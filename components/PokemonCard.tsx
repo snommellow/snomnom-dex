@@ -29,8 +29,8 @@ function bgCandidates(pokemon: { id: number; name: string; tcgImageUrl: string |
     // Tier 1 — PokéOS S3 textless: /tcg/textless/{setId}/{number}.png
     // setId + number derived from our existing pokemontcg.io URL so no extra fetch needed
     ...(tcg
-      ? [`https://s3.pokeos.com/pokeos-uploads/tcg/textless/${tcg.setId}/${tcg.number}.png`]
-      : [`https://s3.pokeos.com/pokeos-uploads/tcg/textless/sv3pt5/${pokemon.id}.png`]),
+      ? [`https://www.pokeos.com/tcg/textless/${tcg.setId}-${tcg.number}.png`]
+      : []),
     // Tier 2 — TCG Pocket textless assets from GitHub (padded national dex ID)
     `https://raw.githubusercontent.com/AikoBliss/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
     // Tier 3 — pokemontcg.io SIR/IR scan (object-top CSS pans text box out of view)

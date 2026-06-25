@@ -78,7 +78,6 @@ const PREMIUM_RARITIES = [
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
-  "Ultra Rare",
 ];
 
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
@@ -169,7 +168,9 @@ async function buildBestMap(cards: TcgCard[]): Promise<Map<number, TcgImageResul
         (!current.prioritySet && prioritySet) ||
         (current.prioritySet === prioritySet && score < current.score) ||
         (current.prioritySet === prioritySet && score === current.score && date > current.date);
-      if (isBetter) best.set(dexNum, { score, prioritySet, date, tcgUrl: tcgImg, card });
+      // Only use tcgUrl for full-art cards (IR/SIR) — others show card text as background
+      const useTcgUrl = PREMIUM_RARITIES.includes(card.rarity) ? tcgImg : null;
+      if (isBetter) best.set(dexNum, { score, prioritySet, date, tcgUrl: useTcgUrl, card });
     }
   }
 

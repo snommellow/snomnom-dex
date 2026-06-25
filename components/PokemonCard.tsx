@@ -16,10 +16,13 @@ const OFFICIAL_ART = (id: number) =>
 
 // ── Background asset cascade ──────────────────────────────────────────────────
 function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
+  const paddedId = String(pokemon.id).padStart(3, "0");
   return [
-    // Tier 1 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
+    // Tier 1 — local public folder: drop PNGs here as /public/tcg-backgrounds/001.png etc.
+    `/tcg-backgrounds/${paddedId}.png`,
+    // Tier 2 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
-    // Tier 2 — official PokeAPI artwork (guaranteed for all 151)
+    // Tier 3 — official PokeAPI artwork (guaranteed for all 151)
     OFFICIAL_ART(pokemon.id),
   ];
 }

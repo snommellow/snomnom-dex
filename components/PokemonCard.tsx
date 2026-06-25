@@ -20,9 +20,8 @@ export default function PokemonCard({ pokemon }: Props) {
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
-  const paddedId = String(pokemon.id).padStart(3, "0");
   const [bgUrl, setBgUrl] = useState(
-    `https://static.dotgg.gg/pokepocket/card/${paddedId}.webp`
+    `https://images.pokemontcg.io/cel25/${pokemon.id}.png`
   );
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 
@@ -23,15 +23,42 @@ export default function PokemonCard({ pokemon }: Props) {
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const el = cardRef.current;
+    if (!el) return;
+    const { left, top, width, height } = el.getBoundingClientRect();
+    const cx = (e.clientX - left) / width - 0.5;
+    const cy = (e.clientY - top) / height - 0.5;
+    setTilt({ x: cy * -18, y: cx * 18 });
+  }
+
+  function handleMouseLeave() {
+    setTilt({ x: 0, y: 0 });
+    setIsHovered(false);
+  }
+
   return (
-    <article className="group cursor-pointer select-none">
+    <article className="group cursor-pointer select-none" style={{ perspective: 600 }}>
       <div
-        className="relative flex flex-col overflow-hidden rounded-xl
-                   shadow-[0_4px_14px_rgba(0,0,0,0.25)]
-                   hover:shadow-[0_8px_24px_rgba(0,0,0,0.38)]
-                   hover:-translate-y-1
-                   transition-all duration-200"
-        style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        className="relative flex flex-col overflow-hidden rounded-xl"
+        style={{
+          border: `2.5px solid ${typeColor}`,
+          backgroundColor: `${typeColor}35`,
+          boxShadow: isHovered
+            ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
+            : `0 4px 14px rgba(0,0,0,0.25)`,
+          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
+          transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
+          willChange: "transform",
+        }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">

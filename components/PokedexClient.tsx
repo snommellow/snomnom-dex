@@ -107,7 +107,7 @@ export default function PokedexClient({ pokemon }: Props) {
       {/* Book shelf grid */}
       {filtered.length > 0 ? (
         <div
-          className="grid gap-x-2 gap-y-8"
+          className="grid gap-x-3 gap-y-4"
           style={{
             gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
             /* Shelf line under each row */

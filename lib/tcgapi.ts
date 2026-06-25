@@ -88,12 +88,26 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return out;
 }
 
+// PokéAPI slugs → pokemontcg.io display names
+const NAME_OVERRIDES: Record<string, string> = {
+  "nidoran-f":  "Nidoran ♀",
+  "nidoran-m":  "Nidoran ♂",
+  "mr-mime":    "Mr. Mime",
+  "farfetchd":  "Farfetch'd",
+  "ho-oh":      "Ho-Oh",
+};
+
+function toDisplayName(slug: string): string {
+  if (NAME_OVERRIDES[slug]) return NAME_OVERRIDES[slug];
+  return slug.charAt(0).toUpperCase() + slug.slice(1);
+}
+
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
 ): Promise<TcgImageResult[]> {
   const entries = pokemon.map((p) => ({
     ...p,
-    displayName: p.name.charAt(0).toUpperCase() + p.name.slice(1),
+    displayName: toDisplayName(p.name),
   }));
 
   const bestMap = new Map<number, TcgImageResult>();

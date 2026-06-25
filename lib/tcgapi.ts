@@ -5,31 +5,6 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
-const PRIORITY_SETS = ["sv3pt5"];
-
-// Fetched once per build — discovers all SV set IDs including new releases
-let _svSetIds: string[] | null = null;
-
-async function getSvSetIds(): Promise<string[]> {
-  if (_svSetIds) return _svSetIds;
-  try {
-    const res = await fetch(
-      `https://api.pokemontcg.io/v2/sets?q=series:"Scarlet %26 Violet"&select=id&pageSize=100`,
-      { next: { revalidate: 86400 } }
-    );
-    if (res.ok) {
-      const data = await res.json();
-      _svSetIds = (data.data as { id: string }[]).map((s) => s.id);
-      return _svSetIds;
-    }
-  } catch { /* fall through to fallback */ }
-  _svSetIds = [
-    "sv1", "sv2", "sv3", "sv3pt5", "sv4", "sv4pt5",
-    "sv5", "sv6", "sv6pt5", "sv7", "sv8", "sv8pt5",
-    "sv9", "sv9pt5",
-  ];
-  return _svSetIds;
-}
 
 interface TcgCard {
   id: string;
@@ -69,7 +44,7 @@ export interface TcgImageResult { tcgUrl: string | null }
 const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
-  const best = new Map<number, { score: number; prioritySet: boolean; date: string; tcgUrl: string | null }>();
+  const best = new Map<number, { score: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
     if (isGimmick(card)) continue;
@@ -79,17 +54,15 @@ function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
-    const prioritySet = PRIORITY_SETS.includes(card.set?.id ?? "");
     const date = card.set?.releaseDate ?? "0000-00-00";
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const cur = best.get(dexNum);
       const better =
         !cur ||
-        (!cur.prioritySet && prioritySet) ||
-        (cur.prioritySet === prioritySet && score < cur.score) ||
-        (cur.prioritySet === prioritySet && score === cur.score && date > cur.date);
-      if (better) best.set(dexNum, { score, prioritySet, date, tcgUrl });
+        score < cur.score ||
+        (score === cur.score && date > cur.date);
+      if (better) best.set(dexNum, { score, date, tcgUrl });
     }
   }
 
@@ -136,47 +109,15 @@ export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
 ): Promise<TcgImageResult[]> {
   const ids = pokemon.map((p) => p.id);
-
-  const bestMap = new Map<number, TcgImageResult>();
-  const merge = (m: Map<number, TcgImageResult>) =>
-    m.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
-  const missingIds = () => ids.filter((id) => !bestMap.has(id));
-
-  // Query by dex number — finds Clefairy, Clefairy ex, Dark Clefairy, etc. all at once
   const dexQ = (dexIds: number[]) =>
     dexIds.map((id) => `nationalPokedexNumbers:${id}`).join(" OR ");
 
-  // Pass 1: priority set (sv3pt5 = 151) only
-  const p1 = await Promise.all(
+  const results = await Promise.all(
     chunk(ids, CHUNK).map((batch) =>
-      tcgFetch(`(${dexQ(batch)}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`)
+      tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
     )
   );
-  merge(buildBestMap(p1.flat()));
 
-  // Pass 2: all SV sets for anything still missing
-  const miss = missingIds();
-  if (miss.length) {
-    const svIds = await getSvSetIds();
-    const setQ = svIds.map((s) => `set.id:${s}`).join(" OR ");
-    const p2 = await Promise.all(
-      chunk(miss, CHUNK).map((batch) =>
-        tcgFetch(`(${dexQ(batch)}) (${setQ}) ${IR_CLAUSE} ${SUB_EXCL}`)
-      )
-    );
-    merge(buildBestMap(p2.flat()));
-  }
-
-  // Pass 3: all sets for anything still missing
-  const miss2 = missingIds();
-  if (miss2.length) {
-    const p3 = await Promise.all(
-      chunk(miss2, CHUNK).map((batch) =>
-        tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
-      )
-    );
-    merge(buildBestMap(p3.flat()));
-  }
-
+  const bestMap = buildBestMap(results.flat());
   return ids.map((id) => bestMap.get(id) ?? { tcgUrl: null });
 }

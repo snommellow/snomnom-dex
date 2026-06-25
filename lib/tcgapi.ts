@@ -48,12 +48,13 @@ interface TcgCard {
   subtypes: string[];
 }
 
+// Only exclude older power-creep mechanics that bloated card sizes (MEGA, VMAX, VSTAR).
+// Modern lowercase "ex" cards (SV era) are the primary IR/SIR full-art source — keep them.
 const EXCLUDED_SUBTYPES = new Set([
-  "MEGA", "Mega", "V", "VMAX", "VSTAR", "EX", "GX", "V-UNION",
+  "MEGA", "Mega", "VMAX", "VSTAR", "V-UNION",
 ]);
 
-// Match "Charizard VMAX", "Pikachu V", "Blastoise-GX", etc.
-const GIMMICK_NAME_RE = /\b(MEGA|VMAX|VSTAR|V-UNION|GX|EX)\b|[-\s]V$/i;
+const GIMMICK_NAME_RE = /\b(MEGA|VMAX|VSTAR|V-UNION)\b/i;
 
 function isGimmickVariant(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
@@ -108,8 +109,10 @@ function buildBestMap(
 
 // ── API helpers ───────────────────────────────────────────────────────────────
 
+// IR/SIR rarity filter already ensures quality — only exclude older MEGA/VMAX/VSTAR bloat.
+// Modern lowercase "ex" (SV era) and GX cards can be IR/SIR full-art, so they're allowed.
 const SUBTYPE_EXCLUSION =
-  "-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:v -subtypes:ex -subtypes:gx";
+  "-subtypes:mega -subtypes:vmax -subtypes:vstar";
 
 const PREMIUM_RARITY_CLAUSE = PREMIUM_RARITIES
   .map((r) => `rarity:"${r}"`)

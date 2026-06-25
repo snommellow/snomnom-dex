@@ -15,19 +15,11 @@ const OFFICIAL_ART = (id: number) =>
 const HOME_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
 
-function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null; pocketImageUrl: string | null }): string[] {
-  return [
-    ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
-    ...(pokemon.pocketImageUrl ? [pokemon.pocketImageUrl] : []),
-    OFFICIAL_ART(pokemon.id),
-  ];
-}
-
 export default function PokemonCard({ pokemon }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
-  const candidates = bgCandidates(pokemon);
+  const candidates = [...pokemon.bgCandidates, OFFICIAL_ART(pokemon.id)];
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 

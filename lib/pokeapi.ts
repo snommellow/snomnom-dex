@@ -60,22 +60,25 @@ export interface PokemonSummary {
   types: string[];
   spriteUrl: string | null;
   artworkUrl: string | null;
-  tcgImageUrl: string | null;
-  pocketImageUrl: string | null;
+  // Ordered candidates for card background: PokéOS textless → TCG image → Pocket → official art
+  bgCandidates: string[];
 }
 
 export function toPokemonSummary(
   p: Pokemon,
-  tcgImageUrl: string | null = null,
+  tcgResult: { pokeosUrl: string | null; tcgUrl: string | null } = { pokeosUrl: null, tcgUrl: null },
   pocketImageUrl: string | null = null,
 ): PokemonSummary {
+  const bg: string[] = [];
+  if (tcgResult.pokeosUrl) bg.push(tcgResult.pokeosUrl);
+  if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
+  if (pocketImageUrl) bg.push(pocketImageUrl);
   return {
     id: p.id,
     name: p.name,
     types: p.types.map((t) => t.type.name),
     spriteUrl: p.sprites.front_default,
     artworkUrl: p.sprites.other["official-artwork"].front_default,
-    tcgImageUrl,
-    pocketImageUrl,
+    bgCandidates: bg,
   };
 }

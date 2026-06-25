@@ -91,6 +91,7 @@ interface TcgCard {
   id: string;
   name: string;
   number: string;
+  images: { small: string; large: string };
   nationalPokedexNumbers: number[];
   rarity: string;
   set: { id: string; releaseDate: string };
@@ -115,16 +116,18 @@ function isJunkRarity(rarity: string): boolean {
 
 // ── Best-card map builder ─────────────────────────────────────────────────────
 
-function buildBestMap(cards: TcgCard[]): Map<number, string> {
-  const best = new Map<number, { score: number; prioritySet: boolean; date: string; url: string }>();
+interface CardEntry { score: number; prioritySet: boolean; date: string; pokeosUrl: string | null; tcgUrl: string | null }
+
+function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null; tcgUrl: string | null }> {
+  const best = new Map<number, CardEntry>();
 
   for (const card of cards) {
     if (isGimmickVariant(card)) continue;
     if (isJunkRarity(card.rarity ?? "")) continue;
 
-    // Prefer PokéOS textless URL; fall back to nothing (caller handles fallback)
-    const url = pokeosUrl(card.set?.id ?? "", card.number ?? "");
-    if (!url) continue;
+    const pokeos = pokeosUrl(card.set?.id ?? "", card.number ?? "");
+    const tcgImg = card.images?.large ?? card.images?.small ?? null;
+    if (!pokeos && !tcgImg) continue;
 
     const score = rarityScore(card.rarity ?? "");
     const prioritySet = PRIORITY_SETS.includes(card.set?.id ?? "");
@@ -137,11 +140,11 @@ function buildBestMap(cards: TcgCard[]): Map<number, string> {
         (!current.prioritySet && prioritySet) ||
         (current.prioritySet === prioritySet && score < current.score) ||
         (current.prioritySet === prioritySet && score === current.score && date > current.date);
-      if (isBetter) best.set(dexNum, { score, prioritySet, date, url });
+      if (isBetter) best.set(dexNum, { score, prioritySet, date, pokeosUrl: pokeos, tcgUrl: tcgImg });
     }
   }
 
-  return new Map([...best.entries()].map(([k, v]) => [k, v.url]));
+  return new Map([...best.entries()].map(([k, v]) => [k, { pokeosUrl: v.pokeosUrl, tcgUrl: v.tcgUrl }]));
 }
 
 // ── API helpers ───────────────────────────────────────────────────────────────
@@ -155,7 +158,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,number,nationalPokedexNumbers,rarity,set,subtypes`,
+        `&select=id,name,number,images,nationalPokedexNumbers,rarity,set,subtypes`,
       { next: { revalidate: 86400 } }
     );
     if (!res.ok) return [];
@@ -191,21 +194,24 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return out;
 }
 
+export interface TcgImageResult { pokeosUrl: string | null; tcgUrl: string | null }
+
 /**
- * Fetch the best PokéOS textless card URL for each Pokémon via pokemontcg.io metadata.
- * Priority: sv3pt5 IR/SIR → swsh12pt5 IR/SIR → null (falls back to Pocket/official art).
+ * Returns PokéOS textless URL + pokemontcg.io fallback image for each Pokémon.
+ * Card renders try pokeosUrl first; if it 404s, tcgUrl is the next candidate.
+ * Priority: sv3pt5 IR/SIR → any-PokéOS-set IR/SIR → null.
  */
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
-): Promise<(string | null)[]> {
+): Promise<TcgImageResult[]> {
   const entries = pokemon.map((p) => ({
     ...p,
     displayName: p.name.charAt(0).toUpperCase() + p.name.slice(1),
   }));
 
-  const bestMap = new Map<number, string>();
-  const merge = (map: Map<number, string>) =>
-    map.forEach((url, id) => { if (!bestMap.has(id)) bestMap.set(id, url); });
+  const bestMap = new Map<number, TcgImageResult>();
+  const merge = (map: Map<number, { pokeosUrl: string | null; tcgUrl: string | null }>) =>
+    map.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
@@ -217,5 +223,5 @@ export async function fetchTcgCardImages(
     merge(buildBestMap(results.flat()));
   }
 
-  return entries.map((e) => bestMap.get(e.id) ?? null);
+  return entries.map((e) => bestMap.get(e.id) ?? { pokeosUrl: null, tcgUrl: null });
 }

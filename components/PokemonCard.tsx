@@ -108,11 +108,12 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Top blur strip ── */}
         <div
-          className="absolute top-0 left-0 right-0 z-[1] pointer-events-none"
+          className="absolute left-0 right-0 z-[1] pointer-events-none"
           style={{
-            height: 48,
-            backdropFilter: "blur(3px)",
-            WebkitBackdropFilter: "blur(3px)",
+            top: 22,
+            height: 56,
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
             maskImage: "linear-gradient(to top, transparent 0%, black 100%)",
             WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 100%)",
           }}

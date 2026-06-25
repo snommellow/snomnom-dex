@@ -64,7 +64,7 @@ export default function PokemonCard({ pokemon }: Props) {
               src={pokeosUrl}
               alt=""
               aria-hidden
-              className="absolute inset-0 w-full h-full object-cover object-top opacity-25"
+              className="absolute inset-0 w-full h-full object-cover object-top opacity-25 z-[1]"
               onError={() => setPokeosVisible(false)}
             />
           )}
@@ -75,8 +75,8 @@ export default function PokemonCard({ pokemon }: Props) {
             aria-hidden
             fill
             sizes="300px"
-            className="object-cover object-top opacity-25"
-            loading="lazy"
+            className="object-cover object-top opacity-25 z-0"
+            loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, nextjsFallbacks.length - 1))}
           />
         </div>

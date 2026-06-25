@@ -213,7 +213,7 @@ export async function fetchTcgCardImages(
   if (miss3.length) {
     const results = await Promise.all(chunk(miss3, CHUNK).map(fetchPass3));
     // rejectJunk=false so commons are accepted if nothing better exists
-    merge(buildBestMap(results.flat(), false));
+    merge(buildBestMap(results.flat(), true));
   }
 
   return entries.map((e) => bestMap.get(e.id) ?? null);

@@ -43,22 +43,28 @@ export default function PokemonCard({ pokemon }: Props) {
 
   return (
     <article className="group cursor-pointer select-none" style={{ perspective: 600 }}>
+      {/* Outer: 3D transform only — no overflow:hidden so backdropFilter works */}
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className="relative flex flex-col overflow-hidden rounded-xl"
         style={{
-          overflow: "hidden",
-          border: `2.5px solid ${typeColor}`,
-          backgroundColor: `${typeColor}35`,
+          borderRadius: 12,
           boxShadow: isHovered
             ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
             : `0 4px 14px rgba(0,0,0,0.25)`,
           transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
           transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
           willChange: "transform",
+        }}
+      >
+      {/* Inner: overflow:hidden for clipping, no transform */}
+      <div
+        className="relative flex flex-col overflow-hidden rounded-xl"
+        style={{
+          border: `2.5px solid ${typeColor}`,
+          backgroundColor: `${typeColor}35`,
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
@@ -136,22 +142,28 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Top fade strip ── */}
+        {/* ── Top blur strip ── */}
         <div
           className="absolute left-0 right-0 z-[1] pointer-events-none"
           style={{
             top: 0,
             height: 56,
-            background: `linear-gradient(to bottom, ${typeColor}cc 0%, transparent 100%)`,
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            maskImage: "linear-gradient(to top, transparent 0%, black 60%)",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 60%)",
           }}
         />
 
-        {/* ── Bottom fade strip ── */}
+        {/* ── Bottom blur strip ── */}
         <div
           className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none"
           style={{
             height: 80,
-            background: `linear-gradient(to top, ${typeColor}cc 0%, transparent 100%)`,
+            backdropFilter: "blur(3px)",
+            WebkitBackdropFilter: "blur(3px)",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           }}
         />
 
@@ -183,6 +195,7 @@ export default function PokemonCard({ pokemon }: Props) {
             );
           })}
         </div>
+      </div>
       </div>
     </article>
   );

@@ -47,14 +47,20 @@ export default function PokemonCard({ pokemon }: Props) {
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+          }}
+        >
           <Image
             src={bgUrl}
             alt=""
             aria-hidden
             fill
             sizes="300px"
-            className="object-cover object-top opacity-25"
+            className="object-cover object-top opacity-30"
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />

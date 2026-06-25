@@ -4,13 +4,26 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless";
 
 // Maps pokemontcg.io set ID → PokéOS set number
+// sv3pt5 textless cards are split across PokéOS sets 110 and 111
+// pokeosUrl() tries 111 first; cards missing there fall through to 110 via bgCandidates
 const POKEOS_SET_MAP: Record<string, number> = {
-  "sv3pt5":   111, // Scarlet & Violet—151
-  "swsh12pt5": 97, // Crown Zenith (guessed — verify)
+  "sv3pt5":    111, // Scarlet & Violet—151 (primary)
+  "swsh12pt5":  97, // Crown Zenith (guessed — verify)
+};
+
+// Secondary PokéOS set for sv3pt5 — used as extra bgCandidate
+const POKEOS_SET_ALT: Record<string, number> = {
+  "sv3pt5": 110,
 };
 
 function pokeosUrl(setId: string, cardNumber: string): string | null {
   const pokeosSet = POKEOS_SET_MAP[setId];
+  if (!pokeosSet) return null;
+  return `${POKEOS_BASE}/${pokeosSet}/${cardNumber}.jpg`;
+}
+
+function pokeosAltUrl(setId: string, cardNumber: string): string | null {
+  const pokeosSet = POKEOS_SET_ALT[setId];
   if (!pokeosSet) return null;
   return `${POKEOS_BASE}/${pokeosSet}/${cardNumber}.jpg`;
 }
@@ -116,9 +129,9 @@ function isJunkRarity(rarity: string): boolean {
 
 // ── Best-card map builder ─────────────────────────────────────────────────────
 
-interface CardEntry { score: number; prioritySet: boolean; date: string; pokeosUrl: string | null; tcgUrl: string | null }
+interface CardEntry { score: number; prioritySet: boolean; date: string; pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }
 
-function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null; tcgUrl: string | null }> {
+function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }> {
   const best = new Map<number, CardEntry>();
 
   for (const card of cards) {
@@ -126,8 +139,9 @@ function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null;
     if (isJunkRarity(card.rarity ?? "")) continue;
 
     const pokeos = pokeosUrl(card.set?.id ?? "", card.number ?? "");
+    const pokeosAlt = pokeosAltUrl(card.set?.id ?? "", card.number ?? "");
     const tcgImg = card.images?.large ?? card.images?.small ?? null;
-    if (!pokeos && !tcgImg) continue;
+    if (!pokeos && !pokeosAlt && !tcgImg) continue;
 
     const score = rarityScore(card.rarity ?? "");
     const prioritySet = PRIORITY_SETS.includes(card.set?.id ?? "");
@@ -140,11 +154,11 @@ function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null;
         (!current.prioritySet && prioritySet) ||
         (current.prioritySet === prioritySet && score < current.score) ||
         (current.prioritySet === prioritySet && score === current.score && date > current.date);
-      if (isBetter) best.set(dexNum, { score, prioritySet, date, pokeosUrl: pokeos, tcgUrl: tcgImg });
+      if (isBetter) best.set(dexNum, { score, prioritySet, date, pokeosUrl: pokeos, pokeosAltUrl: pokeosAlt, tcgUrl: tcgImg });
     }
   }
 
-  return new Map([...best.entries()].map(([k, v]) => [k, { pokeosUrl: v.pokeosUrl, tcgUrl: v.tcgUrl }]));
+  return new Map([...best.entries()].map(([k, v]) => [k, { pokeosUrl: v.pokeosUrl, pokeosAltUrl: v.pokeosAltUrl, tcgUrl: v.tcgUrl }]));
 }
 
 // ── API helpers ───────────────────────────────────────────────────────────────
@@ -194,7 +208,7 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return out;
 }
 
-export interface TcgImageResult { pokeosUrl: string | null; tcgUrl: string | null }
+export interface TcgImageResult { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }
 
 /**
  * Returns PokéOS textless URL + pokemontcg.io fallback image for each Pokémon.
@@ -210,7 +224,7 @@ export async function fetchTcgCardImages(
   }));
 
   const bestMap = new Map<number, TcgImageResult>();
-  const merge = (map: Map<number, { pokeosUrl: string | null; tcgUrl: string | null }>) =>
+  const merge = (map: Map<number, { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }>) =>
     map.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
@@ -223,5 +237,5 @@ export async function fetchTcgCardImages(
     merge(buildBestMap(results.flat()));
   }
 
-  return entries.map((e) => bestMap.get(e.id) ?? { pokeosUrl: null, tcgUrl: null });
+  return entries.map((e) => bestMap.get(e.id) ?? { pokeosUrl: null, pokeosAltUrl: null, tcgUrl: null });
 }

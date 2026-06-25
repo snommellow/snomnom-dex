@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "static.dotgg.gg",
-        pathname: "/pokepocket/**",
+        pathname: "/**",
       },
       {
         protocol: "https",

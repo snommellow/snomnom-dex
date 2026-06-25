@@ -3,29 +3,33 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 // ── PokéOS textless card images ───────────────────────────────────────────────
 const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless";
 
-// Maps pokemontcg.io set ID → PokéOS set number
-// Maps pokemontcg.io set ID → primary PokéOS set number
-const POKEOS_SET_MAP: Record<string, number> = {
-  "sv3pt5": 111, // Scarlet & Violet—151
-  "sv3":    109, // Obsidian Flames (Pidgey IR confirmed here)
-};
+// SV-era PokéOS set IDs fall in this range
+const POKEOS_PROBE_RANGE = Array.from({ length: 50 }, (_, i) => i + 95); // 95–144
 
-// Secondary PokéOS set tried when primary 404s
-const POKEOS_SET_ALT: Record<string, number> = {
-  "sv3pt5": 110, // sv3pt5 cards split across 110 and 111
-  "sv3":    112, // sv3 alt
-};
+// Runtime cache: TCG setId → PokéOS set numbers that had the probed card
+const pokeosSetCache = new Map<string, number[]>();
 
-function pokeosUrl(setId: string, cardNumber: string): string | null {
-  const pokeosSet = POKEOS_SET_MAP[setId];
-  if (!pokeosSet) return null;
-  return `${POKEOS_BASE}/${pokeosSet}/${cardNumber}.jpg`;
+async function discoverPokeosIds(tcgSetId: string, cardNumber: string): Promise<number[]> {
+  if (pokeosSetCache.has(tcgSetId)) return pokeosSetCache.get(tcgSetId)!;
+
+  const results = await Promise.all(
+    POKEOS_PROBE_RANGE.map(async (setId) => {
+      try {
+        const r = await fetch(
+          `${POKEOS_BASE}/${setId}/${cardNumber}.jpg`,
+          { method: "HEAD", cache: "no-store" }
+        );
+        return r.ok ? setId : null;
+      } catch { return null; }
+    })
+  );
+  const found = results.filter((x): x is number => x !== null);
+  pokeosSetCache.set(tcgSetId, found);
+  return found;
 }
 
-function pokeosAltUrl(setId: string, cardNumber: string): string | null {
-  const pokeosSet = POKEOS_SET_ALT[setId];
-  if (!pokeosSet) return null;
-  return `${POKEOS_BASE}/${pokeosSet}/${cardNumber}.jpg`;
+function buildPokeosUrl(setId: number, cardNumber: string): string {
+  return `${POKEOS_BASE}/${setId}/${cardNumber}.jpg`;
 }
 
 // ── PokéOS TCG Pocket star cards ──────────────────────────────────────────────
@@ -74,6 +78,7 @@ const PREMIUM_RARITIES = [
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
+  "Ultra Rare",
 ];
 
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
@@ -93,9 +98,14 @@ function rarityScore(rarity: string): number {
 
 // ── Sets to prioritise ────────────────────────────────────────────────────────
 
-const PRIORITY_SETS = [
-  "sv3pt5", // Scarlet & Violet—151
-  "sv3",    // Obsidian Flames
+// sv3pt5 = 151 set has the most Gen 1 IR/SIR cards
+const PRIORITY_SETS = ["sv3pt5"];
+
+// SV-era sets to search (expanded to cover all SV releases)
+const SV_SETS = [
+  "sv1", "sv2", "sv3", "sv3pt5", "sv4", "sv4pt5",
+  "sv5", "sv6", "sv6pt5", "sv7", "sv8", "sv8pt5",
+  "sv9", "sv9pt5",
 ];
 
 // ── Gimmick detection ─────────────────────────────────────────────────────────
@@ -127,21 +137,26 @@ function isJunkRarity(rarity: string): boolean {
   return JUNK_RARITIES.has(rarity) || rarity === "";
 }
 
-// ── Best-card map builder ─────────────────────────────────────────────────────
+// ── Best-card map builder (with dynamic PokéOS discovery) ─────────────────────
 
-interface CardEntry { score: number; prioritySet: boolean; date: string; pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }
+interface CardEntry {
+  score: number;
+  prioritySet: boolean;
+  date: string;
+  tcgUrl: string | null;
+  card: TcgCard;
+}
 
-function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }> {
+export interface TcgImageResult { pokeosUrls: string[]; tcgUrl: string | null }
+
+async function buildBestMap(cards: TcgCard[]): Promise<Map<number, TcgImageResult>> {
   const best = new Map<number, CardEntry>();
 
   for (const card of cards) {
     if (isGimmickVariant(card)) continue;
     if (isJunkRarity(card.rarity ?? "")) continue;
 
-    const pokeos = pokeosUrl(card.set?.id ?? "", card.number ?? "");
-    const pokeosAlt = pokeosAltUrl(card.set?.id ?? "", card.number ?? "");
     const tcgImg = card.images?.large ?? card.images?.small ?? null;
-    if (!pokeos && !pokeosAlt && !tcgImg) continue;
 
     const score = rarityScore(card.rarity ?? "");
     const prioritySet = PRIORITY_SETS.includes(card.set?.id ?? "");
@@ -154,18 +169,39 @@ function buildBestMap(cards: TcgCard[]): Map<number, { pokeosUrl: string | null;
         (!current.prioritySet && prioritySet) ||
         (current.prioritySet === prioritySet && score < current.score) ||
         (current.prioritySet === prioritySet && score === current.score && date > current.date);
-      if (isBetter) best.set(dexNum, { score, prioritySet, date, pokeosUrl: pokeos, pokeosAltUrl: pokeosAlt, tcgUrl: tcgImg });
+      if (isBetter) best.set(dexNum, { score, prioritySet, date, tcgUrl: tcgImg, card });
     }
   }
 
-  return new Map([...best.entries()].map(([k, v]) => [k, { pokeosUrl: v.pokeosUrl, pokeosAltUrl: v.pokeosAltUrl, tcgUrl: v.tcgUrl }]));
+  // Now probe PokéOS for each winner
+  const entries = [...best.entries()];
+  await Promise.all(
+    entries.map(async ([dexNum, entry]) => {
+      const { card } = entry;
+      const setId = card.set?.id ?? "";
+      if (!setId || !card.number) return;
+      // This will use the cache if the setId was already probed
+      await discoverPokeosIds(setId, card.number);
+    })
+  );
+
+  const result = new Map<number, TcgImageResult>();
+  for (const [dexNum, entry] of entries) {
+    const { card } = entry;
+    const setId = card.set?.id ?? "";
+    const pokeosIds = pokeosSetCache.get(setId) ?? [];
+    const pokeosUrls = pokeosIds.map((id) => buildPokeosUrl(id, card.number));
+    result.set(dexNum, { pokeosUrls, tcgUrl: entry.tcgUrl });
+  }
+
+  return result;
 }
 
 // ── API helpers ───────────────────────────────────────────────────────────────
 
 const SUBTYPE_EXCLUSION = "-subtypes:mega -subtypes:vmax -subtypes:vstar";
 
-const PREMIUM_RARITY_CLAUSE  = PREMIUM_RARITIES.map((r)  => `rarity:"${r}"`).join(" OR ");
+const PREMIUM_RARITY_CLAUSE   = PREMIUM_RARITIES.map((r)   => `rarity:"${r}"`).join(" OR ");
 const ACCEPTABLE_RARITY_CLAUSE = ACCEPTABLE_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
 
 async function tcgFetch(q: string): Promise<TcgCard[]> {
@@ -183,18 +219,18 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   }
 }
 
-// Pass 1 — priority sets (sv3pt5, swsh12pt5) + IR/SIR only
+// Pass 1 — priority sets (sv3pt5 = 151) + IR/SIR only
 async function fetchPass1(names: string[]): Promise<TcgCard[]> {
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
   const setQ  = PRIORITY_SETS.map((s) => `set.id:${s}`).join(" OR ");
   return tcgFetch(`(${nameQ}) (${setQ}) (${PREMIUM_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
-// Pass 2 — any set that has a PokéOS mapping, IR/SIR only
+// Pass 2 — any SV-era set, IR/SIR/UR
 async function fetchPass2(names: string[]): Promise<TcgCard[]> {
   if (!names.length) return [];
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  const setQ  = Object.keys(POKEOS_SET_MAP).map((s) => `set.id:${s}`).join(" OR ");
+  const setQ  = SV_SETS.map((s) => `set.id:${s}`).join(" OR ");
   return tcgFetch(`(${nameQ}) (${setQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
@@ -208,12 +244,10 @@ function chunk<T>(arr: T[], size: number): T[][] {
   return out;
 }
 
-export interface TcgImageResult { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }
-
 /**
- * Returns PokéOS textless URL + pokemontcg.io fallback image for each Pokémon.
- * Card renders try pokeosUrl first; if it 404s, tcgUrl is the next candidate.
- * Priority: sv3pt5 IR/SIR → any-PokéOS-set IR/SIR → null.
+ * Returns PokéOS textless URLs + pokemontcg.io fallback for each Pokémon.
+ * Dynamically discovers PokéOS set IDs by probing S3 with the card number.
+ * Priority: sv3pt5 IR/SIR → any SV IR/SIR/UR → null.
  */
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
@@ -224,18 +258,18 @@ export async function fetchTcgCardImages(
   }));
 
   const bestMap = new Map<number, TcgImageResult>();
-  const merge = (map: Map<number, { pokeosUrl: string | null; pokeosAltUrl: string | null; tcgUrl: string | null }>) =>
+  const merge = (map: Map<number, TcgImageResult>) =>
     map.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
-  merge(buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
+  merge(await buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
 
   const miss2 = missing();
   if (miss2.length) {
     const results = await Promise.all(chunk(miss2, CHUNK).map(fetchPass2));
-    merge(buildBestMap(results.flat()));
+    merge(await buildBestMap(results.flat()));
   }
 
-  return entries.map((e) => bestMap.get(e.id) ?? { pokeosUrl: null, pokeosAltUrl: null, tcgUrl: null });
+  return entries.map((e) => bestMap.get(e.id) ?? { pokeosUrls: [], tcgUrl: null });
 }

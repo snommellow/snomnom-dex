@@ -66,12 +66,15 @@ export interface PokemonSummary {
 
 export function toPokemonSummary(
   p: Pokemon,
-  tcgResult: { pokeosUrl: string | null; pokeosAltUrl?: string | null; tcgUrl: string | null } = { pokeosUrl: null, tcgUrl: null },
+  tcgResult: { pokeosUrls?: string[]; pokeosUrl?: string | null; pokeosAltUrl?: string | null; tcgUrl: string | null } = { tcgUrl: null },
   pocketImageUrl: string | null = null,
 ): PokemonSummary {
   const bg: string[] = [];
-  if (tcgResult.pokeosUrl) bg.push(tcgResult.pokeosUrl);
-  if (tcgResult.pokeosAltUrl) bg.push(tcgResult.pokeosAltUrl);
+  if (tcgResult.pokeosUrls?.length) bg.push(...tcgResult.pokeosUrls);
+  else {
+    if (tcgResult.pokeosUrl) bg.push(tcgResult.pokeosUrl);
+    if (tcgResult.pokeosAltUrl) bg.push(tcgResult.pokeosAltUrl);
+  }
   if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
   if (pocketImageUrl) bg.push(pocketImageUrl);
   return {

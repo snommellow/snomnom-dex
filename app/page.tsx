@@ -24,6 +24,8 @@ function GridSkeleton() {
   );
 }
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <SpriteStyleProvider>
@@ -50,7 +52,9 @@ export default function Home() {
             </div>
 
             {/* Settings button — top right */}
-            <SettingsButton />
+            <div className="ml-auto">
+              <SettingsButton />
+            </div>
           </div>
         </header>
 

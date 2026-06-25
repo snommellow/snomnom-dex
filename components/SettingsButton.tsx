@@ -15,7 +15,7 @@ export default function SettingsButton() {
       <button
         onClick={() => setOpen(true)}
         title="Settings"
-        className="ml-auto flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-all"
+        className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 border border-white/20 text-white/70 hover:text-white hover:border-white/50 transition-all"
       >
         <Settings size={16} />
       </button>

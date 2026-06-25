@@ -1,9 +1,9 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense, useRef } from "react";
 
-const GEN1_DEX: Record<number, string> = {
+const GEN1: Record<number, string> = {
   1:"Bulbasaur",2:"Ivysaur",3:"Venusaur",4:"Charmander",5:"Charmeleon",6:"Charizard",
   7:"Squirtle",8:"Wartortle",9:"Blastoise",10:"Caterpie",11:"Metapod",12:"Butterfree",
   13:"Weedle",14:"Kakuna",15:"Beedrill",16:"Pidgey",17:"Pidgeotto",18:"Pidgeot",
@@ -32,125 +32,126 @@ const GEN1_DEX: Record<number, string> = {
   149:"Dragonite",150:"Mewtwo",151:"Mew",
 };
 
-// Known PokéOS sets for quick navigation
-const KNOWN_SETS = [
-  { id: 110, label: "110 — sv3pt5 alt" },
-  { id: 111, label: "111 — sv3pt5 (151)" },
-  { id: 384, label: "384 — Pocket Genetic Apex", ext: "png" },
-  { id: 461, label: "461 — (Magnemite etc.)", ext: "png" },
+const PRESETS = [
+  { label: "sv3pt5 — 151 (set 111)", set: 111, start: 1,   count: 220, ext: "jpg" },
+  { label: "sv3pt5 — 151 alt (set 110)", set: 110, start: 165, count: 80,  ext: "jpg" },
+  { label: "Pocket Genetic Apex (set 384)", set: 384, start: 227, count: 24,  ext: "png" },
+  { label: "Set 461",                       set: 461, start: 1,   count: 103, ext: "png" },
 ];
 
 function DebugGrid() {
   const params = useSearchParams();
-  const setId  = parseInt(params.get("set")   ?? "461", 10);
-  const start  = parseInt(params.get("start") ?? "1",   10);
-  const count  = parseInt(params.get("count") ?? "150", 10);
-  const ext    = params.get("ext") ?? "jpg";
+  const router = useRouter();
 
-  const BASE = `https://s3.pokeos.com/pokeos-uploads/tcg/textless/${setId}`;
-  const cards = Array.from({ length: count }, (_, i) => start + i);
+  const setId = parseInt(params.get("set")   ?? "111", 10);
+  const start = parseInt(params.get("start") ?? "1",   10);
+  const count = parseInt(params.get("count") ?? "220", 10);
+  const ext   = params.get("ext") ?? "jpg";
 
-  function nav(overrides: Record<string, string | number>) {
-    const p = new URLSearchParams({
-      set: String(setId), start: String(start), count: String(count), ext,
+  const setRef   = useRef<HTMLInputElement>(null);
+  const startRef = useRef<HTMLInputElement>(null);
+  const countRef = useRef<HTMLInputElement>(null);
+  const extRef   = useRef<HTMLSelectElement>(null);
+
+  function go(overrides: Record<string, string | number> = {}) {
+    const next = new URLSearchParams({
+      set:   String(setRef.current?.value   ?? setId),
+      start: String(startRef.current?.value ?? start),
+      count: String(countRef.current?.value ?? count),
+      ext:   extRef.current?.value ?? ext,
       ...Object.fromEntries(Object.entries(overrides).map(([k, v]) => [k, String(v)])),
     });
-    window.location.search = p.toString();
+    router.push(`?${next}`);
   }
+
+  const BASE  = `https://s3.pokeos.com/pokeos-uploads/tcg/textless/${setId}`;
+  const cards = Array.from({ length: count }, (_, i) => start + i);
 
   return (
     <div className="p-4 bg-gray-900 min-h-screen text-white">
-      <h1 className="text-xl font-bold mb-3">PokéOS Debug — Set {setId}</h1>
+      <h1 className="text-lg font-bold mb-3">PokéOS Set Browser</h1>
 
-      {/* Controls */}
-      <div className="flex flex-wrap gap-2 mb-4 items-end">
-        <label className="flex flex-col text-xs text-gray-400 gap-1">
-          Set ID
-          <input
-            type="number" defaultValue={setId}
-            className="w-24 bg-gray-800 rounded px-2 py-1 text-white text-sm"
-            onKeyDown={(e) => e.key === "Enter" && nav({ set: (e.target as HTMLInputElement).value })}
-          />
-        </label>
-        <label className="flex flex-col text-xs text-gray-400 gap-1">
-          Start #
-          <input
-            type="number" defaultValue={start}
-            className="w-20 bg-gray-800 rounded px-2 py-1 text-white text-sm"
-            onKeyDown={(e) => e.key === "Enter" && nav({ start: (e.target as HTMLInputElement).value })}
-          />
-        </label>
-        <label className="flex flex-col text-xs text-gray-400 gap-1">
-          Count
-          <input
-            type="number" defaultValue={count}
-            className="w-20 bg-gray-800 rounded px-2 py-1 text-white text-sm"
-            onKeyDown={(e) => e.key === "Enter" && nav({ count: (e.target as HTMLInputElement).value })}
-          />
-        </label>
-        <label className="flex flex-col text-xs text-gray-400 gap-1">
-          Ext
+      {/* Presets */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {PRESETS.map((p) => {
+          const active = p.set === setId && p.start === start && p.ext === ext;
+          return (
+            <button
+              key={p.label}
+              onClick={() => go({ set: p.set, start: p.start, count: p.count, ext: p.ext })}
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
+                active ? "bg-yellow-400 text-black" : "bg-gray-700 hover:bg-gray-600 text-white"
+              }`}
+            >
+              {p.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Manual controls */}
+      <div className="flex flex-wrap gap-3 mb-5 items-end bg-gray-800 p-3 rounded-lg">
+        {[
+          { label: "Set ID", ref: setRef,   defaultValue: setId,  width: "w-20", type: "number" },
+          { label: "Start #", ref: startRef, defaultValue: start,  width: "w-20", type: "number" },
+          { label: "Count",   ref: countRef, defaultValue: count,  width: "w-20", type: "number" },
+        ].map(({ label, ref, defaultValue, width }) => (
+          <label key={label} className="flex flex-col gap-1 text-xs text-gray-400">
+            {label}
+            <input
+              ref={ref as React.RefObject<HTMLInputElement>}
+              type="number"
+              defaultValue={defaultValue}
+              className={`${width} bg-gray-700 rounded px-2 py-1 text-white text-sm`}
+              onKeyDown={(e) => e.key === "Enter" && go()}
+            />
+          </label>
+        ))}
+        <label className="flex flex-col gap-1 text-xs text-gray-400">
+          Extension
           <select
-            value={ext}
-            className="bg-gray-800 rounded px-2 py-1 text-white text-sm"
-            onChange={(e) => nav({ ext: e.target.value })}
+            ref={extRef}
+            defaultValue={ext}
+            className="bg-gray-700 rounded px-2 py-1 text-white text-sm"
           >
             <option value="jpg">jpg</option>
             <option value="png">png</option>
           </select>
         </label>
         <button
-          className="px-3 py-1 bg-blue-600 hover:bg-blue-500 rounded text-sm self-end"
-          onClick={() => {
-            const setEl  = document.querySelectorAll("input")[0] as HTMLInputElement;
-            const stEl   = document.querySelectorAll("input")[1] as HTMLInputElement;
-            const ctEl   = document.querySelectorAll("input")[2] as HTMLInputElement;
-            nav({ set: setEl.value, start: stEl.value, count: ctEl.value });
-          }}
+          onClick={() => go()}
+          className="px-4 py-1 bg-blue-600 hover:bg-blue-500 rounded text-sm font-medium self-end"
         >
           Go
         </button>
       </div>
 
-      {/* Quick links */}
-      <div className="flex flex-wrap gap-2 mb-5">
-        {KNOWN_SETS.map((s) => (
-          <button
-            key={s.id}
-            onClick={() => nav({ set: s.id, start: 1, count: 250, ext: s.ext ?? "jpg" })}
-            className={`px-2 py-0.5 rounded text-xs ${s.id === setId ? "bg-yellow-500 text-black font-bold" : "bg-gray-700 hover:bg-gray-600"}`}
-          >
-            {s.label}
-          </button>
-        ))}
-      </div>
-
       <p className="text-gray-500 text-xs mb-4">
-        Showing {BASE}/{start}–{start + count - 1}.{ext} · Missing images hide automatically · Green = likely Gen 1
+        {BASE}/{start}–{start + count - 1}.{ext} · Missing cards hide automatically · <span className="text-green-400">Green = Gen 1 dex match</span>
       </p>
 
-      {/* Grid */}
-      <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">
+      {/* Card grid */}
+      <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 lg:grid-cols-11 gap-2">
         {cards.map((n) => {
-          const dexName = GEN1_DEX[n];
+          const name = GEN1[n];
           return (
             <div
               key={n}
               id={`c${n}`}
-              className={`flex flex-col items-center gap-1 rounded p-1 ${dexName ? "bg-green-900/40 ring-1 ring-green-500" : ""}`}
+              className={`flex flex-col items-center gap-1 rounded p-1 ${name ? "bg-green-900/40 ring-1 ring-green-500" : ""}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${BASE}/${n}.${ext}`}
                 alt={String(n)}
-                className="w-20 rounded shadow bg-gray-800"
+                className="w-full rounded shadow bg-gray-800"
                 onError={() => {
                   const el = document.getElementById(`c${n}`);
                   if (el) el.style.display = "none";
                 }}
               />
               <span className="text-yellow-300 text-[10px] font-bold">{n}</span>
-              {dexName && <span className="text-green-300 text-[9px] text-center leading-tight">{dexName}</span>}
+              {name && <span className="text-green-300 text-[9px] text-center leading-tight">{name}</span>}
             </div>
           );
         })}

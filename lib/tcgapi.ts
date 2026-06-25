@@ -15,39 +15,59 @@ function getPokeosUrls(tcgSetId: string, cardNumber: string): string[] {
 }
 
 // ── PokéOS TCG Pocket star cards ──────────────────────────────────────────────
-// Set 384, cards 227-250 — full-art Pocket star illustrations
-const POKEOS_POCKET_BASE = `${POKEOS_BASE}/384`;
+// Each entry is one PokéOS Pocket set. cards: { dexId → card number in that set }
+// To add a new Pocket pack: append a new { pokeosId, name, cards } entry below.
+// Card images use .png and live at POKEOS_BASE/{pokeosId}/{cardNumber}.png
 
-const POCKET_STAR_MAP: Record<number, number> = {
-  1:   227, // Bulbasaur
-  // 228 — Ivysaur card present but not AR quality
-  127: 229, // Pinsir
-  4:   230, // Charmander
-  78:  231, // Rapidash
-  7:   232, // Squirtle
-  130: 233, // Gyarados
-  131: 234, // Lapras
-  101: 235, // Electrode
-  65:  236, // Alakazam
-  79:  237, // Slowpoke
-  50:  238, // Diglett
-  104: 239, // Cubone
-  // 240 — Machop card present but not AR quality
-  34:  241, // Nidoking
-  42:  242, // Golbat
-  110: 243, // Weezing
-  149: 244, // Dragonite
-  18:  245, // Pidgeot
-  // 246 — Abra card present but not AR quality
-  132: 247, // Ditto
-  133: 248, // Eevee
-  137: 249, // Porygon
-  143: 250, // Snorlax
-};
+interface PocketSet {
+  pokeosId: number;
+  name: string;
+  cards: Record<number, number>; // dexId → card number within this PokéOS set
+}
 
-export function getPocketStarUrl(dexId: number): string | null {
-  const n = POCKET_STAR_MAP[dexId];
-  return n != null ? `${POKEOS_POCKET_BASE}/${n}.png` : null;
+const POCKET_SETS: PocketSet[] = [
+  {
+    pokeosId: 384,
+    name: "Genetic Apex",
+    cards: {
+      1:   227, // Bulbasaur
+      // 228 — Ivysaur, not AR quality
+      127: 229, // Pinsir
+      4:   230, // Charmander
+      78:  231, // Rapidash
+      7:   232, // Squirtle
+      130: 233, // Gyarados
+      131: 234, // Lapras
+      101: 235, // Electrode
+      65:  236, // Alakazam
+      79:  237, // Slowpoke
+      50:  238, // Diglett
+      104: 239, // Cubone
+      // 240 — Machop, not AR quality
+      34:  241, // Nidoking
+      42:  242, // Golbat
+      110: 243, // Weezing
+      149: 244, // Dragonite
+      18:  245, // Pidgeot
+      // 246 — Abra, not AR quality
+      132: 247, // Ditto
+      133: 248, // Eevee
+      137: 249, // Porygon
+      143: 250, // Snorlax
+    },
+  },
+  // Future Pocket packs — add entries here as PokéOS adds them:
+  // { pokeosId: 385, name: "Mythical Island", cards: { 35: 1, ... } },
+];
+
+/** Returns all PokéOS Pocket star URLs for a given Pokémon across all known packs. */
+export function getPocketStarUrls(dexId: number): string[] {
+  const urls: string[] = [];
+  for (const set of POCKET_SETS) {
+    const n = set.cards[dexId];
+    if (n != null) urls.push(`${POKEOS_BASE}/${set.pokeosId}/${n}.png`);
+  }
+  return urls;
 }
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────

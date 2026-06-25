@@ -60,13 +60,13 @@ export default function PokemonCard({ pokemon }: Props) {
           willChange: "transform",
         }}
       >
-      {/* Inner: clip-path for clipping (works with backdropFilter unlike overflow:hidden) */}
+      {/* Inner: overflow+isolation forces compositing layer so backdropFilter is clipped */}
       <div
-        className="relative flex flex-col rounded-xl"
+        className="relative flex flex-col overflow-hidden rounded-xl"
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
-          clipPath: "inset(0 round 12px)",
+          isolation: "isolate",
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
@@ -144,29 +144,23 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Top blur strip — same image as bg, clipped to top, blurred ── */}
-        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-          clipPath: "inset(0 0 calc(100% - 56px) 0)",
+        {/* ── Top blur strip ── */}
+        <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
+          top: 0, height: 56,
+          backdropFilter: "blur(4px)",
+          WebkitBackdropFilter: "blur(4px)",
           maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
           WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-        }}>
-          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
-            className="object-cover object-top"
-            style={{ opacity: 0.75, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(6px)" }}
-          />
-        </div>
+        }} />
 
-        {/* ── Bottom blur strip — same image as bg, clipped to bottom, blurred ── */}
-        <div className="absolute inset-0 z-[5] pointer-events-none" style={{
-          clipPath: "inset(calc(100% - 80px) 0 0 0)",
+        {/* ── Bottom blur strip ── */}
+        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
+          height: 80,
+          backdropFilter: "blur(3px)",
+          WebkitBackdropFilter: "blur(3px)",
           maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-        }}>
-          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
-            className="object-cover object-top"
-            style={{ opacity: 0.75, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(6px)" }}
-          />
-        </div>
+        }} />
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

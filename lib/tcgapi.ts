@@ -29,7 +29,7 @@ function detectChainSets(cards: TcgCard[]): Set<string> {
   const chainSets = new Set<string>();
   for (const [sid, dexNums] of setCoverage) {
     for (const chain of GEN1_CHAINS) {
-      if (chain.length > 1 && chain.every((d) => dexNums.has(d))) {
+      if (chain.length >= 3 && chain.every((d) => dexNums.has(d))) {
         chainSets.add(sid);
         break;
       }

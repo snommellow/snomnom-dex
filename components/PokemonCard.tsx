@@ -14,28 +14,12 @@ interface Props {
 const OFFICIAL_ART = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
-// Parse set ID and card number from a pokemontcg.io image URL.
-// e.g. "https://images.pokemontcg.io/sv3pt5/182.png" → { setId:"sv3pt5", number:"182" }
-function parseTcgUrl(url: string | null): { setId: string; number: string } | null {
-  if (!url) return null;
-  const m = url.match(/images\.pokemontcg\.io\/([^/]+)\/(\d+)/);
-  return m ? { setId: m[1], number: m[2] } : null;
-}
-
 // ── Background asset cascade ──────────────────────────────────────────────────
 function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
-  const tcg = parseTcgUrl(pokemon.tcgImageUrl);
-  const pad = String(pokemon.id).padStart(3, "0");
   return [
-    // Tier 1a — PokéOS TCG Pocket, national dex padded (most likely to work)
-    `https://www.pokeos.com/img/tcg/pocket/${pad}.png`,
-    // Tier 1b — PokéOS TCG Pocket with _textless suffix
-    `https://www.pokeos.com/img/tcg/pocket/cards/${pad}_textless.png`,
-    // Tier 1c — PokéOS TCG Pocket using standard TCG setId-number (less likely to match)
-    ...(tcg ? [`https://www.pokeos.com/img/tcg/pocket/cards/${tcg.setId}-${tcg.number}_textless.png`] : []),
-    // Tier 2 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
+    // Tier 1 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
-    // Tier 3 — official PokeAPI artwork (guaranteed for all 151)
+    // Tier 2 — official PokeAPI artwork (guaranteed for all 151)
     OFFICIAL_ART(pokemon.id),
   ];
 }

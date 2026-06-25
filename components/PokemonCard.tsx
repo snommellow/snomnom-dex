@@ -20,8 +20,7 @@ export default function PokemonCard({ pokemon }: Props) {
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
-  // Background starts at the same source; falls back to guaranteed official art on error
-  const [bgUrl, setBgUrl] = useState(artworkUrl);
+  const [bgUrl, setBgUrl] = useState(OFFICIAL_ART(pokemon.id));
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
@@ -37,7 +36,7 @@ export default function PokemonCard({ pokemon }: Props) {
                    transition-all duration-200"
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
-        {/* ── Background: artwork zoomed+blurred, with onError fallback ── */}
+        {/* ── Background: official artwork, covers full card, faded ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src={bgUrl}
@@ -45,15 +44,9 @@ export default function PokemonCard({ pokemon }: Props) {
             aria-hidden
             fill
             sizes="300px"
-            className="object-contain scale-[2.8] blur-[8px] opacity-30"
+            className="object-cover opacity-25"
             loading="lazy"
             onError={() => setBgUrl(OFFICIAL_ART(pokemon.id))}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(160deg, ${typeColor}50 0%, ${typeColor}20 60%, transparent 100%)`,
-            }}
           />
         </div>
 

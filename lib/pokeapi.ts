@@ -24,16 +24,22 @@ export interface PokemonListItem {
   url: string;
 }
 
-export async function fetchPokemonList(limit = 151, offset = 0): Promise<PokemonListItem[]> {
-  const res = await fetch(`${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`, {
-    next: { revalidate: 86400 },
-  });
+export async function fetchPokemonList(
+  limit = 151,
+  offset = 0
+): Promise<PokemonListItem[]> {
+  const res = await fetch(
+    `${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`,
+    { next: { revalidate: 86400 } }
+  );
   if (!res.ok) throw new Error("Failed to fetch Pokémon list");
   const data = await res.json();
   return data.results as PokemonListItem[];
 }
 
-export async function fetchPokemon(nameOrId: string | number): Promise<Pokemon> {
+export async function fetchPokemon(
+  nameOrId: string | number
+): Promise<Pokemon> {
   const res = await fetch(`${BASE_URL}/pokemon/${nameOrId}`, {
     next: { revalidate: 86400 },
   });
@@ -45,4 +51,23 @@ export async function fetchFirst151(): Promise<Pokemon[]> {
   const list = await fetchPokemonList(151);
   const pokemon = await Promise.all(list.map((p) => fetchPokemon(p.name)));
   return pokemon;
+}
+
+// Pull out just what the UI needs so client bundles stay lean
+export interface PokemonSummary {
+  id: number;
+  name: string;
+  types: string[];
+  spriteUrl: string | null;
+  artworkUrl: string | null;
+}
+
+export function toPokemonSummary(p: Pokemon): PokemonSummary {
+  return {
+    id: p.id,
+    name: p.name,
+    types: p.types.map((t) => t.type.name),
+    spriteUrl: p.sprites.front_default,
+    artworkUrl: p.sprites.other["official-artwork"].front_default,
+  };
 }

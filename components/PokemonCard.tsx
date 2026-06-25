@@ -1,54 +1,57 @@
 import Image from "next/image";
-import type { Pokemon } from "@/lib/pokeapi";
-import { TYPE_COLORS, TYPE_BG } from "@/lib/typeColors";
+import type { PokemonSummary } from "@/lib/pokeapi";
+import { TYPE_BADGE, TYPE_GRADIENT } from "@/lib/typeColors";
 
 interface Props {
-  pokemon: Pokemon;
+  pokemon: PokemonSummary;
 }
 
 export default function PokemonCard({ pokemon }: Props) {
-  const primaryType = pokemon.types[0]?.type.name ?? "normal";
-  const spriteUrl =
-    pokemon.sprites.other["official-artwork"].front_default ??
-    pokemon.sprites.front_default;
+  const primaryType = pokemon.types[0] ?? "normal";
+  const imageUrl = pokemon.artworkUrl ?? pokemon.spriteUrl;
+  const gradient = TYPE_GRADIENT[primaryType] ?? "from-gray-100 to-white";
 
   return (
-    <div
-      className={`relative rounded-2xl bg-gradient-to-br ${TYPE_BG[primaryType] ?? "from-gray-200 to-gray-50"} p-4 flex flex-col items-center gap-2 shadow hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer`}
+    <article
+      className={`group relative flex flex-col items-center gap-3 rounded-2xl bg-gradient-to-b ${gradient} p-4 pt-5 ring-1 ring-black/5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-200 cursor-pointer select-none`}
     >
-      <span className="absolute top-2 right-3 text-xs font-mono text-gray-500 font-semibold">
+      {/* Pokédex number */}
+      <span className="absolute top-2.5 left-3 text-[10px] font-mono font-bold text-black/30 tracking-widest">
         #{String(pokemon.id).padStart(3, "0")}
       </span>
 
-      <div className="relative w-24 h-24">
-        {spriteUrl ? (
+      {/* Sprite */}
+      <div className="relative w-28 h-28 mt-1 drop-shadow-md group-hover:scale-110 transition-transform duration-200">
+        {imageUrl ? (
           <Image
-            src={spriteUrl}
+            src={imageUrl}
             alt={pokemon.name}
             fill
-            sizes="96px"
-            className="object-contain drop-shadow-md"
+            sizes="112px"
+            className="object-contain"
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400 text-3xl">?</div>
+          <div className="w-full h-full flex items-center justify-center text-4xl text-black/20">?</div>
         )}
       </div>
 
-      <p className="capitalize font-semibold text-gray-800 text-sm tracking-wide">
+      {/* Name */}
+      <p className="capitalize font-bold text-gray-800 text-sm tracking-wide leading-none">
         {pokemon.name}
       </p>
 
-      <div className="flex gap-1 flex-wrap justify-center">
-        {pokemon.types.map(({ type }) => (
+      {/* Type badges */}
+      <div className="flex flex-wrap justify-center gap-1">
+        {pokemon.types.map((type) => (
           <span
-            key={type.name}
-            className={`px-2 py-0.5 rounded-full text-xs font-semibold capitalize ${TYPE_COLORS[type.name] ?? "bg-gray-400 text-white"}`}
+            key={type}
+            className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold capitalize ring-1 ${TYPE_BADGE[type] ?? "bg-gray-200 text-gray-700 ring-gray-300"}`}
           >
-            {type.name}
+            {type}
           </span>
         ))}
       </div>
-    </div>
+    </article>
   );
 }

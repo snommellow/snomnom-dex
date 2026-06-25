@@ -42,7 +42,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.55, transform: "scale(1.05) translateY(-2.5%)", transformOrigin: "top center" }}
+            style={{ opacity: 0.55, transform: "scale(1.18)", transformOrigin: "top center" }}
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />

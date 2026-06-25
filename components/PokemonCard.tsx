@@ -71,16 +71,29 @@ export default function PokemonCard({ pokemon }: Props) {
             background: `linear-gradient(160deg, ${typeColor}28 0%, ${typeColor}10 100%)`,
           }}
         >
+          {/* TCG card art — full background wallpaper */}
+          {pokemon.tcgImageUrl && (
+            <Image
+              src={pokemon.tcgImageUrl}
+              alt=""
+              aria-hidden
+              fill
+              sizes="160px"
+              className="object-cover opacity-25 z-0"
+              loading="lazy"
+            />
+          )}
+
           {/* Faint radial glow */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 z-[1]"
             style={{
               background: `radial-gradient(ellipse at 50% 60%, ${typeColor}40 0%, transparent 68%)`,
             }}
           />
 
           {/* Official artwork — large, centered, pops on hover */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="absolute inset-0 flex items-center justify-center z-[2]">
             <div className="relative w-32 h-32
                             group-hover:scale-110 group-hover:-translate-y-1
                             transition-transform duration-300 ease-out
@@ -98,7 +111,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
           {/* Sprite badge — bottom-right, visible when not on Modern */}
           {showSprite && (
-            <div className="absolute bottom-1 right-1 w-8 h-8 z-20
+            <div className="absolute bottom-1 right-1 w-8 h-8 z-[3]
                             opacity-70 group-hover:opacity-100
                             transition-opacity duration-200">
               <Image

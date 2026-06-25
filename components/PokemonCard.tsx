@@ -59,12 +59,13 @@ export default function PokemonCard({ pokemon }: Props) {
           willChange: "transform",
         }}
       >
-      {/* Inner: overflow:hidden for clipping, no transform */}
+      {/* Inner: clip-path for clipping (works with backdropFilter unlike overflow:hidden) */}
       <div
-        className="relative flex flex-col overflow-hidden rounded-xl"
+        className="relative flex flex-col rounded-xl"
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
+          clipPath: "inset(0 round 12px)",
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}

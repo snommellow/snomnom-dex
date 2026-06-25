@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import { getSpriteUrl } from "@/lib/spriteStyle";
@@ -10,14 +11,17 @@ interface Props {
   pokemon: PokemonSummary;
 }
 
+const OFFICIAL_ART = (id: number) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+
 export default function PokemonCard({ pokemon }: Props) {
   const { style } = useSpriteStyle();
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
-  const artworkUrl =
-    pokemon.artworkUrl ??
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+  const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
+  // Background starts at the same source; falls back to guaranteed official art on error
+  const [bgUrl, setBgUrl] = useState(artworkUrl);
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
@@ -33,18 +37,17 @@ export default function PokemonCard({ pokemon }: Props) {
                    transition-all duration-200"
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
-        {/* ── Background: official artwork zoomed + blurred to fill card ── */}
-        {/* Transparent PNGs can't use object-cover alone, so we scale 2.8× */}
-        {/* and blur to get a full edge-to-edge wash that matches the Pokémon */}
+        {/* ── Background: artwork zoomed+blurred, with onError fallback ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src={artworkUrl}
+            src={bgUrl}
             alt=""
             aria-hidden
             fill
             sizes="300px"
             className="object-contain scale-[2.8] blur-[8px] opacity-30"
             loading="lazy"
+            onError={() => setBgUrl(OFFICIAL_ART(pokemon.id))}
           />
           <div
             className="absolute inset-0"
@@ -98,7 +101,6 @@ export default function PokemonCard({ pokemon }: Props) {
             background: `radial-gradient(ellipse at 50% 60%, ${typeColor}55 0%, transparent 72%)`,
           }}
         >
-          {/* Official artwork — centered, hover scale */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div
               className="relative w-32 h-32
@@ -117,7 +119,6 @@ export default function PokemonCard({ pokemon }: Props) {
             </div>
           </div>
 
-          {/* Sprite badge — bottom-right */}
           {showSprite && (
             <div
               className="absolute bottom-1 right-1 w-8 h-8 z-10

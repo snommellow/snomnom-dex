@@ -1,4 +1,4 @@
-import { fetchFirst151, toPokemonSummary } from "@/lib/pokeapi";
+import { fetchFirst151, fetchGenus, toPokemonSummary } from "@/lib/pokeapi";
 import { fetchTcgCardImages } from "@/lib/tcgapi";
 import { fetchPocketImages } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
@@ -24,8 +24,10 @@ export default async function PokedexGrid() {
     });
   }
 
+  const genera = await Promise.all(raw.map((p) => fetchGenus(p.id)));
+
   const pokemon = raw.map((p, i) =>
-    toPokemonSummary(p, tcgResults[i], pocketMap.get(i) ? [pocketMap.get(i)!] : [])
+    toPokemonSummary(p, tcgResults[i], pocketMap.get(i) ? [pocketMap.get(i)!] : [], genera[i])
   );
 
   return <PokedexClient pokemon={pokemon} />;

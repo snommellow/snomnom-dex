@@ -80,16 +80,18 @@ export default function PokemonCard({ pokemon }: Props) {
           >
             {pokemon.name}
           </p>
-          <p
-            className="font-semibold uppercase leading-none text-gray-500"
-            style={{
-              fontSize: 7,
-              letterSpacing: ".1em",
-              textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
-            }}
-          >
-            The Games. The Shows.
-          </p>
+          {pokemon.genus && (
+            <p
+              className="font-semibold uppercase leading-none text-gray-500"
+              style={{
+                fontSize: 7,
+                letterSpacing: ".1em",
+                textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
+              }}
+            >
+              {pokemon.genus}
+            </p>
+          )}
         </div>
 
         {/* ── Sprite area ── */}

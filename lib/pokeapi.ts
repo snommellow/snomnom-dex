@@ -64,14 +64,27 @@ export interface PokemonSummary {
   types: string[];
   spriteUrl: string | null;
   artworkUrl: string | null;
+  genus: string | null;
   // Ordered candidates for card background: PokéOS textless → TCG image → Pocket → official art
   bgCandidates: string[];
+}
+
+export async function fetchGenus(id: number): Promise<string | null> {
+  try {
+    const res = await fetch(`${BASE_URL}/pokemon-species/${id}`, { next: { revalidate: 86400 } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const entry = (data.genera as { genus: string; language: { name: string } }[])
+      .find((g) => g.language.name === "en");
+    return entry?.genus ?? null;
+  } catch { return null; }
 }
 
 export function toPokemonSummary(
   p: Pokemon,
   tcgResult: { tcgUrl: string | null } = { tcgUrl: null },
   pocketUrls: string[] = [],
+  genus: string | null = null,
 ): PokemonSummary {
   const bg: string[] = [];
   if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
@@ -82,6 +95,7 @@ export function toPokemonSummary(
     types: p.types.map((t) => t.type.name),
     spriteUrl: p.sprites.front_default,
     artworkUrl: p.sprites.other["official-artwork"].front_default,
+    genus,
     bgCandidates: bg,
   };
 }

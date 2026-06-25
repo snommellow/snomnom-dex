@@ -2,15 +2,24 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
 
+// TCG Pocket 1–3 star full-art cards (immersive/ex full-art, no text box)
+const POCKET_STAR_RARITIES = [
+  "☆☆☆",  // 3-star immersive rare
+  "☆☆",   // 2-star ex full-art
+  "☆",    // 1-star rare
+];
+
 const PREMIUM_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
+  ...POCKET_STAR_RARITIES,
 ];
 
 // Only full-art illustration cards — anything with a text box is excluded
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
+  ...POCKET_STAR_RARITIES,
 ];
 
 // Anything at or below this is "standard layout" — text box, common frame
@@ -18,12 +27,15 @@ const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
 function rarityScore(rarity: string): number {
   const order = [
-    "Special Illustration Rare",  // 0  — best
-    "Illustration Rare",          // 1
-    "Ultra Rare",                 // 2
-    "Secret Rare",                // 3
-    "Rare Holo",                  // 4
-    "Rare",                       // 5
+    "☆☆☆",                        // 0  — Pocket 3-star immersive
+    "Special Illustration Rare",  // 1
+    "☆☆",                         // 2  — Pocket 2-star ex full-art
+    "Illustration Rare",          // 3
+    "☆",                          // 4  — Pocket 1-star
+    "Ultra Rare",                 // 5
+    "Secret Rare",                // 6
+    "Rare Holo",                  // 7
+    "Rare",                       // 8
   ];
   const idx = order.indexOf(rarity);
   return idx === -1 ? order.length + 10 : idx;  // junk gets a very high score
@@ -32,6 +44,8 @@ function rarityScore(rarity: string): number {
 // ── Sets to prioritise for chain/scene art ────────────────────────────────────
 
 const PRIORITY_SETS = [
+  "a1",         // TCG Pocket — Genetic Apex (Gen 1 immersive art)
+  "a1a",        // TCG Pocket — Mythical Island
   "sv3pt5",     // Scarlet & Violet—151 (Gen 1 chain art)
   "swsh12pt5",  // Crown Zenith
 ];

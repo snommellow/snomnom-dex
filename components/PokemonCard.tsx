@@ -113,6 +113,18 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
+        {/* ── Bottom blur strip (blurs card art behind the pills row) ── */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none"
+          style={{
+            height: 40,
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 50%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 50%)",
+          }}
+        />
+
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">
           {pokemon.types.map((type) => {
@@ -123,13 +135,10 @@ export default function PokemonCard({ pokemon }: Props) {
                 className="inline-flex items-center gap-0.5 overflow-hidden rounded-full
                            text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
                 style={{
-                  backgroundColor: `${bg}55`,
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
+                  backgroundColor: bg,
                   fontSize: 8,
                   padding: "2px 6px 2px 3px",
                   textShadow: "0 1px 2px rgba(0,0,0,.45)",
-                  boxShadow: `0 2px 8px rgba(0,0,0,0.25), inset 0 0 0 1px ${bg}88`,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

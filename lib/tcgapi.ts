@@ -4,16 +4,16 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless";
 
 // Maps pokemontcg.io set ID → PokéOS set number
-// sv3pt5 textless cards are split across PokéOS sets 110 and 111
-// pokeosUrl() tries 111 first; cards missing there fall through to 110 via bgCandidates
+// Maps pokemontcg.io set ID → primary PokéOS set number
 const POKEOS_SET_MAP: Record<string, number> = {
-  "sv3pt5":    111, // Scarlet & Violet—151 (primary)
-  "swsh12pt5":  97, // Crown Zenith (guessed — verify)
+  "sv3pt5": 111, // Scarlet & Violet—151
+  "sv3":    109, // Obsidian Flames (Pidgey IR confirmed here)
 };
 
-// Secondary PokéOS set for sv3pt5 — used as extra bgCandidate
+// Secondary PokéOS set tried when primary 404s
 const POKEOS_SET_ALT: Record<string, number> = {
-  "sv3pt5": 110,
+  "sv3pt5": 110, // sv3pt5 cards split across 110 and 111
+  "sv3":    112, // sv3 alt
 };
 
 function pokeosUrl(setId: string, cardNumber: string): string | null {
@@ -94,8 +94,8 @@ function rarityScore(rarity: string): number {
 // ── Sets to prioritise ────────────────────────────────────────────────────────
 
 const PRIORITY_SETS = [
-  "sv3pt5",     // Scarlet & Violet—151
-  "swsh12pt5",  // Crown Zenith
+  "sv3pt5", // Scarlet & Violet—151
+  "sv3",    // Obsidian Flames
 ];
 
 // ── Gimmick detection ─────────────────────────────────────────────────────────

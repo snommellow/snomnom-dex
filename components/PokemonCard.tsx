@@ -19,45 +19,57 @@ export default function PokemonCard({ pokemon }: Props) {
     pokemon.artworkUrl ??
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
 
-  const bgArtUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
-
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
   const showSprite = style !== "modern";
 
   return (
     <article className="group cursor-pointer select-none">
-      {/* Card container — position:relative so the bg image can fill it */}
       <div
-        className="relative flex flex-col overflow-hidden rounded-xl bg-white
+        className="relative flex flex-col overflow-hidden rounded-xl
                    shadow-[0_4px_14px_rgba(0,0,0,0.25)]
                    hover:shadow-[0_8px_24px_rgba(0,0,0,0.38)]
                    hover:-translate-y-1
                    transition-all duration-200"
-        style={{ border: `2.5px solid ${typeColor}` }}
+        style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}18` }}
       >
-        {/* ── Full-card background: official artwork, textless, low opacity ── */}
-        <Image
-          src={bgArtUrl}
-          alt=""
-          aria-hidden
-          fill
-          sizes="160px"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
-          loading="lazy"
-        />
+        {/* ── Background layer: zoomed + blurred artwork fills the card ── */}
+        {/* The official artwork is a transparent PNG, so we scale it 2.5×  */}
+        {/* and blur it to get full edge-to-edge color wash behind everything */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            src={artworkUrl}
+            alt=""
+            aria-hidden
+            fill
+            sizes="300px"
+            className="object-contain scale-[2.6] blur-[6px] opacity-30"
+            loading="lazy"
+          />
+          {/* Type-tinted overlay so the bg feels cohesive, not washed out */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(160deg, ${typeColor}55 0%, ${typeColor}22 60%, ${typeColor}08 100%)`,
+            }}
+          />
+        </div>
 
         {/* ── Masthead strip ── */}
         <div
           className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
           style={{ backgroundColor: typeColor }}
         >
-          <span className="text-white font-black italic leading-none"
-            style={{ fontSize: 9, letterSpacing: ".1em" }}>
+          <span
+            className="text-white font-black italic leading-none"
+            style={{ fontSize: 9, letterSpacing: ".1em" }}
+          >
             POKÉDEX
           </span>
-          <span className="text-white font-black tabular-nums leading-none"
-            style={{ fontSize: 9, letterSpacing: ".06em" }}>
+          <span
+            className="text-white font-black tabular-nums leading-none"
+            style={{ fontSize: 9, letterSpacing: ".06em" }}
+          >
             #{String(pokemon.id).padStart(3, "0")}
           </span>
         </div>
@@ -66,12 +78,14 @@ export default function PokemonCard({ pokemon }: Props) {
         <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0">
           <p
             className="font-black capitalize leading-tight truncate"
-            style={{ fontSize: 14, color: typeColor }}
+            style={{ fontSize: 14, color: typeColor, filter: "brightness(0.7)" }}
           >
             {pokemon.name}
           </p>
-          <p className="font-semibold uppercase leading-none text-gray-400"
-            style={{ fontSize: 7, letterSpacing: ".1em" }}>
+          <p
+            className="font-semibold uppercase leading-none text-gray-500"
+            style={{ fontSize: 7, letterSpacing: ".1em" }}
+          >
             The Games. The Shows.
           </p>
         </div>
@@ -82,23 +96,17 @@ export default function PokemonCard({ pokemon }: Props) {
           style={{
             height: 148,
             borderRadius: 6,
-            background: `linear-gradient(160deg, ${typeColor}28 0%, ${typeColor}10 100%)`,
+            background: `radial-gradient(ellipse at 50% 60%, ${typeColor}55 0%, transparent 72%)`,
           }}
         >
-          {/* Faint radial glow */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `radial-gradient(ellipse at 50% 60%, ${typeColor}40 0%, transparent 68%)`,
-            }}
-          />
-
-          {/* Official artwork — large, centered, pops on hover */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="relative w-32 h-32
-                            group-hover:scale-110 group-hover:-translate-y-1
-                            transition-transform duration-300 ease-out
-                            drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]">
+          {/* Official artwork — centered, hover scale */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="relative w-32 h-32
+                          group-hover:scale-110 group-hover:-translate-y-1
+                          transition-transform duration-300 ease-out
+                          drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]"
+            >
               <Image
                 src={artworkUrl}
                 alt={pokemon.name}
@@ -110,11 +118,13 @@ export default function PokemonCard({ pokemon }: Props) {
             </div>
           </div>
 
-          {/* Sprite badge — bottom-right, visible when not on Modern */}
+          {/* Sprite badge — bottom-right */}
           {showSprite && (
-            <div className="absolute bottom-1 right-1 w-8 h-8 z-20
-                            opacity-70 group-hover:opacity-100
-                            transition-opacity duration-200">
+            <div
+              className="absolute bottom-1 right-1 w-8 h-8 z-10
+                          opacity-70 group-hover:opacity-100
+                          transition-opacity duration-200"
+            >
               <Image
                 src={spriteUrl}
                 alt=""
@@ -130,14 +140,14 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Type pills ── */}
-        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-wrap gap-1 flex-shrink-0">
+        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0">
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (
               <span
                 key={type}
-                className="inline-flex items-center overflow-hidden rounded-full
-                           text-white uppercase font-extrabold tracking-[.06em]"
+                className="inline-flex items-center gap-0.5 overflow-hidden rounded-full
+                           text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
                 style={{
                   backgroundColor: bg,
                   fontSize: 8,
@@ -150,7 +160,7 @@ export default function PokemonCard({ pokemon }: Props) {
                   src={typeIconUrl(type)}
                   alt=""
                   aria-hidden
-                  className="w-3 h-3 flex-shrink-0 mr-0.5 object-contain"
+                  className="w-3 h-3 flex-shrink-0 object-contain"
                 />
                 {type}
               </span>

@@ -136,28 +136,22 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Top blur strip ── */}
+        {/* ── Top fade strip ── */}
         <div
           className="absolute left-0 right-0 z-[1] pointer-events-none"
           style={{
             top: 0,
             height: 56,
-            backdropFilter: "blur(4px)",
-            WebkitBackdropFilter: "blur(4px)",
-            maskImage: "linear-gradient(to top, transparent 0%, black 60%)",
-            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 60%)",
+            background: `linear-gradient(to bottom, ${typeColor}cc 0%, transparent 100%)`,
           }}
         />
 
-        {/* ── Bottom blur strip — fades in smoothly from mid-card ── */}
+        {/* ── Bottom fade strip ── */}
         <div
           className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none"
           style={{
             height: 80,
-            backdropFilter: "blur(3px)",
-            WebkitBackdropFilter: "blur(3px)",
-            maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+            background: `linear-gradient(to top, ${typeColor}cc 0%, transparent 100%)`,
           }}
         />
 

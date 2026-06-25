@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
-import { getSpriteUrl } from "@/lib/spriteStyle";
-import { useSpriteStyle } from "./SpriteStyleContext";
 
 interface Props {
   pokemon: PokemonSummary;
@@ -22,7 +20,6 @@ function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): stri
 }
 
 export default function PokemonCard({ pokemon }: Props) {
-  const { style } = useSpriteStyle();
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
@@ -31,10 +28,6 @@ export default function PokemonCard({ pokemon }: Props) {
   const candidates = bgCandidates(pokemon);
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
-
-  const spriteUrl = getSpriteUrl(pokemon.id, style);
-  const pixelated = style === "gb" || style === "gen1" || style === "pixel";
-  const showSprite = style !== "modern";
 
   return (
     <article className="group cursor-pointer select-none">
@@ -47,20 +40,15 @@ export default function PokemonCard({ pokemon }: Props) {
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
-        <div
-          className="absolute inset-0 z-0 overflow-hidden"
-          style={{
-            maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-          }}
-        >
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src={bgUrl}
             alt=""
             aria-hidden
             fill
             sizes="300px"
-            className="object-cover object-top opacity-30"
+            className="object-cover object-top"
+            style={{ opacity: 0.45, filter: "blur(1.5px)" }}
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
@@ -89,13 +77,22 @@ export default function PokemonCard({ pokemon }: Props) {
         <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0">
           <p
             className="font-black capitalize leading-tight truncate"
-            style={{ fontSize: 14, color: typeColor, filter: "brightness(0.7)" }}
+            style={{
+              fontSize: 14,
+              color: typeColor,
+              filter: "brightness(0.7)",
+              textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
+            }}
           >
             {pokemon.name}
           </p>
           <p
             className="font-semibold uppercase leading-none text-gray-500"
-            style={{ fontSize: 7, letterSpacing: ".1em" }}
+            style={{
+              fontSize: 7,
+              letterSpacing: ".1em",
+              textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
+            }}
           >
             The Games. The Shows.
           </p>
@@ -128,24 +125,6 @@ export default function PokemonCard({ pokemon }: Props) {
             </div>
           </div>
 
-          {showSprite && (
-            <div
-              className="absolute bottom-1 right-1 w-8 h-8 z-10
-                          opacity-70 group-hover:opacity-100
-                          transition-opacity duration-200"
-            >
-              <Image
-                src={spriteUrl}
-                alt=""
-                aria-hidden
-                fill
-                sizes="32px"
-                className="object-contain"
-                style={pixelated ? { imageRendering: "pixelated" } : undefined}
-                loading="lazy"
-              />
-            </div>
-          )}
         </div>
 
         {/* ── Type pills ── */}

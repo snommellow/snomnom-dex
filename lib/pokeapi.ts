@@ -66,11 +66,10 @@ export interface PokemonSummary {
 
 export function toPokemonSummary(
   p: Pokemon,
-  tcgResult: { pokeosUrls?: string[]; tcgUrl: string | null } = { tcgUrl: null },
+  tcgResult: { tcgUrl: string | null } = { tcgUrl: null },
   pocketUrls: string[] = [],
 ): PokemonSummary {
   const bg: string[] = [];
-  if (tcgResult.pokeosUrls?.length) bg.push(...tcgResult.pokeosUrls);
   if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
   bg.push(...pocketUrls);
   return {

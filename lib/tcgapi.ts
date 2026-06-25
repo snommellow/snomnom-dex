@@ -16,9 +16,8 @@ const GEN1_CHAINS: number[][] = [
   [120,121],[129,130],[133,134,135,136],[138,139],[140,141],[147,148,149],
 ];
 
-// A "chain set" is one where every member of at least one multi-stage evolution
-// line has an IR/SIR card — meaning the set was designed with connected artwork.
-function detectChainSets(cards: TcgCard[]): Set<string> {
+// Returns: setId → set of dex numbers that belong to a complete 3-stage chain in that set
+function buildChainDexMap(cards: TcgCard[]): Map<string, Set<number>> {
   const setCoverage = new Map<string, Set<number>>();
   for (const card of cards) {
     const sid = card.set?.id;
@@ -26,16 +25,17 @@ function detectChainSets(cards: TcgCard[]): Set<string> {
     if (!setCoverage.has(sid)) setCoverage.set(sid, new Set());
     for (const d of card.nationalPokedexNumbers ?? []) setCoverage.get(sid)!.add(d);
   }
-  const chainSets = new Set<string>();
+  const result = new Map<string, Set<number>>();
   for (const [sid, dexNums] of setCoverage) {
+    const chainDex = new Set<number>();
     for (const chain of GEN1_CHAINS) {
       if (chain.length >= 3 && chain.every((d) => dexNums.has(d))) {
-        chainSets.add(sid);
-        break;
+        chain.forEach((d) => chainDex.add(d));
       }
     }
+    if (chainDex.size > 0) result.set(sid, chainDex);
   }
-  return chainSets;
+  return result;
 }
 
 
@@ -78,7 +78,7 @@ export interface TcgImageResult { tcgUrl: string | null }
 const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
-  const chainSets = detectChainSets(cards);
+  const chainDexMap = buildChainDexMap(cards);
   const best = new Map<number, { chain: boolean; score: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
@@ -89,10 +89,11 @@ function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
-    const chain = chainSets.has(card.set?.id ?? "");
+    const sid = card.set?.id ?? "";
     const date = card.set?.releaseDate ?? "0000-00-00";
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
+      const chain = chainDexMap.get(sid)?.has(dexNum) ?? false;
       const cur = best.get(dexNum);
       const better =
         !cur ||

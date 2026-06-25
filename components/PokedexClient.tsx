@@ -109,7 +109,7 @@ export default function PokedexClient({ pokemon }: Props) {
         <div
           className="grid gap-x-2 gap-y-8"
           style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
             /* Shelf line under each row */
             backgroundImage:
               "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",

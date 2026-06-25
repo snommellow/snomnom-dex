@@ -32,14 +32,14 @@ export default function PokemonCard({ pokemon }: Props) {
           {/* Publication mark — left */}
           <span
             className="text-white font-black italic leading-none"
-            style={{ fontSize: 9, letterSpacing: ".04em", opacity: 0.9 }}
+            style={{ fontSize: 11, letterSpacing: ".04em", opacity: 0.9 }}
           >
             POKÉDEX
           </span>
           {/* Issue number — right */}
           <span
             className="text-white font-black leading-none"
-            style={{ fontSize: 9, letterSpacing: ".06em" }}
+            style={{ fontSize: 11, letterSpacing: ".06em" }}
           >
             #{String(pokemon.id).padStart(3, "0")}
           </span>
@@ -49,13 +49,13 @@ export default function PokemonCard({ pokemon }: Props) {
         <div className="px-1.5 pt-1 pb-0.5" style={{ backgroundColor: "#fff" }}>
           <p
             className="font-black capitalize leading-tight truncate"
-            style={{ fontSize: 11, color: typeColor, letterSpacing: "-.01em" }}
+            style={{ fontSize: 15, color: typeColor, letterSpacing: "-.01em" }}
           >
             {pokemon.name}
           </p>
           <p
             className="font-semibold leading-none"
-            style={{ fontSize: 7, color: "#999", letterSpacing: ".06em", textTransform: "uppercase" }}
+            style={{ fontSize: 9, color: "#999", letterSpacing: ".06em", textTransform: "uppercase" }}
           >
             The Games. The Shows.
           </p>
@@ -63,25 +63,24 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Cover art ── */}
         <div
-          className="relative mx-1 mb-1 rounded-sm overflow-hidden flex items-center justify-center"
+          className="relative mx-1.5 mb-1 rounded-sm overflow-hidden flex items-center justify-center"
           style={{
             background: `linear-gradient(160deg, ${typeColor}22 0%, ${typeColor}08 100%)`,
-            minHeight: 88,
+            minHeight: 148,
           }}
         >
-          {/* Subtle radial behind sprite */}
           <div
             className="absolute inset-0"
             style={{
               background: `radial-gradient(ellipse at 50% 70%, ${typeColor}30 0%, transparent 65%)`,
             }}
           />
-          <div className="relative w-20 h-20 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10">
+          <div className="relative w-32 h-32 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10">
             <Image
               src={spriteUrl}
               alt={pokemon.name}
               fill
-              sizes="80px"
+              sizes="128px"
               className="object-contain"
               style={pixelated ? { imageRendering: "pixelated" } : undefined}
               loading="lazy"
@@ -89,9 +88,9 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Cover lines (type pills) ── */}
+        {/* ── Cover lines (type pills) — single row ── */}
         <div
-          className="px-1.5 pb-1.5 pt-0.5 flex flex-col gap-0.5"
+          className="px-2 pb-2 pt-1 flex flex-row flex-wrap gap-1"
           style={{ backgroundColor: "#fff" }}
         >
           {pokemon.types.map((type) => {
@@ -103,9 +102,8 @@ export default function PokemonCard({ pokemon }: Props) {
                 style={{
                   backgroundColor: bg,
                   fontSize: 8,
-                  padding: "1px 5px 1px 2px",
+                  padding: "2px 6px 2px 3px",
                   textShadow: "0 1px 2px rgba(0,0,0,.4)",
-                  alignSelf: "flex-start",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

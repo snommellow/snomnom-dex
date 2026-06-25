@@ -43,7 +43,7 @@ export default function PokemonCard({ pokemon }: Props) {
             aria-hidden
             fill
             sizes="300px"
-            className="object-contain scale-[2.6] blur-[6px] opacity-30"
+            className="object-contain scale-[2.6] blur-[6px] opacity-25"
             loading="lazy"
           />
           {/* Type-tinted overlay so the bg feels cohesive, not washed out */}
@@ -140,7 +140,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Type pills ── */}
-        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-2 items-center flex-shrink-0">
+        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (

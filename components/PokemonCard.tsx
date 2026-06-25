@@ -144,6 +144,30 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
+        {/* ── Top blur strip — same image as bg, clipped to top, blurred ── */}
+        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
+          clipPath: "inset(0 0 calc(100% - 56px) 0)",
+          maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+        }}>
+          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
+            className="object-cover object-top"
+            style={{ opacity: 0.75, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(6px)" }}
+          />
+        </div>
+
+        {/* ── Bottom blur strip — same image as bg, clipped to bottom, blurred ── */}
+        <div className="absolute inset-0 z-[5] pointer-events-none" style={{
+          clipPath: "inset(calc(100% - 80px) 0 0 0)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+        }}>
+          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
+            className="object-cover object-top"
+            style={{ opacity: 0.75, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(6px)" }}
+          />
+        </div>
+
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">
           {pokemon.types.map((type) => {
@@ -174,27 +198,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
       </div>
 
-      {/* ── Top blur strip — sibling of clip div so backdropFilter works ── */}
-      <div className="absolute left-0 right-0 pointer-events-none" style={{
-        top: 0, height: 56, zIndex: 10,
-        borderRadius: "12px 12px 0 0",
-        backdropFilter: "blur(4px)",
-        WebkitBackdropFilter: "blur(4px)",
-        maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-        WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-      }} />
-
-      {/* ── Bottom blur strip — sibling of clip div so backdropFilter works ── */}
-      <div className="absolute left-0 right-0 bottom-0 pointer-events-none" style={{
-        height: 80, zIndex: 10,
-        borderRadius: "0 0 12px 12px",
-        backdropFilter: "blur(3px)",
-        WebkitBackdropFilter: "blur(3px)",
-        maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-      }} />
-
-      </div>
+</div>
     </article>
   );
 }

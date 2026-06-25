@@ -1,10 +1,24 @@
 const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
-// ── PokéOS TCG Pocket star cards ──────────────────────────────────────────────
-// Set 384, cards 227-250 — full-art Pocket "star" tier illustrations
-const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless/384";
+// ── PokéOS textless card images ───────────────────────────────────────────────
+const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless";
 
-// Maps national dex number → PokéOS card number
+// Maps pokemontcg.io set ID → PokéOS set number
+const POKEOS_SET_MAP: Record<string, number> = {
+  "sv3pt5":   111, // Scarlet & Violet—151
+  "swsh12pt5": 97, // Crown Zenith (guessed — verify)
+};
+
+function pokeosUrl(setId: string, cardNumber: string): string | null {
+  const pokeosSet = POKEOS_SET_MAP[setId];
+  if (!pokeosSet) return null;
+  return `${POKEOS_BASE}/${pokeosSet}/${cardNumber}.jpg`;
+}
+
+// ── PokéOS TCG Pocket star cards ──────────────────────────────────────────────
+// Set 384, cards 227-250 — full-art Pocket star illustrations
+const POKEOS_POCKET_BASE = `${POKEOS_BASE}/384`;
+
 const POCKET_STAR_MAP: Record<number, number> = {
   1:   227, // Bulbasaur
   44:  228, // Gloom
@@ -22,7 +36,7 @@ const POCKET_STAR_MAP: Record<number, number> = {
   31:  240, // Nidoqueen
   40:  241, // Wigglytuff
   42:  242, // Golbat
-  // 243 — unidentified, skipping for now
+  // 243 — unidentified
   149: 244, // Dragonite
   9:   245, // Blastoise
   52:  246, // Meowth
@@ -34,7 +48,7 @@ const POCKET_STAR_MAP: Record<number, number> = {
 
 export function getPocketStarUrl(dexId: number): string | null {
   const n = POCKET_STAR_MAP[dexId];
-  return n != null ? `${POKEOS_BASE}/${n}.png` : null;
+  return n != null ? `${POKEOS_POCKET_BASE}/${n}.png` : null;
 }
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
@@ -44,7 +58,6 @@ const PREMIUM_RARITIES = [
   "Illustration Rare",
 ];
 
-// Only full-art illustration cards — anything with a text box is excluded
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
@@ -65,10 +78,10 @@ function rarityScore(rarity: string): number {
   return idx === -1 ? order.length + 10 : idx;
 }
 
-// ── Sets to prioritise for chain/scene art ────────────────────────────────────
+// ── Sets to prioritise ────────────────────────────────────────────────────────
 
 const PRIORITY_SETS = [
-  "sv3pt5",     // Scarlet & Violet—151 (Gen 1 chain art)
+  "sv3pt5",     // Scarlet & Violet—151
   "swsh12pt5",  // Crown Zenith
 ];
 
@@ -77,15 +90,13 @@ const PRIORITY_SETS = [
 interface TcgCard {
   id: string;
   name: string;
-  images: { small: string; large: string };
+  number: string;
   nationalPokedexNumbers: number[];
   rarity: string;
   set: { id: string; releaseDate: string };
   subtypes: string[];
 }
 
-// Only exclude older power-creep mechanics. Modern lowercase "ex" (SV era)
-// and GX cards can be IR/SIR full-art, so they're allowed.
 const EXCLUDED_SUBTYPES = new Set([
   "MEGA", "Mega", "VMAX", "VSTAR", "V-UNION",
 ]);
@@ -104,14 +115,15 @@ function isJunkRarity(rarity: string): boolean {
 
 // ── Best-card map builder ─────────────────────────────────────────────────────
 
-function buildBestMap(cards: TcgCard[], rejectJunk = true): Map<number, string> {
+function buildBestMap(cards: TcgCard[]): Map<number, string> {
   const best = new Map<number, { score: number; prioritySet: boolean; date: string; url: string }>();
 
   for (const card of cards) {
     if (isGimmickVariant(card)) continue;
-    if (rejectJunk && isJunkRarity(card.rarity ?? "")) continue;
+    if (isJunkRarity(card.rarity ?? "")) continue;
 
-    const url = card.images?.large ?? card.images?.small;
+    // Prefer PokéOS textless URL; fall back to nothing (caller handles fallback)
+    const url = pokeosUrl(card.set?.id ?? "", card.number ?? "");
     if (!url) continue;
 
     const score = rarityScore(card.rarity ?? "");
@@ -136,14 +148,14 @@ function buildBestMap(cards: TcgCard[], rejectJunk = true): Map<number, string> 
 
 const SUBTYPE_EXCLUSION = "-subtypes:mega -subtypes:vmax -subtypes:vstar";
 
-const PREMIUM_RARITY_CLAUSE = PREMIUM_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
+const PREMIUM_RARITY_CLAUSE  = PREMIUM_RARITIES.map((r)  => `rarity:"${r}"`).join(" OR ");
 const ACCEPTABLE_RARITY_CLAUSE = ACCEPTABLE_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
 
 async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,images,nationalPokedexNumbers,rarity,set,subtypes`,
+        `&select=id,name,number,nationalPokedexNumbers,rarity,set,subtypes`,
       { cache: "no-store" }
     );
     if (!res.ok) return [];
@@ -161,11 +173,12 @@ async function fetchPass1(names: string[]): Promise<TcgCard[]> {
   return tcgFetch(`(${nameQ}) (${setQ}) (${PREMIUM_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
-// Pass 2 — any set, IR/SIR only
+// Pass 2 — any set that has a PokéOS mapping, IR/SIR only
 async function fetchPass2(names: string[]): Promise<TcgCard[]> {
   if (!names.length) return [];
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  return tcgFetch(`(${nameQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
+  const setQ  = Object.keys(POKEOS_SET_MAP).map((s) => `set.id:${s}`).join(" OR ");
+  return tcgFetch(`(${nameQ}) (${setQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -179,12 +192,8 @@ function chunk<T>(arr: T[], size: number): T[][] {
 }
 
 /**
- * Fetch the best TCG card image for each Pokémon.
- * Only IR and SIR full-art cards are used. Pokémon without one return null
- * and fall back to PokeAPI official artwork.
- *
- * Pass 1 — sv3pt5/swsh12pt5, IR/SIR  (Gen 1 priority art)
- * Pass 2 — any set, IR/SIR only
+ * Fetch the best PokéOS textless card URL for each Pokémon via pokemontcg.io metadata.
+ * Priority: sv3pt5 IR/SIR → swsh12pt5 IR/SIR → null (falls back to Pocket/official art).
  */
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>

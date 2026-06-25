@@ -14,12 +14,25 @@ interface Props {
 const OFFICIAL_ART = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
+// Parse set ID and card number from a pokemontcg.io image URL.
+// e.g. "https://images.pokemontcg.io/sv3pt5/182.png" → { setId:"sv3pt5", number:"182" }
+function parseTcgUrl(url: string | null): { setId: string; number: string } | null {
+  if (!url) return null;
+  const m = url.match(/images\.pokemontcg\.io\/([^/]+)\/(\d+)/);
+  return m ? { setId: m[1], number: m[2] } : null;
+}
+
 // ── Background asset cascade ──────────────────────────────────────────────────
 function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
+  const tcg = parseTcgUrl(pokemon.tcgImageUrl);
   return [
-    // Tier 1 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
+    // Tier 1a — PokéOS textless, slash format:  /img/tcg/textless/{setId}/{number}.png
+    ...(tcg ? [`https://www.pokeos.com/img/tcg/textless/${tcg.setId}/${tcg.number}.png`] : []),
+    // Tier 1b — PokéOS textless, hyphen format: /img/tcg/textless/{setId}-{number}.png
+    ...(tcg ? [`https://www.pokeos.com/img/tcg/textless/${tcg.setId}-${tcg.number}.png`] : []),
+    // Tier 2 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
-    // Tier 2 — official PokeAPI artwork (guaranteed for all 151)
+    // Tier 3 — official PokeAPI artwork (guaranteed for all 151)
     OFFICIAL_ART(pokemon.id),
   ];
 }

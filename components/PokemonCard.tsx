@@ -60,13 +60,14 @@ export default function PokemonCard({ pokemon }: Props) {
           willChange: "transform",
         }}
       >
-      {/* Inner: overflow+isolation forces compositing layer so backdropFilter is clipped */}
+      {/* Inner: translateZ(0) forces GPU compositing so overflow:hidden clips backdropFilter */}
       <div
         className="relative flex flex-col overflow-hidden rounded-xl"
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
-          isolation: "isolate",
+          transform: "translateZ(0)",
+          WebkitTransform: "translateZ(0)",
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}

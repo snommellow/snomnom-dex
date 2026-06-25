@@ -74,8 +74,8 @@ export default function PokemonCard({ pokemon }: Props) {
             style={{
               fontSize: 14,
               color: typeColor,
-              filter: "brightness(0.7)",
-              textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
+              WebkitTextStroke: "2px white",
+              paintOrder: "stroke fill",
             }}
           >
             {pokemon.name}

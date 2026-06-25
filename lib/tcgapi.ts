@@ -2,12 +2,15 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
 
-// TCG Pocket 1–3 star full-art cards (immersive/ex full-art, no text box)
+// TCG Pocket star full-art cards (immersive/ex full-art, no text box)
 const POCKET_STAR_RARITIES = [
+  "♛",    // crown rare (rarest)
   "☆☆☆",  // 3-star immersive rare
   "☆☆",   // 2-star ex full-art
   "☆",    // 1-star rare
 ];
+
+const POCKET_SETS = ["a1", "a1a", "a2", "a2a", "a2b"];
 
 const PREMIUM_RARITIES = [
   "Special Illustration Rare",
@@ -22,8 +25,12 @@ const ACCEPTABLE_RARITIES = [
   ...POCKET_STAR_RARITIES,
 ];
 
-// Anything at or below this is "standard layout" — text box, common frame
-const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
+// Anything at or below this is "standard layout" — text box, common frame.
+// Pocket diamond symbols (◇–◇◇◇◇) are commons/uncommons in that product.
+const JUNK_RARITIES = new Set([
+  "Common", "Uncommon", "Promo",
+  "◇", "◇◇", "◇◇◇", "◇◇◇◇",  // TCG Pocket diamond tiers
+]);
 
 function rarityScore(rarity: string): number {
   const order = [
@@ -151,16 +158,24 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   }
 }
 
-// Pass 1 — priority sets + premium rarity only (IR / SIR)
+// Pass 1 — TCG Pocket sets, star rarities only (☆/☆☆/☆☆☆/♛)
+async function fetchPassPocket(names: string[]): Promise<TcgCard[]> {
+  const nameQ  = names.map((n) => `name:"${n}"`).join(" OR ");
+  const setQ   = POCKET_SETS.map((s) => `set.id:${s}`).join(" OR ");
+  const rarQ   = POCKET_STAR_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
+  return tcgFetch(`(${nameQ}) (${setQ}) (${rarQ})`);
+}
+
+// Pass 2 — SV priority sets + IR/SIR
 async function fetchPass1(names: string[]): Promise<TcgCard[]> {
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  const setQ  = PRIORITY_SETS.map((s) => `set.id:${s}`).join(" OR ");
+  const setQ  = PRIORITY_SETS.filter(s => !POCKET_SETS.includes(s)).map((s) => `set.id:${s}`).join(" OR ");
   return tcgFetch(
     `(${nameQ}) (${setQ}) (${PREMIUM_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`
   );
 }
 
-// Pass 2 — any set, IR/SIR only (full-art, no text box)
+// Pass 3 — any set, IR/SIR only (full-art, no text box)
 async function fetchPass2(names: string[]): Promise<TcgCard[]> {
   if (!names.length) return [];
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
@@ -206,16 +221,22 @@ export async function fetchTcgCardImages(
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
-  // ── Pass 1: priority sets, premium rarities ──
-  merge(buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
+  // ── Pass 1: TCG Pocket sets, star rarities ──
+  merge(buildBestMap(await fetchPassPocket(entries.map((e) => e.displayName))));
 
-  // ── Pass 2: any set, IR/SIR only ──
+  // ── Pass 2: SV priority sets, IR/SIR ──
   const miss2 = missing();
   if (miss2.length) {
-    const results = await Promise.all(chunk(miss2, CHUNK).map(fetchPass2));
+    merge(buildBestMap(await fetchPass1(miss2)));
+  }
+
+  // ── Pass 3: any set, IR/SIR only ──
+  const miss3 = missing();
+  if (miss3.length) {
+    const results = await Promise.all(chunk(miss3, CHUNK).map(fetchPass2));
     merge(buildBestMap(results.flat()));
   }
 
-  // Pokémon still missing have no IR/SIR card → return null → fall back to official artwork
+  // Pokémon still missing → null → fall back to official artwork
   return entries.map((e) => bestMap.get(e.id) ?? null);
 }

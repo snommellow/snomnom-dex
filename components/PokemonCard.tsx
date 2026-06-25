@@ -15,14 +15,11 @@ const OFFICIAL_ART = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
 // ── Background asset cascade ──────────────────────────────────────────────────
-function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
-  const paddedId = String(pokemon.id).padStart(3, "0");
+// Tier 1 uses a plain <img> (browser-direct fetch, bypasses Next.js proxy).
+// Tiers 2+ use Next.js <Image> with a state-driven index fallback.
+function nextjsCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
   return [
-    // Tier 1 — local public folder: drop PNGs here as /public/tcg-backgrounds/001.png etc.
-    `/tcg-backgrounds/${paddedId}.png`,
-    // Tier 2 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
-    // Tier 3 — official PokeAPI artwork (guaranteed for all 151)
     OFFICIAL_ART(pokemon.id),
   ];
 }
@@ -34,9 +31,15 @@ export default function PokemonCard({ pokemon }: Props) {
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
 
-  const candidates = bgCandidates(pokemon);
+  const paddedId = String(pokemon.id).padStart(3, "0");
+  // Tier 1: browser-direct plain <img> for pokeos.com (no Next.js proxy)
+  const pokeosUrl = `https://www.pokeos.com/img/tcg/textless/${paddedId}.png`;
+  const [pokeosVisible, setPokeosVisible] = useState(true);
+
+  // Tiers 2+: Next.js <Image> with index-based fallback
+  const nextjsFallbacks = nextjsCandidates(pokemon);
   const [bgIndex, setBgIndex] = useState(0);
-  const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
+  const bgUrl = nextjsFallbacks[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
@@ -52,20 +55,29 @@ export default function PokemonCard({ pokemon }: Props) {
                    transition-all duration-200"
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
-        {/* ── Background: official artwork, covers full card, faded ── */}
+        {/* ── Background layers ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Tier 1: plain <img> — browser fetches pokeos.com directly, no Next.js proxy */}
+          {pokeosVisible && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={pokeosUrl}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 w-full h-full object-cover object-top opacity-25"
+              onError={() => setPokeosVisible(false)}
+            />
+          )}
+          {/* Tiers 2+: Next.js Image — pokemontcg.io SIR/IR then PokeAPI art */}
           <Image
             src={bgUrl}
             alt=""
             aria-hidden
             fill
             sizes="300px"
-            className="object-cover opacity-25 object-top"
+            className="object-cover object-top opacity-25"
             loading="lazy"
-            onError={(e) => {
-              console.error("Card bg failed to load:", e.currentTarget.src);
-              setBgIndex((i) => Math.min(i + 1, candidates.length - 1));
-            }}
+            onError={() => setBgIndex((i) => Math.min(i + 1, nextjsFallbacks.length - 1))}
           />
         </div>
 

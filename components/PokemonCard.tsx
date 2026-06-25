@@ -21,7 +21,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
   const [bgUrl, setBgUrl] = useState(
-    `https://raw.githubusercontent.com/simeonelias/pokemon-tcg-pocket-assets/main/assets/textless/${pokemon.name.toLowerCase()}.png`
+    `https://static.dotgg.gg/pokepocket/card/${pokemon.id}.webp`
   );
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);

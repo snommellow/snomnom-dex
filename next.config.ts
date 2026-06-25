@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "static.dotgg.gg",
+        pathname: "/pokepocket/**",
+      },
+      {
+        protocol: "https",
         hostname: "s3.pokeos.com",
         pathname: "/pokeos-uploads/**",
       },

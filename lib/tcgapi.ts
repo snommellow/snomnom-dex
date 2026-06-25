@@ -135,38 +135,37 @@ function toDisplayName(slug: string): string {
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
 ): Promise<TcgImageResult[]> {
-  const entries = pokemon.map((p) => ({
-    ...p,
-    displayName: toDisplayName(p.name),
-  }));
+  const ids = pokemon.map((p) => p.id);
 
   const bestMap = new Map<number, TcgImageResult>();
   const merge = (m: Map<number, TcgImageResult>) =>
     m.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
-  const missing = () => entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
+  const missingIds = () => ids.filter((id) => !bestMap.has(id));
 
-  // Pass 1: priority set (151) only, chunked same as pass 2
-  const p1chunks = await Promise.all(
-    chunk(entries.map((e) => e.displayName), CHUNK).map((names) => {
-      const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-      return tcgFetch(`(${nameQ}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`);
-    })
+  // Query by dex number — finds Clefairy, Clefairy ex, Dark Clefairy, etc. all at once
+  const dexQ = (dexIds: number[]) =>
+    dexIds.map((id) => `nationalPokedexNumbers:${id}`).join(" OR ");
+
+  // Pass 1: priority set (sv3pt5 = 151) only
+  const p1 = await Promise.all(
+    chunk(ids, CHUNK).map((batch) =>
+      tcgFetch(`(${dexQ(batch)}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`)
+    )
   );
-  merge(buildBestMap(p1chunks.flat()));
+  merge(buildBestMap(p1.flat()));
 
-  // Pass 2: all SV sets (discovered dynamically) for anything still missing
-  const miss = missing();
+  // Pass 2: all SV sets for anything still missing
+  const miss = missingIds();
   if (miss.length) {
     const svIds = await getSvSetIds();
     const setQ = svIds.map((s) => `set.id:${s}`).join(" OR ");
-    const chunks = await Promise.all(
-      chunk(miss, CHUNK).map((names) => {
-        const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-        return tcgFetch(`(${nameQ}) (${setQ}) ${IR_CLAUSE} ${SUB_EXCL}`);
-      })
+    const p2 = await Promise.all(
+      chunk(miss, CHUNK).map((batch) =>
+        tcgFetch(`(${dexQ(batch)}) (${setQ}) ${IR_CLAUSE} ${SUB_EXCL}`)
+      )
     );
-    merge(buildBestMap(chunks.flat()));
+    merge(buildBestMap(p2.flat()));
   }
 
-  return entries.map((e) => bestMap.get(e.id) ?? { tcgUrl: null });
+  return ids.map((id) => bestMap.get(id) ?? { tcgUrl: null });
 }

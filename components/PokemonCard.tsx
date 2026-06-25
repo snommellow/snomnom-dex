@@ -20,8 +20,9 @@ export default function PokemonCard({ pokemon }: Props) {
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
+  // Background: prefer TCG illustration from server fetch; fall back to official artwork
   const [bgUrl, setBgUrl] = useState(
-    `https://images.pokemontcg.io/cel25/${pokemon.id}.png`
+    pokemon.tcgImageUrl ?? OFFICIAL_ART(pokemon.id)
   );
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);

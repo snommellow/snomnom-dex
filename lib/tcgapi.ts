@@ -167,5 +167,16 @@ export async function fetchTcgCardImages(
     merge(buildBestMap(p2.flat()));
   }
 
+  // Pass 3: all sets for anything still missing
+  const miss2 = missingIds();
+  if (miss2.length) {
+    const p3 = await Promise.all(
+      chunk(miss2, CHUNK).map((batch) =>
+        tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
+      )
+    );
+    merge(buildBestMap(p3.flat()));
+  }
+
   return ids.map((id) => bestMap.get(id) ?? { tcgUrl: null });
 }

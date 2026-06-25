@@ -7,11 +7,29 @@ const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
 const PRIORITY_SETS = ["sv3pt5"];
 
-const SV_SETS = [
-  "sv1", "sv2", "sv3", "sv3pt5", "sv4", "sv4pt5",
-  "sv5", "sv6", "sv6pt5", "sv7", "sv8", "sv8pt5",
-  "sv9", "sv9pt5",
-];
+// Fetched once per build — discovers all SV set IDs including new releases
+let _svSetIds: string[] | null = null;
+
+async function getSvSetIds(): Promise<string[]> {
+  if (_svSetIds) return _svSetIds;
+  try {
+    const res = await fetch(
+      `https://api.pokemontcg.io/v2/sets?q=series:"Scarlet %26 Violet"&select=id&pageSize=100`,
+      { next: { revalidate: 86400 } }
+    );
+    if (res.ok) {
+      const data = await res.json();
+      _svSetIds = (data.data as { id: string }[]).map((s) => s.id);
+      return _svSetIds;
+    }
+  } catch { /* fall through to fallback */ }
+  _svSetIds = [
+    "sv1", "sv2", "sv3", "sv3pt5", "sv4", "sv4pt5",
+    "sv5", "sv6", "sv6pt5", "sv7", "sv8", "sv8pt5",
+    "sv9", "sv9pt5",
+  ];
+  return _svSetIds;
+}
 
 interface TcgCard {
   id: string;
@@ -136,10 +154,11 @@ export async function fetchTcgCardImages(
   );
   merge(buildBestMap(p1chunks.flat()));
 
-  // Pass 2: all SV sets for anything still missing
+  // Pass 2: all SV sets (discovered dynamically) for anything still missing
   const miss = missing();
   if (miss.length) {
-    const setQ = SV_SETS.map((s) => `set.id:${s}`).join(" OR ");
+    const svIds = await getSvSetIds();
+    const setQ = svIds.map((s) => `set.id:${s}`).join(" OR ");
     const chunks = await Promise.all(
       chunk(miss, CHUNK).map((names) => {
         const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");

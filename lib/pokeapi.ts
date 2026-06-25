@@ -60,19 +60,14 @@ export interface PokemonSummary {
   types: string[];
   spriteUrl: string | null;
   artworkUrl: string | null;
-  tcgImageUrl: string | null;
 }
 
-export function toPokemonSummary(
-  p: Pokemon,
-  tcgImageUrl: string | null = null
-): PokemonSummary {
+export function toPokemonSummary(p: Pokemon): PokemonSummary {
   return {
     id: p.id,
     name: p.name,
     types: p.types.map((t) => t.type.name),
     spriteUrl: p.sprites.front_default,
     artworkUrl: p.sprites.other["official-artwork"].front_default,
-    tcgImageUrl,
   };
 }

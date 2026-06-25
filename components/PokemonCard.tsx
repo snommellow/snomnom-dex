@@ -111,7 +111,7 @@ export default function PokemonCard({ pokemon }: Props) {
           className="absolute left-0 right-0 z-[1] pointer-events-none"
           style={{
             top: 0,
-            height: 80,
+            height: 56,
             backdropFilter: "blur(4px)",
             WebkitBackdropFilter: "blur(4px)",
             maskImage: "linear-gradient(to top, transparent 0%, black 60%)",

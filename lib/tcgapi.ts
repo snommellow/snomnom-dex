@@ -100,7 +100,10 @@ function buildBestMap(
 
   for (const card of cards) {
     if (isGimmickVariant(card)) continue;
-    if (rejectJunk && isJunkRarity(card.rarity ?? "")) continue;
+    const isPocketSet = POCKET_SETS.includes(card.set?.id ?? "");
+    // For Pocket sets, only allow star/crown rarities (skip diamond commons)
+    if (isPocketSet && isJunkRarity(card.rarity ?? "")) continue;
+    if (!isPocketSet && rejectJunk && isJunkRarity(card.rarity ?? "")) continue;
 
     const url = card.images?.large ?? card.images?.small;
     if (!url) continue;
@@ -158,12 +161,19 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   }
 }
 
-// Pass 1 — TCG Pocket sets, star rarities only (☆/☆☆/☆☆☆/♛)
+// Pass 1 — TCG Pocket sets, all cards (star filtering done client-side via rarityScore)
 async function fetchPassPocket(names: string[]): Promise<TcgCard[]> {
-  const nameQ  = names.map((n) => `name:"${n}"`).join(" OR ");
-  const setQ   = POCKET_SETS.map((s) => `set.id:${s}`).join(" OR ");
-  const rarQ   = POCKET_STAR_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
-  return tcgFetch(`(${nameQ}) (${setQ}) (${rarQ})`);
+  const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
+  const setQ  = POCKET_SETS.map((s) => `set.id:${s}`).join(" OR ");
+  const cards = await tcgFetch(`(${nameQ}) (${setQ})`);
+  // Log unique rarities found so we can verify the rarity strings
+  if (cards.length) {
+    const rarities = [...new Set(cards.map(c => c.rarity))];
+    console.log("[Pocket] found rarities:", rarities, "total cards:", cards.length);
+  } else {
+    console.log("[Pocket] no cards returned — API may not have Pocket sets yet");
+  }
+  return cards;
 }
 
 // Pass 2 — SV priority sets + IR/SIR

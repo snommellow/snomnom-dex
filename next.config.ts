@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/thefabulousyellow/**",
+      },
+      {
+        protocol: "https",
         hostname: "static.dotgg.gg",
         pathname: "/**",
       },

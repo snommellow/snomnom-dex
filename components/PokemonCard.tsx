@@ -20,11 +20,11 @@ const OFFICIAL_ART = (id: number) =>
 function bgCandidates(pokemon: { id: number; name: string; tcgImageUrl: string | null }): string[] {
   const slug = pokemon.name.toLowerCase();
   return [
-    // Tier 1 — PokéOS textless TCG (placeholder: paste real path once confirmed)
+    // Tier 1 — PokéOS textless (placeholder: paste real path once confirmed)
     `https://www.pokeos.com/tcg/textless/${slug}.png`,
-    // Tier 2 — PokéOS TCG Pocket textless (three-digit padded ID format)
-    `https://www.pokeos.com/assets/cards/pocket/${String(pokemon.id).padStart(3, "0")}_textless.png`,
-    // Tier 3 — pokemontcg.io SIR/IR scan from server-side fetch
+    // Tier 2 — TCG Pocket textless assets from GitHub (padded national dex ID)
+    `https://raw.githubusercontent.com/thefabulousyellow/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
+    // Tier 3 — pokemontcg.io SIR/IR scan (object-top CSS pans text box out of view)
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
     // Tier 4 — official PokeAPI artwork (guaranteed to exist for all 151)
     OFFICIAL_ART(pokemon.id),

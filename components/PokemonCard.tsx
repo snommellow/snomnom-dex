@@ -50,6 +50,7 @@ export default function PokemonCard({ pokemon }: Props) {
         onMouseLeave={handleMouseLeave}
         className="relative flex flex-col overflow-hidden rounded-xl"
         style={{
+          overflow: "hidden",
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
           boxShadow: isHovered

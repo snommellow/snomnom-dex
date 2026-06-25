@@ -1,19 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, TYPE_GRADIENT, typeIconUrl } from "@/lib/typeColors";
+import { getSpriteUrl } from "@/lib/spriteStyle";
+import { useSpriteStyle } from "./SpriteStyleContext";
 
 interface Props {
   pokemon: PokemonSummary;
 }
 
 export default function PokemonCard({ pokemon }: Props) {
+  const { style } = useSpriteStyle();
   const primaryType = pokemon.types[0] ?? "normal";
   const gradient = TYPE_GRADIENT[primaryType] ?? "from-gray-100 to-white";
 
-  // Pixel sprite — same source as reference (raw GitHub PokeAPI sprites)
-  const spriteUrl =
-    pokemon.spriteUrl ??
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+  const spriteUrl = getSpriteUrl(pokemon.id, style);
+  const pixelated = style === "gb" || style === "gen1" || style === "pixel";
 
   return (
     <article
@@ -24,7 +27,7 @@ export default function PokemonCard({ pokemon }: Props) {
         #{String(pokemon.id).padStart(3, "0")}
       </span>
 
-      {/* Pixel sprite — rounded rect with inner padding, pixelated rendering */}
+      {/* Sprite */}
       <div className="relative w-24 h-24 mt-1 rounded-xl bg-white/60 p-1 group-hover:scale-110 transition-transform duration-200 shadow-sm">
         <Image
           src={spriteUrl}
@@ -32,7 +35,7 @@ export default function PokemonCard({ pokemon }: Props) {
           fill
           sizes="96px"
           className="object-contain"
-          style={{ imageRendering: "pixelated" }}
+          style={pixelated ? { imageRendering: "pixelated" } : undefined}
           loading="lazy"
         />
       </div>
@@ -42,7 +45,7 @@ export default function PokemonCard({ pokemon }: Props) {
         {pokemon.name}
       </p>
 
-      {/* Type pills — solid colour, SVG icon + uppercase white label, fixed 75 px width */}
+      {/* Type pills */}
       <div className="flex flex-wrap justify-center gap-1.5">
         {pokemon.types.map((type) => {
           const bg = TYPE_COLOR[type] ?? "#828282";

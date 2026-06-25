@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         hostname: "images.scrydex.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.pokeos.com",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -2,12 +2,12 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
 
-// TCG Pocket star full-art cards (immersive/ex full-art, no text box)
+// TCG Pocket star full-art cards — uses ★ (U+2605 BLACK STAR), not ☆
 const POCKET_STAR_RARITIES = [
   "♛",    // crown rare (rarest)
-  "☆☆☆",  // 3-star immersive rare
-  "☆☆",   // 2-star ex full-art
-  "☆",    // 1-star rare
+  "★★★",  // 3-star immersive rare
+  "★★",   // 2-star ex full-art
+  "★",    // 1-star rare
 ];
 
 const POCKET_SETS = ["a1", "a1a", "a2", "a2a", "a2b"];
@@ -34,15 +34,16 @@ const JUNK_RARITIES = new Set([
 
 function rarityScore(rarity: string): number {
   const order = [
-    "☆☆☆",                        // 0  — Pocket 3-star immersive
+    "★★★",                        // 0  — Pocket 3-star immersive
     "Special Illustration Rare",  // 1
-    "☆☆",                         // 2  — Pocket 2-star ex full-art
+    "★★",                         // 2  — Pocket 2-star ex full-art
     "Illustration Rare",          // 3
-    "☆",                          // 4  — Pocket 1-star
-    "Ultra Rare",                 // 5
-    "Secret Rare",                // 6
-    "Rare Holo",                  // 7
-    "Rare",                       // 8
+    "★",                          // 4  — Pocket 1-star
+    "♛",                          // 5  — Pocket crown
+    "Ultra Rare",                 // 6
+    "Secret Rare",                // 7
+    "Rare Holo",                  // 8
+    "Rare",                       // 9
   ];
   const idx = order.indexOf(rarity);
   return idx === -1 ? order.length + 10 : idx;  // junk gets a very high score

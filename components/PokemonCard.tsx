@@ -25,11 +25,14 @@ function parseTcgUrl(url: string | null): { setId: string; number: string } | nu
 // ── Background asset cascade ──────────────────────────────────────────────────
 function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
   const tcg = parseTcgUrl(pokemon.tcgImageUrl);
+  const pad = String(pokemon.id).padStart(3, "0");
   return [
-    // Tier 1a — PokéOS textless, slash format:  /img/tcg/textless/{setId}/{number}.png
-    ...(tcg ? [`https://www.pokeos.com/img/tcg/textless/${tcg.setId}/${tcg.number}.png`] : []),
-    // Tier 1b — PokéOS textless, hyphen format: /img/tcg/textless/{setId}-{number}.png
-    ...(tcg ? [`https://www.pokeos.com/img/tcg/textless/${tcg.setId}-${tcg.number}.png`] : []),
+    // Tier 1a — PokéOS TCG Pocket, national dex padded (most likely to work)
+    `https://www.pokeos.com/img/tcg/pocket/${pad}.png`,
+    // Tier 1b — PokéOS TCG Pocket with _textless suffix
+    `https://www.pokeos.com/img/tcg/pocket/cards/${pad}_textless.png`,
+    // Tier 1c — PokéOS TCG Pocket using standard TCG setId-number (less likely to match)
+    ...(tcg ? [`https://www.pokeos.com/img/tcg/pocket/cards/${tcg.setId}-${tcg.number}_textless.png`] : []),
     // Tier 2 — pokemontcg.io SIR/IR scan; object-top CSS pans the text box out of view
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
     // Tier 3 — official PokeAPI artwork (guaranteed for all 151)

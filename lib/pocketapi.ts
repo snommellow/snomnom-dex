@@ -3,8 +3,8 @@
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
-// Pocket rarity tiers, best → worst
-const POCKET_RARITIES = ["♛", "☆☆☆", "☆☆", "☆"];
+// TCGdex uses English rarity names for Pocket cards, best → worst
+const POCKET_RARITIES = ["Crown", "Three Star", "Two Star", "One Star"];
 
 function rarityScore(rarity: string): number {
   const idx = POCKET_RARITIES.indexOf(rarity);

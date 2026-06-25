@@ -47,13 +47,15 @@ function rarityScore(rarity: string): number {
 
 export interface TcgImageResult { tcgUrl: string | null }
 
-function buildBestMap(cards: TcgCard[], allowedNames: Set<string>): Map<number, TcgImageResult> {
+// Trainer-owned cards have a possessive in the name e.g. "Lillie's Clefairy"
+const TRAINER_OWNED_RE = /'\s*s\s+/i;
+
+function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
   const best = new Map<number, { score: number; prioritySet: boolean; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
-    // Exact name match only — prevents "Clefairy ex", "Lillie's Clefairy", etc.
-    if (!allowedNames.has(card.name)) continue;
     if (isGimmick(card)) continue;
+    if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
     if (!IR_RARITIES.has(card.rarity)) continue;
 
@@ -120,7 +122,6 @@ export async function fetchTcgCardImages(
     displayName: toDisplayName(p.name),
   }));
 
-  const allNames = new Set(entries.map((e) => e.displayName));
   const bestMap = new Map<number, TcgImageResult>();
   const merge = (m: Map<number, TcgImageResult>) =>
     m.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
@@ -128,12 +129,11 @@ export async function fetchTcgCardImages(
 
   // Pass 1: priority set (151) only
   const nameQ1 = entries.map((e) => `name:"${e.displayName}"`).join(" OR ");
-  merge(buildBestMap(await tcgFetch(`(${nameQ1}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`), allNames));
+  merge(buildBestMap(await tcgFetch(`(${nameQ1}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`)));
 
   // Pass 2: all SV sets for anything still missing
   const miss = missing();
   if (miss.length) {
-    const missNames = new Set(miss);
     const setQ = SV_SETS.map((s) => `set.id:${s}`).join(" OR ");
     const chunks = await Promise.all(
       chunk(miss, CHUNK).map((names) => {
@@ -141,7 +141,7 @@ export async function fetchTcgCardImages(
         return tcgFetch(`(${nameQ}) (${setQ}) ${IR_CLAUSE} ${SUB_EXCL}`);
       })
     );
-    merge(buildBestMap(chunks.flat(), missNames));
+    merge(buildBestMap(chunks.flat()));
   }
 
   return entries.map((e) => bestMap.get(e.id) ?? { tcgUrl: null });

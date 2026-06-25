@@ -1,53 +1,50 @@
 // TCGdex API — Pokémon TCG Pocket cards
-// Docs: https://tcgdex.dev/tcg-pocket
-// All Pocket sets live under series "tcgp": A1 (Genetic Apex), A1a (Mythical Island),
-// A2 (Space-Time Smackdown), A2b, A3, … new sets are added automatically.
+// https://tcgdex.dev  |  series "tcgp": A1, A1a, A2, A2b, A3 … future sets auto-included
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
-const TCGDEX_IMG  = "https://assets.tcgdex.net/en";
 
-// Pocket rarity tiers, best first
-// ♛ = Crown Rare, ☆☆☆ = Immersive, ☆☆ = Full Art, ☆ = EX/Star
-const POCKET_RARITY_ORDER = ["♛", "☆☆☆", "☆☆", "☆"];
+// Pocket rarity tiers, best → worst
+const POCKET_RARITIES = ["♛", "☆☆☆", "☆☆", "☆"];
 
 function rarityScore(rarity: string): number {
-  const idx = POCKET_RARITY_ORDER.indexOf(rarity);
+  const idx = POCKET_RARITIES.indexOf(rarity);
   return idx === -1 ? 99 : idx;
 }
 
+// Pocket set IDs all start with "A" (A1, A1a, A2, A2b, A3, …)
+function isPocketSet(setId: string): boolean {
+  return /^A\d/.test(setId);
+}
+
 interface TcgdexCard {
-  id: string;           // e.g. "A1-001"
-  localId: string;      // e.g. "001"
+  id: string;
+  localId: string;
   name: string;
-  image?: string;       // base URL without extension
+  image?: string;
   rarity?: string;
-  set: { id: string };  // e.g. { id: "A1" }
+  set: { id: string };
 }
 
 async function fetchPocketCards(dexId: number): Promise<TcgdexCard[]> {
   try {
+    // TCGdex filter: dexId=N returns all cards for that dex number across all sets
     const res = await fetch(
-      `${TCGDEX_BASE}/cards?dexIds=${dexId}&series=tcgp`,
+      `${TCGDEX_BASE}/cards?dexId=${dexId}`,
       { next: { revalidate: 86400 } }
     );
     if (!res.ok) return [];
-    return (await res.json()) as TcgdexCard[];
+    const all = (await res.json()) as TcgdexCard[];
+    // Keep only TCG Pocket sets (set IDs starting with A) with a star rarity
+    return all.filter(
+      (c) => isPocketSet(c.set?.id ?? "") && POCKET_RARITIES.includes(c.rarity ?? "")
+    );
   } catch { return []; }
 }
 
-function bestPocketCard(cards: TcgdexCard[]): TcgdexCard | null {
-  const starred = cards.filter((c) => POCKET_RARITY_ORDER.includes(c.rarity ?? ""));
-  if (!starred.length) return null;
-  return starred.reduce((best, c) =>
-    rarityScore(c.rarity!) < rarityScore(best.rarity!) ? c : best
-  );
-}
-
 function cardImageUrl(card: TcgdexCard): string {
-  // TCGdex image field is already a full base URL; append quality + format
+  // image field is a full base URL — append quality + format
   if (card.image) return `${card.image}/high.webp`;
-  // Fallback: construct from set + localId
-  return `${TCGDEX_IMG}/tcgp/${card.set.id}/${card.localId}/high.webp`;
+  return `https://assets.tcgdex.net/en/tcgp/${card.set.id}/${card.localId}/high.webp`;
 }
 
 export interface PocketResult { url: string | null }
@@ -55,12 +52,14 @@ export interface PocketResult { url: string | null }
 export async function fetchPocketImages(
   pokemon: Array<{ id: number }>
 ): Promise<PocketResult[]> {
-  const results = await Promise.all(
+  return Promise.all(
     pokemon.map(async ({ id }) => {
       const cards = await fetchPocketCards(id);
-      const best  = bestPocketCard(cards);
-      return { url: best ? cardImageUrl(best) : null };
+      if (!cards.length) return { url: null };
+      const best = cards.reduce((a, b) =>
+        rarityScore(a.rarity ?? "") <= rarityScore(b.rarity ?? "") ? a : b
+      );
+      return { url: cardImageUrl(best) };
     })
   );
-  return results;
 }

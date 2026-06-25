@@ -20,15 +20,23 @@ interface TcgCard {
   images: { small: string; large: string };
   nationalPokedexNumbers: number[];
   rarity: string;
+  supertype: string;
   set: { id: string; releaseDate: string };
   subtypes: string[];
 }
 
-const EXCLUDED_SUBTYPES = new Set(["MEGA", "Mega", "VMAX", "VSTAR", "V-UNION"]);
+const EXCLUDED_SUBTYPES = new Set([
+  "MEGA", "Mega", "VMAX", "VSTAR", "V-UNION", "Tera",
+]);
 const GIMMICK_RE = /\b(MEGA|VMAX|VSTAR|V-UNION)\b/i;
 
 function isGimmick(card: TcgCard): boolean {
-  return (card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s)) || GIMMICK_RE.test(card.name);
+  if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
+  if (GIMMICK_RE.test(card.name)) return true;
+  // Trainer cards have no dex numbers so they're filtered by buildBestMap already,
+  // but exclude explicitly for safety
+  if (card.supertype === "Trainer") return true;
+  return false;
 }
 
 function rarityScore(rarity: string): number {
@@ -70,7 +78,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,number,images,nationalPokedexNumbers,rarity,set,subtypes`,
+        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes`,
       { next: { revalidate: 86400 } }
     );
     if (!res.ok) return [];
@@ -79,7 +87,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
 }
 
 const IR_CLAUSE  = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
-const SUB_EXCL   = `-subtypes:mega -subtypes:vmax -subtypes:vstar`;
+const SUB_EXCL   = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 const CHUNK = 75;
 
 function chunk<T>(arr: T[], size: number): T[][] {

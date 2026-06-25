@@ -14,14 +14,23 @@ interface Props {
 const OFFICIAL_ART = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
+// Parse set ID and card number from a pokemontcg.io image URL.
+// e.g. "https://images.pokemontcg.io/sv3pt5/4.png" → { setId: "sv3pt5", number: "4" }
+function parseTcgUrl(url: string | null): { setId: string; number: string } | null {
+  if (!url) return null;
+  const m = url.match(/images\.pokemontcg\.io\/([^/]+)\/(\d+)/);
+  return m ? { setId: m[1], number: m[2] } : null;
+}
+
 // ── Background asset cascade ──────────────────────────────────────────────────
-// Each tier is tried in order; onError advances to the next.
-// Swap the placeholder strings once the real PokéOS URL pattern is confirmed.
 function bgCandidates(pokemon: { id: number; name: string; tcgImageUrl: string | null }): string[] {
-  const slug = pokemon.name.toLowerCase();
+  const tcg = parseTcgUrl(pokemon.tcgImageUrl);
   return [
-    // Tier 1 — PokéOS S3 textless asset CDN (direct backend path)
-    `https://s3.pokeos.com/pokeos-uploads/cards/textless/${pokemon.id}.png`,
+    // Tier 1 — PokéOS S3 textless: /tcg/textless/{setId}/{number}.png
+    // setId + number derived from our existing pokemontcg.io URL so no extra fetch needed
+    ...(tcg
+      ? [`https://s3.pokeos.com/pokeos-uploads/tcg/textless/${tcg.setId}/${tcg.number}.png`]
+      : [`https://s3.pokeos.com/pokeos-uploads/tcg/textless/sv3pt5/${pokemon.id}.png`]),
     // Tier 2 — TCG Pocket textless assets from GitHub (padded national dex ID)
     `https://raw.githubusercontent.com/AikoBliss/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
     // Tier 3 — pokemontcg.io SIR/IR scan (object-top CSS pans text box out of view)

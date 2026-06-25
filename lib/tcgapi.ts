@@ -231,20 +231,20 @@ export async function fetchTcgCardImages(
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
-  // ── Pass 1: TCG Pocket sets, star rarities ──
-  merge(buildBestMap(await fetchPassPocket(entries.map((e) => e.displayName))));
+  // ── Pass 1: SV priority sets, IR/SIR ──
+  merge(buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
 
-  // ── Pass 2: SV priority sets, IR/SIR ──
+  // ── Pass 2: any set, IR/SIR only ──
   const miss2 = missing();
   if (miss2.length) {
-    merge(buildBestMap(await fetchPass1(miss2)));
+    const results = await Promise.all(chunk(miss2, CHUNK).map(fetchPass2));
+    merge(buildBestMap(results.flat()));
   }
 
-  // ── Pass 3: any set, IR/SIR only ──
+  // ── Pass 3: TCG Pocket star cards ──
   const miss3 = missing();
   if (miss3.length) {
-    const results = await Promise.all(chunk(miss3, CHUNK).map(fetchPass2));
-    merge(buildBestMap(results.flat()));
+    merge(buildBestMap(await fetchPassPocket(miss3)));
   }
 
   // Pokémon still missing → null → fall back to official artwork

@@ -67,68 +67,51 @@ export default function PokemonCard({ pokemon }: Props) {
           className="relative mx-1.5 mb-1 overflow-hidden flex items-center justify-center"
           style={{ minHeight: 148, borderRadius: 2 }}
         >
-          {hasTcg ? (
-            <>
-              {/* TCG card fills the frame, cropped to show the art zone (top ~55%) */}
+          {/* Type-colour base layer always present */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(160deg, ${typeColor}55 0%, ${typeColor}22 100%)`,
+            }}
+          />
+
+          {hasTcg && (
+            /* TCG art cropped window — zoomed in on art zone only (top ~48%
+               of the card) so frame border and attack text are never visible */
+            <div className="absolute inset-0 overflow-hidden">
               <Image
                 src={pokemon.tcgImageUrl!}
-                alt={`${pokemon.name} TCG card`}
+                alt=""
+                aria-hidden
                 fill
                 sizes="200px"
-                className="object-cover object-top scale-[1.08] group-hover:scale-[1.14] transition-transform duration-500"
+                className="object-cover object-top opacity-50 scale-[2.0] origin-top group-hover:scale-[2.1] transition-transform duration-500"
                 loading="lazy"
               />
-              {/* Dark gradient at bottom so text/pills stay readable */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.55) 100%)",
-                }}
-              />
-              {/* Sprite overlaid — small, top-right corner */}
-              <div
-                className="absolute top-1 right-1 w-10 h-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10"
-              >
-                <Image
-                  src={spriteUrl}
-                  alt={pokemon.name}
-                  fill
-                  sizes="40px"
-                  className="object-contain"
-                  style={pixelated ? { imageRendering: "pixelated" } : undefined}
-                  loading="lazy"
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              {/* Fallback: type-colour gradient + centred sprite */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: `linear-gradient(160deg, ${typeColor}33 0%, ${typeColor}0d 100%)`,
-                }}
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: `radial-gradient(ellipse at 50% 70%, ${typeColor}44 0%, transparent 65%)`,
-                }}
-              />
-              <div className="relative w-32 h-32 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10">
-                <Image
-                  src={spriteUrl}
-                  alt={pokemon.name}
-                  fill
-                  sizes="128px"
-                  className="object-contain"
-                  style={pixelated ? { imageRendering: "pixelated" } : undefined}
-                  loading="lazy"
-                />
-              </div>
-            </>
+            </div>
           )}
+
+          {/* Vignette — fades edges so sprite reads cleanly on top */}
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 45%, transparent 30%, rgba(0,0,0,0.18) 100%)",
+            }}
+          />
+
+          {/* Sprite — always centred, always on top */}
+          <div className="relative w-28 h-28 group-hover:scale-110 transition-transform duration-300 drop-shadow-xl z-20">
+            <Image
+              src={spriteUrl}
+              alt={pokemon.name}
+              fill
+              sizes="112px"
+              className="object-contain"
+              style={pixelated ? { imageRendering: "pixelated" } : undefined}
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* ── Type pills — single row ── */}

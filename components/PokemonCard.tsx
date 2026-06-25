@@ -23,7 +23,7 @@ function bgCandidates(pokemon: { id: number; name: string; tcgImageUrl: string |
     // Tier 1 — PokéOS textless (placeholder: paste real path once confirmed)
     `https://www.pokeos.com/tcg/textless/${slug}.png`,
     // Tier 2 — TCG Pocket textless assets from GitHub (padded national dex ID)
-    `https://raw.githubusercontent.com/thefabulousyellow/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
+    `https://raw.githubusercontent.com/AikoBliss/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
     // Tier 3 — pokemontcg.io SIR/IR scan (object-top CSS pans text box out of view)
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
     // Tier 4 — official PokeAPI artwork (guaranteed to exist for all 151)

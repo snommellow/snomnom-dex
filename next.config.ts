@@ -4,19 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
+        // Single wildcard covers all GitHub raw content repos
         protocol: "https",
         hostname: "raw.githubusercontent.com",
-        pathname: "/PokeAPI/sprites/**",
-      },
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-        pathname: "/simeonelias/**",
-      },
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-        pathname: "/thefabulousyellow/**",
+        pathname: "/**",
       },
       {
         protocol: "https",

@@ -21,10 +21,11 @@ const POCKET_STAR_MAP: Record<number, number> = {
   104: 239, // Cubone
   31:  240, // Nidoqueen
   40:  241, // Wigglytuff
-  // 242/243/246 — ghost/unknown cards need re-identification
-  // 92/93/94 (Gastly/Haunter/Gengar) — cards 242/243/246 need re-identification
+  42:  242, // Golbat
+  // 243 — unidentified, skipping for now
   149: 244, // Dragonite
   9:   245, // Blastoise
+  52:  246, // Meowth
   132: 247, // Ditto
   133: 248, // Eevee
   121: 249, // Starmie

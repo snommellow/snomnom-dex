@@ -23,8 +23,6 @@ export default function PokemonCard({ pokemon }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
-  const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
-
   const candidates = bgCandidates(pokemon);
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
@@ -48,7 +46,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.45, filter: "blur(1.5px)" }}
+            style={{ opacity: 0.55 }}
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
@@ -98,34 +96,8 @@ export default function PokemonCard({ pokemon }: Props) {
           </p>
         </div>
 
-        {/* ── Artwork area ── */}
-        <div
-          className="relative z-10 mx-1.5 overflow-hidden flex-shrink-0"
-          style={{
-            height: 148,
-            borderRadius: 6,
-            background: `radial-gradient(ellipse at 50% 60%, ${typeColor}55 0%, transparent 72%)`,
-          }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="relative w-32 h-32
-                          group-hover:scale-110 group-hover:-translate-y-1
-                          transition-transform duration-300 ease-out
-                          drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)]"
-            >
-              <Image
-                src={artworkUrl}
-                alt={pokemon.name}
-                fill
-                sizes="128px"
-                className="object-contain"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-        </div>
+        {/* ── Spacer so type pills sit at the bottom ── */}
+        <div className="flex-1" style={{ minHeight: 120 }} />
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

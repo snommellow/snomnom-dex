@@ -7,13 +7,10 @@ const PREMIUM_RARITIES = [
   "Illustration Rare",
 ];
 
+// Only full-art illustration cards — anything with a text box is excluded
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
-  "Ultra Rare",      // includes ex / full-art cards without text boxes
-  "Secret Rare",     // hyper rares, gold cards
-  "Rare Holo",       // acceptable last resort
-  "Rare",
 ];
 
 // Anything at or below this is "standard layout" — text box, common frame
@@ -146,20 +143,13 @@ async function fetchPass1(names: string[]): Promise<TcgCard[]> {
   );
 }
 
-// Pass 2 — any set, acceptable rarities (IR, SIR, Ultra Rare, Secret Rare, Rare Holo, Rare)
+// Pass 2 — any set, IR/SIR only (full-art, no text box)
 async function fetchPass2(names: string[]): Promise<TcgCard[]> {
   if (!names.length) return [];
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
   return tcgFetch(
     `(${nameQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`
   );
-}
-
-// Pass 3 — absolute fallback: any card, no rarity filter (allows junk)
-async function fetchPass3(names: string[]): Promise<TcgCard[]> {
-  if (!names.length) return [];
-  const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  return tcgFetch(`(${nameQ}) ${SUBTYPE_EXCLUSION}`);
 }
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -174,13 +164,14 @@ function chunk<T>(arr: T[], size: number): T[][] {
 
 /**
  * Fetch the best TCG card image for each Pokémon.
+ * Only Illustration Rare and Special Illustration Rare cards are accepted
+ * (full-art, no text box). Pokémon without IR/SIR return null and fall back
+ * to PokeAPI official artwork on the card.
  *
- * Pass 1 (1 req)  — sv3pt5 + swsh12pt5, IR/SIR only  → chain/scene art
- * Pass 2 (≤2 req) — any set, Rare Holo and above      → clean holos
- * Pass 3 (≤2 req) — any set, any rarity               → last resort only
+ * Pass 1 (1 req)  — sv3pt5 + swsh12pt5, IR/SIR  → priority chain/scene art
+ * Pass 2 (≤2 req) — any set, IR/SIR only         → any full-art version
  *
- * Each pass only runs for Pokémon still missing after the previous pass.
- * Total requests: 1–5.
+ * Total requests: 1–3.
  */
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
@@ -201,20 +192,13 @@ export async function fetchTcgCardImages(
   // ── Pass 1: priority sets, premium rarities ──
   merge(buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
 
-  // ── Pass 2: any set, acceptable rarities ──
+  // ── Pass 2: any set, IR/SIR only ──
   const miss2 = missing();
   if (miss2.length) {
     const results = await Promise.all(chunk(miss2, CHUNK).map(fetchPass2));
     merge(buildBestMap(results.flat()));
   }
 
-  // ── Pass 3: last resort — any rarity, junk allowed ──
-  const miss3 = missing();
-  if (miss3.length) {
-    const results = await Promise.all(chunk(miss3, CHUNK).map(fetchPass3));
-    // rejectJunk=false so commons are accepted if nothing better exists
-    merge(buildBestMap(results.flat(), true));
-  }
-
+  // Pokémon still missing have no IR/SIR card → return null → fall back to official artwork
   return entries.map((e) => bestMap.get(e.id) ?? null);
 }

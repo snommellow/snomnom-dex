@@ -64,7 +64,7 @@ export default function PokemonCard({ pokemon }: Props) {
             aria-hidden
             fill
             sizes="300px"
-            className="object-cover opacity-25"
+            className="object-cover opacity-25 object-top"
             loading="lazy"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />

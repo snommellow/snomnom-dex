@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/simeonelias/**",
+      },
+      {
+        protocol: "https",
         hostname: "s3.pokeos.com",
         pathname: "/pokeos-uploads/**",
       },

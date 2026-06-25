@@ -20,7 +20,9 @@ export default function PokemonCard({ pokemon }: Props) {
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
   const artworkUrl = pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id);
-  const [bgUrl, setBgUrl] = useState(`/tcg-backgrounds/${pokemon.id}.png`);
+  const [bgUrl, setBgUrl] = useState(
+    `https://raw.githubusercontent.com/simeonelias/pokemon-tcg-pocket-assets/main/assets/textless/${pokemon.name.toLowerCase()}.png`
+  );
 
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";

@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.pokemontcg.io",
+        hostname: "s3.pokeos.com",
+        pathname: "/pokeos-uploads/**",
       },
       {
         protocol: "https",

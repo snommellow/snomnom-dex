@@ -33,27 +33,16 @@ export default function PokemonCard({ pokemon }: Props) {
                    transition-all duration-200"
         style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
-        {/* ── Background layer: zoomed + blurred artwork fills the card ── */}
-        {/* The official artwork is a transparent PNG, so we scale it 2.5×  */}
-        {/* and blur it to get full edge-to-edge color wash behind everything */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <Image
-            src={artworkUrl}
-            alt=""
-            aria-hidden
-            fill
-            sizes="300px"
-            className="object-contain scale-[2.6] blur-[6px] opacity-25"
-            loading="lazy"
-          />
-          {/* Type-tinted overlay so the bg feels cohesive, not washed out */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(160deg, ${typeColor}55 0%, ${typeColor}22 60%, ${typeColor}08 100%)`,
-            }}
-          />
-        </div>
+        {/* ── Background: PokéOS textless TCG illustration, edge-to-edge ── */}
+        <Image
+          src={`https://s3.pokeos.com/pokeos-uploads/tcg/textless/384/${pokemon.id}.png`}
+          alt=""
+          aria-hidden
+          fill
+          sizes="200px"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 z-0"
+          loading="lazy"
+        />
 
         {/* ── Masthead strip ── */}
         <div

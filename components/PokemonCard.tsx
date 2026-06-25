@@ -143,30 +143,37 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Top blur strip ── */}
-        <div
-          className="absolute left-0 right-0 z-[1] pointer-events-none"
-          style={{
-            top: 0,
-            height: 56,
-            backdropFilter: "blur(4px)",
-            WebkitBackdropFilter: "blur(4px)",
-            maskImage: "linear-gradient(to top, transparent 0%, black 60%)",
-            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 60%)",
-          }}
-        />
+        {/* ── Top blur strip — clipped image copy with filter:blur ── */}
+        <div className="absolute left-0 right-0 z-[1] pointer-events-none"
+          style={{ top: 0, height: 56, overflow: "hidden",
+            maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)" }}>
+          <div style={{
+            position: "absolute", inset: -8,
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "top center",
+            filter: "blur(6px)",
+            opacity: 0.7,
+            transform: `scale(1.05) translateY(5%)`,
+          }} />
+        </div>
 
-        {/* ── Bottom blur strip ── */}
-        <div
-          className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none"
-          style={{
-            height: 80,
-            backdropFilter: "blur(3px)",
-            WebkitBackdropFilter: "blur(3px)",
+        {/* ── Bottom blur strip — clipped image copy with filter:blur ── */}
+        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none"
+          style={{ height: 80, overflow: "hidden",
             maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-          }}
-        />
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)" }}>
+          <div style={{
+            position: "absolute", inset: -8,
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "top center",
+            filter: "blur(6px)",
+            opacity: 0.7,
+            transform: `scale(1.05) translateY(5%)`,
+          }} />
+        </div>
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

@@ -49,7 +49,7 @@ export default function PokemonCard({ pokemon }: Props) {
           return (
             <span
               key={type}
-              className="inline-flex items-center rounded-full text-white uppercase font-extrabold tracking-[.06em] text-[9px]"
+              className="inline-flex items-center overflow-hidden rounded-full text-white uppercase font-extrabold tracking-[.06em] text-[9px]"
               style={{
                 backgroundColor: bg,
                 width: 75,
@@ -64,7 +64,7 @@ export default function PokemonCard({ pokemon }: Props) {
                 aria-hidden
                 width={16}
                 height={16}
-                className="flex-shrink-0 mr-1"
+                className="flex-shrink-0 mr-1 w-4 h-4 object-contain"
               />
               <span className="flex-1 text-center">{type}</span>
             </span>

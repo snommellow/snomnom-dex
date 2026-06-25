@@ -16,7 +16,7 @@ export default function DebugPokeos461Page() {
           <div key={n} className="flex flex-col items-center gap-1" id={`c${n}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${BASE}/${n}.jpg`}
+              src={`${BASE}/${n}.png`}
               alt={`${n}`}
               className="w-20 rounded shadow-lg bg-gray-800"
               onError={(e) => {

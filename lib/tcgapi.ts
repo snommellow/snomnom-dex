@@ -5,6 +5,39 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
+// Gen 1 evolution chains — used to detect sets with connected chain artwork
+const GEN1_CHAINS: number[][] = [
+  [1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18],[19,20],[21,22],
+  [23,24],[25,26],[27,28],[29,30,31],[32,33,34],[35,36],[37,38],[39,40],
+  [41,42],[43,44,45],[46,47],[48,49],[50,51],[52,53],[54,55],[56,57],[58,59],
+  [60,61,62],[63,64,65],[66,67,68],[69,70,71],[72,73],[74,75,76],[77,78],
+  [79,80],[81,82],[84,85],[86,87],[88,89],[90,91],[92,93,94],[96,97],[98,99],
+  [100,101],[102,103],[104,105],[109,110],[111,112],[116,117],[118,119],
+  [120,121],[129,130],[133,134,135,136],[138,139],[140,141],[147,148,149],
+];
+
+// A "chain set" is one where every member of at least one multi-stage evolution
+// line has an IR/SIR card — meaning the set was designed with connected artwork.
+function detectChainSets(cards: TcgCard[]): Set<string> {
+  const setCoverage = new Map<string, Set<number>>();
+  for (const card of cards) {
+    const sid = card.set?.id;
+    if (!sid) continue;
+    if (!setCoverage.has(sid)) setCoverage.set(sid, new Set());
+    for (const d of card.nationalPokedexNumbers ?? []) setCoverage.get(sid)!.add(d);
+  }
+  const chainSets = new Set<string>();
+  for (const [sid, dexNums] of setCoverage) {
+    for (const chain of GEN1_CHAINS) {
+      if (chain.length > 1 && chain.every((d) => dexNums.has(d))) {
+        chainSets.add(sid);
+        break;
+      }
+    }
+  }
+  return chainSets;
+}
+
 
 
 interface TcgCard {
@@ -45,7 +78,8 @@ export interface TcgImageResult { tcgUrl: string | null }
 const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
-  const best = new Map<number, { score: number; date: string; tcgUrl: string | null }>();
+  const chainSets = detectChainSets(cards);
+  const best = new Map<number, { chain: boolean; score: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
     if (isGimmick(card)) continue;
@@ -55,15 +89,17 @@ function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
+    const chain = chainSets.has(card.set?.id ?? "");
     const date = card.set?.releaseDate ?? "0000-00-00";
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const cur = best.get(dexNum);
       const better =
         !cur ||
-        score < cur.score ||
-        (score === cur.score && date > cur.date);
-      if (better) best.set(dexNum, { score, date, tcgUrl });
+        (!cur.chain && chain) ||
+        (cur.chain === chain && score < cur.score) ||
+        (cur.chain === chain && score === cur.score && date > cur.date);
+      if (better) best.set(dexNum, { chain, score, date, tcgUrl });
     }
   }
 

@@ -12,6 +12,9 @@ interface Props {
 const OFFICIAL_ART = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
+const HOME_SPRITE = (id: number) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
+
 function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
   return [
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
@@ -96,23 +99,25 @@ export default function PokemonCard({ pokemon }: Props) {
           </p>
         </div>
 
-        {/* ── Sprite + type pills ── */}
+        {/* ── Sprite area ── */}
         <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
-          {/* Sprite bottom-right above type pills */}
           <div className="absolute bottom-1 right-1 w-16 h-16">
             <Image
-              src={pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id)}
+              src={HOME_SPRITE(pokemon.id)}
               alt={pokemon.name}
               fill
               sizes="64px"
-              className="object-contain drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)]"
+              className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]"
               loading="lazy"
             />
           </div>
         </div>
 
-        {/* ── Type pills ── */}
-        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">
+        {/* ── Frosted footer: type pills ── */}
+        <div
+          className="relative z-10 px-2.5 py-2 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[32px] backdrop-blur-md"
+          style={{ backgroundColor: `${typeColor}40`, borderTop: `1px solid ${typeColor}60` }}
+        >
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (

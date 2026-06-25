@@ -28,29 +28,33 @@ export async function fetchPokemonList(
   limit = 151,
   offset = 0
 ): Promise<PokemonListItem[]> {
-  const res = await fetch(
-    `${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`,
-    { next: { revalidate: 86400 } }
-  );
-  if (!res.ok) throw new Error("Failed to fetch Pokémon list");
-  const data = await res.json();
-  return data.results as PokemonListItem[];
+  try {
+    const res = await fetch(
+      `${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`,
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.results as PokemonListItem[];
+  } catch { return []; }
 }
 
 export async function fetchPokemon(
   nameOrId: string | number
-): Promise<Pokemon> {
-  const res = await fetch(`${BASE_URL}/pokemon/${nameOrId}`, {
-    next: { revalidate: 86400 },
-  });
-  if (!res.ok) throw new Error(`Failed to fetch Pokémon: ${nameOrId}`);
-  return res.json();
+): Promise<Pokemon | null> {
+  try {
+    const res = await fetch(`${BASE_URL}/pokemon/${nameOrId}`, {
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch { return null; }
 }
 
 export async function fetchFirst151(): Promise<Pokemon[]> {
   const list = await fetchPokemonList(151);
-  const pokemon = await Promise.all(list.map((p) => fetchPokemon(p.name)));
-  return pokemon;
+  const results = await Promise.all(list.map((p) => fetchPokemon(p.name)));
+  return results.filter((p): p is Pokemon => p !== null);
 }
 
 // Pull out just what the UI needs so client bundles stay lean

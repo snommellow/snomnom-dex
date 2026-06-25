@@ -16,27 +16,28 @@ export default function PokemonCard({ pokemon }: Props) {
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
+  const hasTcg = !!pokemon.tcgImageUrl;
 
   return (
-    <article className="group relative cursor-pointer select-none" style={{ perspective: "600px" }}>
-      {/* Magazine cover card */}
+    <article
+      className="group relative cursor-pointer select-none"
+      style={{ perspective: "600px" }}
+    >
       <div
-        className="relative flex flex-col overflow-hidden rounded-sm shadow-[2px_6px_16px_rgba(0,0,0,0.4)] group-hover:shadow-[4px_14px_28px_rgba(0,0,0,0.55)] group-hover:-translate-y-2 transition-all duration-300"
+        className="relative flex flex-col overflow-hidden rounded-sm shadow-[2px_6px_16px_rgba(0,0,0,0.4)] group-hover:shadow-[4px_14px_32px_rgba(0,0,0,0.6)] group-hover:-translate-y-2 transition-all duration-300"
         style={{ background: "#fff", border: `3px solid ${typeColor}` }}
       >
         {/* ── Masthead ── */}
         <div
-          className="flex items-center justify-between px-1.5 py-0.5"
+          className="flex items-center justify-between px-2 py-1 flex-shrink-0"
           style={{ backgroundColor: typeColor }}
         >
-          {/* Publication mark — left */}
           <span
             className="text-white font-black italic leading-none"
             style={{ fontSize: 11, letterSpacing: ".04em", opacity: 0.9 }}
           >
             POKÉDEX
           </span>
-          {/* Issue number — right */}
           <span
             className="text-white font-black leading-none"
             style={{ fontSize: 11, letterSpacing: ".06em" }}
@@ -45,8 +46,8 @@ export default function PokemonCard({ pokemon }: Props) {
           </span>
         </div>
 
-        {/* ── Headline (Pokémon name) ── */}
-        <div className="px-1.5 pt-1 pb-0.5" style={{ backgroundColor: "#fff" }}>
+        {/* ── Headline ── */}
+        <div className="px-2 pt-1.5 pb-1 flex-shrink-0" style={{ backgroundColor: "#fff" }}>
           <p
             className="font-black capitalize leading-tight truncate"
             style={{ fontSize: 15, color: typeColor, letterSpacing: "-.01em" }}
@@ -54,43 +55,85 @@ export default function PokemonCard({ pokemon }: Props) {
             {pokemon.name}
           </p>
           <p
-            className="font-semibold leading-none"
-            style={{ fontSize: 9, color: "#999", letterSpacing: ".06em", textTransform: "uppercase" }}
+            className="font-semibold leading-none mt-0.5"
+            style={{ fontSize: 9, color: "#aaa", letterSpacing: ".06em", textTransform: "uppercase" }}
           >
             The Games. The Shows.
           </p>
         </div>
 
-        {/* ── Cover art ── */}
+        {/* ── Artwork area ── */}
         <div
-          className="relative mx-1.5 mb-1 rounded-sm overflow-hidden flex items-center justify-center"
-          style={{
-            background: `linear-gradient(160deg, ${typeColor}22 0%, ${typeColor}08 100%)`,
-            minHeight: 148,
-          }}
+          className="relative mx-1.5 mb-1 overflow-hidden flex items-center justify-center"
+          style={{ minHeight: 148, borderRadius: 2 }}
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `radial-gradient(ellipse at 50% 70%, ${typeColor}30 0%, transparent 65%)`,
-            }}
-          />
-          <div className="relative w-32 h-32 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10">
-            <Image
-              src={spriteUrl}
-              alt={pokemon.name}
-              fill
-              sizes="128px"
-              className="object-contain"
-              style={pixelated ? { imageRendering: "pixelated" } : undefined}
-              loading="lazy"
-            />
-          </div>
+          {hasTcg ? (
+            <>
+              {/* TCG card fills the frame, cropped to show the art zone (top ~55%) */}
+              <Image
+                src={pokemon.tcgImageUrl!}
+                alt={`${pokemon.name} TCG card`}
+                fill
+                sizes="200px"
+                className="object-cover object-top scale-[1.08] group-hover:scale-[1.14] transition-transform duration-500"
+                loading="lazy"
+              />
+              {/* Dark gradient at bottom so text/pills stay readable */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.55) 100%)",
+                }}
+              />
+              {/* Sprite overlaid — small, top-right corner */}
+              <div
+                className="absolute top-1 right-1 w-10 h-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10"
+              >
+                <Image
+                  src={spriteUrl}
+                  alt={pokemon.name}
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                  style={pixelated ? { imageRendering: "pixelated" } : undefined}
+                  loading="lazy"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Fallback: type-colour gradient + centred sprite */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(160deg, ${typeColor}33 0%, ${typeColor}0d 100%)`,
+                }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `radial-gradient(ellipse at 50% 70%, ${typeColor}44 0%, transparent 65%)`,
+                }}
+              />
+              <div className="relative w-32 h-32 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg z-10">
+                <Image
+                  src={spriteUrl}
+                  alt={pokemon.name}
+                  fill
+                  sizes="128px"
+                  className="object-contain"
+                  style={pixelated ? { imageRendering: "pixelated" } : undefined}
+                  loading="lazy"
+                />
+              </div>
+            </>
+          )}
         </div>
 
-        {/* ── Cover lines (type pills) — single row ── */}
+        {/* ── Type pills — single row ── */}
         <div
-          className="px-2 pb-2 pt-1 flex flex-row flex-wrap gap-1"
+          className="px-2 pb-2 pt-1 flex flex-row flex-wrap gap-1 flex-shrink-0"
           style={{ backgroundColor: "#fff" }}
         >
           {pokemon.types.map((type) => {
@@ -119,9 +162,9 @@ export default function PokemonCard({ pokemon }: Props) {
           })}
         </div>
 
-        {/* ── Barcode strip at bottom (decorative) ── */}
+        {/* ── Barcode strip ── */}
         <div
-          className="h-[5px] w-full"
+          className="h-[5px] w-full flex-shrink-0"
           style={{ backgroundColor: typeColor, opacity: 0.7 }}
         />
       </div>

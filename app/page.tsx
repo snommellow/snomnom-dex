@@ -1,7 +1,5 @@
 import { Suspense } from "react";
 import PokedexGrid from "@/components/PokedexGrid";
-import { SpriteStyleProvider } from "@/components/SpriteStyleContext";
-import SettingsButton from "@/components/SettingsButton";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +26,7 @@ function GridSkeleton() {
 
 export default function Home() {
   return (
-    <SpriteStyleProvider>
+    <>
       {/* Wood-grain shelf background */}
       <div
         className="min-h-screen"
@@ -68,9 +66,6 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ml-auto">
-              <SettingsButton />
-            </div>
           </div>
         </header>
 
@@ -86,6 +81,6 @@ export default function Home() {
           </Suspense>
         </main>
       </div>
-    </SpriteStyleProvider>
+    </>
   );
 }

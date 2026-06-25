@@ -46,7 +46,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.55 }}
+            style={{ opacity: 0.55, transform: "scale(1.18)", transformOrigin: "top center" }}
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
@@ -96,8 +96,20 @@ export default function PokemonCard({ pokemon }: Props) {
           </p>
         </div>
 
-        {/* ── Spacer so type pills sit at the bottom ── */}
-        <div className="flex-1" style={{ minHeight: 120 }} />
+        {/* ── Sprite + type pills ── */}
+        <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
+          {/* Sprite bottom-right above type pills */}
+          <div className="absolute bottom-1 right-1 w-16 h-16">
+            <Image
+              src={pokemon.artworkUrl ?? OFFICIAL_ART(pokemon.id)}
+              alt={pokemon.name}
+              fill
+              sizes="64px"
+              className="object-contain drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)]"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

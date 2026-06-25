@@ -19,7 +19,7 @@ export default function PokemonCard({ pokemon }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
-  const candidates = [...pokemon.bgCandidates, OFFICIAL_ART(pokemon.id)];
+  const candidates = [...(pokemon.bgCandidates ?? []), OFFICIAL_ART(pokemon.id)];
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 

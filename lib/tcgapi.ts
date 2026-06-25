@@ -1,5 +1,42 @@
 const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
+// ── PokéOS TCG Pocket star cards ──────────────────────────────────────────────
+// Set 384, cards 227-250 — full-art Pocket "star" tier illustrations
+const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless/384";
+
+// Maps national dex number → PokéOS card number
+const POCKET_STAR_MAP: Record<number, number> = {
+  1:   227, // Bulbasaur
+  44:  228, // Gloom
+  112: 229, // Rhydon
+  4:   230, // Charmander
+  59:  231, // Arcanine
+  134: 232, // Vaporeon
+  130: 233, // Gyarados
+  131: 234, // Lapras
+  101: 235, // Electrode
+  6:   236, // Charizard
+  79:  237, // Slowpoke
+  50:  238, // Diglett
+  104: 239, // Cubone
+  31:  240, // Nidoqueen
+  40:  241, // Wigglytuff
+  94:  242, // Gengar
+  92:  243, // Gastly
+  149: 244, // Dragonite
+  9:   245, // Blastoise
+  93:  246, // Haunter
+  132: 247, // Ditto
+  133: 248, // Eevee
+  121: 249, // Starmie
+  143: 250, // Snorlax
+};
+
+export function getPocketStarUrl(dexId: number): string | null {
+  const n = POCKET_STAR_MAP[dexId];
+  return n != null ? `${POKEOS_BASE}/${n}.png` : null;
+}
+
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
 
 const PREMIUM_RARITIES = [

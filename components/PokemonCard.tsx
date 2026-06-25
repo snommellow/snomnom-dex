@@ -15,9 +15,10 @@ const OFFICIAL_ART = (id: number) =>
 const HOME_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
 
-function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null }): string[] {
+function bgCandidates(pokemon: { id: number; tcgImageUrl: string | null; pocketImageUrl: string | null }): string[] {
   return [
     ...(pokemon.tcgImageUrl ? [pokemon.tcgImageUrl] : []),
+    ...(pokemon.pocketImageUrl ? [pokemon.pocketImageUrl] : []),
     OFFICIAL_ART(pokemon.id),
   ];
 }

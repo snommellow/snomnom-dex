@@ -61,9 +61,14 @@ export interface PokemonSummary {
   spriteUrl: string | null;
   artworkUrl: string | null;
   tcgImageUrl: string | null;
+  pocketImageUrl: string | null;
 }
 
-export function toPokemonSummary(p: Pokemon, tcgImageUrl: string | null = null): PokemonSummary {
+export function toPokemonSummary(
+  p: Pokemon,
+  tcgImageUrl: string | null = null,
+  pocketImageUrl: string | null = null,
+): PokemonSummary {
   return {
     id: p.id,
     name: p.name,
@@ -71,5 +76,6 @@ export function toPokemonSummary(p: Pokemon, tcgImageUrl: string | null = null):
     spriteUrl: p.sprites.front_default,
     artworkUrl: p.sprites.other["official-artwork"].front_default,
     tcgImageUrl,
+    pocketImageUrl,
   };
 }

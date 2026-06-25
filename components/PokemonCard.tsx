@@ -101,7 +101,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Sprite area ── */}
         <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
-          <div className="absolute bottom-1 right-1 w-24 h-24">
+          <div className="absolute bottom-1 right-1 w-10 h-10">
             <Image
               src={HOME_SPRITE(pokemon.id)}
               alt={pokemon.name}
@@ -121,12 +121,14 @@ export default function PokemonCard({ pokemon }: Props) {
               <span
                 key={type}
                 className="inline-flex items-center gap-0.5 overflow-hidden rounded-full
-                           text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
+                           text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0
+                           backdrop-blur-md"
                 style={{
-                  backgroundColor: bg,
+                  backgroundColor: `${bg}99`,
                   fontSize: 8,
                   padding: "2px 6px 2px 3px",
                   textShadow: "0 1px 2px rgba(0,0,0,.45)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

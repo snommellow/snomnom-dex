@@ -19,23 +19,37 @@ export default function PokemonCard({ pokemon }: Props) {
     pokemon.artworkUrl ??
     `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
 
+  const bgArtUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+
   const spriteUrl = getSpriteUrl(pokemon.id, style);
   const pixelated = style === "gb" || style === "gen1" || style === "pixel";
   const showSprite = style !== "modern";
 
   return (
     <article className="group cursor-pointer select-none">
+      {/* Card container — position:relative so the bg image can fill it */}
       <div
-        className="flex flex-col overflow-hidden rounded-xl bg-white
+        className="relative flex flex-col overflow-hidden rounded-xl bg-white
                    shadow-[0_4px_14px_rgba(0,0,0,0.25)]
                    hover:shadow-[0_8px_24px_rgba(0,0,0,0.38)]
                    hover:-translate-y-1
                    transition-all duration-200"
         style={{ border: `2.5px solid ${typeColor}` }}
       >
+        {/* ── Full-card background: official artwork, textless, low opacity ── */}
+        <Image
+          src={bgArtUrl}
+          alt=""
+          aria-hidden
+          fill
+          sizes="160px"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+          loading="lazy"
+        />
+
         {/* ── Masthead strip ── */}
         <div
-          className="flex items-center justify-between px-2.5 py-1 flex-shrink-0"
+          className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
           style={{ backgroundColor: typeColor }}
         >
           <span className="text-white font-black italic leading-none"
@@ -49,7 +63,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Name + tagline ── */}
-        <div className="px-2.5 pt-1.5 pb-1 bg-white flex-shrink-0">
+        <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0">
           <p
             className="font-black capitalize leading-tight truncate"
             style={{ fontSize: 14, color: typeColor }}
@@ -64,36 +78,23 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Artwork area ── */}
         <div
-          className="relative mx-1.5 overflow-hidden flex-shrink-0"
+          className="relative z-10 mx-1.5 overflow-hidden flex-shrink-0"
           style={{
             height: 148,
             borderRadius: 6,
             background: `linear-gradient(160deg, ${typeColor}28 0%, ${typeColor}10 100%)`,
           }}
         >
-          {/* TCG card art — full background wallpaper */}
-          {pokemon.tcgImageUrl && (
-            <Image
-              src={pokemon.tcgImageUrl}
-              alt=""
-              aria-hidden
-              fill
-              sizes="160px"
-              className="object-cover opacity-25 z-0"
-              loading="lazy"
-            />
-          )}
-
           {/* Faint radial glow */}
           <div
-            className="absolute inset-0 z-[1]"
+            className="absolute inset-0"
             style={{
               background: `radial-gradient(ellipse at 50% 60%, ${typeColor}40 0%, transparent 68%)`,
             }}
           />
 
           {/* Official artwork — large, centered, pops on hover */}
-          <div className="absolute inset-0 flex items-center justify-center z-[2]">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="relative w-32 h-32
                             group-hover:scale-110 group-hover:-translate-y-1
                             transition-transform duration-300 ease-out
@@ -111,7 +112,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
           {/* Sprite badge — bottom-right, visible when not on Modern */}
           {showSprite && (
-            <div className="absolute bottom-1 right-1 w-8 h-8 z-[3]
+            <div className="absolute bottom-1 right-1 w-8 h-8 z-20
                             opacity-70 group-hover:opacity-100
                             transition-opacity duration-200">
               <Image
@@ -129,7 +130,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Type pills ── */}
-        <div className="px-2.5 py-1.5 flex flex-row flex-wrap gap-1 bg-white flex-shrink-0">
+        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-wrap gap-1 flex-shrink-0">
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (

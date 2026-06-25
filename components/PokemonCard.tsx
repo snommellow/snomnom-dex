@@ -89,7 +89,7 @@ export default function PokemonCard({ pokemon }: Props) {
                 textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
               }}
             >
-              {pokemon.genus}
+              The {pokemon.genus.replace(/\s*Pokémon\s*/i, "").trim()}
             </p>
           )}
         </div>

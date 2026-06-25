@@ -110,12 +110,12 @@ export default function PokemonCard({ pokemon }: Props) {
         <div
           className="absolute left-0 right-0 z-[1] pointer-events-none"
           style={{
-            top: 22,
-            height: 56,
+            top: 0,
+            height: 80,
             backdropFilter: "blur(4px)",
             WebkitBackdropFilter: "blur(4px)",
-            maskImage: "linear-gradient(to top, transparent 0%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 100%)",
+            maskImage: "linear-gradient(to top, transparent 0%, black 60%)",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 60%)",
           }}
         />
 

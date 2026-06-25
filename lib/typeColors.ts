@@ -1,24 +1,26 @@
-export const TYPE_BADGE: Record<string, string> = {
-  normal:   "bg-gray-400/20 text-gray-700 ring-gray-400/30",
-  fire:     "bg-orange-400/20 text-orange-700 ring-orange-400/30",
-  water:    "bg-blue-400/20 text-blue-700 ring-blue-400/30",
-  electric: "bg-yellow-400/20 text-yellow-700 ring-yellow-400/30",
-  grass:    "bg-green-400/20 text-green-700 ring-green-400/30",
-  ice:      "bg-cyan-400/20 text-cyan-700 ring-cyan-400/30",
-  fighting: "bg-red-600/20 text-red-800 ring-red-600/30",
-  poison:   "bg-purple-400/20 text-purple-700 ring-purple-400/30",
-  ground:   "bg-amber-500/20 text-amber-800 ring-amber-500/30",
-  flying:   "bg-indigo-400/20 text-indigo-700 ring-indigo-400/30",
-  psychic:  "bg-pink-400/20 text-pink-700 ring-pink-400/30",
-  bug:      "bg-lime-400/20 text-lime-700 ring-lime-400/30",
-  rock:     "bg-yellow-700/20 text-yellow-900 ring-yellow-700/30",
-  ghost:    "bg-purple-700/20 text-purple-900 ring-purple-700/30",
-  dragon:   "bg-violet-600/20 text-violet-800 ring-violet-600/30",
-  dark:     "bg-gray-700/20 text-gray-900 ring-gray-700/30",
-  steel:    "bg-slate-400/20 text-slate-700 ring-slate-400/30",
-  fairy:    "bg-pink-300/20 text-pink-700 ring-pink-300/30",
+// Exact hex values from the Pokémon Home / Unbound reference
+export const TYPE_COLOR: Record<string, string> = {
+  normal:   "#828282",
+  fire:     "#e4613e",
+  water:    "#3a9de2",
+  electric: "#dfbc28",
+  grass:    "#439837",
+  ice:      "#47c8c8",
+  fighting: "#e49021",
+  poison:   "#9354cb",
+  ground:   "#a4733c",
+  flying:   "#74aad0",
+  psychic:  "#e96c8c",
+  bug:      "#9f9f28",
+  rock:     "#a9a481",
+  ghost:    "#6f4570",
+  dragon:   "#576fbc",
+  dark:     "#4f4747",
+  steel:    "#77b2cb",
+  fairy:    "#e18ce1",
 };
 
+// Card gradient tints (subtle, derived from type colour)
 export const TYPE_GRADIENT: Record<string, string> = {
   normal:   "from-gray-200 via-gray-100 to-white",
   fire:     "from-orange-200 via-red-100 to-white",
@@ -26,7 +28,7 @@ export const TYPE_GRADIENT: Record<string, string> = {
   electric: "from-yellow-200 via-amber-100 to-white",
   grass:    "from-green-200 via-lime-100 to-white",
   ice:      "from-cyan-200 via-sky-100 to-white",
-  fighting: "from-red-200 via-orange-100 to-white",
+  fighting: "from-amber-200 via-orange-100 to-white",
   poison:   "from-purple-200 via-pink-100 to-white",
   ground:   "from-amber-200 via-yellow-100 to-white",
   flying:   "from-indigo-200 via-sky-100 to-white",
@@ -40,24 +42,29 @@ export const TYPE_GRADIENT: Record<string, string> = {
   fairy:    "from-pink-200 via-rose-100 to-white",
 };
 
-// Solid dot colour for the type filter pills
+// Dot colour used in the filter pills sidebar
 export const TYPE_DOT: Record<string, string> = {
-  normal:   "bg-gray-400",
-  fire:     "bg-orange-500",
-  water:    "bg-blue-500",
-  electric: "bg-yellow-400",
-  grass:    "bg-green-500",
-  ice:      "bg-cyan-400",
-  fighting: "bg-red-600",
-  poison:   "bg-purple-500",
-  ground:   "bg-amber-500",
-  flying:   "bg-indigo-400",
-  psychic:  "bg-pink-500",
-  bug:      "bg-lime-500",
-  rock:     "bg-yellow-700",
-  ghost:    "bg-purple-700",
-  dragon:   "bg-violet-600",
-  dark:     "bg-gray-700",
-  steel:    "bg-slate-400",
-  fairy:    "bg-pink-300",
+  normal:   "bg-[#828282]",
+  fire:     "bg-[#e4613e]",
+  water:    "bg-[#3a9de2]",
+  electric: "bg-[#dfbc28]",
+  grass:    "bg-[#439837]",
+  ice:      "bg-[#47c8c8]",
+  fighting: "bg-[#e49021]",
+  poison:   "bg-[#9354cb]",
+  ground:   "bg-[#a4733c]",
+  flying:   "bg-[#74aad0]",
+  psychic:  "bg-[#e96c8c]",
+  bug:      "bg-[#9f9f28]",
+  rock:     "bg-[#a9a481]",
+  ghost:    "bg-[#6f4570]",
+  dragon:   "bg-[#576fbc]",
+  dark:     "bg-[#4f4747]",
+  steel:    "bg-[#77b2cb]",
+  fairy:    "bg-[#e18ce1]",
 };
+
+// SVG icon URL from partywhale/pokemon-type-icons (same source as reference)
+export function typeIconUrl(type: string): string {
+  return `https://raw.githubusercontent.com/partywhale/pokemon-type-icons/main/icons/${type}.svg`;
+}

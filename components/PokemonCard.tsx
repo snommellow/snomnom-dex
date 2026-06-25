@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { PokemonSummary } from "@/lib/pokeapi";
-import { TYPE_BADGE, TYPE_GRADIENT } from "@/lib/typeColors";
+import { TYPE_COLOR, TYPE_GRADIENT, typeIconUrl } from "@/lib/typeColors";
 
 interface Props {
   pokemon: PokemonSummary;
@@ -8,8 +8,12 @@ interface Props {
 
 export default function PokemonCard({ pokemon }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
-  const imageUrl = pokemon.artworkUrl ?? pokemon.spriteUrl;
   const gradient = TYPE_GRADIENT[primaryType] ?? "from-gray-100 to-white";
+
+  // Pixel sprite — same source as reference (raw GitHub PokeAPI sprites)
+  const spriteUrl =
+    pokemon.spriteUrl ??
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
 
   return (
     <article
@@ -20,20 +24,17 @@ export default function PokemonCard({ pokemon }: Props) {
         #{String(pokemon.id).padStart(3, "0")}
       </span>
 
-      {/* Sprite */}
-      <div className="relative w-28 h-28 mt-1 drop-shadow-md group-hover:scale-110 transition-transform duration-200">
-        {imageUrl ? (
-          <Image
-            src={imageUrl}
-            alt={pokemon.name}
-            fill
-            sizes="112px"
-            className="object-contain"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-4xl text-black/20">?</div>
-        )}
+      {/* Pixel sprite — rounded rect with inner padding, pixelated rendering */}
+      <div className="relative w-24 h-24 mt-1 rounded-xl bg-white/60 p-1 group-hover:scale-110 transition-transform duration-200 shadow-sm">
+        <Image
+          src={spriteUrl}
+          alt={pokemon.name}
+          fill
+          sizes="96px"
+          className="object-contain"
+          style={{ imageRendering: "pixelated" }}
+          loading="lazy"
+        />
       </div>
 
       {/* Name */}
@@ -41,16 +42,34 @@ export default function PokemonCard({ pokemon }: Props) {
         {pokemon.name}
       </p>
 
-      {/* Type badges */}
-      <div className="flex flex-wrap justify-center gap-1">
-        {pokemon.types.map((type) => (
-          <span
-            key={type}
-            className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold capitalize ring-1 ${TYPE_BADGE[type] ?? "bg-gray-200 text-gray-700 ring-gray-300"}`}
-          >
-            {type}
-          </span>
-        ))}
+      {/* Type pills — solid colour, SVG icon + uppercase white label, fixed 75 px width */}
+      <div className="flex flex-wrap justify-center gap-1.5">
+        {pokemon.types.map((type) => {
+          const bg = TYPE_COLOR[type] ?? "#828282";
+          return (
+            <span
+              key={type}
+              className="inline-flex items-center rounded-full text-white uppercase font-extrabold tracking-[.06em] text-[9px]"
+              style={{
+                backgroundColor: bg,
+                width: 75,
+                padding: "2px 4px 2px 2px",
+                textShadow: "0 1px 2px rgba(0,0,0,.35)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={typeIconUrl(type)}
+                alt=""
+                aria-hidden
+                width={16}
+                height={16}
+                className="flex-shrink-0 mr-1"
+              />
+              <span className="flex-1 text-center">{type}</span>
+            </span>
+          );
+        })}
       </div>
     </article>
   );

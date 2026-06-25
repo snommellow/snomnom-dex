@@ -21,28 +21,28 @@ const POKEOS_POCKET_BASE = `${POKEOS_BASE}/384`;
 
 const POCKET_STAR_MAP: Record<number, number> = {
   1:   227, // Bulbasaur
-  44:  228, // Gloom
-  112: 229, // Rhydon
+  // 228 — Ivysaur card present but not AR quality
+  127: 229, // Pinsir
   4:   230, // Charmander
-  59:  231, // Arcanine
-  134: 232, // Vaporeon
+  78:  231, // Rapidash
+  7:   232, // Squirtle
   130: 233, // Gyarados
   131: 234, // Lapras
   101: 235, // Electrode
-  6:   236, // Charizard
+  65:  236, // Alakazam
   79:  237, // Slowpoke
   50:  238, // Diglett
   104: 239, // Cubone
-  31:  240, // Nidoqueen
-  40:  241, // Wigglytuff
+  // 240 — Machop card present but not AR quality
+  34:  241, // Nidoking
   42:  242, // Golbat
-  // 243 — unidentified
+  110: 243, // Weezing
   149: 244, // Dragonite
-  9:   245, // Blastoise
-  52:  246, // Meowth
+  18:  245, // Pidgeot
+  // 246 — Abra card present but not AR quality
   132: 247, // Ditto
   133: 248, // Eevee
-  121: 249, // Starmie
+  137: 249, // Porygon
   143: 250, // Snorlax
 };
 

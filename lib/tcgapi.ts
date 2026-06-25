@@ -5,8 +5,6 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
-// sv3pt5 = "151" set — has connected evolution chain artwork for all Gen 1 lines
-const PRIORITY_SETS = new Set(["sv3pt5"]);
 
 
 interface TcgCard {
@@ -47,7 +45,7 @@ export interface TcgImageResult { tcgUrl: string | null }
 const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
-  const best = new Map<number, { score: number; priority: boolean; date: string; tcgUrl: string | null }>();
+  const best = new Map<number, { score: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
     if (isGimmick(card)) continue;
@@ -57,17 +55,15 @@ function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
-    const priority = PRIORITY_SETS.has(card.set?.id ?? "");
     const date = card.set?.releaseDate ?? "0000-00-00";
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const cur = best.get(dexNum);
       const better =
         !cur ||
-        (!cur.priority && priority) ||
-        (cur.priority === priority && score < cur.score) ||
-        (cur.priority === priority && score === cur.score && date > cur.date);
-      if (better) best.set(dexNum, { score, priority, date, tcgUrl });
+        score < cur.score ||
+        (score === cur.score && date > cur.date);
+      if (better) best.set(dexNum, { score, date, tcgUrl });
     }
   }
 

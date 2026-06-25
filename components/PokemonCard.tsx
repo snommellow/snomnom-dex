@@ -75,7 +75,7 @@ export default function PokemonCard({ pokemon }: Props) {
               fontSize: 14,
               color: typeColor,
               filter: "brightness(0.7)",
-              textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
+              textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
             }}
           >
             {pokemon.name}
@@ -85,7 +85,7 @@ export default function PokemonCard({ pokemon }: Props) {
             style={{
               fontSize: 7,
               letterSpacing: ".1em",
-              textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
+              textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff",
             }}
           >
             The Games. The Shows.

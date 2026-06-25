@@ -31,7 +31,7 @@ export default function PokemonCard({ pokemon }: Props) {
                    hover:shadow-[0_8px_24px_rgba(0,0,0,0.38)]
                    hover:-translate-y-1
                    transition-all duration-200"
-        style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}18` }}
+        style={{ border: `2.5px solid ${typeColor}`, backgroundColor: `${typeColor}35` }}
       >
         {/* ── Background layer: zoomed + blurred artwork fills the card ── */}
         {/* The official artwork is a transparent PNG, so we scale it 2.5×  */}
@@ -140,7 +140,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Type pills ── */}
-        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0">
+        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-2 items-center flex-shrink-0">
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (

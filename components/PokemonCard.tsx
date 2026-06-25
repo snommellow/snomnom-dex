@@ -20,8 +20,8 @@ const OFFICIAL_ART = (id: number) =>
 function bgCandidates(pokemon: { id: number; name: string; tcgImageUrl: string | null }): string[] {
   const slug = pokemon.name.toLowerCase();
   return [
-    // Tier 1 — PokéOS textless (placeholder: paste real path once confirmed)
-    `https://www.pokeos.com/tcg/textless/${slug}.png`,
+    // Tier 1 — PokéOS S3 textless asset CDN (direct backend path)
+    `https://s3.pokeos.com/pokeos-uploads/cards/textless/${pokemon.id}.png`,
     // Tier 2 — TCG Pocket textless assets from GitHub (padded national dex ID)
     `https://raw.githubusercontent.com/AikoBliss/pokepocket-assets/main/cards/textless/${String(pokemon.id).padStart(3, "0")}.png`,
     // Tier 3 — pokemontcg.io SIR/IR scan (object-top CSS pans text box out of view)
@@ -66,7 +66,10 @@ export default function PokemonCard({ pokemon }: Props) {
             sizes="300px"
             className="object-cover opacity-25 object-top"
             loading="lazy"
-            onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
+            onError={(e) => {
+              console.error("Card bg failed to load:", e.currentTarget.src);
+              setBgIndex((i) => Math.min(i + 1, candidates.length - 1));
+            }}
           />
         </div>
 

@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         hostname: "www.pokeos.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "s3.pokeos.com",
+        pathname: "/**",
+      },
     ],
   },
 };

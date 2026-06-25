@@ -1,54 +1,5 @@
 const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
-// ── Pocket star cards (PokéOS set 384) ───────────────────────────────────────
-// dexId → card number within the PokéOS set. Add new packs as entries in POCKET_SETS.
-
-const POKEOS_BASE = "https://s3.pokeos.com/pokeos-uploads/tcg/textless";
-
-interface PocketSet {
-  pokeosId: number;
-  name: string;
-  cards: Record<number, number>; // dexId → card number
-}
-
-const POCKET_SETS: PocketSet[] = [
-  {
-    pokeosId: 384,
-    name: "Genetic Apex",
-    cards: {
-      1:   227, // Bulbasaur
-      127: 229, // Pinsir
-      4:   230, // Charmander
-      78:  231, // Rapidash
-      7:   232, // Squirtle
-      130: 233, // Gyarados
-      131: 234, // Lapras
-      101: 235, // Electrode
-      65:  236, // Alakazam
-      79:  237, // Slowpoke
-      50:  238, // Diglett
-      104: 239, // Cubone
-      34:  241, // Nidoking
-      42:  242, // Golbat
-      110: 243, // Weezing
-      149: 244, // Dragonite
-      18:  245, // Pidgeot
-      132: 247, // Ditto
-      133: 248, // Eevee
-      137: 249, // Porygon
-      143: 250, // Snorlax
-    },
-  },
-  // Add new Pocket packs here as PokéOS adds them
-];
-
-export function getPocketStarUrls(dexId: number): string[] {
-  return POCKET_SETS.flatMap((s) => {
-    const n = s.cards[dexId];
-    return n != null ? [`${POKEOS_BASE}/${s.pokeosId}/${n}.png`] : [];
-  });
-}
-
 // ── TCG card images (pokemontcg.io) ──────────────────────────────────────────
 
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);

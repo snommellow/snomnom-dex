@@ -2,63 +2,40 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
 // ── Rarity tiers ─────────────────────────────────────────────────────────────
 
-// TCG Pocket star full-art cards — uses ★ (U+2605 BLACK STAR), not ☆
-const POCKET_STAR_RARITIES = [
-  "♛",    // crown rare (rarest)
-  "★★★",  // 3-star immersive rare
-  "★★",   // 2-star ex full-art
-  "★",    // 1-star rare
-];
-
-const POCKET_SETS = ["a1", "a1a", "a2", "a2a", "a2b"];
-
 const PREMIUM_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
-  ...POCKET_STAR_RARITIES,
 ];
 
 // Only full-art illustration cards — anything with a text box is excluded
 const ACCEPTABLE_RARITIES = [
   "Special Illustration Rare",
   "Illustration Rare",
-  ...POCKET_STAR_RARITIES,
 ];
 
-// Anything at or below this is "standard layout" — text box, common frame.
-// Pocket diamond symbols (◇–◇◇◇◇) are commons/uncommons in that product.
-const JUNK_RARITIES = new Set([
-  "Common", "Uncommon", "Promo",
-  "◇", "◇◇", "◇◇◇", "◇◇◇◇",  // TCG Pocket diamond tiers
-]);
+const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
 function rarityScore(rarity: string): number {
   const order = [
-    "★★★",                        // 0  — Pocket 3-star immersive
-    "Special Illustration Rare",  // 1
-    "★★",                         // 2  — Pocket 2-star ex full-art
-    "Illustration Rare",          // 3
-    "★",                          // 4  — Pocket 1-star
-    "♛",                          // 5  — Pocket crown
-    "Ultra Rare",                 // 6
-    "Secret Rare",                // 7
-    "Rare Holo",                  // 8
-    "Rare",                       // 9
+    "Special Illustration Rare",
+    "Illustration Rare",
+    "Ultra Rare",
+    "Secret Rare",
+    "Rare Holo",
+    "Rare",
   ];
   const idx = order.indexOf(rarity);
-  return idx === -1 ? order.length + 10 : idx;  // junk gets a very high score
+  return idx === -1 ? order.length + 10 : idx;
 }
 
 // ── Sets to prioritise for chain/scene art ────────────────────────────────────
 
 const PRIORITY_SETS = [
-  "a1",         // TCG Pocket — Genetic Apex (Gen 1 immersive art)
-  "a1a",        // TCG Pocket — Mythical Island
   "sv3pt5",     // Scarlet & Violet—151 (Gen 1 chain art)
   "swsh12pt5",  // Crown Zenith
 ];
 
-// ── Gimmick detection (subtype + name) ───────────────────────────────────────
+// ── Gimmick detection ─────────────────────────────────────────────────────────
 
 interface TcgCard {
   id: string;
@@ -70,8 +47,8 @@ interface TcgCard {
   subtypes: string[];
 }
 
-// Only exclude older power-creep mechanics that bloated card sizes (MEGA, VMAX, VSTAR).
-// Modern lowercase "ex" cards (SV era) are the primary IR/SIR full-art source — keep them.
+// Only exclude older power-creep mechanics. Modern lowercase "ex" (SV era)
+// and GX cards can be IR/SIR full-art, so they're allowed.
 const EXCLUDED_SUBTYPES = new Set([
   "MEGA", "Mega", "VMAX", "VSTAR", "V-UNION",
 ]);
@@ -90,21 +67,12 @@ function isJunkRarity(rarity: string): boolean {
 
 // ── Best-card map builder ─────────────────────────────────────────────────────
 
-function buildBestMap(
-  cards: TcgCard[],
-  rejectJunk = true
-): Map<number, string> {
-  const best = new Map<
-    number,
-    { score: number; prioritySet: boolean; date: string; url: string }
-  >();
+function buildBestMap(cards: TcgCard[], rejectJunk = true): Map<number, string> {
+  const best = new Map<number, { score: number; prioritySet: boolean; date: string; url: string }>();
 
   for (const card of cards) {
     if (isGimmickVariant(card)) continue;
-    const isPocketSet = POCKET_SETS.includes(card.set?.id ?? "");
-    // For Pocket sets, only allow star/crown rarities (skip diamond commons)
-    if (isPocketSet && isJunkRarity(card.rarity ?? "")) continue;
-    if (!isPocketSet && rejectJunk && isJunkRarity(card.rarity ?? "")) continue;
+    if (rejectJunk && isJunkRarity(card.rarity ?? "")) continue;
 
     const url = card.images?.large ?? card.images?.small;
     if (!url) continue;
@@ -115,16 +83,11 @@ function buildBestMap(
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const current = best.get(dexNum);
-
-      // Priority order: priority set > rarity score > newest date
       const isBetter =
         !current ||
         (!current.prioritySet && prioritySet) ||
         (current.prioritySet === prioritySet && score < current.score) ||
-        (current.prioritySet === prioritySet &&
-          score === current.score &&
-          date > current.date);
-
+        (current.prioritySet === prioritySet && score === current.score && date > current.date);
       if (isBetter) best.set(dexNum, { score, prioritySet, date, url });
     }
   }
@@ -134,18 +97,10 @@ function buildBestMap(
 
 // ── API helpers ───────────────────────────────────────────────────────────────
 
-// IR/SIR rarity filter already ensures quality — only exclude older MEGA/VMAX/VSTAR bloat.
-// Modern lowercase "ex" (SV era) and GX cards can be IR/SIR full-art, so they're allowed.
-const SUBTYPE_EXCLUSION =
-  "-subtypes:mega -subtypes:vmax -subtypes:vstar";
+const SUBTYPE_EXCLUSION = "-subtypes:mega -subtypes:vmax -subtypes:vstar";
 
-const PREMIUM_RARITY_CLAUSE = PREMIUM_RARITIES
-  .map((r) => `rarity:"${r}"`)
-  .join(" OR ");
-
-const ACCEPTABLE_RARITY_CLAUSE = ACCEPTABLE_RARITIES
-  .map((r) => `rarity:"${r}"`)
-  .join(" OR ");
+const PREMIUM_RARITY_CLAUSE = PREMIUM_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
+const ACCEPTABLE_RARITY_CLAUSE = ACCEPTABLE_RARITIES.map((r) => `rarity:"${r}"`).join(" OR ");
 
 async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
@@ -162,37 +117,18 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   }
 }
 
-// Pass 1 — TCG Pocket sets, all cards (star filtering done client-side via rarityScore)
-async function fetchPassPocket(names: string[]): Promise<TcgCard[]> {
-  const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  const setQ  = POCKET_SETS.map((s) => `set.id:${s}`).join(" OR ");
-  const cards = await tcgFetch(`(${nameQ}) (${setQ})`);
-  // Log unique rarities found so we can verify the rarity strings
-  if (cards.length) {
-    const rarities = [...new Set(cards.map(c => c.rarity))];
-    console.log("[Pocket] found rarities:", rarities, "total cards:", cards.length);
-  } else {
-    console.log("[Pocket] no cards returned — API may not have Pocket sets yet");
-  }
-  return cards;
-}
-
-// Pass 2 — SV priority sets + IR/SIR
+// Pass 1 — priority sets (sv3pt5, swsh12pt5) + IR/SIR only
 async function fetchPass1(names: string[]): Promise<TcgCard[]> {
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  const setQ  = PRIORITY_SETS.filter(s => !POCKET_SETS.includes(s)).map((s) => `set.id:${s}`).join(" OR ");
-  return tcgFetch(
-    `(${nameQ}) (${setQ}) (${PREMIUM_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`
-  );
+  const setQ  = PRIORITY_SETS.map((s) => `set.id:${s}`).join(" OR ");
+  return tcgFetch(`(${nameQ}) (${setQ}) (${PREMIUM_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
-// Pass 3 — any set, IR/SIR only (full-art, no text box)
+// Pass 2 — any set, IR/SIR only
 async function fetchPass2(names: string[]): Promise<TcgCard[]> {
   if (!names.length) return [];
   const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
-  return tcgFetch(
-    `(${nameQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`
-  );
+  return tcgFetch(`(${nameQ}) (${ACCEPTABLE_RARITY_CLAUSE}) ${SUBTYPE_EXCLUSION}`);
 }
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -207,14 +143,11 @@ function chunk<T>(arr: T[], size: number): T[][] {
 
 /**
  * Fetch the best TCG card image for each Pokémon.
- * Only Illustration Rare and Special Illustration Rare cards are accepted
- * (full-art, no text box). Pokémon without IR/SIR return null and fall back
- * to PokeAPI official artwork on the card.
+ * Only IR and SIR full-art cards are used. Pokémon without one return null
+ * and fall back to PokeAPI official artwork.
  *
- * Pass 1 (1 req)  — sv3pt5 + swsh12pt5, IR/SIR  → priority chain/scene art
- * Pass 2 (≤2 req) — any set, IR/SIR only         → any full-art version
- *
- * Total requests: 1–3.
+ * Pass 1 — sv3pt5/swsh12pt5, IR/SIR  (Gen 1 priority art)
+ * Pass 2 — any set, IR/SIR only
  */
 export async function fetchTcgCardImages(
   pokemon: Array<{ name: string; id: number }>
@@ -225,29 +158,18 @@ export async function fetchTcgCardImages(
   }));
 
   const bestMap = new Map<number, string>();
-
   const merge = (map: Map<number, string>) =>
     map.forEach((url, id) => { if (!bestMap.has(id)) bestMap.set(id, url); });
-
   const missing = () =>
     entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
-  // ── Pass 1: SV priority sets, IR/SIR ──
   merge(buildBestMap(await fetchPass1(entries.map((e) => e.displayName))));
 
-  // ── Pass 2: any set, IR/SIR only ──
   const miss2 = missing();
   if (miss2.length) {
     const results = await Promise.all(chunk(miss2, CHUNK).map(fetchPass2));
     merge(buildBestMap(results.flat()));
   }
 
-  // ── Pass 3: TCG Pocket star cards ──
-  const miss3 = missing();
-  if (miss3.length) {
-    merge(buildBestMap(await fetchPassPocket(miss3)));
-  }
-
-  // Pokémon still missing → null → fall back to official artwork
   return entries.map((e) => bestMap.get(e.id) ?? null);
 }

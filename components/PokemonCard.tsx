@@ -83,6 +83,23 @@ export default function PokemonCard({ pokemon }: Props) {
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
+          {/* Blurred edge overlay — same image, filter:blur clipped by parent overflow:hidden */}
+          <Image
+            src={bgUrl}
+            alt=""
+            aria-hidden
+            fill
+            sizes="300px"
+            className="object-cover object-top"
+            style={{
+              opacity: 0.7,
+              transform: "scale(1.05) translateY(5%)",
+              transformOrigin: "top center",
+              filter: "blur(8px)",
+              maskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 65%, black 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 65%, black 100%)",
+            }}
+          />
         </div>
 
         {/* ── Masthead strip ── */}
@@ -145,23 +162,6 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
-        {/* ── Top blur strip ── */}
-        <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
-          top: 0, height: 56,
-          backdropFilter: "blur(4px)",
-          WebkitBackdropFilter: "blur(4px)",
-          maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-          WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-        }} />
-
-        {/* ── Bottom blur strip ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
-          height: 80,
-          backdropFilter: "blur(3px)",
-          WebkitBackdropFilter: "blur(3px)",
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-        }} />
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

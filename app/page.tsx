@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import PokedexGrid from "@/components/PokedexGrid";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 function GridSkeleton() {
   return (

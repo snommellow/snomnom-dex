@@ -156,7 +156,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
         `&select=id,name,number,nationalPokedexNumbers,rarity,set,subtypes`,
-      { cache: "no-store" }
+      { next: { revalidate: 86400 } }
     );
     if (!res.ok) return [];
     const data = await res.json();

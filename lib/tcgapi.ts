@@ -127,9 +127,14 @@ export async function fetchTcgCardImages(
     m.forEach((v, id) => { if (!bestMap.has(id)) bestMap.set(id, v); });
   const missing = () => entries.filter((e) => !bestMap.has(e.id)).map((e) => e.displayName);
 
-  // Pass 1: priority set (151) only
-  const nameQ1 = entries.map((e) => `name:"${e.displayName}"`).join(" OR ");
-  merge(buildBestMap(await tcgFetch(`(${nameQ1}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`)));
+  // Pass 1: priority set (151) only, chunked same as pass 2
+  const p1chunks = await Promise.all(
+    chunk(entries.map((e) => e.displayName), CHUNK).map((names) => {
+      const nameQ = names.map((n) => `name:"${n}"`).join(" OR ");
+      return tcgFetch(`(${nameQ}) set.id:sv3pt5 ${IR_CLAUSE} ${SUB_EXCL}`);
+    })
+  );
+  merge(buildBestMap(p1chunks.flat()));
 
   // Pass 2: all SV sets for anything still missing
   const miss = missing();

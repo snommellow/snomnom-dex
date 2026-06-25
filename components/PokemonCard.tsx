@@ -121,14 +121,15 @@ export default function PokemonCard({ pokemon }: Props) {
               <span
                 key={type}
                 className="inline-flex items-center gap-0.5 overflow-hidden rounded-full
-                           text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0
-                           backdrop-blur-md"
+                           text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
                 style={{
-                  backgroundColor: `${bg}99`,
+                  backgroundColor: `${bg}55`,
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
                   fontSize: 8,
                   padding: "2px 6px 2px 3px",
                   textShadow: "0 1px 2px rgba(0,0,0,.45)",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+                  boxShadow: `0 2px 8px rgba(0,0,0,0.25), inset 0 0 0 1px ${bg}88`,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

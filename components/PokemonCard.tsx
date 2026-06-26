@@ -49,7 +49,7 @@ export default function PokemonCard({ pokemon }: Props) {
     const { left, top, width, height } = el.getBoundingClientRect();
     const cx = (e.clientX - left) / width - 0.5;
     const cy = (e.clientY - top) / height - 0.5;
-    setTilt({ x: cy * -25, y: cx * 25 });
+    setTilt({ x: cy * 35, y: cx * -35 });
     setMouse({ x: ((e.clientX - left) / width) * 100, y: ((e.clientY - top) / height) * 100 });
   }
 

@@ -56,7 +56,7 @@ export default function PokemonCard({ pokemon }: Props) {
           boxShadow: isHovered
             ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
             : `0 4px 14px rgba(0,0,0,0.25)`,
-          transform: `skewY(${tilt.x * 0.4}deg) skewX(${tilt.y * -0.4}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
+          transform: `perspective(600px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
           transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
           willChange: "transform",
         }}
@@ -76,20 +76,24 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top blur strip ── */}
+        {/* ── Top blur strip — fades out during 3D tilt ── */}
         <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
           top: 0, height: 56,
           backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
           maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
           WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
         }} />
 
-        {/* ── Bottom blur strip ── */}
+        {/* ── Bottom blur strip — fades out during 3D tilt ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
           height: 80,
           backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
           maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
         }} />
 
         {/* ── Masthead strip ── */}

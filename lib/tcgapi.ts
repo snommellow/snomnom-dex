@@ -7,12 +7,11 @@ const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 const VGX_RARITIES = new Set(["Ultra Rare", "Rare Ultra", "Rare Secret", "Secret Rare"]);
 
 function subtypeScore(subtypes: string[]): number {
-  // Lower = better: prefer V Alternate Art (bleed art), then GX, then EX, then regular Full Art V
-  if (subtypes.includes("V") && subtypes.includes("Alternate Art")) return 0;
+  // Lower = better: V Alternate Art beats GX beats EX (regular V already filtered out above)
+  if (subtypes.includes("V")) return 0;
   if (subtypes.includes("GX")) return 1;
   if (subtypes.includes("EX")) return 2;
-  if (subtypes.includes("V")) return 3; // regular Full Art V — last resort
-  return 4;
+  return 3;
 }
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo", "Rare", "Rare Holo"]);
 
@@ -104,6 +103,9 @@ function buildBestMap(
     if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
+    // Skip standard Full Art V (gold border); only accept V with Alternate Art (bleed-to-edge)
+    const subs = card.subtypes ?? [];
+    if (subs.includes("V") && !subs.includes("Alternate Art")) continue;
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);

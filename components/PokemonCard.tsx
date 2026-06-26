@@ -66,7 +66,7 @@ export default function PokemonCard({ pokemon }: Props) {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className={`relative flex flex-col overflow-hidden rounded-xl${isHovered ? " card-hovered" : ""}`}
+        className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,

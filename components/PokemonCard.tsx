@@ -76,7 +76,6 @@ export default function PokemonCard({ pokemon }: Props) {
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
           position: "relative",
-          filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
         }}
       >
         {/* ── Book spine sides — pivot at card edge, extend forward to meet front face ── */}
@@ -96,6 +95,8 @@ export default function PokemonCard({ pokemon }: Props) {
             border: `4px solid ${typeColor}`,
             backgroundColor: `${typeColor}35`,
             transform: `translateZ(${DEPTH}px)`,
+            boxShadow: isHovered ? "0 20px 40px rgba(0,0,0,0.5)" : "0 4px 14px rgba(0,0,0,0.25)",
+            transition: "box-shadow 0.4s ease",
           }}
         >
         {/* ── Background layer 1: blurred full image (always shown at edges) ── */}

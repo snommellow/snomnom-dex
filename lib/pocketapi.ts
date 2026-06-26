@@ -3,6 +3,12 @@
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
+// Pocket set IDs start with A or B followed by a digit
+function isPocketSet(setId: string): boolean {
+  return /^[AB]\d/i.test(setId);
+}
+function setIdFromCardId(id: string): string { return id.split("-")[0] ?? ""; }
+
 // Only show star-rarity cards (1★, 2★, 3★) — not diamond commons or Crown rares
 const STAR_RARITIES = ["One Star", "Two Star", "Three Star"] as const;
 
@@ -92,6 +98,43 @@ export async function fetchPocketImages(
         if (ra !== rb) return ra <= rb ? a : b;
         return parseInt(b.localId) > parseInt(a.localId) ? b : a;
       });
+      return { url: cardImageUrl(best) };
+    })
+  );
+}
+
+// Pass 4 fallback: any Pocket card (including commons) for Pokémon with no high-quality card
+async function fetchAnyPocketCards(name: string): Promise<TcgdexCard[]> {
+  try {
+    const res = await fetch(
+      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return [];
+    const json = await res.json();
+    const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+    return all.filter((c) => isPocketSet(setIdFromCardId(c.id)) && c.image);
+  } catch { return []; }
+}
+
+export async function fetchPocketFallback(
+  pokemon: Array<{ id: number; name: string }>
+): Promise<PocketResult[]> {
+  return Promise.all(
+    pokemon.map(async ({ name }) => {
+      const nameLower = name.toLowerCase();
+      const cards = await fetchAnyPocketCards(name);
+      const matched = cards.filter((c) => {
+        const cn = c.name.toLowerCase();
+        return (cn === nameLower || cn.startsWith(nameLower + " ")) && !isExcluded(c.name);
+      });
+      if (!matched.length) return { url: null };
+      // Prefer ex cards (full-art), then pick highest localId
+      const exCards = matched.filter((c) => c.name.toLowerCase().includes(" ex"));
+      const pool = exCards.length ? exCards : matched;
+      const best = pool.reduce((a, b) =>
+        parseInt(b.localId) > parseInt(a.localId) ? b : a
+      );
       return { url: cardImageUrl(best) };
     })
   );

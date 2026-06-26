@@ -7,11 +7,14 @@ const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 const VGX_RARITIES = new Set(["Ultra Rare", "Rare Ultra", "Rare Secret", "Secret Rare"]);
 
 function subtypeScore(subtypes: string[]): number {
-  // Lower = better: V Alternate Art beats GX beats EX (regular V already filtered out above)
-  if (subtypes.includes("V")) return 0;
-  if (subtypes.includes("GX")) return 1;
-  if (subtypes.includes("EX")) return 2;
-  return 3;
+  // Lower = better: VSTAR > VMAX > GX > EX > V Alternate Art > regular V
+  if (subtypes.includes("VSTAR")) return 0;
+  if (subtypes.includes("VMAX")) return 1;
+  if (subtypes.includes("GX")) return 2;
+  if (subtypes.includes("EX")) return 3;
+  if (subtypes.includes("V") && subtypes.includes("Alternate Art")) return 4;
+  if (subtypes.includes("V")) return 5;
+  return 6;
 }
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo", "Rare", "Rare Holo"]);
 
@@ -152,8 +155,8 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
 }
 
 const IR_CLAUSE = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
-// Target V and GX full-art cards; exclude SV ex, VMAX, VSTAR, Mega, Trainer
-const VGX_CLAUSE = `(subtypes:V OR subtypes:GX) -subtypes:VMAX -subtypes:VSTAR -subtypes:ex -supertype:Trainer`;
+// Target VSTAR, VMAX, V, GX full-art cards; exclude SV ex, Mega, Trainer
+const VGX_CLAUSE = `(subtypes:VSTAR OR subtypes:VMAX OR subtypes:V OR subtypes:GX) -subtypes:ex -supertype:Trainer`;
 const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 const CHUNK = 75;
 

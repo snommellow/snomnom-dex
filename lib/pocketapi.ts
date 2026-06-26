@@ -1,11 +1,11 @@
 // TCGdex API — Pokémon TCG Pocket cards
-// https://tcgdex.dev  |  series "tcgp": A1, A1a, A2, A2b, A3 … future sets auto-included
+// https://tcgdex.dev  |  Pocket series IDs: A1, A1a, A2, A2b, B1, B2, B2a, …
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
-// Pocket set IDs all start with "A" (A1, A1a, A2, A2b, A3, …)
+// Pocket set IDs start with A or B followed by a digit (A1, A2b, B1, B2a, …)
 function isPocketSet(setId: string): boolean {
-  return /^A\d/i.test(setId);
+  return /^[AB]\d/i.test(setId);
 }
 
 interface TcgdexCard {
@@ -17,39 +17,25 @@ interface TcgdexCard {
   set: { id: string };
 }
 
-async function tcgdexFetch(url: string): Promise<TcgdexCard[]> {
-  try {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) {
-      console.log("[pocket] HTTP", res.status, url);
-      return [];
-    }
-    const json = await res.json();
-    return (Array.isArray(json) ? json : (json?.data ?? json?.cards ?? [])) as TcgdexCard[];
-  } catch (e) {
-    console.log("[pocket] fetch error:", String(e), url);
-    return [];
-  }
+// Prefer ex/full-art cards over plain cards within Pocket results
+function pocketCardScore(card: TcgdexCard): number {
+  const n = card.name.toLowerCase();
+  if (n.includes(" ex")) return 0;   // e.g. "Beedrill ex"
+  if (n.includes("-ex")) return 1;
+  return 2;
 }
 
-async function fetchPocketCards(dexId: number, name: string): Promise<TcgdexCard[]> {
-  // Try multiple query strategies — TCGdex API parameter names vary
-  const strategies = [
-    `${TCGDEX_BASE}/cards?dexId=${dexId}`,
-    `${TCGDEX_BASE}/cards?nationalPokedexNumber=${dexId}`,
-    `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
-  ];
-
-  for (const url of strategies) {
-    const all = await tcgdexFetch(url);
-    console.log(`[pocket dex${dexId} "${name}"] url=${url.split("?")[1]} total=${all.length} sets=${[...new Set(all.map(c=>c.set?.id))].slice(0,5).join(",")}`);
-    const pocket = all.filter((c) => isPocketSet(c.set?.id ?? ""));
-    if (pocket.length) {
-      console.log(`[pocket dex${dexId}] found ${pocket.length} pocket cards, rarities:`, [...new Set(pocket.map(c => c.rarity))]);
-      return pocket;
-    }
-  }
-  return [];
+async function fetchPocketCards(name: string): Promise<TcgdexCard[]> {
+  try {
+    const res = await fetch(
+      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return [];
+    const json = await res.json();
+    const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+    return all.filter((c) => isPocketSet(c.set?.id ?? "") && c.image);
+  } catch { return []; }
 }
 
 function cardImageUrl(card: TcgdexCard): string {
@@ -59,23 +45,15 @@ function cardImageUrl(card: TcgdexCard): string {
 
 export interface PocketResult { url: string | null }
 
-// Rarity priority: best → worst
-const POCKET_RARITY_ORDER = ["Crown Rare", "Crown", "☆☆☆", "Three Star", "☆☆", "Two Star", "☆", "One Star"];
-
-function rarityScore(rarity: string): number {
-  const idx = POCKET_RARITY_ORDER.indexOf(rarity);
-  return idx === -1 ? 99 : idx;
-}
-
 export async function fetchPocketImages(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<PocketResult[]> {
   return Promise.all(
-    pokemon.map(async ({ id, name }) => {
-      const cards = await fetchPocketCards(id, name);
+    pokemon.map(async ({ name }) => {
+      const cards = await fetchPocketCards(name);
       if (!cards.length) return { url: null };
       const best = cards.reduce((a, b) =>
-        rarityScore(a.rarity ?? "") <= rarityScore(b.rarity ?? "") ? a : b
+        pocketCardScore(a) <= pocketCardScore(b) ? a : b
       );
       return { url: cardImageUrl(best) };
     })

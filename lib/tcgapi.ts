@@ -103,6 +103,9 @@ function buildBestMap(
     if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
+    // For V cards, only accept Alternate Art (bleed-to-edge art); skip standard Full Art V
+    const subs = card.subtypes ?? [];
+    if (subs.includes("V") && !subs.includes("Alternate Art")) continue;
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);

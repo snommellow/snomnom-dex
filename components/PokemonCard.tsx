@@ -58,11 +58,11 @@ export default function PokemonCard({ pokemon }: Props) {
     setIsHovered(false);
   }
 
-  const THICKNESS = 6;
+  const DEPTH = 18;
 
   return (
     <article className="group cursor-pointer select-none">
-      {/* ── 3D wrapper: handles perspective + tilt ── */}
+      {/* ── 3D wrapper: perspective + tilt ── */}
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -76,29 +76,26 @@ export default function PokemonCard({ pokemon }: Props) {
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
           position: "relative",
+          filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
         }}
       >
-        {/* ── Card edges (visible during 3D tilt) ── */}
-        {/* Left */}
-        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "right center", transform: `rotateY(-90deg)` }} />
-        {/* Right */}
-        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "left center", transform: `rotateY(90deg)` }} />
-        {/* Top */}
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "bottom center", transform: `rotateX(90deg)` }} />
-        {/* Bottom */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "top center", transform: `rotateX(-90deg)` }} />
+        {/* ── Book spine sides — only visible during tilt ── */}
+        {/* Left side */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: DEPTH, transformOrigin: "right center", transform: "rotateY(-90deg)", background: `linear-gradient(to right, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Right side */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: DEPTH, transformOrigin: "left center", transform: "rotateY(90deg)", background: `linear-gradient(to left, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Top side */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "bottom center", transform: "rotateX(90deg)", background: `linear-gradient(to bottom, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Bottom side */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "top center", transform: "rotateX(-90deg)", background: `linear-gradient(to top, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
 
-        {/* ── Front face ── */}
+        {/* ── Front face (card content pushed forward) ── */}
         <div
           className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
           style={{
-            border: `2.5px solid ${typeColor}`,
+            border: `4px solid ${typeColor}`,
             backgroundColor: `${typeColor}35`,
-            boxShadow: isHovered
-              ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
-              : `0 4px 14px rgba(0,0,0,0.25)`,
-            transform: `translateZ(${THICKNESS}px)`,
-            transition: "box-shadow 0.3s",
+            transform: `translateZ(${DEPTH}px)`,
           }}
         >
         {/* ── Background layer 1: blurred full image (always shown at edges) ── */}

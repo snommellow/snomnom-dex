@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState, useRef } from "react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 
@@ -27,24 +26,14 @@ export default function PokemonCard({ pokemon }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
-  const [rect, setRect] = useState<DOMRect | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const el = cardRef.current;
     if (!el) return;
-    const r = el.getBoundingClientRect();
-    const cx = (e.clientX - r.left) / r.width - 0.5;
-    const cy = (e.clientY - r.top) / r.height - 0.5;
+    const { left, top, width, height } = el.getBoundingClientRect();
+    const cx = (e.clientX - left) / width - 0.5;
+    const cy = (e.clientY - top) / height - 0.5;
     setTilt({ x: cy * -18, y: cx * 18 });
-    setRect(r);
-  }
-
-  function handleMouseEnter() {
-    setIsHovered(true);
-    if (cardRef.current) setRect(cardRef.current.getBoundingClientRect());
   }
 
   function handleMouseLeave() {
@@ -58,7 +47,7 @@ export default function PokemonCard({ pokemon }: Props) {
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
         style={{
           position: "relative",
@@ -94,6 +83,26 @@ export default function PokemonCard({ pokemon }: Props) {
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
         </div>
+
+        {/* ── Top blur — hidden during 3D tilt to avoid browser backdropFilter bug ── */}
+        <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
+          top: 0, height: 56,
+          backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
+          maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
+        }} />
+
+        {/* ── Bottom blur — hidden during 3D tilt ── */}
+        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
+          height: 80,
+          backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
+        }} />
 
         {/* ── Masthead strip ── */}
         <div
@@ -185,29 +194,6 @@ export default function PokemonCard({ pokemon }: Props) {
           })}
         </div>
       </div>
-
-      {/* Portal blur strips — rendered at body level so backdropFilter works with 3D tilt */}
-      {mounted && rect && createPortal(
-        <>
-          <div style={{
-            position: "fixed", pointerEvents: "none", zIndex: 9999,
-            left: rect.left, top: rect.top, width: rect.width, height: 56,
-            backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
-            maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-            WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-            borderRadius: "12px 12px 0 0",
-          }} />
-          <div style={{
-            position: "fixed", pointerEvents: "none", zIndex: 9999,
-            left: rect.left, top: rect.bottom - 80, width: rect.width, height: 80,
-            backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
-            maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-            borderRadius: "0 0 12px 12px",
-          }} />
-        </>,
-        document.body
-      )}
       </div>
 
     </article>

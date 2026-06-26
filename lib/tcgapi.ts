@@ -101,12 +101,12 @@ function buildBestMap(
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const chain = chainDexMap.get(sid)?.has(dexNum) ?? false;
       const cur = best.get(dexNum);
-      const dateWins = preferOlder ? date < cur!.date : date > cur!.date;
       const better =
         !cur ||
         (!cur.chain && chain) ||
         (cur.chain === chain && score < cur.score) ||
-        (cur.chain === chain && score === cur.score && dateWins);
+        (cur.chain === chain && score === cur.score &&
+          (preferOlder ? date < cur.date : date > cur.date));
       if (better) best.set(dexNum, { chain, score, date, tcgUrl });
     }
   }

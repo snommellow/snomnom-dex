@@ -23,6 +23,11 @@ export default function PokemonCard({ pokemon }: Props) {
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = useState({ x: 50, y: 50 });
+  const [isHovered, setIsHovered] = useState(false);
+
   const [sparkles, setSparkles] = useState<{ id: number; top: number; left: number }[]>([]);
   const sparkleId = useRef(0);
 
@@ -37,11 +42,6 @@ export default function PokemonCard({ pokemon }: Props) {
     const t = setInterval(spawn, 350);
     return () => clearInterval(t);
   }, [isHovered]);
-
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [mouse, setMouse] = useState({ x: 50, y: 50 });
-  const [isHovered, setIsHovered] = useState(false);
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const el = cardRef.current;

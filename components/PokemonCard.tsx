@@ -51,7 +51,7 @@ export default function PokemonCard({ pokemon }: Props) {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className="relative flex flex-col overflow-hidden rounded-xl"
+        className={`relative flex flex-col overflow-hidden rounded-xl${isHovered ? " card-hovered" : ""}`}
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
@@ -118,7 +118,7 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
         {/* ── Name + tagline ── */}
-        <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0">
+        <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
           <p
             className="font-black capitalize leading-tight truncate"
             style={{
@@ -159,6 +159,16 @@ export default function PokemonCard({ pokemon }: Props) {
         </div>
 
 
+        {/* ── Sparkle particles ── */}
+        <div className="absolute inset-0 z-[7] pointer-events-none">
+          <div className="card-sparkle" />
+          <div className="card-sparkle" />
+          <div className="card-sparkle" />
+          <div className="card-sparkle" />
+          <div className="card-sparkle" />
+          <div className="card-sparkle" />
+        </div>
+
         {/* ── Holo rainbow shimmer ── */}
         <div className="absolute inset-0 z-[8] pointer-events-none rounded-xl" style={{
           opacity: isHovered ? 1 : 0,
@@ -183,7 +193,7 @@ export default function PokemonCard({ pokemon }: Props) {
         }} />
 
         {/* ── Type pills ── */}
-        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">
+        <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
           {pokemon.types.map((type) => {
             const bg = TYPE_COLOR[type] ?? "#828282";
             return (

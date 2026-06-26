@@ -94,10 +94,10 @@ export default function PokemonCard({ pokemon }: Props) {
         <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
           maskImage: isHovered
             ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, transparent 15%, black 24%, black 72%, transparent 82%, transparent 100%)",
+            : "linear-gradient(to bottom, transparent 0%, transparent 14%, black 22%, black 80%, transparent 92%, transparent 100%)",
           WebkitMaskImage: isHovered
             ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, transparent 15%, black 24%, black 72%, transparent 82%, transparent 100%)",
+            : "linear-gradient(to bottom, transparent 0%, transparent 14%, black 22%, black 80%, transparent 92%, transparent 100%)",
           transition: "mask-image 0.2s",
         }}>
           <Image

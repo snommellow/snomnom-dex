@@ -101,12 +101,14 @@ export default function PokemonCard({ pokemon }: Props) {
           maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
           overflow: "hidden",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
         }}>
           <div style={{
             position: "absolute", inset: "-20px",
             backgroundImage: `url(${bgUrl})`,
             backgroundSize: "cover", backgroundPosition: "top center",
-            filter: "blur(30px)", opacity: 0.95,
+            filter: "blur(50px)", opacity: 0.95,
           }} />
         </div>
 
@@ -116,12 +118,14 @@ export default function PokemonCard({ pokemon }: Props) {
           maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
           overflow: "hidden",
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
         }}>
           <div style={{
             position: "absolute", inset: "-20px",
             backgroundImage: `url(${bgUrl})`,
             backgroundSize: "cover", backgroundPosition: "top center",
-            filter: "blur(30px)", opacity: 0.95,
+            filter: "blur(50px)", opacity: 0.95,
           }} />
         </div>
 

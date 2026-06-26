@@ -39,7 +39,7 @@ export default function PokemonCard({ pokemon }: Props) {
       setTimeout(() => setSparkles((prev) => prev.filter((s) => s.id !== id)), 1100);
     };
     spawn();
-    const t = setInterval(spawn, 350);
+    const t = setInterval(spawn, 900);
     return () => clearInterval(t);
   }, [isHovered]);
 
@@ -183,11 +183,11 @@ export default function PokemonCard({ pokemon }: Props) {
                 position: "absolute",
                 top: `${s.top}%`,
                 left: `${s.left}%`,
-                width: 4,
-                height: 4,
+                width: 2,
+                height: 2,
                 borderRadius: "50%",
                 background: "white",
-                boxShadow: "0 0 4px 2px rgba(255,255,255,0.95), 0 0 10px 5px rgba(255,255,200,0.7)",
+                boxShadow: "0 0 2px 1px rgba(255,255,255,0.95), 0 0 5px 2px rgba(255,255,200,0.6)",
                 animation: "sparkle 1.1s ease-in-out forwards",
                 pointerEvents: "none",
               }}

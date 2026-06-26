@@ -27,17 +27,15 @@ interface TcgdexCard {
 
 async function fetchPocketCards(dexId: number): Promise<TcgdexCard[]> {
   try {
-    // TCGdex filter: dexId=N returns all cards for that dex number across all sets
     const res = await fetch(
       `${TCGDEX_BASE}/cards?dexId=${dexId}`,
-      { next: { revalidate: 86400 } }
+      { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];
     const all = (await res.json()) as TcgdexCard[];
-    // Keep only TCG Pocket sets (set IDs starting with A) with a star rarity
-    return all.filter(
-      (c) => isPocketSet(c.set?.id ?? "") && POCKET_RARITIES.includes(c.rarity ?? "")
-    );
+    const pocket = all.filter((c) => isPocketSet(c.set?.id ?? ""));
+    if (pocket.length) console.log(`[pocket dex${dexId}] rarities:`, [...new Set(pocket.map(c => c.rarity))]);
+    return pocket;
   } catch { return []; }
 }
 
@@ -57,7 +55,8 @@ export async function fetchPocketImages(
       const cards = await fetchPocketCards(id);
       if (!cards.length) return { url: null };
       const best = cards.reduce((a, b) =>
-        rarityScore(a.rarity ?? "") <= rarityScore(b.rarity ?? "") ? a : b
+        rarityScore(a.rarity ?? "") <= rarityScore(b.rarity ?? "") ? a : b,
+        cards[0]
       );
       return { url: cardImageUrl(best) };
     })

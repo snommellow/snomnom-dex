@@ -160,7 +160,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
 
         {/* ── Sparkle particles ── */}
-        <div className="absolute inset-0 z-[7] pointer-events-none">
+        <div className="absolute inset-0 z-[11] pointer-events-none">
           <div className="card-sparkle" />
           <div className="card-sparkle" />
           <div className="card-sparkle" />

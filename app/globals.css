@@ -26,17 +26,17 @@ body {
 }
 
 @keyframes sparkle {
-  0%   { transform: scale(0) rotate(0deg);   opacity: 0; }
-  20%  { transform: scale(1.2) rotate(72deg); opacity: 1; }
-  80%  { transform: scale(0.9) rotate(216deg); opacity: 0.8; }
-  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+  0%   { transform: scale(0) rotate(0deg);    opacity: 0; }
+  30%  { transform: scale(1.0) rotate(90deg); opacity: 0.9; }
+  70%  { transform: scale(0.8) rotate(230deg); opacity: 0.7; }
+  100% { transform: scale(0) rotate(360deg);  opacity: 0; }
 }
 
 .card-sparkle {
   position: absolute;
   pointer-events: none;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: white;
   opacity: 0;
@@ -52,9 +52,9 @@ body {
   clip-path: polygon(50% 0%, 52% 48%, 100% 50%, 52% 52%, 50% 100%, 48% 52%, 0% 50%, 48% 48%);
 }
 
-.card-hovered .card-sparkle:nth-child(1) { top: 15%; left: 20%; animation: sparkle 1.4s ease-in-out 0.0s infinite; }
-.card-hovered .card-sparkle:nth-child(2) { top: 30%; left: 75%; animation: sparkle 1.6s ease-in-out 0.3s infinite; }
-.card-hovered .card-sparkle:nth-child(3) { top: 55%; left: 15%; animation: sparkle 1.3s ease-in-out 0.6s infinite; }
-.card-hovered .card-sparkle:nth-child(4) { top: 70%; left: 60%; animation: sparkle 1.5s ease-in-out 0.1s infinite; }
-.card-hovered .card-sparkle:nth-child(5) { top: 20%; left: 50%; animation: sparkle 1.7s ease-in-out 0.8s infinite; }
-.card-hovered .card-sparkle:nth-child(6) { top: 80%; left: 35%; animation: sparkle 1.2s ease-in-out 0.4s infinite; }
+.card-hovered .card-sparkle:nth-child(1) { top: 15%; left: 20%; animation: sparkle 3.5s ease-in-out 0.0s infinite; }
+.card-hovered .card-sparkle:nth-child(2) { top: 30%; left: 75%; animation: sparkle 4.0s ease-in-out 1.2s infinite; }
+.card-hovered .card-sparkle:nth-child(3) { top: 55%; left: 15%; animation: sparkle 3.8s ease-in-out 2.4s infinite; }
+.card-hovered .card-sparkle:nth-child(4) { top: 70%; left: 60%; animation: sparkle 4.2s ease-in-out 0.6s infinite; }
+.card-hovered .card-sparkle:nth-child(5) { top: 20%; left: 50%; animation: sparkle 3.6s ease-in-out 3.0s infinite; }
+.card-hovered .card-sparkle:nth-child(6) { top: 80%; left: 35%; animation: sparkle 4.5s ease-in-out 1.8s infinite; }

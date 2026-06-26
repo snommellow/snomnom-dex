@@ -95,24 +95,11 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top blur strip — fades out during 3D tilt ── */}
-        <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
-          top: 0, height: 72,
-          backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          background: "linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, transparent 100%)",
-          maskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
-        }} />
-
-        {/* ── Bottom blur strip — fades out during 3D tilt ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
-          height: 100,
-          backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          background: "linear-gradient(to top, rgba(255,255,255,0.35) 0%, transparent 100%)",
-          maskImage: "linear-gradient(to top, black 40%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to top, black 40%, transparent 100%)",
+        {/* ── Full-card color blur — fades out during 3D tilt ── */}
+        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
+          backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />

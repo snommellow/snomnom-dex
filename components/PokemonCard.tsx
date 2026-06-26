@@ -95,24 +95,26 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top blur strip ── */}
+        {/* ── Top: permanent blur bar ── */}
         <div className="absolute left-0 right-0 top-0 z-[1] pointer-events-none" style={{
-          height: "32%",
-          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-          maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 100%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
+          height: "30%",
+          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
+        }} />
+        {/* ── Top: opacity gradient bar ── */}
+        <div className="absolute left-0 right-0 top-0 z-[2] pointer-events-none" style={{
+          height: "30%",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%)",
         }} />
 
-        {/* ── Bottom blur strip ── */}
+        {/* ── Bottom: permanent blur bar ── */}
         <div className="absolute left-0 right-0 bottom-0 z-[5] pointer-events-none" style={{
-          height: "30%",
-          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-          maskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
+          height: "28%",
+          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
+        }} />
+        {/* ── Bottom: opacity gradient bar ── */}
+        <div className="absolute left-0 right-0 bottom-0 z-[6] pointer-events-none" style={{
+          height: "28%",
+          background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)",
         }} />
 
         {/* ── Masthead strip ── */}

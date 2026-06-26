@@ -3,6 +3,7 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 // ── TCG card images (pokemontcg.io) ──────────────────────────────────────────
 
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
+const UR_RARITIES = new Set(["Ultra Rare"]);
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
 
 // Gen 1 evolution chains — used to detect sets with connected chain artwork
@@ -77,15 +78,19 @@ export interface TcgImageResult { tcgUrl: string | null }
 // Trainer-owned cards have a possessive in the name e.g. "Lillie's Clefairy"
 const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
-function buildBestMap(cards: TcgCard[]): Map<number, TcgImageResult> {
+function buildBestMap(
+  cards: TcgCard[],
+  allowedRarities: Set<string>,
+  allowGimmick = false,
+): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
   const best = new Map<number, { chain: boolean; score: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
-    if (isGimmick(card)) continue;
+    if (!allowGimmick && isGimmick(card)) continue;
     if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
-    if (!IR_RARITIES.has(card.rarity)) continue;
+    if (!allowedRarities.has(card.rarity)) continue;
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
@@ -119,8 +124,9 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   } catch { return []; }
 }
 
-const IR_CLAUSE  = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
-const SUB_EXCL   = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
+const IR_CLAUSE = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
+const UR_CLAUSE = `rarity:"Ultra Rare"`;
+const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 const CHUNK = 75;
 
 function chunk<T>(arr: T[], size: number): T[][] {
@@ -131,11 +137,11 @@ function chunk<T>(arr: T[], size: number): T[][] {
 
 // PokéAPI slugs → pokemontcg.io display names
 const NAME_OVERRIDES: Record<string, string> = {
-  "nidoran-f":  "Nidoran ♀",
-  "nidoran-m":  "Nidoran ♂",
-  "mr-mime":    "Mr. Mime",
-  "farfetchd":  "Farfetch'd",
-  "ho-oh":      "Ho-Oh",
+  "nidoran-f": "Nidoran ♀",
+  "nidoran-m": "Nidoran ♂",
+  "mr-mime":   "Mr. Mime",
+  "farfetchd": "Farfetch'd",
+  "ho-oh":     "Ho-Oh",
 };
 
 function toDisplayName(slug: string): string {
@@ -150,12 +156,25 @@ export async function fetchTcgCardImages(
   const dexQ = (dexIds: number[]) =>
     dexIds.map((id) => `nationalPokedexNumbers:${id}`).join(" OR ");
 
-  const results = await Promise.all(
+  // Pass 1: IR / SIR only (best quality, no gimmick forms)
+  const irResults = await Promise.all(
     chunk(ids, CHUNK).map((batch) =>
       tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
     )
   );
+  const irMap = buildBestMap(irResults.flat(), IR_RARITIES, false);
 
-  const bestMap = buildBestMap(results.flat());
-  return ids.map((id) => bestMap.get(id) ?? { tcgUrl: null });
+  // Pass 2: Ultra Rare fallback for Pokémon with no IR/SIR result
+  const missingIds = ids.filter((id) => !irMap.has(id));
+  let urMap = new Map<number, TcgImageResult>();
+  if (missingIds.length > 0) {
+    const urResults = await Promise.all(
+      chunk(missingIds, CHUNK).map((batch) =>
+        tcgFetch(`(${dexQ(batch)}) ${UR_CLAUSE}`)
+      )
+    );
+    urMap = buildBestMap(urResults.flat(), UR_RARITIES, true);
+  }
+
+  return ids.map((id) => irMap.get(id) ?? urMap.get(id) ?? { tcgUrl: null });
 }

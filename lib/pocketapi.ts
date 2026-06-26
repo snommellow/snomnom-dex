@@ -3,15 +3,15 @@
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
-// Pocket set IDs start with A or B followed by a digit (A1, A2b, B1, B2a, …)
-function isPocketSet(setId: string): boolean {
-  return /^[AB]\d/i.test(setId);
-}
+// Only show star-rarity cards (1★, 2★, 3★) — not diamond commons or Crown rares
+const STAR_RARITIES = ["One Star", "Two Star", "Three Star"] as const;
 
-// Extract set ID from card id like "A1-001" → "A1", "A2b-003" → "A2b"
-function setIdFromCardId(cardId: string): string {
-  return cardId.split("-")[0] ?? "";
-}
+// Score by star count: 3★ beats 2★ beats 1★ (lower = better)
+const RARITY_SCORE: Record<string, number> = {
+  "Three Star": 0,
+  "Two Star": 1,
+  "One Star": 2,
+};
 
 interface TcgdexCard {
   id: string;
@@ -22,30 +22,20 @@ interface TcgdexCard {
   set?: { id: string };
 }
 
-// Prefer ex/full-art cards over plain cards within Pocket results
-function pocketCardScore(card: TcgdexCard): number {
-  const n = card.name.toLowerCase();
-  if (n.includes(" ex")) return 0;   // e.g. "Beedrill ex"
-  if (n.includes("-ex")) return 1;
-  return 2;
-}
-
-async function fetchPocketCards(name: string): Promise<TcgdexCard[]> {
+async function fetchStarCards(name: string, rarity: string): Promise<TcgdexCard[]> {
   try {
     const res = await fetch(
-      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
+      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}&rarity=${encodeURIComponent(rarity)}`,
       { next: { revalidate: 86400 } }
     );
     if (!res.ok) return [];
     const json = await res.json();
-    const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-    return all.filter((c) => isPocketSet(c.set?.id ?? setIdFromCardId(c.id)) && c.image);
+    return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
   } catch { return []; }
 }
 
 function cardImageUrl(card: TcgdexCard): string {
-  if (card.image) return `${card.image}/high.webp`;
-  return `https://assets.tcgdex.net/en/tcgp/${card.set.id}/${card.localId}/high.webp`;
+  return `${card.image}/high.webp`;
 }
 
 export interface PocketResult { url: string | null }
@@ -55,10 +45,15 @@ export async function fetchPocketImages(
 ): Promise<PocketResult[]> {
   return Promise.all(
     pokemon.map(async ({ name }) => {
-      const cards = await fetchPocketCards(name);
+      // Fetch all star rarities in parallel, take highest available
+      const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
+      // Flatten, keep cards with images, attach rarity for scoring
+      const cards = STAR_RARITIES.flatMap((rarity, i) =>
+        results[i].filter((c) => c.image).map((c) => ({ ...c, rarity }))
+      );
       if (!cards.length) return { url: null };
       const best = cards.reduce((a, b) =>
-        pocketCardScore(a) <= pocketCardScore(b) ? a : b
+        (RARITY_SCORE[a.rarity ?? ""] ?? 99) <= (RARITY_SCORE[b.rarity ?? ""] ?? 99) ? a : b
       );
       return { url: cardImageUrl(best) };
     })

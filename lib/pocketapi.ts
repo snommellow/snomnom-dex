@@ -56,9 +56,14 @@ export async function fetchPocketImages(
         results[i].filter((c) => c.image && !isMega(c.name)).map((c) => ({ ...c, rarity }))
       );
       if (!cards.length) return { url: null };
-      const best = cards.reduce((a, b) =>
-        (RARITY_SCORE[a.rarity ?? ""] ?? 99) <= (RARITY_SCORE[b.rarity ?? ""] ?? 99) ? a : b
-      );
+      // For ties within the same rarity, prefer highest localId — the rainbow border
+      // variant of a Two Star card always sits at a higher localId than the plain full art.
+      const best = cards.reduce((a, b) => {
+        const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
+        const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
+        if (ra !== rb) return ra <= rb ? a : b;
+        return parseInt(b.localId) > parseInt(a.localId) ? b : a;
+      });
       return { url: cardImageUrl(best) };
     })
   );

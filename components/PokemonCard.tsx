@@ -25,6 +25,7 @@ export default function PokemonCard({ pokemon }: Props) {
 
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -34,6 +35,7 @@ export default function PokemonCard({ pokemon }: Props) {
     const cx = (e.clientX - left) / width - 0.5;
     const cy = (e.clientY - top) / height - 0.5;
     setTilt({ x: cy * -18, y: cx * 18 });
+    setMouse({ x: ((e.clientX - left) / width) * 100, y: ((e.clientY - top) / height) * 100 });
   }
 
   function handleMouseLeave() {
@@ -156,6 +158,29 @@ export default function PokemonCard({ pokemon }: Props) {
           </div>
         </div>
 
+
+        {/* ── Holo rainbow shimmer ── */}
+        <div className="absolute inset-0 z-[8] pointer-events-none rounded-xl" style={{
+          opacity: isHovered ? 1 : 0,
+          transition: "opacity 0.3s",
+          background: `linear-gradient(${mouse.x * 1.8}deg,
+            hsla(0,100%,60%,0.18) 0%,
+            hsla(60,100%,60%,0.18) 16%,
+            hsla(120,100%,60%,0.18) 33%,
+            hsla(180,100%,60%,0.18) 50%,
+            hsla(240,100%,60%,0.18) 66%,
+            hsla(300,100%,60%,0.18) 83%,
+            hsla(360,100%,60%,0.18) 100%)`,
+          mixBlendMode: "color-dodge",
+        }} />
+
+        {/* ── Mouse glow spot ── */}
+        <div className="absolute inset-0 z-[9] pointer-events-none rounded-xl" style={{
+          opacity: isHovered ? 1 : 0,
+          transition: "opacity 0.3s",
+          background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.28) 0%, transparent 55%)`,
+          mixBlendMode: "overlay",
+        }} />
 
         {/* ── Type pills ── */}
         <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]">

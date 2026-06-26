@@ -113,10 +113,10 @@ function buildBestMap(
       const cur = best.get(dexNum);
       const better =
         !cur ||
-        (!cur.chain && chain) ||
-        (cur.chain === chain && score < cur.score) ||
-        (cur.chain === chain && score === cur.score && sub < cur.sub) ||
-        (cur.chain === chain && score === cur.score && sub === cur.sub && date > cur.date);
+        score < cur.score ||
+        (score === cur.score && sub < cur.sub) ||
+        (score === cur.score && sub === cur.sub && !cur.chain && chain) ||
+        (score === cur.score && sub === cur.sub && cur.chain === chain && date > cur.date);
       if (better) best.set(dexNum, { chain, score, sub, date, tcgUrl });
     }
   }

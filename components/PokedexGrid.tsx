@@ -1,6 +1,6 @@
 import { fetchFirst151, fetchGenus, toPokemonSummary } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgVgx } from "@/lib/tcgapi";
-import { fetchPocketImages, fetchPocketFallback } from "@/lib/pocketapi";
+import { fetchPocketImages } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
 export default async function PokedexGrid() {
@@ -27,24 +27,11 @@ export default async function PokedexGrid() {
   const afterPocket = afterIr.filter((id) => !pocketMap.has(id));
   const vgxMap = await fetchTcgVgx(afterPocket);
 
-  // Pass 4: any Pocket card (including commons) for Pokémon still without a card
-  const afterVgx = afterPocket.filter((id) => !vgxMap.has(id));
-  const fallbackList = afterVgx.length
-    ? await fetchPocketFallback(afterVgx.map((id) => {
-        const p = raw.find((r) => r.id === id)!;
-        return { id, name: p.name };
-      }))
-    : [];
-  const fallbackMap = new Map<number, string>();
-  afterVgx.forEach((id, j) => {
-    if (fallbackList[j]?.url) fallbackMap.set(id, fallbackList[j].url!);
-  });
-
   const genera = await Promise.all(raw.map((p) => fetchGenus(p.id)));
 
   const pokemon = raw.map((p) => {
     const tcgResult = irMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
-    const pocketUrl = pocketMap.get(p.id) ?? fallbackMap.get(p.id);
+    const pocketUrl = pocketMap.get(p.id);
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], genera[ids.indexOf(p.id)]);
   });
 

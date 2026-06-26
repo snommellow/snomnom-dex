@@ -58,28 +58,49 @@ export default function PokemonCard({ pokemon }: Props) {
     setIsHovered(false);
   }
 
+  const THICKNESS = 6;
+
   return (
     <article className="group cursor-pointer select-none">
-      {/* Single div: perspective() inline in transform + overflow:hidden on same element — scrydex approach */}
+      {/* ── 3D wrapper: handles perspective + tilt ── */}
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
         style={{
-          border: `2.5px solid ${typeColor}`,
-          backgroundColor: `${typeColor}35`,
-          boxShadow: isHovered
-            ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
-            : `0 4px 14px rgba(0,0,0,0.25)`,
+          transformStyle: "preserve-3d",
           transform: isHovered
-            ? `perspective(600px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
-            : `scale(1)`,
-          transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
+            ? `perspective(700px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
+            : "scale(1)",
+          transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
+          position: "relative",
         }}
       >
+        {/* ── Card edges (visible during 3D tilt) ── */}
+        {/* Left */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "right center", transform: `rotateY(-90deg)` }} />
+        {/* Right */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "left center", transform: `rotateY(90deg)` }} />
+        {/* Top */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "bottom center", transform: `rotateX(90deg)` }} />
+        {/* Bottom */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: THICKNESS, background: `color-mix(in srgb, ${typeColor} 80%, black)`, transformOrigin: "top center", transform: `rotateX(-90deg)` }} />
+
+        {/* ── Front face ── */}
+        <div
+          className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
+          style={{
+            border: `2.5px solid ${typeColor}`,
+            backgroundColor: `${typeColor}35`,
+            boxShadow: isHovered
+              ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
+              : `0 4px 14px rgba(0,0,0,0.25)`,
+            transform: `translateZ(${THICKNESS}px)`,
+            transition: "box-shadow 0.3s",
+          }}
+        >
         {/* ── Background layer 1: blurred full image (always shown at edges) ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -246,8 +267,10 @@ export default function PokemonCard({ pokemon }: Props) {
             );
           })}
         </div>
+        </div>
+        {/* end front face */}
       </div>
-
+      {/* end 3D wrapper */}
     </article>
   );
 }

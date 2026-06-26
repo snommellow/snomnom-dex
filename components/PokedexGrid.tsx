@@ -13,7 +13,10 @@ export default async function PokedexGrid() {
   // Pass 2: TCG Pocket star cards — for Pokémon missing IR/SIR
   const afterIr = ids.filter((id) => !irMap.has(id));
   const pocketResultsList = afterIr.length
-    ? await fetchPocketImages(afterIr.map((id) => ({ id })))
+    ? await fetchPocketImages(afterIr.map((id) => {
+        const p = raw.find((r) => r.id === id)!;
+        return { id, name: p.name };
+      }))
     : [];
   const pocketMap = new Map<number, string>();
   afterIr.forEach((id, j) => {

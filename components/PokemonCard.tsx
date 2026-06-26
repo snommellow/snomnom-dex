@@ -77,7 +77,7 @@ export default function PokemonCard({ pokemon }: Props) {
             ? `perspective(600px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
             : `scale(1)`,
           transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
-          willChange: "transform",
+          willChange: isHovered ? "transform" : "auto",
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
@@ -95,18 +95,22 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top fade — hides TCG name/HP ── */}
+        {/* ── Top blur strip ── */}
         <div className="absolute left-0 right-0 top-0 z-[1] pointer-events-none" style={{
-          height: "30%",
-          background: `linear-gradient(to bottom, ${typeColor}EE 0%, ${typeColor}99 40%, transparent 100%)`,
+          height: "32%",
+          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />
 
-        {/* ── Bottom fade — hides weakness/res/retreat ── */}
+        {/* ── Bottom blur strip ── */}
         <div className="absolute left-0 right-0 bottom-0 z-[5] pointer-events-none" style={{
-          height: "28%",
-          background: `linear-gradient(to top, ${typeColor}EE 0%, ${typeColor}99 40%, transparent 100%)`,
+          height: "30%",
+          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+          maskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />

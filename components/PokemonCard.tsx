@@ -109,7 +109,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.9, transform: "scale(1.15) translateY(5%)", transformOrigin: "top center", filter: "blur(20px)" }}
+            style={{ opacity: 1, transform: "scale(1.2) translateY(5%)", transformOrigin: "top center", filter: "blur(40px)" }}
           />
         </div>
 

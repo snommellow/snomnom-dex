@@ -84,6 +84,28 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
+        {/* ── Top bg blur — blurs only the background image at the top edge ── */}
+        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden" style={{
+          clipPath: "inset(0 0 calc(100% - 56px) 0)",
+          maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+        }}>
+          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
+            className="object-cover object-top"
+            style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(7px)" }} />
+        </div>
+
+        {/* ── Bottom bg blur — blurs only the background image at the bottom edge ── */}
+        <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden" style={{
+          clipPath: "inset(calc(100% - 80px) 0 0 0)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+        }}>
+          <Image src={bgUrl} alt="" aria-hidden fill sizes="300px"
+            className="object-cover object-top"
+            style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center", filter: "blur(7px)" }} />
+        </div>
+
         {/* ── Masthead strip ── */}
         <div
           className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
@@ -176,21 +198,6 @@ export default function PokemonCard({ pokemon }: Props) {
       </div>
       </div>
 
-      {/* ── Blur strips outside 3D wrapper — backdropFilter works here ── */}
-      <div className="absolute left-0 right-0 top-0 pointer-events-none" style={{
-        height: 56, zIndex: 20,
-        backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
-        maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-        WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-        borderRadius: "12px 12px 0 0",
-      }} />
-      <div className="absolute left-0 right-0 bottom-0 pointer-events-none" style={{
-        height: 80, zIndex: 20,
-        backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
-        maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-        borderRadius: "0 0 12px 12px",
-      }} />
     </article>
   );
 }

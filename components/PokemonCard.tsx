@@ -42,31 +42,23 @@ export default function PokemonCard({ pokemon }: Props) {
   }
 
   return (
-    <article className="group cursor-pointer select-none relative" style={{ perspective: 600 }}>
-      {/* Outer: 3D transform only — no overflow:hidden so backdropFilter works */}
+    <article className="group cursor-pointer select-none">
+      {/* Single div: perspective() inline in transform + overflow:hidden on same element — scrydex approach */}
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        style={{
-          position: "relative",
-          borderRadius: 12,
-          boxShadow: isHovered
-            ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
-            : `0 4px 14px rgba(0,0,0,0.25)`,
-          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
-          transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
-          willChange: "transform",
-        }}
-      >
-      {/* Inner: contain:paint creates a paint boundary that clips backdropFilter */}
-      <div
         className="relative flex flex-col overflow-hidden rounded-xl"
         style={{
           border: `2.5px solid ${typeColor}`,
           backgroundColor: `${typeColor}35`,
-          contain: "paint",
+          boxShadow: isHovered
+            ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
+            : `0 4px 14px rgba(0,0,0,0.25)`,
+          transform: `perspective(600px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
+          transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
+          willChange: "transform",
         }}
       >
         {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
@@ -84,24 +76,20 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top blur — hidden during 3D tilt to avoid browser backdropFilter bug ── */}
+        {/* ── Top blur strip ── */}
         <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
           top: 0, height: 56,
           backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)",
           maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
           WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
         }} />
 
-        {/* ── Bottom blur — hidden during 3D tilt ── */}
+        {/* ── Bottom blur strip ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
           height: 80,
           backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
           maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
         }} />
 
         {/* ── Masthead strip ── */}
@@ -193,7 +181,6 @@ export default function PokemonCard({ pokemon }: Props) {
             );
           })}
         </div>
-      </div>
       </div>
 
     </article>

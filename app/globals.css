@@ -26,35 +26,19 @@ body {
 }
 
 @keyframes sparkle {
-  0%   { transform: scale(0) rotate(0deg);    opacity: 0; }
-  30%  { transform: scale(1.0) rotate(90deg); opacity: 0.9; }
-  70%  { transform: scale(0.8) rotate(230deg); opacity: 0.7; }
-  100% { transform: scale(0) rotate(360deg);  opacity: 0; }
+  0%   { transform: scale(0); opacity: 0; }
+  40%  { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
 }
 
 .card-sparkle {
   position: absolute;
   pointer-events: none;
-  width: 7px;
-  height: 7px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: white;
+  transform: scale(0);
   opacity: 0;
-  box-shadow: 0 0 6px 3px rgba(255,255,255,0.9), 0 0 14px 6px rgba(255,255,200,0.6);
+  box-shadow: 0 0 4px 2px rgba(255,255,255,0.95), 0 0 10px 4px rgba(255,255,220,0.7);
 }
-
-.card-sparkle::before,
-.card-sparkle::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  background: white;
-  clip-path: polygon(50% 0%, 52% 48%, 100% 50%, 52% 52%, 50% 100%, 48% 52%, 0% 50%, 48% 48%);
-}
-
-.card-hovered .card-sparkle:nth-child(1) { top: 15%; left: 20%; animation: sparkle 3.5s ease-in-out 0.0s infinite; }
-.card-hovered .card-sparkle:nth-child(2) { top: 30%; left: 75%; animation: sparkle 4.0s ease-in-out 1.2s infinite; }
-.card-hovered .card-sparkle:nth-child(3) { top: 55%; left: 15%; animation: sparkle 3.8s ease-in-out 2.4s infinite; }
-.card-hovered .card-sparkle:nth-child(4) { top: 70%; left: 60%; animation: sparkle 4.2s ease-in-out 0.6s infinite; }
-.card-hovered .card-sparkle:nth-child(5) { top: 20%; left: 50%; animation: sparkle 3.6s ease-in-out 3.0s infinite; }
-.card-hovered .card-sparkle:nth-child(6) { top: 80%; left: 35%; animation: sparkle 4.5s ease-in-out 1.8s infinite; }

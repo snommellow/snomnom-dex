@@ -86,7 +86,7 @@ export default function PokemonCard({ pokemon }: Props) {
           <img src={bgUrl} alt="" aria-hidden style={{
             position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
             objectFit: "cover", objectPosition: "top center",
-            opacity: 0.55, filter: "blur(20px)",
+            opacity: 0.55, filter: "blur(40px)",
           }} />
         </div>
 
@@ -94,10 +94,10 @@ export default function PokemonCard({ pokemon }: Props) {
         <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
           maskImage: isHovered
             ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, black 28%, black 68%, transparent 100%)",
+            : "linear-gradient(to bottom, transparent 0%, transparent 22%, black 38%, black 62%, transparent 78%, transparent 100%)",
           WebkitMaskImage: isHovered
             ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, black 28%, black 68%, transparent 100%)",
+            : "linear-gradient(to bottom, transparent 0%, transparent 22%, black 38%, black 62%, transparent 78%, transparent 100%)",
           transition: "mask-image 0.2s",
         }}>
           <Image

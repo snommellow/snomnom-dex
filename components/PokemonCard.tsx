@@ -97,8 +97,8 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Blurred image overlay (top + bottom) ── */}
         <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
-          maskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 55%, black 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 55%, black 100%)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 20%, transparent 35%, transparent 50%, black 70%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 20%, transparent 35%, transparent 50%, black 70%, black 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }}>
@@ -109,7 +109,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.55, transform: "scale(1.15) translateY(5%)", transformOrigin: "top center", filter: "blur(16px)" }}
+            style={{ opacity: 0.9, transform: "scale(1.15) translateY(5%)", transformOrigin: "top center", filter: "blur(20px)" }}
           />
         </div>
 

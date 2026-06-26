@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useEffect } from "react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 
@@ -23,14 +23,20 @@ export default function PokemonCard({ pokemon }: Props) {
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 
-  const sparkles = useMemo(() =>
-    Array.from({ length: 10 }, () => ({
-      top: Math.random() * 80 + 10,
-      left: Math.random() * 80 + 10,
-      delay: Math.random() * 5,
-      duration: 4 + Math.random() * 3,
-    })),
-  []);
+  const [sparkles, setSparkles] = useState<{ id: number; top: number; left: number }[]>([]);
+  const sparkleId = useRef(0);
+
+  useEffect(() => {
+    if (!isHovered) { setSparkles([]); return; }
+    const spawn = () => {
+      const id = sparkleId.current++;
+      setSparkles((prev) => [...prev, { id, top: Math.random() * 78 + 11, left: Math.random() * 78 + 11 }]);
+      setTimeout(() => setSparkles((prev) => prev.filter((s) => s.id !== id)), 1100);
+    };
+    spawn();
+    const t = setInterval(spawn, 350);
+    return () => clearInterval(t);
+  }, [isHovered]);
 
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -170,20 +176,8 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Sparkle particles ── */}
         <div className="absolute inset-0 z-[11] pointer-events-none">
-          {sparkles.map((s, i) => (
-            <div
-              key={i}
-              className="card-sparkle"
-              style={{
-                top: `${s.top}%`,
-                left: `${s.left}%`,
-                animationName: isHovered ? "sparkle" : "none",
-                animationDuration: `${s.duration}s`,
-                animationDelay: `${s.delay}s`,
-                animationTimingFunction: "ease-in-out",
-                animationIterationCount: "infinite",
-              }}
-            />
+          {sparkles.map((s) => (
+            <div key={s.id} className="card-sparkle" style={{ top: `${s.top}%`, left: `${s.left}%` }} />
           ))}
         </div>
 

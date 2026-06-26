@@ -104,11 +104,11 @@ export default function PokemonCard({ pokemon }: Props) {
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }}>
-          <div style={{
-            position: "absolute", inset: "-20px",
-            backgroundImage: `url(${bgUrl})`,
-            backgroundSize: "cover", backgroundPosition: "top center",
-            filter: "blur(50px)", opacity: 0.95,
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={bgUrl} alt="" aria-hidden style={{
+            position: "absolute", inset: "-30px", width: "calc(100% + 60px)", height: "calc(100% + 60px)",
+            objectFit: "cover", objectPosition: "top center",
+            filter: "blur(60px)", opacity: 0.98,
           }} />
         </div>
 
@@ -121,11 +121,11 @@ export default function PokemonCard({ pokemon }: Props) {
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }}>
-          <div style={{
-            position: "absolute", inset: "-20px",
-            backgroundImage: `url(${bgUrl})`,
-            backgroundSize: "cover", backgroundPosition: "top center",
-            filter: "blur(50px)", opacity: 0.95,
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={bgUrl} alt="" aria-hidden style={{
+            position: "absolute", inset: "-30px", width: "calc(100% + 60px)", height: "calc(100% + 60px)",
+            objectFit: "cover", objectPosition: "top center",
+            filter: "blur(60px)", opacity: 0.98,
           }} />
         </div>
 

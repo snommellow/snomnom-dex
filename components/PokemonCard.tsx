@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef, useMemo, useEffect } from "react";
-import type { PokemonSummary } from "@/lib/pokeapi";
+import type { PokemonSummary, AltForm } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 
 interface Props {
@@ -143,11 +143,18 @@ export default function PokemonCard({ pokemon }: Props) {
           >
             POKÉDEX
           </span>
-          <span
-            className="text-white font-black tabular-nums leading-none"
-            style={{ fontSize: 9, letterSpacing: ".06em" }}
-          >
-            #{String(pokemon.id).padStart(3, "0")}
+          <span className="flex items-center gap-0.5">
+            <span
+              className="text-white font-black tabular-nums leading-none"
+              style={{ fontSize: 9, letterSpacing: ".06em" }}
+            >
+              #{String(pokemon.id).padStart(3, "0")}
+            </span>
+            {pokemon.altForms.length > 0 && (
+              <svg width="6" height="6" viewBox="0 0 10 10" aria-label="Has alternative forms">
+                <polygon points="5,0 10,5 5,10 0,5" fill="rgba(255,255,180,0.92)" />
+              </svg>
+            )}
           </span>
         </div>
 
@@ -269,6 +276,81 @@ export default function PokemonCard({ pokemon }: Props) {
         {/* end front face */}
       </div>
       {/* end 3D wrapper */}
+
+      {/* ── Alternative form mini-cards ── */}
+      {pokemon.altForms.length > 0 && (
+        <div className="flex flex-col gap-1 mt-1">
+          {pokemon.altForms.map((form) => (
+            <FormMiniCard key={form.slug} form={form} />
+          ))}
+        </div>
+      )}
     </article>
+  );
+}
+
+function FormMiniCard({ form }: { form: AltForm }) {
+  const primaryType = form.types[0] ?? "normal";
+  const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
+  const bgUrl = form.tcgUrl ?? form.artworkUrl;
+
+  const CATEGORY_LABEL: Record<string, string> = {
+    mega: "MEGA",
+    regional: "FORM",
+    gmax: "GMAX",
+    other: "ALT",
+  };
+
+  return (
+    <div
+      className="relative overflow-hidden flex flex-col"
+      style={{ border: `2px solid ${typeColor}`, borderRadius: 4, minHeight: 72 }}
+    >
+      {/* Background art */}
+      {bgUrl && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={bgUrl}
+          alt=""
+          aria-hidden
+          style={{
+            position: "absolute", inset: 0, width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "top center",
+            opacity: 0.55,
+          }}
+        />
+      )}
+
+      {/* Top masthead strip */}
+      <div
+        className="relative z-10 flex items-center justify-between px-1.5 py-0.5 flex-shrink-0"
+        style={{ backgroundColor: typeColor }}
+      >
+        <span className="text-white font-black italic leading-none" style={{ fontSize: 7, letterSpacing: ".08em" }}>
+          {CATEGORY_LABEL[form.category] ?? "ALT"}
+        </span>
+        <div className="flex gap-0.5">
+          {form.types.map((type) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={type} src={typeIconUrl(type)} alt={type} title={type} className="w-2.5 h-2.5 object-contain" />
+          ))}
+        </div>
+      </div>
+
+      {/* Form name */}
+      <div className="relative z-10 flex-1 flex items-end px-1.5 py-1">
+        <p
+          className="font-black capitalize leading-tight truncate"
+          style={{
+            fontSize: 10,
+            color: typeColor,
+            WebkitTextStroke: "1.5px white",
+            paintOrder: "stroke fill",
+          }}
+        >
+          {form.displayName}
+        </p>
+      </div>
+    </div>
   );
 }

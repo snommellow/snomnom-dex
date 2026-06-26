@@ -1,5 +1,5 @@
-import { fetchFirst151, fetchGenus, toPokemonSummary } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgVgx } from "@/lib/tcgapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
+import { fetchTcgIrSir, fetchTcgVgx, fetchFormCard } from "@/lib/tcgapi";
 import { fetchPocketImages } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -27,12 +27,36 @@ export default async function PokedexGrid() {
   const afterPocket = afterIr.filter((id) => !pocketMap.has(id));
   const vgxMap = await fetchTcgVgx(afterPocket);
 
-  const genera = await Promise.all(raw.map((p) => fetchGenus(p.id)));
+  // Species data: genus + alt form slots (single fetch per Pokémon)
+  const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
-  const pokemon = raw.map((p) => {
+  // Fetch alt form Pokemon data for all Pokémon
+  const altFormsData = await Promise.all(
+    raw.map((p, i) => fetchAltForms(p.name, speciesData[i].altFormSlots))
+  );
+
+  // Fetch TCG cards for each alt form
+  const altFormsWithCards = await Promise.all(
+    altFormsData.map((forms, i) =>
+      Promise.all(
+        forms.map(async (form) => ({
+          ...form,
+          tcgUrl: await fetchFormCard(form.category, raw[i].id, form.displayName),
+        }))
+      )
+    )
+  );
+
+  const pokemon = raw.map((p, i) => {
     const tcgResult = irMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
     const pocketUrl = pocketMap.get(p.id);
-    return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], genera[ids.indexOf(p.id)]);
+    return toPokemonSummary(
+      p,
+      tcgResult,
+      pocketUrl ? [pocketUrl] : [],
+      speciesData[i].genus,
+      altFormsWithCards[i],
+    );
   });
 
   return <PokedexClient pokemon={pokemon} />;

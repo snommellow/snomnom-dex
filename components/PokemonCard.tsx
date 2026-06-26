@@ -96,7 +96,7 @@ export default function PokemonCard({ pokemon }: Props) {
         {/* ── Top blur strip — fades out during 3D tilt ── */}
         <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
           top: 0, height: 56,
-          backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
+          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
           maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
           WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
           opacity: isHovered ? 0 : 1,
@@ -106,7 +106,7 @@ export default function PokemonCard({ pokemon }: Props) {
         {/* ── Bottom blur strip — fades out during 3D tilt ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
           height: 80,
-          backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
+          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
           maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
           opacity: isHovered ? 0 : 1,

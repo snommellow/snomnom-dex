@@ -56,7 +56,7 @@ export default function PokemonCard({ pokemon }: Props) {
           boxShadow: isHovered
             ? `0 16px 40px rgba(0,0,0,0.45), 0 4px 14px rgba(0,0,0,0.25)`
             : `0 4px 14px rgba(0,0,0,0.25)`,
-          transform: `perspective(600px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
+          transform: `skewY(${tilt.x * 0.4}deg) skewX(${tilt.y * -0.4}deg) ${isHovered ? "scale(1.04)" : "scale(1)"}`,
           transition: isHovered ? "box-shadow 0.1s, transform 0.05s" : "box-shadow 0.3s, transform 0.4s ease",
           willChange: "transform",
         }}

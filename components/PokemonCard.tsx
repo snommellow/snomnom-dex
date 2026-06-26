@@ -97,18 +97,22 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Top blur strip — fades out during 3D tilt ── */}
         <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
-          top: 0, height: 64,
+          top: 0, height: 72,
           backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          background: "linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, rgba(255,255,255,0.35) 0%, transparent 100%)",
+          maskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />
 
         {/* ── Bottom blur strip — fades out during 3D tilt ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
-          height: 90,
+          height: 100,
           backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          background: "linear-gradient(to top, rgba(255,255,255,0.22) 0%, transparent 100%)",
+          background: "linear-gradient(to top, rgba(255,255,255,0.35) 0%, transparent 100%)",
+          maskImage: "linear-gradient(to top, black 40%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to top, black 40%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />

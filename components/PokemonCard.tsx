@@ -61,13 +61,7 @@ export default function PokemonCard({ pokemon }: Props) {
   const DEPTH = 32;
 
   return (
-    <article
-      className="group cursor-pointer select-none"
-      style={{
-        filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
-        transition: "filter 0.4s ease",
-      }}
-    >
+    <article className="group cursor-pointer select-none">
       {/* ── 3D wrapper: perspective + tilt ── */}
       <div
         ref={cardRef}
@@ -82,17 +76,18 @@ export default function PokemonCard({ pokemon }: Props) {
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
           position: "relative",
+          filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
         }}
       >
-        {/* ── Book spine sides — only visible during tilt ── */}
-        {/* Left side */}
-        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: DEPTH, transformOrigin: "right center", transform: "rotateY(-90deg)", background: `linear-gradient(to right, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-        {/* Right side */}
-        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: DEPTH, transformOrigin: "left center", transform: "rotateY(90deg)", background: `linear-gradient(to left, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-        {/* Top side */}
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "bottom center", transform: "rotateX(90deg)", background: `linear-gradient(to bottom, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-        {/* Bottom side */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "top center", transform: "rotateX(-90deg)", background: `linear-gradient(to top, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* ── Book spine sides — pivot at card edge, extend forward to meet front face ── */}
+        {/* Left side: pivot at left edge, rotates toward viewer */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: DEPTH, transformOrigin: "left center", transform: "rotateY(-90deg)", background: `linear-gradient(to right, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Right side: pivot at right edge, rotates toward viewer */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: DEPTH, transformOrigin: "right center", transform: "rotateY(90deg)", background: `linear-gradient(to left, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Top side: pivot at top edge, rotates toward viewer */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "top center", transform: "rotateX(90deg)", background: `linear-gradient(to bottom, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        {/* Bottom side: pivot at bottom edge, rotates toward viewer */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "bottom center", transform: "rotateX(-90deg)", background: `linear-gradient(to top, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
 
         {/* ── Front face (card content pushed forward) ── */}
         <div

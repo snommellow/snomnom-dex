@@ -162,32 +162,41 @@ function toDisplayName(slug: string): string {
   return slug.charAt(0).toUpperCase() + slug.slice(1);
 }
 
-export async function fetchTcgCardImages(
-  pokemon: Array<{ name: string; id: number }>
-): Promise<TcgImageResult[]> {
-  const ids = pokemon.map((p) => p.id);
-  const dexQ = (dexIds: number[]) =>
-    dexIds.map((id) => `nationalPokedexNumbers:${id}`).join(" OR ");
+const dexQ = (dexIds: number[]) =>
+  dexIds.map((id) => `nationalPokedexNumbers:${id}`).join(" OR ");
 
-  // Pass 1: IR / SIR only (best quality, no gimmick forms)
-  const irResults = await Promise.all(
+// Pass 1: IR/SIR — best quality full-art cards, no gimmick forms
+export async function fetchTcgIrSir(
+  ids: number[]
+): Promise<Map<number, TcgImageResult>> {
+  const results = await Promise.all(
     chunk(ids, CHUNK).map((batch) =>
       tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
     )
   );
-  const irMap = buildBestMap(irResults.flat(), IR_RARITIES, false);
+  return buildBestMap(results.flat(), IR_RARITIES, false);
+}
 
-  // Pass 2: Ultra Rare fallback for Pokémon with no IR/SIR result
+// Pass 3: V/GX/EX fallback for Pokémon still missing after IR/SIR + Pocket
+export async function fetchTcgVgx(
+  ids: number[]
+): Promise<Map<number, TcgImageResult>> {
+  if (!ids.length) return new Map();
+  const results = await Promise.all(
+    chunk(ids, CHUNK).map((batch) =>
+      tcgFetch(`(${dexQ(batch)}) ${VGX_CLAUSE}`)
+    )
+  );
+  return buildBestMap(results.flat(), VGX_RARITIES, true, true /* useSubtypeScore */);
+}
+
+// Convenience wrapper (kept for any callers that want all passes at once)
+export async function fetchTcgCardImages(
+  pokemon: Array<{ name: string; id: number }>
+): Promise<TcgImageResult[]> {
+  const ids = pokemon.map((p) => p.id);
+  const irMap = await fetchTcgIrSir(ids);
   const missingIds = ids.filter((id) => !irMap.has(id));
-  let urMap = new Map<number, TcgImageResult>();
-  if (missingIds.length > 0) {
-    const urResults = await Promise.all(
-      chunk(missingIds, CHUNK).map((batch) =>
-        tcgFetch(`(${dexQ(batch)}) ${VGX_CLAUSE}`)
-      )
-    );
-    urMap = buildBestMap(urResults.flat(), VGX_RARITIES, true, true /* useSubtypeScore */);
-  }
-
-  return ids.map((id) => irMap.get(id) ?? urMap.get(id) ?? { tcgUrl: null });
+  const vgxMap = await fetchTcgVgx(missingIds);
+  return ids.map((id) => irMap.get(id) ?? vgxMap.get(id) ?? { tcgUrl: null });
 }

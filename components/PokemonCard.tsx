@@ -95,23 +95,21 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Blurred image overlay (top + bottom) ── */}
-        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-          maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 48%, transparent 60%, black 80%, black 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 48%, transparent 60%, black 80%, black 100%)",
+        {/* ── Top fade — hides TCG name/HP ── */}
+        <div className="absolute left-0 right-0 top-0 z-[1] pointer-events-none" style={{
+          height: "30%",
+          background: `linear-gradient(to bottom, ${typeColor}EE 0%, ${typeColor}99 40%, transparent 100%)`,
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
-        }}>
-          <Image
-            src={bgUrl}
-            alt=""
-            aria-hidden
-            fill
-            sizes="300px"
-            className="object-cover object-top"
-            style={{ opacity: 1, transform: "scale(1.3) translateY(5%)", transformOrigin: "top center", filter: "blur(100px)" }}
-          />
-        </div>
+        }} />
+
+        {/* ── Bottom fade — hides weakness/res/retreat ── */}
+        <div className="absolute left-0 right-0 bottom-0 z-[5] pointer-events-none" style={{
+          height: "28%",
+          background: `linear-gradient(to top, ${typeColor}EE 0%, ${typeColor}99 40%, transparent 100%)`,
+          opacity: isHovered ? 0 : 1,
+          transition: "opacity 0.2s",
+        }} />
 
         {/* ── Masthead strip ── */}
         <div

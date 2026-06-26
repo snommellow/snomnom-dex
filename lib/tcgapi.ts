@@ -66,10 +66,12 @@ const EXCLUDED_SUBTYPES = new Set([
   "MEGA", "Mega", "VMAX", "VSTAR", "V-UNION", "Tera",
 ]);
 const GIMMICK_RE = /\b(MEGA|VMAX|VSTAR|V-UNION)\b/i;
+const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
 
 function isGimmick(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
   if (GIMMICK_RE.test(card.name)) return true;
+  if (REGIONAL_RE.test(card.name)) return true;
   // Trainer cards have no dex numbers so they're filtered by buildBestMap already,
   // but exclude explicitly for safety
   if (card.supertype === "Trainer") return true;

@@ -22,8 +22,8 @@ interface TcgdexCard {
   set?: { id: string };
 }
 
-function isMega(cardName: string): boolean {
-  return /^(mega |m )/i.test(cardName);
+function isExcluded(cardName: string): boolean {
+  return /^(mega |m |alolan |galarian |hisuian |paldean )/i.test(cardName);
 }
 
 async function fetchStarCards(name: string, rarity: string): Promise<TcgdexCard[]> {
@@ -53,7 +53,7 @@ export async function fetchPocketImages(
       const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
       // Flatten, keep cards with images, attach rarity for scoring
       const cards = STAR_RARITIES.flatMap((rarity, i) =>
-        results[i].filter((c) => c.image && !isMega(c.name)).map((c) => ({ ...c, rarity }))
+        results[i].filter((c) => c.image && !isExcluded(c.name)).map((c) => ({ ...c, rarity }))
       );
       if (!cards.length) return { url: null };
 

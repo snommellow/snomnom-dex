@@ -77,6 +77,13 @@ function isGimmick(card: TcgCard): boolean {
   return false;
 }
 
+// Pokémon whose only V cards are gold-border Full Art (not bleed-edge Alternate Art).
+// Add dex numbers here as they're discovered. These Pokémon skip V cards in the VGX pass
+// and fall through to GX/EX or placeholder instead.
+const V_GOLDBORDER_BLOCKLIST = new Set([
+  12, // Butterfree — only has gold-border Full Art V
+]);
+
 function rarityScore(rarity: string): number {
   const order = ["Special Illustration Rare", "Illustration Rare", "Ultra Rare", "Secret Rare", "Rare Holo", "Rare"];
   const idx = order.indexOf(rarity);
@@ -103,6 +110,12 @@ function buildBestMap(
     if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
+    // Skip gold-border Full Art V for blocklisted Pokémon (no Alternate Art available)
+    const subs = card.subtypes ?? [];
+    if (subs.includes("V") && !subs.includes("Alternate Art")) {
+      const dexNums = card.nationalPokedexNumbers ?? [];
+      if (dexNums.every((n) => V_GOLDBORDER_BLOCKLIST.has(n))) continue;
+    }
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);

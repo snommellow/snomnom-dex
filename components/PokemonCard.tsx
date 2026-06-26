@@ -89,7 +89,7 @@ export default function PokemonCard({ pokemon }: Props) {
             fill
             sizes="300px"
             className="object-cover object-top"
-            style={{ opacity: 0.55, transform: "scale(1.15) translateY(5%)", transformOrigin: "top center", filter: "blur(3px)" }}
+            style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
@@ -97,20 +97,18 @@ export default function PokemonCard({ pokemon }: Props) {
 
         {/* ── Top blur strip — fades out during 3D tilt ── */}
         <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
-          top: 0, height: 56,
+          top: 0, height: 64,
           backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          maskImage: "linear-gradient(to top, transparent 0%, black 70%)",
-          WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 70%)",
+          background: "linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />
 
         {/* ── Bottom blur strip — fades out during 3D tilt ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
-          height: 80,
+          height: 90,
           backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)",
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          background: "linear-gradient(to top, rgba(255,255,255,0.22) 0%, transparent 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
         }} />

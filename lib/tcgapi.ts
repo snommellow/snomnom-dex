@@ -82,6 +82,7 @@ function buildBestMap(
   cards: TcgCard[],
   allowedRarities: Set<string>,
   allowGimmick = false,
+  preferOlder = false,
 ): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
   const best = new Map<number, { chain: boolean; score: number; date: string; tcgUrl: string | null }>();
@@ -100,11 +101,12 @@ function buildBestMap(
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const chain = chainDexMap.get(sid)?.has(dexNum) ?? false;
       const cur = best.get(dexNum);
+      const dateWins = preferOlder ? date < cur!.date : date > cur!.date;
       const better =
         !cur ||
         (!cur.chain && chain) ||
         (cur.chain === chain && score < cur.score) ||
-        (cur.chain === chain && score === cur.score && date > cur.date);
+        (cur.chain === chain && score === cur.score && dateWins);
       if (better) best.set(dexNum, { chain, score, date, tcgUrl });
     }
   }
@@ -125,7 +127,8 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
 }
 
 const IR_CLAUSE = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
-const UR_CLAUSE = `rarity:"Ultra Rare"`;
+// Exclude SV-era "ex" from UR fallback — those are the new mechanic ex cards, not older full-art V/GX cards
+const UR_CLAUSE = `rarity:"Ultra Rare" -subtypes:ex -supertype:Trainer`;
 const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 const CHUNK = 75;
 
@@ -173,7 +176,7 @@ export async function fetchTcgCardImages(
         tcgFetch(`(${dexQ(batch)}) ${UR_CLAUSE}`)
       )
     );
-    urMap = buildBestMap(urResults.flat(), UR_RARITIES, true);
+    urMap = buildBestMap(urResults.flat(), UR_RARITIES, true, true);
   }
 
   return ids.map((id) => irMap.get(id) ?? urMap.get(id) ?? { tcgUrl: null });

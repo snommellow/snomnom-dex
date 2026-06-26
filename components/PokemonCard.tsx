@@ -61,7 +61,13 @@ export default function PokemonCard({ pokemon }: Props) {
   const DEPTH = 32;
 
   return (
-    <article className="group cursor-pointer select-none">
+    <article
+      className="group cursor-pointer select-none"
+      style={{
+        filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
+        transition: "filter 0.4s ease",
+      }}
+    >
       {/* ── 3D wrapper: perspective + tilt ── */}
       <div
         ref={cardRef}
@@ -76,7 +82,6 @@ export default function PokemonCard({ pokemon }: Props) {
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
           position: "relative",
-          filter: isHovered ? "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" : "drop-shadow(0 4px 14px rgba(0,0,0,0.25))",
         }}
       >
         {/* ── Book spine sides — only visible during tilt ── */}

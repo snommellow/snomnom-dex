@@ -49,7 +49,7 @@ export default function PokemonCard({ pokemon }: Props) {
     const { left, top, width, height } = el.getBoundingClientRect();
     const cx = (e.clientX - left) / width - 0.5;
     const cy = (e.clientY - top) / height - 0.5;
-    setTilt({ x: cy * -18, y: cx * 18 });
+    setTilt({ x: cy * -25, y: cx * 25 });
     setMouse({ x: ((e.clientX - left) / width) * 100, y: ((e.clientY - top) / height) * 100 });
   }
 
@@ -58,7 +58,7 @@ export default function PokemonCard({ pokemon }: Props) {
     setIsHovered(false);
   }
 
-  const DEPTH = 18;
+  const DEPTH = 32;
 
   return (
     <article className="group cursor-pointer select-none">
@@ -71,7 +71,7 @@ export default function PokemonCard({ pokemon }: Props) {
         style={{
           transformStyle: "preserve-3d",
           transform: isHovered
-            ? `perspective(700px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
+            ? `perspective(500px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
             : "scale(1)",
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",

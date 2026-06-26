@@ -5,6 +5,14 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 // V/GX full-art cards span multiple rarity names depending on set era
 const VGX_RARITIES = new Set(["Ultra Rare", "Rare Ultra", "Rare Secret", "Secret Rare"]);
+
+function subtypeScore(subtypes: string[]): number {
+  // Lower = better: prefer V full art over GX over older EX
+  if (subtypes.includes("V")) return 0;
+  if (subtypes.includes("GX")) return 1;
+  if (subtypes.includes("EX")) return 2;
+  return 3;
+}
 const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo", "Rare", "Rare Holo"]);
 
 // Gen 1 evolution chains — used to detect sets with connected chain artwork
@@ -83,10 +91,10 @@ function buildBestMap(
   cards: TcgCard[],
   allowedRarities: Set<string>,
   allowGimmick = false,
-  preferOlder = false,
+  useSubtypeScore = false,
 ): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
-  const best = new Map<number, { chain: boolean; score: number; date: string; tcgUrl: string | null }>();
+  const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
     if (!allowGimmick && isGimmick(card)) continue;
@@ -96,6 +104,7 @@ function buildBestMap(
 
     const tcgUrl = card.images?.large ?? card.images?.small ?? null;
     const score = rarityScore(card.rarity);
+    const sub = useSubtypeScore ? subtypeScore(card.subtypes ?? []) : 99;
     const sid = card.set?.id ?? "";
     const date = card.set?.releaseDate ?? "0000-00-00";
 
@@ -106,9 +115,9 @@ function buildBestMap(
         !cur ||
         (!cur.chain && chain) ||
         (cur.chain === chain && score < cur.score) ||
-        (cur.chain === chain && score === cur.score &&
-          (preferOlder ? date < cur.date : date > cur.date));
-      if (better) best.set(dexNum, { chain, score, date, tcgUrl });
+        (cur.chain === chain && score === cur.score && sub < cur.sub) ||
+        (cur.chain === chain && score === cur.score && sub === cur.sub && date > cur.date);
+      if (better) best.set(dexNum, { chain, score, sub, date, tcgUrl });
     }
   }
 
@@ -177,7 +186,7 @@ export async function fetchTcgCardImages(
         tcgFetch(`(${dexQ(batch)}) ${VGX_CLAUSE}`)
       )
     );
-    urMap = buildBestMap(urResults.flat(), VGX_RARITIES, true, true);
+    urMap = buildBestMap(urResults.flat(), VGX_RARITIES, true, true /* useSubtypeScore */);
   }
 
   return ids.map((id) => irMap.get(id) ?? urMap.get(id) ?? { tcgUrl: null });

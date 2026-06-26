@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import PokedexGrid from "@/components/PokedexGrid";
 
-export const revalidate = 60; // short for testing, bump back to 86400 when confirmed
+export const revalidate = 86400;
 
 function GridSkeleton() {
   return (

@@ -8,13 +8,18 @@ function isPocketSet(setId: string): boolean {
   return /^[AB]\d/i.test(setId);
 }
 
+// Extract set ID from card id like "A1-001" → "A1", "A2b-003" → "A2b"
+function setIdFromCardId(cardId: string): string {
+  return cardId.split("-")[0] ?? "";
+}
+
 interface TcgdexCard {
   id: string;
   localId: string;
   name: string;
   image?: string;
   rarity?: string;
-  set: { id: string };
+  set?: { id: string };
 }
 
 // Prefer ex/full-art cards over plain cards within Pocket results
@@ -34,7 +39,7 @@ async function fetchPocketCards(name: string): Promise<TcgdexCard[]> {
     if (!res.ok) return [];
     const json = await res.json();
     const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-    return all.filter((c) => isPocketSet(c.set?.id ?? "") && c.image);
+    return all.filter((c) => isPocketSet(c.set?.id ?? setIdFromCardId(c.id)) && c.image);
   } catch { return []; }
 }
 

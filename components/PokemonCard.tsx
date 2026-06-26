@@ -80,8 +80,26 @@ export default function PokemonCard({ pokemon }: Props) {
           willChange: isHovered ? "transform" : "auto",
         }}
       >
-        {/* ── Background: IR/SIR full-art or official artwork fallback ── */}
+        {/* ── Background layer 1: blurred full image (always shown at edges) ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={bgUrl} alt="" aria-hidden style={{
+            position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
+            objectFit: "cover", objectPosition: "top center",
+            opacity: 0.55, filter: "blur(20px)",
+          }} />
+        </div>
+
+        {/* ── Background layer 2: sharp image masked to middle only ── */}
+        <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
+          maskImage: isHovered
+            ? "linear-gradient(black, black)"
+            : "linear-gradient(to bottom, transparent 0%, black 28%, black 68%, transparent 100%)",
+          WebkitMaskImage: isHovered
+            ? "linear-gradient(black, black)"
+            : "linear-gradient(to bottom, transparent 0%, black 28%, black 68%, transparent 100%)",
+          transition: "mask-image 0.2s",
+        }}>
           <Image
             src={bgUrl}
             alt=""
@@ -93,40 +111,6 @@ export default function PokemonCard({ pokemon }: Props) {
             loading="eager"
             onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
           />
-        </div>
-
-        {/* ── Top: heavy blur fading into clear ── */}
-        <div className="absolute left-0 right-0 top-0 z-[1] pointer-events-none" style={{
-          height: "35%",
-          maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
-          overflow: "hidden",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
-        }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={bgUrl} alt="" aria-hidden style={{
-            position: "absolute", inset: "-30px", width: "calc(100% + 60px)", height: "calc(100% + 60px)",
-            objectFit: "cover", objectPosition: "top center",
-            filter: "blur(60px)", opacity: 0.98,
-          }} />
-        </div>
-
-        {/* ── Bottom: heavy blur fading into clear ── */}
-        <div className="absolute left-0 right-0 bottom-0 z-[5] pointer-events-none" style={{
-          height: "32%",
-          maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
-          overflow: "hidden",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
-        }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={bgUrl} alt="" aria-hidden style={{
-            position: "absolute", inset: "-30px", width: "calc(100% + 60px)", height: "calc(100% + 60px)",
-            objectFit: "cover", objectPosition: "top center",
-            filter: "blur(60px)", opacity: 0.98,
-          }} />
         </div>
 
         {/* ── Masthead strip ── */}

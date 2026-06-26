@@ -31,8 +31,14 @@ async function fetchPocketCards(dexId: number): Promise<TcgdexCard[]> {
       `${TCGDEX_BASE}/cards?dexId=${dexId}`,
       { next: { revalidate: 60 } }
     );
-    if (!res.ok) return [];
-    const all = (await res.json()) as TcgdexCard[];
+    if (!res.ok) {
+      console.log(`[pocket dex${dexId}] HTTP ${res.status}`);
+      return [];
+    }
+    const json = await res.json();
+    // TCGdex v2 may return bare array or { data: [...] }
+    const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+    console.log(`[pocket dex${dexId}] total cards: ${all.length}, sample sets:`, all.slice(0,3).map(c=>c.set?.id));
     const pocket = all.filter((c) => isPocketSet(c.set?.id ?? ""));
     if (pocket.length) console.log(`[pocket dex${dexId}] rarities:`, [...new Set(pocket.map(c => c.rarity))]);
     return pocket;

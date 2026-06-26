@@ -3,8 +3,9 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 // ── TCG card images (pokemontcg.io) ──────────────────────────────────────────
 
 const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
-const UR_RARITIES = new Set(["Ultra Rare"]);
-const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo"]);
+// V/GX full-art cards span multiple rarity names depending on set era
+const VGX_RARITIES = new Set(["Ultra Rare", "Rare Ultra", "Rare Secret", "Secret Rare"]);
+const JUNK_RARITIES = new Set(["Common", "Uncommon", "Promo", "Rare", "Rare Holo"]);
 
 // Gen 1 evolution chains — used to detect sets with connected chain artwork
 const GEN1_CHAINS: number[][] = [
@@ -127,8 +128,8 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
 }
 
 const IR_CLAUSE = `(rarity:"Special Illustration Rare" OR rarity:"Illustration Rare")`;
-// Exclude SV-era "ex" from UR fallback — those are the new mechanic ex cards, not older full-art V/GX cards
-const UR_CLAUSE = `rarity:"Ultra Rare" -subtypes:ex -supertype:Trainer`;
+// Target V and GX full-art cards; exclude SV ex, VMAX, VSTAR, Mega, Trainer
+const VGX_CLAUSE = `(subtypes:V OR subtypes:GX) -subtypes:VMAX -subtypes:VSTAR -subtypes:ex -supertype:Trainer`;
 const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 const CHUNK = 75;
 
@@ -173,10 +174,10 @@ export async function fetchTcgCardImages(
   if (missingIds.length > 0) {
     const urResults = await Promise.all(
       chunk(missingIds, CHUNK).map((batch) =>
-        tcgFetch(`(${dexQ(batch)}) ${UR_CLAUSE}`)
+        tcgFetch(`(${dexQ(batch)}) ${VGX_CLAUSE}`)
       )
     );
-    urMap = buildBestMap(urResults.flat(), UR_RARITIES, true, true);
+    urMap = buildBestMap(urResults.flat(), VGX_RARITIES, true, true);
   }
 
   return ids.map((id) => irMap.get(id) ?? urMap.get(id) ?? { tcgUrl: null });

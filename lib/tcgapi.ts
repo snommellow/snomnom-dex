@@ -71,7 +71,6 @@ const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
 function isGimmick(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
   if (GIMMICK_RE.test(card.name)) return true;
-  if (REGIONAL_RE.test(card.name)) return true;
   // Trainer cards have no dex numbers so they're filtered by buildBestMap already,
   // but exclude explicitly for safety
   if (card.supertype === "Trainer") return true;
@@ -99,6 +98,7 @@ function buildBestMap(
   const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; tcgUrl: string | null }>();
 
   for (const card of cards) {
+    if (REGIONAL_RE.test(card.name)) continue;
     if (!allowGimmick && isGimmick(card)) continue;
     if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;

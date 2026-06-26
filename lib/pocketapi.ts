@@ -52,8 +52,17 @@ export async function fetchPocketImages(
       // Fetch all star rarities in parallel, take highest available
       const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
       // Flatten, keep cards with images, attach rarity for scoring
+      const nameLower = name.toLowerCase();
+      const nameMatches = (cardName: string) => {
+        const cn = cardName.toLowerCase();
+        // Accept exact match or "<name> <suffix>" (e.g. "mewtwo ex") but not
+        // substring matches like "pyukumuku" for query "muk".
+        return cn === nameLower || cn.startsWith(nameLower + " ");
+      };
       const cards = STAR_RARITIES.flatMap((rarity, i) =>
-        results[i].filter((c) => c.image && !isExcluded(c.name)).map((c) => ({ ...c, rarity }))
+        results[i]
+          .filter((c) => c.image && nameMatches(c.name) && !isExcluded(c.name))
+          .map((c) => ({ ...c, rarity }))
       );
       if (!cards.length) return { url: null };
 

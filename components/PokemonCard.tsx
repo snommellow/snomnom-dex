@@ -95,25 +95,23 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top blur strip ── */}
-        <div className="absolute left-0 right-0 z-[1] pointer-events-none" style={{
-          top: 0, height: 100,
-          backdropFilter: "blur(50px)", WebkitBackdropFilter: "blur(50px)",
-          maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+        {/* ── Blurred image overlay (top + bottom) ── */}
+        <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
+          maskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 55%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 25%, transparent 55%, black 100%)",
           opacity: isHovered ? 0 : 1,
           transition: "opacity 0.2s",
-        }} />
-
-        {/* ── Bottom blur strip ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
-          height: 160,
-          backdropFilter: "blur(50px)", WebkitBackdropFilter: "blur(50px)",
-          maskImage: "linear-gradient(to top, black 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to top, black 0%, transparent 100%)",
-          opacity: isHovered ? 0 : 1,
-          transition: "opacity 0.2s",
-        }} />
+        }}>
+          <Image
+            src={bgUrl}
+            alt=""
+            aria-hidden
+            fill
+            sizes="300px"
+            className="object-cover object-top"
+            style={{ opacity: 0.55, transform: "scale(1.15) translateY(5%)", transformOrigin: "top center", filter: "blur(16px)" }}
+          />
+        </div>
 
         {/* ── Masthead strip ── */}
         <div

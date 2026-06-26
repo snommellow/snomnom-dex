@@ -95,27 +95,35 @@ export default function PokemonCard({ pokemon }: Props) {
           />
         </div>
 
-        {/* ── Top: permanent blur bar ── */}
+        {/* ── Top: heavy blur fading into clear ── */}
         <div className="absolute left-0 right-0 top-0 z-[1] pointer-events-none" style={{
-          height: "30%",
-          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
-        }} />
-        {/* ── Top: opacity gradient bar ── */}
-        <div className="absolute left-0 right-0 top-0 z-[2] pointer-events-none" style={{
-          height: "30%",
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%)",
-        }} />
+          height: "35%",
+          maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
+          overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", inset: "-20px",
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: "cover", backgroundPosition: "top center",
+            filter: "blur(30px)", opacity: 0.95,
+          }} />
+        </div>
 
-        {/* ── Bottom: permanent blur bar ── */}
+        {/* ── Bottom: heavy blur fading into clear ── */}
         <div className="absolute left-0 right-0 bottom-0 z-[5] pointer-events-none" style={{
-          height: "28%",
-          backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
-        }} />
-        {/* ── Bottom: opacity gradient bar ── */}
-        <div className="absolute left-0 right-0 bottom-0 z-[6] pointer-events-none" style={{
-          height: "28%",
-          background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)",
-        }} />
+          height: "32%",
+          maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
+          overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", inset: "-20px",
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: "cover", backgroundPosition: "top center",
+            filter: "blur(30px)", opacity: 0.95,
+          }} />
+        </div>
 
         {/* ── Masthead strip ── */}
         <div

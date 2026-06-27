@@ -261,21 +261,25 @@ export async function fetchFormCard(
       const tcgType = [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
-      // Pass 1a: "M Name-EX" + type filter (XY-era abbreviation, most precise for X/Y)
-      cards = await tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`);
-      // Pass 1b: "Mega Name" + type filter (alternate naming used by some modern sets)
-      if (!cards.some(isEnglishLegal)) {
-        const more = await tcgFetch(`name:"Mega ${baseName}"${typeClause} supertype:Pokémon`);
-        cards = [...cards, ...more];
-      }
-      // Pass 2: drop type filter — catches megas where game type ≠ TCG energy type
-      //         (e.g. Mega Gyarados is Water in TCG not Darkness)
+      // Search all known mega naming conventions in parallel:
+      // - "M Name-EX"       XY-era (2014–2016)
+      // - "Mega Name ex"    modern MEG-era (2025, lowercase ex, space-separated)
+      // - "Mega Name"       any other variant
+      // All three run simultaneously; results are merged so the best rarity wins.
+      const [mEx, megaEx, megaPlain] = await Promise.all([
+        tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`),
+        tcgFetch(`name:"Mega ${baseName} ex"${typeClause} supertype:Pokémon`),
+        tcgFetch(`name:"Mega ${baseName}"${typeClause} supertype:Pokémon`),
+      ]);
+      cards = [...mEx, ...megaEx, ...megaPlain];
+      // Pass 2: drop type filter if nothing English-legal yet (e.g. Gyarados: Water in TCG ≠ Dark in-game)
       if (!cards.some(isEnglishLegal) && typeClause) {
-        const [a, b] = await Promise.all([
+        const [a, b, c] = await Promise.all([
           tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
+          tcgFetch(`name:"Mega ${baseName} ex" supertype:Pokémon`),
           tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
         ]);
-        cards = [...cards, ...a, ...b];
+        cards = [...cards, ...a, ...b, ...c];
       }
       // Pass 3: dex-number fallback for any Mega subtype card
       if (!cards.some(isEnglishLegal)) {

@@ -69,7 +69,7 @@ export default function PokemonCard({ pokemon, formCategory }: Props) {
   const DEPTH = 32;
 
   return (
-    <article className="group cursor-pointer select-none">
+    <article className="group cursor-pointer select-none h-full">
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -83,6 +83,7 @@ export default function PokemonCard({ pokemon, formCategory }: Props) {
           transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
           willChange: isHovered ? "transform" : "auto",
           position: "relative",
+          height: "100%",
         }}
       >
         {/* Book spine sides */}
@@ -93,7 +94,7 @@ export default function PokemonCard({ pokemon, formCategory }: Props) {
 
         {/* Front face */}
         <div
-          className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
+          className={`relative flex flex-col overflow-hidden h-full${isHovered ? " card-hovered" : ""}`}
           style={{
             border: `4px solid ${typeColor}`,
             backgroundColor: `${typeColor}35`,

@@ -305,16 +305,16 @@ export async function fetchFormCard(
     );
     if (!baseValid.length) return null;
     // For megas with a known TCG type, post-filter to only cards of that exact type.
-    // This prevents X/Y forms from picking each other's cards when both name-queries
-    // return the same result set (e.g. both "M Charizard-EX" queries return all prints).
-    const tcgTypeForFilter = category === "mega"
+    // For X/Y mega forms, strictly filter to only cards matching the expected TCG energy type.
+    // No fallback — if no typed card passes, return null so the next priority pass runs.
+    const isXY = displayName.endsWith(" X") || displayName.endsWith(" Y");
+    const tcgTypeForFilter = (category === "mega" && isXY)
       ? [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean)
       : undefined;
     const valid = tcgTypeForFilter
-      ? (baseValid.filter(c => c.types?.includes(tcgTypeForFilter)).length
-          ? baseValid.filter(c => c.types?.includes(tcgTypeForFilter))
-          : baseValid)
+      ? baseValid.filter(c => c.types?.includes(tcgTypeForFilter))
       : baseValid;
+    if (!valid.length) return null;
     valid.sort((a, b) => {
       const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);
       if (rs !== 0) return rs;

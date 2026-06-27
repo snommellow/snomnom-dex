@@ -45,7 +45,7 @@ export default async function PokedexGrid() {
           const irUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_IR_RARITIES);
           if (irUrl) return { ...form, tcgUrl: irUrl };
           // Pass B: Pocket star cards (★★★ > ★★ rainbow > ★)
-          const pocket = await fetchPocketAltForm(form.displayName, form.category, raw[i].name);
+          const pocket = await fetchPocketAltForm(form.displayName, form.category);
           if (pocket.url) return { ...form, tcgUrl: pocket.url };
           // Pass C: older TCG full-art (Secret/Ultra/Holo EX/GX/V)
           const vgxUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_VGX_RARITIES);

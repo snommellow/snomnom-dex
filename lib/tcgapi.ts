@@ -103,6 +103,7 @@ function buildBestMap(
   allowedRarities: Set<string>,
   allowGimmick = false,
   useSubtypeScore = false,
+  preferLowerNumber = false,
 ): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
   const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; num: number; tcgUrl: string | null }>();
@@ -136,7 +137,7 @@ function buildBestMap(
         (score === cur.score && sub < cur.sub) ||
         (score === cur.score && sub === cur.sub && !cur.chain && chain) ||
         (score === cur.score && sub === cur.sub && cur.chain === chain && date > cur.date) ||
-        (score === cur.score && sub === cur.sub && cur.chain === chain && date === cur.date && num > cur.num);
+        (score === cur.score && sub === cur.sub && cur.chain === chain && date === cur.date && (preferLowerNumber ? num < cur.num : num > cur.num));
       if (better) best.set(dexNum, { chain, score, sub, date, num, tcgUrl });
     }
   }
@@ -213,7 +214,7 @@ export async function fetchTcgPromoSv(
     )
   );
   const cards = results.flat();
-  return buildBestMap(cards, PROMO_RARITIES, false);
+  return buildBestMap(cards, PROMO_RARITIES, false, false, true);
 }
 
 // Pass 2.5: Older full-art promos (swshp, etc.)
@@ -226,7 +227,7 @@ export async function fetchTcgPromoOlder(
       tcgFetch(`(${dexQ(batch)}) ${PROMO_OLDER_CLAUSE}`)
     )
   );
-  return buildBestMap(results.flat(), PROMO_RARITIES, false);
+  return buildBestMap(results.flat(), PROMO_RARITIES, false, false, true);
 }
 
 // Pass 3: V/GX/EX fallback for Pokémon still missing after IR/SIR + Pocket

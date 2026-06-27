@@ -144,7 +144,8 @@ export async function fetchAltForms(
       } catch { return null; }
     })
   );
-  return forms.filter((f): f is AltForm => f !== null);
+  // Exclude "other" category — totem, starter, hat variants, etc. are not meaningful alt forms
+  return forms.filter((f): f is AltForm => f !== null && f.category !== "other");
 }
 
 export function toPokemonSummary(

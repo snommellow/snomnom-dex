@@ -63,6 +63,7 @@ interface TcgCard {
   supertype: string;
   set: { id: string; releaseDate: string };
   subtypes: string[];
+  legalities?: { standard?: string; expanded?: string; unlimited?: string };
 }
 
 const EXCLUDED_SUBTYPES = new Set([
@@ -144,7 +145,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes`,
+        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes,legalities`,
       { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];
@@ -222,11 +223,27 @@ function formRarityScore(r: string | undefined): number {
   return i === -1 ? 99 : i;
 }
 
-// Game type → TCG energy type (only types that map distinctively)
+// Game type → TCG energy type (only types with a distinct TCG energy)
 const GAME_TO_TCG_ENERGY: Record<string, string> = {
   dragon: "Dragon", steel: "Metal", dark: "Darkness",
-  fairy: "Fairy", psychic: "Psychic",
+  fairy: "Fairy", psychic: "Psychic", fighting: "Fighting",
+  fire: "Fire", water: "Water", grass: "Grass",
+  electric: "Lightning", ice: "Water",
 };
+
+// A card is "English-legal" if it appears in at least one English format's legality list.
+// Japanese-only promos are not in any English format and will have no Legal entry.
+function isEnglishLegal(card: TcgCard): boolean {
+  const l = card.legalities;
+  if (!l) return false;
+  return l.unlimited === "Legal" || l.expanded === "Legal" || l.standard === "Legal";
+}
+
+// Extract just the base Pokémon name from a mega displayName
+// "Mega Charizard X" → "Charizard", "Mega Kangaskhan" → "Kangaskhan"
+function megaBaseName(displayName: string): string {
+  return displayName.replace(/^Mega /, "").replace(/ [XY]$/, "").trim();
+}
 
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",
@@ -238,10 +255,17 @@ export async function fetchFormCard(
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
-      // Find the most distinctive TCG energy type for this form (e.g. Dragon for Mega Charizard X)
+      // Use the most distinctive TCG energy type to separate X/Y variants
       const tcgType = formTypes.map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
-      cards = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)${typeClause} supertype:Pokémon`);
+      const baseName = megaBaseName(displayName);
+      // Primary: name-based query (avoids Japanese promos with same dex number)
+      cards = await tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`);
+      // Fallback: dex-number query for any newer mega cards not named "M X-EX"
+      if (!cards.some(isEnglishLegal)) {
+        const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)${typeClause} supertype:Pokémon`);
+        cards = [...cards, ...more];
+      }
     } else if (category === "regional") {
       cards = await tcgFetch(`name:"${displayName}" supertype:Pokémon`);
     }
@@ -249,7 +273,8 @@ export async function fetchFormCard(
       (c.images?.large || c.images?.small) &&
       c.rarity &&
       FORM_ALLOWED.has(c.rarity) &&
-      !TRAINER_OWNED_RE.test(c.name)
+      !TRAINER_OWNED_RE.test(c.name) &&
+      isEnglishLegal(c)
     );
     if (!valid.length) return null;
     valid.sort((a, b) => {

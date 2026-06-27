@@ -210,17 +210,23 @@ export async function fetchTcgVgx(
 
 // ── Alternative form card lookup ─────────────────────────────────────────────
 
-// Same priority order as the main passes: IR/SIR first, then full-art premium
-const FORM_RARITY_ORDER = [
-  "Special Illustration Rare", "Illustration Rare",
+// Pass A: SIR/IR — highest quality, same as main card pass 1
+export const FORM_IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
+// Pass B: older full-art (after Pocket check), same tier as main card pass 3
+const FORM_VGX_RARITY_ORDER = [
   "Secret Rare", "Rare Secret", "Ultra Rare", "Rare Ultra",
   "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
   "Rare Holo V",
 ];
-const FORM_ALLOWED = new Set(FORM_RARITY_ORDER);
+export const FORM_VGX_RARITIES = new Set(FORM_VGX_RARITY_ORDER);
+const FORM_ALL_RARITY_ORDER = [
+  "Special Illustration Rare", "Illustration Rare",
+  ...FORM_VGX_RARITY_ORDER,
+];
+const FORM_ALLOWED = new Set(FORM_ALL_RARITY_ORDER);
 
 function formRarityScore(r: string | undefined): number {
-  const i = FORM_RARITY_ORDER.indexOf(r ?? "");
+  const i = FORM_ALL_RARITY_ORDER.indexOf(r ?? "");
   return i === -1 ? 99 : i;
 }
 
@@ -251,6 +257,7 @@ export async function fetchFormCard(
   dexId: number,
   displayName: string,
   formTypes: string[] = [],
+  raritySet: Set<string> = FORM_ALLOWED,
 ): Promise<string | null> {
   if (category === "gmax" || category === "other") return null;
   try {
@@ -292,7 +299,7 @@ export async function fetchFormCard(
     const baseValid = cards.filter(c =>
       (c.images?.large || c.images?.small) &&
       c.rarity &&
-      FORM_ALLOWED.has(c.rarity) &&
+      raritySet.has(c.rarity) &&
       !TRAINER_OWNED_RE.test(c.name) &&
       isEnglishLegal(c)
     );

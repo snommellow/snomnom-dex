@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgVgx, fetchFormCard } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgVgx, fetchFormCard, FORM_IR_RARITIES, FORM_VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -35,16 +35,21 @@ export default async function PokedexGrid() {
     raw.map((p, i) => fetchAltForms(p.name, speciesData[i].altFormSlots))
   );
 
-  // Fetch TCG cards for each alt form, with Pocket star-card fallback
+  // Fetch TCG cards for each alt form — same priority as main cards:
+  // Pass A: SIR/IR → Pass B: Pocket star cards → Pass C: older TCG (VGX/Holo EX) → artwork
   const altFormsWithCards = await Promise.all(
     altFormsData.map((forms, i) =>
       Promise.all(
         forms.map(async (form) => {
-          const tcgUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types);
-          if (tcgUrl) return { ...form, tcgUrl };
-          // Pocket fallback: try star-rarity Pocket card; mega forms also try base Pokémon name
+          // Pass A: SIR / IR
+          const irUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_IR_RARITIES);
+          if (irUrl) return { ...form, tcgUrl: irUrl };
+          // Pass B: Pocket star cards (★★★ > ★★ rainbow > ★)
           const pocket = await fetchPocketAltForm(form.displayName, form.category, raw[i].name);
-          return { ...form, tcgUrl: pocket.url ?? null };
+          if (pocket.url) return { ...form, tcgUrl: pocket.url };
+          // Pass C: older TCG full-art (Secret/Ultra/Holo EX/GX/V)
+          const vgxUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_VGX_RARITIES);
+          return { ...form, tcgUrl: vgxUrl ?? null };
         })
       )
     )

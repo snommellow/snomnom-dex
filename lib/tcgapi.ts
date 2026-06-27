@@ -111,7 +111,7 @@ function buildBestMap(
     if (REGIONAL_RE.test(card.name)) continue;
     if (!allowGimmick && isGimmick(card)) continue;
     if (TRAINER_OWNED_RE.test(card.name)) continue;
-    if (JUNK_RARITIES.has(card.rarity ?? "") || !card.rarity) continue;
+    if (!card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
     // Skip gold-border Full Art V for blocklisted Pokémon (no Alternate Art available)
     const subs = card.subtypes ?? [];

@@ -168,8 +168,11 @@ const VGX_CLAUSE = `(subtypes:VSTAR OR subtypes:VMAX OR subtypes:V OR subtypes:G
 const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
 // Promo full-art passes
 const PROMO_SV_CLAUSE   = `rarity:Promo set.series:"Scarlet & Violet" ${SUB_EXCL}`;
-const PROMO_OLDER_SETS  = ["swshp"] as const;
-const PROMO_OLDER_CLAUSE = `rarity:Promo (${PROMO_OLDER_SETS.map(s => `set.id:${s}`).join(" OR ")}) ${SUB_EXCL}`;
+// swshp excluded until we can reliably filter its non-full-art stamp promos
+const PROMO_OLDER_SETS: string[] = [];
+const PROMO_OLDER_CLAUSE = PROMO_OLDER_SETS.length
+  ? `rarity:Promo (${PROMO_OLDER_SETS.map(s => `set.id:${s}`).join(" OR ")}) ${SUB_EXCL}`
+  : "";
 const PROMO_RARITIES = new Set(["Promo"]);
 const CHUNK = 75;
 
@@ -230,7 +233,7 @@ export async function fetchTcgPromoSv(
 export async function fetchTcgPromoOlder(
   ids: number[]
 ): Promise<Map<number, TcgImageResult>> {
-  if (!ids.length) return new Map();
+  if (!ids.length || !PROMO_OLDER_CLAUSE) return new Map();
   const results = await Promise.all(
     chunk(ids, CHUNK).map((batch) =>
       tcgFetch(`(${dexQ(batch)}) ${PROMO_OLDER_CLAUSE}`)

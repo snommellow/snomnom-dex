@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgVgx, fetchFormCard, FORM_IR_RARITIES, FORM_VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgPromoOlder, fetchTcgVgx, fetchFormCard, FORM_IR_RARITIES, FORM_VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -10,22 +10,30 @@ export default async function PokedexGrid() {
   // Pass 1: IR/SIR — best quality full-art illustration cards
   const irMap = await fetchTcgIrSir(ids);
 
-  // Pass 2: TCG Pocket star cards — for Pokémon missing IR/SIR
+  // Pass 1.5: SV-era full-art promos
   const afterIr = ids.filter((id) => !irMap.has(id));
-  const pocketResultsList = afterIr.length
-    ? await fetchPocketImages(afterIr.map((id) => {
+  const promoSvMap = await fetchTcgPromoSv(afterIr);
+
+  // Pass 2: TCG Pocket star cards — for Pokémon missing IR/SIR + SV promos
+  const afterPromoSv = afterIr.filter((id) => !promoSvMap.has(id));
+  const pocketResultsList = afterPromoSv.length
+    ? await fetchPocketImages(afterPromoSv.map((id) => {
         const p = raw.find((r) => r.id === id)!;
         return { id, name: p.name };
       }))
     : [];
   const pocketMap = new Map<number, string>();
-  afterIr.forEach((id, j) => {
+  afterPromoSv.forEach((id, j) => {
     if (pocketResultsList[j]?.url) pocketMap.set(id, pocketResultsList[j].url!);
   });
 
-  // Pass 3: V/GX/EX — for Pokémon still missing after IR/SIR + Pocket
-  const afterPocket = afterIr.filter((id) => !pocketMap.has(id));
-  const vgxMap = await fetchTcgVgx(afterPocket);
+  // Pass 2.5: Older full-art promos (swshp, etc.)
+  const afterPocket = afterPromoSv.filter((id) => !pocketMap.has(id));
+  const promoOlderMap = await fetchTcgPromoOlder(afterPocket);
+
+  // Pass 3: V/GX/EX — for Pokémon still missing after all promo + Pocket passes
+  const afterPromoOlder = afterPocket.filter((id) => !promoOlderMap.has(id));
+  const vgxMap = await fetchTcgVgx(afterPromoOlder);
 
   // Species data: genus + alt form slots (single fetch per Pokémon)
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
@@ -56,7 +64,7 @@ export default async function PokedexGrid() {
   );
 
   const pokemon = raw.map((p, i) => {
-    const tcgResult = irMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? promoOlderMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
     const pocketUrl = pocketMap.get(p.id);
     return toPokemonSummary(
       p,

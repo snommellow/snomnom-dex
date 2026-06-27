@@ -158,6 +158,11 @@ const IR_CLAUSE = `(rarity:"Special Illustration Rare" OR rarity:"Illustration R
 // Target VSTAR, VMAX, V, GX full-art cards; exclude SV ex, Mega, Trainer
 const VGX_CLAUSE = `(subtypes:VSTAR OR subtypes:VMAX OR subtypes:V OR subtypes:GX) -subtypes:ex -supertype:Trainer`;
 const SUB_EXCL  = `-subtypes:mega -subtypes:vmax -subtypes:vstar -subtypes:tera -supertype:Trainer`;
+// Promo full-art passes
+const PROMO_SV_CLAUSE   = `rarity:Promo set.series:"Scarlet & Violet" ${SUB_EXCL}`;
+const PROMO_OLDER_SETS  = ["swshp"] as const;
+const PROMO_OLDER_CLAUSE = `rarity:Promo (${PROMO_OLDER_SETS.map(s => `set.id:${s}`).join(" OR ")}) ${SUB_EXCL}`;
+const PROMO_RARITIES = new Set(["Promo"]);
 const CHUNK = 75;
 
 function chunk<T>(arr: T[], size: number): T[][] {
@@ -193,6 +198,32 @@ export async function fetchTcgIrSir(
     )
   );
   return buildBestMap(results.flat(), IR_RARITIES, false);
+}
+
+// Pass 1.5: SV-era full-art promos (svp + any future SV promo sets)
+export async function fetchTcgPromoSv(
+  ids: number[]
+): Promise<Map<number, TcgImageResult>> {
+  if (!ids.length) return new Map();
+  const results = await Promise.all(
+    chunk(ids, CHUNK).map((batch) =>
+      tcgFetch(`(${dexQ(batch)}) ${PROMO_SV_CLAUSE}`)
+    )
+  );
+  return buildBestMap(results.flat(), PROMO_RARITIES, false);
+}
+
+// Pass 2.5: Older full-art promos (swshp, etc.)
+export async function fetchTcgPromoOlder(
+  ids: number[]
+): Promise<Map<number, TcgImageResult>> {
+  if (!ids.length) return new Map();
+  const results = await Promise.all(
+    chunk(ids, CHUNK).map((batch) =>
+      tcgFetch(`(${dexQ(batch)}) ${PROMO_OLDER_CLAUSE}`)
+    )
+  );
+  return buildBestMap(results.flat(), PROMO_RARITIES, false);
 }
 
 // Pass 3: V/GX/EX fallback for Pokémon still missing after IR/SIR + Pocket

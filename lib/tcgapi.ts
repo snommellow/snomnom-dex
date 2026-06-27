@@ -213,8 +213,6 @@ export async function fetchTcgPromoSv(
     )
   );
   const cards = results.flat();
-  // DEBUG: log all promo cards found so we can identify set IDs
-  console.log("[PromoSV] cards found:", cards.map(c => `${c.name} | set:${c.set?.id} | num:${c.number} | date:${c.set?.releaseDate}`));
   return buildBestMap(cards, PROMO_RARITIES, false);
 }
 

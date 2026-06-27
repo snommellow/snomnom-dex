@@ -10,16 +10,12 @@ export default async function PokedexGrid() {
   // Pass 1: IR/SIR — best quality full-art illustration cards
   const irMap = await fetchTcgIrSir(ids);
 
-  // Pass 1.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  const afterIr = ids.filter((id) => !irMap.has(id));
-  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterIr);
-
   // Pass 1.5: SV-era full-art promos
-  const afterTrainerIr = afterIr.filter((id) => !trainerIrMap.has(id));
-  const promoSvMap = await fetchTcgPromoSv(afterTrainerIr);
+  const afterIr = ids.filter((id) => !irMap.has(id));
+  const promoSvMap = await fetchTcgPromoSv(afterIr);
 
-  // Pass 2: TCG Pocket star cards — for Pokémon missing IR/SIR + SV promos
-  const afterPromoSv = afterTrainerIr.filter((id) => !promoSvMap.has(id));
+  // Pass 2: TCG Pocket star cards (newest pack first)
+  const afterPromoSv = afterIr.filter((id) => !promoSvMap.has(id));
   const pocketResultsList = afterPromoSv.length
     ? await fetchPocketImages(afterPromoSv.map((id) => {
         const p = raw.find((r) => r.id === id)!;
@@ -31,12 +27,16 @@ export default async function PokedexGrid() {
     if (pocketResultsList[j]?.url) pocketMap.set(id, pocketResultsList[j].url!);
   });
 
-  // Pass 2.5: Older full-art promos (swshp, etc.)
+  // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
   const afterPocket = afterPromoSv.filter((id) => !pocketMap.has(id));
-  const promoOlderMap = await fetchTcgPromoOlder(afterPocket);
+  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
+
+  // Pass 2.5: Older full-art promos (swshp, etc.)
+  const afterTrainerIr = afterPocket.filter((id) => !trainerIrMap.has(id));
+  const promoOlderMap = await fetchTcgPromoOlder(afterTrainerIr);
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all promo + Pocket passes
-  const afterPromoOlder = afterPocket.filter((id) => !promoOlderMap.has(id));
+  const afterPromoOlder = afterTrainerIr.filter((id) => !promoOlderMap.has(id));
   const vgxMap = await fetchTcgVgx(afterPromoOlder);
 
   // Species data: genus + alt form slots (single fetch per Pokémon)

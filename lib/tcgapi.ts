@@ -263,37 +263,18 @@ export async function fetchFormCard(
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
-      // X/Y forms: hardcode the correct TCG energy type to avoid slot-order ambiguity.
-      // For all other megas, derive from the first mapped game type.
-      const XY_TCG_TYPE: Record<string, string> = {
-        "Mega Charizard X": "Dragon",  "Mega Charizard Y": "Fire",
-        "Mega Mewtwo X":    "Fighting", "Mega Mewtwo Y":    "Psychic",
-      };
-      const tcgType = XY_TCG_TYPE[displayName]
-        ?? formTypes.map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
-      const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
-      // Search all known mega naming conventions in parallel:
-      // - "M Name-EX"       XY-era (2014–2016)
-      // - "Mega Name ex"    modern MEG-era (2025, lowercase ex, space-separated)
-      // - "Mega Name"       any other variant
-      // All three run simultaneously; results are merged so the best rarity wins.
-      const [mEx, megaEx, megaPlain] = await Promise.all([
-        tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`),
-        tcgFetch(`name:"Mega ${baseName} ex"${typeClause} supertype:Pokémon`),
-        tcgFetch(`name:"Mega ${baseName}"${typeClause} supertype:Pokémon`),
+      // Search all naming conventions in parallel. Crucially, also search the FULL
+      // displayName + " ex" so that X/Y-specific names ("Mega Charizard X ex",
+      // "Mega Charizard Y ex") are matched directly — no type-based disambiguation needed.
+      const [displayEx, mEx, megaEx, megaPlain] = await Promise.all([
+        tcgFetch(`name:"${displayName} ex" supertype:Pokémon`),
+        tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
+        tcgFetch(`name:"Mega ${baseName} ex" supertype:Pokémon`),
+        tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
       ]);
-      cards = [...mEx, ...megaEx, ...megaPlain];
-      // Pass 2: drop type filter if nothing English-legal yet (e.g. Gyarados: Water in TCG ≠ Dark in-game)
-      if (!cards.some(isEnglishLegal) && typeClause) {
-        const [a, b, c] = await Promise.all([
-          tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
-          tcgFetch(`name:"Mega ${baseName} ex" supertype:Pokémon`),
-          tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
-        ]);
-        cards = [...cards, ...a, ...b, ...c];
-      }
-      // Pass 3: dex-number fallback for any Mega subtype card
+      cards = [...displayEx, ...mEx, ...megaEx, ...megaPlain];
+      // Dex-number fallback for any remaining Mega subtype card
       if (!cards.some(isEnglishLegal)) {
         const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega) supertype:Pokémon`);
         cards = [...cards, ...more];
@@ -301,24 +282,13 @@ export async function fetchFormCard(
     } else if (category === "regional") {
       cards = await tcgFetch(`name:"${displayName}" supertype:Pokémon`);
     }
-    const baseValid = cards.filter(c =>
+    const valid = cards.filter(c =>
       (c.images?.large || c.images?.small) &&
       c.rarity &&
       raritySet.has(c.rarity) &&
       !TRAINER_OWNED_RE.test(c.name) &&
       isEnglishLegal(c)
     );
-    if (!baseValid.length) return null;
-    // For megas with a known TCG type, post-filter to only cards of that exact type.
-    // For X/Y mega forms, strictly filter to only cards matching the expected TCG energy type.
-    // No fallback — if no typed card passes, return null so the next priority pass runs.
-    const isXY = displayName.endsWith(" X") || displayName.endsWith(" Y");
-    const tcgTypeForFilter = (category === "mega" && isXY)
-      ? [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean)
-      : undefined;
-    const valid = tcgTypeForFilter
-      ? baseValid.filter(c => c.types?.includes(tcgTypeForFilter))
-      : baseValid;
     if (!valid.length) return null;
     valid.sort((a, b) => {
       const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);

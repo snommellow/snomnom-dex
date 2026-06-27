@@ -113,6 +113,7 @@ function rarityScore(rarity: string): number {
 
 export interface TcgImageResult { tcgUrl: string | null }
 
+const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(
   cards: TcgCard[],
@@ -120,6 +121,7 @@ function buildBestMap(
   allowGimmick = false,
   useSubtypeScore = false,
   preferLowerNumber = false,
+  allowTrainerOwned = false,
 ): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
   const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; num: number; tcgUrl: string | null }>();
@@ -127,6 +129,7 @@ function buildBestMap(
   for (const card of cards) {
     if (REGIONAL_RE.test(card.name)) continue;
     if (!allowGimmick && isGimmick(card)) continue;
+    if (!allowTrainerOwned && TRAINER_OWNED_RE.test(card.name)) continue;
     if (!card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
     // Skip gold-border Full Art V for blocklisted Pokémon (no Alternate Art available)
@@ -219,6 +222,19 @@ export async function fetchTcgIrSir(
     )
   );
   return buildBestMap(results.flat(), IR_RARITIES, false);
+}
+
+// Pass 1.1: trainer-owned IR/SIR (e.g. "Erika's Clefable") — for Pokémon with no non-trainer IR/SIR
+export async function fetchTcgTrainerOwnedIrSir(
+  ids: number[]
+): Promise<Map<number, TcgImageResult>> {
+  if (!ids.length) return new Map();
+  const results = await Promise.all(
+    chunk(ids, CHUNK).map((batch) =>
+      tcgFetch(`(${dexQ(batch)}) ${IR_CLAUSE} ${SUB_EXCL}`)
+    )
+  );
+  return buildBestMap(results.flat(), IR_RARITIES, false, false, false, true);
 }
 
 // Known non-full-art SVP stamp/retro reprints to exclude

@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgPromoOlder, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgTrainerOwnedIrSir, fetchTcgPromoSv, fetchTcgPromoOlder, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -10,12 +10,16 @@ export default async function PokedexGrid() {
   // Pass 1: IR/SIR — best quality full-art illustration cards
   const irMap = await fetchTcgIrSir(ids);
 
-  // Pass 1.5: SV-era full-art promos
+  // Pass 1.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
   const afterIr = ids.filter((id) => !irMap.has(id));
-  const promoSvMap = await fetchTcgPromoSv(afterIr);
+  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterIr);
+
+  // Pass 1.5: SV-era full-art promos
+  const afterTrainerIr = afterIr.filter((id) => !trainerIrMap.has(id));
+  const promoSvMap = await fetchTcgPromoSv(afterTrainerIr);
 
   // Pass 2: TCG Pocket star cards — for Pokémon missing IR/SIR + SV promos
-  const afterPromoSv = afterIr.filter((id) => !promoSvMap.has(id));
+  const afterPromoSv = afterTrainerIr.filter((id) => !promoSvMap.has(id));
   const pocketResultsList = afterPromoSv.length
     ? await fetchPocketImages(afterPromoSv.map((id) => {
         const p = raw.find((r) => r.id === id)!;
@@ -64,7 +68,7 @@ export default async function PokedexGrid() {
   );
 
   const pokemon = raw.map((p, i) => {
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? promoOlderMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
+    const tcgResult = irMap.get(p.id) ?? trainerIrMap.get(p.id) ?? promoSvMap.get(p.id) ?? promoOlderMap.get(p.id) ?? vgxMap.get(p.id) ?? { tcgUrl: null };
     const pocketUrl = pocketMap.get(p.id);
     return toPokemonSummary(
       p,

@@ -255,8 +255,9 @@ export async function fetchFormCard(
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
-      // Use the most distinctive TCG energy type to separate X/Y variants
-      const tcgType = formTypes.map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
+      // Reverse types so secondary type (slot 2) is tried first — it's always more
+      // distinctive (dragon beats fire for Charizard X, fighting beats psychic for Mewtwo X)
+      const tcgType = [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
       // Primary: name-based query (avoids Japanese promos with same dex number)
@@ -280,6 +281,11 @@ export async function fetchFormCard(
     valid.sort((a, b) => {
       const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);
       if (rs !== 0) return rs;
+      // Prefer set-numbered cards (123/150) over promo numbers (XY200) — promos
+      // often have Japanese-art overlays even in English sets
+      const setA = /^\d+\/\d+$/.test(a.number) ? 0 : 1;
+      const setB = /^\d+\/\d+$/.test(b.number) ? 0 : 1;
+      if (setA !== setB) return setA - setB;
       return (b.set?.releaseDate ?? "").localeCompare(a.set?.releaseDate ?? "");
     });
     return valid[0]?.images?.large ?? valid[0]?.images?.small ?? null;

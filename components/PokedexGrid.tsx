@@ -1,6 +1,6 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgVgx, fetchFormCard } from "@/lib/tcgapi";
-import { fetchPocketImages } from "@/lib/pocketapi";
+import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
 export default async function PokedexGrid() {
@@ -35,14 +35,17 @@ export default async function PokedexGrid() {
     raw.map((p, i) => fetchAltForms(p.name, speciesData[i].altFormSlots))
   );
 
-  // Fetch TCG cards for each alt form
+  // Fetch TCG cards for each alt form, with Pocket star-card fallback
   const altFormsWithCards = await Promise.all(
     altFormsData.map((forms, i) =>
       Promise.all(
-        forms.map(async (form) => ({
-          ...form,
-          tcgUrl: await fetchFormCard(form.category, raw[i].id, form.displayName, form.types),
-        }))
+        forms.map(async (form) => {
+          const tcgUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types);
+          if (tcgUrl) return { ...form, tcgUrl };
+          // Pocket fallback: try star-rarity Pocket card matching the alt form display name
+          const pocket = await fetchPocketAltForm(form.displayName);
+          return { ...form, tcgUrl: pocket.url ?? null };
+        })
       )
     )
   );

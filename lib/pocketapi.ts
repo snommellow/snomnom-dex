@@ -103,6 +103,25 @@ export async function fetchPocketImages(
   );
 }
 
+// Pocket star-card lookup for alt forms (regional/mega display names like "Alolan Raichu")
+// Does NOT use isExcluded so "Alolan X" names are matched directly.
+export async function fetchPocketAltForm(displayName: string): Promise<PocketResult> {
+  const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(displayName, r)));
+  const nameLower = displayName.toLowerCase();
+  const cards = STAR_RARITIES.flatMap((rarity, i) =>
+    results[i]
+      .filter((c) => c.image && c.name.toLowerCase() === nameLower)
+      .map((c) => ({ ...c, rarity }))
+  );
+  if (!cards.length) return { url: null };
+  const best = cards.reduce((a, b) => {
+    const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
+    const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
+    return ra <= rb ? a : b;
+  });
+  return { url: cardImageUrl(best) };
+}
+
 // Pass 4 fallback: any Pocket card (including commons) for Pokémon with no high-quality card
 async function fetchAnyPocketCards(name: string): Promise<TcgdexCard[]> {
   try {

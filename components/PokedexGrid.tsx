@@ -42,8 +42,8 @@ export default async function PokedexGrid() {
         forms.map(async (form) => {
           const tcgUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types);
           if (tcgUrl) return { ...form, tcgUrl };
-          // Pocket fallback: try star-rarity Pocket card matching the alt form display name
-          const pocket = await fetchPocketAltForm(form.displayName);
+          // Pocket fallback: try star-rarity Pocket card; mega forms also try base Pokémon name
+          const pocket = await fetchPocketAltForm(form.displayName, form.category, raw[i].name);
           return { ...form, tcgUrl: pocket.url ?? null };
         })
       )

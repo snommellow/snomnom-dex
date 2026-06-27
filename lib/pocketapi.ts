@@ -103,23 +103,34 @@ export async function fetchPocketImages(
   );
 }
 
-// Pocket star-card lookup for alt forms (regional/mega display names like "Alolan Raichu")
-// Does NOT use isExcluded so "Alolan X" names are matched directly.
-export async function fetchPocketAltForm(displayName: string): Promise<PocketResult> {
-  const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(displayName, r)));
+// Pocket star-card lookup for alt forms.
+// For regional forms: queries exact display name ("Alolan Raichu"), bypassing isExcluded.
+// For mega forms: falls back to base Pokémon name when no exact match found, since
+// Pocket EX cards use the base name (e.g. "Gyarados ex" for Mega Gyarados).
+export async function fetchPocketAltForm(
+  displayName: string,
+  category: string,
+  basePokemonName?: string,
+): Promise<PocketResult> {
   const nameLower = displayName.toLowerCase();
-  const cards = STAR_RARITIES.flatMap((rarity, i) =>
-    results[i]
+  const exactResults = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(displayName, r)));
+  const exactCards = STAR_RARITIES.flatMap((rarity, i) =>
+    exactResults[i]
       .filter((c) => c.image && c.name.toLowerCase() === nameLower)
       .map((c) => ({ ...c, rarity }))
   );
-  if (!cards.length) return { url: null };
-  const best = cards.reduce((a, b) => {
-    const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
-    const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
-    return ra <= rb ? a : b;
-  });
-  return { url: cardImageUrl(best) };
+  if (exactCards.length) {
+    const best = exactCards.reduce((a, b) =>
+      (RARITY_SCORE[a.rarity ?? ""] ?? 99) <= (RARITY_SCORE[b.rarity ?? ""] ?? 99) ? a : b
+    );
+    return { url: cardImageUrl(best) };
+  }
+  // For mega forms, Pocket cards use the base Pokémon name (e.g. "gyarados" for Mega Gyarados)
+  if (category === "mega" && basePokemonName) {
+    const baseResults = await fetchPocketImages([{ id: 0, name: basePokemonName }]);
+    return baseResults[0] ?? { url: null };
+  }
+  return { url: null };
 }
 
 // Pass 4 fallback: any Pocket card (including commons) for Pokémon with no high-quality card

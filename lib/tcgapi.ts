@@ -260,11 +260,16 @@ export async function fetchFormCard(
       const tcgType = [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
-      // Primary: name-based query (avoids Japanese promos with same dex number)
+      // Pass 1: name + type filter (most precise — separates X/Y variants)
       cards = await tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`);
-      // Fallback: dex-number query for any newer mega cards not named "M X-EX"
+      // Pass 2: name only, no type filter (catches megas where game type ≠ TCG energy type,
+      //          e.g. Mega Gyarados is Water in TCG not Darkness despite game typing)
+      if (!cards.some(isEnglishLegal) && typeClause) {
+        cards = await tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`);
+      }
+      // Pass 3: dex-number fallback for megas not named "M X-EX"
       if (!cards.some(isEnglishLegal)) {
-        const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)${typeClause} supertype:Pokémon`);
+        const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega) supertype:Pokémon`);
         cards = [...cards, ...more];
       }
     } else if (category === "regional") {

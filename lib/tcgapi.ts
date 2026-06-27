@@ -212,7 +212,10 @@ export async function fetchTcgPromoSv(
       tcgFetch(`(${dexQ(batch)}) ${PROMO_SV_CLAUSE}`)
     )
   );
-  return buildBestMap(results.flat(), PROMO_RARITIES, false);
+  const cards = results.flat();
+  // DEBUG: log all promo cards found so we can identify set IDs
+  console.log("[PromoSV] cards found:", cards.map(c => `${c.name} | set:${c.set?.id} | num:${c.number} | date:${c.set?.releaseDate}`));
+  return buildBestMap(cards, PROMO_RARITIES, false);
 }
 
 // Pass 2.5: Older full-art promos (swshp, etc.)

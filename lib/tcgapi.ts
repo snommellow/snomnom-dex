@@ -211,9 +211,8 @@ export async function fetchTcgIrSir(
   return buildBestMap(results.flat(), IR_RARITIES, false);
 }
 
-// Illustration/ETB promos in SVP sit at low card numbers; stamp/retro reprints are higher.
-// Cap at 100 to filter out stamp and retro promos while keeping illustration promos.
-const SV_PROMO_MAX_NUMBER = 100;
+// Known non-full-art SVP stamp/retro reprints to exclude
+const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-168", "svp-169"]);
 
 // Pass 1.5: SV-era full-art promos (svp + any future SV promo sets)
 export async function fetchTcgPromoSv(
@@ -225,7 +224,7 @@ export async function fetchTcgPromoSv(
       tcgFetch(`(${dexQ(batch)}) ${PROMO_SV_CLAUSE}`)
     )
   );
-  const cards = results.flat().filter(c => (parseInt(c.number ?? "999", 10) || 999) <= SV_PROMO_MAX_NUMBER);
+  const cards = results.flat().filter(c => !SVP_BLACKLIST.has(c.id));
   return buildBestMap(cards, PROMO_RARITIES, false, false, true);
 }
 

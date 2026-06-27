@@ -238,7 +238,7 @@ export async function fetchTcgTrainerOwnedIrSir(
 }
 
 // Known non-full-art SVP stamp/retro reprints to exclude
-const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
+const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-159", "svp-167", "svp-168", "svp-169"]);
 
 // Pass 1.5: SV-era full-art promos (svp + any future SV promo sets)
 export async function fetchTcgPromoSv(

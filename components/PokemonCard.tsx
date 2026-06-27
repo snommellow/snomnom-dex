@@ -182,43 +182,30 @@ function TypePills({ types, isHovered }: { types: string[]; isHovered?: boolean 
   );
 }
 
-// ── Form badge icons ──────────────────────────────────────────────────────────
+// ── Form badge icons (official Pokémon item sprites) ─────────────────────────
 
-function MegaStoneIcon() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 20 20" aria-label="Mega Evolution">
-      <circle cx="10" cy="10" r="9" fill="rgba(255,220,255,0.95)" stroke="rgba(180,80,220,0.8)" strokeWidth="1.5" />
-      <polygon points="10,3 14,8 10,13 6,8" fill="rgba(200,80,220,0.85)" />
-      <circle cx="10" cy="10" r="2.5" fill="white" opacity="0.9" />
-    </svg>
-  );
-}
+const SPRITES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items";
 
-function GmaxIcon() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 20 20" aria-label="Gigantamax">
-      <polygon points="10,1 13,7 19,8 14.5,12.5 16,19 10,16 4,19 5.5,12.5 1,8 7,7" fill="rgba(255,60,60,0.9)" stroke="rgba(180,0,0,0.7)" strokeWidth="1" />
-      <text x="10" y="13.5" textAnchor="middle" fontSize="7" fontWeight="900" fill="white" fontFamily="sans-serif">G</text>
-    </svg>
-  );
-}
-
-function RegionalIcon() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 20 20" aria-label="Regional Form">
-      <circle cx="10" cy="10" r="9" fill="rgba(200,240,255,0.95)" stroke="rgba(60,140,220,0.8)" strokeWidth="1.5" />
-      <ellipse cx="10" cy="10" rx="5" ry="9" fill="none" stroke="rgba(60,140,220,0.7)" strokeWidth="1.2" />
-      <line x1="1" y1="10" x2="19" y2="10" stroke="rgba(60,140,220,0.7)" strokeWidth="1.2" />
-    </svg>
-  );
-}
+// Mega Evolution: Key Stone (held by trainer to trigger mega)
+// Gigantamax: Dynamax Band
+// Regional: Oval Charm (represents regional variant discovery)
+const FORM_ICON_URL: Record<string, string> = {
+  mega:     `${SPRITES}/key-stone.png`,
+  gmax:     `${SPRITES}/dynamax-band.png`,
+  regional: `${SPRITES}/oval-charm.png`,
+};
 
 function FormIcon({ category }: { category: AltForm["category"] }) {
-  if (category === "mega") return <MegaStoneIcon />;
-  if (category === "gmax") return <GmaxIcon />;
-  if (category === "regional") return <RegionalIcon />;
-  return null;
+  const src = FORM_ICON_URL[category];
+  if (!src) return null;
+  const label = category === "mega" ? "Mega Evolution" : category === "gmax" ? "Gigantamax" : "Regional Form";
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={label} title={label} className="w-3 h-3 object-contain" style={{ imageRendering: "pixelated" }} />
+  );
 }
+
+
 
 // ── Main Pokémon card ─────────────────────────────────────────────────────────
 

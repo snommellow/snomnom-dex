@@ -210,13 +210,15 @@ export async function fetchTcgVgx(
 
 // ── Alternative form card lookup ─────────────────────────────────────────────
 
-// Rarity preference for form cards (Mega EX, regional IR/SIR, etc.)
+// Same priority order as the main passes: IR/SIR first, then full-art premium
 const FORM_RARITY_ORDER = [
   "Special Illustration Rare", "Illustration Rare",
   "Secret Rare", "Rare Secret", "Ultra Rare", "Rare Ultra",
   "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
-  "Rare Holo V", "Rare Holo",
+  "Rare Holo V",
 ];
+const FORM_ALLOWED = new Set(FORM_RARITY_ORDER);
+
 function formRarityScore(r: string | undefined): number {
   const i = FORM_RARITY_ORDER.indexOf(r ?? "");
   return i === -1 ? 99 : i;
@@ -227,16 +229,20 @@ export async function fetchFormCard(
   dexId: number,
   displayName: string,
 ): Promise<string | null> {
-  // Gigantamax: no distinct TCG card (VMAX cards appear in the main VGX pass)
   if (category === "gmax" || category === "other") return null;
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
       cards = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)`);
     } else if (category === "regional") {
-      cards = await tcgFetch(`name:"${displayName}"`);
+      cards = await tcgFetch(`name:"${displayName}" -supertype:Trainer`);
     }
-    const valid = cards.filter(c => (c.images?.large || c.images?.small) && c.rarity);
+    const valid = cards.filter(c =>
+      (c.images?.large || c.images?.small) &&
+      c.rarity &&
+      FORM_ALLOWED.has(c.rarity) &&
+      !TRAINER_OWNED_RE.test(c.name)
+    );
     if (!valid.length) return null;
     valid.sort((a, b) => formRarityScore(a.rarity) - formRarityScore(b.rarity));
     return valid[0]?.images?.large ?? valid[0]?.images?.small ?? null;

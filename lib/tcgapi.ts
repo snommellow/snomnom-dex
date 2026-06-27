@@ -261,14 +261,23 @@ export async function fetchFormCard(
       const tcgType = [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
-      // Pass 1: name + type filter (most precise — separates X/Y variants)
+      // Pass 1a: "M Name-EX" + type filter (XY-era abbreviation, most precise for X/Y)
       cards = await tcgFetch(`name:"M ${baseName}-EX"${typeClause} supertype:Pokémon`);
-      // Pass 2: name only, no type filter (catches megas where game type ≠ TCG energy type,
-      //          e.g. Mega Gyarados is Water in TCG not Darkness despite game typing)
-      if (!cards.some(isEnglishLegal) && typeClause) {
-        cards = await tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`);
+      // Pass 1b: "Mega Name" + type filter (alternate naming used by some modern sets)
+      if (!cards.some(isEnglishLegal)) {
+        const more = await tcgFetch(`name:"Mega ${baseName}"${typeClause} supertype:Pokémon`);
+        cards = [...cards, ...more];
       }
-      // Pass 3: dex-number fallback for megas not named "M X-EX"
+      // Pass 2: drop type filter — catches megas where game type ≠ TCG energy type
+      //         (e.g. Mega Gyarados is Water in TCG not Darkness)
+      if (!cards.some(isEnglishLegal) && typeClause) {
+        const [a, b] = await Promise.all([
+          tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
+          tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
+        ]);
+        cards = [...cards, ...a, ...b];
+      }
+      // Pass 3: dex-number fallback for any Mega subtype card
       if (!cards.some(isEnglishLegal)) {
         const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega) supertype:Pokémon`);
         cards = [...cards, ...more];

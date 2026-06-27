@@ -247,14 +247,14 @@ export default function PokemonCard({ pokemon, formCategory }: Props) {
 }
 
 // Alt form card: converts AltForm data into a PokemonSummary and renders the exact same PokemonCard
-export function AltFormCard({ form, baseId }: { form: AltForm; baseId: number }) {
+export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: number; genus?: string | null }) {
   const summary: PokemonSummary = {
     id: baseId,
     name: form.displayName,
     types: form.types,
     spriteUrl: null,
     artworkUrl: form.artworkUrl,
-    genus: null,
+    genus: genus ?? null,
     bgCandidates: [form.tcgUrl, form.artworkUrl].filter((u): u is string => !!u),
     altForms: [],
   };

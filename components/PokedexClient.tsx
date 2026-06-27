@@ -118,7 +118,7 @@ export default function PokedexClient({ pokemon }: Props) {
           {filtered.flatMap((p) => [
             <PokemonCard key={p.id} pokemon={p} />,
             ...(p.altForms ?? []).map((form) => (
-              <AltFormCard key={form.slug} form={form} baseId={p.id} />
+              <AltFormCard key={form.slug} form={form} baseId={p.id} genus={p.genus} />
             )),
           ])}
         </div>

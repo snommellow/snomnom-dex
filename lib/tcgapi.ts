@@ -339,7 +339,8 @@ export async function fetchFormCard(
       raritySet.has(c.rarity) &&
       !TRAINER_OWNED_RE.test(c.name) &&
       isEnglishLegal(c) &&
-      !isGimmick(c)
+      !(c.subtypes ?? []).includes("Tera") &&
+      !(c.rules ?? []).some((r) => TERA_RULE_RE.test(r))
     );
     if (!valid.length) return null;
     valid.sort((a, b) => {

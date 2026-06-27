@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgPromoOlder, fetchTcgVgx, fetchFormCard, FORM_IR_RARITIES, FORM_VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgPromoOlder, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -50,13 +50,13 @@ export default async function PokedexGrid() {
       Promise.all(
         forms.map(async (form) => {
           // Pass A: SIR / IR
-          const irUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_IR_RARITIES);
+          const irUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES);
           if (irUrl) return { ...form, tcgUrl: irUrl };
           // Pass B: Pocket star cards (★★★ > ★★ rainbow > ★)
           const pocket = await fetchPocketAltForm(form.displayName, form.category);
           if (pocket.url) return { ...form, tcgUrl: pocket.url };
           // Pass C: older TCG full-art (Secret/Ultra/Holo EX/GX/V)
-          const vgxUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, FORM_VGX_RARITIES);
+          const vgxUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES);
           return { ...form, tcgUrl: vgxUrl ?? null };
         })
       )

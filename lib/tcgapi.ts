@@ -2,9 +2,22 @@ const TCG_BASE = "https://api.pokemontcg.io/v2/cards";
 
 // ── TCG card images (pokemontcg.io) ──────────────────────────────────────────
 
-const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
-// V/GX full-art cards span multiple rarity names depending on set era
-const VGX_RARITIES = new Set(["Ultra Rare", "Rare Ultra", "Rare Secret", "Secret Rare"]);
+// Unified rarity priority order — shared by both main and alt form card lookups
+const RARITY_ORDER = [
+  "Special Illustration Rare", "Illustration Rare",
+  "Secret Rare", "Rare Secret", "Trainer Gallery Rare Holo",
+  "Ultra Rare", "Rare Ultra",
+  "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
+  "Rare Holo V",
+];
+
+export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
+export const VGX_RARITIES = new Set([
+  "Secret Rare", "Rare Secret", "Trainer Gallery Rare Holo",
+  "Ultra Rare", "Rare Ultra",
+  "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
+  "Rare Holo V",
+]);
 
 function subtypeScore(subtypes: string[]): number {
   // Lower = better: VSTAR > VMAX > GX > EX > V Alternate Art > regular V
@@ -94,8 +107,7 @@ function isGimmick(card: TcgCard): boolean {
 const V_GOLDBORDER_BLOCKLIST = new Set<number>([]);
 
 function rarityScore(rarity: string): number {
-  const order = ["Special Illustration Rare", "Illustration Rare", "Ultra Rare", "Secret Rare", "Rare Holo", "Rare"];
-  const idx = order.indexOf(rarity);
+  const idx = RARITY_ORDER.indexOf(rarity);
   return idx === -1 ? 99 : idx;
 }
 
@@ -257,27 +269,6 @@ export async function fetchTcgVgx(
 
 // ── Alternative form card lookup ─────────────────────────────────────────────
 
-// Pass A: SIR/IR — highest quality, same as main card pass 1
-export const FORM_IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
-// Pass B: older full-art (after Pocket check), same tier as main card pass 3
-const FORM_VGX_RARITY_ORDER = [
-  "Secret Rare", "Rare Secret", "Trainer Gallery Rare Holo",
-  "Ultra Rare", "Rare Ultra",
-  "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
-  "Rare Holo V",
-];
-export const FORM_VGX_RARITIES = new Set(FORM_VGX_RARITY_ORDER);
-const FORM_ALL_RARITY_ORDER = [
-  "Special Illustration Rare", "Illustration Rare",
-  ...FORM_VGX_RARITY_ORDER,
-];
-const FORM_ALLOWED = new Set(FORM_ALL_RARITY_ORDER);
-
-function formRarityScore(r: string | undefined): number {
-  const i = FORM_ALL_RARITY_ORDER.indexOf(r ?? "");
-  return i === -1 ? 99 : i;
-}
-
 // Game type → TCG energy type (only types with a distinct TCG energy)
 const GAME_TO_TCG_ENERGY: Record<string, string> = {
   dragon: "Dragon", steel: "Metal", dark: "Darkness",
@@ -305,7 +296,7 @@ export async function fetchFormCard(
   dexId: number,
   displayName: string,
   formTypes: string[] = [],
-  raritySet: Set<string> = FORM_ALLOWED,
+  raritySet: Set<string> = VGX_RARITIES,
 ): Promise<string | null> {
   if (category === "gmax" || category === "other") return null;
   try {
@@ -345,7 +336,7 @@ export async function fetchFormCard(
     );
     if (!valid.length) return null;
     valid.sort((a, b) => {
-      const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);
+      const rs = rarityScore(a.rarity) - rarityScore(b.rarity);
       if (rs !== 0) return rs;
       return (b.set?.releaseDate ?? "").localeCompare(a.set?.releaseDate ?? "");
     });

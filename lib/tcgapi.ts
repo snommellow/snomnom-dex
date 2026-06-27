@@ -261,9 +261,10 @@ export async function fetchTcgVgx(
 export const FORM_IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 // Pass B: older full-art (after Pocket check), same tier as main card pass 3
 const FORM_VGX_RARITY_ORDER = [
-  "Secret Rare", "Rare Secret", "Ultra Rare", "Rare Ultra",
+  "Secret Rare", "Rare Secret", "Trainer Gallery Rare Holo",
+  "Ultra Rare", "Rare Ultra",
   "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
-  "Trainer Gallery Rare Holo", "Rare Holo V",
+  "Rare Holo V",
 ];
 export const FORM_VGX_RARITIES = new Set(FORM_VGX_RARITY_ORDER);
 const FORM_ALL_RARITY_ORDER = [

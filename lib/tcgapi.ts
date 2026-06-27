@@ -263,9 +263,14 @@ export async function fetchFormCard(
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
-      // Reverse types so secondary type (slot 2) is tried first — it's always more
-      // distinctive (dragon beats fire for Charizard X, fighting beats psychic for Mewtwo X)
-      const tcgType = [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
+      // X/Y forms: hardcode the correct TCG energy type to avoid slot-order ambiguity.
+      // For all other megas, derive from the first mapped game type.
+      const XY_TCG_TYPE: Record<string, string> = {
+        "Mega Charizard X": "Dragon",  "Mega Charizard Y": "Fire",
+        "Mega Mewtwo X":    "Fighting", "Mega Mewtwo Y":    "Psychic",
+      };
+      const tcgType = XY_TCG_TYPE[displayName]
+        ?? formTypes.map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
       const typeClause = tcgType ? ` types:${tcgType}` : "";
       const baseName = megaBaseName(displayName);
       // Search all known mega naming conventions in parallel:

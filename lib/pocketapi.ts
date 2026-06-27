@@ -112,10 +112,16 @@ export async function fetchPocketAltForm(
   category: string,
 ): Promise<PocketResult> {
   const nameLower = displayName.toLowerCase();
+  // Pocket mega cards use "Mega Name ex" naming (e.g. "Mega Gyarados ex"), so accept
+  // exact name match OR exact name + " ex" suffix.
+  const matchesName = (cardName: string) => {
+    const cn = cardName.toLowerCase();
+    return cn === nameLower || cn === nameLower + " ex";
+  };
   const exactResults = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(displayName, r)));
   const exactCards = STAR_RARITIES.flatMap((rarity, i) =>
     exactResults[i]
-      .filter((c) => c.image && c.name.toLowerCase() === nameLower)
+      .filter((c) => c.image && matchesName(c.name))
       .map((c) => ({ ...c, rarity }))
   );
   if (exactCards.length) {
@@ -124,8 +130,6 @@ export async function fetchPocketAltForm(
     );
     return { url: cardImageUrl(best) };
   }
-  // No base-name fallback for megas — picking the regular Pokémon's Pocket card
-  // (e.g. "Gyarados ex") for a mega form is misleading; let Pass C find the TCG card.
   return { url: null };
 }
 

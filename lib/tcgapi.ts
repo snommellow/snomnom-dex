@@ -79,6 +79,7 @@ const TERA_RULE_RE = /^tera[:\s]/i;
 function isGimmick(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
   if (GIMMICK_RE.test(card.name)) return true;
+  if (REGIONAL_RE.test(card.name)) return true;
   // Tera cards don't always have "Tera" in subtypes — check the rule box instead
   if ((card.rules ?? []).some((r) => TERA_RULE_RE.test(r))) return true;
   // Trainer cards have no dex numbers so they're filtered by buildBestMap already,

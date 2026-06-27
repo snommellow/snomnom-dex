@@ -263,7 +263,7 @@ export const FORM_IR_RARITIES = new Set(["Special Illustration Rare", "Illustrat
 const FORM_VGX_RARITY_ORDER = [
   "Secret Rare", "Rare Secret", "Ultra Rare", "Rare Ultra",
   "Rare Holo EX", "Holo Rare EX", "Rare Holo GX", "Holo Rare GX",
-  "Rare Holo V",
+  "Trainer Gallery Rare Holo", "Rare Holo V",
 ];
 export const FORM_VGX_RARITIES = new Set(FORM_VGX_RARITY_ORDER);
 const FORM_ALL_RARITY_ORDER = [

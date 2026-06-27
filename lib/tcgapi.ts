@@ -1,5 +1,4 @@
 // TCGdex API — English TCG card lookup (https://tcgdex.dev)
-// Replaces pokemontcg.io; uses the same base URL as pocketapi.ts
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
@@ -7,7 +6,7 @@ const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 const RARITY_ORDER = [
   "Special illustration rare",
   "Illustration rare",
-  "Hyper rare",       // Secret Rare equivalent (full-art SIR-tier for older sets)
+  "Hyper rare",       // Secret Rare equivalent
   "Ultra Rare",       // Full-art V, full-art GX trainer, etc.
   "Holo Rare VSTAR",
   "Holo Rare VMAX",
@@ -20,17 +19,17 @@ export const VGX_RARITIES = new Set([
 ]);
 
 // Trainer Gallery localId pattern — TG01, TG08, TG19, etc.
-// TCGdex classifies these as "Rare" so we detect them by localId instead of rarity.
+// TCGdex classifies these as "Rare" so we detect by localId instead.
 const TG_RE = /^TG\d+$/;
 
 const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
-const TRAINER_OWNED_RE = /'\s*s\s+/i;
-// VMAX/VSTAR in the card name signals a gimmick form — excluded from the main Pokémon slot
-// but allowed when fetching alt-form cards.
+// Handle both straight (') and curly (') apostrophes used by TCGdex
+const TRAINER_OWNED_RE = /['’]\s*s\s+/i;
+// VMAX/VSTAR in card name = gimmick form; excluded from main slot, allowed for alt-forms
 const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
-// Cards to exclude due to API misclassification (e.g. chain holos tagged as IR)
-const CARD_BLACKLIST = new Set<string>([]);
+// SVP promos that are non-full-art stamp reprints — excluded from promo pass
+const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
 
 interface TcgdexCard {
   id: string;
@@ -66,6 +65,20 @@ function setIdFromCardId(id: string): string {
   return id.split("-")[0] ?? "";
 }
 
+// TCGdex does substring name matching — "Paras" returns "Parasol Lady".
+// Post-filter: only accept exact match or "<query> <suffix>" (e.g. "Charizard ex").
+function nameMatches(cardName: string, query: string): boolean {
+  const cn = cardName.toLowerCase();
+  const q  = query.toLowerCase();
+  return cn === q || cn.startsWith(q + " ");
+}
+
+// All SV-era cards with " ex" suffix are Tera Pokémon — exclude from main slot.
+// Alt-form lookups (mega ex cards) pass allowTeraEx: true to skip this filter.
+function isTeraEx(card: TcgdexCard): boolean {
+  return /\sex$/i.test(card.name) && setIdFromCardId(card.id).startsWith("sv");
+}
+
 async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
   try {
     const params = new URLSearchParams({ name });
@@ -82,7 +95,6 @@ function pickBest(cards: Array<TcgdexCard & { _rarity: string }>): string | null
   const winner = cards.reduce((a, b) => {
     const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
     if (ra !== rb) return ra < rb ? a : b;
-    // Prefer newer set (sv06 > sv01, swsh12 > swsh01)
     return setIdFromCardId(b.id) > setIdFromCardId(a.id) ? b : a;
   });
   return cardImageUrl(winner);
@@ -92,19 +104,21 @@ interface FetchOptions {
   allowTrainerOwned?: boolean;
   allowGimmick?: boolean;
   skipRegionalFilter?: boolean;
+  allowTeraEx?: boolean;
 }
 
 async function fetchBestByRarities(
   displayName: string,
   rarities: string[],
-  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false }: FetchOptions = {},
+  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false, allowTeraEx = false }: FetchOptions = {},
 ): Promise<string | null> {
   const results = await Promise.all(rarities.map(r => tcgFetch(displayName, r)));
   const cards = results.flatMap((list, i) =>
     list
       .filter(c =>
         c.image &&
-        !CARD_BLACKLIST.has(c.id) &&
+        nameMatches(c.name, displayName) &&
+        (allowTeraEx        || !isTeraEx(c)) &&
         (skipRegionalFilter || !REGIONAL_RE.test(c.name)) &&
         (allowTrainerOwned  || !TRAINER_OWNED_RE.test(c.name)) &&
         (allowGimmick       || !MAIN_GIMMICK_RE.test(c.name))
@@ -130,11 +144,38 @@ export async function fetchTcgIrSir(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
+// Pass 1.5: SV-era full-art promos (svp set, rarity "None" on TCGdex)
+// Pick highest localId per Pokémon — higher numbers = better promo quality.
+export async function fetchTcgPromoSv(
+  pokemon: Array<{ id: number; name: string }>
+): Promise<Map<number, TcgImageResult>> {
+  if (!pokemon.length) return new Map();
+  const entries = await Promise.all(
+    pokemon.map(async ({ id, name }) => {
+      const displayName = toDisplayName(name);
+      const allCards = await tcgFetch(displayName);
+      const svpCards = allCards.filter(c =>
+        c.image &&
+        setIdFromCardId(c.id) === "svp" &&
+        !SVP_BLACKLIST.has(c.id) &&
+        nameMatches(c.name, displayName) &&
+        !REGIONAL_RE.test(c.name) &&
+        !TRAINER_OWNED_RE.test(c.name)
+      );
+      if (!svpCards.length) return null;
+      const best = svpCards.reduce((a, b) =>
+        parseInt(b.localId) > parseInt(a.localId) ? b : a
+      );
+      return [id, { tcgUrl: cardImageUrl(best) }] as const;
+    })
+  );
+  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+}
+
 // Pass 2.1: Trainer-owned IR/SIR (e.g. "Erika's Clefable")
-// TCGdex name search won't return "Erika's Clefable" for a "Clefable" query,
-// so we fetch the exact trainer-owned name using the allowTrainerOwned filter.
-// Callers pass Pokémon that already had no non-trainer IR found; we try their
-// display name as-is — if the TCGdex card name includes the trainer, it'll match.
+// Note: TCGdex name search returns exact/prefix matches only, so "Clefable"
+// won't find "Erika's Clefable". This pass handles cases where the trainer
+// name is included in the query (future: trainer-name mapping).
 export async function fetchTcgTrainerOwnedIrSir(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
@@ -171,7 +212,7 @@ export async function fetchTcgVgx(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Alt-form card lookup — IR → TG (regional only) → VGX, with Mega name fallbacks
+// Alt-form card lookup — IR → TG (regional) → VGX, with Mega name fallbacks
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",
   _dexId: number,
@@ -182,7 +223,7 @@ export async function fetchFormCard(
   if (category === "gmax" || category === "other") return null;
 
   const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
-  const opts: FetchOptions = { skipRegionalFilter: true, allowGimmick: true };
+  const opts: FetchOptions = { skipRegionalFilter: true, allowGimmick: true, allowTeraEx: true };
 
   if (category === "regional") {
     if (raritySet === IR_RARITIES) {
@@ -190,7 +231,9 @@ export async function fetchFormCard(
     }
     // VGX pass: check Trainer Gallery cards first — they rank above Ultra Rare
     const allCards = await tcgFetch(displayName);
-    const tgCards = allCards.filter(c => c.image && TG_RE.test(c.localId));
+    const tgCards = allCards.filter(c =>
+      c.image && TG_RE.test(c.localId) && nameMatches(c.name, displayName)
+    );
     if (tgCards.length) {
       const best = tgCards.reduce((a, b) =>
         parseInt(b.localId.slice(2)) > parseInt(a.localId.slice(2)) ? b : a
@@ -207,8 +250,8 @@ export async function fetchFormCard(
       ? [`${displayName} ex`]
       : [`${displayName} ex`, `M ${baseName}-EX`, `Mega ${baseName} ex`, `Mega ${baseName}`];
 
-    for (const name of namesToTry) {
-      const url = await fetchBestByRarities(name, rarities, opts);
+    for (const queryName of namesToTry) {
+      const url = await fetchBestByRarities(queryName, rarities, { ...opts, skipRegionalFilter: false });
       if (url) return url;
     }
     return null;

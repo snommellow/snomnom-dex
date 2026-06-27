@@ -125,9 +125,26 @@ export async function fetchPocketAltForm(
       .map((c) => ({ ...c, rarity }))
   );
   if (exactCards.length) {
-    const best = exactCards.reduce((a, b) =>
-      (RARITY_SCORE[a.rarity ?? ""] ?? 99) <= (RARITY_SCORE[b.rarity ?? ""] ?? 99) ? a : b
-    );
+    // Apply same Two Star rainbow filter as fetchPocketImages
+    const twoStars = exactCards.filter((c) => c.rarity === "Two Star");
+    const setOf = (id: string) => id.split("-")[0];
+    const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
+    const rainbowTwoStars = [...bySet.values()]
+      .filter((group) => group.length >= 2)
+      .map((group) => group.reduce((a, b) =>
+        parseInt(b.localId) > parseInt(a.localId) ? b : a
+      ));
+    const eligible = [
+      ...exactCards.filter((c) => c.rarity !== "Two Star"),
+      ...rainbowTwoStars,
+    ];
+    if (!eligible.length) return { url: null };
+    const best = eligible.reduce((a, b) => {
+      const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
+      const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
+      if (ra !== rb) return ra <= rb ? a : b;
+      return parseInt(b.localId) > parseInt(a.localId) ? b : a;
+    });
     return { url: cardImageUrl(best) };
   }
   return { url: null };

@@ -264,20 +264,24 @@ export async function fetchFormCard(
     let cards: TcgCard[] = [];
     if (category === "mega") {
       const baseName = megaBaseName(displayName);
-      // Search all naming conventions in parallel. Crucially, also search the FULL
-      // displayName + " ex" so that X/Y-specific names ("Mega Charizard X ex",
-      // "Mega Charizard Y ex") are matched directly — no type-based disambiguation needed.
-      const [displayEx, mEx, megaEx, megaPlain] = await Promise.all([
-        tcgFetch(`name:"${displayName} ex" supertype:Pokémon`),
-        tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
-        tcgFetch(`name:"Mega ${baseName} ex" supertype:Pokémon`),
-        tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
-      ]);
-      cards = [...displayEx, ...mEx, ...megaEx, ...megaPlain];
-      // Dex-number fallback for any remaining Mega subtype card
-      if (!cards.some(isEnglishLegal)) {
-        const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega) supertype:Pokémon`);
-        cards = [...cards, ...more];
+      const isXY = displayName.endsWith(" X") || displayName.endsWith(" Y");
+      if (isXY) {
+        // X/Y forms: only search exact display name to avoid cross-contamination
+        // ("Mega Charizard X ex" must not match "Mega Charizard Y ex" cards and vice versa)
+        cards = await tcgFetch(`name:"${displayName} ex" supertype:Pokémon`);
+      } else {
+        const [displayEx, mEx, megaEx, megaPlain] = await Promise.all([
+          tcgFetch(`name:"${displayName} ex" supertype:Pokémon`),
+          tcgFetch(`name:"M ${baseName}-EX" supertype:Pokémon`),
+          tcgFetch(`name:"Mega ${baseName} ex" supertype:Pokémon`),
+          tcgFetch(`name:"Mega ${baseName}" supertype:Pokémon`),
+        ]);
+        cards = [...displayEx, ...mEx, ...megaEx, ...megaPlain];
+        // Dex-number fallback for any remaining Mega subtype card
+        if (!cards.some(isEnglishLegal)) {
+          const more = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega) supertype:Pokémon`);
+          cards = [...cards, ...more];
+        }
       }
     } else if (category === "regional") {
       cards = await tcgFetch(`name:"${displayName}" supertype:Pokémon`);

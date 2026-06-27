@@ -10,7 +10,7 @@ function isPocketSet(setId: string): boolean {
 function setIdFromCardId(id: string): string { return id.split("-")[0] ?? ""; }
 // Newer set = alphabetically greater (A1 < A1a < A2 < A2b < B1 < B2 < B2a)
 function newerSet(a: string, b: string): string { return a > b ? a : b; }
-function pickNewest(a: TcgdexCard & { rarity: string }, b: TcgdexCard & { rarity: string }) {
+function pickNewest<T extends TcgdexCard>(a: T, b: T): T {
   const aSet = setIdFromCardId(a.id);
   const bSet = setIdFromCardId(b.id);
   if (aSet !== bSet) return newerSet(aSet, bSet) === bSet ? b : a;

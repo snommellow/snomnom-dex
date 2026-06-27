@@ -65,6 +65,7 @@ interface TcgCard {
   subtypes: string[];
   types?: string[];
   legalities?: { standard?: string; expanded?: string; unlimited?: string };
+  rules?: string[];
 }
 
 const EXCLUDED_SUBTYPES = new Set([
@@ -73,9 +74,13 @@ const EXCLUDED_SUBTYPES = new Set([
 const GIMMICK_RE = /\b(MEGA|VMAX|VSTAR|V-UNION)\b/i;
 const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
 
+const TERA_RULE_RE = /tera pok[eé]mon/i;
+
 function isGimmick(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
   if (GIMMICK_RE.test(card.name)) return true;
+  // Tera cards don't always have "Tera" in subtypes — check the rule box instead
+  if ((card.rules ?? []).some((r) => TERA_RULE_RE.test(r))) return true;
   // Trainer cards have no dex numbers so they're filtered by buildBestMap already,
   // but exclude explicitly for safety
   if (card.supertype === "Trainer") return true;
@@ -149,7 +154,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes,types,legalities`,
+        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes,types,legalities,rules`,
       { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];

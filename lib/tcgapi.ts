@@ -127,6 +127,7 @@ function buildBestMap(
   const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; num: number; tcgUrl: string | null }>();
 
   for (const card of cards) {
+    if (CARD_BLACKLIST.has(card.id)) continue;
     if (REGIONAL_RE.test(card.name)) continue;
     if (!allowGimmick && isGimmick(card)) continue;
     if (!allowTrainerOwned && TRAINER_OWNED_RE.test(card.name)) continue;
@@ -237,8 +238,11 @@ export async function fetchTcgTrainerOwnedIrSir(
   return buildBestMap(results.flat(), IR_RARITIES, false, false, false, true);
 }
 
-// Known non-full-art SVP stamp/retro reprints to exclude
-const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-159", "svp-167", "svp-168", "svp-169"]);
+// Known non-full-art SVP stamp/retro reprints to exclude from promo pass
+const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
+
+// Cards the API mislabels with a higher rarity (e.g. chain holos tagged as IR)
+const CARD_BLACKLIST = new Set(["sv8-59"]);
 
 // Pass 1.5: SV-era full-art promos (svp + any future SV promo sets)
 export async function fetchTcgPromoSv(

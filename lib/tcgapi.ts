@@ -105,7 +105,7 @@ function buildBestMap(
   useSubtypeScore = false,
 ): Map<number, TcgImageResult> {
   const chainDexMap = buildChainDexMap(cards);
-  const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; tcgUrl: string | null }>();
+  const best = new Map<number, { chain: boolean; score: number; sub: number; date: string; num: number; tcgUrl: string | null }>();
 
   for (const card of cards) {
     if (REGIONAL_RE.test(card.name)) continue;
@@ -125,6 +125,7 @@ function buildBestMap(
     const sub = useSubtypeScore ? subtypeScore(card.subtypes ?? []) : 99;
     const sid = card.set?.id ?? "";
     const date = card.set?.releaseDate ?? "0000-00-00";
+    const num = parseInt(card.number ?? "0", 10) || 0;
 
     for (const dexNum of card.nationalPokedexNumbers ?? []) {
       const chain = chainDexMap.get(sid)?.has(dexNum) ?? false;
@@ -134,8 +135,9 @@ function buildBestMap(
         score < cur.score ||
         (score === cur.score && sub < cur.sub) ||
         (score === cur.score && sub === cur.sub && !cur.chain && chain) ||
-        (score === cur.score && sub === cur.sub && cur.chain === chain && date > cur.date);
-      if (better) best.set(dexNum, { chain, score, sub, date, tcgUrl });
+        (score === cur.score && sub === cur.sub && cur.chain === chain && date > cur.date) ||
+        (score === cur.score && sub === cur.sub && cur.chain === chain && date === cur.date && num > cur.num);
+      if (better) best.set(dexNum, { chain, score, sub, date, num, tcgUrl });
     }
   }
 

@@ -203,6 +203,10 @@ export async function fetchTcgIrSir(
   return buildBestMap(results.flat(), IR_RARITIES, false);
 }
 
+// Illustration/ETB promos in SVP sit at low card numbers; stamp/retro reprints are higher.
+// Cap at 100 to filter out stamp and retro promos while keeping illustration promos.
+const SV_PROMO_MAX_NUMBER = 100;
+
 // Pass 1.5: SV-era full-art promos (svp + any future SV promo sets)
 export async function fetchTcgPromoSv(
   ids: number[]
@@ -213,7 +217,7 @@ export async function fetchTcgPromoSv(
       tcgFetch(`(${dexQ(batch)}) ${PROMO_SV_CLAUSE}`)
     )
   );
-  const cards = results.flat();
+  const cards = results.flat().filter(c => (parseInt(c.number ?? "999", 10) || 999) <= SV_PROMO_MAX_NUMBER);
   return buildBestMap(cards, PROMO_RARITIES, false, false, true);
 }
 

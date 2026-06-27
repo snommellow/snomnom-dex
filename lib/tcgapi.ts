@@ -113,8 +113,6 @@ function rarityScore(rarity: string): number {
 
 export interface TcgImageResult { tcgUrl: string | null }
 
-// Trainer-owned cards have a possessive in the name e.g. "Lillie's Clefairy"
-const TRAINER_OWNED_RE = /'\s*s\s+/i;
 
 function buildBestMap(
   cards: TcgCard[],
@@ -129,7 +127,6 @@ function buildBestMap(
   for (const card of cards) {
     if (REGIONAL_RE.test(card.name)) continue;
     if (!allowGimmick && isGimmick(card)) continue;
-    if (TRAINER_OWNED_RE.test(card.name)) continue;
     if (!card.rarity) continue;
     if (!allowedRarities.has(card.rarity)) continue;
     // Skip gold-border Full Art V for blocklisted Pokémon (no Alternate Art available)
@@ -329,7 +326,6 @@ export async function fetchFormCard(
       (c.images?.large || c.images?.small) &&
       c.rarity &&
       raritySet.has(c.rarity) &&
-      !TRAINER_OWNED_RE.test(c.name) &&
       isEnglishLegal(c) &&
       !(c.subtypes ?? []).includes("Tera") &&
       !(c.rules ?? []).some((r) => TERA_RULE_RE.test(r))

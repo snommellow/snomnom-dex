@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { Search, X } from "lucide-react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
-import PokemonCard from "./PokemonCard";
+import PokemonCard, { AltFormCard } from "./PokemonCard";
 
 const ALL_TYPES = [
   "normal","fire","water","electric","grass","ice","fighting",
@@ -115,9 +115,12 @@ export default function PokedexClient({ pokemon }: Props) {
               "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
           }}
         >
-          {filtered.map((p) => (
-            <PokemonCard key={p.id} pokemon={p} />
-          ))}
+          {filtered.flatMap((p) => [
+            <PokemonCard key={p.id} pokemon={p} />,
+            ...(p.altForms ?? []).map((form) => (
+              <AltFormCard key={form.slug} form={form} baseId={p.id} />
+            )),
+          ])}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-24 text-amber-800/50 gap-3">

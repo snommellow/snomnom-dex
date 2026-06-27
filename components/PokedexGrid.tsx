@@ -41,7 +41,7 @@ export default async function PokedexGrid() {
       Promise.all(
         forms.map(async (form) => ({
           ...form,
-          tcgUrl: await fetchFormCard(form.category, raw[i].id, form.displayName),
+          tcgUrl: await fetchFormCard(form.category, raw[i].id, form.displayName, form.types),
         }))
       )
     )

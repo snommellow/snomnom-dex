@@ -83,9 +83,7 @@ function isGimmick(card: TcgCard): boolean {
 // Pokémon whose only V cards are gold-border Full Art (not bleed-edge Alternate Art).
 // Add dex numbers here as they're discovered. These Pokémon skip V cards in the VGX pass
 // and fall through to GX/EX or placeholder instead.
-const V_GOLDBORDER_BLOCKLIST = new Set([
-  12, // Butterfree — only has gold-border Full Art V
-]);
+const V_GOLDBORDER_BLOCKLIST = new Set<number>([]);
 
 function rarityScore(rarity: string): number {
   const order = ["Special Illustration Rare", "Illustration Rare", "Ultra Rare", "Secret Rare", "Rare Holo", "Rare"];
@@ -224,18 +222,28 @@ function formRarityScore(r: string | undefined): number {
   return i === -1 ? 99 : i;
 }
 
+// Game type → TCG energy type (only types that map distinctively)
+const GAME_TO_TCG_ENERGY: Record<string, string> = {
+  dragon: "Dragon", steel: "Metal", dark: "Darkness",
+  fairy: "Fairy", psychic: "Psychic",
+};
+
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",
   dexId: number,
   displayName: string,
+  formTypes: string[] = [],
 ): Promise<string | null> {
   if (category === "gmax" || category === "other") return null;
   try {
     let cards: TcgCard[] = [];
     if (category === "mega") {
-      cards = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)`);
+      // Find the most distinctive TCG energy type for this form (e.g. Dragon for Mega Charizard X)
+      const tcgType = formTypes.map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean);
+      const typeClause = tcgType ? ` types:${tcgType}` : "";
+      cards = await tcgFetch(`nationalPokedexNumbers:${dexId} (subtypes:MEGA OR subtypes:Mega)${typeClause} supertype:Pokémon`);
     } else if (category === "regional") {
-      cards = await tcgFetch(`name:"${displayName}" -supertype:Trainer`);
+      cards = await tcgFetch(`name:"${displayName}" supertype:Pokémon`);
     }
     const valid = cards.filter(c =>
       (c.images?.large || c.images?.small) &&
@@ -244,7 +252,11 @@ export async function fetchFormCard(
       !TRAINER_OWNED_RE.test(c.name)
     );
     if (!valid.length) return null;
-    valid.sort((a, b) => formRarityScore(a.rarity) - formRarityScore(b.rarity));
+    valid.sort((a, b) => {
+      const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);
+      if (rs !== 0) return rs;
+      return (b.set?.releaseDate ?? "").localeCompare(a.set?.releaseDate ?? "");
+    });
     return valid[0]?.images?.large ?? valid[0]?.images?.small ?? null;
   } catch { return null; }
 }

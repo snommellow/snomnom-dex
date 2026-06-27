@@ -11,20 +11,31 @@ const OFFICIAL_ART = (id: number) =>
 const HOME_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
 
-// ── Shared 3D card shell ──────────────────────────────────────────────────────
+const SPRITES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items";
+const FORM_ICON_URL: Record<string, string> = {
+  mega:     `${SPRITES}/key-stone.png`,
+  gmax:     `${SPRITES}/dynamax-band.png`,
+  regional: `${SPRITES}/oval-charm.png`,
+};
 
-interface CardShellProps {
-  typeColor: string;
-  bgUrl: string;
-  onBgError?: () => void;
-  children: React.ReactNode;
+interface Props {
+  pokemon: PokemonSummary;
+  formCategory?: AltForm["category"];
 }
 
-function CardShell({ typeColor, bgUrl, onBgError, children }: CardShellProps) {
+export default function PokemonCard({ pokemon, formCategory }: Props) {
+  const primaryType = pokemon.types[0] ?? "normal";
+  const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
+
+  const candidates = [...(pokemon.bgCandidates ?? []), OFFICIAL_ART(pokemon.id)];
+  const [bgIndex, setBgIndex] = useState(0);
+  const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
+
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+
   const [sparkles, setSparkles] = useState<{ id: number; top: number; left: number }[]>([]);
   const sparkleId = useRef(0);
 
@@ -58,260 +69,194 @@ function CardShell({ typeColor, bgUrl, onBgError, children }: CardShellProps) {
   const DEPTH = 32;
 
   return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-        transform: isHovered
-          ? `perspective(500px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
-          : "scale(1)",
-        transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
-        willChange: isHovered ? "transform" : "auto",
-        position: "relative",
-      }}
-    >
-      {/* Book spine sides */}
-      <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: DEPTH, transformOrigin: "left center", transform: "rotateY(-90deg)", background: `linear-gradient(to right, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-      <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: DEPTH, transformOrigin: "right center", transform: "rotateY(90deg)", background: `linear-gradient(to left, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "top center", transform: "rotateX(90deg)", background: `linear-gradient(to bottom, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "bottom center", transform: "rotateX(-90deg)", background: `linear-gradient(to top, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
-
-      {/* Front face */}
+    <article className="group cursor-pointer select-none">
       <div
-        className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={handleMouseLeave}
         style={{
-          border: `4px solid ${typeColor}`,
-          backgroundColor: `${typeColor}35`,
-          transform: `translateZ(${DEPTH}px)`,
-          boxShadow: isHovered ? "0 20px 40px rgba(0,0,0,0.5)" : "0 4px 14px rgba(0,0,0,0.25)",
-          transition: "box-shadow 0.4s ease",
+          transformStyle: "preserve-3d",
+          transform: isHovered
+            ? `perspective(500px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1.04)`
+            : "scale(1)",
+          transition: isHovered ? "transform 0.05s" : "transform 0.4s ease",
+          willChange: isHovered ? "transform" : "auto",
+          position: "relative",
         }}
       >
-        {/* Blurred bg */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={bgUrl} alt="" aria-hidden style={{
-            position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
-            objectFit: "cover", objectPosition: "top center",
-            opacity: 0.55, filter: "blur(25px)",
-          }} />
-        </div>
+        {/* Book spine sides */}
+        <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: DEPTH, transformOrigin: "left center", transform: "rotateY(-90deg)", background: `linear-gradient(to right, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: DEPTH, transformOrigin: "right center", transform: "rotateY(90deg)", background: `linear-gradient(to left, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "top center", transform: "rotateX(90deg)", background: `linear-gradient(to bottom, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: DEPTH, transformOrigin: "bottom center", transform: "rotateX(-90deg)", background: `linear-gradient(to top, color-mix(in srgb, ${typeColor} 60%, black), ${typeColor})` }} />
 
-        {/* Sharp bg masked to middle */}
-        <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
-          maskImage: isHovered
-            ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
-          WebkitMaskImage: isHovered
-            ? "linear-gradient(black, black)"
-            : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
-          transition: "mask-image 0.2s",
-        }}>
-          <Image
-            src={bgUrl}
-            alt=""
-            aria-hidden
-            fill
-            sizes="300px"
-            className="object-cover object-top"
-            style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
-            loading="eager"
-            onError={onBgError}
-          />
-        </div>
-
-        {children}
-
-        {/* Sparkles */}
-        <div className="absolute inset-0 z-[11] pointer-events-none">
-          {sparkles.map((s) => (
-            <div key={s.id} style={{
-              position: "absolute", top: `${s.top}%`, left: `${s.left}%`,
-              width: 2, height: 2, borderRadius: "50%", background: "white",
-              boxShadow: "0 0 2px 1px rgba(255,255,255,0.95), 0 0 5px 2px rgba(255,255,200,0.6)",
-              animation: "sparkle 1.1s ease-in-out forwards", pointerEvents: "none",
-            }} />
-          ))}
-        </div>
-
-        {/* Holo shimmer */}
-        <div className="absolute inset-0 z-[8] pointer-events-none rounded-xl" style={{
-          opacity: isHovered ? 1 : 0, transition: "opacity 0.3s",
-          background: `linear-gradient(${mouse.x * 1.8}deg,
-            hsla(0,100%,60%,0.18) 0%, hsla(60,100%,60%,0.18) 16%,
-            hsla(120,100%,60%,0.18) 33%, hsla(180,100%,60%,0.18) 50%,
-            hsla(240,100%,60%,0.18) 66%, hsla(300,100%,60%,0.18) 83%,
-            hsla(360,100%,60%,0.18) 100%)`,
-          mixBlendMode: "color-dodge",
-        }} />
-
-        {/* Mouse glow */}
-        <div className="absolute inset-0 z-[9] pointer-events-none rounded-xl" style={{
-          opacity: isHovered ? 1 : 0, transition: "opacity 0.3s",
-          background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.28) 0%, transparent 55%)`,
-          mixBlendMode: "overlay",
-        }} />
-      </div>
-    </div>
-  );
-}
-
-// ── Type pills row (shared) ───────────────────────────────────────────────────
-
-function TypePills({ types, isHovered }: { types: string[]; isHovered?: boolean }) {
-  return (
-    <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]"
-      style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
-      {types.map((type) => {
-        const bg = TYPE_COLOR[type] ?? "#828282";
-        return (
-          <span key={type}
-            className="inline-flex items-center gap-0.5 overflow-hidden rounded-full text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
-            style={{ backgroundColor: bg, fontSize: 8, padding: "2px 6px 2px 3px", textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
-          >
+        {/* Front face */}
+        <div
+          className={`relative flex flex-col overflow-hidden${isHovered ? " card-hovered" : ""}`}
+          style={{
+            border: `4px solid ${typeColor}`,
+            backgroundColor: `${typeColor}35`,
+            transform: `translateZ(${DEPTH}px)`,
+            boxShadow: isHovered ? "0 20px 40px rgba(0,0,0,0.5)" : "0 4px 14px rgba(0,0,0,0.25)",
+            transition: "box-shadow 0.4s ease",
+          }}
+        >
+          {/* Background layer 1: blurred */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={typeIconUrl(type)} alt="" aria-hidden className="w-3 h-3 flex-shrink-0 object-contain" />
-            {type}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
+            <img src={bgUrl} alt="" aria-hidden style={{
+              position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
+              objectFit: "cover", objectPosition: "top center",
+              opacity: 0.55, filter: "blur(25px)",
+            }} />
+          </div>
 
-// ── Form badge icons (official Pokémon item sprites) ─────────────────────────
+          {/* Background layer 2: sharp, masked */}
+          <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none" style={{
+            maskImage: isHovered
+              ? "linear-gradient(black, black)"
+              : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
+            WebkitMaskImage: isHovered
+              ? "linear-gradient(black, black)"
+              : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
+            transition: "mask-image 0.2s",
+          }}>
+            <Image
+              src={bgUrl}
+              alt=""
+              aria-hidden
+              fill
+              sizes="300px"
+              className="object-cover object-top"
+              style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
+              loading="eager"
+              onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
+            />
+          </div>
 
-const SPRITES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items";
+          {/* Masthead */}
+          <div
+            className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
+            style={{ backgroundColor: typeColor }}
+          >
+            <span className="text-white font-black italic leading-none" style={{ fontSize: 9, letterSpacing: ".1em" }}>
+              POKÉDEX
+            </span>
+            <span className="flex items-center gap-1">
+              {formCategory && FORM_ICON_URL[formCategory] && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={FORM_ICON_URL[formCategory]}
+                  alt={formCategory}
+                  className="w-3 h-3 object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              )}
+              <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
+                #{String(pokemon.id).padStart(3, "0")}
+              </span>
+            </span>
+          </div>
 
-// Mega Evolution: Key Stone (held by trainer to trigger mega)
-// Gigantamax: Dynamax Band
-// Regional: Oval Charm (represents regional variant discovery)
-const FORM_ICON_URL: Record<string, string> = {
-  mega:     `${SPRITES}/key-stone.png`,
-  gmax:     `${SPRITES}/dynamax-band.png`,
-  regional: `${SPRITES}/oval-charm.png`,
-};
-
-function FormIcon({ category }: { category: AltForm["category"] }) {
-  const src = FORM_ICON_URL[category];
-  if (!src) return null;
-  const label = category === "mega" ? "Mega Evolution" : category === "gmax" ? "Gigantamax" : "Regional Form";
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={label} title={label} className="w-3 h-3 object-contain" style={{ imageRendering: "pixelated" }} />
-  );
-}
-
-
-
-// ── Main Pokémon card ─────────────────────────────────────────────────────────
-
-export default function PokemonCard({ pokemon }: { pokemon: PokemonSummary }) {
-  const primaryType = pokemon.types[0] ?? "normal";
-  const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
-
-  const candidates = [...(pokemon.bgCandidates ?? []), OFFICIAL_ART(pokemon.id)];
-  const [bgIndex, setBgIndex] = useState(0);
-  const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <article className="group cursor-pointer select-none"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <CardShell
-        typeColor={typeColor}
-        bgUrl={bgUrl}
-        onBgError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
-      >
-        {/* Masthead */}
-        <div className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
-          style={{ backgroundColor: typeColor }}>
-          <span className="text-white font-black italic leading-none" style={{ fontSize: 9, letterSpacing: ".1em" }}>
-            POKÉDEX
-          </span>
-          <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
-            #{String(pokemon.id).padStart(3, "0")}
-          </span>
-        </div>
-
-        {/* Name + genus */}
-        <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0"
-          style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
-          <p className="font-black capitalize leading-tight truncate"
-            style={{ fontSize: 14, color: typeColor, WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}>
-            {pokemon.name}
-          </p>
-          {pokemon.genus && (
-            <p className="font-semibold uppercase leading-none text-gray-500"
-              style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}>
-              The {pokemon.genus.replace(/\s*Pokémon\s*/i, "").trim()}
+          {/* Name + tagline */}
+          <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
+            <p
+              className="font-black capitalize leading-tight truncate"
+              style={{ fontSize: 14, color: typeColor, WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}
+            >
+              {pokemon.name}
             </p>
-          )}
-        </div>
+            {pokemon.genus && (
+              <p
+                className="font-semibold uppercase leading-none text-gray-500"
+                style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}
+              >
+                The {pokemon.genus.replace(/\s*Pokémon\s*/i, "").trim()}
+              </p>
+            )}
+          </div>
 
-        {/* Sprite */}
-        <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
-          <div className="absolute bottom-1 right-1 w-10 h-10">
-            <Image src={HOME_SPRITE(pokemon.id)} alt={pokemon.name} fill sizes="64px"
-              className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]" loading="lazy" />
+          {/* Sprite area */}
+          <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
+            {!formCategory && (
+              <div className="absolute bottom-1 right-1 w-10 h-10">
+                <Image
+                  src={HOME_SPRITE(pokemon.id)}
+                  alt={pokemon.name}
+                  fill
+                  sizes="64px"
+                  className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]"
+                  loading="lazy"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Sparkles */}
+          <div className="absolute inset-0 z-[11] pointer-events-none">
+            {sparkles.map((s) => (
+              <div key={s.id} style={{
+                position: "absolute", top: `${s.top}%`, left: `${s.left}%`,
+                width: 2, height: 2, borderRadius: "50%", background: "white",
+                boxShadow: "0 0 2px 1px rgba(255,255,255,0.95), 0 0 5px 2px rgba(255,255,200,0.6)",
+                animation: "sparkle 1.1s ease-in-out forwards", pointerEvents: "none",
+              }} />
+            ))}
+          </div>
+
+          {/* Holo shimmer */}
+          <div className="absolute inset-0 z-[8] pointer-events-none rounded-xl" style={{
+            opacity: isHovered ? 1 : 0, transition: "opacity 0.3s",
+            background: `linear-gradient(${mouse.x * 1.8}deg,
+              hsla(0,100%,60%,0.18) 0%, hsla(60,100%,60%,0.18) 16%,
+              hsla(120,100%,60%,0.18) 33%, hsla(180,100%,60%,0.18) 50%,
+              hsla(240,100%,60%,0.18) 66%, hsla(300,100%,60%,0.18) 83%,
+              hsla(360,100%,60%,0.18) 100%)`,
+            mixBlendMode: "color-dodge",
+          }} />
+
+          {/* Mouse glow */}
+          <div className="absolute inset-0 z-[9] pointer-events-none rounded-xl" style={{
+            opacity: isHovered ? 1 : 0, transition: "opacity 0.3s",
+            background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.28) 0%, transparent 55%)`,
+            mixBlendMode: "overlay",
+          }} />
+
+          {/* Type pills */}
+          <div className="relative z-10 px-2.5 py-1.5 flex flex-row flex-nowrap gap-1.5 items-center flex-shrink-0 min-h-[24px]" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
+            {pokemon.types.map((type) => {
+              const bg = TYPE_COLOR[type] ?? "#828282";
+              return (
+                <span
+                  key={type}
+                  className="inline-flex items-center gap-0.5 overflow-hidden rounded-full text-white uppercase font-extrabold tracking-[.06em] flex-shrink-0"
+                  style={{ backgroundColor: bg, fontSize: 8, padding: "2px 6px 2px 3px", textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={typeIconUrl(type)} alt="" aria-hidden className="w-3 h-3 flex-shrink-0 object-contain" />
+                  {type}
+                </span>
+              );
+            })}
           </div>
         </div>
-
-        <TypePills types={pokemon.types} isHovered={isHovered} />
-      </CardShell>
+      </div>
     </article>
   );
 }
 
-// ── Alt form card — same design, form icon in masthead ────────────────────────
-
+// Alt form card: converts AltForm data into a PokemonSummary and renders the exact same PokemonCard
 export function AltFormCard({ form, baseId }: { form: AltForm; baseId: number }) {
-  const primaryType = form.types[0] ?? "normal";
-  const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
-  const bgUrl = form.tcgUrl ?? form.artworkUrl ?? OFFICIAL_ART(baseId);
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <article className="group cursor-pointer select-none"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <CardShell typeColor={typeColor} bgUrl={bgUrl}>
-        {/* Masthead */}
-        <div className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
-          style={{ backgroundColor: typeColor }}>
-          <span className="text-white font-black italic leading-none" style={{ fontSize: 9, letterSpacing: ".1em" }}>
-            POKÉDEX
-          </span>
-          <span className="flex items-center gap-1">
-            <FormIcon category={form.category} />
-            <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
-              #{String(baseId).padStart(3, "0")}
-            </span>
-          </span>
-        </div>
-
-        {/* Form name (no genus) */}
-        <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0"
-          style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
-          <p className="font-black capitalize leading-tight truncate"
-            style={{ fontSize: 14, color: typeColor, WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}>
-            {form.displayName}
-          </p>
-        </div>
-
-        {/* Sprite placeholder space */}
-        <div className="relative z-10 flex-1" style={{ minHeight: 120 }} />
-
-        <TypePills types={form.types} isHovered={isHovered} />
-      </CardShell>
-    </article>
-  );
+  const summary: PokemonSummary = {
+    id: baseId,
+    name: form.displayName,
+    types: form.types,
+    spriteUrl: null,
+    artworkUrl: form.artworkUrl,
+    genus: null,
+    bgCandidates: [form.tcgUrl, form.artworkUrl].filter((u): u is string => !!u),
+    altForms: [],
+  };
+  return <PokemonCard pokemon={summary} formCategory={form.category} />;
 }

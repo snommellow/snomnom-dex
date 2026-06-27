@@ -8,6 +8,14 @@ function isPocketSet(setId: string): boolean {
   return /^[AB]\d/i.test(setId);
 }
 function setIdFromCardId(id: string): string { return id.split("-")[0] ?? ""; }
+// Newer set = alphabetically greater (A1 < A1a < A2 < A2b < B1 < B2 < B2a)
+function newerSet(a: string, b: string): string { return a > b ? a : b; }
+function pickNewest(a: TcgdexCard & { rarity: string }, b: TcgdexCard & { rarity: string }) {
+  const aSet = setIdFromCardId(a.id);
+  const bSet = setIdFromCardId(b.id);
+  if (aSet !== bSet) return newerSet(aSet, bSet) === bSet ? b : a;
+  return parseInt(b.localId) > parseInt(a.localId) ? b : a;
+}
 
 // Only show star-rarity cards (1★, 2★, 3★) — not diamond commons or Crown rares
 const STAR_RARITIES = ["One Star", "Two Star", "Three Star"] as const;
@@ -82,9 +90,7 @@ export async function fetchPocketImages(
       const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
       const rainbowTwoStars = [...bySet.values()]
         .filter((group) => group.length >= 2)
-        .map((group) => group.reduce((a, b) =>
-          parseInt(b.localId) > parseInt(a.localId) ? b : a
-        ));
+        .map((group) => group.reduce((a, b) => pickNewest(a, b)));
 
       const eligible = [
         ...cards.filter((c) => c.rarity !== "Two Star"),
@@ -96,7 +102,7 @@ export async function fetchPocketImages(
         const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
         const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
         if (ra !== rb) return ra <= rb ? a : b;
-        return parseInt(b.localId) > parseInt(a.localId) ? b : a;
+        return pickNewest(a, b);
       });
       return { url: cardImageUrl(best) };
     })
@@ -143,7 +149,7 @@ export async function fetchPocketAltForm(
       const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;
       const rb = RARITY_SCORE[b.rarity ?? ""] ?? 99;
       if (ra !== rb) return ra <= rb ? a : b;
-      return parseInt(b.localId) > parseInt(a.localId) ? b : a;
+      return pickNewest(a, b);
     });
     return { url: cardImageUrl(best) };
   }

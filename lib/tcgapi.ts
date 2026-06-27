@@ -63,6 +63,7 @@ interface TcgCard {
   supertype: string;
   set: { id: string; releaseDate: string };
   subtypes: string[];
+  types?: string[];
   legalities?: { standard?: string; expanded?: string; unlimited?: string };
 }
 
@@ -145,7 +146,7 @@ async function tcgFetch(q: string): Promise<TcgCard[]> {
   try {
     const res = await fetch(
       `${TCG_BASE}?q=${encodeURIComponent(q)}&pageSize=250&orderBy=-set.releaseDate` +
-        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes,legalities`,
+        `&select=id,name,number,images,nationalPokedexNumbers,rarity,supertype,set,subtypes,types,legalities`,
       { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];
@@ -275,14 +276,25 @@ export async function fetchFormCard(
     } else if (category === "regional") {
       cards = await tcgFetch(`name:"${displayName}" supertype:Pokémon`);
     }
-    const valid = cards.filter(c =>
+    const baseValid = cards.filter(c =>
       (c.images?.large || c.images?.small) &&
       c.rarity &&
       FORM_ALLOWED.has(c.rarity) &&
       !TRAINER_OWNED_RE.test(c.name) &&
       isEnglishLegal(c)
     );
-    if (!valid.length) return null;
+    if (!baseValid.length) return null;
+    // For megas with a known TCG type, post-filter to only cards of that exact type.
+    // This prevents X/Y forms from picking each other's cards when both name-queries
+    // return the same result set (e.g. both "M Charizard-EX" queries return all prints).
+    const tcgTypeForFilter = category === "mega"
+      ? [...formTypes].reverse().map(t => GAME_TO_TCG_ENERGY[t]).find(Boolean)
+      : undefined;
+    const valid = tcgTypeForFilter
+      ? (baseValid.filter(c => c.types?.includes(tcgTypeForFilter)).length
+          ? baseValid.filter(c => c.types?.includes(tcgTypeForFilter))
+          : baseValid)
+      : baseValid;
     valid.sort((a, b) => {
       const rs = formRarityScore(a.rarity) - formRarityScore(b.rarity);
       if (rs !== 0) return rs;

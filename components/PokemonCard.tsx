@@ -19,6 +19,7 @@ export default function PokemonCard({ pokemon }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
+  const altForms = pokemon.altForms ?? [];
   const candidates = [...(pokemon.bgCandidates ?? []), OFFICIAL_ART(pokemon.id)];
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
@@ -150,7 +151,7 @@ export default function PokemonCard({ pokemon }: Props) {
             >
               #{String(pokemon.id).padStart(3, "0")}
             </span>
-            {pokemon.altForms.length > 0 && (
+            {altForms.length > 0 && (
               <svg width="6" height="6" viewBox="0 0 10 10" aria-label="Has alternative forms">
                 <polygon points="5,0 10,5 5,10 0,5" fill="rgba(255,255,180,0.92)" />
               </svg>
@@ -278,9 +279,9 @@ export default function PokemonCard({ pokemon }: Props) {
       {/* end 3D wrapper */}
 
       {/* ── Alternative form mini-cards ── */}
-      {pokemon.altForms.length > 0 && (
+      {altForms.length > 0 && (
         <div className="flex flex-col gap-1 mt-1">
-          {pokemon.altForms.map((form) => (
+          {altForms.map((form) => (
             <FormMiniCard key={form.slug} form={form} />
           ))}
         </div>

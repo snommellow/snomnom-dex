@@ -74,7 +74,7 @@ const EXCLUDED_SUBTYPES = new Set([
 const GIMMICK_RE = /\b(MEGA|VMAX|VSTAR|V-UNION)\b/i;
 const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
 
-const TERA_RULE_RE = /tera pok[eé]mon/i;
+const TERA_RULE_RE = /^tera[:\s]/i;
 
 function isGimmick(card: TcgCard): boolean {
   if ((card.subtypes ?? []).some((s) => EXCLUDED_SUBTYPES.has(s))) return true;
@@ -335,7 +335,8 @@ export async function fetchFormCard(
       c.rarity &&
       raritySet.has(c.rarity) &&
       !TRAINER_OWNED_RE.test(c.name) &&
-      isEnglishLegal(c)
+      isEnglishLegal(c) &&
+      !isGimmick(c)
     );
     if (!valid.length) return null;
     valid.sort((a, b) => {

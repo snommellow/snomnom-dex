@@ -206,12 +206,7 @@ export async function fetchTcgIrSir(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const chainSets = chainSetsMap.get(id);
-    const inChain = (chainsByDex.get(id)?.length ?? 0) > 1;
-    // If this Pokémon is part of a multi-member chain but no common IR set exists,
-    // skip it so the whole chain falls through to the next pass together.
-    if (inChain && !chainSets?.size) return null;
-    const url = pickBestWithChain(candidatesList[i], chainSets);
+    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

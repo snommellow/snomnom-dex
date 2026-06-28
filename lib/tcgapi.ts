@@ -17,8 +17,10 @@ const RARITY_ORDER = [
   // VGX pass (lower index = higher priority)
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
+  "Rare Ultra",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo V",
@@ -30,8 +32,10 @@ export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration R
 export const VGX_RARITIES = new Set([
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
+  "Rare Ultra",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo V",

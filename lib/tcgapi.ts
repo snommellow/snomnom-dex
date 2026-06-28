@@ -306,6 +306,7 @@ export async function fetchTcgVgx(
     return rarities.flatMap((r, i) =>
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
         .filter(c => !["Rare Ultra", "Rare Secret", "Hyper Rare"].includes(r) || (!c.name.endsWith("-GX") && !/ V(-UNION)?$/.test(c.name)))
+        .filter(c => !c.subtypes?.includes("Gigantamax"))
     );
   });
 

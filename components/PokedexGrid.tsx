@@ -1,8 +1,6 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchTcgFromChainSet, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
-import { fetchPtcgSetsByDexRange } from "@/lib/pokemontcgapi";
-import { buildChainSets } from "@/lib/chains";
 import PokedexClient from "./PokedexClient";
 
 
@@ -18,14 +16,9 @@ export default async function PokedexGrid() {
   // Species data: genus + alt form slots + evolution chain URL (single fetch per Pokémon)
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
-  // Fetch evolution chains and pokemontcg.io set memberships in parallel
+  // Fetch each unique evolution chain once, then build dex ID → chain members map
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
-  const minDex = Math.min(...raw.map(p => p.id));
-  const maxDex = Math.max(...raw.map(p => p.id));
-  const [chainResults, ptcgSetsByDex] = await Promise.all([
-    Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url))),
-    fetchPtcgSetsByDexRange(minDex, maxDex),
-  ]);
+  const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
 
   const chainsByDex = new Map<number, number[]>();
@@ -36,11 +29,7 @@ export default async function PokedexGrid() {
     }
   });
 
-  const tcgChainSets = buildChainSets(ptcgSetsByDex, chainsByDex);
-
-  // Pass 1: IR/SIR — best quality full-art illustration cards.
-  // Chain sets built internally from IR/SIR candidates so only sets where ALL
-  // chain members have an IR/SIR are preferred (not historical lower-rarity sets).
+  // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred
   const irMap = await fetchTcgIrSir(raw, chainsByDex);
 
   // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
@@ -93,7 +82,7 @@ export default async function PokedexGrid() {
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
-  const vgxMap = await fetchTcgVgx(afterTrainerIr, tcgChainSets);
+  const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
 
   // Fetch alt form Pokémon data.
   // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.

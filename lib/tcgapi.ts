@@ -96,20 +96,6 @@ function nameMatches(cardName: string, query: string): boolean {
   return cn === q || cn.startsWith(q + " ");
 }
 
-// SV-era " ex" cards from sv3 onwards are Tera Pokémon — exclude from main slot.
-// sv1/sv2 have regular (non-Tera) ex cards like Venusaur ex; Tera focus starts at sv3.
-// Alt-form lookups (mega ex cards) pass allowTeraEx: true to skip this filter.
-// sv03.5 = Pokémon 151 (not Tera) — parseInt("03.5") = 3 which would
-// incorrectly match the >= 3 threshold, so exclude non-integer set numbers.
-function isTeraEx(card: TcgdexCard): boolean {
-  if (!/\sex$/i.test(card.name)) return false;
-  const setId = setIdFromCardId(card.id);
-  if (!setId.startsWith("sv")) return false;
-  const suffix = setId.slice(2);
-  if (suffix.includes(".")) return false; // sub-sets like sv03.5 (151), sv04.5, etc.
-  const major = parseInt(suffix);
-  return major >= 3;
-}
 
 async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
   const params = new URLSearchParams({ name });
@@ -157,13 +143,12 @@ interface FetchOptions {
   allowTrainerOwned?: boolean;
   allowGimmick?: boolean;
   skipRegionalFilter?: boolean;
-  allowTeraEx?: boolean;
 }
 
 async function fetchCandidates(
   displayName: string,
   rarities: string[],
-  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false, allowTeraEx = false }: FetchOptions = {},
+  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false }: FetchOptions = {},
 ): Promise<RankedCard[]> {
   const results = await Promise.all(rarities.map(r => tcgFetch(displayName, r)));
   return results.flatMap((list, i) =>
@@ -171,7 +156,6 @@ async function fetchCandidates(
       .filter(c =>
         c.image &&
         nameMatches(c.name, displayName) &&
-        (allowTeraEx        || !isTeraEx(c)) &&
         (skipRegionalFilter || !REGIONAL_RE.test(c.name)) &&
         (allowTrainerOwned  || !TRAINER_OWNED_RE.test(c.name)) &&
         (allowGimmick       || !MAIN_GIMMICK_RE.test(c.name))
@@ -229,7 +213,6 @@ export async function fetchTcgPromoSv(
         setIdFromCardId(c.id) === "svp" &&
         !SVP_BLACKLIST.has(c.id) &&
         nameMatches(c.name, displayName) &&
-        !isTeraEx(c) &&
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name)
       );
@@ -325,7 +308,7 @@ export async function fetchFormCard(
   // Regional forms: skip regional name filter (querying by regional name already) but no Tera ex
   const regionalOpts: FetchOptions = { skipRegionalFilter: true, allowGimmick: false };
   // Mega forms: allow Tera ex (SV mega ex cards use " ex" suffix) but enforce regional filter
-  const megaOpts: FetchOptions = { allowGimmick: true, allowTeraEx: true };
+  const megaOpts: FetchOptions = { allowGimmick: true };
 
   if (category === "regional") {
     if (raritySet === IR_RARITIES) {

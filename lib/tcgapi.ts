@@ -18,11 +18,12 @@ const RARITY_ORDER = [
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo V",
+  "Rare Holo GX",
 ];
 
 export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 export const VGX_RARITIES = new Set([
-  "Hyper Rare", "Ultra Rare", "Rare Holo VSTAR", "Rare Holo VMAX", "Rare Holo V",
+  "Hyper Rare", "Ultra Rare", "Rare Holo VSTAR", "Rare Holo VMAX", "Rare Holo V", "Rare Holo GX",
 ]);
 
 // Trainer Gallery card number pattern — TG01, TG08, TG19, etc.

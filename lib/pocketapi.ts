@@ -35,14 +35,16 @@ function pickNewest<T extends TcgdexCard>(a: T, b: T): T {
   return parseInt(b.localId) > parseInt(a.localId) ? b : a;
 }
 
-// Only show star-rarity cards (1★, 2★, 3★) — not diamond commons or Crown rares
-const STAR_RARITIES = ["One Star", "Two Star", "Three Star"] as const;
+// Show star and shiny-star cards — not diamond commons or Crown rares
+// Two Shiny (✦✦) = shiny full-art, equivalent to Two Star in quality
+const STAR_RARITIES = ["One Star", "Two Star", "Two Shiny", "Three Star"] as const;
 
-// Score by star count: 3★ beats 2★ beats 1★ (lower = better)
+// Score: lower = better. Three Star (immersive) > Two Shiny (shiny full-art) > Two Star > One Star
 const RARITY_SCORE: Record<string, number> = {
   "Three Star": 0,
-  "Two Star": 1,
-  "One Star": 2,
+  "Two Shiny": 1,
+  "Two Star": 2,
+  "One Star": 3,
 };
 
 interface TcgdexCard {

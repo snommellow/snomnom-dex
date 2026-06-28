@@ -1,51 +1,65 @@
-// pokemontcg.io API — English TCG card lookup (https://pokemontcg.io)
+// TCGdex API — English TCG card lookup (https://tcgdex.dev)
 
 import { buildChainSets } from "./chains";
 
-const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
+const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
-function getHeaders(): HeadersInit {
-  const key = process.env.POKEMONTCG_API_KEY;
-  return key ? { "X-Api-Key": key } : {};
+// Limit concurrent TCGdex requests to avoid rate limiting.
+// A single PokedexGrid render fires 300+ simultaneous requests without this.
+const MAX_CONCURRENT = 20;
+let _active = 0;
+const _queue: Array<() => void> = [];
+function withRateLimit<T>(fn: () => Promise<T>): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const run = () => {
+      _active++;
+      fn().then(resolve, reject).finally(() => {
+        _active--;
+        if (_queue.length > 0) _queue.shift()!();
+      });
+    };
+    if (_active < MAX_CONCURRENT) run();
+    else _queue.push(run);
+  });
 }
 
 // Unified rarity priority — lower index = better card
 const RARITY_ORDER = [
-  "Special Illustration Rare",
-  "Illustration Rare",
-  "Hyper Rare",
-  "Ultra Rare",
-  "Rare Holo VSTAR",
-  "Rare Holo VMAX",
-  "Rare Holo V",
+  "Special illustration rare",
+  "Illustration rare",
+  "Hyper rare",       // Secret Rare equivalent
+  "Ultra Rare",       // Full-art V, full-art GX trainer, etc.
+  "Holo Rare VSTAR",
+  "Holo Rare VMAX",
+  "Holo Rare V",
 ];
 
-export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
+export const IR_RARITIES = new Set(["Special illustration rare", "Illustration rare"]);
 export const VGX_RARITIES = new Set([
-  "Hyper Rare", "Ultra Rare", "Rare Holo VSTAR", "Rare Holo VMAX", "Rare Holo V",
+  "Hyper rare", "Ultra Rare", "Holo Rare VSTAR", "Holo Rare VMAX", "Holo Rare V",
 ]);
 
-// Trainer Gallery card number pattern — TG01, TG08, TG19, etc.
+// Trainer Gallery localId pattern — TG01, TG08, TG19, etc.
+// TCGdex classifies these as "Rare" so we detect by localId instead.
 const TG_RE = /^TG\d+$/;
 
 const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
+// Handle both straight (') and curly (') apostrophes used by TCGdex
 const TRAINER_OWNED_RE = /['']\s*s\s+/i;
+// VMAX/VSTAR in card name = gimmick form; excluded from main slot, allowed for alt-forms
 const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
 // SVP promos that are non-full-art stamp reprints — excluded from promo pass
-const SVP_BLACKLIST = new Set(["11", "24", "167", "168", "169"]);
+const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
 
-interface PtcgCard {
+interface TcgdexCard {
   id: string;
-  number: string;
+  localId: string;
   name: string;
-  rarity: string;
-  subtypes: string[];
-  set: { id: string };
-  images: { small: string; large: string };
+  image?: string;
 }
 
-interface RankedCard extends PtcgCard { _rarity: string }
+interface RankedCard extends TcgdexCard { _rarity: string }
 
 export interface TcgImageResult { tcgUrl: string | null }
 
@@ -61,8 +75,8 @@ function toDisplayName(slug: string): string {
   return NAME_OVERRIDES[slug] ?? (slug.charAt(0).toUpperCase() + slug.slice(1));
 }
 
-function cardImageUrl(card: PtcgCard): string {
-  return card.images.large;
+function cardImageUrl(card: TcgdexCard): string {
+  return `${card.image}/high.webp`;
 }
 
 function rarityScore(rarity: string): number {
@@ -70,83 +84,46 @@ function rarityScore(rarity: string): number {
   return idx === -1 ? 99 : idx;
 }
 
+function setIdFromCardId(id: string): string {
+  return id.split("-")[0] ?? "";
+}
+
+// TCGdex does substring name matching — "Paras" returns "Parasol Lady".
+// Post-filter: only accept exact match or "<query> <suffix>" (e.g. "Charizard ex").
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
   return cn === q || cn.startsWith(q + " ");
 }
 
-// Fetch ALL cards matching a query, handling pagination automatically.
-// Instead of one request per Pokémon, callers fetch an entire rarity at once
-// and look up by name client-side — far fewer total requests.
-async function fetchAllPages(q: string): Promise<PtcgCard[]> {
-  const results: PtcgCard[] = [];
-  let page = 1;
-  while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,set,images`;
-    let data: PtcgCard[] = [];
+// SV sets that have regular (non-Tera) " ex" cards.
+// All other sv* sets use the Tera mechanic and should be excluded from the main slot.
+const NON_TERA_SV_EX_SETS = new Set(["sv01", "sv02", "sv03.5"]);
+
+function isTeraEx(card: TcgdexCard): boolean {
+  if (!/\sex$/i.test(card.name)) return false;
+  const setId = setIdFromCardId(card.id);
+  if (!setId.startsWith("sv")) return false;
+  return !NON_TERA_SV_EX_SETS.has(setId);
+}
+
+async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
+  const params = new URLSearchParams({ name });
+  if (rarity) params.set("rarity", rarity);
+  const url = `${TCGDEX_BASE}/cards?${params}`;
+  return withRateLimit(async () => {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
-        const res = await fetch(url, {
-          headers: getHeaders(),
-          next: { revalidate: 86400 },
-        });
+        const res = await fetch(url, { next: { revalidate: 86400 } });
         if (res.status === 429 && attempt < 2) continue;
-        if (!res.ok) return results;
+        if (!res.ok) return [];
         const json = await res.json();
-        data = json.data ?? [];
-        break;
-      } catch { if (attempt === 2) return results; }
+        return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+      } catch { if (attempt === 2) return []; }
     }
-    results.push(...data);
-    if (data.length < 250) break;
-    page++;
-  }
-  return results;
-}
-
-// Build a name→cards index from a bulk rarity fetch.
-// Keys are lowercased card names for fast lookup.
-function buildNameIndex(cards: PtcgCard[]): Map<string, PtcgCard[]> {
-  const index = new Map<string, PtcgCard[]>();
-  for (const card of cards) {
-    const key = card.name.toLowerCase();
-    const existing = index.get(key);
-    if (existing) existing.push(card);
-    else index.set(key, [card]);
-  }
-  return index;
-}
-
-// Look up candidates for a Pokémon from a pre-built name index.
-// Matches exact name or "name <suffix>" (e.g. "Charizard ex", "Charizard V").
-function lookupCandidates(
-  index: Map<string, PtcgCard[]>,
-  displayName: string,
-  rarity: string,
-  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false }: {
-    allowTrainerOwned?: boolean;
-    allowGimmick?: boolean;
-    skipRegionalFilter?: boolean;
-  } = {},
-): RankedCard[] {
-  const nameLower = displayName.toLowerCase();
-  const matched: RankedCard[] = [];
-  for (const [key, cards] of index) {
-    if (!nameMatches(key, nameLower)) continue;
-    for (const c of cards) {
-      if (
-        c.images?.large &&
-        (skipRegionalFilter || !REGIONAL_RE.test(c.name)) &&
-        (allowTrainerOwned  || !TRAINER_OWNED_RE.test(c.name)) &&
-        (allowGimmick       || !MAIN_GIMMICK_RE.test(c.name))
-      ) {
-        matched.push({ ...c, _rarity: rarity });
-      }
-    }
-  }
-  return matched;
+    return [];
+  });
 }
 
 function pickBest(cards: RankedCard[]): string | null {
@@ -154,10 +131,11 @@ function pickBest(cards: RankedCard[]): string | null {
   const winner = cards.reduce((a, b) => {
     const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
     if (ra !== rb) return ra < rb ? a : b;
-    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
-    // Same rarity + same set: prefer higher number (alt arts are secret-rare numbered)
-    const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;
-    return bNum >= aNum ? b : a;
+    const aSet = setIdFromCardId(a.id), bSet = setIdFromCardId(b.id);
+    if (aSet !== bSet) return bSet > aSet ? b : a;
+    // Same rarity + same set: prefer higher localId (alt arts are secret-rare numbered)
+    const aId = parseInt(a.localId) || 0, bId = parseInt(b.localId) || 0;
+    return bId >= aId ? b : a;
   });
   return cardImageUrl(winner);
 }
@@ -165,18 +143,10 @@ function pickBest(cards: RankedCard[]): string | null {
 function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefined): string | null {
   if (!cards.length) return null;
   if (chainSets?.size) {
-    const chainCards = cards.filter(c => chainSets.has(c.set.id));
+    const chainCards = cards.filter(c => chainSets.has(setIdFromCardId(c.id)));
     if (chainCards.length) return pickBest(chainCards);
   }
   return pickBest(cards);
-}
-
-// Fetch all cards of a given rarity (non-Tera) and return a name index.
-// Excludes "me*" sets (Mega Evolution / Pocket-format crossover sets on pokemontcg.io).
-async function fetchRarityIndex(rarity: string, allowTeraEx = false): Promise<Map<string, PtcgCard[]>> {
-  const teraFilter = allowTeraEx ? "" : " -subtypes:Tera";
-  const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter} -set.id:me*`);
-  return buildNameIndex(cards);
 }
 
 interface FetchOptions {
@@ -186,26 +156,53 @@ interface FetchOptions {
   allowTeraEx?: boolean;
 }
 
-// Pass 1: IR / SIR — highest quality full-art illustration cards, chain-set preferred.
+async function fetchCandidates(
+  displayName: string,
+  rarities: string[],
+  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false, allowTeraEx = false }: FetchOptions = {},
+): Promise<RankedCard[]> {
+  const results = await Promise.all(rarities.map(r => tcgFetch(displayName, r)));
+  return results.flatMap((list, i) =>
+    list
+      .filter(c =>
+        c.image &&
+        nameMatches(c.name, displayName) &&
+        (allowTeraEx        || !isTeraEx(c)) &&
+        (skipRegionalFilter || !REGIONAL_RE.test(c.name)) &&
+        (allowTrainerOwned  || !TRAINER_OWNED_RE.test(c.name)) &&
+        (allowGimmick       || !MAIN_GIMMICK_RE.test(c.name))
+      )
+      .map(c => ({ ...c, _rarity: rarities[i] }))
+  );
+}
+
+async function fetchBestByRarities(
+  displayName: string,
+  rarities: string[],
+  opts: FetchOptions = {},
+): Promise<string | null> {
+  return pickBest(await fetchCandidates(displayName, rarities, opts));
+}
+
+// Pass 1: IR / SIR — highest quality full-art illustration cards.
+// Chain-set preference: find sets where ALL chain members have an IR/SIR candidate,
+// then prefer those sets. Built from TCGdex candidates (not pokemontcg.io) so only
+// IR/SIR sets are considered, not historical sets with lower-rarity cards.
 export async function fetchTcgIrSir(
   pokemon: Array<{ id: number; name: string }>,
   chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
-  // Two bulk fetches cover all 151+ Pokémon — one per rarity
-  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
-
-  const candidatesList = pokemon.map(({ name }) => {
-    const displayName = toDisplayName(name);
-    // allowGimmick: true so VMAX/VSTAR SIR alt arts (e.g. Charizard VMAX SIR) are included
-    return rarities.flatMap((r, i) => lookupCandidates(indexes[i], displayName, r, { allowGimmick: true }));
-  });
-
+  const rarities = ["Special illustration rare", "Illustration rare"];
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
+  );
   const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => c.set.id))])
+    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
   );
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
+  // pickBestWithChain: if a common set covers all chain members, prefer that set.
+  // Otherwise fall back to individual best card.
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
@@ -213,71 +210,69 @@ export async function fetchTcgIrSir(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Pass 1.5: SV-era full-art promos (svp set), highest number = best quality.
+// Pass 1.5: SV-era full-art promos (svp set, rarity "None" on TCGdex)
+// Pick highest localId per Pokémon — higher numbers = better promo quality.
 export async function fetchTcgPromoSv(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  // One bulk fetch for the entire svp set
-  const allSvp = await fetchAllPages(`set.id:svp -subtypes:Tera`);
-  const index = buildNameIndex(allSvp);
-
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
-    const svpCards = (index.get(displayName.toLowerCase()) ?? []).filter(c =>
-      c.images?.large &&
-      !SVP_BLACKLIST.has(c.number) &&
-      nameMatches(c.name, displayName) &&
-      !REGIONAL_RE.test(c.name) &&
-      !TRAINER_OWNED_RE.test(c.name)
-    );
-    if (!svpCards.length) return null;
-    const best = svpCards.reduce((a, b) =>
-      parseInt(b.number) > parseInt(a.number) ? b : a
-    );
-    return [id, { tcgUrl: cardImageUrl(best) }] as const;
-  });
+  const entries = await Promise.all(
+    pokemon.map(async ({ id, name }) => {
+      const displayName = toDisplayName(name);
+      const allCards = await tcgFetch(displayName);
+      const svpCards = allCards.filter(c =>
+        c.image &&
+        setIdFromCardId(c.id) === "svp" &&
+        !SVP_BLACKLIST.has(c.id) &&
+        nameMatches(c.name, displayName) &&
+        !isTeraEx(c) &&
+        !REGIONAL_RE.test(c.name) &&
+        !TRAINER_OWNED_RE.test(c.name)
+      );
+      if (!svpCards.length) return null;
+      const best = svpCards.reduce((a, b) =>
+        parseInt(b.localId) > parseInt(a.localId) ? b : a
+      );
+      return [id, { tcgUrl: cardImageUrl(best) }] as const;
+    })
+  );
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
 // Pass 2.1: Trainer-owned IR/SIR (e.g. "Erika's Clefable")
+// Note: TCGdex name search returns exact/prefix matches only, so "Clefable"
+// won't find "Erika's Clefable". This pass handles cases where the trainer
+// name is included in the query (future: trainer-name mapping).
 export async function fetchTcgTrainerOwnedIrSir(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  // Reuse same rarity indexes but allow trainer-owned names
-  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
-
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
-    const candidates = rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowTrainerOwned: true, allowGimmick: true })
-    );
-    const url = pickBest(candidates);
-    return url ? [id, { tcgUrl: url }] as const : null;
-  });
+  const entries = await Promise.all(
+    pokemon.map(async ({ id, name }) => {
+      const url = await fetchBestByRarities(
+        toDisplayName(name),
+        ["Special illustration rare", "Illustration rare"],
+        { allowTrainerOwned: true },
+      );
+      return url ? [id, { tcgUrl: url }] as const : null;
+    })
+  );
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
 // Pass 3: V / GX / EX fallback — chain-set preferred.
+// Chain sets built from VGX candidates (same approach as IR/SIR pass).
 export async function fetchTcgVgx(
   pokemon: Array<{ id: number; name: string }>,
   chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
-
-  const candidatesList = pokemon.map(({ name }) => {
-    const displayName = toDisplayName(name);
-    return rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
-    );
-  });
-
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowGimmick: true }))
+  );
   const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => c.set.id))])
+    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
   );
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
@@ -288,31 +283,31 @@ export async function fetchTcgVgx(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Chain reconciliation: find the best card for a Pokémon within allowed sets.
+// Chain reconciliation: find the best IR/SIR or VGX card for a Pokémon,
+// but ONLY return it if the result is from one of the allowed set IDs.
+// Used to upgrade Pocket Pokémon to TCG when their chain is in TCG.
 export async function fetchTcgFromChainSet(
   pokemon: Array<{ id: number; name: string }>,
   requiredSets: Map<number, Set<string>>,
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  const rarities = RARITY_ORDER;
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r, true)));
-
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
+  const allRarities = RARITY_ORDER; // IR/SIR first, then VGX
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) =>
+      fetchCandidates(toDisplayName(name), allRarities, { allowGimmick: true })
+    )
+  );
+  const entries = pokemon.map(({ id }, i) => {
     const allowed = requiredSets.get(id);
     if (!allowed?.size) return null;
-    const candidates = rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
-        .filter(c => allowed.has(c.set.id))
-    );
-    const url = pickBest(candidates);
+    const inSet = candidatesList[i].filter(c => allowed.has(setIdFromCardId(c.id)));
+    const url = pickBest(inSet);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Alt-form card lookup — IR → TG (regional) → VGX, with Mega name fallbacks.
-// Alt forms are looked up individually (low volume, varied names).
+// Alt-form card lookup — IR → TG (regional) → VGX, with Mega name fallbacks
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",
   _dexId: number,
@@ -323,30 +318,27 @@ export async function fetchFormCard(
   if (category === "gmax" || category === "other") return null;
 
   const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
-  const teraFilter = " -subtypes:Tera";
-  const megaTeraFilter = ""; // mega ex cards in SV are Tera — allow them
+  // Regional forms: skip regional name filter (querying by regional name already) but no Tera ex
+  const regionalOpts: FetchOptions = { skipRegionalFilter: true, allowGimmick: false };
+  // Mega forms: allow Tera ex (SV mega ex cards use " ex" suffix) but enforce regional filter
+  const megaOpts: FetchOptions = { allowGimmick: true, allowTeraEx: true };
 
   if (category === "regional") {
     if (raritySet === IR_RARITIES) {
-      const cards = await fetchAllPages(`name:"${displayName}"${teraFilter}`);
-      const candidates = cards
-        .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
-        .map(c => ({ ...c, _rarity: c.rarity }));
-      return pickBest(candidates);
+      return fetchBestByRarities(displayName, rarities, regionalOpts);
     }
-    // VGX pass: check Trainer Gallery cards first
-    const allCards = await fetchAllPages(`name:"${displayName}"`);
-    const tgCards = allCards.filter(c => c.images?.large && TG_RE.test(c.number) && nameMatches(c.name, displayName));
+    // VGX pass: check Trainer Gallery cards first — they rank above Ultra Rare
+    const allCards = await tcgFetch(displayName);
+    const tgCards = allCards.filter(c =>
+      c.image && TG_RE.test(c.localId) && nameMatches(c.name, displayName)
+    );
     if (tgCards.length) {
       const best = tgCards.reduce((a, b) =>
-        parseInt(b.number.slice(2)) > parseInt(a.number.slice(2)) ? b : a
+        parseInt(b.localId.slice(2)) > parseInt(a.localId.slice(2)) ? b : a
       );
       return cardImageUrl(best);
     }
-    const candidates = allCards
-      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
-      .map(c => ({ ...c, _rarity: c.rarity }));
-    return pickBest(candidates);
+    return fetchBestByRarities(displayName, rarities, regionalOpts);
   }
 
   if (category === "mega") {
@@ -357,11 +349,7 @@ export async function fetchFormCard(
       : [`${displayName} ex`, `M ${baseName}-EX`, `Mega ${baseName} ex`, `Mega ${baseName}`];
 
     for (const queryName of namesToTry) {
-      const cards = await fetchAllPages(`name:"${queryName}"${megaTeraFilter}`);
-      const candidates = cards
-        .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
-        .map(c => ({ ...c, _rarity: c.rarity }));
-      const url = pickBest(candidates);
+      const url = await fetchBestByRarities(queryName, rarities, megaOpts);
       if (url) return url;
     }
     return null;

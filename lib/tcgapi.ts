@@ -11,21 +11,30 @@ function getHeaders(): HeadersInit {
 
 // Unified rarity priority — lower index = better card
 const RARITY_ORDER = [
+  // IR/SIR pass
   "Special Illustration Rare",
   "Illustration Rare",
-  "Hyper Rare",
-  "Ultra Rare",
+  // VGX pass (lower index = higher priority)
+  "Hyper Rare",              // Secret Rare / gold rainbow
+  "Trainer Gallery Rare Holo",
+  "Ultra Rare",              // Full-art ex/V/GX/EX
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
-  "Rare Holo V",
-  "Rare Holo GX",
   "Rare Holo EX",
+  "Rare Holo GX",
+  "Rare Holo V",
 ];
 
 export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 export const VGX_RARITIES = new Set([
-  "Hyper Rare", "Ultra Rare", "Rare Holo VSTAR", "Rare Holo VMAX", "Rare Holo V",
-  "Rare Holo GX", "Rare Holo EX",
+  "Hyper Rare",
+  "Trainer Gallery Rare Holo",
+  "Ultra Rare",
+  "Rare Holo VSTAR",
+  "Rare Holo VMAX",
+  "Rare Holo EX",
+  "Rare Holo GX",
+  "Rare Holo V",
 ]);
 
 // Trainer Gallery card number pattern — TG01, TG08, TG19, etc.

@@ -397,9 +397,8 @@ export async function fetchFormCard(
     const vmaxName = `${baseName} VMAX`;
     const cards = await fetchAllPages(`name:"${vmaxName}"`);
     const candidates = cards
-      .filter(c => c.images?.large && nameMatches(c.name, vmaxName))
+      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV"))
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
-    console.log(`[gmax] ${vmaxName}: found ${cards.length} cards, ${candidates.length} candidates`, candidates.map(c => `${c.id} ${c.rarity}`));
     return pickBest(candidates);
   }
 

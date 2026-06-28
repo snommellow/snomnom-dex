@@ -34,12 +34,16 @@ export default async function PokedexGrid() {
   // Otherwise each Pokémon gets its individual best IR card.
   const irMap = await fetchTcgIrSir(raw, chainsByDex);
 
-  // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
+  // Pass 1.5: trainer-owned IR/SIR (e.g. "Erika's Clefable")
   const afterIr = raw.filter((p) => !irMap.has(p.id));
-  const promoSvMap = await fetchTcgPromoSv(afterIr);
+  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterIr);
 
-  // Pass 2: TCG Pocket star cards, chain-set preferred (newest pack first as tiebreaker)
-  const afterPromoSv = afterIr.filter((p) => !promoSvMap.has(p.id));
+  // Pass 2: SV-era full-art promos (svp set, highest localId = best quality)
+  const afterTrainerIr = afterIr.filter((p) => !trainerIrMap.has(p.id));
+  const promoSvMap = await fetchTcgPromoSv(afterTrainerIr);
+
+  // Pass 3: TCG Pocket star cards, chain-set preferred (newest pack first as tiebreaker)
+  const afterPromoSv = afterTrainerIr.filter((p) => !promoSvMap.has(p.id));
   const pocketResultsList = afterPromoSv.length
     ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })))
     : [];
@@ -48,13 +52,9 @@ export default async function PokedexGrid() {
     if (pocketResultsList[j]?.url) pocketMap.set(p.id, pocketResultsList[j].url!);
   });
 
-  // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
+  // Pass 4: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
-  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
-
-  // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
-  const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
-  const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
+  const vgxMap = await fetchTcgVgx(afterPocket, chainsByDex);
 
   // Fetch alt form Pokémon data.
   // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.

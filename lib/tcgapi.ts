@@ -155,8 +155,9 @@ export async function fetchTcgIrSir(
   chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
+  // allowTeraEx: IR/SIR illustration art is high-quality scene art regardless of ex/Tera status
   const candidatesList = await Promise.all(
-    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowTeraEx: true }))
   );
   const setsByDex = new Map(
     pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])

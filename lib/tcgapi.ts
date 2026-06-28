@@ -251,23 +251,27 @@ export async function fetchTcgPromoSv(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Pass 2.1: Trainer-owned IR/SIR (e.g. "Erika's Clefable")
+// Pass 2.1: Trainer-owned IR/SIR (e.g. "Giovanni's Dugtrio", "Erika's Clefable")
+// Uses per-Pokémon queries so pokemontcg.io substring matching finds "X's <Name>" cards.
 export async function fetchTcgTrainerOwnedIrSir(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  // Reuse same rarity indexes but allow trainer-owned names
   const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
 
-  const entries = pokemon.map(({ id, name }) => {
+  const entries = await Promise.all(pokemon.map(async ({ id, name }) => {
     const displayName = toDisplayName(name);
-    const candidates = rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowTrainerOwned: true })
+    const results = await Promise.all(
+      rarities.map(r => fetchAllPages(`name:"${displayName}" rarity:"${r}" -subtypes:Tera`))
+    );
+    const candidates = results.flatMap((cards, i) =>
+      cards
+        .filter(c => c.images?.large && TRAINER_OWNED_RE.test(c.name) && !REGIONAL_RE.test(c.name))
+        .map(c => ({ ...c, _rarity: rarities[i] }))
     );
     const url = pickBest(candidates);
     return url ? [id, { tcgUrl: url }] as const : null;
-  });
+  }));
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 

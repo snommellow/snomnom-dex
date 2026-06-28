@@ -38,8 +38,10 @@ export default async function PokedexGrid() {
 
   const tcgChainSets = buildChainSets(ptcgSetsByDex, chainsByDex);
 
-  // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred
-  const irMap = await fetchTcgIrSir(raw, tcgChainSets);
+  // Pass 1: IR/SIR — best quality full-art illustration cards.
+  // Chain sets built internally from IR/SIR candidates so only sets where ALL
+  // chain members have an IR/SIR are preferred (not historical lower-rarity sets).
+  const irMap = await fetchTcgIrSir(raw, chainsByDex);
 
   // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
   const afterIr = raw.filter((p) => !irMap.has(p.id));

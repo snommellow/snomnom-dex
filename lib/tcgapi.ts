@@ -1,5 +1,7 @@
 // TCGdex API — English TCG card lookup (https://tcgdex.dev)
 
+import { buildChainSets } from "./chains";
+
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
 // Unified rarity priority — lower index = better card
@@ -151,20 +153,25 @@ async function fetchBestByRarities(
   return pickBest(await fetchCandidates(displayName, rarities, opts));
 }
 
-// Pass 1: IR / SIR — highest quality full-art illustration cards
-// Chain-set preference: prefer sets where all evo line members have a card.
-// chainSets: pre-computed Map<dexId, Set<tcgdexSetId>> (from pokemontcg.io + buildChainSets).
+// Pass 1: IR / SIR — highest quality full-art illustration cards.
+// Chain-set preference: find sets where ALL chain members have an IR/SIR candidate,
+// then prefer those sets. Built from TCGdex candidates (not pokemontcg.io) so only
+// IR/SIR sets are considered, not historical sets with lower-rarity cards.
 export async function fetchTcgIrSir(
   pokemon: Array<{ id: number; name: string }>,
-  chainSets: Map<number, Set<string>> = new Map(),
+  chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
   );
+  const setsByDex = new Map(
+    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
+  );
+  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSets.get(id));
+    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -220,8 +227,9 @@ export async function fetchTcgTrainerOwnedIrSir(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Pass 3: V / GX / EX fallback — chain-set preferred
-// chainSets: pre-computed Map<dexId, Set<tcgdexSetId>> (from pokemontcg.io + buildChainSets).
+// Pass 3: V / GX / EX fallback — chain-set preferred.
+// Uses pokemontcg.io-based chainSets for broader historical set coverage
+// (VGX cards span many older sets TCGdex may not fully index as candidates).
 export async function fetchTcgVgx(
   pokemon: Array<{ id: number; name: string }>,
   chainSets: Map<number, Set<string>> = new Map(),

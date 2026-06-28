@@ -39,7 +39,7 @@ export default async function PokedexGrid() {
   // Pass 2: TCG Pocket star cards, chain-set preferred (newest pack first as tiebreaker)
   const afterPromoSv = afterIr.filter((p) => !promoSvMap.has(p.id));
   const pocketResultsList = afterPromoSv.length
-    ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })), chainsByDex)
+    ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })))
     : [];
   const pocketMap = new Map<number, string>();
   afterPromoSv.forEach((p, j) => {
@@ -98,7 +98,7 @@ export default async function PokedexGrid() {
     const tcgList = [...tcgOnlyIds]
       .map(id => raw.find(p => p.id === id))
       .filter((p): p is NonNullable<typeof p> => p != null);
-    const pocketCheck = await fetchPocketImages(tcgList.map(p => ({ id: p.id, name: p.name })), chainsByDex);
+    const pocketCheck = await fetchPocketImages(tcgList.map(p => ({ id: p.id, name: p.name })));
 
     const canDemoteIds = new Set<number>();
     tcgList.forEach((p, i) => {
@@ -123,7 +123,7 @@ export default async function PokedexGrid() {
       const demoteList = [...demoteChainIds]
         .map(id => raw.find(p => p.id === id))
         .filter((p): p is NonNullable<typeof p> => p != null);
-      const demoteResults = await fetchPocketImages(demoteList.map(p => ({ id: p.id, name: p.name })), chainsByDex);
+      const demoteResults = await fetchPocketImages(demoteList.map(p => ({ id: p.id, name: p.name })));
       demoteList.forEach((p, i) => {
         const result = demoteResults[i];
         if (!result?.url) return;

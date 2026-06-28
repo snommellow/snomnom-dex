@@ -1,7 +1,6 @@
 // TCGdex API — Pokémon TCG Pocket cards
 // https://tcgdex.dev  |  Pocket series IDs: A1, A1a, A2, A2b, B1, B2, B2a, …
 
-import { buildChainSets } from "./chains";
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
@@ -117,10 +116,8 @@ function pickBestPocket(cards: Array<TcgdexCard & { rarity: string }>, chainSets
 
 export async function fetchPocketImages(
   pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<PocketResult[]> {
-  // Fetch all candidates first to enable chain-set detection
-  const candidatesList = await Promise.all(
+  return Promise.all(
     pokemon.map(async ({ name }) => {
       const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
       const nameLower = name.toLowerCase();
@@ -128,22 +125,13 @@ export async function fetchPocketImages(
         const cn = cardName.toLowerCase();
         return cn === nameLower || cn.startsWith(nameLower + " ");
       };
-      return STAR_RARITIES.flatMap((rarity, i) =>
+      const cards = STAR_RARITIES.flatMap((rarity, i) =>
         results[i]
           .filter((c) => c.image && nameMatches(c.name) && !isExcluded(c.name))
           .map((c) => ({ ...c, rarity }))
       );
+      return pickBestPocket(cards);
     })
-  );
-
-  const setOf = (id: string) => id.split("-")[0];
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setOf(c.id)))])
-  );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
-
-  return candidatesList.map((cards, i) =>
-    pickBestPocket(cards, chainSetsMap.get(pokemon[i].id))
   );
 }
 

@@ -49,9 +49,11 @@ export default async function PokedexGrid() {
   });
 
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  // Also exclude chain-excluded IDs so they don't sneak back in via this pass.
-  const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id) && !irChainExcluded.has(p.id));
-  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
+  // Chain-excluded IDs are blocked from IR passes but still fall to VGX.
+  const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
+  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(
+    afterPocket.filter((p) => !irChainExcluded.has(p.id))
+  );
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));

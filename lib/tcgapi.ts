@@ -172,9 +172,10 @@ function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefin
 }
 
 // Fetch all cards of a given rarity (non-Tera) and return a name index.
+// Excludes "me*" sets (Mega Evolution / Pocket-format crossover sets on pokemontcg.io).
 async function fetchRarityIndex(rarity: string, allowTeraEx = false): Promise<Map<string, PtcgCard[]>> {
   const teraFilter = allowTeraEx ? "" : " -subtypes:Tera";
-  const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter}`);
+  const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter} -set.id:me*`);
   return buildNameIndex(cards);
 }
 
@@ -326,14 +327,14 @@ export async function fetchFormCard(
 
   if (category === "regional") {
     if (raritySet === IR_RARITIES) {
-      const cards = await fetchAllPages(`name:"${displayName}"${teraFilter}`);
+      const cards = await fetchAllPages(`name:"${displayName}"${teraFilter} -set.id:me*`);
       const candidates = cards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
         .map(c => ({ ...c, _rarity: c.rarity }));
       return pickBest(candidates);
     }
     // VGX pass: check Trainer Gallery cards first
-    const allCards = await fetchAllPages(`name:"${displayName}"`);
+    const allCards = await fetchAllPages(`name:"${displayName}" -set.id:me*`);
     const tgCards = allCards.filter(c => c.images?.large && TG_RE.test(c.number) && nameMatches(c.name, displayName));
     if (tgCards.length) {
       const best = tgCards.reduce((a, b) =>
@@ -355,7 +356,7 @@ export async function fetchFormCard(
       : [`${displayName} ex`, `M ${baseName}-EX`, `Mega ${baseName} ex`, `Mega ${baseName}`];
 
     for (const queryName of namesToTry) {
-      const cards = await fetchAllPages(`name:"${queryName}"${megaTeraFilter}`);
+      const cards = await fetchAllPages(`name:"${queryName}"${megaTeraFilter} -set.id:me*`);
       const candidates = cards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
         .map(c => ({ ...c, _rarity: c.rarity }));

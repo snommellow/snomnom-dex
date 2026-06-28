@@ -141,28 +141,36 @@ function lookupCandidates(
   index: Map<string, PtcgCard[]>,
   displayName: string,
   rarity: string,
-  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false }: {
+  { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false, allowRegionalFallback = false }: {
     allowTrainerOwned?: boolean;
     allowGimmick?: boolean;
     skipRegionalFilter?: boolean;
+    allowRegionalFallback?: boolean;
   } = {},
 ): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   const matched: RankedCard[] = [];
+  const regionalMatched: RankedCard[] = [];
   for (const [key, cards] of index) {
-    if (!nameMatches(key, nameLower)) continue;
+    const isRegionalKey = REGIONAL_RE.test(key);
+    // For regional keys (e.g. "alolan persian-gx"), check if the base name is contained
+    const keyMatches = isRegionalKey
+      ? (key.includes(" " + nameLower + "-") || key.includes(" " + nameLower + " ") || key.endsWith(" " + nameLower))
+      : nameMatches(key, nameLower);
+    if (!keyMatches) continue;
     for (const c of cards) {
       if (
         c.images?.large &&
-        (skipRegionalFilter || !REGIONAL_RE.test(c.name)) &&
-        (allowTrainerOwned  || !TRAINER_OWNED_RE.test(c.name)) &&
-        (allowGimmick       || !MAIN_GIMMICK_RE.test(c.name))
+        (allowTrainerOwned || !TRAINER_OWNED_RE.test(c.name)) &&
+        (allowGimmick      || !MAIN_GIMMICK_RE.test(c.name))
       ) {
-        matched.push({ ...c, _rarity: rarity });
+        if (skipRegionalFilter || !isRegionalKey) matched.push({ ...c, _rarity: rarity });
+        else if (allowRegionalFallback) regionalMatched.push({ ...c, _rarity: rarity });
       }
     }
   }
-  return matched;
+  // Use regional cards only if no non-regional candidates found
+  return matched.length ? matched : regionalMatched;
 }
 
 function pickBest(cards: RankedCard[]): string | null {
@@ -296,7 +304,7 @@ export async function fetchTcgVgx(
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
     return rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
+      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
         .filter(c => r !== "Rare Ultra" || !c.name.endsWith("-GX"))
     );
   });

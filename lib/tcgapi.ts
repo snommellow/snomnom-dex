@@ -259,23 +259,20 @@ export async function fetchTcgTrainerOwnedIrSir(
 }
 
 // Pass 3: V / GX / EX fallback — chain-set preferred.
-// Chain sets built from VGX candidates (same approach as IR/SIR pass).
+// Accepts pre-computed chainSets (from pokemontcg.io via buildChainSets)
+// for broader historical coverage than TCGdex candidates alone.
 export async function fetchTcgVgx(
   pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
+  chainSets: Map<number, Set<string>> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowGimmick: true }))
   );
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
-  );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    const url = pickBestWithChain(candidatesList[i], chainSets.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

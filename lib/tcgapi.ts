@@ -192,7 +192,8 @@ function pickBest(cards: RankedCard[]): string | null {
 function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefined): string | null {
   if (!cards.length) return null;
   if (chainSets?.size) {
-    const chainCards = cards.filter(c => chainSets.has(c.set.id));
+    // TG cards are always eligible — don't filter them by chain set
+    const chainCards = cards.filter(c => chainSets.has(c.set.id) || TG_RE.test(c.number));
     if (chainCards.length) return pickBest(chainCards);
   }
   return pickBest(cards);

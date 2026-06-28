@@ -63,18 +63,18 @@ export interface PocketResult { url: string | null }
 function pickBestPocket(cards: Array<TcgdexCard & { rarity: string }>, chainSets?: Set<string>): PocketResult {
   if (!cards.length) return { url: null };
 
-  // When a Pokémon has 2+ Two Star cards in the same set, keep only the highest
-  // localId (the rainbow-border version). Singletons are kept as-is.
+  // Only show rainbow-border Two Stars (sets where the Pokémon appears 2+ times).
+  // Singletons don't have a rainbow version and are excluded.
   const twoStars = cards.filter((c) => c.rarity === "Two Star");
   const setOf = (id: string) => id.split("-")[0];
   const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
-  const filteredTwoStars = [...bySet.values()].map((group) =>
-    group.reduce((a, b) => pickNewest(a, b))
-  );
+  const rainbowTwoStars = [...bySet.values()]
+    .filter((group) => group.length >= 2)
+    .map((group) => group.reduce((a, b) => pickNewest(a, b)));
 
   const eligible = [
     ...cards.filter((c) => c.rarity !== "Two Star"),
-    ...filteredTwoStars,
+    ...rainbowTwoStars,
   ];
   if (!eligible.length) return { url: null };
 
@@ -151,12 +151,12 @@ export async function fetchPocketAltForm(
     const twoStars = exactCards.filter((c) => c.rarity === "Two Star");
     const setOf = (id: string) => id.split("-")[0];
     const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
-    const filteredTwoStars = [...bySet.values()].map((group) =>
-      group.reduce((a, b) => parseInt(b.localId) > parseInt(a.localId) ? b : a)
-    );
+    const rainbowTwoStars = [...bySet.values()]
+      .filter((group) => group.length >= 2)
+      .map((group) => group.reduce((a, b) => parseInt(b.localId) > parseInt(a.localId) ? b : a));
     const eligible = [
       ...exactCards.filter((c) => c.rarity !== "Two Star"),
-      ...filteredTwoStars,
+      ...rainbowTwoStars,
     ];
     if (!eligible.length) return { url: null };
     const best = eligible.reduce((a, b) => {

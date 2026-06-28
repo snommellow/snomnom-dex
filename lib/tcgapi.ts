@@ -172,7 +172,7 @@ function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefin
 }
 
 // Fetch all cards of a given rarity (non-Tera) and return a name index.
-async function fetchRarityIndex(rarity: string, allowTeraEx = false, excludeMeSets = false): Promise<Map<string, PtcgCard[]>> {
+async function fetchRarityIndex(rarity: string, allowTeraEx = false, excludeMeSets = true): Promise<Map<string, PtcgCard[]>> {
   const teraFilter = allowTeraEx ? "" : " -subtypes:Tera";
   const meFilter = excludeMeSets ? " -set.id:me*" : "";
   const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter}${meFilter}`);
@@ -266,7 +266,7 @@ export async function fetchTcgVgx(
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r, false, true)));
+  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
 
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);

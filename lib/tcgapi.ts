@@ -4,6 +4,25 @@ import { buildChainSets } from "./chains";
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
+// Limit concurrent TCGdex requests to avoid rate limiting.
+// A single PokedexGrid render fires 300+ simultaneous requests without this.
+const MAX_CONCURRENT = 20;
+let _active = 0;
+const _queue: Array<() => void> = [];
+function withRateLimit<T>(fn: () => Promise<T>): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const run = () => {
+      _active++;
+      fn().then(resolve, reject).finally(() => {
+        _active--;
+        if (_queue.length > 0) _queue.shift()!();
+      });
+    };
+    if (_active < MAX_CONCURRENT) run();
+    else _queue.push(run);
+  });
+}
+
 // Unified rarity priority — lower index = better card
 const RARITY_ORDER = [
   "Special illustration rare",
@@ -92,17 +111,19 @@ async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
   const params = new URLSearchParams({ name });
   if (rarity) params.set("rarity", rarity);
   const url = `${TCGDEX_BASE}/cards?${params}`;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
-      const res = await fetch(url, { next: { revalidate: 86400 } });
-      if (res.status === 429 && attempt < 2) continue;
-      if (!res.ok) return [];
-      const json = await res.json();
-      return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-    } catch { if (attempt === 2) return []; }
-  }
-  return [];
+  return withRateLimit(async () => {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
+        const res = await fetch(url, { next: { revalidate: 86400 } });
+        if (res.status === 429 && attempt < 2) continue;
+        if (!res.ok) return [];
+        const json = await res.json();
+        return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+      } catch { if (attempt === 2) return []; }
+    }
+    return [];
+  });
 }
 
 function pickBest(cards: RankedCard[]): string | null {

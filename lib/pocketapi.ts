@@ -5,6 +5,23 @@ import { buildChainSets } from "./chains";
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
+const MAX_CONCURRENT = 20;
+let _active = 0;
+const _queue: Array<() => void> = [];
+function withRateLimit<T>(fn: () => Promise<T>): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const run = () => {
+      _active++;
+      fn().then(resolve, reject).finally(() => {
+        _active--;
+        if (_queue.length > 0) _queue.shift()!();
+      });
+    };
+    if (_active < MAX_CONCURRENT) run();
+    else _queue.push(run);
+  });
+}
+
 // Pocket set IDs start with A or B followed by a digit
 function isPocketSet(setId: string): boolean {
   return /^[AB]\d/i.test(setId);
@@ -44,17 +61,19 @@ function isExcluded(cardName: string): boolean {
 
 async function fetchStarCards(name: string, rarity: string): Promise<TcgdexCard[]> {
   const url = `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}&rarity=${encodeURIComponent(rarity)}`;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
-      const res = await fetch(url, { next: { revalidate: 86400 } });
-      if (res.status === 429 && attempt < 2) continue;
-      if (!res.ok) return [];
-      const json = await res.json();
-      return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-    } catch { if (attempt === 2) return []; }
-  }
-  return [];
+  return withRateLimit(async () => {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
+        const res = await fetch(url, { next: { revalidate: 86400 } });
+        if (res.status === 429 && attempt < 2) continue;
+        if (!res.ok) return [];
+        const json = await res.json();
+        return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+      } catch { if (attempt === 2) return []; }
+    }
+    return [];
+  });
 }
 
 function cardImageUrl(card: TcgdexCard): string {

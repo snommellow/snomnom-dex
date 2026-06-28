@@ -1,7 +1,5 @@
 // TCGdex API — English TCG card lookup (https://tcgdex.dev)
 
-import { buildChainSets } from "./chains";
-
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
 // Unified rarity priority — lower index = better card
@@ -154,22 +152,19 @@ async function fetchBestByRarities(
 }
 
 // Pass 1: IR / SIR — highest quality full-art illustration cards
-// Chain-set preference: if all members of an evo line have IR/SIR in the same set, prefer it.
+// Chain-set preference: prefer sets where all evo line members have a card.
+// chainSets: pre-computed Map<dexId, Set<tcgdexSetId>> (from pokemontcg.io + buildChainSets).
 export async function fetchTcgIrSir(
   pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
+  chainSets: Map<number, Set<string>> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
   );
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
-  );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    const url = pickBestWithChain(candidatesList[i], chainSets.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -226,22 +221,19 @@ export async function fetchTcgTrainerOwnedIrSir(
 }
 
 // Pass 3: V / GX / EX fallback — chain-set preferred
+// chainSets: pre-computed Map<dexId, Set<tcgdexSetId>> (from pokemontcg.io + buildChainSets).
 export async function fetchTcgVgx(
   pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
+  chainSets: Map<number, Set<string>> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowGimmick: true }))
   );
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
-  );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    const url = pickBestWithChain(candidatesList[i], chainSets.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

@@ -1,6 +1,8 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
+import { fetchPtcgSetsByDexRange } from "@/lib/pokemontcgapi";
+import { buildChainSets } from "@/lib/chains";
 import PokedexClient from "./PokedexClient";
 
 
@@ -29,8 +31,15 @@ export default async function PokedexGrid() {
     }
   });
 
+  // Build pre-computed chain sets using pokemontcg.io nationalPokedexNumbers data
+  // (broader set coverage than TCGdex candidates alone)
+  const minDex = Math.min(...raw.map(p => p.id));
+  const maxDex = Math.max(...raw.map(p => p.id));
+  const ptcgSetsByDex = await fetchPtcgSetsByDexRange(minDex, maxDex);
+  const tcgChainSets = buildChainSets(ptcgSetsByDex, chainsByDex);
+
   // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred
-  const irMap = await fetchTcgIrSir(raw, chainsByDex);
+  const irMap = await fetchTcgIrSir(raw, tcgChainSets);
 
   // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
   const afterIr = raw.filter((p) => !irMap.has(p.id));
@@ -52,7 +61,7 @@ export default async function PokedexGrid() {
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
-  const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
+  const vgxMap = await fetchTcgVgx(afterTrainerIr, tcgChainSets);
 
   // Fetch alt form Pokémon data.
   // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.

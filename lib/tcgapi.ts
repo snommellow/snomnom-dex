@@ -252,26 +252,31 @@ export async function fetchTcgPromoSv(
 }
 
 // Pass 2.1: Trainer-owned IR/SIR (e.g. "Giovanni's Dugtrio", "Erika's Clefable")
-// Uses per-Pokémon queries so pokemontcg.io substring matching finds "X's <Name>" cards.
+// Uses bulk IR/SIR index with a contains check to match "X's <Name>" card names.
 export async function fetchTcgTrainerOwnedIrSir(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
+  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
 
-  const entries = await Promise.all(pokemon.map(async ({ id, name }) => {
+  const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);
-    const results = await Promise.all(
-      rarities.map(r => fetchAllPages(`name:"${displayName}" rarity:"${r}" -subtypes:Tera`))
-    );
-    const candidates = results.flatMap((cards, i) =>
-      cards
-        .filter(c => c.images?.large && TRAINER_OWNED_RE.test(c.name) && !REGIONAL_RE.test(c.name))
-        .map(c => ({ ...c, _rarity: rarities[i] }))
-    );
+    const nameLower = displayName.toLowerCase();
+    const candidates: RankedCard[] = [];
+    for (let i = 0; i < rarities.length; i++) {
+      for (const [key, cards] of indexes[i]) {
+        if (!TRAINER_OWNED_RE.test(key)) continue;
+        if (!key.includes(nameLower)) continue;
+        for (const c of cards) {
+          if (c.images?.large && !REGIONAL_RE.test(c.name))
+            candidates.push({ ...c, _rarity: rarities[i] });
+        }
+      }
+    }
     const url = pickBest(candidates);
     return url ? [id, { tcgUrl: url }] as const : null;
-  }));
+  });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 

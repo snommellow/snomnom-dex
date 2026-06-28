@@ -81,22 +81,48 @@ export interface PokemonSummary {
   altForms: AltForm[];
 }
 
-// Single species fetch: returns genus + non-default form slots
+// Single species fetch: returns genus + non-default form slots + evolution chain URL
 export async function fetchSpeciesData(id: number): Promise<{
   genus: string | null;
   altFormSlots: Array<{ name: string; url: string }>;
+  evolutionChainUrl: string | null;
 }> {
   try {
     const res = await fetch(`${BASE_URL}/pokemon-species/${id}`, { next: { revalidate: 86400 } });
-    if (!res.ok) return { genus: null, altFormSlots: [] };
+    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null };
     const data = await res.json();
     const entry = (data.genera as { genus: string; language: { name: string } }[])
       .find((g) => g.language.name === "en");
     const alts = (data.varieties as Array<{ is_default: boolean; pokemon: { name: string; url: string } }>)
       .filter(v => !v.is_default)
       .map(v => v.pokemon);
-    return { genus: entry?.genus ?? null, altFormSlots: alts };
-  } catch { return { genus: null, altFormSlots: [] }; }
+    return {
+      genus: entry?.genus ?? null,
+      altFormSlots: alts,
+      evolutionChainUrl: (data.evolution_chain as { url: string } | null)?.url ?? null,
+    };
+  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null }; }
+}
+
+interface EvolutionNode {
+  species: { url: string };
+  evolves_to: EvolutionNode[];
+}
+
+function extractChainIds(node: EvolutionNode): number[] {
+  const parts = node.species.url.split("/").filter(Boolean);
+  const id = parseInt(parts[parts.length - 1] ?? "0");
+  return [id, ...node.evolves_to.flatMap(extractChainIds)];
+}
+
+// Fetch all dex IDs in an evolution chain (including branching, e.g. Eevee)
+export async function fetchEvolutionChainIds(url: string): Promise<number[]> {
+  try {
+    const res = await fetch(url, { next: { revalidate: 86400 } });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return extractChainIds(data.chain as EvolutionNode);
+  } catch { return []; }
 }
 
 // Keep for any callers that only need the genus string

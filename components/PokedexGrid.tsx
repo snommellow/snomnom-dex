@@ -1,4 +1,4 @@
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, toPokemonSummary } from "@/lib/pokeapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
@@ -10,17 +10,33 @@ const CANONICAL_GEN1_MEGA_IDS = new Set([3, 6, 9, 15, 18, 65, 80, 94, 115, 127, 
 export default async function PokedexGrid() {
   const raw = await fetchFirst151();
 
-  // Pass 1: IR/SIR — best quality full-art illustration cards
-  const irMap = await fetchTcgIrSir(raw);
+  // Species data: genus + alt form slots + evolution chain URL (single fetch per Pokémon)
+  const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
+
+  // Fetch each unique evolution chain once, then build a map: dex ID → all chain members
+  const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
+  const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
+  const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
+
+  const chainsByDex = new Map<number, number[]>();
+  speciesData.forEach((s, i) => {
+    if (s.evolutionChainUrl) {
+      const ids = urlToIds.get(s.evolutionChainUrl) ?? [];
+      if (ids.length > 1) chainsByDex.set(raw[i].id, ids);
+    }
+  });
+
+  // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred
+  const irMap = await fetchTcgIrSir(raw, chainsByDex);
 
   // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
   const afterIr = raw.filter((p) => !irMap.has(p.id));
   const promoSvMap = await fetchTcgPromoSv(afterIr);
 
-  // Pass 2: TCG Pocket star cards (newest pack first)
+  // Pass 2: TCG Pocket star cards, chain-set preferred (newest pack first as tiebreaker)
   const afterPromoSv = afterIr.filter((p) => !promoSvMap.has(p.id));
   const pocketResultsList = afterPromoSv.length
-    ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })))
+    ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })), chainsByDex)
     : [];
   const pocketMap = new Map<number, string>();
   afterPromoSv.forEach((p, j) => {
@@ -31,12 +47,9 @@ export default async function PokedexGrid() {
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
   const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
 
-  // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes
+  // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
-  const vgxMap = await fetchTcgVgx(afterTrainerIr);
-
-  // Species data: genus + alt form slots (single fetch per Pokémon)
-  const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
+  const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
 
   // Fetch alt form Pokémon data; filter out phantom megas PokéAPI lists for Gen 1
   const altFormsData = await Promise.all(

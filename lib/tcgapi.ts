@@ -1,5 +1,7 @@
 // TCGdex API — English TCG card lookup (https://tcgdex.dev)
 
+import { buildChainSets } from "./chains";
+
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
 // Unified rarity priority — lower index = better card
@@ -30,20 +32,6 @@ const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
 // SVP promos that are non-full-art stamp reprints — excluded from promo pass
 const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
-
-// Gen 1 evolution chains by dex ID — used for chain-set tiebreaking
-// A "chain set" is one where every member of the chain has a candidate card.
-const GEN1_CHAINS: number[][] = [
-  [1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18],
-  [19,20],[21,22],[23,24],[25,26],[27,28],[29,30,31],[32,33,34],
-  [35,36],[37,38],[39,40],[41,42],[43,44,45],[46,47],[48,49],
-  [50,51],[52,53],[54,55],[56,57],[58,59],[60,61,62],[63,64,65],
-  [66,67,68],[69,70,71],[72,73],[74,75,76],[77,78],[79,80],
-  [81,82],[84,85],[86,87],[88,89],[90,91],[92,93,94],[96,97],
-  [98,99],[100,101],[102,103],[104,105],[109,110],[111,112],
-  [116,117],[118,119],[120,121],[129,130],[133,134,135,136],
-  [138,139],[140,141],[147,148,149],
-];
 
 interface TcgdexCard {
   id: string;
@@ -116,8 +104,7 @@ function pickBest(cards: RankedCard[]): string | null {
   return cardImageUrl(winner);
 }
 
-// Pick best card, preferring cards from chain sets (sets where full evo line is present).
-function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | null): string | null {
+function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefined): string | null {
   if (!cards.length) return null;
   if (chainSets?.size) {
     const chainCards = cards.filter(c => chainSets.has(setIdFromCardId(c.id)));
@@ -133,7 +120,6 @@ interface FetchOptions {
   allowTeraEx?: boolean;
 }
 
-// Fetch all matching candidates (without picking) for chain-aware selection.
 async function fetchCandidates(
   displayName: string,
   rarities: string[],
@@ -162,47 +148,23 @@ async function fetchBestByRarities(
   return pickBest(await fetchCandidates(displayName, rarities, opts));
 }
 
-// Build chain sets: for each evolution chain, find set IDs present for ALL members.
-function buildChainSets(
-  candidatesByDex: Map<number, RankedCard[]>,
-): Map<number, Set<string>> {
-  const result = new Map<number, Set<string>>();
-  for (const chain of GEN1_CHAINS) {
-    if (chain.length < 2) continue;
-    // Collect set IDs per chain member
-    const setsByMember = chain.map(id => {
-      const cards = candidatesByDex.get(id) ?? [];
-      return new Set(cards.map(c => setIdFromCardId(c.id)));
-    });
-    // Intersect: sets where every member has a card
-    const commonSets = setsByMember.reduce((acc, s) => {
-      for (const setId of acc) if (!s.has(setId)) acc.delete(setId);
-      return acc;
-    }, new Set(setsByMember[0]));
-    if (!commonSets.size) continue;
-    for (const id of chain) {
-      const existing = result.get(id);
-      if (existing) for (const s of commonSets) existing.add(s);
-      else result.set(id, new Set(commonSets));
-    }
-  }
-  return result;
-}
-
-// Pass 1: IR / SIR — highest quality full-art illustration cards, chain-set preferred
+// Pass 1: IR / SIR — highest quality full-art illustration cards
+// Chain-set preference: if all members of an evo line have IR/SIR in the same set, prefer it.
 export async function fetchTcgIrSir(
-  pokemon: Array<{ id: number; name: string }>
+  pokemon: Array<{ id: number; name: string }>,
+  chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
-  // Fetch all candidates first so we can do chain detection
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
   );
-  const candidatesByDex = new Map(pokemon.map((p, i) => [p.id, candidatesList[i]]));
-  const chainSets = buildChainSets(candidatesByDex);
+  const setsByDex = new Map(
+    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
+  );
+  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSets.get(id) ?? null);
+    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -258,22 +220,25 @@ export async function fetchTcgTrainerOwnedIrSir(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Pass 3: V / GX / EX fallback for Pokémon missing all earlier passes
+// Pass 3: V / GX / EX fallback — chain-set preferred
 export async function fetchTcgVgx(
-  pokemon: Array<{ id: number; name: string }>
+  pokemon: Array<{ id: number; name: string }>,
+  chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
-  const entries = await Promise.all(
-    pokemon.map(async ({ id, name }) => {
-      const url = await fetchBestByRarities(
-        toDisplayName(name),
-        rarities,
-        { allowGimmick: true },
-      );
-      return url ? [id, { tcgUrl: url }] as const : null;
-    })
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowGimmick: true }))
   );
+  const setsByDex = new Map(
+    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])
+  );
+  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
+
+  const entries = pokemon.map(({ id }, i) => {
+    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    return url ? [id, { tcgUrl: url }] as const : null;
+  });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 

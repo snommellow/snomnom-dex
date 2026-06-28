@@ -135,7 +135,11 @@ function pickBest(cards: RankedCard[]): string | null {
   const winner = cards.reduce((a, b) => {
     const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
     if (ra !== rb) return ra < rb ? a : b;
-    return setIdFromCardId(b.id) > setIdFromCardId(a.id) ? b : a;
+    const aSet = setIdFromCardId(a.id), bSet = setIdFromCardId(b.id);
+    if (aSet !== bSet) return bSet > aSet ? b : a;
+    // Same rarity + same set: prefer higher localId (alt arts are secret-rare numbered)
+    const aId = parseInt(a.localId) || 0, bId = parseInt(b.localId) || 0;
+    return bId >= aId ? b : a;
   });
   return cardImageUrl(winner);
 }

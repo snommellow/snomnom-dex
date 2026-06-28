@@ -96,18 +96,15 @@ function nameMatches(cardName: string, query: string): boolean {
   return cn === q || cn.startsWith(q + " ");
 }
 
-// SV-era " ex" cards from sv3 onwards are Tera Pokémon — not the base form.
-// sv1/sv2 have regular ex cards (Venusaur ex, etc.); Tera starts at sv3.
-// sv03.5 (Pokémon 151) is a sub-set with regular ex cards — exempt it.
-// sv04.5 (Paldean Fates) has Tera ex — not exempt.
+// SV sets that have regular (non-Tera) " ex" cards.
+// All other sv* sets use the Tera mechanic and should be excluded from the main slot.
+const NON_TERA_SV_EX_SETS = new Set(["sv01", "sv02", "sv03.5"]);
+
 function isTeraEx(card: TcgdexCard): boolean {
   if (!/\sex$/i.test(card.name)) return false;
   const setId = setIdFromCardId(card.id);
   if (!setId.startsWith("sv")) return false;
-  const suffix = setId.slice(2);
-  const major = parseInt(suffix);
-  if (suffix.includes(".") && major < 4) return false; // sv03.5 exempt; sv04.5+ are Tera
-  return major >= 3;
+  return !NON_TERA_SV_EX_SETS.has(setId);
 }
 
 async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {

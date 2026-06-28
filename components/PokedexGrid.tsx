@@ -1,4 +1,4 @@
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary } from "@/lib/pokeapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
 import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
@@ -6,6 +6,12 @@ import PokedexClient from "./PokedexClient";
 // PokéAPI includes phantom/unreleased megas in its game data (e.g. Clefable).
 // Only show mega alt forms for Pokémon with canonical Gen 1 megas.
 const CANONICAL_GEN1_MEGA_IDS = new Set([3, 6, 9, 15, 18, 65, 80, 94, 115, 127, 130, 142, 150]);
+
+// Pokémon with TCG mega cards that have no official game mega form in PokéAPI.
+// Keyed by dex ID → display name used for TCGdex lookup.
+const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
+  149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
+};
 
 export default async function PokedexGrid() {
   const raw = await fetchFirst151();

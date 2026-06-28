@@ -305,7 +305,7 @@ export async function fetchTcgVgx(
     const displayName = toDisplayName(name);
     return rarities.flatMap((r, i) =>
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
-        .filter(c => r !== "Rare Ultra" || !c.name.endsWith("-GX"))
+        .filter(c => (r !== "Rare Ultra" && r !== "Rare Secret") || !c.name.endsWith("-GX"))
     );
   });
 

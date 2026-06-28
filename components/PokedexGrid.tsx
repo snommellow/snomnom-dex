@@ -76,67 +76,6 @@ export default async function PokedexGrid() {
     }
   }
 
-  // Pass 2.5b: chain demotion — when a chain is split (some members in TCG irMap/promoSvMap,
-  // others still in pocketMap), attempt to reconcile:
-  //   • If the TCG member has a Pocket star card → demote it to Pocket (all Pocket).
-  //   • If not → remove Pocket siblings from pocketMap so they fall to VGX (all TCG).
-  const processedChainKeys = new Set<string>();
-  const tcgOnlyIds = new Set<number>(); // chain members in TCG with no Pocket card
-  const pocketSiblingsToUpgrade = new Set<number>(); // pocketMap members whose TCG sibling can't demote
-
-  for (const [, chainIds] of chainsByDex) {
-    const tcgIds = chainIds.filter(id => tcgSetByDex.has(id) && !reconciledIds.has(id));
-    const pocketIds = chainIds.filter(id => pocketMap.has(id));
-    if (!tcgIds.length || !pocketIds.length) continue;
-    const key = [...chainIds].sort().join(",");
-    if (processedChainKeys.has(key)) continue;
-    processedChainKeys.add(key);
-    for (const id of tcgIds) tcgOnlyIds.add(id);
-  }
-
-  if (tcgOnlyIds.size) {
-    const tcgList = [...tcgOnlyIds]
-      .map(id => raw.find(p => p.id === id))
-      .filter((p): p is NonNullable<typeof p> => p != null);
-    const pocketCheck = await fetchPocketImages(tcgList.map(p => ({ id: p.id, name: p.name })));
-
-    const canDemoteIds = new Set<number>();
-    tcgList.forEach((p, i) => {
-      if (pocketCheck[i]?.url) {
-        canDemoteIds.add(p.id);
-      } else {
-        for (const cid of chainsByDex.get(p.id) ?? []) {
-          if (pocketMap.has(cid)) pocketSiblingsToUpgrade.add(cid);
-        }
-      }
-    });
-
-    // Pocket siblings whose TCG partner can't demote → remove from pocketMap → fall to VGX
-    for (const cid of pocketSiblingsToUpgrade) pocketMap.delete(cid);
-
-    // TCG members that CAN demote → move to pocketMap, re-fetch whole chain for set alignment
-    if (canDemoteIds.size) {
-      const demoteChainIds = new Set<number>();
-      for (const id of canDemoteIds) {
-        for (const cid of chainsByDex.get(id) ?? []) demoteChainIds.add(cid);
-      }
-      const demoteList = [...demoteChainIds]
-        .map(id => raw.find(p => p.id === id))
-        .filter((p): p is NonNullable<typeof p> => p != null);
-      const demoteResults = await fetchPocketImages(demoteList.map(p => ({ id: p.id, name: p.name })));
-      demoteList.forEach((p, i) => {
-        const result = demoteResults[i];
-        if (!result?.url) return;
-        pocketMap.set(p.id, result.url);
-        if (canDemoteIds.has(p.id)) {
-          irMap.delete(p.id);
-          promoSvMap.delete(p.id);
-          reconciledIds.add(p.id);
-        }
-      });
-    }
-  }
-
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id) && !reconciledIds.has(p.id));
   const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);

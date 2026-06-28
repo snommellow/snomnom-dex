@@ -30,9 +30,9 @@ export default async function PokedexGrid() {
   });
 
   // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred.
-  // chainExcluded: Pokémon with IR candidates but no common chain set — blocked from
-  // all IR passes so their chain falls through to the next pass as a unit.
-  const { map: irMap, chainExcluded: irChainExcluded } = await fetchTcgIrSir(raw, chainsByDex);
+  // If all chain members share a common IR set, that set is preferred for all.
+  // Otherwise each Pokémon gets its individual best IR card.
+  const irMap = await fetchTcgIrSir(raw, chainsByDex);
 
   // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
   const afterIr = raw.filter((p) => !irMap.has(p.id));
@@ -49,11 +49,8 @@ export default async function PokedexGrid() {
   });
 
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  // Chain-excluded IDs are blocked from IR passes but still fall to VGX.
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
-  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(
-    afterPocket.filter((p) => !irChainExcluded.has(p.id))
-  );
+  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));

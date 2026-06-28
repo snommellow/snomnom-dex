@@ -195,7 +195,7 @@ async function fetchBestByRarities(
 export async function fetchTcgIrSir(
   pokemon: Array<{ id: number; name: string }>,
   chainsByDex: Map<number, number[]> = new Map(),
-): Promise<{ map: Map<number, TcgImageResult>; chainExcluded: Set<number> }> {
+): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
   const candidatesList = await Promise.all(
     pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
@@ -205,23 +205,13 @@ export async function fetchTcgIrSir(
   );
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
-  const chainExcluded = new Set<number>();
+  // pickBestWithChain: if a common set covers all chain members, prefer that set.
+  // Otherwise fall back to individual best card.
   const entries = pokemon.map(({ id }, i) => {
-    const chainSets = chainSetsMap.get(id);
-    const inChain = (chainsByDex.get(id)?.length ?? 0) > 1;
-    // If this Pokémon is in a multi-member chain but no IR set covers ALL members,
-    // exclude it so the whole chain falls through to the next pass together.
-    if (inChain && !chainSets?.size) {
-      if (candidatesList[i].length > 0) chainExcluded.add(id);
-      return null;
-    }
-    const url = pickBestWithChain(candidatesList[i], chainSets);
+    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
-  return {
-    map: new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null)),
-    chainExcluded,
-  };
+  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
 // Pass 1.5: SV-era full-art promos (svp set, rarity "None" on TCGdex)

@@ -310,9 +310,10 @@ export async function fetchTcgVgx(
     return rarities.flatMap((r, i) =>
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
         .filter(c => {
-          if (!["Rare Ultra", "Rare Secret", "Hyper Rare"].includes(r)) return true;
+          if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
           if (c.name.endsWith("-GX")) return false;
           if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
+          if (/ VMAX$/.test(c.name)) return false;
           return true;
         })
     );

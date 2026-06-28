@@ -159,6 +159,7 @@ export async function fetchTcgPromoSv(
         setIdFromCardId(c.id) === "svp" &&
         !SVP_BLACKLIST.has(c.id) &&
         nameMatches(c.name, displayName) &&
+        !isTeraEx(c) &&
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name)
       );

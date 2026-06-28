@@ -124,7 +124,7 @@ export async function fetchPocketImages(
       const nameLower = name.toLowerCase();
       const nameMatches = (cardName: string) => {
         const cn = cardName.toLowerCase();
-        return (cn === nameLower || cn.startsWith(nameLower + " ")) && !cn.endsWith(" vmax");
+        return cn === nameLower || cn.startsWith(nameLower + " ");
       };
       const cards = STAR_RARITIES.flatMap((rarity, i) =>
         results[i]

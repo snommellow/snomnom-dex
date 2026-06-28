@@ -20,9 +20,9 @@ const RARITY_ORDER = [
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
   "Rare Ultra",
+  "Rare Holo V",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
-  "Rare Holo V",
   "Rare Holo GX",
   "Rare Holo EX",
 ];
@@ -34,9 +34,9 @@ export const VGX_RARITIES = new Set([
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
   "Rare Ultra",
+  "Rare Holo V",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
-  "Rare Holo V",
   "Rare Holo GX",
   "Rare Holo EX",
 ]);
@@ -306,7 +306,6 @@ export async function fetchTcgVgx(
     return rarities.flatMap((r, i) =>
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
         .filter(c => !["Rare Ultra", "Rare Secret", "Hyper Rare"].includes(r) || (!c.name.endsWith("-GX") && !/ V(-UNION)?$/.test(c.name)))
-        .filter(c => !c.subtypes?.includes("Gigantamax"))
     );
   });
 

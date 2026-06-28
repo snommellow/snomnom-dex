@@ -76,7 +76,46 @@ export default async function PokedexGrid() {
     }
   }
 
+  // Pass 2.5b: demotion — chains still split after upgrade attempt.
+  // If some chain members are in TCG and others remain in Pocket,
+  // move the TCG minority to Pocket for visual consistency.
+  const processedDemotionKeys = new Set<string>();
+  const shouldDemoteIds = new Set<number>();
+  for (const [, chainIds] of chainsByDex) {
+    const tcgIds = chainIds.filter(id => tcgSetByDex.has(id) && !reconciledIds.has(id));
+    const stillPocket = chainIds.filter(id => pocketMap.has(id));
+    if (!tcgIds.length || !stillPocket.length) continue;
+    const key = [...chainIds].sort().join(",");
+    if (processedDemotionKeys.has(key)) continue;
+    processedDemotionKeys.add(key);
+    for (const id of tcgIds) shouldDemoteIds.add(id);
+  }
+  if (shouldDemoteIds.size) {
+    const demoteChainMemberIds = new Set<number>();
+    for (const id of shouldDemoteIds) {
+      for (const cid of chainsByDex.get(id) ?? []) demoteChainMemberIds.add(cid);
+    }
+    const demoteList = [...demoteChainMemberIds]
+      .map(id => raw.find(p => p.id === id))
+      .filter((p): p is NonNullable<typeof p> => p != null);
+    const demotePocketResults = await fetchPocketImages(
+      demoteList.map(p => ({ id: p.id, name: p.name })),
+      chainsByDex,
+    );
+    demoteList.forEach((p, i) => {
+      const result = demotePocketResults[i];
+      if (!result?.url) return;
+      pocketMap.set(p.id, result.url);
+      if (shouldDemoteIds.has(p.id)) {
+        irMap.delete(p.id);
+        promoSvMap.delete(p.id);
+        reconciledIds.add(p.id);
+      }
+    });
+  }
+
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
+  // reconciledIds covers both upgraded Pocket→TCG and demoted TCG→Pocket members
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id) && !reconciledIds.has(p.id));
   const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
 

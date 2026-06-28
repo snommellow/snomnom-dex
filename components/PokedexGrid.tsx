@@ -76,75 +76,7 @@ export default async function PokedexGrid() {
     }
   }
 
-  // Pass 2.5b: demotion — chains still split after upgrade attempt.
-  // If some chain members are in TCG and others remain in Pocket,
-  // move the TCG minority to Pocket for visual consistency.
-  const processedDemotionKeys = new Set<string>();
-  const shouldDemoteIds = new Set<number>();
-  for (const [, chainIds] of chainsByDex) {
-    const tcgIds = chainIds.filter(id => tcgSetByDex.has(id) && !reconciledIds.has(id));
-    const stillPocket = chainIds.filter(id => pocketMap.has(id));
-    if (!tcgIds.length || !stillPocket.length) continue;
-    const key = [...chainIds].sort().join(",");
-    if (processedDemotionKeys.has(key)) continue;
-    processedDemotionKeys.add(key);
-    for (const id of tcgIds) shouldDemoteIds.add(id);
-  }
-  if (shouldDemoteIds.size) {
-    // First: check if each TCG member actually has a Pocket star card
-    const demoteTargetList = [...shouldDemoteIds]
-      .map(id => raw.find(p => p.id === id))
-      .filter((p): p is NonNullable<typeof p> => p != null);
-    const demoteTargetPocket = await fetchPocketImages(
-      demoteTargetList.map(p => ({ id: p.id, name: p.name })),
-      chainsByDex,
-    );
-
-    // Split: TCG members WITH a pocket card → demote. Those WITHOUT → upgrade pocket siblings to VGX.
-    const canDemoteIds = new Set<number>();
-    const mustUpgradePocketSiblings = new Set<number>(); // chain members in pocketMap to remove
-    demoteTargetList.forEach((p, i) => {
-      if (demoteTargetPocket[i]?.url) {
-        canDemoteIds.add(p.id);
-      } else {
-        // No pocket card for this TCG member — move its pocket siblings to VGX pass
-        for (const cid of chainsByDex.get(p.id) ?? []) {
-          if (pocketMap.has(cid)) mustUpgradePocketSiblings.add(cid);
-        }
-      }
-    });
-
-    // Remove pocket members that can't be chain-matched to a demotable TCG member
-    for (const cid of mustUpgradePocketSiblings) pocketMap.delete(cid);
-
-    // Demote TCG members that DO have pocket cards — re-fetch full chain for set alignment
-    if (canDemoteIds.size) {
-      const demoteChainMemberIds = new Set<number>();
-      for (const id of canDemoteIds) {
-        for (const cid of chainsByDex.get(id) ?? []) demoteChainMemberIds.add(cid);
-      }
-      const demoteList = [...demoteChainMemberIds]
-        .map(id => raw.find(p => p.id === id))
-        .filter((p): p is NonNullable<typeof p> => p != null);
-      const demotePocketResults = await fetchPocketImages(
-        demoteList.map(p => ({ id: p.id, name: p.name })),
-        chainsByDex,
-      );
-      demoteList.forEach((p, i) => {
-        const result = demotePocketResults[i];
-        if (!result?.url) return;
-        pocketMap.set(p.id, result.url);
-        if (canDemoteIds.has(p.id)) {
-          irMap.delete(p.id);
-          promoSvMap.delete(p.id);
-          reconciledIds.add(p.id);
-        }
-      });
-    }
-  }
-
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  // reconciledIds covers both upgraded Pocket→TCG and demoted TCG→Pocket members
   const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id) && !reconciledIds.has(p.id));
   const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
 

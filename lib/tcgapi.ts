@@ -24,12 +24,26 @@ const TG_RE = /^TG\d+$/;
 
 const REGIONAL_RE = /^(alolan|galarian|hisuian|paldean)\s/i;
 // Handle both straight (') and curly (') apostrophes used by TCGdex
-const TRAINER_OWNED_RE = /['’]\s*s\s+/i;
+const TRAINER_OWNED_RE = /['']\s*s\s+/i;
 // VMAX/VSTAR in card name = gimmick form; excluded from main slot, allowed for alt-forms
 const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
 // SVP promos that are non-full-art stamp reprints — excluded from promo pass
 const SVP_BLACKLIST = new Set(["svp-11", "svp-24", "svp-167", "svp-168", "svp-169"]);
+
+// Gen 1 evolution chains by dex ID — used for chain-set tiebreaking
+// A "chain set" is one where every member of the chain has a candidate card.
+const GEN1_CHAINS: number[][] = [
+  [1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18],
+  [19,20],[21,22],[23,24],[25,26],[27,28],[29,30,31],[32,33,34],
+  [35,36],[37,38],[39,40],[41,42],[43,44,45],[46,47],[48,49],
+  [50,51],[52,53],[54,55],[56,57],[58,59],[60,61,62],[63,64,65],
+  [66,67,68],[69,70,71],[72,73],[74,75,76],[77,78],[79,80],
+  [81,82],[84,85],[86,87],[88,89],[90,91],[92,93,94],[96,97],
+  [98,99],[100,101],[102,103],[104,105],[109,110],[111,112],
+  [116,117],[118,119],[120,121],[129,130],[133,134,135,136],
+  [138,139],[140,141],[147,148,149],
+];
 
 interface TcgdexCard {
   id: string;
@@ -37,6 +51,8 @@ interface TcgdexCard {
   name: string;
   image?: string;
 }
+
+interface RankedCard extends TcgdexCard { _rarity: string }
 
 export interface TcgImageResult { tcgUrl: string | null }
 
@@ -90,7 +106,7 @@ async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
   } catch { return []; }
 }
 
-function pickBest(cards: Array<TcgdexCard & { _rarity: string }>): string | null {
+function pickBest(cards: RankedCard[]): string | null {
   if (!cards.length) return null;
   const winner = cards.reduce((a, b) => {
     const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
@@ -100,6 +116,16 @@ function pickBest(cards: Array<TcgdexCard & { _rarity: string }>): string | null
   return cardImageUrl(winner);
 }
 
+// Pick best card, preferring cards from chain sets (sets where full evo line is present).
+function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | null): string | null {
+  if (!cards.length) return null;
+  if (chainSets?.size) {
+    const chainCards = cards.filter(c => chainSets.has(setIdFromCardId(c.id)));
+    if (chainCards.length) return pickBest(chainCards);
+  }
+  return pickBest(cards);
+}
+
 interface FetchOptions {
   allowTrainerOwned?: boolean;
   allowGimmick?: boolean;
@@ -107,13 +133,14 @@ interface FetchOptions {
   allowTeraEx?: boolean;
 }
 
-async function fetchBestByRarities(
+// Fetch all matching candidates (without picking) for chain-aware selection.
+async function fetchCandidates(
   displayName: string,
   rarities: string[],
   { allowTrainerOwned = false, allowGimmick = false, skipRegionalFilter = false, allowTeraEx = false }: FetchOptions = {},
-): Promise<string | null> {
+): Promise<RankedCard[]> {
   const results = await Promise.all(rarities.map(r => tcgFetch(displayName, r)));
-  const cards = results.flatMap((list, i) =>
+  return results.flatMap((list, i) =>
     list
       .filter(c =>
         c.image &&
@@ -125,22 +152,59 @@ async function fetchBestByRarities(
       )
       .map(c => ({ ...c, _rarity: rarities[i] }))
   );
-  return pickBest(cards);
 }
 
-// Pass 1: IR / SIR — highest quality full-art illustration cards
+async function fetchBestByRarities(
+  displayName: string,
+  rarities: string[],
+  opts: FetchOptions = {},
+): Promise<string | null> {
+  return pickBest(await fetchCandidates(displayName, rarities, opts));
+}
+
+// Build chain sets: for each evolution chain, find set IDs present for ALL members.
+function buildChainSets(
+  candidatesByDex: Map<number, RankedCard[]>,
+): Map<number, Set<string>> {
+  const result = new Map<number, Set<string>>();
+  for (const chain of GEN1_CHAINS) {
+    if (chain.length < 2) continue;
+    // Collect set IDs per chain member
+    const setsByMember = chain.map(id => {
+      const cards = candidatesByDex.get(id) ?? [];
+      return new Set(cards.map(c => setIdFromCardId(c.id)));
+    });
+    // Intersect: sets where every member has a card
+    const commonSets = setsByMember.reduce((acc, s) => {
+      for (const setId of acc) if (!s.has(setId)) acc.delete(setId);
+      return acc;
+    }, new Set(setsByMember[0]));
+    if (!commonSets.size) continue;
+    for (const id of chain) {
+      const existing = result.get(id);
+      if (existing) for (const s of commonSets) existing.add(s);
+      else result.set(id, new Set(commonSets));
+    }
+  }
+  return result;
+}
+
+// Pass 1: IR / SIR — highest quality full-art illustration cards, chain-set preferred
 export async function fetchTcgIrSir(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
-  const entries = await Promise.all(
-    pokemon.map(async ({ id, name }) => {
-      const url = await fetchBestByRarities(
-        toDisplayName(name),
-        ["Special illustration rare", "Illustration rare"],
-      );
-      return url ? [id, { tcgUrl: url }] as const : null;
-    })
+  const rarities = ["Special illustration rare", "Illustration rare"];
+  // Fetch all candidates first so we can do chain detection
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
   );
+  const candidatesByDex = new Map(pokemon.map((p, i) => [p.id, candidatesList[i]]));
+  const chainSets = buildChainSets(candidatesByDex);
+
+  const entries = pokemon.map(({ id }, i) => {
+    const url = pickBestWithChain(candidatesList[i], chainSets.get(id) ?? null);
+    return url ? [id, { tcgUrl: url }] as const : null;
+  });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 

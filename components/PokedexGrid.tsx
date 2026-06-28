@@ -3,9 +3,6 @@ import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx,
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
-// PokéAPI includes phantom/unreleased megas in its game data (e.g. Clefable).
-// Only show mega alt forms for Pokémon with canonical Gen 1 megas.
-const CANONICAL_GEN1_MEGA_IDS = new Set([3, 6, 9, 15, 18, 65, 80, 94, 115, 127, 130, 142, 149, 150]);
 
 // Pokémon with TCG mega cards that have no official game mega form in PokéAPI.
 // Keyed by dex ID → display name used for TCGdex lookup.
@@ -57,12 +54,13 @@ export default async function PokedexGrid() {
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
   const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
 
-  // Fetch alt form Pokémon data; filter out phantom megas PokéAPI lists for Gen 1.
+  // Fetch alt form Pokémon data.
+  // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.
   // Inject TCG_ONLY_MEGAS for Pokémon whose mega exists in the TCG but not yet in PokéAPI.
   const altFormsData = await Promise.all(
     raw.map((p, i) =>
       fetchAltForms(p.name, speciesData[i].altFormSlots).then((forms) => {
-        const filtered = forms.filter((f) => f.category !== "mega" || CANONICAL_GEN1_MEGA_IDS.has(p.id));
+        const filtered = forms.filter((f) => f.category !== "mega" || f.artworkUrl !== null);
         const tcgOnly = TCG_ONLY_MEGAS[p.id];
         if (tcgOnly && !filtered.some((f) => f.category === "mega")) {
           filtered.push({

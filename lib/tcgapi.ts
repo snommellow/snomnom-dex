@@ -197,7 +197,8 @@ export async function fetchTcgIrSir(
 
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
-    return rarities.flatMap((r, i) => lookupCandidates(indexes[i], displayName, r));
+    // allowGimmick: true so VMAX/VSTAR SIR alt arts (e.g. Charizard VMAX SIR) are included
+    return rarities.flatMap((r, i) => lookupCandidates(indexes[i], displayName, r, { allowGimmick: true }));
   });
 
   const setsByDex = new Map(
@@ -251,7 +252,7 @@ export async function fetchTcgTrainerOwnedIrSir(
   const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);
     const candidates = rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowTrainerOwned: true })
+      lookupCandidates(indexes[i], displayName, r, { allowTrainerOwned: true, allowGimmick: true })
     );
     const url = pickBest(candidates);
     return url ? [id, { tcgUrl: url }] as const : null;

@@ -18,9 +18,14 @@ export default async function PokedexGrid() {
   // Species data: genus + alt form slots + evolution chain URL (single fetch per Pokémon)
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
-  // Fetch each unique evolution chain once, then build a map: dex ID → all chain members
+  // Fetch evolution chains and pokemontcg.io set memberships in parallel
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
-  const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
+  const minDex = Math.min(...raw.map(p => p.id));
+  const maxDex = Math.max(...raw.map(p => p.id));
+  const [chainResults, ptcgSetsByDex] = await Promise.all([
+    Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url))),
+    fetchPtcgSetsByDexRange(minDex, maxDex),
+  ]);
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
 
   const chainsByDex = new Map<number, number[]>();
@@ -31,11 +36,6 @@ export default async function PokedexGrid() {
     }
   });
 
-  // Build pre-computed chain sets using pokemontcg.io nationalPokedexNumbers data
-  // (broader set coverage than TCGdex candidates alone)
-  const minDex = Math.min(...raw.map(p => p.id));
-  const maxDex = Math.max(...raw.map(p => p.id));
-  const ptcgSetsByDex = await fetchPtcgSetsByDexRange(minDex, maxDex);
   const tcgChainSets = buildChainSets(ptcgSetsByDex, chainsByDex);
 
   // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred

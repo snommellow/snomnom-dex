@@ -21,41 +21,57 @@ interface PtcgCard {
   nationalPokedexNumbers: number[];
 }
 
+interface PtcgResponse {
+  data: PtcgCard[];
+  totalCount: number;
+  pageSize: number;
+}
+
+function mergeInto(result: Map<number, Set<string>>, cards: PtcgCard[], minDex: number, maxDex: number) {
+  for (const card of cards) {
+    const setId = toTcgdexSetId(card.set.id);
+    for (const dexNum of card.nationalPokedexNumbers) {
+      if (dexNum < minDex || dexNum > maxDex) continue;
+      const existing = result.get(dexNum);
+      if (existing) existing.add(setId);
+      else result.set(dexNum, new Set([setId]));
+    }
+  }
+}
+
 // Batch-fetch all card set memberships for dex numbers in [minDex, maxDex].
-// Uses a single paginated query rather than one request per Pokémon.
+// Fetches page 1 to get total count, then fetches remaining pages in parallel.
 // Returns Map<dexId, Set<tcgdexSetId>>.
 export async function fetchPtcgSetsByDexRange(
   minDex: number,
   maxDex: number,
 ): Promise<Map<number, Set<string>>> {
   const result = new Map<number, Set<string>>();
-  let page = 1;
+  const PAGE_SIZE = 250;
+  const url = (page: number) =>
+    `${BASE}/cards?q=nationalPokedexNumbers:[${minDex}+TO+${maxDex}]` +
+    `&select=set,nationalPokedexNumbers&pageSize=${PAGE_SIZE}&page=${page}`;
 
-  while (true) {
-    try {
-      const res = await fetch(
-        `${BASE}/cards?q=nationalPokedexNumbers:[${minDex}+TO+${maxDex}]` +
-        `&select=set,nationalPokedexNumbers&pageSize=250&page=${page}`,
-        { next: { revalidate: 86400 } }
+  try {
+    const firstRes = await fetch(url(1), { next: { revalidate: 86400 } });
+    if (!firstRes.ok) return result;
+    const firstData = (await firstRes.json()) as PtcgResponse;
+    mergeInto(result, firstData.data, minDex, maxDex);
+
+    const totalPages = Math.ceil(firstData.totalCount / PAGE_SIZE);
+    if (totalPages > 1) {
+      const rest = await Promise.all(
+        Array.from({ length: totalPages - 1 }, (_, i) =>
+          fetch(url(i + 2), { next: { revalidate: 86400 } })
+            .then(r => r.ok ? r.json() as Promise<PtcgResponse> : null)
+            .catch(() => null)
+        )
       );
-      if (!res.ok) break;
-      const data = await res.json();
-      const cards = data.data as PtcgCard[];
-
-      for (const card of cards) {
-        const setId = toTcgdexSetId(card.set.id);
-        for (const dexNum of card.nationalPokedexNumbers) {
-          if (dexNum < minDex || dexNum > maxDex) continue;
-          const existing = result.get(dexNum);
-          if (existing) existing.add(setId);
-          else result.set(dexNum, new Set([setId]));
-        }
+      for (const data of rest) {
+        if (data) mergeInto(result, data.data, minDex, maxDex);
       }
-
-      if (cards.length < 250) break;
-      page++;
-    } catch { break; }
-  }
+    }
+  } catch { /* return partial result */ }
 
   return result;
 }

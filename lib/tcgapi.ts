@@ -77,10 +77,15 @@ function nameMatches(cardName: string, query: string): boolean {
   return cn === q || cn.startsWith(q + " ");
 }
 
-// All SV-era cards with " ex" suffix are Tera Pokémon — exclude from main slot.
+// SV-era " ex" cards from sv3 onwards are Tera Pokémon — exclude from main slot.
+// sv1/sv2 have regular (non-Tera) ex cards like Venusaur ex; Tera focus starts at sv3.
 // Alt-form lookups (mega ex cards) pass allowTeraEx: true to skip this filter.
 function isTeraEx(card: TcgdexCard): boolean {
-  return /\sex$/i.test(card.name) && setIdFromCardId(card.id).startsWith("sv");
+  if (!/\sex$/i.test(card.name)) return false;
+  const setId = setIdFromCardId(card.id);
+  if (!setId.startsWith("sv")) return false;
+  const major = parseInt(setId.slice(2));
+  return major >= 3;
 }
 
 async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
@@ -155,9 +160,8 @@ export async function fetchTcgIrSir(
   chainsByDex: Map<number, number[]> = new Map(),
 ): Promise<Map<number, TcgImageResult>> {
   const rarities = ["Special illustration rare", "Illustration rare"];
-  // allowTeraEx: IR/SIR illustration art is high-quality scene art regardless of ex/Tera status
   const candidatesList = await Promise.all(
-    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities, { allowTeraEx: true }))
+    pokemon.map(({ name }) => fetchCandidates(toDisplayName(name), rarities))
   );
   const setsByDex = new Map(
     pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => setIdFromCardId(c.id)))])

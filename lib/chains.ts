@@ -9,8 +9,8 @@ export function buildChainSets(
   const processed = new Set<string>();
 
   for (const [, fullChain] of chainsByDex) {
-    // Only consider members that are in the current batch (have candidates)
-    const chain = fullChain.filter(id => setsByDex.has(id));
+    // Only consider members that have at least one candidate card in this pass
+    const chain = fullChain.filter(id => (setsByDex.get(id)?.size ?? 0) > 0);
     if (chain.length < 2) continue;
     const key = [...chain].sort((a, b) => a - b).join(",");
     if (processed.has(key)) continue;

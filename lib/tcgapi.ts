@@ -92,7 +92,7 @@ function rarityScore(rarity: string): number {
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
-  return cn === q || cn.startsWith(q + " ") || cn.startsWith(q + "-") || cn.includes("& " + q);
+  return cn === q || cn.startsWith(q + " ") || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
 }
 
 // Fetch ALL cards matching a query, handling pagination automatically.

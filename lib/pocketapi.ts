@@ -43,15 +43,18 @@ function isExcluded(cardName: string): boolean {
 }
 
 async function fetchStarCards(name: string, rarity: string): Promise<TcgdexCard[]> {
-  try {
-    const res = await fetch(
-      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}&rarity=${encodeURIComponent(rarity)}`,
-      { next: { revalidate: 86400 } }
-    );
-    if (!res.ok) return [];
-    const json = await res.json();
-    return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-  } catch { return []; }
+  const url = `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}&rarity=${encodeURIComponent(rarity)}`;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
+      const res = await fetch(url, { next: { revalidate: 86400 } });
+      if (res.status === 429 && attempt < 2) continue;
+      if (!res.ok) return [];
+      const json = await res.json();
+      return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+    } catch { if (attempt === 2) return []; }
+  }
+  return [];
 }
 
 function cardImageUrl(card: TcgdexCard): string {

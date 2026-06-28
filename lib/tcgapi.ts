@@ -89,14 +89,20 @@ function isTeraEx(card: TcgdexCard): boolean {
 }
 
 async function tcgFetch(name: string, rarity?: string): Promise<TcgdexCard[]> {
-  try {
-    const params = new URLSearchParams({ name });
-    if (rarity) params.set("rarity", rarity);
-    const res = await fetch(`${TCGDEX_BASE}/cards?${params}`, { next: { revalidate: 86400 } });
-    if (!res.ok) return [];
-    const json = await res.json();
-    return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-  } catch { return []; }
+  const params = new URLSearchParams({ name });
+  if (rarity) params.set("rarity", rarity);
+  const url = `${TCGDEX_BASE}/cards?${params}`;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
+      const res = await fetch(url, { next: { revalidate: 86400 } });
+      if (res.status === 429 && attempt < 2) continue;
+      if (!res.ok) return [];
+      const json = await res.json();
+      return (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+    } catch { if (attempt === 2) return []; }
+  }
+  return [];
 }
 
 function pickBest(cards: RankedCard[]): string | null {

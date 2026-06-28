@@ -15,26 +15,26 @@ const RARITY_ORDER = [
   "Special Illustration Rare",
   "Illustration Rare",
   // VGX pass (lower index = higher priority)
-  "Hyper Rare",              // Secret Rare / gold rainbow
-  "Trainer Gallery Rare Holo",
-  "Ultra Rare",              // Full-art ex/V/GX/EX
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo V",
   "Rare Holo GX",
   "Rare Holo EX",
+  "Hyper Rare",
+  "Trainer Gallery Rare Holo",
+  "Ultra Rare",
 ];
 
 export const IR_RARITIES = new Set(["Special Illustration Rare", "Illustration Rare"]);
 export const VGX_RARITIES = new Set([
-  "Hyper Rare",
-  "Trainer Gallery Rare Holo",
-  "Ultra Rare",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo V",
   "Rare Holo GX",
   "Rare Holo EX",
+  "Hyper Rare",
+  "Trainer Gallery Rare Holo",
+  "Ultra Rare",
 ]);
 
 // Trainer Gallery card number pattern — TG01, TG08, TG19, etc.

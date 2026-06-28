@@ -84,18 +84,18 @@ export interface PocketResult { url: string | null }
 function pickBestPocket(cards: Array<TcgdexCard & { rarity: string }>, chainSets?: Set<string>): PocketResult {
   if (!cards.length) return { url: null };
 
-  // Only show rainbow-border Two Stars (sets where the Pokémon appears 2+ times).
-  // Singletons don't have a rainbow version and are excluded.
-  const twoStars = cards.filter((c) => c.rarity === "Two Star");
+  // For Two Stars: when a Pokémon has multiple Two Stars in the same set,
+  // pick the highest localId (the rainbow/special-art version). Otherwise show the singleton.
   const setOf = (id: string) => id.split("-")[0];
+  const twoStars = cards.filter((c) => c.rarity === "Two Star");
   const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
-  const rainbowTwoStars = [...bySet.values()]
-    .filter((group) => group.length >= 2)
-    .map((group) => group.reduce((a, b) => pickNewest(a, b)));
+  const bestTwoStars = [...bySet.values()].map((group) =>
+    group.reduce((a, b) => pickNewest(a, b))
+  );
 
   const eligible = [
     ...cards.filter((c) => c.rarity !== "Two Star"),
-    ...rainbowTwoStars,
+    ...bestTwoStars,
   ];
   if (!eligible.length) return { url: null };
 
@@ -157,16 +157,15 @@ export async function fetchPocketAltForm(
       .map((c) => ({ ...c, rarity }))
   );
   if (exactCards.length) {
-    // Apply same Two Star rainbow filter as fetchPocketImages
-    const twoStars = exactCards.filter((c) => c.rarity === "Two Star");
     const setOf = (id: string) => id.split("-")[0];
+    const twoStars = exactCards.filter((c) => c.rarity === "Two Star");
     const bySet = Map.groupBy(twoStars, (c) => setOf(c.id));
-    const rainbowTwoStars = [...bySet.values()]
-      .filter((group) => group.length >= 2)
-      .map((group) => group.reduce((a, b) => parseInt(b.localId) > parseInt(a.localId) ? b : a));
+    const bestTwoStars = [...bySet.values()].map((group) =>
+      group.reduce((a, b) => parseInt(b.localId) > parseInt(a.localId) ? b : a)
+    );
     const eligible = [
       ...exactCards.filter((c) => c.rarity !== "Two Star"),
-      ...rainbowTwoStars,
+      ...bestTwoStars,
     ];
     if (!eligible.length) return { url: null };
     const best = eligible.reduce((a, b) => {

@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchTcgFromChainSet, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import { fetchPtcgSetsByDexRange } from "@/lib/pokemontcgapi";
 import { buildChainSets } from "@/lib/chains";
@@ -55,8 +55,38 @@ export default async function PokedexGrid() {
     if (pocketResultsList[j]?.url) pocketMap.set(p.id, pocketResultsList[j].url!);
   });
 
+  // Pass 2.5: chain reconciliation — Pocket Pokémon whose chain members have TCG cards.
+  // Try to find a TCG card from the SAME set as the chain's TCG card so the chain looks consistent.
+  // TCGdex image URLs: https://assets.tcgdex.net/en/{setId}/{cardId}/high.webp → index 4 = setId
+  const tcgSetByDex = new Map<number, string>();
+  for (const [id, r] of [...irMap, ...promoSvMap]) {
+    if (r.tcgUrl) tcgSetByDex.set(id, r.tcgUrl.split("/")[4] ?? "");
+  }
+  const reconList = [...pocketMap.keys()]
+    .map(id => raw.find(p => p.id === id))
+    .filter((p): p is NonNullable<typeof p> => {
+      if (!p) return false;
+      const chain = chainsByDex.get(p.id) ?? [];
+      return chain.some(mid => mid !== p.id && tcgSetByDex.has(mid));
+    });
+  const reconciledIds = new Set<number>();
+  if (reconList.length) {
+    const reconSets = new Map<number, Set<string>>();
+    for (const { id } of reconList) {
+      const chain = chainsByDex.get(id) ?? [];
+      const sets = new Set(chain.flatMap(mid => { const s = tcgSetByDex.get(mid); return s ? [s] : []; }));
+      if (sets.size) reconSets.set(id, sets);
+    }
+    const reconMap = await fetchTcgFromChainSet(reconList, reconSets);
+    for (const [id, result] of reconMap) {
+      pocketMap.delete(id);
+      irMap.set(id, result);
+      reconciledIds.add(id);
+    }
+  }
+
   // Pass 2.1: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
+  const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id) && !reconciledIds.has(p.id));
   const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
 
   // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred

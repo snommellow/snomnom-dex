@@ -239,6 +239,30 @@ export async function fetchTcgVgx(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
+// Chain reconciliation: find the best IR/SIR or VGX card for a Pokémon,
+// but ONLY return it if the result is from one of the allowed set IDs.
+// Used to upgrade Pocket Pokémon to TCG when their chain is in TCG.
+export async function fetchTcgFromChainSet(
+  pokemon: Array<{ id: number; name: string }>,
+  requiredSets: Map<number, Set<string>>,
+): Promise<Map<number, TcgImageResult>> {
+  if (!pokemon.length) return new Map();
+  const allRarities = RARITY_ORDER; // IR/SIR first, then VGX
+  const candidatesList = await Promise.all(
+    pokemon.map(({ name }) =>
+      fetchCandidates(toDisplayName(name), allRarities, { allowGimmick: true })
+    )
+  );
+  const entries = pokemon.map(({ id }, i) => {
+    const allowed = requiredSets.get(id);
+    if (!allowed?.size) return null;
+    const inSet = candidatesList[i].filter(c => allowed.has(setIdFromCardId(c.id)));
+    const url = pickBest(inSet);
+    return url ? [id, { tcgUrl: url }] as const : null;
+  });
+  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+}
+
 // Alt-form card lookup — IR → TG (regional) → VGX, with Mega name fallbacks
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",

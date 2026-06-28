@@ -175,7 +175,7 @@ function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefin
 // Excludes "me*" sets (Mega Evolution / Pocket-format crossover sets on pokemontcg.io).
 async function fetchRarityIndex(rarity: string, allowTeraEx = false): Promise<Map<string, PtcgCard[]>> {
   const teraFilter = allowTeraEx ? "" : " -subtypes:Tera";
-  const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter}`);
+  const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter} -set.id:me*`);
   return buildNameIndex(cards);
 }
 

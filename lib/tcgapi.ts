@@ -353,7 +353,7 @@ export async function fetchFormCard(
   _formTypes: string[] = [],
   raritySet: Set<string> = VGX_RARITIES,
 ): Promise<string | null> {
-  if (category === "gmax" || category === "other") return null;
+  if (category === "other") return null;
 
   const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
   const teraFilter = " -subtypes:Tera";
@@ -378,6 +378,17 @@ export async function fetchFormCard(
     }
     const candidates = allCards
       .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
+      .map(c => ({ ...c, _rarity: c.rarity }));
+    return pickBest(candidates);
+  }
+
+  if (category === "gmax") {
+    const baseName = displayName.replace(/^Gigantamax /, "").trim();
+    const vmaxName = `${baseName} VMAX`;
+    const cards = await fetchAllPages(`name:"${vmaxName}"`);
+    const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
+    const candidates = cards
+      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, vmaxName))
       .map(c => ({ ...c, _rarity: c.rarity }));
     return pickBest(candidates);
   }

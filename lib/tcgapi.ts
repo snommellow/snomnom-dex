@@ -99,11 +99,15 @@ function nameMatches(cardName: string, query: string): boolean {
 // SV-era " ex" cards from sv3 onwards are Tera Pokémon — exclude from main slot.
 // sv1/sv2 have regular (non-Tera) ex cards like Venusaur ex; Tera focus starts at sv3.
 // Alt-form lookups (mega ex cards) pass allowTeraEx: true to skip this filter.
+// sv03.5 = Pokémon 151 (not Tera) — parseInt("03.5") = 3 which would
+// incorrectly match the >= 3 threshold, so exclude non-integer set numbers.
 function isTeraEx(card: TcgdexCard): boolean {
   if (!/\sex$/i.test(card.name)) return false;
   const setId = setIdFromCardId(card.id);
   if (!setId.startsWith("sv")) return false;
-  const major = parseInt(setId.slice(2));
+  const suffix = setId.slice(2);
+  if (suffix.includes(".")) return false; // sub-sets like sv03.5 (151), sv04.5, etc.
+  const major = parseInt(suffix);
   return major >= 3;
 }
 

@@ -4,12 +4,12 @@
 
 const BASE = "https://api.pokemontcg.io/v2";
 
-// pokemontcg.io set IDs that differ from TCGdex set IDs
+// pokemontcg.io set IDs → TCGdex set IDs (where they differ)
 const SET_ID_MAP: Record<string, string> = {
-  "sv3pt5":  "sv2a",    // Pokémon 151
-  "sv4pt5":  "sv3pt5",  // Paldean Fates
-  "sv6pt5":  "sv6pt5",  // Shrouded Fable (likely same, confirm if wrong)
-  "sv8pt5":  "sv8pt5",  // Prismatic Evolutions (likely same)
+  "sv3pt5":  "sv03.5",  // Pokémon 151
+  "sv4pt5":  "sv04.5",  // Paldean Fates
+  "sv6pt5":  "sv06.5",  // Shrouded Fable
+  "sv8pt5":  "sv08.5",  // Prismatic Evolutions
 };
 
 function toTcgdexSetId(ptcgId: string): string {

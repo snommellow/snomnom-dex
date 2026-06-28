@@ -258,11 +258,14 @@ export async function fetchFormCard(
   if (category === "gmax" || category === "other") return null;
 
   const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
-  const opts: FetchOptions = { skipRegionalFilter: true, allowGimmick: true, allowTeraEx: true };
+  // Regional forms: skip regional name filter (querying by regional name already) but no Tera ex
+  const regionalOpts: FetchOptions = { skipRegionalFilter: true, allowGimmick: false };
+  // Mega forms: allow Tera ex (SV mega ex cards use " ex" suffix) but enforce regional filter
+  const megaOpts: FetchOptions = { allowGimmick: true, allowTeraEx: true };
 
   if (category === "regional") {
     if (raritySet === IR_RARITIES) {
-      return fetchBestByRarities(displayName, rarities, opts);
+      return fetchBestByRarities(displayName, rarities, regionalOpts);
     }
     // VGX pass: check Trainer Gallery cards first — they rank above Ultra Rare
     const allCards = await tcgFetch(displayName);
@@ -275,7 +278,7 @@ export async function fetchFormCard(
       );
       return cardImageUrl(best);
     }
-    return fetchBestByRarities(displayName, rarities, opts);
+    return fetchBestByRarities(displayName, rarities, regionalOpts);
   }
 
   if (category === "mega") {
@@ -286,7 +289,7 @@ export async function fetchFormCard(
       : [`${displayName} ex`, `M ${baseName}-EX`, `Mega ${baseName} ex`, `Mega ${baseName}`];
 
     for (const queryName of namesToTry) {
-      const url = await fetchBestByRarities(queryName, rarities, { ...opts, skipRegionalFilter: false });
+      const url = await fetchBestByRarities(queryName, rarities, megaOpts);
       if (url) return url;
     }
     return null;

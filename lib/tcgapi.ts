@@ -92,7 +92,9 @@ function rarityScore(rarity: string): number {
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
-  return cn === q || cn.startsWith(q + " ") || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
+  // Reject TAG TEAM first-in-team matches ("Muk & Alolan Muk-GX" for query "muk")
+  const startsWithMatch = cn.startsWith(q + " ") && !cn.startsWith(q + " &");
+  return cn === q || startsWithMatch || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
 }
 
 // Fetch ALL cards matching a query, handling pagination automatically.
@@ -339,7 +341,7 @@ export async function fetchTcgVgx(
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
     return rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
+      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
         .filter(c => {
           if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
           if (c.name.endsWith("-GX")) return false;

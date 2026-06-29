@@ -151,13 +151,6 @@ export async function fetchPocketAltForm(
     const cn = cardName.toLowerCase();
     return cn === nameLower || cn === nameLower + " ex";
   };
-  if (displayName === "Mega Slowbro") {
-    const sets = await fetch(`${TCGDEX_BASE}/sets`, { next: { revalidate: 86400 } }).then(r => r.json()).catch(() => []);
-    const pocketSets = (Array.isArray(sets) ? sets : []).filter((s: {id: string}) => isPocketSet(s.id)).map((s: {id: string; name: string}) => s.id + ":" + s.name);
-    process.stderr.write(`[pocket sets] ${JSON.stringify(pocketSets)}\n`);
-    const megaSearch = await fetch(`${TCGDEX_BASE}/cards?name=Mega+Slowbro`, { next: { revalidate: 86400 } }).then(r => r.json()).catch(() => []);
-    process.stderr.write(`[pocket mega-search] ${JSON.stringify((Array.isArray(megaSearch) ? megaSearch : megaSearch?.data ?? []).map((c: TcgdexCard) => `${c.id} "${c.name}" rarity=${c.rarity}`))}\n`);
-  }
   // For mega forms, the Pocket card name is "Mega Name ex" — query both forms to ensure we find it
   const queryNames = category === "mega" ? [displayName, `${displayName} ex`] : [displayName];
   const allResults = await Promise.all(

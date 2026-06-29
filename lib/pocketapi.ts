@@ -151,7 +151,14 @@ export async function fetchPocketAltForm(
     const cn = cardName.toLowerCase();
     return cn === nameLower || cn === nameLower + " ex";
   };
-  const exactResults = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(displayName, r)));
+  // For mega forms, the Pocket card name is "Mega Name ex" — query both forms to ensure we find it
+  const queryNames = category === "mega" ? [displayName, `${displayName} ex`] : [displayName];
+  const allResults = await Promise.all(
+    queryNames.flatMap(qName => STAR_RARITIES.map(r => fetchStarCards(qName, r)))
+  );
+  const exactResults = STAR_RARITIES.map((_, ri) =>
+    queryNames.flatMap((_, qi) => allResults[qi * STAR_RARITIES.length + ri])
+  );
   const exactCards = STAR_RARITIES.flatMap((rarity, i) =>
     exactResults[i]
       .filter((c) => c.image && matchesName(c.name))

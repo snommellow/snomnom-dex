@@ -79,10 +79,7 @@ export default async function PokedexGrid() {
             fetchPocketAltForm(form.displayName, form.category),
             fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
           ]);
-          // Mega forms: Pocket wins over IR (Pocket mega cards are more iconic)
-          const tcgUrl = form.category === "mega"
-            ? (pocket.url || null) ?? irUrl ?? vgxUrl ?? null
-            : irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+          const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
           return { ...form, tcgUrl };
         })
       )

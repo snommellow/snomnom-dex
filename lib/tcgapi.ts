@@ -437,6 +437,9 @@ export async function fetchFormCard(
       .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
     // Prefer standard GX card over Full Art (Ultra Rare) when both exist
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
+    if (displayName === "Alolan Golem") {
+      process.stderr.write(`[formcard ${displayName}] allCards=${allCards.length} candidates=${JSON.stringify(candidates.map(c => `${c.set.id}/${c.number} ${c.rarity}`))} hasGx=${hasGx}\n`);
+    }
     return pickBest(hasGx ? candidates.filter(c => c._rarity !== "Ultra Rare") : candidates);
   }
 

@@ -66,7 +66,7 @@ interface PtcgCard {
 
 interface RankedCard extends PtcgCard { _rarity: string }
 
-export interface TcgImageResult { tcgUrl: string | null }
+export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean }
 
 const NAME_OVERRIDES: Record<string, string> = {
   "nidoran-f": "Nidoran ♀",
@@ -181,7 +181,7 @@ function swshSetNum(setId: string): number {
   return m ? parseInt(m[1]) : 0;
 }
 
-function pickBest(cards: RankedCard[]): string | null {
+function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
   // TG illustration cards get Trainer Gallery Rare Holo score (beats Rare Ultra/V)
   // Rare Ultra from swsh11+ are full-art border reprints, not distinct alt arts — deprioritize below Rare Holo V
@@ -190,7 +190,7 @@ function pickBest(cards: RankedCard[]): string | null {
     if (c._rarity === "Rare Ultra" && swshSetNum(c.set.id) >= 11) return rarityScore("Rare Holo V") + 1;
     return rarityScore(c._rarity);
   };
-  const winner = cards.reduce((a, b) => {
+  return cards.reduce((a, b) => {
     const ra = effectiveScore(a), rb = effectiveScore(b);
     if (ra !== rb) return ra < rb ? a : b;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
@@ -198,7 +198,11 @@ function pickBest(cards: RankedCard[]): string | null {
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;
     return bNum >= aNum ? b : a;
   });
-  return cardImageUrl(winner);
+}
+
+function pickBest(cards: RankedCard[]): string | null {
+  const winner = pickBestCard(cards);
+  return winner ? cardImageUrl(winner) : null;
 }
 
 function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefined): string | null {
@@ -209,6 +213,15 @@ function pickBestWithChain(cards: RankedCard[], chainSets: Set<string> | undefin
     if (chainCards.length) return pickBest(chainCards);
   }
   return pickBest(cards);
+}
+
+function pickBestCardWithChain(cards: RankedCard[], chainSets: Set<string> | undefined): RankedCard | null {
+  if (!cards.length) return null;
+  if (chainSets?.size) {
+    const chainCards = cards.filter(c => chainSets.has(c.set.id) || TG_RE.test(c.number));
+    if (chainCards.length) return pickBestCard(chainCards);
+  }
+  return pickBestCard(cards);
 }
 
 // Fetch all cards of a given rarity (non-Tera) and return a name index.
@@ -338,8 +351,9 @@ export async function fetchTcgVgx(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
-    return url ? [id, { tcgUrl: url }] as const : null;
+    const winner = pickBestCardWithChain(candidatesList[i], chainSetsMap.get(id));
+    if (!winner) return null;
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: winner._rarity === "Rare Holo EX" }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }

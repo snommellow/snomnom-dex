@@ -185,7 +185,15 @@ export function toPokemonSummary(
   regularCardUrl?: string,
 ): PokemonSummary {
   const bg: string[] = [];
-  if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
+  let resolvedRegularCard = regularCardUrl;
+  if (tcgResult.tcgUrl) {
+    if (tcgResult.isOldStyle) {
+      // Old-style EX cards: use crop treatment (same as Rare Holo fallback)
+      resolvedRegularCard = resolvedRegularCard ?? tcgResult.tcgUrl;
+    } else {
+      bg.push(tcgResult.tcgUrl);
+    }
+  }
   bg.push(...pocketUrls);
   return {
     id: p.id,
@@ -195,7 +203,7 @@ export function toPokemonSummary(
     artworkUrl: p.sprites.other["official-artwork"].front_default,
     genus,
     bgCandidates: bg,
-    regularCardUrl,
+    regularCardUrl: resolvedRegularCard,
     altForms,
   };
 }

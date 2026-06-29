@@ -359,7 +359,8 @@ export async function fetchTcgVgx(
   const entries = pokemon.map(({ id }, i) => {
     const winner = pickBestCardWithChain(candidatesList[i], chainSetsMap.get(id));
     if (!winner) return null;
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: winner._rarity === "Rare Holo EX" && isPreBwSet(winner.set.id) }] as const;
+    const oldStyleRarities = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: oldStyleRarities.has(winner._rarity) && isPreBwSet(winner.set.id) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }

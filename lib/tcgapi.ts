@@ -19,8 +19,8 @@ const RARITY_ORDER = [
   "Rare Secret",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
-  "Rare Holo V",
   "Rare Ultra",
+  "Rare Holo V",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo GX",
@@ -176,11 +176,20 @@ function lookupCandidates(
   return matched.length ? matched : regionalMatched;
 }
 
+function swshSetNum(setId: string): number {
+  const m = setId.match(/^swsh(\d+)/i);
+  return m ? parseInt(m[1]) : 0;
+}
+
 function pickBest(cards: RankedCard[]): string | null {
   if (!cards.length) return null;
   // TG illustration cards get Trainer Gallery Rare Holo score (beats Rare Ultra/V)
-  const effectiveScore = (c: RankedCard) =>
-    TG_RE.test(c.number) ? rarityScore("Trainer Gallery Rare Holo") : rarityScore(c._rarity);
+  // Rare Ultra from swsh11+ are full-art border reprints, not distinct alt arts — deprioritize below Rare Holo V
+  const effectiveScore = (c: RankedCard) => {
+    if (TG_RE.test(c.number)) return rarityScore("Trainer Gallery Rare Holo");
+    if (c._rarity === "Rare Ultra" && swshSetNum(c.set.id) >= 11) return rarityScore("Rare Holo V") + 1;
+    return rarityScore(c._rarity);
+  };
   const winner = cards.reduce((a, b) => {
     const ra = effectiveScore(a), rb = effectiveScore(b);
     if (ra !== rb) return ra < rb ? a : b;

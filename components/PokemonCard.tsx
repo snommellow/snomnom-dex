@@ -28,7 +28,8 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
-  const candidates = [...(pokemon.bgCandidates ?? []), HOME_SPRITE(pokemon.id), OFFICIAL_ART(pokemon.id)];
+  const hasSpecialCard = (pokemon.bgCandidates?.length ?? 0) > 0;
+  const candidates = [...(pokemon.bgCandidates ?? []), OFFICIAL_ART(pokemon.id)];
   const [bgIndex, setBgIndex] = useState(0);
   const bgUrl = candidates[bgIndex] ?? OFFICIAL_ART(pokemon.id);
 
@@ -107,9 +108,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
           {/* Background layer 1: blurred */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={bgUrl} alt="" aria-hidden style={{
+            <img src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : bgUrl} alt="" aria-hidden style={{
               position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
-              objectFit: "cover", objectPosition: "top center",
+              objectFit: "cover", objectPosition: !hasSpecialCard && pokemon.regularCardUrl ? "center 30%" : "top center",
               opacity: 0.55, filter: "blur(25px)",
             }} />
           </div>
@@ -124,17 +125,32 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
               : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
             transition: "mask-image 0.2s",
           }}>
-            <Image
-              src={bgUrl}
-              alt=""
-              aria-hidden
-              fill
-              sizes="300px"
-              className="object-cover object-top"
-              style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
-              loading="eager"
-              onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
-            />
+            {!hasSpecialCard && pokemon.regularCardUrl ? (
+              /* Regular card: crop to artwork area only (skip name bar at top, moves at bottom) */
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={pokemon.regularCardUrl}
+                alt=""
+                aria-hidden
+                style={{
+                  position: "absolute", inset: 0, width: "100%", height: "170%",
+                  objectFit: "cover", objectPosition: "center 28%",
+                  opacity: 0.7, transform: "translateY(-8%)",
+                }}
+              />
+            ) : (
+              <Image
+                src={bgUrl}
+                alt=""
+                aria-hidden
+                fill
+                sizes="300px"
+                className="object-cover object-top"
+                style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
+                loading="eager"
+                onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}
+              />
+            )}
           </div>
 
           {/* Masthead */}

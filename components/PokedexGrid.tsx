@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchTcgFallbackArt, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -56,6 +56,10 @@ export default async function PokedexGrid() {
   const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
   const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
 
+  // Pass 4: Regular TCG card art fallback — artwork-only crop shown in UI for Pokémon still without any card
+  const afterVgx = afterTrainerIr.filter((p) => !vgxMap.has(p.id));
+  const fallbackArtMap = await fetchTcgFallbackArt(afterVgx);
+
   // Fetch alt form Pokémon data.
   // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.
   // Inject TCG_ONLY_MEGAS for Pokémon whose mega exists in the TCG but not yet in PokéAPI.
@@ -108,6 +112,7 @@ export default async function PokedexGrid() {
       pocketUrl ? [pocketUrl] : [],
       speciesData[i].genus,
       altFormsWithCards[i],
+      fallbackArtMap.get(p.id),
     );
   });
 

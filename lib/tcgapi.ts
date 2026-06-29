@@ -445,3 +445,25 @@ export async function fetchFormCard(
 
   return null;
 }
+
+// Final fallback: fetch any available TCG card for Pokémon with no special art.
+// Returns the image URL to be cropped to artwork area in the UI.
+export async function fetchTcgFallbackArt(
+  pokemon: { id: number; name: string }[],
+): Promise<Map<number, string>> {
+  if (!pokemon.length) return new Map();
+  const results = await Promise.all(
+    pokemon.map(async ({ id, name }) => {
+      const displayName = toDisplayName(name);
+      const cards = await fetchAllPages(`name:"${displayName}" -subtypes:VMAX -subtypes:VSTAR -subtypes:V`);
+      const withImage = cards.filter(c => c.images?.large && nameMatches(c.name, displayName));
+      if (!withImage.length) return [id, null] as const;
+      // Prefer Rare Holo from newest set
+      const holos = withImage.filter(c => c.rarity === "Rare Holo");
+      const pool = holos.length ? holos : withImage;
+      const best = pool.reduce((a, b) => b.set.id > a.set.id ? b : a);
+      return [id, cardImageUrl(best)] as const;
+    })
+  );
+  return new Map(results.filter((e): e is [number, string] => e[1] !== null));
+}

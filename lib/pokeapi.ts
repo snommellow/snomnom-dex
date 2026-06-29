@@ -78,6 +78,8 @@ export interface PokemonSummary {
   genus: string | null;
   // Ordered candidates for card background: TCG image → Pocket → official art
   bgCandidates: string[];
+  // Regular TCG card used as artwork-only fallback (cropped to art area in UI)
+  regularCardUrl?: string;
   altForms: AltForm[];
 }
 
@@ -180,6 +182,7 @@ export function toPokemonSummary(
   pocketUrls: string[] = [],
   genus: string | null = null,
   altForms: AltForm[] = [],
+  regularCardUrl?: string,
 ): PokemonSummary {
   const bg: string[] = [];
   if (tcgResult.tcgUrl) bg.push(tcgResult.tcgUrl);
@@ -192,6 +195,7 @@ export function toPokemonSummary(
     artworkUrl: p.sprites.other["official-artwork"].front_default,
     genus,
     bgCandidates: bg,
+    regularCardUrl,
     altForms,
   };
 }

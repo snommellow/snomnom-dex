@@ -400,7 +400,7 @@ export async function fetchFormCard(
       return cardImageUrl(best);
     }
     const candidates = allCards
-      .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName))
+      .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
       .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Ultra Rare" : c.rarity }));
     return pickBest(candidates);
   }

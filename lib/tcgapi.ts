@@ -469,34 +469,28 @@ export async function fetchFormCard(
   return null;
 }
 
-// Final fallback: fetch any available TCG card for Pokémon with no special art.
-// Checks Rare Holo EX and Rare Holo GX first (rarer, better artwork), then Rare Holo.
+// Rarities considered for the fallback crop card — ordered from rarest to most common.
+// VGX Pokémon are already filtered out upstream, so V/VMAX/VSTAR won't appear here.
+const FALLBACK_RARITIES = [
+  "Rare Holo EX",
+  "Rare Holo GX",
+  "Rare Holo",
+] as const;
+
+// Final fallback: find the rarest available card for Pokémon with no special art.
+// Fetches all rarity indexes in parallel, then picks the highest-rarity card per Pokémon.
 export async function fetchTcgFallbackArt(
   pokemon: { id: number; name: string }[],
 ): Promise<Map<number, string>> {
   if (!pokemon.length) return new Map();
-  const [exIndex, gxIndex, holoIndex] = await Promise.all([
-    fetchRarityIndex("Rare Holo EX"),
-    fetchRarityIndex("Rare Holo GX"),
-    fetchRarityIndex("Rare Holo"),
-  ]);
+  const indexes = await Promise.all(FALLBACK_RARITIES.map(r => fetchRarityIndex(r)));
   const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);
-    // Prefer EX > GX > plain Rare Holo (rarest/most visually distinct)
-    const exPool = lookupCandidates(exIndex, displayName, "Rare Holo EX", { allowGimmick: true });
-    if (exPool.length) {
-      const best = exPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
-      return [id, cardImageUrl(best)] as const;
-    }
-    const gxPool = lookupCandidates(gxIndex, displayName, "Rare Holo GX", { allowGimmick: true });
-    if (gxPool.length) {
-      const best = gxPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
-      return [id, cardImageUrl(best)] as const;
-    }
-    const holoPool = lookupCandidates(holoIndex, displayName, "Rare Holo");
-    if (!holoPool.length) return null;
-    const best = holoPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
-    return [id, cardImageUrl(best)] as const;
+    const allCandidates: RankedCard[] = FALLBACK_RARITIES.flatMap((r, i) =>
+      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
+    );
+    const url = pickBest(allCandidates);
+    return url ? [id, url] as const : null;
   });
   return new Map(entries.filter((e): e is [number, string] => e !== null));
 }

@@ -275,7 +275,6 @@ export async function fetchTcgIrSir(
 
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
-    if (id === 76) process.stderr.write(`[ir golem] candidates=${JSON.stringify(candidatesList[i].map(c => `${c.set.id}/${c.number} ${c._rarity} name="${c.name}"`))} url=${url}\n`);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -348,9 +347,12 @@ export async function fetchTcgVgx(
 
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
+    const nameLower = displayName.toLowerCase();
     return rarities.flatMap((r, i) =>
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
         .filter(c => {
+          // Exclude SV-era "Pokémon ex" cards from VGX — distinct identities from the base form
+          if (c.name.toLowerCase() === nameLower + " ex") return false;
           if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
           if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
           if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
@@ -379,7 +381,6 @@ export async function fetchTcgVgx(
     const winner = modern.length
       ? pickBestCard(modern)
       : pickBestCardWithChain(all, chainSets);
-    if (id === 76) process.stderr.write(`[vgx golem] all=${JSON.stringify(all.map(c => `${c.set.id}/${c.number} ${c._rarity} "${c.name}"`))} winner=${winner ? `${winner.set.id}/${winner.number}` : null}\n`);
     if (!winner) return null;
     return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
   });
@@ -523,7 +524,6 @@ export async function fetchTcgFallbackArt(
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
     );
     const url = pickBest(allCandidates);
-    if (id === 76) process.stderr.write(`[fallback golem] candidates=${JSON.stringify(allCandidates.map(c => `${c.set.id}/${c.number} ${c._rarity} "${c.name}"`))} url=${url}\n`);
     return url ? [id, url] as const : null;
   });
   return new Map(entries.filter((e): e is [number, string] => e !== null));

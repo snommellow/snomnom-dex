@@ -435,14 +435,10 @@ export async function fetchFormCard(
     const candidates = allCards
       .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
       .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
-    // Prefer standard GX card over Full Art (Ultra Rare) when both exist
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
-    const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Ultra Rare") : candidates;
-    const result = pickBest(finalCandidates);
-    if (displayName === "Alolan Golem") {
-      process.stderr.write(`[formcard ${displayName}] hasGx=${hasGx} finalCandidates=${JSON.stringify(finalCandidates.map(c => `${c.set.id}/${c.number}`))} result=${result}\n`);
-    }
-    return result;
+    // Prefer standard GX card over Full Art (Rare Ultra) when both exist
+    const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Rare Ultra") : candidates;
+    return pickBest(finalCandidates);
   }
 
   if (category === "gmax") {

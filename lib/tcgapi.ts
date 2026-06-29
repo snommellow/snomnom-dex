@@ -300,10 +300,12 @@ export async function fetchTcgPromoSv(
       !TRAINER_OWNED_RE.test(c.name)
     );
     if (!svpCards.length) return null;
-    const best = svpCards.reduce((a, b) =>
-      parseInt(b.number) > parseInt(a.number) ? b : a
-    );
-    if (id === 143) process.stderr.write(`[snorlax svp] candidates=${JSON.stringify(svpCards.map(c => `${c.id} #${c.number}`))} best=${best.id}\n`);
+    const best = svpCards.reduce((a, b) => {
+      const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
+      if (ra !== rb) return ra < rb ? a : b;
+      return parseInt(b.number) > parseInt(a.number) ? b : a;
+    });
+    if (id === 143) process.stderr.write(`[snorlax svp] candidates=${JSON.stringify(svpCards.map(c => `${c.id} #${c.number} rarity=${c.rarity}`))} best=${best.id}\n`);
     return [id, { tcgUrl: cardImageUrl(best) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

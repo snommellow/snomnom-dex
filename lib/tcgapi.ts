@@ -392,7 +392,7 @@ export async function fetchFormCard(
     }
     const candidates = allCards
       .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName))
-      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
+      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Ultra Rare" : c.rarity }));
     console.log("[regional vgx]", displayName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     return pickBest(candidates);
   }

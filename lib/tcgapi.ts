@@ -395,7 +395,7 @@ export async function fetchFormCard(
   if (category === "gmax") {
     const baseName = displayName.replace(/^Gigantamax /, "").trim();
     const vmaxName = `${baseName} VMAX`;
-    const cards = await fetchAllPages(`name:"${vmaxName}"`);
+    const cards = await fetchAllPages(`name:"${baseName}" subtypes:VMAX`);
     const candidates = cards
       .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare")
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));

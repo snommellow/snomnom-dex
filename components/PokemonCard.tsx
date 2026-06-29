@@ -126,15 +126,17 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             transition: "mask-image 0.2s",
           }}>
             {!hasSpecialCard && pokemon.regularCardUrl ? (
-              /* Regular card: fill width from top — name + artwork visible, moves clipped at bottom */
+              /* Regular card: scale up from top so only name + artwork fits in container */
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={pokemon.regularCardUrl}
                 alt=""
                 aria-hidden
                 style={{
-                  position: "absolute", top: 0, left: 0,
+                  position: "absolute", top: 0, left: "50%",
                   width: "100%", height: "auto",
+                  transform: "translateX(-50%) scale(1.6)",
+                  transformOrigin: "top center",
                   opacity: 0.8,
                 }}
               />

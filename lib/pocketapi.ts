@@ -164,7 +164,13 @@ export async function fetchPocketAltForm(
       .filter((c) => c.image && matchesName(c.name))
       .map((c) => ({ ...c, rarity }))
   );
-  if (displayName === "Mega Slowbro") process.stderr.write(`[pocket mega-slowbro] queryNames=${JSON.stringify(queryNames)} exactCards=${JSON.stringify(exactCards.map(c => `${c.id} ${c.rarity} "${c.name}"`))}\n`);
+  if (displayName === "Mega Slowbro") {
+    process.stderr.write(`[pocket mega-slowbro] queryNames=${JSON.stringify(queryNames)} exactCards=${JSON.stringify(exactCards.map(c => `${c.id} ${c.rarity} "${c.name}"`))}\n`);
+    // Debug: try raw fetch for "Slowbro" to see what names TCGdex uses
+    const raw = await fetch(`${TCGDEX_BASE}/cards?name=Slowbro`, { next: { revalidate: 86400 } }).then(r => r.json()).catch(() => []);
+    const items = (Array.isArray(raw) ? raw : raw?.data ?? []) as TcgdexCard[];
+    process.stderr.write(`[pocket slowbro-raw] ${JSON.stringify(items.filter(c => isPocketSet(setIdFromCardId(c.id))).map(c => `${c.id} "${c.name}" rarity=${c.rarity}`))}\n`);
+  }
   if (exactCards.length) {
     const setOf = (id: string) => id.split("-")[0];
     const twoStars = exactCards.filter((c) => c.rarity === "Two Star");

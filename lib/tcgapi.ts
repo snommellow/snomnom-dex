@@ -341,7 +341,7 @@ export async function fetchTcgVgx(
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
     return rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true, allowRegionalFallback: true })
+      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
         .filter(c => {
           if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
           if (c.name.endsWith("-GX")) return false;

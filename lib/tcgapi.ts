@@ -328,7 +328,11 @@ export async function fetchTcgVgx(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    if (id === 121) console.log("[vgx starmie]", candidatesList[i].map(c => `${c.set.id}/${c.number}(${c._rarity})`));
+    if (id === 121) {
+      console.log("[vgx starmie candidates]", candidatesList[i].map(c => `${c.set.id}/${c.number}(${c._rarity})`));
+      const dbgWinner = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+      console.log("[vgx starmie winner]", dbgWinner);
+    }
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });

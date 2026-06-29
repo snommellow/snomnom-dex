@@ -66,7 +66,7 @@ interface PtcgCard {
 
 interface RankedCard extends PtcgCard { _rarity: string }
 
-export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean; isRegional?: boolean }
+export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean }
 
 const NAME_OVERRIDES: Record<string, string> = {
   "nidoran-f": "Nidoran ♀",
@@ -92,6 +92,8 @@ function rarityScore(rarity: string): number {
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
+  // Exclude SV-era basic "Pokémon ex" (lowercase space-ex) — those are distinct card identities
+  if (cn === q + " ex") return false;
   return cn === q || cn.startsWith(q + " ") || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
 }
 
@@ -370,8 +372,7 @@ export async function fetchTcgVgx(
       ? pickBestCard(modern)
       : pickBestCardWithChain(all, chainSets);
     if (!winner) return null;
-    const isRegional = REGIONAL_RE.test(winner.name);
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner), isRegional }] as const;
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }

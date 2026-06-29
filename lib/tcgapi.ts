@@ -401,9 +401,20 @@ export async function fetchFormCard(
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
     console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
-    // Newest set wins; within same set, highest card number wins
+    // Set tier: TG sets (0) > post-swsh45 numbered (1) > promos (2) > early sets (3)
+    const gmaxTier = (id: string) =>
+      /tg$/i.test(id) ? 0
+      : /^swsh([5-9]|1\d)/i.test(id) ? 1
+      : id === "swshp" ? 2
+      : 3;
+    const swshNum = (id: string) => { const m = id.match(/^swsh(\d+)/); return m ? parseInt(m[1]) : 0; };
     const winner = candidates.reduce((a, b) => {
-      if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+      const ta = gmaxTier(a.set.id), tb = gmaxTier(b.set.id);
+      if (ta !== tb) return ta < tb ? a : b;
+      if (a.set.id !== b.set.id) {
+        const na = swshNum(a.set.id), nb = swshNum(b.set.id);
+        if (na !== nb) return nb > na ? b : a;
+      }
       return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
     });
     return cardImageUrl(winner);

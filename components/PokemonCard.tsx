@@ -201,7 +201,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 
           {/* Sprite area */}
           <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
-            {!formCategory && (
+            {!formCategory ? (
               <div className="absolute bottom-1 right-1 w-10 h-10">
                 <Image
                   src={HOME_SPRITE(pokemon.id)}
@@ -212,7 +212,18 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   loading="lazy"
                 />
               </div>
-            )}
+            ) : pokemon.artworkUrl ? (
+              <div className="absolute bottom-1 right-1 w-10 h-10">
+                <Image
+                  src={pokemon.artworkUrl}
+                  alt={pokemon.name}
+                  fill
+                  sizes="64px"
+                  className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]"
+                  loading="lazy"
+                />
+              </div>
+            ) : null}
           </div>
 
           {/* Sparkles */}

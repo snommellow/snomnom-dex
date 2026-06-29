@@ -328,6 +328,7 @@ export async function fetchTcgVgx(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
+    if (id === 121) console.log("[vgx starmie]", candidatesList[i].map(c => `${c.set.id}/${c.number}(${c._rarity})`));
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
@@ -392,6 +393,7 @@ export async function fetchFormCard(
     const candidates = allCards
       .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName))
       .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
+    console.log("[regional vgx]", displayName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     return pickBest(candidates);
   }
 

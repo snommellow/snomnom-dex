@@ -397,7 +397,7 @@ export async function fetchFormCard(
     const vmaxName = `${baseName} VMAX`;
     const cards = await fetchAllPages(`name:"${vmaxName}"`);
     const candidates = cards
-      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv")
+      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Rare Rainbow" && c.rarity !== "Rare Secret" && c.rarity !== "Hyper Rare")
       .map(c => ({ ...c, _rarity: "Rare Holo VMAX" }));
     return pickBest(candidates);
   }

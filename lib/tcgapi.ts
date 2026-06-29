@@ -344,7 +344,7 @@ export async function fetchTcgVgx(
       lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
         .filter(c => {
           if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
-          if (c.name.endsWith("-GX")) return false;
+          if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
           if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
           if (/ V(-UNION)?$/.test(c.name) && r === "Hyper Rare") return false;
           if (/ VMAX$/.test(c.name)) return false;

@@ -447,23 +447,20 @@ export async function fetchFormCard(
 }
 
 // Final fallback: fetch any available TCG card for Pokémon with no special art.
-// Returns the image URL to be cropped to artwork area in the UI.
+// Uses bulk rarity indexes (same pattern as other passes) to avoid per-Pokémon API calls.
 export async function fetchTcgFallbackArt(
   pokemon: { id: number; name: string }[],
 ): Promise<Map<number, string>> {
   if (!pokemon.length) return new Map();
-  const results = await Promise.all(
-    pokemon.map(async ({ id, name }) => {
-      const displayName = toDisplayName(name);
-      const cards = await fetchAllPages(`name:"${displayName}" -subtypes:VMAX -subtypes:VSTAR -subtypes:V`);
-      const withImage = cards.filter(c => c.images?.large && nameMatches(c.name, displayName));
-      if (!withImage.length) return [id, null] as const;
-      // Prefer Rare Holo from newest set
-      const holos = withImage.filter(c => c.rarity === "Rare Holo");
-      const pool = holos.length ? holos : withImage;
-      const best = pool.reduce((a, b) => b.set.id > a.set.id ? b : a);
-      return [id, cardImageUrl(best)] as const;
-    })
-  );
-  return new Map(results.filter((e): e is [number, string] => e[1] !== null));
+  const rarities = ["Rare Holo", "Rare"];
+  const [holoIndex, rareIndex] = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
+  const entries = pokemon.map(({ id, name }) => {
+    const displayName = toDisplayName(name);
+    const holos = lookupCandidates(holoIndex, displayName, "Rare Holo");
+    const pool = holos.length ? holos : lookupCandidates(rareIndex, displayName, "Rare");
+    if (!pool.length) return null;
+    const best = pool.reduce((a, b) => b.set.id > a.set.id ? b : a);
+    return [id, cardImageUrl(best)] as const;
+  });
+  return new Map(entries.filter((e): e is [number, string] => e !== null));
 }

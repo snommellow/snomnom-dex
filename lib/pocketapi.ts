@@ -164,6 +164,7 @@ export async function fetchPocketAltForm(
       .filter((c) => c.image && matchesName(c.name))
       .map((c) => ({ ...c, rarity }))
   );
+  if (displayName === "Mega Slowbro") process.stderr.write(`[pocket mega-slowbro] queryNames=${JSON.stringify(queryNames)} exactCards=${JSON.stringify(exactCards.map(c => `${c.id} ${c.rarity} "${c.name}"`))}\n`);
   if (exactCards.length) {
     const setOf = (id: string) => id.split("-")[0];
     const twoStars = exactCards.filter((c) => c.rarity === "Two Star");

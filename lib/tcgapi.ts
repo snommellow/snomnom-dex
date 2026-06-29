@@ -404,6 +404,7 @@ export async function fetchFormCard(
       .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare" && c.rarity !== "Rare Rainbow" && !(c.rarity === "Rare Secret" && /tg$/i.test(c.set.id)))
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
+    console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     // Set tier: TG sets (0) > post-swsh45 numbered (1) > promos (2) > early sets (3)
     const gmaxTier = (id: string) =>
       /tg$/i.test(id) ? 0

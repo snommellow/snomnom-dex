@@ -401,11 +401,10 @@ export async function fetchFormCard(
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
     console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
-    // Prefer Rare Secret (alt arts) > regular VMAX > Rare Rainbow; then newest set, then highest number
-    const gmaxRarityScore = (r: string) => r === "Rare Secret" ? 0 : r === "Rare Rainbow" ? 2 : 1;
+    // Prefer Rare Secret (alt arts) first, then newest set, then highest number
     const winner = candidates.reduce((a, b) => {
-      const ra = gmaxRarityScore(a.rarity), rb = gmaxRarityScore(b.rarity);
-      if (ra !== rb) return ra < rb ? a : b;
+      const aIsAlt = a.rarity === "Rare Secret", bIsAlt = b.rarity === "Rare Secret";
+      if (aIsAlt !== bIsAlt) return bIsAlt ? b : a;
       if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
       return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
     });

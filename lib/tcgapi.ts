@@ -275,6 +275,7 @@ export async function fetchTcgIrSir(
 
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    if (id === 76) process.stderr.write(`[ir golem] candidates=${JSON.stringify(candidatesList[i].map(c => `${c.set.id}/${c.number} ${c._rarity} name="${c.name}"`))} url=${url}\n`);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

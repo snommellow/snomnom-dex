@@ -399,7 +399,13 @@ export async function fetchFormCard(
     const candidates = cards
       .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Rare Rainbow" && c.rarity !== "Hyper Rare")
       .map(c => ({ ...c, _rarity: "Rare Holo VMAX" }));
-    return pickBest(candidates);
+    if (!candidates.length) return null;
+    // Pick by newest set first, then highest card number (alt arts > base)
+    const winner = candidates.reduce((a, b) => {
+      if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+      return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
+    });
+    return cardImageUrl(winner);
   }
 
   if (category === "mega") {

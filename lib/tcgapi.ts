@@ -470,17 +470,32 @@ export async function fetchFormCard(
 }
 
 // Final fallback: fetch any available TCG card for Pokémon with no special art.
-// Uses bulk Rare Holo index to avoid per-Pokémon API calls.
+// Checks Rare Holo EX and Rare Holo GX first (rarer, better artwork), then Rare Holo.
 export async function fetchTcgFallbackArt(
   pokemon: { id: number; name: string }[],
 ): Promise<Map<number, string>> {
   if (!pokemon.length) return new Map();
-  const holoIndex = await fetchRarityIndex("Rare Holo");
+  const [exIndex, gxIndex, holoIndex] = await Promise.all([
+    fetchRarityIndex("Rare Holo EX"),
+    fetchRarityIndex("Rare Holo GX"),
+    fetchRarityIndex("Rare Holo"),
+  ]);
   const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);
-    const pool = lookupCandidates(holoIndex, displayName, "Rare Holo");
-    if (!pool.length) return null;
-    const best = pool.reduce((a, b) => b.set.id > a.set.id ? b : a);
+    // Prefer EX > GX > plain Rare Holo (rarest/most visually distinct)
+    const exPool = lookupCandidates(exIndex, displayName, "Rare Holo EX", { allowGimmick: true });
+    if (exPool.length) {
+      const best = exPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
+      return [id, cardImageUrl(best)] as const;
+    }
+    const gxPool = lookupCandidates(gxIndex, displayName, "Rare Holo GX", { allowGimmick: true });
+    if (gxPool.length) {
+      const best = gxPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
+      return [id, cardImageUrl(best)] as const;
+    }
+    const holoPool = lookupCandidates(holoIndex, displayName, "Rare Holo");
+    if (!holoPool.length) return null;
+    const best = holoPool.reduce((a, b) => b.set.id > a.set.id ? b : a);
     return [id, cardImageUrl(best)] as const;
   });
   return new Map(entries.filter((e): e is [number, string] => e !== null));

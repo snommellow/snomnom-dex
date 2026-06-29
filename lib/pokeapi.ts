@@ -188,8 +188,8 @@ export function toPokemonSummary(
   let resolvedRegularCard = regularCardUrl;
   if (tcgResult.tcgUrl) {
     if (tcgResult.isOldStyle) {
-      // Old-style EX cards: use crop treatment (same as Rare Holo fallback)
-      resolvedRegularCard = resolvedRegularCard ?? tcgResult.tcgUrl;
+      // Old-style EX/GX cards: use crop treatment — always prefer over plain Rare Holo fallback
+      resolvedRegularCard = tcgResult.tcgUrl;
     } else {
       bg.push(tcgResult.tcgUrl);
     }

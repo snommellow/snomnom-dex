@@ -400,6 +400,7 @@ export async function fetchFormCard(
       .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Rare Rainbow" && c.rarity !== "Hyper Rare")
       .map(c => ({ ...c, _rarity: "Rare Holo VMAX" }));
     if (!candidates.length) return null;
+    console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     // Pick by newest set first, then highest card number (alt arts > base)
     const winner = candidates.reduce((a, b) => {
       if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;

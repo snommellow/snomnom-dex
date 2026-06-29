@@ -328,11 +328,6 @@ export async function fetchTcgVgx(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    if (id === 121) {
-      console.log("[vgx starmie candidates]", candidatesList[i].map(c => `${c.set.id}/${c.number}(${c._rarity})`));
-      const dbgWinner = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
-      console.log("[vgx starmie winner]", dbgWinner);
-    }
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });
@@ -397,7 +392,6 @@ export async function fetchFormCard(
     const candidates = allCards
       .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName))
       .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Ultra Rare" : c.rarity }));
-    console.log("[regional vgx]", displayName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     return pickBest(candidates);
   }
 
@@ -406,10 +400,9 @@ export async function fetchFormCard(
     const vmaxName = `${baseName} VMAX`;
     const cards = await fetchAllPages(`name:"${baseName}" subtypes:VMAX`);
     const candidates = cards
-      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare" && !(c.rarity === "Rare Rainbow" && (SWSH_EARLY_SETS.has(c.set.id) || c.set.id === "swsh45sv")) && !(c.rarity === "Rare Secret" && /tg$/i.test(c.set.id)))
+      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare" && c.rarity !== "Rare Rainbow" && !(c.rarity === "Rare Secret" && /tg$/i.test(c.set.id)))
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
-    console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
     // Set tier: TG sets (0) > post-swsh45 numbered (1) > promos (2) > early sets (3)
     const gmaxTier = (id: string) =>
       /tg$/i.test(id) ? 0

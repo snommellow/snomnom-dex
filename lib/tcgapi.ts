@@ -362,9 +362,13 @@ export async function fetchTcgVgx(
   const entries = pokemon.map(({ id }, i) => {
     const all = candidatesList[i];
     const chainSets = chainSetsMap.get(id);
-    // Prefer modern full-art cards over old-style — only fall back to old-style if no modern card found
+    // Prefer modern full-art cards over old-style.
+    // Modern cards (GX, TAG TEAM, V, etc.) skip chain filtering — they're standalone full-arts
+    // that don't need chain set coherence. Old-style cards still use chain filtering.
     const modern = all.filter(c => !isOldStyleCard(c));
-    const winner = pickBestCardWithChain(modern.length ? modern : all, chainSets);
+    const winner = modern.length
+      ? pickBestCard(modern)
+      : pickBestCardWithChain(all, chainSets);
     if (!winner) return null;
     return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
   });

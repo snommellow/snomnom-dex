@@ -135,7 +135,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 style={{
                   position: "absolute", top: 0, left: "50%",
                   width: "100%", height: "auto",
-                  transform: "translateX(-50%) translateY(6%) scale(1.75)",
+                  transform: "translateX(-50%) translateY(6%) scale(2.2)",
                   transformOrigin: "top center",
                   opacity: 0.8,
                 }}

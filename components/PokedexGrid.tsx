@@ -13,6 +13,10 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 export default async function PokedexGrid() {
   const raw = await fetchFirst151();
 
+  // Start Pocket fetches immediately — they only need names, not chain/species data.
+  // This lets Phase B run in parallel with species fetches + Phase A.
+  const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name })));
+
   // Species data: genus + alt form slots + evolution chain URL (single fetch per Pokémon)
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
@@ -59,14 +63,14 @@ export default async function PokedexGrid() {
     ),
   ]);
 
-  // Phase B: Pocket images — per-Pokémon calls, so filter to only those without a card yet.
-  const needsPocket = raw.filter((p) => !irMap.has(p.id) && !promoSvMap.has(p.id));
-  const pocketResultsList = needsPocket.length
-    ? await fetchPocketImages(needsPocket.map((p) => ({ id: p.id, name: p.name })))
-    : [];
+  // Phase B: Pocket images — resolve the promise started before Phase A.
+  // Filter to only Pokémon without an IR/SIR or promo card.
+  const allPocketResults = await pocketPromise;
   const pocketMap = new Map<number, string>();
-  needsPocket.forEach((p, j) => {
-    if (pocketResultsList[j]?.url) pocketMap.set(p.id, pocketResultsList[j].url!);
+  raw.forEach((p, j) => {
+    if (allPocketResults[j]?.url && !irMap.has(p.id) && !promoSvMap.has(p.id)) {
+      pocketMap.set(p.id, allPocketResults[j].url!);
+    }
   });
 
   // Fetch TCG cards for each alt form — run all three passes in parallel per form, then pick by priority.

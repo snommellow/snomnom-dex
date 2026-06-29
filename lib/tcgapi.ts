@@ -181,6 +181,9 @@ function pickBest(cards: RankedCard[]): string | null {
   const winner = cards.reduce((a, b) => {
     const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
     if (ra !== rb) return ra < rb ? a : b;
+    // TG illustration cards beat same-rarity regular reprints regardless of set order
+    const aTg = TG_RE.test(a.number), bTg = TG_RE.test(b.number);
+    if (aTg !== bTg) return bTg ? b : a;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
     // Same rarity + same set: prefer higher number (alt arts are secret-rare numbered)
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;

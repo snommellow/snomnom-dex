@@ -281,14 +281,18 @@ export async function fetchTcgIrSir(
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
-// Pass 1.5: SV-era full-art promos (svp set), highest number = best quality.
+// SV-era full-art promo set IDs — add new promo sets here as they release
+const SV_PROMO_SETS = ["svp", "mep"];
+
+// Pass 1.5: SV-era full-art promos, best rarity then highest number wins.
 export async function fetchTcgPromoSv(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  // One bulk fetch for the entire svp set
-  const allSvp = await fetchAllPages(`set.id:svp -subtypes:Tera`);
-  const index = buildNameIndex(allSvp);
+  const allCards = (await Promise.all(
+    SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
+  )).flat();
+  const index = buildNameIndex(allCards);
 
   const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);

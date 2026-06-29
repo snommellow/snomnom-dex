@@ -181,6 +181,12 @@ function swshSetNum(setId: string): number {
   return m ? parseInt(m[1]) : 0;
 }
 
+// Returns true for sets older than BW era (DP, Platinum, HGSS, EX series, Base, Neo, etc.)
+// BW introduced full-bleed artwork so bw+ sets look fine as card backgrounds.
+function isPreBwSet(setId: string): boolean {
+  return !/^(bw|xy|sm|swsh|sv)/i.test(setId);
+}
+
 function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
   // TG illustration cards get Trainer Gallery Rare Holo score (beats Rare Ultra/V)
@@ -353,7 +359,7 @@ export async function fetchTcgVgx(
   const entries = pokemon.map(({ id }, i) => {
     const winner = pickBestCardWithChain(candidatesList[i], chainSetsMap.get(id));
     if (!winner) return null;
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: winner._rarity === "Rare Holo EX" }] as const;
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: winner._rarity === "Rare Holo EX" && isPreBwSet(winner.set.id) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
@@ -475,6 +481,8 @@ const FALLBACK_RARITIES = [
   "Rare Holo EX",
   "Rare Holo GX",
   "Rare Holo",
+  "Rare Secret",
+  "Rare Ultra",
 ] as const;
 
 // Final fallback: find the rarest available card for Pokémon with no special art.

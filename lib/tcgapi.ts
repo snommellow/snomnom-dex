@@ -456,17 +456,15 @@ export async function fetchFormCard(
 }
 
 // Final fallback: fetch any available TCG card for Pokémon with no special art.
-// Uses bulk rarity indexes (same pattern as other passes) to avoid per-Pokémon API calls.
+// Uses bulk Rare Holo index to avoid per-Pokémon API calls.
 export async function fetchTcgFallbackArt(
   pokemon: { id: number; name: string }[],
 ): Promise<Map<number, string>> {
   if (!pokemon.length) return new Map();
-  const rarities = ["Rare Holo", "Rare"];
-  const [holoIndex, rareIndex] = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
+  const holoIndex = await fetchRarityIndex("Rare Holo");
   const entries = pokemon.map(({ id, name }) => {
     const displayName = toDisplayName(name);
-    const holos = lookupCandidates(holoIndex, displayName, "Rare Holo");
-    const pool = holos.length ? holos : lookupCandidates(rareIndex, displayName, "Rare");
+    const pool = lookupCandidates(holoIndex, displayName, "Rare Holo");
     if (!pool.length) return null;
     const best = pool.reduce((a, b) => b.set.id > a.set.id ? b : a);
     return [id, cardImageUrl(best)] as const;

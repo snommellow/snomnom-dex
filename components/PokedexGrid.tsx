@@ -29,75 +29,58 @@ export default async function PokedexGrid() {
     }
   });
 
-  // Pass 1: IR/SIR — best quality full-art illustration cards, chain-set preferred.
-  // If all chain members share a common IR set, that set is preferred for all.
-  // Otherwise each Pokémon gets its individual best IR card.
-  const irMap = await fetchTcgIrSir(raw, chainsByDex);
+  // Phase A: run all bulk TCG passes + alt form data in parallel.
+  // All bulk passes fetch full rarity indexes regardless of Pokémon list size,
+  // so parallelizing them costs no extra API calls.
+  const [irMap, promoSvMap, trainerIrMap, vgxMap, fallbackArtMap, altFormsData] = await Promise.all([
+    fetchTcgIrSir(raw, chainsByDex),
+    fetchTcgPromoSv(raw),
+    fetchTcgTrainerOwnedIrSir(raw),
+    fetchTcgVgx(raw, chainsByDex),
+    fetchTcgFallbackArt(raw),
+    Promise.all(
+      raw.map((p, i) =>
+        fetchAltForms(p.name, speciesData[i].altFormSlots).then((forms) => {
+          const filtered = forms.filter((f) => f.category !== "mega" || f.artworkUrl !== null);
+          const tcgOnly = TCG_ONLY_MEGAS[p.id];
+          if (tcgOnly && !filtered.some((f) => f.category === "mega")) {
+            filtered.push({
+              slug: `${p.name}-mega`,
+              displayName: tcgOnly.displayName,
+              types: tcgOnly.types,
+              artworkUrl: null,
+              category: "mega",
+              tcgUrl: null,
+            } satisfies AltForm);
+          }
+          return filtered;
+        })
+      )
+    ),
+  ]);
 
-  // Pass 1.5: SV-era full-art promos (svp set, highest localId = best quality)
-  const afterIr = raw.filter((p) => !irMap.has(p.id));
-  const promoSvMap = await fetchTcgPromoSv(afterIr);
-
-  // Pass 2: TCG Pocket star cards, chain-set preferred (newest pack first as tiebreaker)
-  const afterPromoSv = afterIr.filter((p) => !promoSvMap.has(p.id));
-  const pocketResultsList = afterPromoSv.length
-    ? await fetchPocketImages(afterPromoSv.map((p) => ({ id: p.id, name: p.name })))
+  // Phase B: Pocket images — per-Pokémon calls, so filter to only those without a card yet.
+  const needsPocket = raw.filter((p) => !irMap.has(p.id) && !promoSvMap.has(p.id));
+  const pocketResultsList = needsPocket.length
+    ? await fetchPocketImages(needsPocket.map((p) => ({ id: p.id, name: p.name })))
     : [];
   const pocketMap = new Map<number, string>();
-  afterPromoSv.forEach((p, j) => {
+  needsPocket.forEach((p, j) => {
     if (pocketResultsList[j]?.url) pocketMap.set(p.id, pocketResultsList[j].url!);
   });
 
-  // Pass 2.5: trainer-owned IR/SIR (e.g. "Erika's Clefable")
-  const afterPocket = afterPromoSv.filter((p) => !pocketMap.has(p.id));
-  const trainerIrMap = await fetchTcgTrainerOwnedIrSir(afterPocket);
-
-  // Pass 3: V/GX/EX — for Pokémon still missing after all earlier passes, chain-set preferred
-  const afterTrainerIr = afterPocket.filter((p) => !trainerIrMap.has(p.id));
-  const vgxMap = await fetchTcgVgx(afterTrainerIr, chainsByDex);
-
-  // Pass 4: Regular TCG card art fallback — artwork-only crop shown in UI for Pokémon still without any card
-  const afterVgx = afterTrainerIr.filter((p) => !vgxMap.has(p.id));
-  const fallbackArtMap = await fetchTcgFallbackArt(afterVgx);
-
-  // Fetch alt form Pokémon data.
-  // Phantom megas in PokéAPI (e.g. Clefable) have no official artwork — filter those out.
-  // Inject TCG_ONLY_MEGAS for Pokémon whose mega exists in the TCG but not yet in PokéAPI.
-  const altFormsData = await Promise.all(
-    raw.map((p, i) =>
-      fetchAltForms(p.name, speciesData[i].altFormSlots).then((forms) => {
-        const filtered = forms.filter((f) => f.category !== "mega" || f.artworkUrl !== null);
-        const tcgOnly = TCG_ONLY_MEGAS[p.id];
-        if (tcgOnly && !filtered.some((f) => f.category === "mega")) {
-          filtered.push({
-            slug: `${p.name}-mega`,
-            displayName: tcgOnly.displayName,
-            types: tcgOnly.types,
-            artworkUrl: null,
-            category: "mega",
-            tcgUrl: null,
-          } satisfies AltForm);
-        }
-        return filtered;
-      })
-    )
-  );
-
-  // Fetch TCG cards for each alt form — same priority as main cards:
-  // Pass A: SIR/IR → Pass B: Pocket star cards → Pass C: TG (regional) + VGX → artwork
+  // Fetch TCG cards for each alt form — run all three passes in parallel per form, then pick by priority.
   const altFormsWithCards = await Promise.all(
     altFormsData.map((forms, i) =>
       Promise.all(
         forms.map(async (form) => {
-          // Pass A: SIR / IR
-          const irUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES);
-          if (irUrl) return { ...form, tcgUrl: irUrl };
-          // Pass B: Pocket star cards (★★★ > ★★ rainbow > ★)
-          const pocket = await fetchPocketAltForm(form.displayName, form.category);
-          if (pocket.url) return { ...form, tcgUrl: pocket.url };
-          // Pass C: TG (regional) + older TCG full-art (Hyper rare / Ultra Rare / Holo V)
-          const vgxUrl = await fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES);
-          return { ...form, tcgUrl: vgxUrl ?? null };
+          const [irUrl, pocket, vgxUrl] = await Promise.all([
+            fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
+            fetchPocketAltForm(form.displayName, form.category),
+            fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
+          ]);
+          const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+          return { ...form, tcgUrl };
         })
       )
     )

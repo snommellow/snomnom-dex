@@ -90,10 +90,7 @@ export default async function PokedexGrid() {
     const pocketUrl = pocketMap.get(p.id);
     // Pocket beats trainerIr and VGX — only use those if no pocket card
     const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
-    if (p.id === 76 || p.id === 89) {
-      console.log(`[DEBUG] #${p.id} ${p.name}:`, { ir: irMap.get(p.id)?.tcgUrl ?? null, promo: promoSvMap.get(p.id)?.tcgUrl ?? null, pocket: pocketUrl ?? null, trainerIr: trainerIrMap.get(p.id)?.tcgUrl ?? null, vgx: vgxMap.get(p.id) ?? null, fallback: fallbackArtMap.get(p.id) ?? null, tcgResult });
-    }
-    return toPokemonSummary(
+return toPokemonSummary(
       p,
       tcgResult,
       pocketUrl ? [pocketUrl] : [],

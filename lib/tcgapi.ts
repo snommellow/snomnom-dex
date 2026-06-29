@@ -401,12 +401,7 @@ export async function fetchFormCard(
     }
     const candidates = allCards
       .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
-      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Ultra Rare" : c.rarity }));
-    if (displayName === "Galarian Rapidash") {
-      console.log("[regional]", displayName, "allCards", allCards.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
-      console.log("[regional]", displayName, "candidates", candidates.map(c => `${c.set.id}/${c.number}(${c._rarity})`));
-      console.log("[regional]", displayName, "winner", pickBest(candidates));
-    }
+      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
     return pickBest(candidates);
   }
 

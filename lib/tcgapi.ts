@@ -178,12 +178,12 @@ function lookupCandidates(
 
 function pickBest(cards: RankedCard[]): string | null {
   if (!cards.length) return null;
+  // TG illustration cards get Trainer Gallery Rare Holo score (beats Rare Ultra/V)
+  const effectiveScore = (c: RankedCard) =>
+    TG_RE.test(c.number) ? rarityScore("Trainer Gallery Rare Holo") : rarityScore(c._rarity);
   const winner = cards.reduce((a, b) => {
-    const ra = rarityScore(a._rarity), rb = rarityScore(b._rarity);
+    const ra = effectiveScore(a), rb = effectiveScore(b);
     if (ra !== rb) return ra < rb ? a : b;
-    // TG illustration cards beat same-rarity regular reprints regardless of set order
-    const aTg = TG_RE.test(a.number), bTg = TG_RE.test(b.number);
-    if (aTg !== bTg) return bTg ? b : a;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
     // Same rarity + same set: prefer higher number (alt arts are secret-rare numbered)
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;

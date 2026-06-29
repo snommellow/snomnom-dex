@@ -92,8 +92,6 @@ function rarityScore(rarity: string): number {
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
-  // Exclude SV-era basic "Pokémon ex" (lowercase space-ex) — those are distinct card identities
-  if (cn === q + " ex") return false;
   return cn === q || cn.startsWith(q + " ") || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
 }
 
@@ -258,7 +256,16 @@ export async function fetchTcgIrSir(
 
   const candidatesList = pokemon.map(({ name }) => {
     const displayName = toDisplayName(name);
-    return rarities.flatMap((r, i) => lookupCandidates(indexes[i], displayName, r));
+    const nameLower = displayName.toLowerCase();
+    return rarities.flatMap((r, i) => {
+      const candidates = lookupCandidates(indexes[i], displayName, r);
+      // For IR only (not SIR): exclude SV-era "Pokémon ex" cards — they're distinct identities.
+      // SIR of ex Pokémon (e.g. Mew ex SIR) are always desired and pass through.
+      if (r === "Illustration Rare") {
+        return candidates.filter(c => c.name.toLowerCase() !== nameLower + " ex");
+      }
+      return candidates;
+    });
   });
 
   const setsByDex = new Map(

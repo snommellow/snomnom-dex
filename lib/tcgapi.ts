@@ -275,6 +275,7 @@ export async function fetchTcgIrSir(
 
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    if (id === 143) process.stderr.write(`[snorlax ir] candidates=${JSON.stringify(candidatesList[i].map(c => `${c.id} ${c.name} ${c._rarity}`))} result=${url}\n`);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -302,6 +303,7 @@ export async function fetchTcgPromoSv(
     const best = svpCards.reduce((a, b) =>
       parseInt(b.number) > parseInt(a.number) ? b : a
     );
+    if (id === 143) process.stderr.write(`[snorlax svp] candidates=${JSON.stringify(svpCards.map(c => `${c.id} #${c.number}`))} best=${best.id}\n`);
     return [id, { tcgUrl: cardImageUrl(best) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

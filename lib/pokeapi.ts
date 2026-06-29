@@ -178,7 +178,7 @@ export async function fetchAltForms(
 
 export function toPokemonSummary(
   p: Pokemon,
-  tcgResult: { tcgUrl: string | null } = { tcgUrl: null },
+  tcgResult: { tcgUrl: string | null; isOldStyle?: boolean } = { tcgUrl: null },
   pocketUrls: string[] = [],
   genus: string | null = null,
   altForms: AltForm[] = [],

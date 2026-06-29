@@ -168,7 +168,7 @@ function lookupCandidates(
         (allowGimmick      || !MAIN_GIMMICK_RE.test(c.name))
       ) {
         if (skipRegionalFilter || !isRegionalKey) matched.push({ ...c, _rarity: rarity });
-        else if (allowRegionalFallback && /^alolan /i.test(c.name) && /(-GX|-EX| ex| V| VMAX| VSTAR)$/i.test(c.name)) regionalMatched.push({ ...c, _rarity: rarity });
+        else if (allowRegionalFallback && REGIONAL_RE.test(c.name) && /[- ](GX|EX|ex|V|VMAX|VSTAR)$/i.test(c.name)) regionalMatched.push({ ...c, _rarity: rarity });
       }
     }
   }

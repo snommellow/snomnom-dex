@@ -19,8 +19,8 @@ const RARITY_ORDER = [
   "Rare Secret",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
-  "Rare Ultra",
   "Rare Holo V",
+  "Rare Ultra",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
   "Rare Holo GX",
@@ -329,10 +329,6 @@ export async function fetchTcgVgx(
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
   const entries = pokemon.map(({ id }, i) => {
-    if (id === 139) {
-      console.log("[vgx omastar candidates]", candidatesList[i].map(c => `${c.set.id}/${c.number}(${c._rarity})`));
-      console.log("[vgx omastar winner]", pickBestWithChain(candidatesList[i], chainSetsMap.get(id)));
-    }
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
     return url ? [id, { tcgUrl: url }] as const : null;
   });

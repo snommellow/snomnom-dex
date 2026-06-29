@@ -356,11 +356,17 @@ export async function fetchTcgVgx(
   );
   const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
 
+  const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
+  const isOldStyleCard = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id);
+
   const entries = pokemon.map(({ id }, i) => {
-    const winner = pickBestCardWithChain(candidatesList[i], chainSetsMap.get(id));
+    const all = candidatesList[i];
+    const chainSets = chainSetsMap.get(id);
+    // Prefer modern full-art cards over old-style — only fall back to old-style if no modern card found
+    const modern = all.filter(c => !isOldStyleCard(c));
+    const winner = pickBestCardWithChain(modern.length ? modern : all, chainSets);
     if (!winner) return null;
-    const oldStyleRarities = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: oldStyleRarities.has(winner._rarity) && isPreBwSet(winner.set.id) }] as const;
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }

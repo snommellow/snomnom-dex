@@ -399,20 +399,9 @@ export async function fetchFormCard(
   if (category === "gmax") {
     const baseName = displayName.replace(/^Gigantamax /, "").trim();
     const vmaxName = `${baseName} VMAX`;
-    // Specific alt-art cards that are Rare Rainbow but should be used (set-number format)
-    const GMAX_ALT_ART: Record<string, string> = {
-      "Gengar VMAX": "swsh8-271",
-    };
-    const altArt = GMAX_ALT_ART[vmaxName];
-    if (altArt) {
-      const [setId, num] = altArt.split("-");
-      const cards = await fetchAllPages(`name:"${baseName}" subtypes:VMAX`);
-      const match = cards.find(c => c.set.id === setId && c.number === num && c.images?.large);
-      if (match) return cardImageUrl(match);
-    }
     const cards = await fetchAllPages(`name:"${baseName}" subtypes:VMAX`);
     const candidates = cards
-      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare" && c.rarity !== "Rare Rainbow" && !(c.rarity === "Rare Secret" && /tg$/i.test(c.set.id)))
+      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare" && !(c.rarity === "Rare Rainbow" && (SWSH_EARLY_SETS.has(c.set.id) || c.set.id === "swsh45sv")) && !(c.rarity === "Rare Secret" && /tg$/i.test(c.set.id)))
       .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
     // Set tier: TG sets (0) > post-swsh45 numbered (1) > promos (2) > early sets (3)

@@ -390,8 +390,8 @@ export async function fetchFormCard(
       return cardImageUrl(best);
     }
     const candidates = allCards
-      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
-      .map(c => ({ ...c, _rarity: c.rarity }));
+      .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName))
+      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
     return pickBest(candidates);
   }
 

@@ -397,12 +397,15 @@ export async function fetchFormCard(
     const vmaxName = `${baseName} VMAX`;
     const cards = await fetchAllPages(`name:"${vmaxName}"`);
     const candidates = cards
-      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Rare Rainbow" && c.rarity !== "Hyper Rare")
-      .map(c => ({ ...c, _rarity: "Rare Holo VMAX" }));
+      .filter(c => c.images?.large && nameMatches(c.name, vmaxName) && !c.number.startsWith("SV") && c.set.id !== "swsh45sv" && c.rarity !== "Hyper Rare")
+      .map(c => ({ ...c, _rarity: c.rarity ?? "Rare Holo VMAX" }));
     if (!candidates.length) return null;
     console.log("[gmax]", vmaxName, candidates.map(c => `${c.set.id}/${c.number}(${c.rarity})`));
-    // Pick by newest set first, then highest card number (alt arts > base)
+    // Prefer Rare Secret (alt arts) > regular VMAX > Rare Rainbow; then newest set, then highest number
+    const gmaxRarityScore = (r: string) => r === "Rare Secret" ? 0 : r === "Rare Rainbow" ? 2 : 1;
     const winner = candidates.reduce((a, b) => {
+      const ra = gmaxRarityScore(a.rarity), rb = gmaxRarityScore(b.rarity);
+      if (ra !== rb) return ra < rb ? a : b;
       if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
       return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
     });

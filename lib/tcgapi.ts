@@ -275,6 +275,7 @@ export async function fetchTcgIrSir(
 
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
+    if (id === 93) process.stderr.write(`[haunter ir] candidates=${JSON.stringify(candidatesList[i].map(c => `${c.id} ${c._rarity}`))} result=${url}\n`);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
@@ -302,12 +303,14 @@ export async function fetchTcgPromoSv(
       !REGIONAL_RE.test(c.name) &&
       !TRAINER_OWNED_RE.test(c.name)
     );
+    if (id === 93) process.stderr.write(`[haunter promo] candidates=${JSON.stringify(svpCards.map(c => `${c.id} #${c.number} rarity=${c.rarity}`))}\n`);
     if (!svpCards.length) return null;
     const best = svpCards.reduce((a, b) => {
       const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
       if (ra !== rb) return ra < rb ? a : b;
       return parseInt(b.number) > parseInt(a.number) ? b : a;
     });
+    if (id === 93) process.stderr.write(`[haunter promo] best=${best.id}\n`);
     return [id, { tcgUrl: cardImageUrl(best) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

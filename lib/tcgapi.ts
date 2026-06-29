@@ -66,7 +66,7 @@ interface PtcgCard {
 
 interface RankedCard extends PtcgCard { _rarity: string }
 
-export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean }
+export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean; isAlolan?: boolean }
 
 const NAME_OVERRIDES: Record<string, string> = {
   "nidoran-f": "Nidoran ♀",
@@ -370,7 +370,8 @@ export async function fetchTcgVgx(
       ? pickBestCard(modern)
       : pickBestCardWithChain(all, chainSets);
     if (!winner) return null;
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
+    const isAlolan = /^alolan /i.test(winner.name);
+    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner), isAlolan }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }

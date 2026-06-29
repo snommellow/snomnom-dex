@@ -88,8 +88,15 @@ export default async function PokedexGrid() {
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
+    const vgxResult = vgxMap.get(p.id);
+    // Alolan VGX cards (e.g. Alolan Golem-GX for Golem) beat regular IR — more iconic art
     // Pocket beats trainerIr and VGX — only use those if no pocket card
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
+    const tcgResult = (vgxResult?.isAlolan ? vgxResult : null)
+      ?? irMap.get(p.id)
+      ?? promoSvMap.get(p.id)
+      ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
+      ?? (!pocketUrl ? (vgxResult?.isAlolan ? undefined : vgxResult) : undefined)
+      ?? { tcgUrl: null };
     return toPokemonSummary(
       p,
       tcgResult,

@@ -282,7 +282,7 @@ export async function fetchTcgIrSir(
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release
-const SV_PROMO_SETS = ["svp", "mep"];
+const SV_PROMO_SETS = ["svp", "svpin", "mep", "mepin"];
 
 // Pass 1.5: SV-era full-art promos, best rarity then highest number wins.
 export async function fetchTcgPromoSv(

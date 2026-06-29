@@ -215,7 +215,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             ) : pokemon.artworkUrl ? (
               <div className="absolute bottom-1 right-1 w-10 h-10">
                 <Image
-                  src={pokemon.artworkUrl}
+                  src={HOME_SPRITE(parseInt(pokemon.artworkUrl.match(/\/(\d+)\.png$/)?.[1] ?? "0"))}
                   alt={pokemon.name}
                   fill
                   sizes="64px"

@@ -281,16 +281,18 @@ export async function fetchTcgIrSir(
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release
-const SV_PROMO_SETS = ["svp", "mep"];
+const SV_PROMO_SETS = ["svp", "mep", "mepen"];
 
 // Pass 1.5: SV-era full-art promos, best rarity then highest number wins.
 export async function fetchTcgPromoSv(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  const allCards = (await Promise.all(
+  const perSetCards = await Promise.all(
     SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
-  )).flat();
+  );
+  perSetCards.forEach((cards, i) => { if (cards.length > 0) process.stderr.write(`[promo fetch] set=${SV_PROMO_SETS[i]} count=${cards.length}\n`); });
+  const allCards = perSetCards.flat();
   const index = buildNameIndex(allCards);
 
   const entries = pokemon.map(({ id, name }) => {

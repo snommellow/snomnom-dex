@@ -519,6 +519,23 @@ const LAST_RESORT_RARITY: Record<string, number> = {
 
 // Pass 5: per-Pokémon name fetch for Pokémon with no card from any other pass.
 // Picks the highest-rarity card available (any rarity), then newest set as tiebreaker.
+// Last-resort lookup for alt forms by display name (already human-readable, no slug conversion needed).
+export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
+  const cards = await fetchAllPages(`name:"${displayName}"`);
+  const candidates = cards.filter(c =>
+    c.images?.large && nameMatches(c.name, displayName)
+  );
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) => {
+    const ra = LAST_RESORT_RARITY[a.rarity] ?? 4;
+    const rb = LAST_RESORT_RARITY[b.rarity] ?? 4;
+    if (ra !== rb) return ra < rb ? a : b;
+    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
+  });
+  return cardImageUrl(best);
+}
+
 export async function fetchTcgLastResort(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {

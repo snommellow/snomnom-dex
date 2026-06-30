@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormCardLastResort, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -93,7 +93,9 @@ export default async function PokedexGrid() {
               fetchPocketAltForm(form.displayName, form.category),
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
             ]);
-            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl
+              ?? (form.category !== "other" ? await fetchFormCardLastResort(form.displayName) : null)
+              ?? null;
             return { ...form, tcgUrl };
           })
         )

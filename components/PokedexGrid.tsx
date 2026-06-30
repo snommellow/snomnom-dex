@@ -104,14 +104,15 @@ export default async function PokedexGrid() {
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
     // Pocket beats trainerIr and VGX — only use those if no pocket card
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? lastResortMap.get(p.id) ?? { tcgUrl: null };
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
+    const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
     return toPokemonSummary(
       p,
       tcgResult,
       pocketUrl ? [pocketUrl] : [],
       speciesData[i].genus,
       altFormsWithCards[i],
-      fallbackArtMap.get(p.id),
+      fallbackCrop,
     );
   });
 

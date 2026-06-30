@@ -93,10 +93,11 @@ export default async function PokedexGrid() {
               fetchPocketAltForm(form.displayName, form.category),
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
             ]);
-            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl
-              ?? (form.category !== "other" ? await fetchFormCardLastResort(form.displayName) : null)
-              ?? null;
-            return { ...form, tcgUrl };
+            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            const regularCardUrl = !tcgUrl && form.category !== "other"
+              ? await fetchFormCardLastResort(form.displayName)
+              : null;
+            return { ...form, tcgUrl, regularCardUrl };
           })
         )
       )

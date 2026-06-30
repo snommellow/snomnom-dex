@@ -33,6 +33,7 @@ export interface AltForm {
   artworkUrl: string | null;
   category: FormCategory;
   tcgUrl: string | null;
+  regularCardUrl?: string | null;
 }
 
 export async function fetchPokemonList(

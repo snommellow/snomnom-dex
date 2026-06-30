@@ -315,6 +315,7 @@ export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: nu
     artworkUrl: form.artworkUrl,
     genus: genus ?? null,
     bgCandidates: [form.tcgUrl, form.artworkUrl].filter((u): u is string => !!u),
+    regularCardUrl: form.regularCardUrl ?? undefined,
     altForms: [],
   };
   return <PokemonCard pokemon={summary} formCategory={form.category} formLabel={formLabel} />;

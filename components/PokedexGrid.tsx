@@ -78,7 +78,7 @@ export default async function PokedexGrid() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !vgxMap.has(p.id);
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
   // Fetch TCG cards for each alt form — run all three passes in parallel per form, then pick by priority.

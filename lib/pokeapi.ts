@@ -34,6 +34,7 @@ export interface AltForm {
   category: FormCategory;
   tcgUrl: string | null;
   regularCardUrl?: string | null;
+  formSpriteUrl?: string | null;
 }
 
 export async function fetchPokemonList(
@@ -167,6 +168,7 @@ export async function fetchAltForms(
           displayName,
           types: (p.types as PokemonType[]).map(t => t.type.name),
           artworkUrl: p.sprites?.other?.["official-artwork"]?.front_default ?? null,
+          formSpriteUrl: p.sprites?.other?.["official-artwork"]?.front_default ?? p.sprites?.front_default ?? null,
           category,
           tcgUrl: null,
         } as AltForm;

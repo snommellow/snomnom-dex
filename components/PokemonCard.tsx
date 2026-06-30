@@ -314,7 +314,7 @@ export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: nu
     spriteUrl: null,
     artworkUrl: form.artworkUrl,
     genus: genus ?? null,
-    bgCandidates: [form.tcgUrl, form.artworkUrl].filter((u): u is string => !!u),
+    bgCandidates: [form.tcgUrl, form.artworkUrl ?? form.formSpriteUrl].filter((u): u is string => !!u),
     regularCardUrl: form.regularCardUrl ?? undefined,
     altForms: [],
   };

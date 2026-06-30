@@ -275,25 +275,22 @@ export async function fetchTcgIrSir(
 
   const entries = pokemon.map(({ id }, i) => {
     const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
-    if (id === 93) process.stderr.write(`[haunter ir] candidates=${JSON.stringify(candidatesList[i].map(c => `${c.id} ${c._rarity}`))} result=${url}\n`);
     return url ? [id, { tcgUrl: url }] as const : null;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release
-const SV_PROMO_SETS = ["svp", "svpin", "mep", "mepin"];
+const SV_PROMO_SETS = ["svp", "mep"];
 
 // Pass 1.5: SV-era full-art promos, best rarity then highest number wins.
 export async function fetchTcgPromoSv(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
-  const perSetCards = await Promise.all(
+  const allCards = (await Promise.all(
     SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
-  );
-  perSetCards.forEach((cards, i) => process.stderr.write(`[promo fetch] set=${SV_PROMO_SETS[i]} count=${cards.length} sample=${JSON.stringify(cards.slice(0,2).map(c => c.id))}\n`));
-  const allCards = perSetCards.flat();
+  )).flat();
   const index = buildNameIndex(allCards);
 
   const entries = pokemon.map(({ id, name }) => {
@@ -305,14 +302,12 @@ export async function fetchTcgPromoSv(
       !REGIONAL_RE.test(c.name) &&
       !TRAINER_OWNED_RE.test(c.name)
     );
-    if (id === 93) process.stderr.write(`[haunter promo] candidates=${JSON.stringify(svpCards.map(c => `${c.id} #${c.number} rarity=${c.rarity}`))}\n`);
     if (!svpCards.length) return null;
     const best = svpCards.reduce((a, b) => {
       const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
       if (ra !== rb) return ra < rb ? a : b;
       return parseInt(b.number) > parseInt(a.number) ? b : a;
     });
-    if (id === 93) process.stderr.write(`[haunter promo] best=${best.id}\n`);
     return [id, { tcgUrl: cardImageUrl(best) }] as const;
   });
   return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));

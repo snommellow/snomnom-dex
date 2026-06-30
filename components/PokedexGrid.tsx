@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchTcgFallbackArt, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -73,27 +73,38 @@ export default async function PokedexGrid() {
     }
   });
 
+  // Phase C: last-resort pass for Pokémon with no background card from any prior pass.
+  // Run in parallel with alt form fetches.
+  const noCardPokemon = raw.filter((p) => {
+    const pocketUrl = pocketMap.get(p.id);
+    return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id);
+  });
+
   // Fetch TCG cards for each alt form — run all three passes in parallel per form, then pick by priority.
-  const altFormsWithCards = await Promise.all(
-    altFormsData.map((forms, i) =>
-      Promise.all(
-        forms.map(async (form) => {
-          const [irUrl, pocket, vgxUrl] = await Promise.all([
-            fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
-            fetchPocketAltForm(form.displayName, form.category),
-            fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
-          ]);
-          const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
-          return { ...form, tcgUrl };
-        })
+  const [lastResortMap, altFormsWithCards] = await Promise.all([
+    fetchTcgLastResort(noCardPokemon),
+    Promise.all(
+      altFormsData.map((forms, i) =>
+        Promise.all(
+          forms.map(async (form) => {
+            const [irUrl, pocket, vgxUrl] = await Promise.all([
+              fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
+              fetchPocketAltForm(form.displayName, form.category),
+              fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
+            ]);
+            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            return { ...form, tcgUrl };
+          })
+        )
       )
-    )
-  );
+    ),
+  ]);
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
     // Pocket beats trainerIr and VGX — only use those if no pocket card
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? lastResortMap.get(p.id) ?? { tcgUrl: null };
     return toPokemonSummary(
       p,
       tcgResult,

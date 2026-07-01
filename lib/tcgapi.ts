@@ -500,7 +500,7 @@ const LAST_RESORT_RARITY: Record<string, number> = {
 export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
   const cards = await fetchAllPages(`name:"${displayName}"`);
   const candidates = cards.filter(c =>
-    c.images?.large && nameMatches(c.name, displayName)
+    c.images?.large && nameMatches(c.name, displayName) && !/p$/i.test(c.set.id)
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {

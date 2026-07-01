@@ -147,12 +147,22 @@ export async function fetchPocketAltForm(
   const nameLower = displayName.toLowerCase();
   // Pocket mega cards use "Mega Name ex" naming (e.g. "Mega Gyarados ex"), so accept
   // exact name match OR exact name + " ex" suffix.
+  const baseNameLower = isXYForm ? baseDisplayName.toLowerCase() : nameLower;
   const matchesName = (cardName: string) => {
     const cn = cardName.toLowerCase();
-    return cn === nameLower || cn === nameLower + " ex";
+    return cn === nameLower || cn === nameLower + " ex"
+      || (isXYForm && (cn === baseNameLower || cn === baseNameLower + " ex"));
   };
-  // For mega forms, the Pocket card name is "Mega Name ex" — query both forms to ensure we find it
-  const queryNames = category === "mega" ? [displayName, `${displayName} ex`] : [displayName];
+  // For mega forms, the Pocket card name is "Mega Name ex" — query both forms to ensure we find it.
+  // For X/Y forms also try the base name without suffix (e.g. "Mega Mewtwo ex") in case
+  // TCGdex omits the X/Y variant from the card name.
+  const isXYForm = category === "mega" && (displayName.endsWith(" X") || displayName.endsWith(" Y"));
+  const baseDisplayName = isXYForm ? displayName.replace(/ [XY]$/, "") : displayName;
+  const queryNames = category === "mega"
+    ? isXYForm
+      ? [displayName, `${displayName} ex`, baseDisplayName, `${baseDisplayName} ex`]
+      : [displayName, `${displayName} ex`]
+    : [displayName];
   const allResults = await Promise.all(
     queryNames.flatMap(qName => STAR_RARITIES.map(r => fetchStarCards(qName, r)))
   );

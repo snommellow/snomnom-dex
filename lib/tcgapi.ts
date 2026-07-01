@@ -37,7 +37,8 @@ export const VGX_RARITIES = new Set([
   "Rare Holo V",
   "Rare Holo VSTAR",
   "Rare Holo VMAX",
-  "Rare Holo GX",
+  // "Rare Holo GX" omitted — standard bordered card, looks bad as a full background.
+  // GX holos fall through to regularCardUrl (crop treatment) via fetchFormCardLastResort.
   "Rare Holo EX",
 ]);
 

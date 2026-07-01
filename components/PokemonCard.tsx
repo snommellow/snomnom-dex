@@ -110,7 +110,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : bgUrl} alt="" aria-hidden style={{
               position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
-              objectFit: "cover", objectPosition: "top center",
+              objectFit: "cover", objectPosition: "center",
               opacity: 0.55, filter: "blur(25px)",
             }} />
           </div>
@@ -147,7 +147,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 aria-hidden
                 fill
                 sizes="300px"
-                className="object-cover object-top"
+                className="object-cover object-center"
                 style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
                 loading="eager"
                 onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}

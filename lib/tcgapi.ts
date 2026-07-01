@@ -291,7 +291,9 @@ export function trainerIrPick(data: IrSirData, displayName: string): string | nu
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release
-const SV_PROMO_SETS = ["svp", "mep", "mepen"];
+// mep/mepen excluded: those sets contain standard bordered cards for common Pokémon
+// (no blacklist like SVP_BLACKLIST exists for them, causing non-full-art backgrounds)
+const SV_PROMO_SETS = ["svp"];
 
 export async function buildPromoSvData(): Promise<PromoSvData> {
   const perSetCards = await Promise.all(

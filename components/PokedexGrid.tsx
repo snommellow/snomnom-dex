@@ -94,6 +94,7 @@ export default async function PokedexGrid() {
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
             ]);
             const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            if (form.displayName === "Mega Blastoise") console.log(`[grid debug] Mega Blastoise irUrl=${irUrl} pocket=${pocket.url} vgxUrl=${vgxUrl} tcgUrl=${tcgUrl}`);
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? await fetchFormCardLastResort(form.displayName)
               : null;

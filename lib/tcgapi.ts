@@ -49,9 +49,7 @@ const TRAINER_OWNED_RE = /['']\s*s\s+/i;
 const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
 // SVP promos that are non-full-art stamp reprints — excluded from promo pass
-// 102 = Oddish — card exists in pokemontcg.io API with images.large but the CDN image is missing,
-// causing it to land in promoSvMap and override the reliable sv3pt5 fallback with a broken URL.
-const SVP_BLACKLIST = new Set(["11", "24", "102", "122", "167", "168", "169"]);
+const SVP_BLACKLIST = new Set(["11", "24", "122", "167", "168", "169"]);
 
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
@@ -297,12 +295,25 @@ export function trainerIrPick(data: IrSirData, displayName: string): string | nu
 // (no blacklist like SVP_BLACKLIST exists for them, causing non-full-art backgrounds)
 const SV_PROMO_SETS = ["svp"];
 
+async function imageExists(url: string): Promise<boolean> {
+  try {
+    const res = await fetch(url, { method: "HEAD", next: { revalidate: 86400 } });
+    return res.ok;
+  } catch { return false; }
+}
+
 export async function buildPromoSvData(): Promise<PromoSvData> {
   const perSetCards = await Promise.all(
     SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
   );
   perSetCards.forEach((cards, i) => { if (cards.length > 0) process.stderr.write(`[promo fetch] set=${SV_PROMO_SETS[i]} count=${cards.length}\n`); });
-  return { index: buildNameIndex(perSetCards.flat()) };
+  const allCards = perSetCards.flat();
+  // Verify image URLs — some cards in the pokemontcg.io API have images.large set but the CDN
+  // file is missing. Filter those out so they don't block the last-resort fallback path.
+  const verified = await Promise.all(
+    allCards.map(async c => c.images?.large ? (await imageExists(c.images.large) ? c : null) : c)
+  );
+  return { index: buildNameIndex(verified.filter((c): c is PtcgCard => c !== null)) };
 }
 
 export function promoSvPick(data: PromoSvData, displayName: string): string | null {

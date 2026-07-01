@@ -500,6 +500,7 @@ export async function fetchFormCard(
       const candidates = cards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
         .map(c => ({ ...c, _rarity: c.rarity }));
+      console.log(`[mega debug] ${displayName} query="${queryName}" total=${cards.length} candidates=${candidates.length} rarities=${[...new Set(cards.map(c=>c.rarity))].join(',')}`);
       const url = pickBest(candidates);
       if (url) return url;
     }
@@ -511,6 +512,7 @@ export async function fetchFormCard(
       const subtypeCandidates = subtypeCards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && c.name.toLowerCase().includes(baseName.toLowerCase()))
         .map(c => ({ ...c, _rarity: c.rarity }));
+      console.log(`[mega debug] ${displayName} subtype fallback total=${subtypeCards.length} candidates=${subtypeCandidates.length} names=${subtypeCards.map(c=>c.name+'/'+c.rarity).join(',')}`);
       return pickBest(subtypeCandidates);
     }
     return null;

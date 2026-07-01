@@ -520,7 +520,7 @@ export async function fetchTcgLastResort(
       const displayName = toDisplayName(name);
       const cards = await fetchAllPages(`name:"${displayName}"`);
       const candidates = cards.filter(c =>
-        c.images?.large &&
+        (c.images?.large || c.images?.small) &&
         nameMatches(c.name, displayName) &&
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name)

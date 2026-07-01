@@ -12,7 +12,7 @@ import {
   IR_RARITIES, VGX_RARITIES,
 } from "@/lib/tcgapi";
 import { buildChainSets } from "@/lib/chains";
-import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
+import { fetchPocketImages, fetchPocketAltForm, fetchPocketFallback } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
 
@@ -142,8 +142,9 @@ export default async function PokedexGrid() {
 
   // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
   // per-name queries that the bulk indexes can't handle (e.g. "M Charizard-EX" ≠ "Mega Charizard X").
-  const [lastResortMap, altFormsWithCards] = await Promise.all([
+  const [lastResortTcgMap, pocketFallbackResults, altFormsWithCards] = await Promise.all([
     fetchTcgLastResort(noCardPokemon),
+    fetchPocketFallback(noCardPokemon),
     Promise.all(
       altFormsData.map((forms, i) =>
         Promise.all(
@@ -180,6 +181,14 @@ export default async function PokedexGrid() {
       )
     ),
   ]);
+
+  // Merge TCG last resort with Pocket fallback — TCG wins when both are available.
+  const lastResortMap = new Map(lastResortTcgMap);
+  noCardPokemon.forEach((p, i) => {
+    if (!lastResortMap.has(p.id) && pocketFallbackResults[i]?.url) {
+      lastResortMap.set(p.id, { tcgUrl: pocketFallbackResults[i].url! });
+    }
+  });
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);

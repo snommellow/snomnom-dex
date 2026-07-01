@@ -16,7 +16,7 @@ import {
   IR_RARITIES, VGX_RARITIES,
 } from "../lib/tcgapi";
 import { buildChainSets } from "../lib/chains";
-import { fetchPocketImages, fetchPocketAltForm } from "../lib/pocketapi";
+import { fetchPocketImages, fetchPocketAltForm, fetchPocketFallback } from "../lib/pocketapi";
 
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
@@ -124,8 +124,9 @@ async function main() {
   });
 
   console.log(`Fetching alt form cards + last-resort for ${noCardPokemon.length} Pokémon...`);
-  const [lastResortMap, altFormsWithCards] = await Promise.all([
+  const [lastResortTcgMap, pocketFallbackResults, altFormsWithCards] = await Promise.all([
     fetchTcgLastResort(noCardPokemon),
+    fetchPocketFallback(noCardPokemon),
     Promise.all(
       altFormsData.map((forms, i) =>
         Promise.all(
@@ -157,6 +158,13 @@ async function main() {
       )
     ),
   ]);
+
+  const lastResortMap = new Map(lastResortTcgMap);
+  noCardPokemon.forEach((p, i) => {
+    if (!lastResortMap.has(p.id) && pocketFallbackResults[i]?.url) {
+      lastResortMap.set(p.id, { tcgUrl: pocketFallbackResults[i].url! });
+    }
+  });
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);

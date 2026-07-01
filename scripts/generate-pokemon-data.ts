@@ -1,6 +1,10 @@
-import fs from "fs";
-import path from "path";
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "@/lib/pokeapi";
+#!/usr/bin/env tsx
+// Generates lib/pokemon-data.json — run with: npm run generate
+// Requires POKEMONTCG_API_KEY env var (optional but avoids rate limits).
+
+import { writeFileSync } from "fs";
+import { join } from "path";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "../lib/pokeapi";
 import {
   buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildPromoSvData, promoSvPick,
@@ -10,43 +14,27 @@ import {
   fetchFormCard, fetchFormCardLastResort, fetchCardById,
   fetchTcgLastResort, toDisplayName,
   IR_RARITIES, VGX_RARITIES,
-} from "@/lib/tcgapi";
-import { buildChainSets } from "@/lib/chains";
-import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
-import PokedexClient from "./PokedexClient";
+} from "../lib/tcgapi";
+import { buildChainSets } from "../lib/chains";
+import { fetchPocketImages, fetchPocketAltForm } from "../lib/pocketapi";
 
-
-// Pokémon with TCG mega cards that have no official game mega form in PokéAPI.
-// Keyed by dex ID → display name used for TCGdex lookup.
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
 
-// Hardcoded pokemontcg.io card IDs for alt forms where automated lookup can't distinguish variants.
-// Used when the API card name doesn't encode the X/Y variant (e.g. both M Mewtwo-EX cards are
-// named identically — only the card number distinguishes them).
 const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
-  // XY8 BREAKthrough: 63/162 = Psycho Cut (X form), 64/162 = Psychic Infinity (Y form)
   "Mega Mewtwo X": "xy8-63",
 };
 
-export default async function PokedexGrid() {
-  // Use pre-generated static data when available — run `npm run generate` to refresh.
-  const staticPath = path.join(process.cwd(), "lib/pokemon-data.json");
-  if (fs.existsSync(staticPath)) {
-    const pokemon = JSON.parse(fs.readFileSync(staticPath, "utf-8")) as PokemonSummary[];
-    return <PokedexClient pokemon={pokemon} />;
-  }
-
+async function main() {
+  console.log("Fetching Pokémon list...");
   const raw = await fetchFirst151();
 
-  // Start Pocket fetches immediately — they only need names, not chain/species data.
   const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name })));
 
-  // Species data: genus + alt form slots + evolution chain URL
+  console.log("Fetching species data...");
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
-  // Build dex ID → evolution chain members map
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
   const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
@@ -59,8 +47,7 @@ export default async function PokedexGrid() {
     }
   });
 
-  // Phase A: fetch all TCG indexes + alt form data in parallel.
-  // All four builders fetch full rarity indexes regardless of Pokémon list size.
+  console.log("Fetching TCG indexes + alt forms...");
   const [irData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
     buildIrSirData(),
     buildPromoSvData(),
@@ -88,7 +75,6 @@ export default async function PokedexGrid() {
     ),
   ]);
 
-  // Compute candidates + chain sets for IR and VGX passes (both need cross-Pokémon set coherence).
   const irCandidatesList = raw.map(p => irSirCandidates(irData, toDisplayName(p.name)));
   const irSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(irCandidatesList[i].map(c => c.set.id))]));
   const irChainSetsMap = buildChainSets(irSetsByDex, chainsByDex);
@@ -97,7 +83,6 @@ export default async function PokedexGrid() {
   const vgxSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(vgxCandidatesList[i].map(c => c.set.id))]));
   const vgxChainSetsMap = buildChainSets(vgxSetsByDex, chainsByDex);
 
-  // Build result maps for base Pokémon — all sync lookups using the shared indexes.
   const irMap = new Map(raw.flatMap((p, i) => {
     const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
@@ -123,8 +108,7 @@ export default async function PokedexGrid() {
     return url ? [[p.id, url]] : [];
   }));
 
-  // Phase B: Pocket images — resolve the promise started before Phase A.
-  // Filter to only Pokémon without an IR/SIR or promo card.
+  console.log("Fetching Pocket images...");
   const allPocketResults = await pocketPromise;
   const pocketMap = new Map<number, string>();
   raw.forEach((p, j) => {
@@ -133,15 +117,13 @@ export default async function PokedexGrid() {
     }
   });
 
-  // Phase C: last-resort pass for Pokémon with no background card from any prior pass.
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
       !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
-  // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
-  // per-name queries that the bulk indexes can't handle (e.g. "M Charizard-EX" ≠ "Mega Charizard X").
+  console.log(`Fetching alt form cards + last-resort for ${noCardPokemon.length} Pokémon...`);
   const [lastResortMap, altFormsWithCards] = await Promise.all([
     fetchTcgLastResort(noCardPokemon),
     Promise.all(
@@ -149,8 +131,6 @@ export default async function PokedexGrid() {
         Promise.all(
           forms.map(async (form) => {
             const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
-
-            // Sync lookups from shared indexes (free — data already in memory)
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
             const promoUrl = promoSvPick(promoData, form.displayName);
             const trainerIrUrl = trainerIrPick(irData, form.displayName);
@@ -158,8 +138,6 @@ export default async function PokedexGrid() {
             const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);
             const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
 
-            // Async: per-name queries needed for mega forms (bulk indexes key on card name, not form name)
-            // and Pocket lookup. Run in parallel.
             const [irFromFormCard, pocket, vgxFromFormCard, hardcodedUrl] = await Promise.all([
               !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
               fetchPocketAltForm(form.displayName, form.category),
@@ -169,7 +147,6 @@ export default async function PokedexGrid() {
 
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
             const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
-
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
@@ -183,19 +160,15 @@ export default async function PokedexGrid() {
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
-    // Pocket beats trainerIr and VGX — only use those if no pocket card
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
     const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
-    return toPokemonSummary(
-      p,
-      tcgResult,
-      pocketUrl ? [pocketUrl] : [],
-      speciesData[i].genus,
-      altFormsWithCards[i],
-      fallbackCrop,
-    );
+    return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 
-  return <PokedexClient pokemon={pokemon} />;
+  const outPath = join(import.meta.dirname, "../lib/pokemon-data.json");
+  writeFileSync(outPath, JSON.stringify(pokemon, null, 2));
+  console.log(`Written ${pokemon.length} Pokémon to lib/pokemon-data.json`);
 }
+
+main().catch((e) => { console.error(e); process.exit(1); });

@@ -114,8 +114,8 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
               style={{
                 position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
                 objectFit: "cover",
-                // For AT cards: anchor to 30% to show artwork region in the blur
-                objectPosition: !hasSpecialCard && pokemon.ancientTraitUrl && !pokemon.regularCardUrl ? "center 30%" : "center",
+                // For AT cards: anchor to 45% to show artwork region in the blur
+                objectPosition: !hasSpecialCard && pokemon.ancientTraitUrl && !pokemon.regularCardUrl ? "center 45%" : "center",
                 opacity: 0.55, filter: "blur(25px)",
               }}
             />
@@ -147,8 +147,10 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 }}
               />
             ) : !hasSpecialCard && pokemon.ancientTraitUrl ? (
-              /* Ancient Trait card: zoom ~2.2x and offset to show only artwork area (10-55% of card),
-                 skipping the card name bar at top and the Ancient Trait text band below artwork. */
+              /* Ancient Trait card: zoom 2.33x and offset so the visible window starts at ~22% of
+                 the card (past name bar + AT text band) and ends at ~64% (bottom of artwork).
+                 Math: translateY(-51%) shifts element up 0.51×h before scale, so at container top
+                 we see (0.51×h)/2.33 = 21.9% of original card height. */
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={pokemon.ancientTraitUrl}
@@ -157,7 +159,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 style={{
                   position: "absolute", top: 0, left: "50%",
                   width: "100%", height: "auto",
-                  transform: "translateX(-50%) scale(2.2) translateY(-10%)",
+                  transform: "translateX(-50%) scale(2.33) translateY(-51%)",
                   transformOrigin: "top center",
                   opacity: 0.7,
                 }}

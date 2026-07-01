@@ -180,7 +180,6 @@ export async function fetchPocketAltForm(
       ...exactCards.filter((c) => c.rarity !== "Two Star"),
       ...rainbowTwoStars,
     ];
-    console.log(`[pocket alt debug2] ${displayName} twoStars=${twoStars.length} bySet=${[...bySet.entries()].map(([s,g])=>s+':'+g.length).join(',')} rainbowTwoStars=${rainbowTwoStars.length} eligible=${eligible.length} urls=${eligible.map(c=>c.image).join(',')}`);
     if (!eligible.length) return { url: null };
     const best = eligible.reduce((a, b) => {
       const ra = RARITY_SCORE[a.rarity ?? ""] ?? 99;

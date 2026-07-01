@@ -505,8 +505,8 @@ export async function fetchFormCard(
     }
     // Final fallback: query by MEGA subtype — catches "M Name-EX" cards where
     // the hyphen in quoted name queries confuses the Lucene parser.
-    // Skip for X/Y forms — they need exact card matching to distinguish variants.
-    if (!isXY) {
+    // Skip for X/Y forms and IR pass (IR pass only wants SIR/IR which megas don't have).
+    if (!isXY && raritySet !== IR_RARITIES) {
       const subtypeCards = await fetchAllPages(`name:${baseName} subtypes:MEGA`);
       // Last resort: relax rarity/image filters — promo and old XY cards often lack images.large
       const subtypeCandidates = subtypeCards

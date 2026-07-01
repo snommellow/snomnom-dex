@@ -592,6 +592,20 @@ const FALLBACK_RARITIES = [
 ] as const;
 
 // Final fallback: find the rarest available card for Pokémon with no special art.
+// Fetch a single card by pokemontcg.io ID (e.g. "xy8-64") and return its image URL.
+export async function fetchCardById(cardId: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${PTCGIO_BASE}/cards/${encodeURIComponent(cardId)}`, {
+      headers: getHeaders(),
+      next: { revalidate: 86400 },
+    });
+    if (!res.ok) return null;
+    const json = await res.json() as { data?: PtcgCard };
+    if (!json.data?.images) return null;
+    return cardImageUrl(json.data);
+  } catch { return null; }
+}
+
 // Fetches all rarity indexes in parallel, then picks the highest-rarity card per Pokémon.
 export async function fetchTcgFallbackArt(
   pokemon: { id: number; name: string }[],

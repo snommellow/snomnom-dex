@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormCardLastResort, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormCardLastResort, fetchCardById, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -8,6 +8,14 @@ import PokedexClient from "./PokedexClient";
 // Keyed by dex ID → display name used for TCGdex lookup.
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
+};
+
+// Hardcoded pokemontcg.io card IDs for alt forms where automated lookup can't distinguish variants.
+// Used when the API card name doesn't encode the X/Y variant (e.g. both M Mewtwo-EX cards are
+// named identically — only the card number distinguishes them).
+const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
+  // XY8 BREAKthrough: 63/162 = Psycho Cut (X form), 64/162 = Psychic Infinity (Y form)
+  "Mega Mewtwo X": "xy8-63",
 };
 
 export default async function PokedexGrid() {
@@ -88,12 +96,14 @@ export default async function PokedexGrid() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const [irUrl, pocket, vgxUrl] = await Promise.all([
+            const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
+            const [irUrl, pocket, vgxUrl, hardcodedUrl] = await Promise.all([
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
               fetchPocketAltForm(form.displayName, form.category),
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
+              hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
             ]);
-            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? hardcodedUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? await fetchFormCardLastResort(form.displayName)
               : null;

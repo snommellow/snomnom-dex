@@ -1,5 +1,14 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormPromoSv, fetchFormTrainerIr, fetchFormFallbackArt, fetchFormCardLastResort, fetchCardById, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import {
+  buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
+  buildPromoSvData, promoSvPick,
+  buildVgxData, vgxCandidates, vgxPick,
+  buildFallbackArtData, fallbackArtPick,
+  fetchFormCard, fetchFormCardLastResort, fetchCardById,
+  fetchTcgLastResort, toDisplayName,
+  IR_RARITIES, VGX_RARITIES,
+} from "@/lib/tcgapi";
+import { buildChainSets } from "@/lib/chains";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -22,13 +31,12 @@ export default async function PokedexGrid() {
   const raw = await fetchFirst151();
 
   // Start Pocket fetches immediately — they only need names, not chain/species data.
-  // This lets Phase B run in parallel with species fetches + Phase A.
   const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name })));
 
-  // Species data: genus + alt form slots + evolution chain URL (single fetch per Pokémon)
+  // Species data: genus + alt form slots + evolution chain URL
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
-  // Fetch each unique evolution chain once, then build dex ID → chain members map
+  // Build dex ID → evolution chain members map
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
   const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
@@ -41,15 +49,13 @@ export default async function PokedexGrid() {
     }
   });
 
-  // Phase A: run all bulk TCG passes + alt form data in parallel.
-  // All bulk passes fetch full rarity indexes regardless of Pokémon list size,
-  // so parallelizing them costs no extra API calls.
-  const [irMap, promoSvMap, trainerIrMap, vgxMap, fallbackArtMap, altFormsData] = await Promise.all([
-    fetchTcgIrSir(raw, chainsByDex),
-    fetchTcgPromoSv(raw),
-    fetchTcgTrainerOwnedIrSir(raw),
-    fetchTcgVgx(raw, chainsByDex),
-    fetchTcgFallbackArt(raw),
+  // Phase A: fetch all TCG indexes + alt form data in parallel.
+  // All four builders fetch full rarity indexes regardless of Pokémon list size.
+  const [irData, promoData, vgxData, fallbackData, altFormsData] = await Promise.all([
+    buildIrSirData(),
+    buildPromoSvData(),
+    buildVgxData(),
+    buildFallbackArtData(),
     Promise.all(
       raw.map((p, i) =>
         fetchAltForms(p.name, speciesData[i].altFormSlots).then((forms) => {
@@ -71,6 +77,37 @@ export default async function PokedexGrid() {
     ),
   ]);
 
+  // Compute candidates + chain sets for IR and VGX passes (both need cross-Pokémon set coherence).
+  const irCandidatesList = raw.map(p => irSirCandidates(irData, toDisplayName(p.name)));
+  const irSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(irCandidatesList[i].map(c => c.set.id))]));
+  const irChainSetsMap = buildChainSets(irSetsByDex, chainsByDex);
+
+  const vgxCandidatesList = raw.map(p => vgxCandidates(vgxData, toDisplayName(p.name)));
+  const vgxSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(vgxCandidatesList[i].map(c => c.set.id))]));
+  const vgxChainSetsMap = buildChainSets(vgxSetsByDex, chainsByDex);
+
+  // Build result maps for base Pokémon — all sync lookups using the shared indexes.
+  const irMap = new Map(raw.flatMap((p, i) => {
+    const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
+    return r ? [[p.id, r]] : [];
+  }));
+  const promoSvMap = new Map(raw.flatMap(p => {
+    const url = promoSvPick(promoData, toDisplayName(p.name));
+    return url ? [[p.id, { tcgUrl: url }]] : [];
+  }));
+  const trainerIrMap = new Map(raw.flatMap(p => {
+    const url = trainerIrPick(irData, toDisplayName(p.name));
+    return url ? [[p.id, { tcgUrl: url }]] : [];
+  }));
+  const vgxMap = new Map(raw.flatMap((p, i) => {
+    const r = vgxPick(vgxCandidatesList[i], vgxChainSetsMap.get(p.id));
+    return r ? [[p.id, r]] : [];
+  }));
+  const fallbackArtMap = new Map(raw.flatMap(p => {
+    const url = fallbackArtPick(fallbackData, toDisplayName(p.name));
+    return url ? [[p.id, url]] : [];
+  }));
+
   // Phase B: Pocket images — resolve the promise started before Phase A.
   // Filter to only Pokémon without an IR/SIR or promo card.
   const allPocketResults = await pocketPromise;
@@ -82,14 +119,14 @@ export default async function PokedexGrid() {
   });
 
   // Phase C: last-resort pass for Pokémon with no background card from any prior pass.
-  // Run in parallel with alt form fetches.
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
       !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
-  // Fetch TCG cards for each alt form — run all three passes in parallel per form, then pick by priority.
+  // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
+  // per-name queries that the bulk indexes can't handle (e.g. "M Charizard-EX" ≠ "Mega Charizard X").
   const [lastResortMap, altFormsWithCards] = await Promise.all([
     fetchTcgLastResort(noCardPokemon),
     Promise.all(
@@ -97,18 +134,29 @@ export default async function PokedexGrid() {
         Promise.all(
           forms.map(async (form) => {
             const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
-            const [irUrl, promoUrl, pocket, trainerIrUrl, vgxUrl, hardcodedUrl, fallbackArtUrl] = await Promise.all([
-              fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
-              fetchFormPromoSv(form.displayName),
+
+            // Sync lookups from shared indexes (free — data already in memory)
+            const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
+            const promoUrl = promoSvPick(promoData, form.displayName);
+            const trainerIrUrl = trainerIrPick(irData, form.displayName);
+            const vgxFromIndex = vgxPick(vgxCandidates(vgxData, form.displayName));
+            const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
+
+            // Async: per-name queries needed for mega forms (bulk indexes key on card name, not form name)
+            // and Pocket lookup. Run in parallel.
+            const [irFromFormCard, pocket, vgxFromFormCard, hardcodedUrl] = await Promise.all([
+              !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
               fetchPocketAltForm(form.displayName, form.category),
-              fetchFormTrainerIr(form.displayName),
-              fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
+              !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
               hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
-              fetchFormFallbackArt(form.displayName),
             ]);
+
+            const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
+            const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
+
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (fallbackArtUrl ?? await fetchFormCardLastResort(form.displayName))
+              ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

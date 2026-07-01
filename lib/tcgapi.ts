@@ -64,7 +64,7 @@ interface PtcgCard {
   images: { small: string; large: string | null };
 }
 
-interface RankedCard extends PtcgCard { _rarity: string }
+export interface RankedCard extends PtcgCard { _rarity: string }
 
 export interface TcgImageResult { tcgUrl: string | null; isOldStyle?: boolean }
 
@@ -76,9 +76,15 @@ const NAME_OVERRIDES: Record<string, string> = {
   "ho-oh":     "Ho-Oh",
 };
 
-function toDisplayName(slug: string): string {
+export function toDisplayName(slug: string): string {
   return NAME_OVERRIDES[slug] ?? (slug.charAt(0).toUpperCase() + slug.slice(1));
 }
+
+// Opaque data types returned by index builders — passed to sync lookup functions.
+export interface IrSirData { rarities: string[]; indexes: Map<string, PtcgCard[]>[] }
+export interface PromoSvData { index: Map<string, PtcgCard[]> }
+export interface VgxData { rarities: string[]; indexes: Map<string, PtcgCard[]>[] }
+export interface FallbackArtData { rarities: readonly string[]; indexes: Map<string, PtcgCard[]>[] }
 
 function cardImageUrl(card: PtcgCard): string {
   return card.images.large ?? card.images.small;
@@ -245,154 +251,103 @@ interface FetchOptions {
   allowTeraEx?: boolean;
 }
 
-// Pass 1: IR / SIR — highest quality full-art illustration cards, chain-set preferred.
-export async function fetchTcgIrSir(
-  pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
-): Promise<Map<number, TcgImageResult>> {
-  // Two bulk fetches cover all 151+ Pokémon — one per rarity
+// --- Index builders (async, one network call per rarity) ---
+
+export async function buildIrSirData(): Promise<IrSirData> {
   const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
   const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
+  return { rarities, indexes };
+}
 
-  const candidatesList = pokemon.map(({ name }) => {
-    const displayName = toDisplayName(name);
-    const nameLower = displayName.toLowerCase();
-    return rarities.flatMap((r, i) => {
-      const candidates = lookupCandidates(indexes[i], displayName, r);
-      // For IR only (not SIR): exclude SV-era "Pokémon ex" cards — they're distinct identities.
-      // SIR of ex Pokémon (e.g. Mew ex SIR) are always desired and pass through.
-      if (r === "Illustration Rare") {
-        return candidates.filter(c => c.name.toLowerCase() !== nameLower + " ex");
+// --- Sync lookup functions (use pre-built index data) ---
+
+export function irSirCandidates(data: IrSirData, displayName: string): RankedCard[] {
+  const nameLower = displayName.toLowerCase();
+  return data.rarities.flatMap((r, i) => {
+    const cands = lookupCandidates(data.indexes[i], displayName, r);
+    // For IR (not SIR): exclude SV-era "Pokémon ex" cards — distinct identities from the base form
+    return r === "Illustration Rare" ? cands.filter(c => c.name.toLowerCase() !== nameLower + " ex") : cands;
+  });
+}
+
+export function irSirPick(candidates: RankedCard[], chainSets?: Set<string>): TcgImageResult | null {
+  const url = pickBestWithChain(candidates, chainSets);
+  return url ? { tcgUrl: url } : null;
+}
+
+export function trainerIrPick(data: IrSirData, displayName: string): string | null {
+  const nameLower = displayName.toLowerCase();
+  const candidates: RankedCard[] = [];
+  for (let i = 0; i < data.rarities.length; i++) {
+    for (const [key, cards] of data.indexes[i]) {
+      if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
+      for (const c of cards) {
+        if (c.images?.large) candidates.push({ ...c, _rarity: data.rarities[i] });
       }
-      return candidates;
-    });
-  });
-
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => c.set.id))])
-  );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
-
-  const entries = pokemon.map(({ id }, i) => {
-    const url = pickBestWithChain(candidatesList[i], chainSetsMap.get(id));
-    return url ? [id, { tcgUrl: url }] as const : null;
-  });
-  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+    }
+  }
+  return pickBest(candidates);
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release
 const SV_PROMO_SETS = ["svp", "mep", "mepen"];
 
-// Pass 1.5: SV-era full-art promos, best rarity then highest number wins.
-export async function fetchTcgPromoSv(
-  pokemon: Array<{ id: number; name: string }>
-): Promise<Map<number, TcgImageResult>> {
-  if (!pokemon.length) return new Map();
+export async function buildPromoSvData(): Promise<PromoSvData> {
   const perSetCards = await Promise.all(
     SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
   );
   perSetCards.forEach((cards, i) => { if (cards.length > 0) process.stderr.write(`[promo fetch] set=${SV_PROMO_SETS[i]} count=${cards.length}\n`); });
-  const allCards = perSetCards.flat();
-  const index = buildNameIndex(allCards);
-
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
-    const svpCards = (index.get(displayName.toLowerCase()) ?? []).filter(c =>
-      c.images?.large &&
-      !SVP_BLACKLIST.has(c.number) &&
-      nameMatches(c.name, displayName) &&
-      !REGIONAL_RE.test(c.name) &&
-      !TRAINER_OWNED_RE.test(c.name)
-    );
-    if (!svpCards.length) return null;
-    const best = svpCards.reduce((a, b) => {
-      const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
-      if (ra !== rb) return ra < rb ? a : b;
-      return parseInt(b.number) > parseInt(a.number) ? b : a;
-    });
-    return [id, { tcgUrl: cardImageUrl(best) }] as const;
-  });
-  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+  return { index: buildNameIndex(perSetCards.flat()) };
 }
 
-// Pass 2.1: Trainer-owned IR/SIR (e.g. "Giovanni's Dugtrio", "Erika's Clefable")
-// Uses bulk IR/SIR index with a contains check to match "X's <Name>" card names.
-export async function fetchTcgTrainerOwnedIrSir(
-  pokemon: Array<{ id: number; name: string }>
-): Promise<Map<number, TcgImageResult>> {
-  if (!pokemon.length) return new Map();
-  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
-
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
-    const nameLower = displayName.toLowerCase();
-    const candidates: RankedCard[] = [];
-    for (let i = 0; i < rarities.length; i++) {
-      for (const [key, cards] of indexes[i]) {
-        if (!TRAINER_OWNED_RE.test(key)) continue;
-        if (!key.includes(nameLower)) continue;
-        for (const c of cards) {
-          if (c.images?.large && !REGIONAL_RE.test(c.name))
-            candidates.push({ ...c, _rarity: rarities[i] });
-        }
-      }
-    }
-    const url = pickBest(candidates);
-    return url ? [id, { tcgUrl: url }] as const : null;
+export function promoSvPick(data: PromoSvData, displayName: string): string | null {
+  const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
+    c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
+    !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name)
+  );
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) => {
+    const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
+    if (ra !== rb) return ra < rb ? a : b;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
   });
-  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+  return cardImageUrl(best);
 }
 
-// Pass 3: V / GX / EX fallback — chain-set preferred.
-export async function fetchTcgVgx(
-  pokemon: Array<{ id: number; name: string }>,
-  chainsByDex: Map<number, number[]> = new Map(),
-): Promise<Map<number, TcgImageResult>> {
-  if (!pokemon.length) return new Map();
+export async function buildVgxData(): Promise<VgxData> {
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
   const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r, false, true)));
+  return { rarities, indexes };
+}
 
-  const candidatesList = pokemon.map(({ name }) => {
-    const displayName = toDisplayName(name);
-    const nameLower = displayName.toLowerCase();
-    return rarities.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
-        .filter(c => {
-          // Exclude SV-era "Pokémon ex" cards from VGX — distinct identities from the base form
-          if (c.name.toLowerCase() === nameLower + " ex") return false;
-          if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
-          if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
-          if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
-          if (/ V(-UNION)?$/.test(c.name) && r === "Hyper Rare") return false;
-          if (/ VMAX$/.test(c.name)) return false;
-          return true;
-        })
-    );
-  });
+const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
-  const setsByDex = new Map(
-    pokemon.map((p, i) => [p.id, new Set(candidatesList[i].map(c => c.set.id))])
+export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
+  const nameLower = displayName.toLowerCase();
+  return data.rarities.flatMap((r, i) =>
+    lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
+      .filter(c => {
+        if (c.name.toLowerCase() === nameLower + " ex") return false;
+        if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
+        if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
+        if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
+        if (/ V(-UNION)?$/.test(c.name) && r === "Hyper Rare") return false;
+        if (/ VMAX$/.test(c.name)) return false;
+        return true;
+      })
   );
-  const chainSetsMap = buildChainSets(setsByDex, chainsByDex);
+}
 
-  const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
-  const isOldStyleCard = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id);
-
-  const entries = pokemon.map(({ id }, i) => {
-    const all = candidatesList[i];
-    const chainSets = chainSetsMap.get(id);
-    // Prefer modern full-art cards over old-style.
-    // Modern cards (GX, TAG TEAM, V, etc.) skip chain filtering — they're standalone full-arts
-    // that don't need chain set coherence. Old-style cards still use chain filtering.
-    const modern = all.filter(c => !isOldStyleCard(c));
-    const winner = modern.length
-      ? pickBestCard(modern)
-      : pickBestCardWithChain(all, chainSets);
-    if (!winner) return null;
-    return [id, { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyleCard(winner) }] as const;
-  });
-  return new Map(entries.filter((e): e is NonNullable<typeof e> => e !== null));
+export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgImageResult | null {
+  if (!candidates.length) return null;
+  const isOldStyle = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id);
+  // Modern full-art cards (GX, V, TAG TEAM etc.) don't need chain set coherence
+  const modern = candidates.filter(c => !isOldStyle(c));
+  const winner = modern.length
+    ? pickBestCard(modern)
+    : pickBestCardWithChain(candidates, chainSets);
+  if (!winner) return null;
+  return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
 }
 
 // Chain reconciliation: find the best card for a Pokémon within allowed sets.
@@ -591,46 +546,14 @@ const FALLBACK_RARITIES = [
   "Rare Ultra",
 ] as const;
 
-// Final fallback: find the rarest available card for Pokémon with no special art.
-// Alt-form variants of the bulk passes — reuse the same indexes (deduplicated by Next.js fetch cache).
-
-export async function fetchFormPromoSv(displayName: string): Promise<string | null> {
-  const perSetCards = await Promise.all(
-    SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
-  );
-  const index = buildNameIndex(perSetCards.flat());
-  const candidates = (index.get(displayName.toLowerCase()) ?? []).filter(c =>
-    c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName)
-  );
-  if (!candidates.length) return null;
-  const best = candidates.reduce((a, b) => {
-    const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
-    if (ra !== rb) return ra < rb ? a : b;
-    return parseInt(b.number) > parseInt(a.number) ? b : a;
-  });
-  return cardImageUrl(best);
-}
-
-export async function fetchFormTrainerIr(displayName: string): Promise<string | null> {
-  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
-  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
-  const nameLower = displayName.toLowerCase();
-  const candidates: RankedCard[] = [];
-  for (let i = 0; i < rarities.length; i++) {
-    for (const [key, cards] of indexes[i]) {
-      if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
-      for (const c of cards) {
-        if (c.images?.large) candidates.push({ ...c, _rarity: rarities[i] });
-      }
-    }
-  }
-  return pickBest(candidates);
-}
-
-export async function fetchFormFallbackArt(displayName: string): Promise<string | null> {
+export async function buildFallbackArtData(): Promise<FallbackArtData> {
   const indexes = await Promise.all(FALLBACK_RARITIES.map(r => fetchRarityIndex(r)));
-  const candidates: RankedCard[] = FALLBACK_RARITIES.flatMap((r, i) =>
-    lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
+  return { rarities: FALLBACK_RARITIES, indexes };
+}
+
+export function fallbackArtPick(data: FallbackArtData, displayName: string): string | null {
+  const candidates: RankedCard[] = (data.rarities as string[]).flatMap((r, i) =>
+    lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
   );
   return pickBest(candidates);
 }
@@ -649,19 +572,3 @@ export async function fetchCardById(cardId: string): Promise<string | null> {
   } catch { return null; }
 }
 
-// Fetches all rarity indexes in parallel, then picks the highest-rarity card per Pokémon.
-export async function fetchTcgFallbackArt(
-  pokemon: { id: number; name: string }[],
-): Promise<Map<number, string>> {
-  if (!pokemon.length) return new Map();
-  const indexes = await Promise.all(FALLBACK_RARITIES.map(r => fetchRarityIndex(r)));
-  const entries = pokemon.map(({ id, name }) => {
-    const displayName = toDisplayName(name);
-    const allCandidates: RankedCard[] = FALLBACK_RARITIES.flatMap((r, i) =>
-      lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
-    );
-    const url = pickBest(allCandidates);
-    return url ? [id, url] as const : null;
-  });
-  return new Map(entries.filter((e): e is [number, string] => e !== null));
-}

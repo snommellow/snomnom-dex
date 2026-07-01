@@ -107,18 +107,27 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
         >
           {/* Background layer 1: blurred */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : pokemon.ancientTraitUrl && !hasSpecialCard ? pokemon.ancientTraitUrl : bgUrl}
-              alt="" aria-hidden
-              style={{
-                position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
-                objectFit: "cover",
-                // For AT cards: anchor to 45% to show artwork region in the blur
-                objectPosition: !hasSpecialCard && pokemon.ancientTraitUrl && !pokemon.regularCardUrl ? "center 45%" : "center",
+            {!hasSpecialCard && pokemon.ancientTraitUrl && !pokemon.regularCardUrl ? (
+              /* AT card: same crop as sharp layer so blurred bg also shows only artwork area */
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={pokemon.ancientTraitUrl} alt="" aria-hidden style={{
+                position: "absolute", top: "-70%", left: "50%",
+                width: "auto", height: "250%",
+                transform: "translateX(-50%)",
                 opacity: 0.55, filter: "blur(25px)",
-              }}
-            />
+              }} />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : bgUrl}
+                alt="" aria-hidden
+                style={{
+                  position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
+                  objectFit: "cover", objectPosition: "center",
+                  opacity: 0.55, filter: "blur(25px)",
+                }}
+              />
+            )}
           </div>
 
           {/* Background layer 2: sharp, masked */}

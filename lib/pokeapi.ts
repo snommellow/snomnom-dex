@@ -135,10 +135,16 @@ export async function fetchGenus(id: number): Promise<string | null> {
   return genus;
 }
 
+const FORM_BASE_NAME_OVERRIDES: Record<string, string> = {
+  "farfetchd": "Farfetch'd",
+  "mr-mime":   "Mr. Mime",
+  "ho-oh":     "Ho-Oh",
+};
+
 function parseFormSlug(slug: string, baseName: string): { displayName: string; category: FormCategory } {
   const suffix = slug.startsWith(baseName + "-") ? slug.slice(baseName.length + 1) : slug;
   const cap = (s: string) => s.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-  const base = cap(baseName);
+  const base = FORM_BASE_NAME_OVERRIDES[baseName] ?? cap(baseName);
 
   if (suffix === "mega")   return { displayName: `Mega ${base}`,    category: "mega" };
   if (suffix === "mega-x") return { displayName: `Mega ${base} X`,  category: "mega" };

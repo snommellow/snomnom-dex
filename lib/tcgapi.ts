@@ -407,8 +407,8 @@ export async function fetchFormCard(
       return cardImageUrl(best);
     }
     const candidates = allCards
-      .filter(c => c.images?.large && (rarities.includes(c.rarity) || c.rarity === "Promo") && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
-      .map(c => ({ ...c, _rarity: c.rarity === "Promo" ? "Rare Holo V" : c.rarity }));
+      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
+      .map(c => ({ ...c, _rarity: c.rarity }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
     // Prefer standard GX card over Full Art (Rare Ultra) when both exist
     const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Rare Ultra") : candidates;

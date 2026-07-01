@@ -5,7 +5,7 @@ import {
   buildVgxData, vgxCandidates, vgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
-  fetchFormCard, fetchCardById,
+  fetchFormCard, fetchFormCardLastResort, fetchCardById,
   fetchTcgLastResort, toDisplayName,
   IR_RARITIES, VGX_RARITIES,
 } from "@/lib/tcgapi";
@@ -163,7 +163,7 @@ export default async function PokedexGrid() {
 
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (fallbackUrl ?? null)
+              ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

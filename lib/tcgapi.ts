@@ -409,7 +409,9 @@ export async function fetchFormCard(
       return cardImageUrl(best);
     }
     const candidates = allCards
-      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName) && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
+      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName)
+        && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
+        && !/p$/i.test(c.set.id)) // exclude promo sets — bordered standard cards, not full-art
       .map(c => ({ ...c, _rarity: c.rarity }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
     // Prefer standard GX card over Full Art (Rare Ultra) when both exist

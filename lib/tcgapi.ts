@@ -546,6 +546,30 @@ const FALLBACK_RARITIES = [
   "Rare Ultra",
 ] as const;
 
+// XY Ancient Trait sets — Primal Clash, Roaring Skies, Ancient Origins
+const ANCIENT_TRAIT_SETS = ["xy5", "xy6", "xy7"];
+
+export interface AncientTraitData { index: Map<string, PtcgCard[]> }
+
+export async function buildAncientTraitData(): Promise<AncientTraitData> {
+  const perSetCards = await Promise.all(
+    ANCIENT_TRAIT_SETS.map(setId => fetchAllPages(`rarity:"Rare Holo" set.id:${setId}`))
+  );
+  return { index: buildNameIndex(perSetCards.flat()) };
+}
+
+export function ancientTraitPick(data: AncientTraitData, displayName: string): string | null {
+  const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
+    c.images?.large && nameMatches(c.name, displayName) && !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name)
+  );
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) => {
+    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+    return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
+  });
+  return cardImageUrl(best);
+}
+
 export async function buildFallbackArtData(): Promise<FallbackArtData> {
   const indexes = await Promise.all(FALLBACK_RARITIES.map(r => fetchRarityIndex(r)));
   return { rarities: FALLBACK_RARITIES, indexes };

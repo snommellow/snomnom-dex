@@ -3,6 +3,7 @@ import {
   buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildPromoSvData, promoSvPick,
   buildVgxData, vgxCandidates, vgxPick,
+  buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
   fetchFormCard, fetchFormCardLastResort, fetchCardById,
   fetchTcgLastResort, toDisplayName,
@@ -51,10 +52,11 @@ export default async function PokedexGrid() {
 
   // Phase A: fetch all TCG indexes + alt form data in parallel.
   // All four builders fetch full rarity indexes regardless of Pokémon list size.
-  const [irData, promoData, vgxData, fallbackData, altFormsData] = await Promise.all([
+  const [irData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
     buildIrSirData(),
     buildPromoSvData(),
     buildVgxData(),
+    buildAncientTraitData(),
     buildFallbackArtData(),
     Promise.all(
       raw.map((p, i) =>
@@ -103,6 +105,10 @@ export default async function PokedexGrid() {
     const r = vgxPick(vgxCandidatesList[i], vgxChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
   }));
+  const ancientTraitMap = new Map(raw.flatMap(p => {
+    const url = ancientTraitPick(ancientTraitData, toDisplayName(p.name));
+    return url ? [[p.id, url]] : [];
+  }));
   const fallbackArtMap = new Map(raw.flatMap(p => {
     const url = fallbackArtPick(fallbackData, toDisplayName(p.name));
     return url ? [[p.id, url]] : [];
@@ -122,7 +128,7 @@ export default async function PokedexGrid() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !ancientTraitMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
   // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
@@ -140,6 +146,7 @@ export default async function PokedexGrid() {
             const promoUrl = promoSvPick(promoData, form.displayName);
             const trainerIrUrl = trainerIrPick(irData, form.displayName);
             const vgxFromIndex = vgxPick(vgxCandidates(vgxData, form.displayName));
+            const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);
             const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
 
             // Async: per-name queries needed for mega forms (bulk indexes key on card name, not form name)
@@ -154,7 +161,7 @@ export default async function PokedexGrid() {
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
             const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
 
-            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? null;
+            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
@@ -168,7 +175,8 @@ export default async function PokedexGrid() {
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
     // Pocket beats trainerIr and VGX — only use those if no pocket card
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
+    const ancientTraitUrl = ancientTraitMap.get(p.id);
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
     const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
     return toPokemonSummary(
       p,

@@ -164,6 +164,7 @@ export async function fetchPocketAltForm(
       .filter((c) => c.image && matchesName(c.name))
       .map((c) => ({ ...c, rarity }))
   );
+  console.log(`[pocket alt debug] ${displayName} exactCards=${exactCards.length} allRaw=${allResults.flat().map(c=>c.name+'/'+c.rarity).join(',')}`);
   if (exactCards.length) {
     const setOf = (id: string) => id.split("-")[0];
     const twoStars = exactCards.filter((c) => c.rarity === "Two Star");

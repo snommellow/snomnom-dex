@@ -62,7 +62,7 @@ interface PtcgCard {
   subtypes: string[];
   set: { id: string };
   images: { small: string; large: string | null };
-  ancientTrait?: { name: string; text: string } | null;
+
 }
 
 export interface RankedCard extends PtcgCard { _rarity: string }
@@ -552,35 +552,11 @@ const ANCIENT_TRAIT_SETS = ["xy5", "xy6", "xy7"];
 
 export interface AncientTraitData { index: Map<string, PtcgCard[]> }
 
-async function fetchAllPagesWithAncientTrait(q: string): Promise<PtcgCard[]> {
-  const results: PtcgCard[] = [];
-  let page = 1;
-  while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,set,images,ancientTrait`;
-    let data: PtcgCard[] = [];
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        const res = await fetch(url, { next: { revalidate: 86400 }, headers: PTCGIO_HEADERS });
-        if (!res.ok) break;
-        const json = await res.json() as { data?: PtcgCard[]; totalCount?: number; page?: number; pageSize?: number };
-        data = json.data ?? [];
-        break;
-      } catch { if (attempt === 2) break; await new Promise(r => setTimeout(r, 300 * (attempt + 1))); }
-    }
-    results.push(...data);
-    if (data.length < 250) break;
-    page++;
-  }
-  return results;
-}
-
 export async function buildAncientTraitData(): Promise<AncientTraitData> {
   const perSetCards = await Promise.all(
-    ANCIENT_TRAIT_SETS.map(setId => fetchAllPagesWithAncientTrait(`supertype:Pokémon set.id:${setId}`))
+    ANCIENT_TRAIT_SETS.map(setId => fetchAllPages(`ancientTrait.name:* set.id:${setId}`))
   );
-  // Only include cards that actually have an Ancient Trait (α symbol)
-  const atCards = perSetCards.flat().filter(c => c.ancientTrait != null);
-  return { index: buildNameIndex(atCards) };
+  return { index: buildNameIndex(perSetCards.flat()) };
 }
 
 const AT_RARITY_SCORE: Record<string, number> = {

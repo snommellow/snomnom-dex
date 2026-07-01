@@ -140,22 +140,6 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   opacity: 0.8,
                 }}
               />
-            ) : !hasSpecialCard && pokemon.ancientTraitUrl ? (
-              /* Ancient Trait card: show only the artwork area (28–68% of card height).
-                 height:250% makes the image 2.5× the container. top:-70% offsets so the
-                 visible window is image[70/250..170/250] = image[28%..68%] = artwork only. */
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={pokemon.ancientTraitUrl}
-                alt=""
-                aria-hidden
-                style={{
-                  position: "absolute", top: "-70%", left: "50%",
-                  width: "auto", height: "250%",
-                  transform: "translateX(-50%)",
-                  opacity: 0.7,
-                }}
-              />
             ) : (
               <Image
                 src={bgUrl}

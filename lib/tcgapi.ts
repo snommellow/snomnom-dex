@@ -119,7 +119,7 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
           next: { revalidate: 86400 },
         });
         if (res.status === 429 && attempt < 2) continue;
-        if (!res.ok) return results;
+        if (!res.ok) throw new Error(`pokemontcg.io ${res.status} for ${q}`);
         const json = await res.json();
         data = json.data ?? [];
         break;

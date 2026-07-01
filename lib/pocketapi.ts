@@ -203,16 +203,14 @@ export async function fetchPocketAltForm(
 
 // Pass 4 fallback: any Pocket card (including commons) for Pokémon with no high-quality card
 async function fetchAnyPocketCards(name: string): Promise<TcgdexCard[]> {
-  try {
-    const res = await fetch(
-      `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
-      { next: { revalidate: 86400 } }
-    );
-    if (!res.ok) return [];
-    const json = await res.json();
-    const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-    return all.filter((c) => isPocketSet(setIdFromCardId(c.id)) && c.image);
-  } catch { return []; }
+  const res = await fetch(
+    `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) throw new Error(`tcgdex ${res.status} for ${name}`);
+  const json = await res.json();
+  const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
+  return all.filter((c) => isPocketSet(setIdFromCardId(c.id)) && c.image);
 }
 
 export async function fetchPocketFallback(

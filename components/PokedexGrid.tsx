@@ -140,6 +140,24 @@ export default async function PokedexGrid() {
       !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
+  // DEBUG: trace Oddish (id=43) through every map
+  {
+    const p43 = raw.find(p => p.id === 43);
+    if (p43) {
+      const pocketUrl43 = pocketMap.get(43);
+      console.log("[DEBUG Oddish #43]", {
+        inIrMap: irMap.has(43),
+        inPromoSvMap: promoSvMap.has(43),
+        inPocketMap: !!pocketUrl43, pocketUrl: pocketUrl43,
+        inTrainerIrMap: trainerIrMap.has(43), trainerIrUrl: trainerIrMap.get(43),
+        inVgxMap: vgxMap.has(43),
+        inFallbackArtMap: fallbackArtMap.has(43), fallbackArtUrl: fallbackArtMap.get(43),
+        inAncientTraitMap: ancientTraitMap.has(43), ancientTraitUrl: ancientTraitMap.get(43),
+        inNoCardPokemon: noCardPokemon.some(p => p.id === 43),
+      });
+    }
+  }
+
   // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
   // per-name queries that the bulk indexes can't handle (e.g. "M Charizard-EX" ≠ "Mega Charizard X").
   const [lastResortTcgMap, pocketFallbackResults, altFormsWithCards] = await Promise.all([
@@ -189,6 +207,15 @@ export default async function PokedexGrid() {
       lastResortMap.set(p.id, { tcgUrl: pocketFallbackResults[i].url! });
     }
   });
+
+  // DEBUG: trace Oddish last-resort result
+  if (noCardPokemon.some(p => p.id === 43)) {
+    console.log("[DEBUG Oddish last-resort]", {
+      tcgLastResort: lastResortTcgMap.get(43),
+      pocketFallback: pocketFallbackResults[noCardPokemon.findIndex(p => p.id === 43)]?.url,
+      merged: lastResortMap.get(43),
+    });
+  }
 
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);

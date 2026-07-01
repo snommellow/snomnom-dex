@@ -128,7 +128,7 @@ export default async function PokedexGrid() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !ancientTraitMap.has(p.id) && !fallbackArtMap.has(p.id);
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
   });
 
   // Alt forms use the same shared indexes (sync lookups) plus fetchFormCard for mega-specific
@@ -161,9 +161,9 @@ export default async function PokedexGrid() {
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
             const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
 
-            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? null;
+            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (ancientTraitUrl ?? fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
+              ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })
@@ -175,8 +175,9 @@ export default async function PokedexGrid() {
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id);
     // Pocket beats trainerIr and VGX — only use those if no pocket card
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null };
-    const fallbackCrop = ancientTraitMap.get(p.id) ?? fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
+    const ancientTraitUrl = ancientTraitMap.get(p.id);
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
+    const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
     return toPokemonSummary(
       p,
       tcgResult,

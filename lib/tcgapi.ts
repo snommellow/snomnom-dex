@@ -493,7 +493,7 @@ export async function fetchFormCard(
     const isXY = displayName.endsWith(" X") || displayName.endsWith(" Y");
     const namesToTry = isXY
       ? [`${displayName} ex`]
-      : [`${displayName} ex`, `M ${baseName}-EX`, `M ${baseName}`, `Mega ${baseName} ex`, `Mega ${baseName}`];
+      : [`${displayName} ex`, `M ${baseName}-EX`, `Mega ${baseName} ex`, `Mega ${baseName}`];
 
     for (const queryName of namesToTry) {
       const cards = await fetchAllPages(`name:"${queryName}"${megaTeraFilter}`);

@@ -108,11 +108,17 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
           {/* Background layer 1: blurred */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : bgUrl} alt="" aria-hidden style={{
-              position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
-              objectFit: "cover", objectPosition: "center",
-              opacity: 0.55, filter: "blur(25px)",
-            }} />
+            <img
+              src={!hasSpecialCard && pokemon.regularCardUrl ? pokemon.regularCardUrl : pokemon.ancientTraitUrl && !hasSpecialCard ? pokemon.ancientTraitUrl : bgUrl}
+              alt="" aria-hidden
+              style={{
+                position: "absolute", inset: "-40px", width: "calc(100% + 80px)", height: "calc(100% + 80px)",
+                objectFit: "cover",
+                // For AT cards: anchor to 30% to show artwork region in the blur
+                objectPosition: !hasSpecialCard && pokemon.ancientTraitUrl && !pokemon.regularCardUrl ? "center 30%" : "center",
+                opacity: 0.55, filter: "blur(25px)",
+              }}
+            />
           </div>
 
           {/* Background layer 2: sharp, masked */}
@@ -140,6 +146,22 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   opacity: 0.8,
                 }}
               />
+            ) : !hasSpecialCard && pokemon.ancientTraitUrl ? (
+              /* Ancient Trait card: zoom ~2.2x and offset to show only artwork area (10-55% of card),
+                 skipping the card name bar at top and the Ancient Trait text band below artwork. */
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={pokemon.ancientTraitUrl}
+                alt=""
+                aria-hidden
+                style={{
+                  position: "absolute", top: 0, left: "50%",
+                  width: "100%", height: "auto",
+                  transform: "translateX(-50%) scale(2.2) translateY(-10%)",
+                  transformOrigin: "top center",
+                  opacity: 0.7,
+                }}
+              />
             ) : (
               <Image
                 src={bgUrl}
@@ -147,7 +169,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 aria-hidden
                 fill
                 sizes="300px"
-                className="object-cover object-center"
+                className="object-cover object-top"
                 style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
                 loading="eager"
                 onError={() => setBgIndex((i) => Math.min(i + 1, candidates.length - 1))}

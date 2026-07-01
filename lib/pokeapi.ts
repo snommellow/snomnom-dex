@@ -82,6 +82,8 @@ export interface PokemonSummary {
   bgCandidates: string[];
   // Regular TCG card used as artwork-only fallback (cropped to art area in UI)
   regularCardUrl?: string;
+  // Standard holo card (XY Ancient Trait) — zoomed to show only the artwork area
+  ancientTraitUrl?: string;
   altForms: AltForm[];
 }
 
@@ -186,6 +188,7 @@ export function toPokemonSummary(
   genus: string | null = null,
   altForms: AltForm[] = [],
   regularCardUrl?: string,
+  ancientTraitUrl?: string,
 ): PokemonSummary {
   const bg: string[] = [];
   let resolvedRegularCard = regularCardUrl;
@@ -207,6 +210,7 @@ export function toPokemonSummary(
     genus,
     bgCandidates: bg,
     regularCardUrl: resolvedRegularCard,
+    ancientTraitUrl,
     altForms,
   };
 }

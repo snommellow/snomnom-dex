@@ -553,10 +553,17 @@ export interface AncientTraitData { index: Map<string, PtcgCard[]> }
 
 export async function buildAncientTraitData(): Promise<AncientTraitData> {
   const perSetCards = await Promise.all(
-    ANCIENT_TRAIT_SETS.map(setId => fetchAllPages(`rarity:"Rare Holo" set.id:${setId}`))
+    ANCIENT_TRAIT_SETS.map(setId => fetchAllPages(`supertype:Pokémon set.id:${setId}`))
   );
   return { index: buildNameIndex(perSetCards.flat()) };
 }
+
+const AT_RARITY_SCORE: Record<string, number> = {
+  "Rare Holo": 0,
+  "Rare": 1,
+  "Uncommon": 2,
+  "Common": 3,
+};
 
 export function ancientTraitPick(data: AncientTraitData, displayName: string): string | null {
   const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
@@ -564,6 +571,9 @@ export function ancientTraitPick(data: AncientTraitData, displayName: string): s
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {
+    const ra = AT_RARITY_SCORE[a.rarity ?? ""] ?? 4;
+    const rb = AT_RARITY_SCORE[b.rarity ?? ""] ?? 4;
+    if (ra !== rb) return ra <= rb ? a : b;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
     return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
   });

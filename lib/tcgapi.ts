@@ -61,7 +61,7 @@ interface PtcgCard {
   rarity: string;
   subtypes: string[];
   set: { id: string };
-  images: { small: string; large: string };
+  images: { small: string; large: string | null };
 }
 
 interface RankedCard extends PtcgCard { _rarity: string }
@@ -81,7 +81,7 @@ function toDisplayName(slug: string): string {
 }
 
 function cardImageUrl(card: PtcgCard): string {
-  return card.images.large;
+  return card.images.large ?? card.images.small;
 }
 
 function rarityScore(rarity: string): number {
@@ -500,7 +500,6 @@ export async function fetchFormCard(
       const candidates = cards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
         .map(c => ({ ...c, _rarity: c.rarity }));
-      console.log(`[mega debug] ${displayName} query="${queryName}" total=${cards.length} candidates=${candidates.length} rarities=${[...new Set(cards.map(c=>c.rarity))].join(',')}`);
       const url = pickBest(candidates);
       if (url) return url;
     }
@@ -509,10 +508,10 @@ export async function fetchFormCard(
     // Skip for X/Y forms — they need exact card matching to distinguish variants.
     if (!isXY) {
       const subtypeCards = await fetchAllPages(`name:${baseName} subtypes:MEGA`);
+      // Last resort: relax rarity/image filters — promo and old XY cards often lack images.large
       const subtypeCandidates = subtypeCards
-        .filter(c => c.images?.large && rarities.includes(c.rarity) && c.name.toLowerCase().includes(baseName.toLowerCase()))
-        .map(c => ({ ...c, _rarity: c.rarity }));
-      console.log(`[mega debug] ${displayName} subtype fallback total=${subtypeCards.length} candidates=${subtypeCandidates.length} names=${subtypeCards.map(c=>c.name+'/'+c.rarity).join(',')}`);
+        .filter(c => (c.images?.large || c.images?.small) && c.name.toLowerCase().includes(baseName.toLowerCase()))
+        .map(c => ({ ...c, _rarity: RARITY_ORDER.includes(c.rarity) ? c.rarity : "Rare Holo EX" }));
       return pickBest(subtypeCandidates);
     }
     return null;

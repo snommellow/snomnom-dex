@@ -505,11 +505,15 @@ export async function fetchFormCard(
     }
     // Final fallback: query by MEGA subtype — catches "M Name-EX" cards where
     // the hyphen in quoted name queries confuses the Lucene parser.
-    const subtypeCards = await fetchAllPages(`name:"${baseName}" subtypes:MEGA`);
-    const subtypeCandidates = subtypeCards
-      .filter(c => c.images?.large && rarities.includes(c.rarity) && c.name.toLowerCase().includes(baseName.toLowerCase()))
-      .map(c => ({ ...c, _rarity: c.rarity }));
-    return pickBest(subtypeCandidates);
+    // Skip for X/Y forms — they need exact card matching to distinguish variants.
+    if (!isXY) {
+      const subtypeCards = await fetchAllPages(`name:${baseName} subtypes:MEGA`);
+      const subtypeCandidates = subtypeCards
+        .filter(c => c.images?.large && rarities.includes(c.rarity) && c.name.toLowerCase().includes(baseName.toLowerCase()))
+        .map(c => ({ ...c, _rarity: c.rarity }));
+      return pickBest(subtypeCandidates);
+    }
+    return null;
   }
 
   return null;

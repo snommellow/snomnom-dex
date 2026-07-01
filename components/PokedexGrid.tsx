@@ -28,6 +28,8 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
   // XY8 BREAKthrough: 63/162 = Psycho Cut (X form), 64/162 = Psychic Infinity (Y form)
   "Mega Mewtwo X": "xy8-63",
+  // Black Star Promo SWSH294 — preferred over the Lost Origin regular print
+  "Hisuian Electrode": "swshp-SWSH294",
 };
 
 export default async function PokedexGrid() {

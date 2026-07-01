@@ -1,5 +1,5 @@
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "@/lib/pokeapi";
-import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormCardLastResort, fetchCardById, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
+import { fetchTcgIrSir, fetchTcgPromoSv, fetchTcgTrainerOwnedIrSir, fetchTcgVgx, fetchFormCard, fetchFormPromoSv, fetchFormTrainerIr, fetchFormFallbackArt, fetchFormCardLastResort, fetchCardById, fetchTcgFallbackArt, fetchTcgLastResort, IR_RARITIES, VGX_RARITIES } from "@/lib/tcgapi";
 import { fetchPocketImages, fetchPocketAltForm } from "@/lib/pocketapi";
 import PokedexClient from "./PokedexClient";
 
@@ -97,15 +97,18 @@ export default async function PokedexGrid() {
         Promise.all(
           forms.map(async (form) => {
             const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
-            const [irUrl, pocket, vgxUrl, hardcodedUrl] = await Promise.all([
+            const [irUrl, promoUrl, pocket, trainerIrUrl, vgxUrl, hardcodedUrl, fallbackArtUrl] = await Promise.all([
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES),
+              fetchFormPromoSv(form.displayName),
               fetchPocketAltForm(form.displayName, form.category),
+              fetchFormTrainerIr(form.displayName),
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
               hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
+              fetchFormFallbackArt(form.displayName),
             ]);
-            const tcgUrl = hardcodedUrl ?? irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
+            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? await fetchFormCardLastResort(form.displayName)
+              ? (fallbackArtUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

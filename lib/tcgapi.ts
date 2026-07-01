@@ -592,6 +592,49 @@ const FALLBACK_RARITIES = [
 ] as const;
 
 // Final fallback: find the rarest available card for Pokémon with no special art.
+// Alt-form variants of the bulk passes — reuse the same indexes (deduplicated by Next.js fetch cache).
+
+export async function fetchFormPromoSv(displayName: string): Promise<string | null> {
+  const perSetCards = await Promise.all(
+    SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
+  );
+  const index = buildNameIndex(perSetCards.flat());
+  const candidates = (index.get(displayName.toLowerCase()) ?? []).filter(c =>
+    c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName)
+  );
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) => {
+    const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
+    if (ra !== rb) return ra < rb ? a : b;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
+  });
+  return cardImageUrl(best);
+}
+
+export async function fetchFormTrainerIr(displayName: string): Promise<string | null> {
+  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
+  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
+  const nameLower = displayName.toLowerCase();
+  const candidates: RankedCard[] = [];
+  for (let i = 0; i < rarities.length; i++) {
+    for (const [key, cards] of indexes[i]) {
+      if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
+      for (const c of cards) {
+        if (c.images?.large) candidates.push({ ...c, _rarity: rarities[i] });
+      }
+    }
+  }
+  return pickBest(candidates);
+}
+
+export async function fetchFormFallbackArt(displayName: string): Promise<string | null> {
+  const indexes = await Promise.all(FALLBACK_RARITIES.map(r => fetchRarityIndex(r)));
+  const candidates: RankedCard[] = FALLBACK_RARITIES.flatMap((r, i) =>
+    lookupCandidates(indexes[i], displayName, r, { allowGimmick: true })
+  );
+  return pickBest(candidates);
+}
+
 // Fetch a single card by pokemontcg.io ID (e.g. "xy8-64") and return its image URL.
 export async function fetchCardById(cardId: string): Promise<string | null> {
   try {

@@ -49,7 +49,9 @@ const TRAINER_OWNED_RE = /['']\s*s\s+/i;
 const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 
 // SVP promos that are non-full-art stamp reprints — excluded from promo pass
-const SVP_BLACKLIST = new Set(["11", "24", "122", "167", "168", "169"]);
+// 102 = Oddish — card exists in pokemontcg.io API with images.large but the CDN image is missing,
+// causing it to land in promoSvMap and override the reliable sv3pt5 fallback with a broken URL.
+const SVP_BLACKLIST = new Set(["11", "24", "102", "122", "167", "168", "169"]);
 
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);

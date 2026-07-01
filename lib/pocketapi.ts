@@ -205,7 +205,7 @@ export async function fetchPocketAltForm(
 async function fetchAnyPocketCards(name: string): Promise<TcgdexCard[]> {
   const res = await fetch(
     `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
-    { next: { revalidate: 3600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) throw new Error(`tcgdex ${res.status} for ${name}`);
   const json = await res.json();

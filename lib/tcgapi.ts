@@ -105,7 +105,7 @@ function nameMatches(cardName: string, query: string): boolean {
 // Fetch ALL cards matching a query, handling pagination automatically.
 // Instead of one request per Pokémon, callers fetch an entire rarity at once
 // and look up by name client-side — far fewer total requests.
-async function fetchAllPages(q: string): Promise<PtcgCard[]> {
+async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
   const results: PtcgCard[] = [];
   let page = 1;
   while (true) {
@@ -116,7 +116,7 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
         if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
         const res = await fetch(url, {
           headers: getHeaders(),
-          next: { revalidate: 86400 },
+          ...(noCache ? { cache: "no-store" } : { next: { revalidate: 86400 } }),
         });
         if (res.status === 429 && attempt < 2) continue;
         if (!res.ok) throw new Error(`pokemontcg.io ${res.status} for ${q}`);
@@ -515,7 +515,7 @@ export async function fetchFormCardLastResort(displayName: string): Promise<stri
 // "Pokémon Card 151" (sv3pt5) — contains a card for every original 151 Pokémon.
 // Used as a single bulk fallback instead of firing one request per Pokémon.
 async function fetchSet151Index(): Promise<Map<string, PtcgCard[]>> {
-  const cards = await fetchAllPages(`set.id:sv3pt5`);
+  const cards = await fetchAllPages(`set.id:sv3pt5`, true);
   return buildNameIndex(cards);
 }
 
@@ -553,7 +553,7 @@ export async function fetchTcgLastResort(
 
       // Stagger per-name requests to avoid simultaneous rate-limit hits
       await new Promise(r => setTimeout(r, i * 50));
-      const cards = await fetchAllPages(`name:"${displayName}"`);
+      const cards = await fetchAllPages(`name:"${displayName}"`, true);
       const candidates = cards.filter(c =>
         (c.images?.large || c.images?.small) &&
         nameMatches(c.name, displayName) &&

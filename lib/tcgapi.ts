@@ -505,13 +505,19 @@ export async function fetchFormCard(
     }
     // Final fallback: query by MEGA subtype — catches "M Name-EX" cards where
     // the hyphen in quoted name queries confuses the Lucene parser.
-    // Skip for X/Y forms and IR pass (IR pass only wants SIR/IR which megas don't have).
-    if (!isXY && raritySet !== IR_RARITIES) {
+    // Skip for IR pass (IR pass only wants SIR/IR which megas don't have).
+    if (raritySet !== IR_RARITIES) {
+      const xySuffix = isXY ? (displayName.endsWith(" X") ? " X" : " Y") : null;
       const subtypeCards = await fetchAllPages(`name:${baseName} subtypes:MEGA`);
       // Last resort: relax rarity/image filters — promo and old XY cards often lack images.large
-      const subtypeCandidates = subtypeCards
+      let subtypeCandidates = subtypeCards
         .filter(c => (c.images?.large || c.images?.small) && c.name.toLowerCase().includes(baseName.toLowerCase()))
         .map(c => ({ ...c, _rarity: RARITY_ORDER.includes(c.rarity) ? c.rarity : "Rare Holo EX" }));
+      // For X/Y forms, prefer cards that include the variant suffix; fall back to all if none match
+      if (xySuffix) {
+        const xyMatches = subtypeCandidates.filter(c => c.name.includes(xySuffix));
+        if (xyMatches.length) subtypeCandidates = xyMatches;
+      }
       return pickBest(subtypeCandidates);
     }
     return null;

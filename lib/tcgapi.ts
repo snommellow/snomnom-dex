@@ -410,8 +410,7 @@ export async function fetchFormCard(
     }
     const candidates = allCards
       .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName)
-        && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
-        && !/p$/i.test(c.set.id)) // exclude promo sets — bordered standard cards, not full-art
+        && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
       .map(c => ({ ...c, _rarity: c.rarity }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
     // Prefer standard GX card over Full Art (Rare Ultra) when both exist
@@ -500,7 +499,7 @@ const LAST_RESORT_RARITY: Record<string, number> = {
 export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
   const cards = await fetchAllPages(`name:"${displayName}"`);
   const candidates = cards.filter(c =>
-    c.images?.large && nameMatches(c.name, displayName) && !/p$/i.test(c.set.id)
+    c.images?.large && nameMatches(c.name, displayName)
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {

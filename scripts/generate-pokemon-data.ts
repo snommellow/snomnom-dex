@@ -24,7 +24,6 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 
 const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
   "Mega Mewtwo X": "xy8-63",
-  "Hisuian Electrode": "swshp-SWSH294",
 };
 
 async function main() {

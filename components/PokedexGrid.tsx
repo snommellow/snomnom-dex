@@ -103,7 +103,7 @@ export default async function PokedexGrid() {
               fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES),
               hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
             ]);
-            const tcgUrl = irUrl ?? (pocket.url || null) ?? vgxUrl ?? hardcodedUrl ?? null;
+            const tcgUrl = hardcodedUrl ?? irUrl ?? (pocket.url || null) ?? vgxUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? await fetchFormCardLastResort(form.displayName)
               : null;

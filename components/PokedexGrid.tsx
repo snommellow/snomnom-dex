@@ -196,9 +196,7 @@ export default async function PokedexGrid() {
   const pocketFallbackMap = new Map<number, string>();
   noCardPokemon.forEach((p, i) => {
     if (pocketFallbackResults[i]?.url) {
-      if (!lastResortMap.has(p.id)) {
-        pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
-      }
+      pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
     }
   });
 

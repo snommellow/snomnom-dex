@@ -172,11 +172,7 @@ async function main() {
   const pocketFallbackMap = new Map<number, string>();
   noCardPokemon.forEach((p, i) => {
     if (pocketFallbackResults[i]?.url) {
-      if (lastResortMap.has(p.id)) {
-        // TCG last-resort found — pocket fallback not needed
-      } else {
-        pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
-      }
+      pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
     }
   });
 

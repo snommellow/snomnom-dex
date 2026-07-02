@@ -157,8 +157,8 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 
           {/* Masthead */}
           <div
-            className="relative z-10 flex items-center justify-between px-2.5 py-1 flex-shrink-0"
-            style={{ backgroundColor: typeColor }}
+            className="relative z-10 flex items-center justify-between px-2.5 flex-shrink-0"
+            style={{ backgroundColor: typeColor, height: 20 }}
           >
             <span className="text-white font-black italic leading-none" style={{ fontSize: 9, letterSpacing: ".1em" }}>
               POKÉDEX
@@ -169,8 +169,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 <img
                   src={FORM_ICON_URL[formCategory]}
                   alt={formCategory}
-                  className="w-3 h-3 object-contain"
-                  style={{ imageRendering: "pixelated" }}
+                  style={{ width: 9, height: 9, objectFit: "contain", imageRendering: "pixelated" }}
                 />
               )}
               <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
@@ -212,10 +211,10 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   loading="lazy"
                 />
               </div>
-            ) : pokemon.artworkUrl ? (
+            ) : (
               <div className="absolute bottom-1 right-1 w-10 h-10" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
                 <Image
-                  src={HOME_SPRITE(parseInt(pokemon.artworkUrl.match(/\/(\d+)\.png$/)?.[1] ?? "0"))}
+                  src={HOME_SPRITE(pokemon.id)}
                   alt={pokemon.name}
                   fill
                   sizes="64px"
@@ -223,7 +222,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   loading="lazy"
                 />
               </div>
-            ) : null}
+            )}
           </div>
 
           {/* Sparkles */}

@@ -534,40 +534,18 @@ export async function fetchFormCardLastResort(displayName: string): Promise<stri
   return cardImageUrl(pickHighestValue(candidates));
 }
 
-// "Pokémon Card 151" (sv3pt5) — contains a card for every original 151 Pokémon.
-// Used as a single bulk fallback instead of firing one request per Pokémon.
-async function fetchSet151Index(): Promise<Map<string, PtcgCard[]>> {
-  const cards = await fetchAllPages(`set.id:sv3pt5`, true);
-  return buildNameIndex(cards);
-}
 
 export async function fetchTcgLastResort(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<Map<number, TcgImageResult>> {
   if (!pokemon.length) return new Map();
 
-  // Bulk fetch sv3pt5 first — one request covers all 151 original Pokémon.
-  const set151Index = await fetchSet151Index();
-
-  const pickFromIndex = (displayName: string): string | null => {
-    const candidates = (set151Index.get(displayName.toLowerCase()) ?? []).filter(c =>
-      (c.images?.large || c.images?.small) &&
-      nameMatches(c.name, displayName) &&
-      !REGIONAL_RE.test(c.name) &&
-      !TRAINER_OWNED_RE.test(c.name)
-    );
-    if (!candidates.length) return null;
-    return cardImageUrl(pickHighestValue(candidates));
-  };
-
-  // For Pokémon not covered by sv3pt5, fall back to per-name queries (staggered to avoid rate limits).
+  // Per-name search across all sets — picks the most valuable card by market price.
+  // noCardPokemon is typically a small list so individual queries are acceptable.
   const results = await Promise.all(
     pokemon.map(async ({ id, name }, i) => {
       const displayName = toDisplayName(name);
-      const bulkUrl = pickFromIndex(displayName);
-      if (bulkUrl) return [id, { tcgUrl: bulkUrl }] as const;
-
-      // Stagger per-name requests to avoid simultaneous rate-limit hits
+      // Stagger requests to avoid simultaneous rate-limit hits
       await new Promise(r => setTimeout(r, i * 50));
       const cards = await fetchAllPages(`name:"${displayName}"`, true);
       const candidates = cards.filter(c =>

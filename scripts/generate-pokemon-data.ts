@@ -11,7 +11,7 @@ import {
   buildVgxData, vgxCandidates, vgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
-  fetchFormCard, fetchFormCardLastResort, fetchCardById,
+  fetchFormCard, fetchFormCardLastResort,
   fetchTcgLastResort, toDisplayName,
   IR_RARITIES, VGX_RARITIES,
 } from "../lib/tcgapi";
@@ -22,14 +22,15 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
 
-const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
-  "Mega Mewtwo X": "xy8-63",
-  // SWSH294 has "Promo" rarity — not in VGX_RARITIES, so the normal V-card lookup only
-  // finds swsh11-172 (Lost Origin). Hardcode to target the Black Star Promo directly.
-  "Hisuian Electrode": "swshp-SWSH294",
-  // SM236 is a full-art promo ("Promo" rarity) — not in VGX_RARITIES, so automated lookup
-  // picks sm5/29 (Guardians Rising bordered holo) instead.
-  "Alolan Sandslash": "smp-SM236",
+// Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
+// Using URLs directly avoids a per-card API call that can fail under rate limits.
+// URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
+const HARDCODED_FORM_URLS: Record<string, string> = {
+  "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
+  // SWSH294 is the Black Star Promo full-art; automated lookup picks swsh11-172 (bordered V).
+  "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
+  // SM236 is a full-art promo; automated lookup picks sm5/29 (bordered holo).
+  "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
 };
 
 async function main() {
@@ -143,7 +144,7 @@ async function main() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
+            const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
             const promoUrl = await promoSvPick(promoData, form.displayName);
             const trainerIrUrl = trainerIrPick(irData, form.displayName);
@@ -151,11 +152,10 @@ async function main() {
             const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);
             const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
 
-            const [irFromFormCard, pocket, vgxFromFormCard, hardcodedUrl] = await Promise.all([
+            const [irFromFormCard, pocket, vgxFromFormCard] = await Promise.all([
               !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
               fetchPocketAltForm(form.displayName, form.category),
               !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
-              hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
             ]);
 
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;

@@ -7,7 +7,7 @@ import {
   buildVgxData, vgxCandidates, vgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
-  fetchFormCard, fetchFormCardLastResort, fetchCardById,
+  fetchFormCard, fetchFormCardLastResort,
   fetchTcgLastResort, toDisplayName,
   IR_RARITIES, VGX_RARITIES,
 } from "@/lib/tcgapi";
@@ -22,18 +22,15 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
 
-// Hardcoded pokemontcg.io card IDs for alt forms where automated lookup can't distinguish variants.
-// Used when the API card name doesn't encode the X/Y variant (e.g. both M Mewtwo-EX cards are
-// named identically — only the card number distinguishes them).
-const HARDCODED_FORM_CARD_IDS: Record<string, string> = {
+// Direct image URLs for forms where automated lookup picks a wrong/inferior card.
+// URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
+const HARDCODED_FORM_URLS: Record<string, string> = {
   // XY8 BREAKthrough: 63/162 = Psycho Cut (X form), 64/162 = Psychic Infinity (Y form)
-  "Mega Mewtwo X": "xy8-63",
-  // SWSH294 has "Promo" rarity — not in VGX_RARITIES, so the normal V-card lookup only
-  // finds swsh11-172 (Lost Origin). Hardcode to target the Black Star Promo directly.
-  "Hisuian Electrode": "swshp-SWSH294",
-  // SM236 is a full-art promo ("Promo" rarity) — not in VGX_RARITIES, so automated lookup
-  // picks sm5/29 (Guardians Rising bordered holo) instead.
-  "Alolan Sandslash": "smp-SM236",
+  "Mega Mewtwo X": "https://images.pokemontcg.io/xy8/63_hires.png",
+  // SWSH294 is the Black Star Promo full-art; automated lookup picks swsh11-172 (bordered V).
+  "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
+  // SM236 is a full-art promo; automated lookup picks sm5/29 (bordered holo).
+  "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
 };
 
 export default async function PokedexGrid() {
@@ -159,7 +156,7 @@ export default async function PokedexGrid() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedCardId = HARDCODED_FORM_CARD_IDS[form.displayName];
+            const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
 
             // Sync lookups from shared indexes (free — data already in memory)
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
@@ -171,11 +168,10 @@ export default async function PokedexGrid() {
 
             // Async: per-name queries needed for mega forms (bulk indexes key on card name, not form name)
             // and Pocket lookup. Run in parallel.
-            const [irFromFormCard, pocket, vgxFromFormCard, hardcodedUrl] = await Promise.all([
+            const [irFromFormCard, pocket, vgxFromFormCard] = await Promise.all([
               !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
               fetchPocketAltForm(form.displayName, form.category),
               !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
-              hardcodedCardId ? fetchCardById(hardcodedCardId) : Promise.resolve(null),
             ]);
 
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;

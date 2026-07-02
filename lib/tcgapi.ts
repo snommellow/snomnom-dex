@@ -54,6 +54,12 @@ const SVP_BLACKLIST = new Set(["11", "24", "122", "167", "168", "169"]);
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
+// Sets that are primarily shiny Pokémon cards — excluded from fallback/last-resort picks
+const SHINY_SETS = new Set(["sv4pt5", "shf", "sm115", "sm35", "xy8pt5"]);
+function isShinyCard(c: PtcgCard): boolean {
+  return SHINY_SETS.has(c.set.id) || (c.rarity ?? "").startsWith("Shiny");
+}
+
 interface PtcgCard {
   id: string;
   number: string;
@@ -528,7 +534,7 @@ function pickHighestValue(candidates: PtcgCard[]): PtcgCard {
 export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
   const cards = await fetchAllPages(`name:"${displayName}" -rarity:Common`);
   const candidates = cards.filter(c =>
-    c.images?.large && nameMatches(c.name, displayName)
+    c.images?.large && nameMatches(c.name, displayName) && !isShinyCard(c)
   );
   if (!candidates.length) return null;
   return cardImageUrl(pickHighestValue(candidates));
@@ -552,7 +558,8 @@ export async function fetchTcgLastResort(
         (c.images?.large || c.images?.small) &&
         nameMatches(c.name, displayName) &&
         !REGIONAL_RE.test(c.name) &&
-        !TRAINER_OWNED_RE.test(c.name)
+        !TRAINER_OWNED_RE.test(c.name) &&
+        !isShinyCard(c)
       );
       if (!candidates.length) return null;
       return [id, { tcgUrl: cardImageUrl(pickHighestValue(candidates)) }] as const;
@@ -613,7 +620,7 @@ export async function buildFallbackArtData(): Promise<FallbackArtData> {
 export function fallbackArtPick(data: FallbackArtData, displayName: string): string | null {
   const candidates: RankedCard[] = (data.rarities as string[]).flatMap((r, i) =>
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
-  );
+  ).filter(c => !isShinyCard(c));
   if (!candidates.length) return null;
   return cardImageUrl(pickHighestValue(candidates));
 }

@@ -238,37 +238,8 @@ export async function fetchPocketAltForm(
   return { url: null };
 }
 
-// Pass 4 fallback: any Pocket card (including commons) for Pokémon with no high-quality card
-async function fetchAnyPocketCards(name: string): Promise<TcgdexCard[]> {
-  const res = await fetch(
-    `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`,
-    { cache: "no-store" }
-  );
-  if (!res.ok) throw new Error(`tcgdex ${res.status} for ${name}`);
-  const json = await res.json();
-  const all = (Array.isArray(json) ? json : (json?.data ?? [])) as TcgdexCard[];
-  return all.filter((c) => isPocketSet(setIdFromCardId(c.id)) && c.image);
-}
-
 export async function fetchPocketFallback(
   pokemon: Array<{ id: number; name: string }>
 ): Promise<PocketResult[]> {
-  return Promise.all(
-    pokemon.map(async ({ name }) => {
-      const nameLower = name.toLowerCase();
-      const cards = await fetchAnyPocketCards(name);
-      const matched = cards.filter((c) => {
-        const cn = c.name.toLowerCase();
-        return (cn === nameLower || cn.startsWith(nameLower + " ")) && !isExcluded(c.name);
-      });
-      if (!matched.length) return { url: null };
-      // Prefer ex cards (full-art), then pick highest localId
-      const exCards = matched.filter((c) => c.name.toLowerCase().includes(" ex"));
-      const pool = exCards.length ? exCards : matched;
-      const best = pool.reduce((a, b) =>
-        parseInt(b.localId) > parseInt(a.localId) ? b : a
-      );
-      return { url: cardImageUrl(best) };
-    })
-  );
+  return pokemon.map(() => ({ url: null }));
 }

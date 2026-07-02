@@ -61,7 +61,7 @@ function isShinyCard(c: PtcgCard): boolean {
 
 // WotC-era Gen 1 sets: Base, Jungle, Fossil, Team Rocket, Gym, Neo, e-Card (Expedition/Aquapolis/Skyridge)
 function isGenOneEraSet(setId: string): boolean {
-  return /^(base|gym|neo|si|ecard)\d/i.test(setId);
+  return /^(base|gym|neo)\d/i.test(setId);
 }
 
 interface PtcgCard {

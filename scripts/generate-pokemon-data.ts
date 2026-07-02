@@ -169,14 +169,19 @@ async function main() {
   ]);
 
   const lastResortMap = new Map(lastResortTcgMap);
+  const pocketFallbackMap = new Map<number, string>();
   noCardPokemon.forEach((p, i) => {
-    if (!lastResortMap.has(p.id) && pocketFallbackResults[i]?.url) {
-      lastResortMap.set(p.id, { tcgUrl: pocketFallbackResults[i].url! });
+    if (pocketFallbackResults[i]?.url) {
+      if (lastResortMap.has(p.id)) {
+        // TCG last-resort found — pocket fallback not needed
+      } else {
+        pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
+      }
     }
   });
 
   const pokemon = raw.map((p, i) => {
-    const pocketUrl = pocketMap.get(p.id);
+    const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
     const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;

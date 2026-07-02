@@ -539,7 +539,7 @@ function pickHighestValue(candidates: PtcgCard[]): PtcgCard {
 export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
   const cards = await fetchAllPages(`name:"${displayName}"`);
   const candidates = cards.filter(c =>
-    c.images?.large && nameMatches(c.name, displayName) && !isShinyCard(c)
+    c.images?.large && nameMatches(c.name, displayName) && !isShinyCard(c) && !isGenOneEraSet(c.set.id)
   );
   if (!candidates.length) return null;
   return cardImageUrl(pickHighestValue(candidates));
@@ -564,7 +564,8 @@ export async function fetchTcgLastResort(
         nameMatches(c.name, displayName) &&
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name) &&
-        !isShinyCard(c)
+        !isShinyCard(c) &&
+        !isGenOneEraSet(c.set.id)
       );
       if (!candidates.length) return null;
       return [id, { tcgUrl: cardImageUrl(pickHighestValue(candidates)) }] as const;

@@ -638,7 +638,8 @@ export function fallbackArtPick(data: FallbackArtData, displayName: string): str
   const candidates: RankedCard[] = (data.rarities as string[]).flatMap((r, i) =>
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
   );
-  return pickBest(candidates);
+  if (!candidates.length) return null;
+  return cardImageUrl(pickHighestValue(candidates));
 }
 
 // Fetch a single card by pokemontcg.io ID (e.g. "xy8-64") and return its image URL.

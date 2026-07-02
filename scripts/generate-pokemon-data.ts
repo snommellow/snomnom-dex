@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 // Generates lib/pokemon-data.json — run with: npm run generate
-// Requires POKEMONTCG_API_KEY env var (optional but avoids rate limits).
+// Optional: set POKEMONTCG_API_KEY env var to avoid rate limits.
 
 import { writeFileSync } from "fs";
 import { join } from "path";

@@ -62,7 +62,7 @@ interface PtcgCard {
   subtypes: string[];
   set: { id: string };
   images: { small: string; large: string | null };
-
+  tcgplayer?: { prices?: Record<string, { market?: number | null }> };
 }
 
 export interface RankedCard extends PtcgCard { _rarity: string }
@@ -498,13 +498,31 @@ export async function fetchFormCard(
   return null;
 }
 
-// Last-resort rarity order for Pokémon with no high-quality card — lower = better display value.
+// Last-resort rarity order — fallback when no price data is available (lower = better).
 const LAST_RESORT_RARITY: Record<string, number> = {
   "Rare Holo": 0,
   "Rare": 1,
   "Uncommon": 2,
   "Common": 3,
 };
+
+function marketPrice(card: PtcgCard): number {
+  const prices = card.tcgplayer?.prices;
+  if (!prices) return 0;
+  return Math.max(0, ...Object.values(prices).map(v => v?.market ?? 0));
+}
+
+function pickHighestValue(candidates: PtcgCard[]): PtcgCard {
+  return candidates.reduce((a, b) => {
+    const pa = marketPrice(a), pb = marketPrice(b);
+    if (pa !== pb) return pb > pa ? b : a;
+    const ra = LAST_RESORT_RARITY[a.rarity] ?? 4;
+    const rb = LAST_RESORT_RARITY[b.rarity] ?? 4;
+    if (ra !== rb) return ra < rb ? a : b;
+    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
+  });
+}
 
 // Pass 5: per-Pokémon name fetch for Pokémon with no card from any other pass.
 // Picks the highest-rarity card available (any rarity), then newest set as tiebreaker.
@@ -515,14 +533,7 @@ export async function fetchFormCardLastResort(displayName: string): Promise<stri
     c.images?.large && nameMatches(c.name, displayName)
   );
   if (!candidates.length) return null;
-  const best = candidates.reduce((a, b) => {
-    const ra = LAST_RESORT_RARITY[a.rarity] ?? 4;
-    const rb = LAST_RESORT_RARITY[b.rarity] ?? 4;
-    if (ra !== rb) return ra < rb ? a : b;
-    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
-    return parseInt(b.number) > parseInt(a.number) ? b : a;
-  });
-  return cardImageUrl(best);
+  return cardImageUrl(pickHighestValue(candidates));
 }
 
 // "Pokémon Card 151" (sv3pt5) — contains a card for every original 151 Pokémon.
@@ -548,13 +559,7 @@ export async function fetchTcgLastResort(
       !TRAINER_OWNED_RE.test(c.name)
     );
     if (!candidates.length) return null;
-    const best = candidates.reduce((a, b) => {
-      const ra = LAST_RESORT_RARITY[a.rarity] ?? 4;
-      const rb = LAST_RESORT_RARITY[b.rarity] ?? 4;
-      if (ra !== rb) return ra < rb ? a : b;
-      return parseInt(b.number) > parseInt(a.number) ? b : a;
-    });
-    return cardImageUrl(best);
+    return cardImageUrl(pickHighestValue(candidates));
   };
 
   // For Pokémon not covered by sv3pt5, fall back to per-name queries (staggered to avoid rate limits).
@@ -574,14 +579,7 @@ export async function fetchTcgLastResort(
         !TRAINER_OWNED_RE.test(c.name)
       );
       if (!candidates.length) return null;
-      const best = candidates.reduce((a, b) => {
-        const ra = LAST_RESORT_RARITY[a.rarity] ?? 4;
-        const rb = LAST_RESORT_RARITY[b.rarity] ?? 4;
-        if (ra !== rb) return ra < rb ? a : b;
-        if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
-        return parseInt(b.number) > parseInt(a.number) ? b : a;
-      });
-      return [id, { tcgUrl: cardImageUrl(best) }] as const;
+      return [id, { tcgUrl: cardImageUrl(pickHighestValue(candidates)) }] as const;
     })
   );
   return new Map(results.filter((r): r is NonNullable<typeof r> => r !== null));

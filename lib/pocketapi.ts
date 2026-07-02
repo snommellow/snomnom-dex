@@ -55,14 +55,16 @@ interface TcgdexCard {
   types?: string[];
 }
 
-// Maps PokéAPI type names to Pocket TCG energy types
-const POKEAPI_TO_TCG_TYPE: Record<string, string> = {
-  normal: "Colorless", fire: "Fire", water: "Water",
-  electric: "Lightning", grass: "Grass", ice: "Water",
-  fighting: "Fighting", poison: "Grass", ground: "Fighting",
-  flying: "Colorless", psychic: "Psychic", bug: "Grass",
-  rock: "Fighting", ghost: "Psychic", dragon: "Dragon",
-  dark: "Darkness", steel: "Metal", fairy: "Psychic",
+// Maps PokéAPI type names to Pocket TCG energy types.
+// Poison maps to both Grass (e.g. Weedle, Caterpie) and Psychic (e.g. Nidoqueen, Zubat)
+// because Pocket TCG splits Poison Pokémon across both energy types.
+const POKEAPI_TO_TCG_TYPE: Record<string, string[]> = {
+  normal:   ["Colorless"], fire:     ["Fire"],    water:    ["Water"],
+  electric: ["Lightning"], grass:    ["Grass"],   ice:      ["Water"],
+  fighting: ["Fighting"],  poison:   ["Grass", "Psychic"], ground: ["Fighting"],
+  flying:   ["Colorless"], psychic:  ["Psychic"], bug:      ["Grass"],
+  rock:     ["Fighting"],  ghost:    ["Psychic"], dragon:   ["Dragon"],
+  dark:     ["Darkness"],  steel:    ["Metal"],   fairy:    ["Psychic"],
 };
 
 function isExcluded(cardName: string): boolean {
@@ -141,7 +143,7 @@ export async function fetchPocketImages(
 ): Promise<PocketResult[]> {
   return Promise.all(
     pokemon.map(async ({ name, gameTypes }) => {
-      const expectedTcgTypes = new Set(gameTypes.map(t => POKEAPI_TO_TCG_TYPE[t] ?? "Colorless"));
+      const expectedTcgTypes = new Set(gameTypes.flatMap(t => POKEAPI_TO_TCG_TYPE[t] ?? ["Colorless"]));
       const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
       const nameLower = name.toLowerCase();
       const nameMatches = (cardName: string) => {

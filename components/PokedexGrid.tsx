@@ -47,7 +47,7 @@ export default async function PokedexGrid() {
   const raw = await fetchFirst151();
 
   // Start Pocket fetches immediately — they only need names, not chain/species data.
-  const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name })));
+  const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name, gameTypes: p.types.map(t => t.type.name) })));
 
   // Species data: genus + alt form slots + evolution chain URL
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));

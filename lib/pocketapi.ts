@@ -52,7 +52,18 @@ interface TcgdexCard {
   image?: string;
   rarity?: string;
   set?: { id: string };
+  types?: string[];
 }
+
+// Maps PokéAPI type names to Pocket TCG energy types
+const POKEAPI_TO_TCG_TYPE: Record<string, string> = {
+  normal: "Colorless", fire: "Fire", water: "Water",
+  electric: "Lightning", grass: "Grass", ice: "Water",
+  fighting: "Fighting", poison: "Grass", ground: "Fighting",
+  flying: "Colorless", psychic: "Psychic", bug: "Grass",
+  rock: "Fighting", ghost: "Psychic", dragon: "Dragon",
+  dark: "Darkness", steel: "Metal", fairy: "Psychic",
+};
 
 function isExcluded(cardName: string): boolean {
   return /^(mega |m |alolan |galarian |hisuian |paldean )/i.test(cardName);
@@ -116,10 +127,11 @@ function pickBestPocket(cards: Array<TcgdexCard & { rarity: string }>, chainSets
 }
 
 export async function fetchPocketImages(
-  pokemon: Array<{ id: number; name: string }>,
+  pokemon: Array<{ id: number; name: string; gameTypes: string[] }>,
 ): Promise<PocketResult[]> {
   return Promise.all(
-    pokemon.map(async ({ name }) => {
+    pokemon.map(async ({ name, gameTypes }) => {
+      const expectedTcgTypes = new Set(gameTypes.map(t => POKEAPI_TO_TCG_TYPE[t] ?? "Colorless"));
       const results = await Promise.all(STAR_RARITIES.map((r) => fetchStarCards(name, r)));
       const nameLower = name.toLowerCase();
       const nameMatches = (cardName: string) => {
@@ -128,7 +140,14 @@ export async function fetchPocketImages(
       };
       const cards = STAR_RARITIES.flatMap((rarity, i) =>
         results[i]
-          .filter((c) => c.image && nameMatches(c.name) && !isExcluded(c.name))
+          .filter((c) => {
+            if (!c.image || !nameMatches(c.name) || isExcluded(c.name)) return false;
+            if (!isPocketSet(setIdFromCardId(c.id))) return false;
+            // If tcgdex returns type info, reject cards whose type doesn't match
+            // (catches Alolan forms labeled without "Alolan" prefix, e.g. Alolan Rattata as "Rattata")
+            if (c.types?.length && !c.types.some(t => expectedTcgTypes.has(t))) return false;
+            return true;
+          })
           .map((c) => ({ ...c, rarity }))
       );
       return pickBestPocket(cards);

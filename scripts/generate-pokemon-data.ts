@@ -36,7 +36,7 @@ async function main() {
   console.log("Fetching Pokémon list...");
   const raw = await fetchFirst151();
 
-  const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name })));
+  const pocketPromise = fetchPocketImages(raw.map((p) => ({ id: p.id, name: p.name, gameTypes: p.types.map(t => t.type.name) })));
 
   console.log("Fetching species data...");
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));

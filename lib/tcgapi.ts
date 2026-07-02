@@ -67,7 +67,7 @@ interface PtcgCard {
   subtypes: string[];
   set: { id: string };
   images: { small: string; large: string | null };
-  tcgplayer?: { prices?: Record<string, { market?: number | null }> };
+  tcgplayer?: { prices?: Record<string, { market?: number | null; mid?: number | null }> };
 }
 
 export interface RankedCard extends PtcgCard { _rarity: string }
@@ -512,7 +512,8 @@ const LAST_RESORT_RARITY: Record<string, number> = {
 function marketPrice(card: PtcgCard): number {
   const prices = card.tcgplayer?.prices;
   if (!prices) return 0;
-  return Math.max(0, ...Object.values(prices).map(v => v?.market ?? 0));
+  // Prefer market price, fall back to mid price when market is unavailable
+  return Math.max(0, ...Object.values(prices).map(v => v?.market ?? v?.mid ?? 0));
 }
 
 function pickHighestValue(candidates: PtcgCard[]): PtcgCard {
@@ -621,12 +622,15 @@ export function fallbackArtPick(data: FallbackArtData, displayName: string): str
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
   ).filter(c => !isShinyCard(c));
   if (!candidates.length) return null;
-  // Rarity tier first (EX > GX > Holo > Secret > Ultra), then price within the same tier
+  // Rarity tier first (EX > GX > Holo > Secret > Ultra), then price, then newest set
   const rarityIndex = (c: RankedCard) => (data.rarities as string[]).indexOf(c._rarity);
   const best = candidates.reduce((a, b) => {
     const ra = rarityIndex(a), rb = rarityIndex(b);
     if (ra !== rb) return ra < rb ? a : b;
-    return marketPrice(b) > marketPrice(a) ? b : a;
+    const pa = marketPrice(a), pb = marketPrice(b);
+    if (pa !== pb) return pb > pa ? b : a;
+    if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
   });
   return cardImageUrl(best);
 }

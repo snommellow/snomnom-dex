@@ -21,10 +21,9 @@ const FORM_ICON_URL: Record<string, string> = {
 interface Props {
   pokemon: PokemonSummary;
   formCategory?: AltForm["category"];
-  formLabel?: string;
 }
 
-export default function PokemonCard({ pokemon, formCategory, formLabel }: Props) {
+export default function PokemonCard({ pokemon, formCategory }: Props) {
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 
@@ -187,14 +186,12 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             >
               {pokemon.name}
             </p>
-            {(pokemon.genus || formLabel) && (
+            {pokemon.genus && (
               <p
                 className="font-semibold leading-none text-gray-500"
                 style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}
               >
-                {pokemon.genus
-                  ? `The ${pokemon.genus.replace(/\s*Pokémon\s*/i, "").trim()}.${formLabel ? ` The ${formLabel}.` : ""}`
-                  : formLabel ? `The ${formLabel}.` : ""}
+                {`The ${pokemon.genus.replace(/\s*Pokémon\s*/i, "").trim()}.`}
               </p>
             )}
           </div>
@@ -279,37 +276,12 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   );
 }
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega "] as const;
-
-function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
-  let baseName = displayName;
-  for (const prefix of FORM_PREFIXES) {
-    if (baseName.startsWith(prefix)) { baseName = baseName.slice(prefix.length); break; }
-  }
-  // Strip " X" / " Y" suffix from the base name for mega X/Y forms
-  if (category === "mega") baseName = baseName.replace(/ [XY]$/, "");
-
-  // Build form label
-  let label = "";
-  if (category === "mega") {
-    label = displayName.endsWith(" X") ? "Mega X" : displayName.endsWith(" Y") ? "Mega Y" : "Mega";
-  } else if (category === "gmax") {
-    label = "Gigantamax";
-  } else if (category === "regional") {
-    if (displayName.startsWith("Alolan")) label = "Alolan";
-    else if (displayName.startsWith("Galarian")) label = "Galarian";
-    else if (displayName.startsWith("Hisuian")) label = "Hisuian";
-    else if (displayName.startsWith("Paldean")) label = "Paldean";
-  }
-  return { baseName, formLabel: label };
-}
 
 // Alt form card: converts AltForm data into a PokemonSummary and renders the exact same PokemonCard
 export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: number; genus?: string | null }) {
-  const { baseName, formLabel } = extractAltFormParts(form.displayName, form.category);
   const summary: PokemonSummary = {
     id: baseId,
-    name: baseName,
+    name: form.displayName,
     types: form.types,
     spriteUrl: null,
     artworkUrl: form.artworkUrl,
@@ -320,5 +292,5 @@ export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: nu
     regularCardUrl: form.regularCardUrl ?? undefined,
     altForms: [],
   };
-  return <PokemonCard pokemon={summary} formCategory={form.category} formLabel={formLabel} />;
+  return <PokemonCard pokemon={summary} formCategory={form.category} />;
 }

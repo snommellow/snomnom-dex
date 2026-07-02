@@ -15,8 +15,11 @@ function GridSkeleton() {
           <div key={i} className="h-6 w-16 rounded-full bg-amber-200/40 animate-pulse" />
         ))}
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-        {Array.from({ length: 24 }).map((_, i) => (
+      <div
+        className="grid gap-x-3 gap-y-4"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))" }}
+      >
+        {Array.from({ length: 32 }).map((_, i) => (
           <div key={i} className="rounded-md bg-amber-200/40 animate-pulse h-44" />
         ))}
       </div>
@@ -62,7 +65,7 @@ export default function Home() {
                 Snomnom Dex
               </h1>
               <p className="text-red-200 text-[11px] font-medium leading-none mt-0.5">
-                Generation I · 151 Pokémon
+                Generation I–II · 251 Pokémon
               </p>
             </div>
 

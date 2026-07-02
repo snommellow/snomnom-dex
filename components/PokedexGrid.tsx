@@ -192,18 +192,18 @@ export default async function PokedexGrid() {
     ),
   ]);
 
-  // Merge TCG last resort with Pocket fallback — TCG wins when both are available.
   const lastResortMap = new Map(lastResortTcgMap);
+  const pocketFallbackMap = new Map<number, string>();
   noCardPokemon.forEach((p, i) => {
-    if (!lastResortMap.has(p.id) && pocketFallbackResults[i]?.url) {
-      lastResortMap.set(p.id, { tcgUrl: pocketFallbackResults[i].url! });
+    if (pocketFallbackResults[i]?.url) {
+      if (!lastResortMap.has(p.id)) {
+        pocketFallbackMap.set(p.id, pocketFallbackResults[i].url!);
+      }
     }
   });
 
-
   const pokemon = raw.map((p, i) => {
-    const pocketUrl = pocketMap.get(p.id);
-    // Pocket beats trainerIr and VGX — only use those if no pocket card
+    const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
     const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;

@@ -22,6 +22,14 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
 
+// Direct background card URLs for base Pokémon where automated lookup fails or picks wrong card.
+// Keyed by dex ID. These bypass tcgResult and go directly into bgCandidates.
+// URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
+const HARDCODED_BG_URLS: Record<number, string> = {
+  // #022 Fearow: xy6-41 is θ Double Ancient Trait from Roaring Skies — AT lookup fails under rate limits.
+  22: "https://images.pokemontcg.io/xy6/41_hires.png",
+};
+
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
 // Using URLs directly avoids a per-card API call that can fail under rate limits.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
@@ -182,8 +190,9 @@ async function main() {
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
-    const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
+    const hardcodedBg = HARDCODED_BG_URLS[p.id];
+    const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
+    const fallbackCrop = !hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined;
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 

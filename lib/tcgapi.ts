@@ -622,7 +622,14 @@ export function fallbackArtPick(data: FallbackArtData, displayName: string): str
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
   ).filter(c => !isShinyCard(c));
   if (!candidates.length) return null;
-  return cardImageUrl(pickHighestValue(candidates));
+  // Rarity tier first (EX > GX > Holo > Secret > Ultra), then price within the same tier
+  const rarityIndex = (c: RankedCard) => (data.rarities as string[]).indexOf(c._rarity);
+  const best = candidates.reduce((a, b) => {
+    const ra = rarityIndex(a), rb = rarityIndex(b);
+    if (ra !== rb) return ra < rb ? a : b;
+    return marketPrice(b) > marketPrice(a) ? b : a;
+  });
+  return cardImageUrl(best);
 }
 
 // Fetch a single card by pokemontcg.io ID (e.g. "xy8-64") and return its image URL.

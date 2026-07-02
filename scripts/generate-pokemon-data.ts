@@ -2,9 +2,9 @@
 // Generates lib/pokemon-data.json — run with: npm run generate
 // Optional: set POKEMONTCG_API_KEY env var to avoid rate limits.
 
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm } from "../lib/pokeapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
 import {
   buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildPromoSvData, promoSvPick,
@@ -132,9 +132,12 @@ async function main() {
       !trainerIrMap.has(p.id) && !vgxMap.has(p.id);
   });
 
-  console.log(`Fetching alt form cards + last-resort for ${noCardPokemon.length} Pokémon...`);
-  const [lastResortTcgMap, pocketFallbackResults, altFormsWithCards] = await Promise.all([
-    fetchTcgLastResort(noCardPokemon),
+  // Run fetchTcgLastResort before alt-form queries to avoid competing with them for rate limits.
+  console.log(`Fetching last-resort cards for ${noCardPokemon.length} Pokémon...`);
+  const lastResortTcgMap = await fetchTcgLastResort(noCardPokemon);
+
+  console.log("Fetching alt form cards...");
+  const [pocketFallbackResults, altFormsWithCards] = await Promise.all([
     fetchPocketFallback(noCardPokemon),
     Promise.all(
       altFormsData.map((forms, i) =>
@@ -184,7 +187,20 @@ async function main() {
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 
+  // Preserve regularCardUrl from previous run when the new run returned null
+  // (guards against transient API failures wiping out previously-found fallback cards).
   const outPath = join(import.meta.dirname, "../lib/pokemon-data.json");
+  if (existsSync(outPath)) {
+    const prev = JSON.parse(readFileSync(outPath, "utf-8")) as PokemonSummary[];
+    const prevById = new Map(prev.map(p => [p.id, p]));
+    for (const p of pokemon) {
+      if (!p.regularCardUrl && !p.bgCandidates.length) {
+        const old = prevById.get(p.id);
+        if (old?.regularCardUrl) p.regularCardUrl = old.regularCardUrl;
+      }
+    }
+  }
+
   writeFileSync(outPath, JSON.stringify(pokemon, null, 2));
   console.log(`Written ${pokemon.length} Pokémon to lib/pokemon-data.json`);
 }

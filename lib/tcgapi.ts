@@ -564,7 +564,8 @@ export async function fetchTcgLastResort(
         nameMatches(c.name, displayName) &&
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name) &&
-        !isShinyCard(c)
+        !isShinyCard(c) &&
+        !/^ecard\d/i.test(c.set.id)
       );
       if (!candidates.length) return null;
       return [id, { tcgUrl: cardImageUrl(pickHighestValue(candidates)) }] as const;

@@ -182,7 +182,7 @@ async function main() {
   const pokemon = raw.map((p, i) => {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
-    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null };
+    const tcgResult = irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl, isOldStyle: true } : undefined) ?? { tcgUrl: null };
     const fallbackCrop = fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined;
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
@@ -196,7 +196,7 @@ async function main() {
     for (const p of pokemon) {
       if (!p.regularCardUrl && !p.bgCandidates.length) {
         const old = prevById.get(p.id);
-        if (old?.regularCardUrl) p.regularCardUrl = old.regularCardUrl;
+        if (old?.regularCardUrl && !/\/ecard\d\//i.test(old.regularCardUrl)) p.regularCardUrl = old.regularCardUrl;
       }
     }
   }

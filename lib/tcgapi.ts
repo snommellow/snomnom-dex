@@ -216,8 +216,11 @@ function pickBestCard(cards: RankedCard[]): RankedCard | null {
   return cards.reduce((a, b) => {
     const ra = effectiveScore(a), rb = effectiveScore(b);
     if (ra !== rb) return ra < rb ? a : b;
+    // Same rarity tier: prefer higher market price
+    const pa = marketPrice(a), pb = marketPrice(b);
+    if (pa !== pb) return pb > pa ? b : a;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
-    // Same rarity + same set: prefer higher number (alt arts are secret-rare numbered)
+    // Same rarity + same price + same set: prefer higher number (alt arts are secret-rare numbered)
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;
     return bNum >= aNum ? b : a;
   });

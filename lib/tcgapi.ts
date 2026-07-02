@@ -55,7 +55,7 @@ const SVP_BLACKLIST = new Set(["11", "24", "122", "167", "168", "169"]);
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
 // Sets that are primarily shiny Pokémon cards — excluded from fallback/last-resort picks
-const SHINY_SETS = new Set(["sv4pt5", "shf", "sm115", "sm35", "xy8pt5"]);
+const SHINY_SETS = new Set(["sv4pt5", "shf", "swsh45sv", "sm115", "sm115sv", "sm35", "xy8pt5"]);
 function isShinyCard(c: PtcgCard): boolean {
   return SHINY_SETS.has(c.set.id) || (c.rarity ?? "").startsWith("Shiny");
 }

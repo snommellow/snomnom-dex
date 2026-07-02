@@ -108,10 +108,13 @@ export default async function PokedexGrid() {
     const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
   }));
-  const promoSvMap = new Map(raw.flatMap(p => {
-    const url = promoSvPick(promoData, toDisplayName(p.name));
-    return url ? [[p.id, { tcgUrl: url }]] : [];
-  }));
+  const promoSvEntries = await Promise.all(
+    raw.map(async p => {
+      const url = await promoSvPick(promoData, toDisplayName(p.name));
+      return url ? [p.id, { tcgUrl: url }] as const : null;
+    })
+  );
+  const promoSvMap = new Map(promoSvEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const trainerIrMap = new Map(raw.flatMap(p => {
     const url = trainerIrPick(irData, toDisplayName(p.name));
     return url ? [[p.id, { tcgUrl: url }]] : [];
@@ -160,7 +163,7 @@ export default async function PokedexGrid() {
 
             // Sync lookups from shared indexes (free — data already in memory)
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
-            const promoUrl = promoSvPick(promoData, form.displayName);
+            const promoUrl = await promoSvPick(promoData, form.displayName);
             const trainerIrUrl = trainerIrPick(irData, form.displayName);
             const vgxFromIndex = vgxPick(vgxCandidates(vgxData, form.displayName));
             const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);

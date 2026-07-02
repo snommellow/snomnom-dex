@@ -307,16 +307,13 @@ export async function buildPromoSvData(): Promise<PromoSvData> {
     SV_PROMO_SETS.map(setId => fetchAllPages(`set.id:${setId} -subtypes:Tera`))
   );
   perSetCards.forEach((cards, i) => { if (cards.length > 0) process.stderr.write(`[promo fetch] set=${SV_PROMO_SETS[i]} count=${cards.length}\n`); });
-  const allCards = perSetCards.flat();
-  // Verify image URLs — some cards in the pokemontcg.io API have images.large set but the CDN
-  // file is missing. Filter those out so they don't block the last-resort fallback path.
-  const verified = await Promise.all(
-    allCards.map(async c => c.images?.large ? (await imageExists(c.images.large) ? c : null) : c)
-  );
-  return { index: buildNameIndex(verified.filter((c): c is PtcgCard => c !== null)) };
+  return { index: buildNameIndex(perSetCards.flat()) };
 }
 
-export function promoSvPick(data: PromoSvData, displayName: string): string | null {
+// promoSvPick is async so it can verify the winner's image URL before returning it.
+// Some pokemontcg.io API entries have images.large set but the actual CDN file is missing;
+// verifying only the single winner (not all candidates) keeps this check cheap.
+export async function promoSvPick(data: PromoSvData, displayName: string): Promise<string | null> {
   const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
     c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
     !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name)
@@ -327,7 +324,8 @@ export function promoSvPick(data: PromoSvData, displayName: string): string | nu
     if (ra !== rb) return ra < rb ? a : b;
     return parseInt(b.number) > parseInt(a.number) ? b : a;
   });
-  return cardImageUrl(best);
+  const url = cardImageUrl(best);
+  return (await imageExists(url)) ? url : null;
 }
 
 export async function buildVgxData(): Promise<VgxData> {

@@ -59,6 +59,11 @@ function isShinyCard(c: PtcgCard): boolean {
   return (c.rarity ?? "").startsWith("Shiny") || /^SV\d/i.test(c.number);
 }
 
+// WotC-era Gen 1 sets: Base, Jungle, Fossil, Team Rocket, Gym, Neo, e-Card (Expedition/Aquapolis/Skyridge)
+function isGenOneEraSet(setId: string): boolean {
+  return /^(base|gym|neo|si|ecard)\d/i.test(setId);
+}
+
 interface PtcgCard {
   id: string;
   number: string;
@@ -620,7 +625,7 @@ export async function buildFallbackArtData(): Promise<FallbackArtData> {
 export function fallbackArtPick(data: FallbackArtData, displayName: string): string | null {
   const candidates: RankedCard[] = (data.rarities as string[]).flatMap((r, i) =>
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
-  ).filter(c => !isShinyCard(c));
+  ).filter(c => !isShinyCard(c) && !isGenOneEraSet(c.set.id));
   if (!candidates.length) return null;
   // Rarity tier first (EX > GX > Holo > Secret > Ultra), then price, then newest set
   const rarityIndex = (c: RankedCard) => (data.rarities as string[]).indexOf(c._rarity);

@@ -206,21 +206,18 @@ function isPreBwSet(setId: string): boolean {
 
 function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
-  // TG illustration cards get Trainer Gallery Rare Holo score (beats Rare Ultra/V)
-  // Rare Ultra from swsh11+ are full-art border reprints, not distinct alt arts — deprioritize below Rare Holo V
+  // Rare Ultra from swsh11+ are full-art border reprints — deprioritize below Rare Holo V
   const effectiveScore = (c: RankedCard) => {
-    if (TG_RE.test(c.number)) return rarityScore("Trainer Gallery Rare Holo");
     if (c._rarity === "Rare Ultra" && swshSetNum(c.set.id) >= 11) return rarityScore("Rare Holo V") + 1;
     return rarityScore(c._rarity);
   };
   return cards.reduce((a, b) => {
     const ra = effectiveScore(a), rb = effectiveScore(b);
     if (ra !== rb) return ra < rb ? a : b;
-    // Same rarity tier: prefer higher market price
+    // Same rarity tier: prefer higher market price (catches TG vs Ultra Rare, etc.)
     const pa = marketPrice(a), pb = marketPrice(b);
     if (pa !== pb) return pb > pa ? b : a;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
-    // Same rarity + same price + same set: prefer higher number (alt arts are secret-rare numbered)
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;
     return bNum >= aNum ? b : a;
   });

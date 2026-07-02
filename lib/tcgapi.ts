@@ -54,10 +54,9 @@ const SVP_BLACKLIST = new Set(["11", "24", "122", "167", "168", "169"]);
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
-// Sets that are primarily shiny Pokémon cards — excluded from fallback/last-resort picks
-const SHINY_SETS = new Set(["sv4pt5", "shf", "swsh45sv", "sm115", "sm115sv", "sm35", "xy8pt5"]);
+// Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
-  return SHINY_SETS.has(c.set.id) || (c.rarity ?? "").startsWith("Shiny");
+  return (c.rarity ?? "").startsWith("Shiny") || /^SV\d/i.test(c.number);
 }
 
 interface PtcgCard {

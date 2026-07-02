@@ -227,7 +227,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             ) : (
               <div className="absolute bottom-1 right-1 w-10 h-10" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
                 <Image
-                  src={HOME_SPRITE(pokemon.id)}
+                  src={pokemon.artworkUrl ?? HOME_SPRITE(pokemon.id)}
                   alt={pokemon.name}
                   fill
                   sizes="64px"

@@ -336,7 +336,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xyp/XY158_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -451,8 +451,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sm7/85_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sm7/85_hires.png"
       }
     ]
   },
@@ -644,7 +644,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png",
         "category": "regional",
-        "tcgUrl": null,
+        "tcgUrl": "https://images.pokemontcg.io/smp/SM236_hires.png",
         "regularCardUrl": null
       }
     ]
@@ -1051,7 +1051,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10106.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10106.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv8/208_hires.png",
+        "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3a/087/high.webp",
         "regularCardUrl": null
       }
     ]
@@ -1092,7 +1092,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10161.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh2/126_hires.png"
+        "regularCardUrl": null
       },
       {
         "slug": "meowth-gmax",
@@ -1213,7 +1213,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv6/181_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -1507,7 +1507,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10109.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/sm9/35_hires.png"
+        "regularCardUrl": null
       }
     ]
   },
@@ -1562,7 +1562,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sm4/34_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -1647,7 +1647,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH126_hires.png"
+        "regularCardUrl": null
       }
     ]
   },
@@ -1835,7 +1835,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10112.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/sm11/127_hires.png"
+        "regularCardUrl": null
       }
     ]
   },
@@ -2073,8 +2073,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG01_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG01_hires.png"
       }
     ]
   },
@@ -2102,7 +2102,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh11/172_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
         "regularCardUrl": null
       }
     ]
@@ -2704,7 +2704,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10205.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10205.png",
         "category": "gmax",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH087_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -2880,7 +2880,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10206.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10206.png",
         "category": "gmax",
-        "tcgUrl": "https://images.pokemontcg.io/swsh1/142_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -2910,7 +2910,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG16_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -2941,7 +2941,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh6/174_hires.png"
+        "regularCardUrl": null
       }
     ]
   },
@@ -2970,7 +2970,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG20_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -3057,7 +3057,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10043.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10043.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy8/160_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy8/63_hires.png",
         "regularCardUrl": null
       },
       {
@@ -3069,7 +3069,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10044.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10044.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy8/160_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]
@@ -4079,7 +4079,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": null
+        "regularCardUrl": "https://images.pokemontcg.io/swsh10/89_hires.png"
       }
     ]
   },
@@ -4154,7 +4154,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy3/112_hires.png",
         "regularCardUrl": null
       }
     ]
@@ -4183,7 +4183,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": null
+        "regularCardUrl": "https://images.pokemontcg.io/swsh10/92_hires.png"
       }
     ]
   },
@@ -4718,7 +4718,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy7/92_hires.png",
+        "tcgUrl": null,
         "regularCardUrl": null
       }
     ]

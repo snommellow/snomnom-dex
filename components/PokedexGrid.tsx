@@ -24,7 +24,7 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 
 // Direct background card URLs for base Pokémon where automated lookup fails or picks wrong card.
 const HARDCODED_BG_URLS: Record<number, string> = {
-  22: "https://images.pokemontcg.io/xy6/66_hires.png",
+  22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
 };
 
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.

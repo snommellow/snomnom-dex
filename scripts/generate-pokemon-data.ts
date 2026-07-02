@@ -26,8 +26,8 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 // Keyed by dex ID. These bypass tcgResult and go directly into bgCandidates.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
-  // #022 Fearow: xy6-66 is θ Double Ancient Trait from Roaring Skies — AT lookup fails under rate limits.
-  22: "https://images.pokemontcg.io/xy6/66_hires.png",
+  // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo — the $61 full-art promo card.
+  22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.

@@ -61,7 +61,7 @@ interface TcgdexCard {
 const POKEAPI_TO_TCG_TYPE: Record<string, string[]> = {
   normal:   ["Colorless"], fire:     ["Fire"],    water:    ["Water"],
   electric: ["Lightning"], grass:    ["Grass"],   ice:      ["Water"],
-  fighting: ["Fighting"],  poison:   ["Grass", "Psychic"], ground: ["Fighting"],
+  fighting: ["Fighting"],  poison:   ["Grass", "Psychic", "Darkness"], ground: ["Fighting"],
   flying:   ["Colorless"], psychic:  ["Psychic"], bug:      ["Grass"],
   rock:     ["Fighting"],  ghost:    ["Psychic"], dragon:   ["Dragon"],
   dark:     ["Darkness"],  steel:    ["Metal"],   fairy:    ["Psychic"],

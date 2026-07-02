@@ -129,7 +129,7 @@ async function main() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !vgxMap.has(p.id) && !fallbackArtMap.has(p.id);
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id);
   });
 
   console.log(`Fetching alt form cards + last-resort for ${noCardPokemon.length} Pokémon...`);

@@ -18,6 +18,19 @@ const FORM_ICON_URL: Record<string, string> = {
   regional: `${SPRITES}/oval-charm.png`,
 };
 
+const NAME_DISPLAY: Record<string, string> = {
+  "nidoran-f": "Nidoran♀",
+  "nidoran-m": "Nidoran♂",
+  "mr-mime":   "Mr. Mime",
+  "ho-oh":     "Ho-Oh",
+  "farfetchd": "Farfetch'd",
+};
+
+function formatName(name: string): string {
+  return NAME_DISPLAY[name]
+    ?? name.split("-").map(w => (w[0]?.toUpperCase() ?? "") + w.slice(1)).join(" ");
+}
+
 interface Props {
   pokemon: PokemonSummary;
   formCategory?: AltForm["category"];
@@ -181,10 +194,10 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
           {/* Name + tagline */}
           <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
             <p
-              className="font-black capitalize leading-tight truncate"
+              className="font-black leading-tight truncate"
               style={{ fontSize: 14, color: typeColor, WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}
             >
-              {pokemon.name}
+              {formatName(pokemon.name)}
             </p>
             {(pokemon.genus || formLabel) && (
               <p

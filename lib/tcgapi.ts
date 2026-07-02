@@ -109,7 +109,7 @@ async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
   const results: PtcgCard[] = [];
   let page = 1;
   while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,set,images`;
+    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,set,images,tcgplayer`;
     let data: PtcgCard[] = [];
     for (let attempt = 0; attempt < 3; attempt++) {
       try {

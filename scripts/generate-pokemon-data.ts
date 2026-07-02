@@ -187,16 +187,26 @@ async function main() {
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 
-  // Preserve regularCardUrl from previous run when the new run returned null
-  // (guards against transient API failures wiping out previously-found fallback cards).
+  // Preserve cards from previous run when the new run returned null.
+  // Guards against transient API failures (rate limits, timeouts) wiping out previously-found cards.
   const outPath = join(import.meta.dirname, "../lib/pokemon-data.json");
   if (existsSync(outPath)) {
     const prev = JSON.parse(readFileSync(outPath, "utf-8")) as PokemonSummary[];
     const prevById = new Map(prev.map(p => [p.id, p]));
     for (const p of pokemon) {
+      const old = prevById.get(p.id);
+      if (!old) continue;
+      // Preserve base form fallback card
       if (!p.regularCardUrl && !p.bgCandidates.length) {
-        const old = prevById.get(p.id);
-        if (old?.regularCardUrl && !/\/(base|gym|neo)\d\//i.test(old.regularCardUrl)) p.regularCardUrl = old.regularCardUrl;
+        if (old.regularCardUrl && !/\/(base|gym|neo)\d\//i.test(old.regularCardUrl)) p.regularCardUrl = old.regularCardUrl;
+      }
+      // Preserve alt form cards
+      const oldFormBySlug = new Map((old.altForms ?? []).map(f => [f.slug, f]));
+      for (const form of p.altForms ?? []) {
+        if (form.tcgUrl || form.regularCardUrl) continue;
+        const oldForm = oldFormBySlug.get(form.slug);
+        if (oldForm?.tcgUrl) form.tcgUrl = oldForm.tcgUrl;
+        else if (oldForm?.regularCardUrl) form.regularCardUrl = oldForm.regularCardUrl;
       }
     }
   }

@@ -61,7 +61,7 @@ function isShinyCard(c: PtcgCard): boolean {
 
 // WotC-era Gen 1 sets: Base, Jungle, Fossil, Team Rocket, Gym, Neo, e-Card (Expedition/Aquapolis/Skyridge)
 function isGenOneEraSet(setId: string): boolean {
-  return /^(base|gym|neo|ecard)\d/i.test(setId);
+  return /^(base|gym|neo)\d/i.test(setId);
 }
 
 interface PtcgCard {
@@ -565,7 +565,7 @@ export async function fetchTcgLastResort(
         !REGIONAL_RE.test(c.name) &&
         !TRAINER_OWNED_RE.test(c.name) &&
         !isShinyCard(c) &&
-        !/^ecard\d/i.test(c.set.id)
+        !isGenOneEraSet(c.set.id)
       );
       if (!candidates.length) return null;
       return [id, { tcgUrl: cardImageUrl(pickHighestValue(candidates)) }] as const;

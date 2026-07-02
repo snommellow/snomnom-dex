@@ -196,7 +196,7 @@ async function main() {
     for (const p of pokemon) {
       if (!p.regularCardUrl && !p.bgCandidates.length) {
         const old = prevById.get(p.id);
-        if (old?.regularCardUrl && !/\/ecard\d\//i.test(old.regularCardUrl)) p.regularCardUrl = old.regularCardUrl;
+        if (old?.regularCardUrl && !/\/(base|gym|neo)\d\//i.test(old.regularCardUrl)) p.regularCardUrl = old.regularCardUrl;
       }
     }
   }

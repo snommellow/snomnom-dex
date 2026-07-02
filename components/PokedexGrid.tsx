@@ -27,6 +27,11 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
 };
 
+// Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
+const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
+  76: "https://images.pokemontcg.io/ecard3/148_hires.png",
+};
+
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
@@ -206,7 +211,7 @@ export default async function PokedexGrid() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
-    const fallbackCrop = !hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined;
+    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(
       p,
       tcgResult,

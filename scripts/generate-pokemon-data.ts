@@ -30,6 +30,13 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
 };
 
+// Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
+// Keyed by dex ID. These override fallbackCrop so the correct card shows cropped.
+const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
+  // #076 Golem: ecard3-148 Crystal Type from Skyridge ($1,387) — fallback picks g1/46 (Golem EX, Generations).
+  76: "https://images.pokemontcg.io/ecard3/148_hires.png",
+};
+
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
 // Using URLs directly avoids a per-card API call that can fail under rate limits.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
@@ -192,7 +199,7 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
-    const fallbackCrop = !hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined;
+    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 

@@ -531,7 +531,7 @@ function pickHighestValue(candidates: PtcgCard[]): PtcgCard {
 // Picks the highest-rarity card available (any rarity), then newest set as tiebreaker.
 // Last-resort lookup for alt forms by display name (already human-readable, no slug conversion needed).
 export async function fetchFormCardLastResort(displayName: string): Promise<string | null> {
-  const cards = await fetchAllPages(`name:"${displayName}" -rarity:Common`);
+  const cards = await fetchAllPages(`name:"${displayName}"`);
   const candidates = cards.filter(c =>
     c.images?.large && nameMatches(c.name, displayName) && !isShinyCard(c)
   );
@@ -552,7 +552,7 @@ export async function fetchTcgLastResort(
       const displayName = toDisplayName(name);
       // Stagger requests to avoid simultaneous rate-limit hits
       await new Promise(r => setTimeout(r, i * 50));
-      const cards = await fetchAllPages(`name:"${displayName}" -rarity:Common`, true);
+      const cards = await fetchAllPages(`name:"${displayName}"`, true);
       const candidates = cards.filter(c =>
         (c.images?.large || c.images?.small) &&
         nameMatches(c.name, displayName) &&

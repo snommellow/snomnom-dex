@@ -256,14 +256,14 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
           }} />
 
           {/* Type pills */}
-          <div className="relative z-10 px-2.5 py-1.5 flex flex-col gap-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
+          <div className="relative z-10 px-2.5 py-1.5 flex flex-row gap-1.5 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
             {pokemon.types.map((type) => {
               const bg = TYPE_COLOR[type] ?? "#828282";
               return (
                 <span
                   key={type}
-                  className="flex items-center justify-center gap-1 rounded-full text-white uppercase font-extrabold tracking-[.06em] w-full"
-                  style={{ backgroundColor: bg, fontSize: 8, padding: "3px 8px", textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
+                  className="flex items-center justify-center gap-1 rounded-full text-white uppercase font-extrabold tracking-[.06em]"
+                  style={{ backgroundColor: bg, fontSize: 8, padding: "3px 0", flex: 1, textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={typeIconUrl(type)} alt="" aria-hidden className="w-3 h-3 flex-shrink-0 object-contain" />

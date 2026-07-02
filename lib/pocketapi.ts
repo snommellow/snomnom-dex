@@ -243,3 +243,4 @@ export async function fetchPocketFallback(
 ): Promise<PocketResult[]> {
   return pokemon.map(() => ({ url: null }));
 }
+

@@ -86,6 +86,16 @@ async function fetchStarCards(name: string, rarity: string): Promise<TcgdexCard[
   });
 }
 
+async function fetchCardDetail(id: string): Promise<TcgdexCard | null> {
+  return withRateLimit(async () => {
+    try {
+      const res = await fetch(`${TCGDEX_BASE}/cards/${encodeURIComponent(id)}`, { next: { revalidate: 86400 } });
+      if (!res.ok) return null;
+      return await res.json() as TcgdexCard;
+    } catch { return null; }
+  });
+}
+
 function cardImageUrl(card: TcgdexCard): string {
   return `${card.image}/high.webp`;
 }
@@ -138,18 +148,26 @@ export async function fetchPocketImages(
         const cn = cardName.toLowerCase();
         return cn === nameLower || cn.startsWith(nameLower + " ");
       };
-      const cards = STAR_RARITIES.flatMap((rarity, i) =>
+      const prefiltered = STAR_RARITIES.flatMap((rarity, i) =>
         results[i]
-          .filter((c) => {
-            if (!c.image || !nameMatches(c.name) || isExcluded(c.name)) return false;
-            if (!isPocketSet(setIdFromCardId(c.id))) return false;
-            // If tcgdex returns type info, reject cards whose type doesn't match
-            // (catches Alolan forms labeled without "Alolan" prefix, e.g. Alolan Rattata as "Rattata")
-            if (c.types?.length && !c.types.some(t => expectedTcgTypes.has(t))) return false;
-            return true;
-          })
+          .filter((c) => c.image && nameMatches(c.name) && !isExcluded(c.name) && isPocketSet(setIdFromCardId(c.id)))
           .map((c) => ({ ...c, rarity }))
       );
+
+      // Fetch card details to get types (list endpoint doesn't reliably return types field).
+      // This catches mislabeled cards like Alolan Rattata appearing as "Rattata" in tcgdex.
+      const detailed = await Promise.all(
+        prefiltered.map(async (c) => {
+          if (c.types?.length) return c;
+          const detail = await fetchCardDetail(c.id);
+          return detail ? { ...c, types: detail.types } : c;
+        })
+      );
+
+      const cards = detailed.filter((c) => {
+        if (c.types?.length && !c.types.some(t => expectedTcgTypes.has(t))) return false;
+        return true;
+      });
       return pickBestPocket(cards);
     })
   );

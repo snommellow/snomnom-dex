@@ -262,12 +262,12 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
               return (
                 <span
                   key={type}
-                  className="flex items-center justify-center gap-1 rounded-full text-white uppercase font-extrabold tracking-[.06em]"
-                  style={{ backgroundColor: bg, fontSize: 8, padding: "3px 0", flex: 1, textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
+                  className="flex items-center rounded-full text-white uppercase font-extrabold tracking-[.06em]"
+                  style={{ backgroundColor: bg, fontSize: 8, padding: "3px 8px 3px 6px", flex: 1, textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={typeIconUrl(type)} alt="" aria-hidden className="w-3 h-3 flex-shrink-0 object-contain" />
-                  {type}
+                  <img src={typeIconUrl(type)} alt="" aria-hidden className="w-4 h-4 flex-shrink-0 object-contain" />
+                  <span style={{ flex: 1, textAlign: "center" }}>{type}</span>
                 </span>
               );
             })}

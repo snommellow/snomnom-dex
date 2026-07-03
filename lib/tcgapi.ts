@@ -420,21 +420,14 @@ export async function fetchFormCard(
         .map(c => ({ ...c, _rarity: c.rarity }));
       return pickBest(candidates);
     }
-    // VGX pass: check Trainer Gallery cards first
+    // VGX pass: gather all candidates including TG cards, pick by market price
     const allCards = await fetchAllPages(`name:"${displayName}"`);
-    const tgCards = allCards.filter(c => c.images?.large && TG_RE.test(c.number) && nameMatches(c.name, displayName));
-    if (tgCards.length) {
-      const best = tgCards.reduce((a, b) =>
-        parseInt(b.number.slice(2)) > parseInt(a.number.slice(2)) ? b : a
-      );
-      return cardImageUrl(best);
-    }
     const candidates = allCards
-      .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName)
+      .filter(c => c.images?.large && nameMatches(c.name, displayName)
+        && (TG_RE.test(c.number) || rarities.includes(c.rarity))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
-      .map(c => ({ ...c, _rarity: c.rarity }));
+      .map(c => ({ ...c, _rarity: TG_RE.test(c.number) ? "Trainer Gallery Rare Holo" : (c.rarity ?? "") }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
-    // Prefer standard GX card over Full Art (Rare Ultra) when both exist
     const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Rare Ultra") : candidates;
     return pickBest(finalCandidates);
   }

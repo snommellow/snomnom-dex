@@ -40,9 +40,6 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X": "https://images.pokemontcg.io/xy8/63_hires.png",
   "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
   "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
-  "Galarian Articuno": "https://images.pokemontcg.io/swsh6/170_hires.png",
-  "Galarian Zapdos":   "https://images.pokemontcg.io/swsh6/174_hires.png",
-  "Galarian Moltres":  "https://images.pokemontcg.io/swsh6/177_hires.png",
 };
 
 export default async function PokedexGrid() {

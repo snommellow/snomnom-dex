@@ -233,6 +233,14 @@ async function main() {
     }
   }
 
+  // Apply hardcodes last — after preserve loop — so they always win.
+  for (const p of pokemon) {
+    const bgUrl = HARDCODED_BG_URLS[p.id];
+    if (bgUrl) { p.bgCandidates = [bgUrl]; p.regularCardUrl = undefined; }
+    const regularUrl = HARDCODED_REGULAR_CARD_URLS[p.id];
+    if (regularUrl) { p.regularCardUrl = regularUrl; }
+  }
+
   writeFileSync(outPath, JSON.stringify(pokemon, null, 2));
   console.log(`Written ${pokemon.length} Pokémon to lib/pokemon-data.json`);
 }

@@ -48,10 +48,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
-  // SWSH294 is the Black Star Promo full-art; automated lookup picks swsh11-172 (bordered V).
-  "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
-  // SM236 is a full-art promo; automated lookup picks sm5/29 (bordered holo).
-  "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
 };
 
 async function main() {

@@ -420,13 +420,16 @@ export async function fetchFormCard(
         .map(c => ({ ...c, _rarity: c.rarity }));
       return pickBest(candidates);
     }
-    // VGX pass: gather all candidates including TG cards, pick by market price
+    // VGX pass: gather all candidates including TG cards and full-art promos, pick by market price.
+    // Promos from swshp/smp/xyp are full-art cards (e.g. SWSH294, SM236); assign TG tier so
+    // market price decides between them and TG cards.
+    const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName)
-        && (TG_RE.test(c.number) || rarities.includes(c.rarity))
+        && (TG_RE.test(c.number) || rarities.includes(c.rarity) || (c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id)))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
-      .map(c => ({ ...c, _rarity: TG_RE.test(c.number) ? "Trainer Gallery Rare Holo" : (c.rarity ?? "") }));
+      .map(c => ({ ...c, _rarity: (TG_RE.test(c.number) || c.rarity === "Promo") ? "Trainer Gallery Rare Holo" : (c.rarity ?? "") }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
     const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Rare Ultra") : candidates;
     return pickBest(finalCandidates);

@@ -38,8 +38,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X": "https://images.pokemontcg.io/xy8/63_hires.png",
-  "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
-  "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
 };
 
 export default async function PokedexGrid() {

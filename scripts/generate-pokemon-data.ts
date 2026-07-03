@@ -223,7 +223,7 @@ async function main() {
       for (const form of p.altForms ?? []) {
         if (form.tcgUrl || form.regularCardUrl) continue;
         const oldForm = oldFormBySlug.get(form.slug);
-        if (oldForm?.tcgUrl) form.tcgUrl = oldForm.tcgUrl;
+        if (oldForm?.tcgUrl && !oldForm.tcgUrl.includes("scrydex.com")) form.tcgUrl = oldForm.tcgUrl;
         else if (oldForm?.regularCardUrl) form.regularCardUrl = oldForm.regularCardUrl;
       }
     }

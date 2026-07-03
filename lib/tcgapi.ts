@@ -323,10 +323,15 @@ export async function buildPromoSvData(): Promise<PromoSvData> {
 // promoSvPick is async so it can verify the winner's image URL before returning it.
 // Some pokemontcg.io API entries have images.large set but the actual CDN file is missing;
 // verifying only the single winner (not all candidates) keeps this check cheap.
+// Stamp reprints in SVP have plain Pokémon names ("Feraligatr", "Pupitar", etc.).
+// Genuine full-art promos worth showing as backgrounds always carry a battle mechanic suffix.
+const SVP_MECHANIC_RE = /\s+(ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/;
+
 export async function promoSvPick(data: PromoSvData, displayName: string): Promise<string | null> {
   const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
     c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
-    !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name)
+    !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name) &&
+    SVP_MECHANIC_RE.test(c.name)
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {

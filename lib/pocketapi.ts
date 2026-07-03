@@ -209,7 +209,7 @@ export async function fetchPocketAltForm(
   );
   const exactCards = STAR_RARITIES.flatMap((rarity, i) =>
     exactResults[i]
-      .filter((c) => c.image && matchesName(c.name))
+      .filter((c) => c.image && matchesName(c.name) && isPocketSet(setIdFromCardId(c.id)))
       .map((c) => ({ ...c, rarity }))
   );
   if (exactCards.length) {

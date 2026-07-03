@@ -201,7 +201,7 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
-    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
+    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
   });
 

@@ -429,9 +429,12 @@ export async function fetchFormCard(
       return pickBest(candidates);
     }
     // VGX pass: gather all candidates including TG cards and full-art promos.
-    // Every eligible card here is a full-art, so rarity tiers don't matter —
-    // flatten to one tier and let the market-price tiebreaker decide outright.
+    // Full-art tiers (TG, Ultra Rare, Rare Ultra, Secret, promos) carry no signal
+    // relative to each other — flatten them to one tier so market price decides.
+    // Bordered tiers (Rare Holo V/VSTAR/VMAX) keep their lower rank so a cheap
+    // bordered card can never out-price a full-art.
     const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
+    const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName)
@@ -440,7 +443,11 @@ export async function fetchFormCard(
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const hasGx = candidates.some(c => c.rarity === "Rare Holo GX");
     const finalCandidates = (hasGx ? candidates.filter(c => c.rarity !== "Rare Ultra") : candidates)
-      .map(c => ({ ...c, _rarity: "Trainer Gallery Rare Holo" }));
+      .map(c => ({
+        ...c,
+        _rarity: (TG_RE.test(c.number) || c.rarity === "Promo" || FULL_ART_TIERS.has(c.rarity))
+          ? "Trainer Gallery Rare Holo" : (c.rarity ?? ""),
+      }));
     return pickBest(finalCandidates);
   }
 

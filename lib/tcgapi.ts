@@ -357,6 +357,9 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
       .filter(c => {
         if (c.name.toLowerCase() === nameLower + " ex") return false;
+        // SWSH "Rare Secret" cards are solid-gold shinies (e.g. swsh8 Flaaffy 280,
+        // swsh9 Galarian birds 181-183) — not alt-art illustrations
+        if (r === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
         if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
         if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
         if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
@@ -433,7 +436,8 @@ export async function fetchFormCard(
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName)
         && (TG_RE.test(c.number) || rarities.includes(c.rarity) || (c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id)))
-        && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name)))
+        && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
+        && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)))
       .map(c => ({ ...c, _rarity: (TG_RE.test(c.number) || c.rarity === "Promo") ? "Trainer Gallery Rare Holo" : (c.rarity ?? "") }));
     const hasGx = candidates.some(c => c._rarity === "Rare Holo GX");
     const finalCandidates = hasGx ? candidates.filter(c => c._rarity !== "Rare Ultra") : candidates;

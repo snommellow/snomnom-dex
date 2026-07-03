@@ -52,6 +52,10 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
   // SM236 is a full-art promo; automated lookup picks sm5/29 (bordered holo).
   "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
+  // Galarian birds: TG cards ($20) lose on market value to swsh6 full-arts ($82+).
+  "Galarian Articuno": "https://images.pokemontcg.io/swsh6/170_hires.png",
+  "Galarian Zapdos":   "https://images.pokemontcg.io/swsh6/174_hires.png",
+  "Galarian Moltres":  "https://images.pokemontcg.io/swsh6/177_hires.png",
 };
 
 async function main() {

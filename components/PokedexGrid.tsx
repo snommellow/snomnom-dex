@@ -37,12 +37,12 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
-  // XY8 BREAKthrough: 63/162 = Psycho Cut (X form), 64/162 = Psychic Infinity (Y form)
   "Mega Mewtwo X": "https://images.pokemontcg.io/xy8/63_hires.png",
-  // SWSH294 is the Black Star Promo full-art; automated lookup picks swsh11-172 (bordered V).
   "Hisuian Electrode": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
-  // SM236 is a full-art promo; automated lookup picks sm5/29 (bordered holo).
   "Alolan Sandslash": "https://images.pokemontcg.io/smp/SM236_hires.png",
+  "Galarian Articuno": "https://images.pokemontcg.io/swsh6/170_hires.png",
+  "Galarian Zapdos":   "https://images.pokemontcg.io/swsh6/174_hires.png",
+  "Galarian Moltres":  "https://images.pokemontcg.io/swsh6/177_hires.png",
 };
 
 export default async function PokedexGrid() {

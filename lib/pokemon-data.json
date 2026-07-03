@@ -1692,9 +1692,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png",
     "genus": "Magnet Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/159_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H19_hires.png",
     "altForms": []
   },
   {
@@ -2820,8 +2819,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
     "genus": "Sleeping Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/51_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A3b/091/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/sm9/120_hires.png",
     "altForms": [
       {
         "slug": "snorlax-gmax",
@@ -2992,8 +2992,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
     "genus": "Genetic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/52_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/282/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ex1/101_hires.png",
     "altForms": [
       {
         "slug": "mewtwo-mega-x",
@@ -3181,9 +3182,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
     "genus": "Big Jaw Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/89_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/103_hires.png",
     "altForms": [
       {
         "slug": "feraligatr-mega",
@@ -3254,9 +3254,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/164.png",
     "genus": "Owl Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/141_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/hgss1/8_hires.png",
     "altForms": []
   },
   {
@@ -3463,8 +3462,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/178.png",
     "genus": "Mystic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/59_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4/174/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H32_hires.png",
     "altForms": []
   },
   {
@@ -3477,7 +3477,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/179.png",
     "genus": "Wool Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/107_hires.png"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG34_hires.png"
     ],
     "altForms": []
   },
@@ -3491,7 +3491,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/180.png",
     "genus": "Wool Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/108_hires.png"
+      "https://images.pokemontcg.io/swsh8/280_hires.png"
     ],
     "altForms": []
   },
@@ -3704,9 +3704,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/194.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/194.png",
     "genus": "Water Fish Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/155_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/66_hires.png",
     "altForms": [
       {
         "slug": "wooper-paldea",
@@ -3733,9 +3732,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/195.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/195.png",
     "genus": "Water Fish Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/156_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/hgss1/9_hires.png",
     "altForms": []
   },
   {
@@ -3779,7 +3777,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/198.png",
     "genus": "Darkness Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/21_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4/178/high.webp"
     ],
     "altForms": []
   },
@@ -3878,9 +3876,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/204.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/204.png",
     "genus": "Bagworm Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/61_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/85_hires.png",
     "altForms": []
   },
   {
@@ -4406,9 +4403,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/233.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/233.png",
     "genus": "Virtual Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/138_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/12_hires.png",
     "altForms": []
   },
   {
@@ -4607,9 +4603,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/247.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/247.png",
     "genus": "Hard Shell Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/svp/120_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex11/51_hires.png",
     "altForms": []
   },
   {

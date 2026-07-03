@@ -28,6 +28,8 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 const HARDCODED_BG_URLS: Record<number, string> = {
   // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo — the $61 full-art promo card.
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
+  // #121 Starmie: swsh10tg-TG13 ($132) beats swsh10/166 which the IR pass picks instead.
+  121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -35,6 +37,10 @@ const HARDCODED_BG_URLS: Record<number, string> = {
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   // #076 Golem: ecard3-148 Crystal Type from Skyridge ($1,387) — fallback picks g1/46 (Golem EX, Generations).
   76: "https://images.pokemontcg.io/ecard3/148_hires.png",
+  // #123 Scyther: ex1-102 Scyther ex Ruby & Sapphire ($101) — fallback picks cheaper Stormfront card.
+  123: "https://images.pokemontcg.io/ex1/102_hires.png",
+  // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — fallback picks cheaper Stormfront card.
+  125: "https://images.pokemontcg.io/ex1/97_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.

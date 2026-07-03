@@ -25,11 +25,13 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 // Direct background card URLs for base Pokémon where automated lookup fails or picks wrong card.
 const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
+  121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
 };
 
-// Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   76: "https://images.pokemontcg.io/ecard3/148_hires.png",
+  123: "https://images.pokemontcg.io/ex1/102_hires.png",
+  125: "https://images.pokemontcg.io/ex1/97_hires.png",
 };
 
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.

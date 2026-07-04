@@ -65,7 +65,9 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // sm10-193 (Venomoth GX full art) shares its artist with the bordered sm10-12 sibling,
 // which normally signals a safe extended illustration — but confirmed by direct user
 // feedback to look wrong in this specific card template, so it's excluded anyway.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193"]);
+// xy5-153 (Aggron-EX, Rare Ultra, $40) outranks Aggron V (swsh9-96, $1.01) by rarity tier,
+// but confirmed by direct user feedback that the V card is the one wanted here.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
@@ -472,7 +474,7 @@ export async function fetchRegionalPromoPriority(displayName: string): Promise<s
 }
 
 export async function fetchFormCard(
-  category: "mega" | "regional" | "gmax" | "other",
+  category: "mega" | "regional" | "gmax" | "primal" | "other",
   _dexId: number,
   displayName: string,
   _formTypes: string[] = [],
@@ -587,6 +589,20 @@ export async function fetchFormCard(
       }
       const url = pickBest(subtypeCandidates);
       return url ? { tcgUrl: url } : null;
+    }
+    return null;
+  }
+
+  if (category === "primal") {
+    // Primal Kyogre/Groudon cards are named literally, e.g. "Primal Kyogre-EX" / "Primal Kyogre".
+    const namesToTry = [`${displayName}-EX`, `${displayName} EX`, displayName];
+    for (const queryName of namesToTry) {
+      const cards = await fetchAllPages(`name:"${queryName}"`);
+      const candidates = cards
+        .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
+        .map(c => ({ ...c, _rarity: c.rarity }));
+      const url = pickBest(candidates);
+      if (url) return { tcgUrl: url };
     }
     return null;
   }

@@ -24,7 +24,7 @@ export interface PokemonListItem {
   url: string;
 }
 
-export type FormCategory = "mega" | "regional" | "gmax" | "other";
+export type FormCategory = "mega" | "regional" | "gmax" | "primal" | "other";
 
 export interface AltForm {
   slug: string;
@@ -160,6 +160,7 @@ function parseFormSlug(slug: string, baseName: string): { displayName: string; c
   if (suffix === "hisui")  return { displayName: `Hisuian ${base}`, category: "regional" };
   if (suffix === "paldea") return { displayName: `Paldean ${base}`, category: "regional" };
   if (suffix === "gmax")   return { displayName: `Gigantamax ${base}`, category: "gmax" };
+  if (suffix === "primal") return { displayName: `Primal ${base}`, category: "primal" };
   return { displayName: cap(slug), category: "other" };
 }
 

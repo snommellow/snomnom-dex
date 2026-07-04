@@ -437,8 +437,10 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
     if (c.name.toLowerCase() === nameLower + " ex") return false;
     if (MISMATCHED_FULL_ART_BLACKLIST.has(c.id)) return false;
     // SWSH "Rare Secret" cards are solid-gold shinies (e.g. swsh8 Flaaffy 280,
-    // swsh9 Galarian birds 181-183) — not alt-art illustrations
-    if (c._rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
+    // swsh9 Galarian birds 181-183) — not alt-art illustrations. BW-era Rare Secrets
+    // (e.g. bw6-128 "Rayquaza") are the same deal: shiny recolors of the standard
+    // illustration, not full art — full-art Rare Secrets only started in the XY era.
+    if (c._rarity === "Rare Secret" && /^(swsh|bw)/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
     if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c._rarity)) return true;
     if (c.name.endsWith("-GX") && !c.name.includes(" & ")
       && !(c.artist && borderedGxArtists.has(c.artist))) return false;
@@ -556,7 +558,7 @@ export async function fetchFormCard(
           && ["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c.rarity)
           && !(c.artist && borderedGxArtists.has(c.artist)))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
-        && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
+        && !(c.rarity === "Rare Secret" && /^(swsh|bw)/i.test(c.set.id) && !TG_RE.test(c.number)));
     const finalCandidates = candidates
       .map(c => ({
         ...c,

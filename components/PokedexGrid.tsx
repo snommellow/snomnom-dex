@@ -32,12 +32,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   76: "https://images.pokemontcg.io/ecard3/148_hires.png",
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
-};
-
-// Alt forms pinned to a bordered card shown cropped — see generate-pokemon-data.ts for why.
-const HARDCODED_FORM_REGULAR_CARD_URLS: Record<string, string> = {
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.
@@ -169,8 +163,6 @@ export default async function PokedexGrid() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedRegular = HARDCODED_FORM_REGULAR_CARD_URLS[form.displayName];
-            if (hardcodedRegular) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegular };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
 
             // Sync lookups from shared indexes (free — data already in memory)

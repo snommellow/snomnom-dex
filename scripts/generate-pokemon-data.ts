@@ -41,18 +41,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — fallback picks cheaper Stormfront card.
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
-  // #210 Granbull: swsh9-57 bordered V ($0.78, illus. PLANETA Mochizuki). The higher-value
-  // swsh9-159 "Rare Ultra" (illus. Ayaka Yoshida — a genuinely different illustration, not
-  // an extended reprint) looks worse with this app's text overlay, so pinned by preference.
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
-};
-
-// Alt forms pinned to a bordered card shown cropped for the same reason as above —
-// the higher-value "full art" is a different illustration that doesn't read well here.
-const HARDCODED_FORM_REGULAR_CARD_URLS: Record<string, string> = {
-  // Hisuian Typhlosion: swsh10-53 bordered V (illus. Shin Nagasawa). swsh10-169 "Rare Ultra"
-  // (illus. 5ban Graphics) is a different illustration, pinned by preference.
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
@@ -173,8 +161,6 @@ async function main() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedRegular = HARDCODED_FORM_REGULAR_CARD_URLS[form.displayName];
-            if (hardcodedRegular) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegular };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
             const promoUrl = await promoSvPick(promoData, form.displayName);

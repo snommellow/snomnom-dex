@@ -32,13 +32,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   76: "https://images.pokemontcg.io/ecard3/148_hires.png",
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
-};
-
-// Alt forms pinned to a bordered card shown cropped (extended-art full-arts reuse the
-// same illustration with text over it — the bordered art box is cleaner).
-const HARDCODED_FORM_REGULAR_CARD_URLS: Record<string, string> = {
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.
@@ -170,8 +163,6 @@ export default async function PokedexGrid() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedRegular = HARDCODED_FORM_REGULAR_CARD_URLS[form.displayName];
-            if (hardcodedRegular) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegular };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
 
             // Sync lookups from shared indexes (free — data already in memory)
@@ -190,12 +181,15 @@ export default async function PokedexGrid() {
               !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
             ]);
 
-            const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
-            const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
+            const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard?.tcgUrl ?? null;
+            // isOldStyle = extended-art detection picked the bordered sibling: crop it, don't full-bleed it
+            const vgxResult = vgxFromIndex ?? vgxFromFormCard;
+            const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
+            const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
 
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
+              ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

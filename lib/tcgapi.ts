@@ -70,6 +70,7 @@ interface PtcgCard {
   name: string;
   rarity: string;
   subtypes: string[];
+  artist?: string;
   set: { id: string };
   images: { small: string; large: string | null };
   tcgplayer?: { prices?: Record<string, { market?: number | null; mid?: number | null }> };
@@ -119,7 +120,7 @@ async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
   const results: PtcgCard[] = [];
   let page = 1;
   while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,set,images,tcgplayer`;
+    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,set,images,tcgplayer`;
     let data: PtcgCard[] = [];
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
@@ -351,6 +352,22 @@ export async function buildVgxData(): Promise<VgxData> {
 
 const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
+// Extended-art detection: SWSH "full art" V cards that reuse their bordered sibling's
+// illustration (same name, same set, same artist) are extended reprints, not alt arts.
+// True alt arts are separately commissioned and carry a different artist credit.
+// Those extended arts print ability/attack text over the artwork, so the bordered
+// sibling shown cropped is the better display.
+const BORDERED_V_RARITIES = new Set(["Rare Holo V", "Rare Holo VSTAR", "Rare Holo VMAX"]);
+const EXTENDED_ART_RARITIES = new Set(["Ultra Rare", "Rare Ultra"]);
+
+function borderedSibling(card: RankedCard, pool: RankedCard[]): RankedCard | null {
+  if (!card.artist || !EXTENDED_ART_RARITIES.has(card._rarity)) return null;
+  return pool.find(b =>
+    BORDERED_V_RARITIES.has(b._rarity) && b.set.id === card.set.id &&
+    b.name === card.name && b.artist === card.artist && b.images?.large
+  ) ?? null;
+}
+
 export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   return data.rarities.flatMap((r, i) =>
@@ -379,6 +396,8 @@ export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgI
     ? pickBestCard(modern)
     : pickBestCardWithChain(candidates, chainSets);
   if (!winner) return null;
+  const sibling = borderedSibling(winner, candidates);
+  if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
   return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
 }
 
@@ -413,7 +432,7 @@ export async function fetchFormCard(
   displayName: string,
   _formTypes: string[] = [],
   raritySet: Set<string> = VGX_RARITIES,
-): Promise<string | null> {
+): Promise<TcgImageResult | null> {
   if (category === "other") return null;
 
   const rarities = RARITY_ORDER.filter(r => raritySet.has(r));
@@ -426,7 +445,8 @@ export async function fetchFormCard(
       const candidates = cards
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, displayName))
         .map(c => ({ ...c, _rarity: c.rarity }));
-      return pickBest(candidates);
+      const url = pickBest(candidates);
+      return url ? { tcgUrl: url } : null;
     }
     // VGX pass: gather all candidates including TG cards and full-art promos.
     // Full-art tiers (TG, Ultra Rare, Rare Ultra, Secret, promos) carry no signal
@@ -442,13 +462,20 @@ export async function fetchFormCard(
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const hasGx = candidates.some(c => c.rarity === "Rare Holo GX");
+    // Keep the real rarity in a separate pool for extended-art detection —
+    // borderedSibling needs to see the original tiers, not the flattened ones.
+    const rankedPool: RankedCard[] = candidates.map(c => ({ ...c, _rarity: c.rarity ?? "" }));
     const finalCandidates = (hasGx ? candidates.filter(c => c.rarity !== "Rare Ultra") : candidates)
       .map(c => ({
         ...c,
         _rarity: (TG_RE.test(c.number) || c.rarity === "Promo" || FULL_ART_TIERS.has(c.rarity))
           ? "Trainer Gallery Rare Holo" : (c.rarity ?? ""),
       }));
-    return pickBest(finalCandidates);
+    const winner = pickBestCard(finalCandidates);
+    if (!winner) return null;
+    const sibling = borderedSibling({ ...winner, _rarity: winner.rarity ?? "" }, rankedPool);
+    if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
+    return { tcgUrl: cardImageUrl(winner) };
   }
 
   if (category === "gmax") {
@@ -477,7 +504,7 @@ export async function fetchFormCard(
       }
       return (parseInt(b.number) || 0) >= (parseInt(a.number) || 0) ? b : a;
     });
-    return cardImageUrl(winner);
+    return { tcgUrl: cardImageUrl(winner) };
   }
 
   if (category === "mega") {
@@ -493,7 +520,7 @@ export async function fetchFormCard(
         .filter(c => c.images?.large && rarities.includes(c.rarity) && nameMatches(c.name, queryName))
         .map(c => ({ ...c, _rarity: c.rarity }));
       const url = pickBest(candidates);
-      if (url) return url;
+      if (url) return { tcgUrl: url };
     }
     // Final fallback: query by MEGA subtype — catches "M Name-EX" cards where
     // the hyphen in quoted name queries confuses the Lucene parser.
@@ -510,7 +537,8 @@ export async function fetchFormCard(
         const xyMatches = subtypeCandidates.filter(c => c.name.includes(xySuffix));
         if (xyMatches.length) subtypeCandidates = xyMatches;
       }
-      return pickBest(subtypeCandidates);
+      const url = pickBest(subtypeCandidates);
+      return url ? { tcgUrl: url } : null;
     }
     return null;
   }

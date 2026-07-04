@@ -41,17 +41,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — fallback picks cheaper Stormfront card.
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
-  // #210 Granbull: swsh9-57 bordered V. The full-art 159 reuses the same illustration with
-  // ability text printed over it — the bordered art box shows the artwork cleaner. No API
-  // field distinguishes extended-art full-arts from true alt arts, so pinned by hand.
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
-};
-
-// Alt forms that should show a bordered card cropped instead of a full-bleed card.
-// Same extended-art situation as HARDCODED_REGULAR_CARD_URLS above, keyed by display name.
-const HARDCODED_FORM_REGULAR_CARD_URLS: Record<string, string> = {
-  // Hisuian Typhlosion: swsh10-53 bordered V — full-art 169 is the same art with text over it.
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
@@ -172,8 +161,6 @@ async function main() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
-            const hardcodedRegular = HARDCODED_FORM_REGULAR_CARD_URLS[form.displayName];
-            if (hardcodedRegular) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegular };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
             const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
             const promoUrl = await promoSvPick(promoData, form.displayName);
@@ -188,11 +175,14 @@ async function main() {
               !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
             ]);
 
-            const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard;
-            const vgxUrl = vgxFromIndex?.tcgUrl ?? vgxFromFormCard;
+            const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard?.tcgUrl ?? null;
+            // isOldStyle = extended-art detection picked the bordered sibling: crop it, don't full-bleed it
+            const vgxResult = vgxFromIndex ?? vgxFromFormCard;
+            const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
+            const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
+              ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

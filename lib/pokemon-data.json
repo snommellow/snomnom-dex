@@ -1551,8 +1551,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png",
     "genus": "Fire Horse Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pl4/SH11_hires.png",
+    "bgCandidates": [
+      "https://assets.tcgdex.net/zh-tw/SV/SVHK/001/high.webp"
+    ],
     "altForms": [
       {
         "slug": "ponyta-galar",

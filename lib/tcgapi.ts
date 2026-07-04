@@ -56,6 +56,13 @@ const SVP_BLACKLIST = new Set(["11", "24", "59", "89", "122", "167", "168", "169
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
+// Full-art V/VSTAR/VMAX cards confirmed (via API artist field) to be a genuinely different
+// illustration from their bordered "Rare Holo V"-tier sibling, not an extended reprint —
+// e.g. swsh9-159 "Granbull V" (artist Ayaka Yoshida) vs its bordered swsh9-57 sibling (artist
+// PLANETA Mochizuki). Excluding these lets the bordered sibling win on its own tier instead of
+// permanently overriding with a hardcode — a genuinely better future card can still compete.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169"]);
+
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
   return (c.rarity ?? "").startsWith("Shiny") || /^SV\d/i.test(c.number);
@@ -372,6 +379,7 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
       .filter(c => {
         if (c.name.toLowerCase() === nameLower + " ex") return false;
+        if (MISMATCHED_FULL_ART_BLACKLIST.has(c.id)) return false;
         // SWSH "Rare Secret" cards are solid-gold shinies (e.g. swsh8 Flaaffy 280,
         // swsh9 Galarian birds 181-183) — not alt-art illustrations
         if (r === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
@@ -484,6 +492,7 @@ export async function fetchFormCard(
     const allCards = await fetchAllPages(`name:"${displayName}"`);
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName) && (TG_RE.test(c.number) || rarities.includes(c.rarity))
+        && !MISMATCHED_FULL_ART_BLACKLIST.has(c.id)
         // Single-Pokémon "-GX" full arts are plain swirl-background alt-arts that read poorly
         // full-bleed — prefer the bordered "Rare Holo GX" sibling. TAG TEAM GX cards are the
         // exception worth showing full-bleed.

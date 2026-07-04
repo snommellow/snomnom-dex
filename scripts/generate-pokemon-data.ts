@@ -26,14 +26,14 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 // Keyed by dex ID. These bypass tcgResult and go directly into bgCandidates.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
-  // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo — the $61 full-art promo card.
+  // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo ($61 full-art). The "xyp" set is
+  // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
+  // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
-  // #121 Starmie: swsh10tg-TG13 ($132) beats swsh10/166 which the IR pass picks instead.
+  // #121 Starmie: swsh10tg-TG13 ($132) isn't found by any automated pass at all (confirmed via
+  // debug: vgxCandidates never surfaces it, for a reason not yet root-caused) — beats swsh10/166
+  // which vgxPick picks instead in its absence.
   121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
-  // #210 Granbull: swsh9-57 bordered V, by preference over the same-set swsh9-159 "Rare Ultra"
-  // full art (a different illustration, not an extended reprint — verified via API artist
-  // field). No reliable signal distinguishes "looks good" full-arts from this one.
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
   // #077 Ponyta: Mainland China-exclusive promo full art. Not indexed by pokemontcg.io or
   // TCGdex (checked both — no data for this card/set), so pinned directly by URL.
   77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
@@ -42,11 +42,11 @@ const HARDCODED_BG_URLS: Record<number, string> = {
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
 // Keyed by dex ID. These override fallbackCrop so the correct card shows cropped.
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
-  // #076 Golem: ecard3-148 Crystal Type from Skyridge ($1,387) — fallback picks g1/46 (Golem EX, Generations).
-  76: "https://images.pokemontcg.io/ecard3/148_hires.png",
-  // #123 Scyther: ex1-102 Scyther ex Ruby & Sapphire ($101) — fallback picks cheaper Stormfront card.
+  // #123 Scyther: ex1-102 Scyther ex Ruby & Sapphire ($101) — pokemontcg.io shows $0 market
+  // price for this card (stale data for old EX-era sets), so no price-based blacklist fix is
+  // possible: excluding the current wrong pick would just promote a different wrong one.
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
-  // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — fallback picks cheaper Stormfront card.
+  // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — same stale-price issue as Scyther.
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
 };
 
@@ -54,10 +54,9 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // Using URLs directly avoids a per-card API call that can fail under rate limits.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
+  // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name
+  // mismatch rather than a losing-candidate issue — not yet root-caused enough to convert safely.
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
-  // Hisuian Typhlosion: swsh10-53 bordered V, by preference over the same-set swsh10-169
-  // "Rare Ultra" full art (a different illustration — verified via API artist field).
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 async function main() {

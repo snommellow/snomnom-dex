@@ -26,12 +26,10 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
 const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
   121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
-  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
   77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
 };
 
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
-  76: "https://images.pokemontcg.io/ecard3/148_hires.png",
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
 };
@@ -40,7 +38,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X": "https://images.pokemontcg.io/xy8/63_hires.png",
-  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 export default async function PokedexGrid() {

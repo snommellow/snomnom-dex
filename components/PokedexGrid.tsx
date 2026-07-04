@@ -32,6 +32,13 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   76: "https://images.pokemontcg.io/ecard3/148_hires.png",
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
+  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
+};
+
+// Alt forms pinned to a bordered card shown cropped (extended-art full-arts reuse the
+// same illustration with text over it — the bordered art box is cleaner).
+const HARDCODED_FORM_REGULAR_CARD_URLS: Record<string, string> = {
+  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 // Direct image URLs for forms where automated lookup picks a wrong/inferior card.
@@ -163,6 +170,8 @@ export default async function PokedexGrid() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
+            const hardcodedRegular = HARDCODED_FORM_REGULAR_CARD_URLS[form.displayName];
+            if (hardcodedRegular) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegular };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
 
             // Sync lookups from shared indexes (free — data already in memory)
@@ -207,12 +216,13 @@ export default async function PokedexGrid() {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
-    const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
-    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
+    const hardcodedRegular = HARDCODED_REGULAR_CARD_URLS[p.id];
+    const tcgResult = hardcodedRegular ? { tcgUrl: null } : hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
+    const fallbackCrop = hardcodedRegular ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(
       p,
       tcgResult,
-      pocketUrl ? [pocketUrl] : [],
+      hardcodedRegular || !pocketUrl ? [] : [pocketUrl],
       speciesData[i].genus,
       altFormsWithCards[i],
       fallbackCrop,

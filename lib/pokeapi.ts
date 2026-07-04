@@ -101,9 +101,10 @@ export async function fetchSpeciesData(id: number): Promise<{
     const alts = (data.varieties as Array<{ is_default: boolean; pokemon: { name: string; url: string } }>)
       .filter(v => !v.is_default)
       .map(v => v.pokemon);
-    // zh-Hant = Traditional Chinese — matches TCGdex's zh-tw card names for the HK-exclusive lookup.
+    // zh-hant = Traditional Chinese (PokeAPI language codes are lowercase) — matches TCGdex's
+    // zh-tw card names for the HK-exclusive lookup.
     const nameEntry = (data.names as { name: string; language: { name: string } }[])
-      .find((n) => n.language.name === "zh-Hant");
+      .find((n) => n.language.name === "zh-hant");
     return {
       genus: entry?.genus ?? null,
       altFormSlots: alts,

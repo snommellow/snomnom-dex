@@ -264,4 +264,4 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-// trigger: debug run for PokeAPI species names language keys
+// trigger: verify Chinese-exclusive promo pipeline end to end (Ponyta)

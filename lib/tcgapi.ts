@@ -340,7 +340,10 @@ export async function buildPromoSvData(): Promise<PromoSvData> {
 // text (Mareep, Flaaffy — confirmed via API: abilities: null) that don't. Requiring an ability
 // is a reliable signal since real API data shows it lines up with both confirmed groups.
 export async function promoSvPick(data: PromoSvData, displayName: string): Promise<string | null> {
-  const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
+  // Scan every index key rather than an exact Map.get(displayName) — suffixed promos like
+  // "Kingdra ex" are indexed under their full card name ("kingdra ex"), so an exact lookup for
+  // "kingdra" always misses even though nameMatches() below would correctly match it.
+  const candidates = [...data.index.values()].flat().filter(c =>
     c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
     !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name) &&
     (c.abilities?.length || /\s+(ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))

@@ -3566,7 +3566,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/182/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG12_hires.png",
     "altForms": [],
     "familyId": 163,
     "familyOrder": 0
@@ -3931,8 +3930,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/184.png",
     "genus": "Aqua Rabbit Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/114_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/xy5/104_hires.png"
+    ],
     "altForms": [],
     "familyId": 183,
     "familyOrder": 2
@@ -4237,7 +4237,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/078/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12/66_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12/177_hires.png",
     "altForms": [],
     "familyId": 201,
     "familyOrder": 0
@@ -5227,7 +5227,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/254.png",
     "genus": "Forest Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/xy7/84_hires.png"
+      "https://images.pokemontcg.io/xy5/9_hires.png"
     ],
     "altForms": [
       {
@@ -6281,8 +6281,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/me1/158_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/me1/158_hires.png"
       }
     ],
     "familyId": 309,

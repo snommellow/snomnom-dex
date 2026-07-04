@@ -90,22 +90,27 @@ export async function fetchSpeciesData(id: number): Promise<{
   genus: string | null;
   altFormSlots: Array<{ name: string; url: string }>;
   evolutionChainUrl: string | null;
+  chineseName: string | null;
 }> {
   try {
     const res = await fetch(`${BASE_URL}/pokemon-species/${id}`, { next: { revalidate: 86400 } });
-    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null };
+    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null, chineseName: null };
     const data = await res.json();
     const entry = (data.genera as { genus: string; language: { name: string } }[])
       .find((g) => g.language.name === "en");
     const alts = (data.varieties as Array<{ is_default: boolean; pokemon: { name: string; url: string } }>)
       .filter(v => !v.is_default)
       .map(v => v.pokemon);
+    // zh-Hant = Traditional Chinese — matches TCGdex's zh-tw card names for the HK-exclusive lookup.
+    const nameEntry = (data.names as { name: string; language: { name: string } }[])
+      .find((n) => n.language.name === "zh-Hant");
     return {
       genus: entry?.genus ?? null,
       altFormSlots: alts,
       evolutionChainUrl: (data.evolution_chain as { url: string } | null)?.url ?? null,
+      chineseName: nameEntry?.name ?? null,
     };
-  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null }; }
+  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null, chineseName: null }; }
 }
 
 interface EvolutionNode {

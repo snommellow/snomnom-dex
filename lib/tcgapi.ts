@@ -361,7 +361,6 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
         // swsh9 Galarian birds 181-183) — not alt-art illustrations
         if (r === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
         if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
-        if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
         if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
         if (/ V(-UNION)?$/.test(c.name) && r === "Hyper Rare") return false;
         if (/ VMAX$/.test(c.name)) return false;

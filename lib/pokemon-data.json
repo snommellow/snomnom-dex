@@ -3141,8 +3141,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
         "category": "regional",
-        "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh10/53_hires.png"
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/53_hires.png",
+        "regularCardUrl": null
       }
     ]
   },
@@ -3975,9 +3975,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/210.png",
     "genus": "Fairy Pok\u00e9mon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9/57_hires.png"
+    ],
     "altForms": [],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh9/57_hires.png"
+    "regularCardUrl": null
   },
   {
     "id": 211,

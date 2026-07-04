@@ -353,9 +353,10 @@ export async function buildVgxData(): Promise<VgxData> {
 const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
 // Whenever a Pokémon has both a bordered "Rare Holo V/VSTAR/VMAX" and a same-set, same-name
-// "Ultra Rare"/"Rare Ultra" full art, prefer showing the bordered card cropped. These full
-// arts vary in illustration quality — some read fine full-bleed, many don't — and there's no
-// API signal for "this one looks good here", so the bordered original is the safer default.
+// "Ultra Rare"/"Rare Ultra" full art, prefer the bordered card as the full-bleed background.
+// These full arts vary in illustration quality — some read fine full-bleed, many don't — and
+// there's no API signal for "this one looks good here", so the bordered original is the safer
+// default background image.
 const BORDERED_V_RARITIES = new Set(["Rare Holo V", "Rare Holo VSTAR", "Rare Holo VMAX"]);
 const EXTENDED_ART_RARITIES = new Set(["Ultra Rare", "Rare Ultra"]);
 
@@ -396,7 +397,7 @@ export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgI
     : pickBestCardWithChain(candidates, chainSets);
   if (!winner) return null;
   const sibling = borderedSibling(winner, candidates);
-  if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
+  if (sibling) return { tcgUrl: cardImageUrl(sibling) };
   return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
 }
 
@@ -473,7 +474,7 @@ export async function fetchFormCard(
     const winner = pickBestCard(finalCandidates);
     if (!winner) return null;
     const sibling = borderedSibling({ ...winner, _rarity: winner.rarity ?? "" }, rankedPool);
-    if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
+    if (sibling) return { tcgUrl: cardImageUrl(sibling) };
     return { tcgUrl: cardImageUrl(winner) };
   }
 

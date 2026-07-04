@@ -382,10 +382,17 @@ export function trainerVgxPick(data: VgxData, displayName: string): string | nul
 const SV_PROMO_SETS = ["svp"];
 
 async function imageExists(url: string): Promise<boolean> {
-  try {
-    const res = await fetch(url, { method: "HEAD", next: { revalidate: 86400 } });
-    return res.ok;
-  } catch { return false; }
+  // Retries, like fetchAllPages — a single transient network failure here was silently
+  // making promoSvPick return null (e.g. Mewtwo/Snorlax intermittently falling back to a
+  // worse pick), since the winning candidate's image never got a second chance to verify.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      if (attempt > 0) await new Promise(r => setTimeout(r, 500 * attempt));
+      const res = await fetch(url, { method: "HEAD", next: { revalidate: 86400 } });
+      return res.ok;
+    } catch { if (attempt === 2) return false; }
+  }
+  return false;
 }
 
 export async function buildPromoSvData(): Promise<PromoSvData> {

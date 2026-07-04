@@ -11,7 +11,8 @@ on:
       - 'lib/pokeapi.ts'
       - 'lib/tcgdexZh.ts'
       - 'lib/chains.ts'
-      - 'scripts/generate-pokemon-data.ts'
+      - 'scripts/**'
+      - '.github/workflows/generate-pokemon-data.yml'
   workflow_dispatch:
 
 jobs:

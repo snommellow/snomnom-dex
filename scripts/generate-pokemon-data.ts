@@ -264,4 +264,4 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-// trigger: debug run for bordered-vs-full-art SVP promo distinction
+// trigger: debug run for Chinese-exclusive promo pipeline (Ponyta)

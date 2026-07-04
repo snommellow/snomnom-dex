@@ -449,16 +449,27 @@ export async function fetchFormCard(
       return url ? { tcgUrl: url } : null;
     }
     // VGX pass: gather all candidates including TG cards and full-art promos.
-    // Full-art tiers (TG, Ultra Rare, Rare Ultra, Secret, promos) carry no signal
-    // relative to each other — flatten them to one tier so market price decides.
-    // Bordered tiers (Rare Holo V/VSTAR/VMAX) keep their lower rank so a cheap
-    // bordered card can never out-price a full-art.
+    // Full-art tiers (TG, Ultra Rare, Rare Ultra, Secret) carry no signal relative to each
+    // other — flatten them to one tier so market price decides. Bordered tiers (Rare Holo
+    // V/VSTAR/VMAX) keep their lower rank so a cheap bordered card can never out-price a
+    // full-art. Promos (swshp/smp/xyp) are curated separately and take priority over this
+    // whole pool — a specific full-art promo shouldn't lose to some unrelated set's pricier
+    // Ultra Rare of the same Pokémon just because that set happens to price higher.
     const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
     const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
-    const candidates = allCards
+    // Plain reprints in these promo sets have no suffix (e.g. "Alolan Sandslash"); genuine
+    // full-art promos always carry one — hyphenated for GX ("Alolan Sandslash-GX"), spaced
+    // for the rest ("Hisuian Electrode V").
+    const promoCandidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName)
-        && (TG_RE.test(c.number) || rarities.includes(c.rarity) || (c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id)))
+        && c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id) && /[\s-](ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
+      .map(c => ({ ...c, _rarity: "Trainer Gallery Rare Holo" }));
+    const promoUrl = pickBest(promoCandidates);
+    if (promoUrl) return { tcgUrl: promoUrl };
+
+    const candidates = allCards
+      .filter(c => c.images?.large && nameMatches(c.name, displayName) && (TG_RE.test(c.number) || rarities.includes(c.rarity))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const hasGx = candidates.some(c => c.rarity === "Rare Holo GX");
@@ -468,7 +479,7 @@ export async function fetchFormCard(
     const finalCandidates = (hasGx ? candidates.filter(c => c.rarity !== "Rare Ultra") : candidates)
       .map(c => ({
         ...c,
-        _rarity: (TG_RE.test(c.number) || c.rarity === "Promo" || FULL_ART_TIERS.has(c.rarity))
+        _rarity: (TG_RE.test(c.number) || FULL_ART_TIERS.has(c.rarity))
           ? "Trainer Gallery Rare Holo" : (c.rarity ?? ""),
       }));
     const winner = pickBestCard(finalCandidates);

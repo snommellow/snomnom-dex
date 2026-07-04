@@ -1,0 +1,125 @@
+{
+  "kyogre": {
+    "irCandidates": [],
+    "irResult": null,
+    "vgxCandidates": [
+      {
+        "id": "bw5-104",
+        "name": "Kyogre-EX",
+        "set": "bw5",
+        "number": "104",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "xy5-148",
+        "name": "Kyogre-EX",
+        "set": "xy5",
+        "number": "148",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "swsh12pt5-37",
+        "name": "Kyogre V",
+        "set": "swsh12pt5",
+        "number": "37",
+        "rarity": "Rare Holo V",
+        "artist": "PLANETA Tsuji"
+      },
+      {
+        "id": "bw5-26",
+        "name": "Kyogre-EX",
+        "set": "bw5",
+        "number": "26",
+        "rarity": "Rare Holo EX",
+        "artist": "Shizurow"
+      },
+      {
+        "id": "xy5-54",
+        "name": "Kyogre-EX",
+        "set": "xy5",
+        "number": "54",
+        "rarity": "Rare Holo EX",
+        "artist": "Ryota Murayama"
+      }
+    ],
+    "vgxResult": {
+      "tcgUrl": "https://images.pokemontcg.io/bw5/104_hires.png",
+      "isOldStyle": false
+    },
+    "promoUrl": "https://images.pokemontcg.io/svp/178_hires.png",
+    "trainerPromoUrl": null,
+    "trainerOwnedRaw": [
+      {
+        "id": "dc1-6",
+        "name": "Team Aqua's Kyogre-EX",
+        "set": "dc1",
+        "number": "6",
+        "rarity": "Rare Ultra",
+        "artist": "nagimiso"
+      }
+    ]
+  },
+  "jirachi": {
+    "irCandidates": [],
+    "irResult": null,
+    "vgxCandidates": [
+      {
+        "id": "ex4-97",
+        "name": "Jirachi",
+        "set": "ex4",
+        "number": "97",
+        "rarity": "Rare Secret",
+        "artist": "Mitsuhiro Arita"
+      },
+      {
+        "id": "bw10-98",
+        "name": "Jirachi-EX",
+        "set": "bw10",
+        "number": "98",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm11-79a",
+        "name": "Jirachi-GX",
+        "set": "sm11",
+        "number": "79a",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "swsh10-170",
+        "name": "Jirachi V",
+        "set": "swsh10",
+        "number": "170",
+        "rarity": "Rare Ultra",
+        "artist": "N-DESIGN Inc."
+      },
+      {
+        "id": "sm11-79",
+        "name": "Jirachi-GX",
+        "set": "sm11",
+        "number": "79",
+        "rarity": "Rare Holo GX",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "bw10-60",
+        "name": "Jirachi-EX",
+        "set": "bw10",
+        "number": "60",
+        "rarity": "Rare Holo EX",
+        "artist": "Ryo Ueda"
+      }
+    ],
+    "vgxResult": {
+      "tcgUrl": "https://images.pokemontcg.io/bw10/98_hires.png",
+      "isOldStyle": false
+    },
+    "promoUrl": null,
+    "trainerPromoUrl": null,
+    "trainerOwnedRaw": []
+  }
+}

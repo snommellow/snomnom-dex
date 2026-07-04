@@ -1071,8 +1071,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/49.png",
     "genus": "Poison Moth Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/12_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm10/12_hires.png"
+    ],
     "altForms": [],
     "familyId": 48,
     "familyOrder": 1

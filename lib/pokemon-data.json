@@ -1687,7 +1687,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sm4/102_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm4/34_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3106,7 +3106,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
     "genus": "Sleeping Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/184_hires.png"
+      "https://images.pokemontcg.io/ex7/104_hires.png"
     ],
     "altForms": [
       {
@@ -3292,7 +3292,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
     "genus": "Genetic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv10/231_hires.png"
+      "https://images.scrydex.com/pokemon/me2pt5-281/large"
     ],
     "altForms": [
       {
@@ -6984,7 +6984,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/351.png",
     "genus": "Weather Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8/195_hires.png"
+      "https://images.pokemontcg.io/swsh11tg/TG11_hires.png"
     ],
     "altForms": [
       {

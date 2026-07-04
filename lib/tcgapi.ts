@@ -438,10 +438,11 @@ export async function fetchFormCard(
     const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
     const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
     // A handful of promo-set cards carry a mechanic suffix (V/GX/ex) but are still bordered,
-    // non-full-art prints — SWSH237 "Hisuian Typhlosion V" is a stamped bordered reprint
-    // reusing an existing illustration, unlike SWSH294 "Hisuian Electrode V" which is a
+    // non-full-art prints — SWSH237 "Hisuian Typhlosion V" and SWSH111 "Galarian Rapidash V"
+    // are stamped bordered reprints (confirmed via API: different artist, promo-tier pricing
+    // far below their full-art siblings), unlike SWSH294 "Hisuian Electrode V" which is a
     // genuine full-art. No API field distinguishes them, so exclude known cases by number.
-    const PROMO_BLACKLIST = new Set(["SWSH237"]);
+    const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
     // Plain reprints in these promo sets have no suffix (e.g. "Alolan Sandslash"); genuine
     // full-art promos always carry one — hyphenated for GX ("Alolan Sandslash-GX"), spaced

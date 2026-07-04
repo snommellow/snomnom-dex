@@ -99,6 +99,9 @@ const NAME_OVERRIDES: Record<string, string> = {
   "mr-mime":   "Mr. Mime",
   "farfetchd": "Farfetch'd",
   "ho-oh":     "Ho-Oh",
+  // PokeAPI's default list entry for Deoxys is "deoxys-normal" (its base form is not
+  // just "deoxys" like other multi-form species), which doesn't match any card name.
+  "deoxys-normal": "Deoxys",
 };
 
 export function toDisplayName(slug: string): string {

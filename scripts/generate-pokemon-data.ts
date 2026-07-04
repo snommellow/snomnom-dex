@@ -247,18 +247,6 @@ async function main() {
     if (regularUrl) { p.regularCardUrl = regularUrl; p.bgCandidates = []; }
   }
 
-  // Hard safety net: scrydex.com hosts non-Pocket TCGdex card images (fan-made "me"/collector
-  // sets) that have repeatedly leaked into output despite upstream filtering. Strip
-  // unconditionally so a leak anywhere in the pipeline can never survive into the committed data.
-  for (const p of pokemon) {
-    p.bgCandidates = p.bgCandidates.filter(u => !u.includes("scrydex.com"));
-    if (p.regularCardUrl?.includes("scrydex.com")) p.regularCardUrl = undefined;
-    for (const form of p.altForms ?? []) {
-      if (form.tcgUrl?.includes("scrydex.com")) form.tcgUrl = null;
-      if (form.regularCardUrl?.includes("scrydex.com")) form.regularCardUrl = null;
-    }
-  }
-
   writeFileSync(outPath, JSON.stringify(pokemon, null, 2));
   console.log(`Written ${pokemon.length} Pokémon to lib/pokemon-data.json`);
 }

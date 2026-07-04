@@ -217,14 +217,6 @@ function pickBestCard(cards: RankedCard[]): RankedCard | null {
     if (ra !== rb) return ra < rb ? a : b;
     // Same rarity tier: prefer higher market price (catches TG vs Ultra Rare, etc.)
     const pa = marketPrice(a), pb = marketPrice(b);
-    // Trainer Gallery's character-illustrated art style has consistently read better than a
-    // plain swirl-background full art at a similar price — when tied on tier and within ~15%
-    // of each other in price, prefer the TG print over a non-TG one rather than the pure
-    // highest bidder (a clear price gap, like the Galarian birds, still decides normally).
-    const aIsTG = TG_RE.test(a.number), bIsTG = TG_RE.test(b.number);
-    if (aIsTG !== bIsTG && pa > 0 && pb > 0 && Math.max(pa, pb) / Math.min(pa, pb) <= 1.15) {
-      return aIsTG ? a : b;
-    }
     if (pa !== pb) return pb > pa ? b : a;
     if (a.set.id !== b.set.id) return b.set.id > a.set.id ? b : a;
     const aNum = parseInt(a.number) || 0, bNum = parseInt(b.number) || 0;

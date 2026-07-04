@@ -1,0 +1,124 @@
+{
+  "rayquaza": {
+    "irCandidates": [],
+    "irResult": null,
+    "vgxCandidates": [
+      {
+        "id": "bw6-128",
+        "name": "Rayquaza",
+        "set": "bw6",
+        "number": "128",
+        "rarity": "Rare Secret",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "xy6-104",
+        "name": "Rayquaza-EX",
+        "set": "xy6",
+        "number": "104",
+        "rarity": "Rare Ultra",
+        "artist": "Ryo Ueda"
+      },
+      {
+        "id": "bw6-123",
+        "name": "Rayquaza-EX",
+        "set": "bw6",
+        "number": "123",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm7-160",
+        "name": "Rayquaza-GX",
+        "set": "sm7",
+        "number": "160",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm7-177a",
+        "name": "Rayquaza-GX",
+        "set": "sm7",
+        "number": "177a",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "swsh7-193",
+        "name": "Rayquaza V",
+        "set": "swsh7",
+        "number": "193",
+        "rarity": "Rare Ultra",
+        "artist": "PLANETA Mochizuki"
+      },
+      {
+        "id": "swsh7-194",
+        "name": "Rayquaza V",
+        "set": "swsh7",
+        "number": "194",
+        "rarity": "Rare Ultra",
+        "artist": "Ryuta Fuse"
+      },
+      {
+        "id": "swsh7-110",
+        "name": "Rayquaza V",
+        "set": "swsh7",
+        "number": "110",
+        "rarity": "Rare Holo V",
+        "artist": "PLANETA Mochizuki"
+      },
+      {
+        "id": "swsh12pt5-100",
+        "name": "Rayquaza V",
+        "set": "swsh12pt5",
+        "number": "100",
+        "rarity": "Rare Holo V",
+        "artist": "PLANETA Mochizuki"
+      },
+      {
+        "id": "sm7-109",
+        "name": "Rayquaza-GX",
+        "set": "sm7",
+        "number": "109",
+        "rarity": "Rare Holo GX",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "xy6-60",
+        "name": "Rayquaza-EX",
+        "set": "xy6",
+        "number": "60",
+        "rarity": "Rare Holo EX",
+        "artist": "PLANETA"
+      },
+      {
+        "id": "xy6-75",
+        "name": "Rayquaza-EX",
+        "set": "xy6",
+        "number": "75",
+        "rarity": "Rare Holo EX",
+        "artist": "Ryota Murayama"
+      },
+      {
+        "id": "bw6-85",
+        "name": "Rayquaza-EX",
+        "set": "bw6",
+        "number": "85",
+        "rarity": "Rare Holo EX",
+        "artist": "Eske Yoshinob"
+      },
+      {
+        "id": "ex15-97",
+        "name": "Rayquaza ex δ",
+        "set": "ex15",
+        "number": "97",
+        "rarity": "Rare Holo EX",
+        "artist": "Ryo Ueda"
+      }
+    ],
+    "vgxResult": {
+      "tcgUrl": "https://images.pokemontcg.io/bw6/128_hires.png",
+      "isOldStyle": false
+    }
+  }
+}

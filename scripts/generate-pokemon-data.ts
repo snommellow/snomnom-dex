@@ -81,6 +81,17 @@ async function main() {
     }
   });
 
+  // Family view grouping: familyId = lowest dex number in the chain (positions the group
+  // among others); familyOrder = this Pokémon's index in the chain's evolution order (the
+  // chain array is already baby → basic → stage 1 → stage 2 from fetchEvolutionChainIds' DFS).
+  const familyByDex = new Map<number, { familyId: number; familyOrder: number }>();
+  raw.forEach((p) => {
+    const chain = chainsByDex.get(p.id);
+    familyByDex.set(p.id, chain
+      ? { familyId: Math.min(...chain), familyOrder: chain.indexOf(p.id) }
+      : { familyId: p.id, familyOrder: 0 });
+  });
+
   console.log("Fetching TCG indexes + alt forms...");
   const [irData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
     buildIrSirData(),
@@ -218,7 +229,7 @@ async function main() {
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
-    return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop);
+    return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
   });
 
   // Preserve cards from previous run when the new run returned null.

@@ -83,6 +83,12 @@ export interface PokemonSummary {
   // Regular TCG card used as artwork-only fallback (cropped to art area in UI)
   regularCardUrl?: string;
   altForms: AltForm[];
+  // Evolution family grouping for the "family view" sort. familyId is the lowest dex number
+  // among all members of this Pokémon's evolution chain (used to position the family group
+  // relative to others); familyOrder is this Pokémon's index within the chain's evolution
+  // order (baby → basic → stage 1 → stage 2), used to order members within the group.
+  familyId: number;
+  familyOrder: number;
 }
 
 // Single species fetch: returns genus + non-default form slots + evolution chain URL
@@ -192,6 +198,7 @@ export function toPokemonSummary(
   genus: string | null = null,
   altForms: AltForm[] = [],
   regularCardUrl?: string,
+  family?: { familyId: number; familyOrder: number },
 ): PokemonSummary {
   const bg: string[] = [];
   let resolvedRegularCard = regularCardUrl;
@@ -214,5 +221,7 @@ export function toPokemonSummary(
     bgCandidates: bg,
     regularCardUrl: resolvedRegularCard,
     altForms,
+    familyId: family?.familyId ?? p.id,
+    familyOrder: family?.familyOrder ?? 0,
   };
 }

@@ -72,6 +72,16 @@ export default async function PokedexGrid() {
     }
   });
 
+  // Family view grouping: familyId = lowest dex number in the chain (positions the group
+  // among others); familyOrder = this Pokémon's index in the chain's evolution order.
+  const familyByDex = new Map<number, { familyId: number; familyOrder: number }>();
+  raw.forEach((p) => {
+    const chain = chainsByDex.get(p.id);
+    familyByDex.set(p.id, chain
+      ? { familyId: Math.min(...chain), familyOrder: chain.indexOf(p.id) }
+      : { familyId: p.id, familyOrder: 0 });
+  });
+
   // Phase A: fetch all TCG indexes + alt form data in parallel.
   // All four builders fetch full rarity indexes regardless of Pokémon list size.
   const [irData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
@@ -226,6 +236,7 @@ export default async function PokedexGrid() {
       speciesData[i].genus,
       altFormsWithCards[i],
       fallbackCrop,
+      familyByDex.get(p.id),
     );
   });
 

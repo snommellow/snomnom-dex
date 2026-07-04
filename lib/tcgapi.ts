@@ -374,6 +374,28 @@ export async function promoSvPick(data: PromoSvData, displayName: string): Promi
   return (await imageExists(url)) ? url : null;
 }
 
+// promoSvPick excludes trainer-owned names (e.g. "Steven's Beldum") since most Pokémon's own
+// promoSvPick search shouldn't surface someone else's card. This pass specifically finds them —
+// mirrors trainerIrPick but against the SVP promo dataset instead of the IR/SIR dataset.
+export async function trainerPromoPick(data: PromoSvData, displayName: string): Promise<string | null> {
+  const nameLower = displayName.toLowerCase();
+  const candidates: PtcgCard[] = [];
+  for (const [key, cards] of data.index) {
+    if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
+    for (const c of cards) {
+      if (c.images?.large && !SVP_BLACKLIST.has(c.number)) candidates.push(c);
+    }
+  }
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) => {
+    const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
+    if (ra !== rb) return ra < rb ? a : b;
+    return parseInt(b.number) > parseInt(a.number) ? b : a;
+  });
+  const url = cardImageUrl(best);
+  return (await imageExists(url)) ? url : null;
+}
+
 export async function buildVgxData(): Promise<VgxData> {
   const rarities = RARITY_ORDER.filter(r => VGX_RARITIES.has(r));
   const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r, false, true)));

@@ -7416,8 +7416,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/374.png",
     "genus": "Iron Ball Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/59_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/207_hires.png"
+    ],
     "altForms": [],
     "familyId": 374,
     "familyOrder": 0

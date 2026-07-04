@@ -1,18 +1,20 @@
 #!/usr/bin/env tsx
 import { writeFileSync } from "fs";
+import {
+  buildVgxData, vgxCandidates,
+  fetchRegionalPromoPriority,
+} from "../lib/tcgapi";
 
 const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
-
 function getHeaders(): HeadersInit {
   const key = process.env.POKEMONTCG_API_KEY;
   return key ? { "X-Api-Key": key } : {};
 }
-
 async function fetchAll(q: string) {
   const results: any[] = [];
   let page = 1;
   while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,attacks,flavorText,set,images,tcgplayer`;
+    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,abilities,attacks,set,images,tcgplayer`;
     const res = await fetch(url, { headers: getHeaders() });
     if (!res.ok) break;
     const json = await res.json();
@@ -24,36 +26,32 @@ async function fetchAll(q: string) {
   return results;
 }
 
-function marketPrice(c: any): number {
-  const prices = c.tcgplayer?.prices;
-  if (!prices) return 0;
-  return Math.max(0, ...Object.values(prices).map((v: any) => v?.market ?? v?.mid ?? 0));
-}
-
 async function main() {
-  const speciesRes = await fetch("https://pokeapi.co/api/v2/pokemon-species/351");
-  const species = await speciesRes.json();
-  const varieties = (species.varieties as any[]).map(v => v.pokemon.name);
+  const out: Record<string, unknown> = {};
 
-  const castformAll = await fetchAll(`name:"Castform" -subtypes:Tera`);
+  // Mewtwo: check svp/52 raw card data (ability/attack fields) to see why promoSvPick excludes it.
+  const mewtwoSvp = (await fetchAll(`set.id:svp name:"Mewtwo"`)).map(c => ({
+    id: c.id, name: c.name, number: c.number, rarity: c.rarity,
+    abilities: c.abilities, attacks: (c.attacks ?? []).map((a: any) => a.name),
+  }));
+  out.mewtwoSvp = mewtwoSvp;
 
-  const out = {
-    varieties,
-    cards: castformAll
-      .filter(c => c.images?.large)
-      .map(c => ({
-        id: c.id, name: c.name, set: c.set.name, setId: c.set.id, number: c.number,
-        rarity: c.rarity, artist: c.artist,
-        attacks: (c.attacks ?? []).map((a: any) => a.name),
-        flavorText: c.flavorText,
-        price: marketPrice(c),
-        image: c.images.large,
-      }))
-      .sort((a, b) => b.price - a.price),
-  };
+  // Alolan Golem-GX: dump every candidate from the regional VGX path with full tiebreak fields.
+  const vgxData = await buildVgxData();
+  const golemCands = vgxCandidates(vgxData, "Alolan Golem");
+  out.golemVgxCandidates = golemCands.map(c => ({
+    id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c._rarity, artist: c.artist,
+    price: (c as any).tcgplayer?.prices,
+  }));
+  const golemAll = await fetchAll(`name:"Alolan Golem"`);
+  out.golemAllCards = golemAll.map(c => ({
+    id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c.rarity,
+    tcgplayer: c.tcgplayer,
+  }));
+  out.golemPromoPriority = await fetchRegionalPromoPriority("Alolan Golem");
 
   writeFileSync("lib/debug-cards.json", JSON.stringify(out, null, 2));
-  console.log(`wrote lib/debug-cards.json with ${out.cards.length} cards`);
+  console.log("wrote lib/debug-cards.json");
 }
 
 main();

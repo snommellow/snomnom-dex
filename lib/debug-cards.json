@@ -1,0 +1,335 @@
+{
+  "varieties": [
+    "castform",
+    "castform-sunny",
+    "castform-rainy",
+    "castform-snowy"
+  ],
+  "cards": [
+    {
+      "id": "ex11-34",
+      "name": "Castform",
+      "set": "Delta Species",
+      "setId": "ex11",
+      "number": "34",
+      "rarity": "Uncommon",
+      "artist": "Miki Tanaka",
+      "attacks": [
+        "Holon Draw"
+      ],
+      "price": 37.35,
+      "image": "https://images.pokemontcg.io/ex11/34_hires.png"
+    },
+    {
+      "id": "ex5-23",
+      "name": "Rain Castform",
+      "set": "Hidden Legends",
+      "setId": "ex5",
+      "number": "23",
+      "rarity": "Rare",
+      "artist": "Sumiyoshi Kizuki",
+      "attacks": [
+        "Scattered Shower",
+        "Rainy Day Blues"
+      ],
+      "price": 34.86,
+      "image": "https://images.pokemontcg.io/ex5/23_hires.png"
+    },
+    {
+      "id": "ex5-26",
+      "name": "Sunny Castform",
+      "set": "Hidden Legends",
+      "setId": "ex5",
+      "number": "26",
+      "rarity": "Rare",
+      "artist": "Sumiyoshi Kizuki",
+      "attacks": [
+        "Sunshine",
+        "Sunburn"
+      ],
+      "price": 32.36,
+      "image": "https://images.pokemontcg.io/ex5/26_hires.png"
+    },
+    {
+      "id": "ex5-25",
+      "name": "Snow-cloud Castform",
+      "set": "Hidden Legends",
+      "setId": "ex5",
+      "number": "25",
+      "rarity": "Rare",
+      "artist": "Sumiyoshi Kizuki",
+      "attacks": [
+        "Flurries",
+        "White Snow"
+      ],
+      "price": 30.79,
+      "image": "https://images.pokemontcg.io/ex5/25_hires.png"
+    },
+    {
+      "id": "ex13-44",
+      "name": "Holon's Castform",
+      "set": "Holon Phantoms",
+      "setId": "ex13",
+      "number": "44",
+      "rarity": "Uncommon",
+      "artist": "Mitsuhiro Arita",
+      "attacks": [
+        "Delta Draw"
+      ],
+      "price": 29.82,
+      "image": "https://images.pokemontcg.io/ex13/44_hires.png"
+    },
+    {
+      "id": "ex11-31",
+      "name": "Sunny Castform",
+      "set": "Delta Species",
+      "setId": "ex11",
+      "number": "31",
+      "rarity": "Rare",
+      "artist": "Miki Tanaka",
+      "attacks": [
+        "Holon Search"
+      ],
+      "price": 28.9,
+      "image": "https://images.pokemontcg.io/ex11/31_hires.png"
+    },
+    {
+      "id": "ex11-29",
+      "name": "Snow-cloud Castform",
+      "set": "Delta Species",
+      "setId": "ex11",
+      "number": "29",
+      "rarity": "Rare",
+      "artist": "Miki Tanaka",
+      "attacks": [
+        "Holon Blizzard"
+      ],
+      "price": 28.48,
+      "image": "https://images.pokemontcg.io/ex11/29_hires.png"
+    },
+    {
+      "id": "ex5-30",
+      "name": "Castform",
+      "set": "Hidden Legends",
+      "setId": "ex5",
+      "number": "30",
+      "rarity": "Uncommon",
+      "artist": "Sumiyoshi Kizuki",
+      "attacks": [
+        "Forecast",
+        "Extra Ball"
+      ],
+      "price": 26.36,
+      "image": "https://images.pokemontcg.io/ex5/30_hires.png"
+    },
+    {
+      "id": "ex11-26",
+      "name": "Rain Castform",
+      "set": "Delta Species",
+      "setId": "ex11",
+      "number": "26",
+      "rarity": "Rare",
+      "artist": "Miki Tanaka",
+      "attacks": [
+        "Holon Splash"
+      ],
+      "price": 21,
+      "image": "https://images.pokemontcg.io/ex11/26_hires.png"
+    },
+    {
+      "id": "dp6-49",
+      "name": "Castform Rain Form",
+      "set": "Legends Awakened",
+      "setId": "dp6",
+      "number": "49",
+      "rarity": "Uncommon",
+      "artist": "Emi Yoshida",
+      "attacks": [
+        "Water Pulse"
+      ],
+      "flavorText": "Its appearance changes with the weather. Recently, its molecules were found to be just like water.",
+      "price": 12.39,
+      "image": "https://images.pokemontcg.io/dp6/49_hires.png"
+    },
+    {
+      "id": "sv8-195",
+      "name": "Castform Sunny Form",
+      "set": "Surging Sparks",
+      "setId": "sv8",
+      "number": "195",
+      "rarity": "Illustration Rare",
+      "attacks": [
+        "Singe",
+        "Sunny Assist"
+      ],
+      "price": 9.39,
+      "image": "https://images.pokemontcg.io/sv8/195_hires.png"
+    },
+    {
+      "id": "dp6-48",
+      "name": "Castform",
+      "set": "Legends Awakened",
+      "setId": "dp6",
+      "number": "48",
+      "rarity": "Uncommon",
+      "artist": "Kanako Eo",
+      "attacks": [
+        "Weather Ball"
+      ],
+      "flavorText": "Its appearance changes with the weather. Recently, its molecules were found to be just like water.",
+      "price": 7.31,
+      "image": "https://images.pokemontcg.io/dp6/48_hires.png"
+    },
+    {
+      "id": "dp6-51",
+      "name": "Castform Sunny Form",
+      "set": "Legends Awakened",
+      "setId": "dp6",
+      "number": "51",
+      "rarity": "Uncommon",
+      "artist": "Lee HyunJung",
+      "attacks": [
+        "Ember"
+      ],
+      "flavorText": "Its appearance changes with the weather. Recently, its molecules were found to be just like water.",
+      "price": 6.61,
+      "image": "https://images.pokemontcg.io/dp6/51_hires.png"
+    },
+    {
+      "id": "dp6-50",
+      "name": "Castform Snow-Cloud Form",
+      "set": "Legends Awakened",
+      "setId": "dp6",
+      "number": "50",
+      "rarity": "Uncommon",
+      "artist": "Saya Tsuruta",
+      "attacks": [
+        "Hail"
+      ],
+      "flavorText": "Its appearance changes with the weather. Recently, its molecules were found to be just like water.",
+      "price": 6.43,
+      "image": "https://images.pokemontcg.io/dp6/50_hires.png"
+    },
+    {
+      "id": "swsh11tg-TG11",
+      "name": "Castform",
+      "set": "Lost Origin Trainer Gallery",
+      "setId": "swsh11tg",
+      "number": "TG11",
+      "rarity": "Trainer Gallery Rare Holo",
+      "artist": "Atsushi Furusawa",
+      "attacks": [
+        "Weather Force"
+      ],
+      "flavorText": "Its form changes depending on the weather. The rougher conditions get, the rougher Castform's disposition!",
+      "price": 2.38,
+      "image": "https://images.pokemontcg.io/swsh11tg/TG11_hires.png"
+    },
+    {
+      "id": "swsh6-121",
+      "name": "Castform",
+      "set": "Chilling Reign",
+      "setId": "swsh6",
+      "number": "121",
+      "rarity": "Common",
+      "artist": "Asako Ito",
+      "attacks": [
+        "Weather Force"
+      ],
+      "flavorText": "Its form changes depending on the weather. The rougher conditions get, the rougher Castform's disposition!",
+      "price": 0.44,
+      "image": "https://images.pokemontcg.io/swsh6/121_hires.png"
+    },
+    {
+      "id": "sm2-105",
+      "name": "Castform",
+      "set": "Guardians Rising",
+      "setId": "sm2",
+      "number": "105",
+      "rarity": "Common",
+      "artist": "sui",
+      "attacks": [
+        "Weather Teller",
+        "Water Pulse"
+      ],
+      "flavorText": "It changes its form depending on the weather. Changes in the temperature or humidity appear to affect its cellular structure.",
+      "price": 0.36,
+      "image": "https://images.pokemontcg.io/sm2/105_hires.png"
+    },
+    {
+      "id": "swsh6-22",
+      "name": "Castform Sunny Form",
+      "set": "Chilling Reign",
+      "setId": "swsh6",
+      "number": "22",
+      "rarity": "Common",
+      "artist": "Yuka Morii",
+      "attacks": [
+        "High-Pressure Blast"
+      ],
+      "flavorText": "Castform changes to this form when it basks in bright sunlight. When you touch its glowing skin, it feels all dried out!",
+      "price": 0.33,
+      "image": "https://images.pokemontcg.io/swsh6/22_hires.png"
+    },
+    {
+      "id": "swsh6-33",
+      "name": "Castform Rainy Form",
+      "set": "Chilling Reign",
+      "setId": "swsh6",
+      "number": "33",
+      "rarity": "Common",
+      "artist": "sowsow",
+      "attacks": [
+        "Rainfall"
+      ],
+      "flavorText": "This is Castform's form when pelted by rain. In an experiment where it was placed in a shower, this Pokémon didn't change to this form.",
+      "price": 0.33,
+      "image": "https://images.pokemontcg.io/swsh6/33_hires.png"
+    },
+    {
+      "id": "swsh6-34",
+      "name": "Castform Snowy Form",
+      "set": "Chilling Reign",
+      "setId": "swsh6",
+      "number": "34",
+      "rarity": "Common",
+      "artist": "miki kudo",
+      "attacks": [
+        "Frosty Typhoon"
+      ],
+      "flavorText": "This is Castform's form when caught in a hailstorm. Its whole body is chilled, and its skin is partially frozen!",
+      "price": 0.29,
+      "image": "https://images.pokemontcg.io/swsh6/34_hires.png"
+    },
+    {
+      "id": "swsh9-116",
+      "name": "Castform",
+      "set": "Brilliant Stars",
+      "setId": "swsh9",
+      "number": "116",
+      "rarity": "Common",
+      "artist": "kawayoo",
+      "attacks": [
+        "Double Draw",
+        "Hurricane"
+      ],
+      "flavorText": "Its form changes depending on the weather. The rougher conditions get, the rougher Castform's disposition!",
+      "price": 0.22,
+      "image": "https://images.pokemontcg.io/swsh9/116_hires.png"
+    },
+    {
+      "id": "sv8-20",
+      "name": "Castform Sunny Form",
+      "set": "Surging Sparks",
+      "setId": "sv8",
+      "number": "20",
+      "rarity": "Common",
+      "attacks": [
+        "Singe",
+        "Sunny Assist"
+      ],
+      "price": 0.19,
+      "image": "https://images.pokemontcg.io/sv8/20_hires.png"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ async function fetchCards(name: string) {
 }
 
 async function main() {
-  const vileplume = await fetchCards("Vileplume GX");
+  const vileplume = await fetchCards("Vileplume");
   writeFileSync("lib/debug-cards.json", JSON.stringify({ vileplume }, null, 2));
   console.log("Wrote lib/debug-cards.json");
 }

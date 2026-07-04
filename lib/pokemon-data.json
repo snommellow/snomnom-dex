@@ -7668,7 +7668,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png",
     "genus": "DNA Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png"
+    ],
     "altForms": [],
     "familyId": 386,
     "familyOrder": 0

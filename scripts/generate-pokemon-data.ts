@@ -11,7 +11,7 @@ import {
   buildVgxData, vgxCandidates, vgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
-  fetchFormCard, fetchFormCardLastResort,
+  fetchFormCard, fetchFormCardLastResort, fetchRegionalPromoPriority,
   fetchTcgLastResort, toDisplayName,
   IR_RARITIES, VGX_RARITIES,
 } from "../lib/tcgapi";
@@ -176,10 +176,13 @@ async function main() {
             const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);
             const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
 
-            const [irFromFormCard, pocket, vgxFromFormCard] = await Promise.all([
+            const [irFromFormCard, pocket, vgxFromFormCard, regionalPromoUrl] = await Promise.all([
               !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
               fetchPocketAltForm(form.displayName, form.category),
               !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
+              // Checked independently of vgxFromIndex — a shared-index winner shouldn't silently
+              // block a curated full-art promo (e.g. Hisuian Electrode's SWSH294) from competing.
+              form.category === "regional" ? fetchRegionalPromoPriority(form.displayName) : Promise.resolve(null),
             ]);
 
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard?.tcgUrl ?? null;
@@ -187,7 +190,7 @@ async function main() {
             const vgxResult = vgxFromIndex ?? vgxFromFormCard;
             const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
             const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
-            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
+            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? regionalPromoUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
               : null;

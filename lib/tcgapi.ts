@@ -413,6 +413,32 @@ export async function fetchTcgFromChainSet(
 
 // Alt-form card lookup — IR → TG (regional) → VGX, with Mega name fallbacks.
 // Alt forms are looked up individually (low volume, varied names).
+// Promos (swshp/smp/xyp) are curated separately from the main VGX pool and take priority
+// over it — a specific full-art promo shouldn't lose to some unrelated set's pricier Ultra
+// Rare of the same Pokémon just because that set happens to price higher. Exported standalone
+// so callers can check it even when a shared-index lookup already found a non-promo winner —
+// otherwise a real (but less desirable) card short-circuits the promo check entirely.
+const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
+// A handful of promo-set cards carry a mechanic suffix (V/GX/ex) but are still bordered,
+// non-full-art prints — SWSH237 "Hisuian Typhlosion V" and SWSH111 "Galarian Rapidash V"
+// are stamped bordered reprints (confirmed via API: different artist, promo-tier pricing
+// far below their full-art siblings), unlike SWSH294 "Hisuian Electrode V" which is a
+// genuine full-art. No API field distinguishes them, so exclude known cases by number.
+const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111"]);
+
+export async function fetchRegionalPromoPriority(displayName: string): Promise<string | null> {
+  const allCards = await fetchAllPages(`name:"${displayName}"`);
+  // Plain reprints in these promo sets have no suffix (e.g. "Alolan Sandslash"); genuine
+  // full-art promos always carry one — hyphenated for GX ("Alolan Sandslash-GX"), spaced
+  // for the rest ("Hisuian Electrode V").
+  const promoCandidates = allCards
+    .filter(c => c.images?.large && nameMatches(c.name, displayName)
+      && c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id) && !PROMO_BLACKLIST.has(c.number)
+      && /[\s-](ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
+    .map(c => ({ ...c, _rarity: "Trainer Gallery Rare Holo" }));
+  return pickBest(promoCandidates);
+}
+
 export async function fetchFormCard(
   category: "mega" | "regional" | "gmax" | "other",
   _dexId: number,
@@ -435,33 +461,15 @@ export async function fetchFormCard(
       const url = pickBest(candidates);
       return url ? { tcgUrl: url } : null;
     }
-    // VGX pass: gather all candidates including TG cards and full-art promos.
-    // Full-art tiers (TG, Ultra Rare, Rare Ultra, Secret) carry no signal relative to each
-    // other — flatten them to one tier so market price decides. Bordered tiers (Rare Holo
-    // V/VSTAR/VMAX) keep their lower rank so a cheap bordered card can never out-price a
-    // full-art. Promos (swshp/smp/xyp) are curated separately and take priority over this
-    // whole pool — a specific full-art promo shouldn't lose to some unrelated set's pricier
-    // Ultra Rare of the same Pokémon just because that set happens to price higher.
-    const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
-    const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
-    // A handful of promo-set cards carry a mechanic suffix (V/GX/ex) but are still bordered,
-    // non-full-art prints — SWSH237 "Hisuian Typhlosion V" and SWSH111 "Galarian Rapidash V"
-    // are stamped bordered reprints (confirmed via API: different artist, promo-tier pricing
-    // far below their full-art siblings), unlike SWSH294 "Hisuian Electrode V" which is a
-    // genuine full-art. No API field distinguishes them, so exclude known cases by number.
-    const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111"]);
-    const allCards = await fetchAllPages(`name:"${displayName}"`);
-    // Plain reprints in these promo sets have no suffix (e.g. "Alolan Sandslash"); genuine
-    // full-art promos always carry one — hyphenated for GX ("Alolan Sandslash-GX"), spaced
-    // for the rest ("Hisuian Electrode V").
-    const promoCandidates = allCards
-      .filter(c => c.images?.large && nameMatches(c.name, displayName)
-        && c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id) && !PROMO_BLACKLIST.has(c.number)
-        && /[\s-](ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
-      .map(c => ({ ...c, _rarity: "Trainer Gallery Rare Holo" }));
-    const promoUrl = pickBest(promoCandidates);
+    const promoUrl = await fetchRegionalPromoPriority(displayName);
     if (promoUrl) return { tcgUrl: promoUrl };
 
+    // VGX pass: gather all candidates including TG cards. Full-art tiers (TG, Ultra Rare,
+    // Rare Ultra, Secret) carry no signal relative to each other — flatten them to one tier
+    // so market price decides. Bordered tiers (Rare Holo V/VSTAR/VMAX) keep their lower rank
+    // so a cheap bordered card can never out-price a full-art.
+    const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
+    const allCards = await fetchAllPages(`name:"${displayName}"`);
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName) && (TG_RE.test(c.number) || rarities.includes(c.rarity))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))

@@ -1,0 +1,220 @@
+{
+  "hopsSnorlax": [
+    {
+      "id": "sv9-117",
+      "name": "Hop's Snorlax",
+      "set": "sv9",
+      "number": "117",
+      "rarity": "Rare",
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sv9-117",
+        "updatedAt": "2026/07/04",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.2,
+            "mid": 1,
+            "high": 19.9,
+            "market": 1.05,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.01,
+            "mid": 0.35,
+            "high": 19.99,
+            "market": 0.32,
+            "directLow": 0.3
+          }
+        }
+      }
+    },
+    {
+      "id": "svp-184",
+      "name": "Hop's Snorlax",
+      "set": "svp",
+      "number": "184",
+      "rarity": "Promo",
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/svp-184",
+        "updatedAt": "2026/07/04",
+        "prices": {
+          "holofoil": {
+            "low": 16.39,
+            "mid": 20.64,
+            "high": 138.96,
+            "market": 20.09,
+            "directLow": 20.09
+          }
+        }
+      }
+    }
+  ],
+  "snorlaxSvp": [
+    {
+      "id": "svp-51",
+      "name": "Snorlax",
+      "set": "svp",
+      "number": "51",
+      "rarity": "Promo",
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/svp-51",
+        "updatedAt": "2026/07/04",
+        "prices": {
+          "holofoil": {
+            "low": 17.01,
+            "mid": 25.57,
+            "high": 500,
+            "market": 22.79,
+            "directLow": 23.27
+          }
+        }
+      }
+    },
+    {
+      "id": "svp-122",
+      "name": "Snorlax",
+      "set": "svp",
+      "number": "122",
+      "rarity": "Promo",
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/svp-122",
+        "updatedAt": "2026/07/04",
+        "prices": {
+          "holofoil": {
+            "low": 8.49,
+            "mid": 12,
+            "high": 199.99,
+            "market": 11.18,
+            "directLow": 8.49
+          }
+        }
+      }
+    },
+    {
+      "id": "svp-184",
+      "name": "Hop's Snorlax",
+      "set": "svp",
+      "number": "184",
+      "rarity": "Promo",
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/svp-184",
+        "updatedAt": "2026/07/04",
+        "prices": {
+          "holofoil": {
+            "low": 16.39,
+            "mid": 20.64,
+            "high": 138.96,
+            "market": 20.09,
+            "directLow": 20.09
+          }
+        }
+      }
+    }
+  ],
+  "castformNamesMatchingBase": [
+    {
+      "id": "ex11-34",
+      "name": "Castform",
+      "set": "ex11",
+      "number": "34",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "ex5-30",
+      "name": "Castform",
+      "set": "ex5",
+      "number": "30",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "dp6-48",
+      "name": "Castform",
+      "set": "dp6",
+      "number": "48",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "dp6-49",
+      "name": "Castform Rain Form",
+      "set": "dp6",
+      "number": "49",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "dp6-50",
+      "name": "Castform Snow-Cloud Form",
+      "set": "dp6",
+      "number": "50",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "dp6-51",
+      "name": "Castform Sunny Form",
+      "set": "dp6",
+      "number": "51",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "sm2-105",
+      "name": "Castform",
+      "set": "sm2",
+      "number": "105",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh6-22",
+      "name": "Castform Sunny Form",
+      "set": "swsh6",
+      "number": "22",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh6-33",
+      "name": "Castform Rainy Form",
+      "set": "swsh6",
+      "number": "33",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh6-34",
+      "name": "Castform Snowy Form",
+      "set": "swsh6",
+      "number": "34",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh6-121",
+      "name": "Castform",
+      "set": "swsh6",
+      "number": "121",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh9-116",
+      "name": "Castform",
+      "set": "swsh9",
+      "number": "116",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh11tg-TG11",
+      "name": "Castform",
+      "set": "swsh11tg",
+      "number": "TG11",
+      "rarity": "Trainer Gallery Rare Holo"
+    },
+    {
+      "id": "sv8-20",
+      "name": "Castform Sunny Form",
+      "set": "sv8",
+      "number": "20",
+      "rarity": "Common"
+    },
+    {
+      "id": "sv8-195",
+      "name": "Castform Sunny Form",
+      "set": "sv8",
+      "number": "195",
+      "rarity": "Illustration Rare"
+    }
+  ]
+}

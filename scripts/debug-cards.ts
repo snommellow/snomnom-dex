@@ -12,7 +12,7 @@ async function fetchAll(q: string) {
   const results: any[] = [];
   let page = 1;
   while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,abilities,attacks,flavorText,set,images,tcgplayer`;
+    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,attacks,flavorText,set,images,tcgplayer`;
     const res = await fetch(url, { headers: getHeaders() });
     if (!res.ok) break;
     const json = await res.json();
@@ -24,24 +24,29 @@ async function fetchAll(q: string) {
   return results;
 }
 
+function marketPrice(c: any): number {
+  const prices = c.tcgplayer?.prices;
+  if (!prices) return 0;
+  return Math.max(0, ...Object.values(prices).map((v: any) => v?.market ?? v?.mid ?? 0));
+}
+
 async function main() {
   const deoxysAll = await fetchAll(`name:"Deoxys" -subtypes:Tera`);
-  const gg12 = deoxysAll.find(c => c.id === "swsh12pt5gg-GG12");
-  // "ex9" is EX Deoxys — the classic set with one card per forme.
-  const ex9 = deoxysAll.filter(c => c.set.id === "ex9");
 
-  const out = {
-    gg12,
-    ex9Cards: ex9.map(c => ({
-      id: c.id, name: c.name, number: c.number, rarity: c.rarity,
-      attacks: c.attacks, abilities: c.abilities, flavorText: c.flavorText, artist: c.artist,
-      images: c.images,
-    })),
-    allDeoxysCount: deoxysAll.length,
-  };
+  const out = deoxysAll
+    .filter(c => c.images?.large)
+    .map(c => ({
+      id: c.id, name: c.name, set: c.set.name, setId: c.set.id, number: c.number,
+      rarity: c.rarity, artist: c.artist,
+      attacks: (c.attacks ?? []).map((a: any) => a.name),
+      flavorText: c.flavorText,
+      price: marketPrice(c),
+      image: c.images.large,
+    }))
+    .sort((a, b) => b.price - a.price);
 
   writeFileSync("lib/debug-cards.json", JSON.stringify(out, null, 2));
-  console.log("wrote lib/debug-cards.json");
+  console.log(`wrote lib/debug-cards.json with ${out.length} cards`);
 }
 
 main();

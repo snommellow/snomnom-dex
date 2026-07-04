@@ -1901,8 +1901,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/84.png",
     "genus": "Twin Bird Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/73_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/xy12/112_hires.png"
+    ],
     "altForms": [],
     "familyId": 84,
     "familyOrder": 0
@@ -3105,7 +3106,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
     "genus": "Sleeping Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/51_hires.png"
+      "https://images.pokemontcg.io/svp/184_hires.png"
     ],
     "altForms": [
       {
@@ -4523,8 +4524,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/215.png",
     "genus": "Sharp Claw Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex1/103_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/ex7/103_hires.png"
+    ],
     "altForms": [
       {
         "slug": "sneasel-hisui",
@@ -7590,7 +7592,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/382.png",
     "genus": "Sea Basin Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/178_hires.png"
+      "https://images.pokemontcg.io/dc1/6_hires.png"
     ],
     "altForms": [
       {
@@ -7681,7 +7683,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/385.png",
     "genus": "Wish Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw10/98_hires.png"
+      "https://images.pokemontcg.io/xyp/XY67a_hires.png"
     ],
     "altForms": [],
     "familyId": 385,

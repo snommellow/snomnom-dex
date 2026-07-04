@@ -170,10 +170,17 @@ function lookupCandidates(
   } = {},
 ): RankedCard[] {
   const nameLower = displayName.toLowerCase();
+  // If the query itself already names a regional form ("Galarian Rapidash"), match it like
+  // any other exact name — the fuzzy "base name inside a regional key" path below is only for
+  // when the query is a plain base name (e.g. "Rapidash") being fuzzy-matched against a
+  // regional-prefixed card ("Galarian Rapidash V"). Without this, a query that already
+  // includes the prefix never matches its own card: "galarian rapidash v" doesn't contain
+  // " galarian rapidash " (the prefix has no leading space to find).
+  const queryIsRegional = REGIONAL_RE.test(nameLower);
   const matched: RankedCard[] = [];
   const regionalMatched: RankedCard[] = [];
   for (const [key, cards] of index) {
-    const isRegionalKey = REGIONAL_RE.test(key);
+    const isRegionalKey = !queryIsRegional && REGIONAL_RE.test(key);
     // For regional keys (e.g. "alolan persian-gx"), check if the base name is contained
     const keyMatches = isRegionalKey
       ? (key.includes(" " + nameLower + "-") || key.includes(" " + nameLower + " ") || key.endsWith(" " + nameLower))

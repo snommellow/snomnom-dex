@@ -27,6 +27,7 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
   121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
   210: "https://images.pokemontcg.io/swsh9/57_hires.png",
+  77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
 };
 
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {

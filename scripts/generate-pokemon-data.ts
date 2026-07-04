@@ -34,6 +34,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // full art (a different illustration, not an extended reprint — verified via API artist
   // field). No reliable signal distinguishes "looks good" full-arts from this one.
   210: "https://images.pokemontcg.io/swsh9/57_hires.png",
+  // #077 Ponyta: Mainland China-exclusive promo full art. Not indexed by pokemontcg.io or
+  // TCGdex (checked both — no data for this card/set), so pinned directly by URL.
+  77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.

@@ -15,37 +15,47 @@ import {
   IR_RARITIES, VGX_RARITIES,
 } from "../lib/tcgapi";
 
-async function checkBase(name: string, dexId: number) {
-  const displayName = toDisplayName(name);
+async function main() {
+  console.log("Building shared indexes once...");
   const [irData, promoData, vgxData, ancientTraitData, fallbackData] = await Promise.all([
     buildIrSirData(), buildPromoSvData(), buildVgxData(), buildAncientTraitData(), buildFallbackArtData(),
   ]);
-  const irResult = irSirPick(irSirCandidates(irData, displayName));
-  const promoUrl = await promoSvPick(promoData, displayName);
-  const trainerIrUrl = trainerIrPick(irData, displayName);
-  const vgxResult = vgxPick(vgxCandidates(vgxData, displayName));
-  const ancientTraitUrl = ancientTraitPick(ancientTraitData, displayName);
-  const fallbackUrl = fallbackArtPick(fallbackData, displayName);
-  return { dexId, name, irResult, promoUrl, trainerIrUrl, vgxResult, ancientTraitUrl, fallbackUrl };
-}
 
-async function checkForm(displayName: string, category: "mega" | "regional" | "gmax", dexId: number, types: string[] = []) {
-  const irForm = await fetchFormCard(category, dexId, displayName, types, IR_RARITIES);
-  const vgxForm = await fetchFormCard(category, dexId, displayName, types, VGX_RARITIES);
-  const lastResort = await fetchFormCardLastResort(displayName);
-  return { displayName, irForm, vgxForm, lastResort };
-}
+  function checkBase(name: string) {
+    const displayName = toDisplayName(name);
+    const irResult = irSirPick(irSirCandidates(irData, displayName));
+    const vgxResult = vgxPick(vgxCandidates(vgxData, displayName));
+    const ancientTraitUrl = ancientTraitPick(ancientTraitData, displayName);
+    const fallbackUrl = fallbackArtPick(fallbackData, displayName);
+    return { name, irResult, trainerIrUrl: trainerIrPick(irData, displayName), vgxResult, ancientTraitUrl, fallbackUrl };
+  }
 
-async function main() {
-  const results: Record<string, unknown> = {};
-  results.fearow = await checkBase("fearow", 22);
-  results.starmie = await checkBase("starmie", 121);
-  results.granbull = await checkBase("granbull", 210);
-  results.golem = await checkBase("golem", 76);
-  results.scyther = await checkBase("scyther", 123);
-  results.electabuzz = await checkBase("electabuzz", 125);
-  results.megaMewtwoX = await checkForm("Mega Mewtwo X", "mega", 150, ["psychic"]);
-  results.hisuianTyphlosion = await checkForm("Hisuian Typhlosion", "regional", 157, ["fire", "ghost"]);
+  const results: Record<string, unknown> = {
+    fearow: checkBase("fearow"),
+    starmie: checkBase("starmie"),
+    granbull: checkBase("granbull"),
+    golem: checkBase("golem"),
+    scyther: checkBase("scyther"),
+    electabuzz: checkBase("electabuzz"),
+  };
+
+  // Promo pass needs awaiting (verifies image existence) — run after the sync checks.
+  for (const name of ["fearow", "starmie", "granbull", "golem", "scyther", "electabuzz"]) {
+    (results[name] as Record<string, unknown>).promoUrl = await promoSvPick(promoData, toDisplayName(name));
+  }
+
+  console.log("Checking alt forms...");
+  results.megaMewtwoX = {
+    irForm: await fetchFormCard("mega", 150, "Mega Mewtwo X", ["psychic"], IR_RARITIES),
+    vgxForm: await fetchFormCard("mega", 150, "Mega Mewtwo X", ["psychic"], VGX_RARITIES),
+    lastResort: await fetchFormCardLastResort("Mega Mewtwo X"),
+  };
+  results.hisuianTyphlosion = {
+    irForm: await fetchFormCard("regional", 157, "Hisuian Typhlosion", ["fire", "ghost"], IR_RARITIES),
+    vgxForm: await fetchFormCard("regional", 157, "Hisuian Typhlosion", ["fire", "ghost"], VGX_RARITIES),
+    lastResort: await fetchFormCardLastResort("Hisuian Typhlosion"),
+  };
+
   writeFileSync("lib/debug-cards.json", JSON.stringify(results, null, 2));
   console.log("Wrote lib/debug-cards.json");
 }

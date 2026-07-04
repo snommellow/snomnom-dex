@@ -36,11 +36,16 @@ jobs:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
         run: npm run generate
 
+      - name: Debug cards
+        env:
+          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
+        run: npx tsx scripts/debug-cards.ts
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/pokemon-data.json
+          git add lib/pokemon-data.json lib/debug-cards.json
           if git diff --cached --quiet; then
             echo "No changes to pokemon-data.json"
           else

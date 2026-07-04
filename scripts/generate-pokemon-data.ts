@@ -255,4 +255,4 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-// trigger: debug run for Venomoth/Persian/Mareep/Flaaffy investigation
+// trigger: debug run for bordered-vs-full-art SVP promo distinction

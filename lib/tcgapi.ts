@@ -59,6 +59,15 @@ const SVP_BLACKLIST = new Set(["11", "22", "24", "59", "89", "122", "167", "168"
 // Barrier"/"Psyslash") is a full-bleed cityscape illustration, not a plain stamp reprint.
 const SVP_ALLOWLIST = new Set(["52"]);
 
+// Trainer-owned cards confirmed to be worse than the Pokémon's own plain promo/card despite
+// ranking higher by rarity tier — e.g. sv10-231 "Team Rocket's Mewtwo ex" (Special Illustration
+// Rare, $554) outranks svp-52 "Mewtwo" ($49) by tier, but the user prefers the plain promo here.
+// Unlike Kyogre/Beldum (where the trainer-owned card was the only good option), Mewtwo already
+// has a solid plain alternative, so this is a per-card exception, not a rule reversal.
+// svp-184 "Hop's Snorlax" ($20.09) similarly outranks svp-51 "Snorlax" ($22.79) by set/number
+// tiebreak despite the user preferring the plain promo.
+const TRAINER_CARD_BLACKLIST = new Set(["sv10-231", "svp-184"]);
+
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
@@ -72,7 +81,10 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // feedback to look wrong in this specific card template, so it's excluded anyway.
 // xy5-153 (Aggron-EX, Rare Ultra, $40) outranks Aggron V (swsh9-96, $1.01) by rarity tier,
 // but confirmed by direct user feedback that the V card is the one wanted here.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153"]);
+// sm4-102 (Alolan Golem-GX full art) shares its artist with the bordered sm4-34 sibling
+// (both "5ban Graphics"), which normally signals a safe extended illustration — but confirmed
+// by direct user feedback to look wrong in this specific card template.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
@@ -131,9 +143,15 @@ function rarityScore(rarity: string): number {
   return idx === -1 ? 99 : idx;
 }
 
+// Card names with these trailing words are forme-specific variants (e.g. Castform's "Castform
+// Sunny Form"), not a generic mechanic suffix like "ex"/"V"/"GX" — a bare species-name query
+// must not match them, or the base Pokémon picks up a card meant for one of its alt forms.
+const FORME_VARIANT_SUFFIX_RE = /\s+(Sunny|Rainy|Rain|Snowy|Snow-Cloud)\s+Forme?$/i;
+
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();
   const q  = query.toLowerCase();
+  if (cn.startsWith(q + " ") && FORME_VARIANT_SUFFIX_RE.test(cardName.slice(query.length))) return false;
   return cn === q || cn.startsWith(q + " ") || cn === q + "-gx" || cn === q + "-ex" || cn.includes("& " + q);
 }
 
@@ -334,7 +352,7 @@ export function trainerIrPick(data: IrSirData, displayName: string): string | nu
     for (const [key, cards] of data.indexes[i]) {
       if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
       for (const c of cards) {
-        if (c.images?.large) candidates.push({ ...c, _rarity: data.rarities[i] });
+        if (c.images?.large && !TRAINER_CARD_BLACKLIST.has(c.id)) candidates.push({ ...c, _rarity: data.rarities[i] });
       }
     }
   }
@@ -351,7 +369,7 @@ export function trainerVgxPick(data: VgxData, displayName: string): string | nul
     for (const [key, cards] of data.indexes[i]) {
       if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
       for (const c of cards) {
-        if (c.images?.large) candidates.push({ ...c, _rarity: data.rarities[i] });
+        if (c.images?.large && !TRAINER_CARD_BLACKLIST.has(c.id)) candidates.push({ ...c, _rarity: data.rarities[i] });
       }
     }
   }
@@ -414,7 +432,7 @@ export async function trainerPromoPick(data: PromoSvData, displayName: string): 
   for (const [key, cards] of data.index) {
     if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
     for (const c of cards) {
-      if (c.images?.large && !SVP_BLACKLIST.has(c.number)) candidates.push(c);
+      if (c.images?.large && !SVP_BLACKLIST.has(c.number) && !TRAINER_CARD_BLACKLIST.has(c.id)) candidates.push(c);
     }
   }
   if (!candidates.length) return null;

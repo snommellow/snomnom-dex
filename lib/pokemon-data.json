@@ -3733,8 +3733,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/195.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/195.png",
     "genus": "Water Fish Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss1/9_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/156_hires.png"
+    ],
     "altForms": []
   },
   {

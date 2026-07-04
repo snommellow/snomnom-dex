@@ -8,7 +8,7 @@ import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds,
 import {
   buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildPromoSvData, promoSvPick, trainerPromoPick,
-  buildVgxData, vgxCandidates, vgxPick,
+  buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
   fetchFormCard, fetchFormCardLastResort, fetchRegionalPromoPriority,
@@ -37,6 +37,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // #077 Ponyta: Mainland China-exclusive promo full art. Not indexed by pokemontcg.io or
   // TCGdex (checked both — no data for this card/set), so pinned directly by URL.
   77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
+  // #385 Jirachi: xyp-XY67a ($191.65) is an XY Black Star Promo full art, same "xyp" set as
+  // Fearow above — outside promoSvPick's scope, structurally unreachable by any automated pass.
+  385: "https://images.pokemontcg.io/xyp/XY67a_hires.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -149,6 +152,10 @@ async function main() {
     })
   );
   const trainerPromoMap = new Map(trainerPromoEntries.filter((e): e is NonNullable<typeof e> => e !== null));
+  const trainerVgxMap = new Map(raw.flatMap(p => {
+    const url = trainerVgxPick(vgxData, toDisplayName(p.name));
+    return url ? [[p.id, { tcgUrl: url }]] : [];
+  }));
   const vgxMap = new Map(raw.flatMap((p, i) => {
     const r = vgxPick(vgxCandidatesList[i], vgxChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
@@ -174,7 +181,7 @@ async function main() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !trainerPromoMap.has(p.id) && !vgxMap.has(p.id);
+      !trainerIrMap.has(p.id) && !trainerPromoMap.has(p.id) && !trainerVgxMap.has(p.id) && !vgxMap.has(p.id);
   });
 
   // Run fetchTcgLastResort before alt-form queries to avoid competing with them for rate limits.
@@ -233,7 +240,7 @@ async function main() {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
-    const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null });
+    const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined) ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined) ?? promoSvMap.get(p.id) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null });
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
   });

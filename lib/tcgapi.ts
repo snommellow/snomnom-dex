@@ -327,6 +327,23 @@ export function trainerIrPick(data: IrSirData, displayName: string): string | nu
   return pickBest(candidates);
 }
 
+// Trainer-owned cards outside the SVP promo set (e.g. "Team Aqua's Kyogre-EX" from the
+// Double Crisis half-deck set) — mirrors trainerIrPick/trainerPromoPick but against the
+// shared VGX dataset, which spans all sets rather than one curated subset.
+export function trainerVgxPick(data: VgxData, displayName: string): string | null {
+  const nameLower = displayName.toLowerCase();
+  const candidates: RankedCard[] = [];
+  for (let i = 0; i < data.rarities.length; i++) {
+    for (const [key, cards] of data.indexes[i]) {
+      if (!TRAINER_OWNED_RE.test(key) || !key.includes(nameLower)) continue;
+      for (const c of cards) {
+        if (c.images?.large) candidates.push({ ...c, _rarity: data.rarities[i] });
+      }
+    }
+  }
+  return pickBest(candidates);
+}
+
 // SV-era full-art promo set IDs — add new promo sets here as they release
 // mep/mepen excluded: those sets contain standard bordered cards for common Pokémon
 // (no blacklist like SVP_BLACKLIST exists for them, causing non-full-art backgrounds)

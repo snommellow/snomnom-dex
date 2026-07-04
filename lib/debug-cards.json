@@ -1,0 +1,129 @@
+{
+  "gg12": {
+    "id": "swsh12pt5gg-GG12",
+    "name": "Deoxys",
+    "subtypes": [
+      "Basic",
+      "Fusion Strike",
+      "Single Strike",
+      "Rapid Strike"
+    ],
+    "attacks": [
+      {
+        "name": "Photon Boost",
+        "cost": [
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedEnergyCost": 3,
+        "damage": "80+",
+        "text": "If this Pokémon has any Fusion Strike Energy attached, this attack does 80 more damage."
+      }
+    ],
+    "set": {
+      "id": "swsh12pt5gg",
+      "name": "Crown Zenith Galarian Gallery",
+      "series": "Sword & Shield",
+      "printedTotal": 70,
+      "total": 70,
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "ptcgoCode": "CRZ",
+      "releaseDate": "2023/01/20",
+      "updatedAt": "2023/01/19 15:45:00",
+      "images": {
+        "symbol": "https://images.pokemontcg.io/swsh12pt5gg/symbol.png",
+        "logo": "https://images.pokemontcg.io/swsh12pt5gg/logo.png"
+      }
+    },
+    "number": "GG12",
+    "artist": "Scav",
+    "rarity": "Trainer Gallery Rare Holo",
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12pt5gg/GG12.png",
+      "large": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png"
+    },
+    "tcgplayer": {
+      "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG12",
+      "updatedAt": "2026/07/04",
+      "prices": {
+        "holofoil": {
+          "low": 17.26,
+          "mid": 22.15,
+          "high": 999.99,
+          "market": 20.73,
+          "directLow": 23.7
+        }
+      }
+    }
+  },
+  "ex9Cards": [
+    {
+      "id": "ex9-2",
+      "name": "Deoxys",
+      "number": "2",
+      "rarity": "Rare Holo",
+      "attacks": [
+        {
+          "name": "Swift",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": "This attack's damage isn't affected by Weakness, Resistance, Poké-Power, Poké-Bodies, or any other effects on the Defending Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Form Change",
+          "text": "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with Deoxys. (Any cards attached to Deoxys, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn.",
+          "type": "Poké-Power"
+        }
+      ],
+      "artist": "Hironobu Yoshida",
+      "images": {
+        "small": "https://images.pokemontcg.io/ex9/2.png",
+        "large": "https://images.pokemontcg.io/ex9/2_hires.png"
+      }
+    },
+    {
+      "id": "ex9-93",
+      "name": "Deoxys ex",
+      "number": "93",
+      "rarity": "Rare Holo EX",
+      "attacks": [
+        {
+          "name": "Fastwave",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "50",
+          "text": "This attack's damage isn't affected by Resistance, Poké-Powers, Poké-Bodies, or any other effects on the Defending Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Form Change",
+          "text": "Once during your turn (before your attack), you may search your deck for another Deoxys ex and switch it with Deoxys ex. (Any cards attached to Deoxys ex, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys ex on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn.",
+          "type": "Poké-Power"
+        }
+      ],
+      "artist": "Mitsuhiro Arita",
+      "images": {
+        "small": "https://images.pokemontcg.io/ex9/93.png",
+        "large": "https://images.pokemontcg.io/ex9/93_hires.png"
+      }
+    }
+  ],
+  "allDeoxysCount": 45
+}

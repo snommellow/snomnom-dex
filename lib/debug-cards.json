@@ -1,0 +1,14 @@
+{
+  "species": {
+    "genus": "Fire Horse Pokémon",
+    "altFormSlots": [
+      {
+        "name": "ponyta-galar",
+        "url": "https://pokeapi.co/api/v2/pokemon/10162/"
+      }
+    ],
+    "evolutionChainUrl": "https://pokeapi.co/api/v2/evolution-chain/32/",
+    "chineseName": null
+  },
+  "zhResult": null
+}

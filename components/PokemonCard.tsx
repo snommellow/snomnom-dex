@@ -293,7 +293,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -312,6 +312,8 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Galarian")) label = "Galarian";
     else if (displayName.startsWith("Hisuian")) label = "Hisuian";
     else if (displayName.startsWith("Paldean")) label = "Paldean";
+  } else if (category === "primal") {
+    label = "Primal Reversion";
   }
   return { baseName, formLabel: label };
 }

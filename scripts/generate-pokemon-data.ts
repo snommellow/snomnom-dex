@@ -62,6 +62,15 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
 };
 
+// Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
+// the form at all — every "Deoxys" TCG printing shares one name regardless of battle forme,
+// so these are the only cards literally named per forme (Legends Awakened, dp6), picked by hand.
+const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
+  "Attack Forme Deoxys":  "https://images.pokemontcg.io/dp6/24_hires.png",
+  "Defense Forme Deoxys": "https://images.pokemontcg.io/dp6/25_hires.png",
+  "Speed Forme Deoxys":   "https://images.pokemontcg.io/dp6/26_hires.png",
+};
+
 async function main() {
   console.log("Fetching Pokémon list...");
   const raw = await fetchFirst151();
@@ -195,6 +204,9 @@ async function main() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
+            const hardcodedRegularUrl = HARDCODED_FORM_REGULAR_URLS[form.displayName];
+            if (hardcodedRegularUrl) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegularUrl };
+
             // "forme" cards (e.g. Deoxys' Attack/Defense/Speed formes) aren't distinguished by
             // name in the TCG — every printing is just "Deoxys" — so search by the base
             // Pokémon's display name instead of the forme-specific display name.

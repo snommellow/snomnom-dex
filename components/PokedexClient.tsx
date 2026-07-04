@@ -40,8 +40,8 @@ export default function PokedexClient({ pokemon }: Props) {
 
   // Family view: group by evolution family, families ordered by their lowest dex number,
   // members within a family ordered by evolution stage (baby → basic → stage 1 → stage 2).
-  // All alt forms (Mega/Gigantamax/regional) ride along in the row right after their base
-  // Pokémon.
+  // All base evolution stages come first, then all alt forms (Mega/Gigantamax/regional)
+  // after, in the same row — not interleaved per-stage.
   const families = useMemo(() => {
     if (!familyView) return null;
     const groups = new Map<number, PokemonSummary[]>();
@@ -54,11 +54,13 @@ export default function PokedexClient({ pokemon }: Props) {
     return [...groups.entries()]
       .sort(([a], [b]) => a - b)
       .map(([familyId, members]) => {
-        const items = members.flatMap((p) => [
-          { kind: "base" as const, key: `${p.id}`, pokemon: p },
-          ...(p.altForms ?? [])
-            .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus })),
-        ]);
+        const items = [
+          ...members.map((p) => ({ kind: "base" as const, key: `${p.id}`, pokemon: p })),
+          ...members.flatMap((p) =>
+            (p.altForms ?? [])
+              .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus }))
+          ),
+        ];
         return { familyId, items };
       });
   }, [filtered, familyView]);

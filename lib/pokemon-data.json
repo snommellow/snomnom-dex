@@ -3292,9 +3292,8 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
     "genus": "Genetic Pokémon",
     "bgCandidates": [
-      "https://assets.tcgdex.net/en/tcgp/A1/282/high.webp"
+      "https://images.pokemontcg.io/sv10/231_hires.png"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex1/101_hires.png",
     "altForms": [
       {
         "slug": "mewtwo-mega-x",
@@ -6987,7 +6986,44 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/sv8/195_hires.png"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "castform-sunny",
+        "displayName": "Sunny Forme Castform",
+        "types": [
+          "fire"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/sv8/195_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "castform-rainy",
+        "displayName": "Rainy Forme Castform",
+        "types": [
+          "water"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/ex5/23_hires.png"
+      },
+      {
+        "slug": "castform-snowy",
+        "displayName": "Snowy Forme Castform",
+        "types": [
+          "ice"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/ex5/25_hires.png"
+      }
+    ],
     "familyId": 351,
     "familyOrder": 0
   },
@@ -7711,8 +7747,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/dp6/24_hires.png"
       },
       {
         "slug": "deoxys-defense",
@@ -7723,8 +7759,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/dp6/25_hires.png"
       },
       {
         "slug": "deoxys-speed",
@@ -7735,8 +7771,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/dp6/26_hires.png"
       }
     ],
     "familyId": 386,

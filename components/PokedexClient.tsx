@@ -1,12 +1,17 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, type CSSProperties } from "react";
 import { Search, X, GitBranch, LayoutGrid } from "lucide-react";
 import type { PokemonSummary } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import PokemonCard, { AltFormCard } from "./PokemonCard";
 
-const FAMILY_ROW_MAX = 8;
+// Fixed-width cards, same as the normal dex order — never flexed wider to fill a row.
+const SHELF_GRID_STYLE: CSSProperties = {
+  gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+  backgroundImage:
+    "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
+};
 
 const ALL_TYPES = [
   "normal","fire","water","electric","grass","ice","fighting",
@@ -35,6 +40,9 @@ export default function PokedexClient({ pokemon }: Props) {
 
   // Family view: group by evolution family, families ordered by their lowest dex number,
   // members within a family ordered by evolution stage (baby → basic → stage 1 → stage 2).
+  // Mega/Gigantamax alt forms ride along in the main row after their base Pokémon; regional
+  // forms (Alolan/Galarian/Hisuian/Paldean) get their own second row per family since they're
+  // an alternate lineage, not a next evolution stage.
   const families = useMemo(() => {
     if (!familyView) return null;
     const groups = new Map<number, PokemonSummary[]>();
@@ -46,7 +54,20 @@ export default function PokedexClient({ pokemon }: Props) {
     for (const group of groups.values()) group.sort((a, b) => a.familyOrder - b.familyOrder);
     return [...groups.entries()]
       .sort(([a], [b]) => a - b)
-      .map(([familyId, members]) => ({ familyId, members }));
+      .map(([familyId, members]) => {
+        const mainItems = members.flatMap((p) => [
+          { kind: "base" as const, key: `${p.id}`, pokemon: p },
+          ...(p.altForms ?? [])
+            .filter((f) => f.category !== "regional")
+            .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus })),
+        ]);
+        const regionalItems = members.flatMap((p) =>
+          (p.altForms ?? [])
+            .filter((f) => f.category === "regional")
+            .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus }))
+        );
+        return { familyId, mainItems, regionalItems };
+      });
   }, [filtered, familyView]);
 
   return (
@@ -140,32 +161,29 @@ export default function PokedexClient({ pokemon }: Props) {
       {filtered.length > 0 ? (
         families ? (
           <div className="flex flex-col gap-5">
-            {families.map(({ familyId, members }) => (
-              <div
-                key={familyId}
-                className="grid gap-x-3 gap-y-4"
-                style={{
-                  gridTemplateColumns: `repeat(${Math.min(FAMILY_ROW_MAX, members.length)}, minmax(100px, 1fr))`,
-                  backgroundImage:
-                    "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
-                }}
-              >
-                {members.map((p) => (
-                  <PokemonCard key={p.id} pokemon={p} />
-                ))}
+            {families.map(({ familyId, mainItems, regionalItems }) => (
+              <div key={familyId} className="flex flex-col gap-2">
+                <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
+                  {mainItems.map((item) =>
+                    item.kind === "base" ? (
+                      <PokemonCard key={item.key} pokemon={item.pokemon} />
+                    ) : (
+                      <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
+                    )
+                  )}
+                </div>
+                {regionalItems.length > 0 && (
+                  <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
+                    {regionalItems.map((item) => (
+                      <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
         ) : (
-          <div
-            className="grid gap-x-3 gap-y-4"
-            style={{
-              gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
-              /* Shelf line under each row */
-              backgroundImage:
-                "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
-            }}
-          >
+          <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
             {filtered.flatMap((p) => [
               <PokemonCard key={p.id} pokemon={p} />,
               ...(p.altForms ?? []).map((form) => (

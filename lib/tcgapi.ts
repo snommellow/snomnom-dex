@@ -61,7 +61,10 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // e.g. swsh9-159 "Granbull V" (artist Ayaka Yoshida) vs its bordered swsh9-57 sibling (artist
 // PLANETA Mochizuki). Excluding these lets the bordered sibling win on its own tier instead of
 // permanently overriding with a hardcode — a genuinely better future card can still compete.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169"]);
+// sm10-193 (Venomoth GX full art) shares its artist with the bordered sm10-12 sibling,
+// which normally signals a safe extended illustration — but confirmed by direct user
+// feedback to look wrong in this specific card template, so it's excluded anyway.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {

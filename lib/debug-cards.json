@@ -1,129 +1,662 @@
-{
-  "gg12": {
+[
+  {
+    "id": "bw9-111",
+    "name": "Deoxys-EX",
+    "set": "Plasma Freeze",
+    "setId": "bw9",
+    "number": "111",
+    "rarity": "Rare Ultra",
+    "artist": "5ban Graphics",
+    "attacks": [
+      "Helix Force"
+    ],
+    "price": 598.96,
+    "image": "https://images.pokemontcg.io/bw9/111_hires.png"
+  },
+  {
+    "id": "ex13-5",
+    "name": "Deoxys δ",
+    "set": "Holon Phantoms",
+    "setId": "ex13",
+    "number": "5",
+    "rarity": "Rare Holo",
+    "artist": "Kouki Saitou",
+    "attacks": [
+      "Crystal Laser"
+    ],
+    "price": 349.99,
+    "image": "https://images.pokemontcg.io/ex13/5_hires.png"
+  },
+  {
+    "id": "pop4-17",
+    "name": "Deoxys ex",
+    "set": "POP Series 4",
+    "setId": "pop4",
+    "number": "17",
+    "rarity": "Rare",
+    "artist": "Hiromichi Sugiyama",
+    "attacks": [
+      "Fastwave"
+    ],
+    "price": 299,
+    "image": "https://images.pokemontcg.io/pop4/17_hires.png"
+  },
+  {
+    "id": "hgss3-90",
+    "name": "Rayquaza & Deoxys LEGEND",
+    "set": "HS—Undaunted",
+    "setId": "hgss3",
+    "number": "90",
+    "rarity": "LEGEND",
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "attacks": [
+      "Ozone Buster"
+    ],
+    "price": 264.3,
+    "image": "https://images.pokemontcg.io/hgss3/90_hires.png"
+  },
+  {
+    "id": "ex8-97",
+    "name": "Deoxys ex",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "97",
+    "rarity": "Rare Holo EX",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Energy Burst"
+    ],
+    "price": 225.49,
+    "image": "https://images.pokemontcg.io/ex8/97_hires.png"
+  },
+  {
+    "id": "ex8-16",
+    "name": "Deoxys",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "16",
+    "rarity": "Rare",
+    "artist": "Hironobu Yoshida",
+    "attacks": [
+      "Link Blast"
+    ],
+    "price": 204.98,
+    "image": "https://images.pokemontcg.io/ex8/16_hires.png"
+  },
+  {
+    "id": "ex9-2",
+    "name": "Deoxys",
+    "set": "Emerald",
+    "setId": "ex9",
+    "number": "2",
+    "rarity": "Rare Holo",
+    "artist": "Hironobu Yoshida",
+    "attacks": [
+      "Swift"
+    ],
+    "price": 202.08,
+    "image": "https://images.pokemontcg.io/ex9/2_hires.png"
+  },
+  {
+    "id": "hgss3-89",
+    "name": "Rayquaza & Deoxys LEGEND",
+    "set": "HS—Undaunted",
+    "setId": "hgss3",
+    "number": "89",
+    "rarity": "LEGEND",
+    "artist": "Shinji Higuchi + Sachiko Eba",
+    "attacks": [
+      "Ozone Buster"
+    ],
+    "price": 197.86,
+    "image": "https://images.pokemontcg.io/hgss3/89_hires.png"
+  },
+  {
+    "id": "ex8-98",
+    "name": "Deoxys ex",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "98",
+    "rarity": "Rare Holo EX",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Psyburst"
+    ],
+    "price": 179.99,
+    "image": "https://images.pokemontcg.io/ex8/98_hires.png"
+  },
+  {
+    "id": "ex8-99",
+    "name": "Deoxys ex",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "99",
+    "rarity": "Rare Holo EX",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Psychic Shield"
+    ],
+    "price": 169.17,
+    "image": "https://images.pokemontcg.io/ex8/99_hires.png"
+  },
+  {
+    "id": "ex9-93",
+    "name": "Deoxys ex",
+    "set": "Emerald",
+    "setId": "ex9",
+    "number": "93",
+    "rarity": "Rare Holo EX",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Fastwave"
+    ],
+    "price": 164.89,
+    "image": "https://images.pokemontcg.io/ex9/93_hires.png"
+  },
+  {
+    "id": "ex8-17",
+    "name": "Deoxys",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "17",
+    "rarity": "Rare",
+    "artist": "Hironobu Yoshida",
+    "attacks": [
+      "Energy Crush"
+    ],
+    "price": 149.4,
+    "image": "https://images.pokemontcg.io/ex8/17_hires.png"
+  },
+  {
+    "id": "ex13-6",
+    "name": "Deoxys δ",
+    "set": "Holon Phantoms",
+    "setId": "ex13",
+    "number": "6",
+    "rarity": "Rare Holo",
+    "artist": "Masakazu Fukuda",
+    "attacks": [
+      "Teleportation Burst"
+    ],
+    "price": 145.67,
+    "image": "https://images.pokemontcg.io/ex13/6_hires.png"
+  },
+  {
+    "id": "smp-SM240",
+    "name": "Espeon & Deoxys-GX",
+    "set": "SM Black Star Promos",
+    "setId": "smp",
+    "number": "SM240",
+    "rarity": "Promo",
+    "artist": "Hasuno",
+    "attacks": [
+      "Psychic Club",
+      "Cross Division-GX"
+    ],
+    "price": 131.95,
+    "image": "https://images.pokemontcg.io/smp/SM240_hires.png"
+  },
+  {
+    "id": "pop4-2",
+    "name": "Deoxys δ",
+    "set": "POP Series 4",
+    "setId": "pop4",
+    "number": "2",
+    "rarity": "Rare",
+    "artist": "Kouki Saitou",
+    "attacks": [
+      "Crystal Laser"
+    ],
+    "price": 100.66,
+    "image": "https://images.pokemontcg.io/pop4/2_hires.png"
+  },
+  {
+    "id": "ex13-3",
+    "name": "Deoxys δ",
+    "set": "Holon Phantoms",
+    "setId": "ex13",
+    "number": "3",
+    "rarity": "Rare Holo",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Energy Loop"
+    ],
+    "price": 97.01,
+    "image": "https://images.pokemontcg.io/ex13/3_hires.png"
+  },
+  {
+    "id": "ex13-4",
+    "name": "Deoxys δ",
+    "set": "Holon Phantoms",
+    "setId": "ex13",
+    "number": "4",
+    "rarity": "Rare Holo",
+    "artist": "Kagemaru Himeno",
+    "attacks": [
+      "Delta Reduction"
+    ],
+    "price": 93.85,
+    "image": "https://images.pokemontcg.io/ex13/4_hires.png"
+  },
+  {
+    "id": "swsh12pt5gg-GG45",
+    "name": "Deoxys VMAX",
+    "set": "Crown Zenith Galarian Gallery",
+    "setId": "swsh12pt5gg",
+    "number": "GG45",
+    "rarity": "Rare Holo VMAX",
+    "artist": "Akira Komayama",
+    "attacks": [
+      "Max Drain"
+    ],
+    "price": 81.46,
+    "image": "https://images.pokemontcg.io/swsh12pt5gg/GG45_hires.png"
+  },
+  {
+    "id": "swsh12pt5gg-GG46",
+    "name": "Deoxys VSTAR",
+    "set": "Crown Zenith Galarian Gallery",
+    "setId": "swsh12pt5gg",
+    "number": "GG46",
+    "rarity": "Rare Holo VSTAR",
+    "artist": "DOM",
+    "attacks": [
+      "Psychic Javelin",
+      "Star Force"
+    ],
+    "price": 56.87,
+    "image": "https://images.pokemontcg.io/swsh12pt5gg/GG46_hires.png"
+  },
+  {
+    "id": "sm11-72",
+    "name": "Espeon & Deoxys-GX",
+    "set": "Unified Minds",
+    "setId": "sm11",
+    "number": "72",
+    "rarity": "Rare Holo GX",
+    "artist": "Mitsuhiro Arita",
+    "attacks": [
+      "Psychic Club",
+      "Cross Division-GX"
+    ],
+    "price": 54.48,
+    "image": "https://images.pokemontcg.io/sm11/72_hires.png"
+  },
+  {
+    "id": "ex8-18",
+    "name": "Deoxys",
+    "set": "Deoxys",
+    "setId": "ex8",
+    "number": "18",
+    "rarity": "Rare",
+    "artist": "Hironobu Yoshida",
+    "attacks": [
+      "Barrier Attack"
+    ],
+    "price": 51.77,
+    "image": "https://images.pokemontcg.io/ex8/18_hires.png"
+  },
+  {
+    "id": "col1-2",
+    "name": "Deoxys",
+    "set": "Call of Legends",
+    "setId": "col1",
+    "number": "2",
+    "rarity": "Rare Holo",
+    "artist": "Ryo Ueda",
+    "attacks": [
+      "Cell Storm"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 50,
+    "image": "https://images.pokemontcg.io/col1/2_hires.png"
+  },
+  {
+    "id": "dp6-1",
+    "name": "Deoxys Normal Forme",
+    "set": "Legends Awakened",
+    "setId": "dp6",
+    "number": "1",
+    "rarity": "Rare Holo",
+    "artist": "Kent Kanetsuna",
+    "attacks": [
+      "Energy Crush"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 44.58,
+    "image": "https://images.pokemontcg.io/dp6/1_hires.png"
+  },
+  {
+    "id": "bw9-53",
+    "name": "Deoxys-EX",
+    "set": "Plasma Freeze",
+    "setId": "bw9",
+    "number": "53",
+    "rarity": "Rare Holo EX",
+    "artist": "Eske Yoshinob",
+    "attacks": [
+      "Helix Force"
+    ],
+    "price": 27.86,
+    "image": "https://images.pokemontcg.io/bw9/53_hires.png"
+  },
+  {
+    "id": "bwp-BW82",
+    "name": "Deoxys-EX",
+    "set": "BW Black Star Promos",
+    "setId": "bwp",
+    "number": "BW82",
+    "rarity": "Promo",
+    "artist": "Eske Yoshinob",
+    "attacks": [
+      "Helix Force"
+    ],
+    "price": 22.24,
+    "image": "https://images.pokemontcg.io/bwp/BW82_hires.png"
+  },
+  {
     "id": "swsh12pt5gg-GG12",
     "name": "Deoxys",
-    "subtypes": [
-      "Basic",
-      "Fusion Strike",
-      "Single Strike",
-      "Rapid Strike"
-    ],
-    "attacks": [
-      {
-        "name": "Photon Boost",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
-        "convertedEnergyCost": 3,
-        "damage": "80+",
-        "text": "If this Pokémon has any Fusion Strike Energy attached, this attack does 80 more damage."
-      }
-    ],
-    "set": {
-      "id": "swsh12pt5gg",
-      "name": "Crown Zenith Galarian Gallery",
-      "series": "Sword & Shield",
-      "printedTotal": 70,
-      "total": 70,
-      "legalities": {
-        "unlimited": "Legal",
-        "standard": "Legal",
-        "expanded": "Legal"
-      },
-      "ptcgoCode": "CRZ",
-      "releaseDate": "2023/01/20",
-      "updatedAt": "2023/01/19 15:45:00",
-      "images": {
-        "symbol": "https://images.pokemontcg.io/swsh12pt5gg/symbol.png",
-        "logo": "https://images.pokemontcg.io/swsh12pt5gg/logo.png"
-      }
-    },
+    "set": "Crown Zenith Galarian Gallery",
+    "setId": "swsh12pt5gg",
     "number": "GG12",
-    "artist": "Scav",
     "rarity": "Trainer Gallery Rare Holo",
+    "artist": "Scav",
+    "attacks": [
+      "Photon Boost"
+    ],
     "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh12pt5gg/GG12.png",
-      "large": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png"
-    },
-    "tcgplayer": {
-      "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG12",
-      "updatedAt": "2026/07/04",
-      "prices": {
-        "holofoil": {
-          "low": 17.26,
-          "mid": 22.15,
-          "high": 999.99,
-          "market": 20.73,
-          "directLow": 23.7
-        }
-      }
-    }
+    "price": 20.73,
+    "image": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png"
   },
-  "ex9Cards": [
-    {
-      "id": "ex9-2",
-      "name": "Deoxys",
-      "number": "2",
-      "rarity": "Rare Holo",
-      "attacks": [
-        {
-          "name": "Swift",
-          "cost": [
-            "Colorless",
-            "Colorless"
-          ],
-          "convertedEnergyCost": 2,
-          "damage": "30",
-          "text": "This attack's damage isn't affected by Weakness, Resistance, Poké-Power, Poké-Bodies, or any other effects on the Defending Pokémon."
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Form Change",
-          "text": "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with Deoxys. (Any cards attached to Deoxys, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn.",
-          "type": "Poké-Power"
-        }
-      ],
-      "artist": "Hironobu Yoshida",
-      "images": {
-        "small": "https://images.pokemontcg.io/ex9/2.png",
-        "large": "https://images.pokemontcg.io/ex9/2_hires.png"
-      }
-    },
-    {
-      "id": "ex9-93",
-      "name": "Deoxys ex",
-      "number": "93",
-      "rarity": "Rare Holo EX",
-      "attacks": [
-        {
-          "name": "Fastwave",
-          "cost": [
-            "Colorless",
-            "Colorless",
-            "Colorless"
-          ],
-          "convertedEnergyCost": 3,
-          "damage": "50",
-          "text": "This attack's damage isn't affected by Resistance, Poké-Powers, Poké-Bodies, or any other effects on the Defending Pokémon."
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Form Change",
-          "text": "Once during your turn (before your attack), you may search your deck for another Deoxys ex and switch it with Deoxys ex. (Any cards attached to Deoxys ex, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys ex on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn.",
-          "type": "Poké-Power"
-        }
-      ],
-      "artist": "Mitsuhiro Arita",
-      "images": {
-        "small": "https://images.pokemontcg.io/ex9/93.png",
-        "large": "https://images.pokemontcg.io/ex9/93_hires.png"
-      }
-    }
-  ],
-  "allDeoxysCount": 45
-}
+  {
+    "id": "dp6-24",
+    "name": "Deoxys Attack Forme",
+    "set": "Legends Awakened",
+    "setId": "dp6",
+    "number": "24",
+    "rarity": "Rare",
+    "artist": "Kent Kanetsuna",
+    "attacks": [
+      "Psychic Boost"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 19.36,
+    "image": "https://images.pokemontcg.io/dp6/24_hires.png"
+  },
+  {
+    "id": "smp-SM164",
+    "name": "Deoxys",
+    "set": "SM Black Star Promos",
+    "setId": "smp",
+    "number": "SM164",
+    "rarity": "Promo",
+    "artist": "You Iribi",
+    "attacks": [
+      "Psycho Boost"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 18.55,
+    "image": "https://images.pokemontcg.io/smp/SM164_hires.png"
+  },
+  {
+    "id": "dp6-26",
+    "name": "Deoxys Speed Forme",
+    "set": "Legends Awakened",
+    "setId": "dp6",
+    "number": "26",
+    "rarity": "Rare",
+    "artist": "Kazuaki Aihara",
+    "attacks": [
+      "Speed Shot"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 17.2,
+    "image": "https://images.pokemontcg.io/dp6/26_hires.png"
+  },
+  {
+    "id": "sm7-67",
+    "name": "Deoxys",
+    "set": "Celestial Storm",
+    "setId": "sm7",
+    "number": "67",
+    "rarity": "Rare Holo",
+    "artist": "Masakazu Fukuda",
+    "attacks": [
+      "Psychic",
+      "Power Blast"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 15.56,
+    "image": "https://images.pokemontcg.io/sm7/67_hires.png"
+  },
+  {
+    "id": "dp6-25",
+    "name": "Deoxys Defense Forme",
+    "set": "Legends Awakened",
+    "setId": "dp6",
+    "number": "25",
+    "rarity": "Rare",
+    "artist": "Kazuaki Aihara",
+    "attacks": [
+      "Psychic Defense"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 11.17,
+    "image": "https://images.pokemontcg.io/dp6/25_hires.png"
+  },
+  {
+    "id": "swshp-SWSH268",
+    "name": "Deoxys VSTAR",
+    "set": "SWSH Black Star Promos",
+    "setId": "swshp",
+    "number": "SWSH268",
+    "rarity": "Promo",
+    "artist": "5ban Graphics",
+    "attacks": [
+      "Psychic Javelin",
+      "Star Force"
+    ],
+    "price": 6.22,
+    "image": "https://images.pokemontcg.io/swshp/SWSH268_hires.png"
+  },
+  {
+    "id": "swshp-SWSH267",
+    "name": "Deoxys VMAX",
+    "set": "SWSH Black Star Promos",
+    "setId": "swshp",
+    "number": "SWSH267",
+    "rarity": "Promo",
+    "artist": "N-DESIGN Inc.",
+    "attacks": [
+      "Max Drain"
+    ],
+    "price": 5.8,
+    "image": "https://images.pokemontcg.io/swshp/SWSH267_hires.png"
+  },
+  {
+    "id": "swshp-SWSH170",
+    "name": "Deoxys",
+    "set": "SWSH Black Star Promos",
+    "setId": "swshp",
+    "number": "SWSH170",
+    "rarity": "Promo",
+    "artist": "Souichirou Gunjima",
+    "attacks": [
+      "Photon Boost"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 4.29,
+    "image": "https://images.pokemontcg.io/swshp/SWSH170_hires.png"
+  },
+  {
+    "id": "sm7-68",
+    "name": "Deoxys",
+    "set": "Celestial Storm",
+    "setId": "sm7",
+    "number": "68",
+    "rarity": "Rare",
+    "artist": "Ayaka Yoshida",
+    "attacks": [
+      "Reflect",
+      "Psychic Corkscrew"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 2.99,
+    "image": "https://images.pokemontcg.io/sm7/68_hires.png"
+  },
+  {
+    "id": "xy6-33",
+    "name": "Deoxys",
+    "set": "Roaring Skies",
+    "setId": "xy6",
+    "number": "33",
+    "rarity": "Rare Holo",
+    "artist": "kawayoo",
+    "attacks": [
+      "Close Encounter",
+      "Overdrive Smash"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 2.87,
+    "image": "https://images.pokemontcg.io/xy6/33_hires.png"
+  },
+  {
+    "id": "sm7-69",
+    "name": "Deoxys",
+    "set": "Celestial Storm",
+    "setId": "sm7",
+    "number": "69",
+    "rarity": "Rare",
+    "artist": "Kouki Saitou",
+    "attacks": [
+      "Teleportation Burst",
+      "Spear Dive"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 2.78,
+    "image": "https://images.pokemontcg.io/sm7/69_hires.png"
+  },
+  {
+    "id": "swshp-SWSH266",
+    "name": "Deoxys V",
+    "set": "SWSH Black Star Promos",
+    "setId": "swshp",
+    "number": "SWSH266",
+    "rarity": "Promo",
+    "artist": "N-DESIGN Inc.",
+    "attacks": [
+      "Psychic",
+      "Power Edge"
+    ],
+    "price": 2.23,
+    "image": "https://images.pokemontcg.io/swshp/SWSH266_hires.png"
+  },
+  {
+    "id": "swsh8-120",
+    "name": "Deoxys",
+    "set": "Fusion Strike",
+    "setId": "swsh8",
+    "number": "120",
+    "rarity": "Rare Holo",
+    "artist": "Kouki Saitou",
+    "attacks": [
+      "Photon Boost"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 0.35,
+    "image": "https://images.pokemontcg.io/swsh8/120_hires.png"
+  },
+  {
+    "id": "sv4-74",
+    "name": "Deoxys",
+    "set": "Paradox Rift",
+    "setId": "sv4",
+    "number": "74",
+    "rarity": "Rare",
+    "artist": "Saya Tsuruta",
+    "attacks": [
+      "Psypunch",
+      "Genome Spiral"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 0.25,
+    "image": "https://images.pokemontcg.io/sv4/74_hires.png"
+  },
+  {
+    "id": "col1-SL1",
+    "name": "Deoxys",
+    "set": "Call of Legends",
+    "setId": "col1",
+    "number": "SL1",
+    "rarity": "Rare Holo",
+    "artist": "Noriko Hotta",
+    "attacks": [
+      "Cell Storm"
+    ],
+    "flavorText": "DNA from a space virus mutated and became a Pokémon. It appears where auroras are seen.",
+    "price": 0,
+    "image": "https://images.pokemontcg.io/col1/SL1_hires.png"
+  },
+  {
+    "id": "me4-33",
+    "name": "Deoxys",
+    "set": "Chaos Rising",
+    "setId": "me4",
+    "number": "33",
+    "rarity": "Uncommon",
+    "artist": "GOSSAN",
+    "attacks": [
+      "Psy Protection"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 0,
+    "image": "https://images.scrydex.com/pokemon/me4-33/large"
+  },
+  {
+    "id": "me4-31",
+    "name": "Deoxys",
+    "set": "Chaos Rising",
+    "setId": "me4",
+    "number": "31",
+    "rarity": "Uncommon",
+    "artist": "Shiburingaru",
+    "attacks": [
+      "Genome Charge",
+      "Psychic"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 0,
+    "image": "https://images.scrydex.com/pokemon/me4-31/large"
+  },
+  {
+    "id": "me4-34",
+    "name": "Deoxys",
+    "set": "Chaos Rising",
+    "setId": "me4",
+    "number": "34",
+    "rarity": "Uncommon",
+    "artist": "hncl",
+    "attacks": [
+      "Psyspeed"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 0,
+    "image": "https://images.scrydex.com/pokemon/me4-34/large"
+  },
+  {
+    "id": "me4-32",
+    "name": "Deoxys",
+    "set": "Chaos Rising",
+    "setId": "me4",
+    "number": "32",
+    "rarity": "Uncommon",
+    "artist": "nagimiso",
+    "attacks": [
+      "Psyspear"
+    ],
+    "flavorText": "An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.",
+    "price": 0,
+    "image": "https://images.scrydex.com/pokemon/me4-32/large"
+  }
+]

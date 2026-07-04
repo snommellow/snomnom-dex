@@ -634,8 +634,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png",
         "category": "regional",
-        "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/smp/SM18_hires.png"
+        "tcgUrl": "https://images.pokemontcg.io/smp/SM236_hires.png",
+        "regularCardUrl": null
       }
     ]
   },
@@ -678,7 +678,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/240/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/9_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H21_hires.png",
     "altForms": []
   },
   {
@@ -1262,7 +1262,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/089/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/11_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H24_hires.png",
     "altForms": []
   },
   {
@@ -1412,7 +1412,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png",
     "genus": "Flycatcher Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H30_hires.png",
     "altForms": [
       {
         "slug": "victreebel-mega",
@@ -2068,7 +2068,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh11/172_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
         "regularCardUrl": null
       }
     ]
@@ -2226,6 +2226,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/243/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/32_hires.png",
     "altForms": [
       {
         "slug": "weezing-galar",
@@ -3240,6 +3241,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/182/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG12_hires.png",
     "altForms": []
   },
   {
@@ -3374,6 +3376,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/171/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/22_hires.png",
     "altForms": []
   },
   {
@@ -3431,7 +3434,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/176.png",
     "genus": "Happiness Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex7/14_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H27_hires.png",
     "altForms": []
   },
   {
@@ -3462,7 +3465,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/174/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss2/11_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H32_hires.png",
     "altForms": []
   },
   {
@@ -3790,7 +3793,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/199.png",
     "genus": "Royal Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/14_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H22_hires.png",
     "altForms": [
       {
         "slug": "slowking-galar",
@@ -3833,7 +3836,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/078/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12/176_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12/66_hires.png",
     "altForms": []
   },
   {
@@ -4075,7 +4078,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy3/112_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
         "regularCardUrl": null
       }
     ]
@@ -4188,7 +4191,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/221.png",
     "genus": "Swine Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex7/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H22_hires.png",
     "altForms": []
   },
   {
@@ -4431,7 +4434,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/184/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss3/8_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/col1/21_hires.png",
     "altForms": []
   },
   {

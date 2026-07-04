@@ -18,6 +18,23 @@ import {
 import { buildChainSets } from "../lib/chains";
 import { fetchPocketImages, fetchPocketAltForm, fetchPocketFallback } from "../lib/pocketapi";
 
+// Firing ~380+ concurrent promoSvPick calls (each doing its own imageExists HEAD request)
+// was sustained enough to overwhelm pokemontcg.io's rate limit past our retry budget —
+// isolated single-Pokémon calls always succeeded, but the full run consistently failed for
+// specific Pokémon depending on request ordering. Batching keeps concurrency bounded instead.
+async function mapWithConcurrency<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results: R[] = new Array(items.length);
+  let next = 0;
+  async function worker() {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await fn(items[i]);
+    }
+  }
+  await Promise.all(Array.from({ length: limit }, worker));
+  return results;
+}
+
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
@@ -151,23 +168,19 @@ async function main() {
     const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
   }));
-  const promoSvEntries = await Promise.all(
-    raw.map(async p => {
-      const url = await promoSvPick(promoData, toDisplayName(p.name));
-      return url ? [p.id, { tcgUrl: url }] as const : null;
-    })
-  );
+  const promoSvEntries = await mapWithConcurrency(raw, 10, async p => {
+    const url = await promoSvPick(promoData, toDisplayName(p.name));
+    return url ? [p.id, { tcgUrl: url }] as const : null;
+  });
   const promoSvMap = new Map(promoSvEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const trainerIrMap = new Map(raw.flatMap(p => {
     const url = trainerIrPick(irData, toDisplayName(p.name));
     return url ? [[p.id, { tcgUrl: url }]] : [];
   }));
-  const trainerPromoEntries = await Promise.all(
-    raw.map(async p => {
-      const url = await trainerPromoPick(promoData, toDisplayName(p.name));
-      return url ? [p.id, { tcgUrl: url }] as const : null;
-    })
-  );
+  const trainerPromoEntries = await mapWithConcurrency(raw, 10, async p => {
+    const url = await trainerPromoPick(promoData, toDisplayName(p.name));
+    return url ? [p.id, { tcgUrl: url }] as const : null;
+  });
   const trainerPromoMap = new Map(trainerPromoEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const trainerVgxMap = new Map(raw.flatMap(p => {
     const url = trainerVgxPick(vgxData, toDisplayName(p.name));

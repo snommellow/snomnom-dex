@@ -352,24 +352,6 @@ export async function buildVgxData(): Promise<VgxData> {
 
 const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
-// Extended-art detection: an SWSH "Ultra Rare" V/VSTAR/VMAX full art is, by TCG design,
-// always the same illustration as its bordered "Rare Holo V/VSTAR/VMAX" sibling in the
-// same set — extended to full bleed with ability/attack text printed over it. A genuinely
-// new illustration instead gets a Rare Secret/Rainbow rarity, which this never matches
-// against (those aren't in BORDERED_V_RARITIES). Artist is checked only when both sides
-// report one, since pokemontcg.io leaves the field empty for some cards.
-const BORDERED_V_RARITIES = new Set(["Rare Holo V", "Rare Holo VSTAR", "Rare Holo VMAX"]);
-const EXTENDED_ART_RARITIES = new Set(["Ultra Rare", "Rare Ultra"]);
-
-function borderedSibling(card: RankedCard, pool: RankedCard[]): RankedCard | null {
-  if (!EXTENDED_ART_RARITIES.has(card._rarity)) return null;
-  return pool.find(b =>
-    BORDERED_V_RARITIES.has(b._rarity) && b.set.id === card.set.id &&
-    b.name === card.name && b.images?.large &&
-    (!card.artist || !b.artist || card.artist === b.artist)
-  ) ?? null;
-}
-
 export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   return data.rarities.flatMap((r, i) =>
@@ -398,8 +380,6 @@ export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgI
     ? pickBestCard(modern)
     : pickBestCardWithChain(candidates, chainSets);
   if (!winner) return null;
-  const sibling = borderedSibling(winner, candidates);
-  if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
   return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
 }
 
@@ -464,20 +444,14 @@ export async function fetchFormCard(
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const hasGx = candidates.some(c => c.rarity === "Rare Holo GX");
-    // Keep the real rarity in a separate pool for extended-art detection —
-    // borderedSibling needs to see the original tiers, not the flattened ones.
-    const rankedPool: RankedCard[] = candidates.map(c => ({ ...c, _rarity: c.rarity ?? "" }));
     const finalCandidates = (hasGx ? candidates.filter(c => c.rarity !== "Rare Ultra") : candidates)
       .map(c => ({
         ...c,
         _rarity: (TG_RE.test(c.number) || c.rarity === "Promo" || FULL_ART_TIERS.has(c.rarity))
           ? "Trainer Gallery Rare Holo" : (c.rarity ?? ""),
       }));
-    const winner = pickBestCard(finalCandidates);
-    if (!winner) return null;
-    const sibling = borderedSibling({ ...winner, _rarity: winner.rarity ?? "" }, rankedPool);
-    if (sibling) return { tcgUrl: cardImageUrl(sibling), isOldStyle: true };
-    return { tcgUrl: cardImageUrl(winner) };
+    const url = pickBest(finalCandidates);
+    return url ? { tcgUrl: url } : null;
   }
 
   if (category === "gmax") {

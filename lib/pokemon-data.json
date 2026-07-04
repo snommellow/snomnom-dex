@@ -7652,7 +7652,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
     "genus": "Sky High Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw6/128_hires.png"
+      "https://images.pokemontcg.io/swsh7/194_hires.png"
     ],
     "altForms": [
       {
@@ -7701,7 +7701,44 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "deoxys-attack",
+        "displayName": "Attack Forme Deoxys",
+        "types": [
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "deoxys-defense",
+        "displayName": "Defense Forme Deoxys",
+        "types": [
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "deoxys-speed",
+        "displayName": "Speed Forme Deoxys",
+        "types": [
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG12_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 386,
     "familyOrder": 0
   }

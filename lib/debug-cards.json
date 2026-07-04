@@ -1,3 +1,1282 @@
 {
-  "vileplume": []
+  "vileplume": [
+    {
+      "id": "xy7-3",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "xy7",
+        "name": "Ancient Origins",
+        "series": "XY",
+        "printedTotal": 98,
+        "total": 100,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "AOR",
+        "releaseDate": "2015/08/12",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/xy7/symbol.png",
+          "logo": "https://images.pokemontcg.io/xy7/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Midori Harada",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/xy7/3.png",
+        "large": "https://images.pokemontcg.io/xy7/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/xy7-3",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "normal": {
+            "low": 0.2,
+            "mid": 0.55,
+            "high": 29.99,
+            "market": 0.52,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 1.39,
+            "mid": 1.8,
+            "high": 27.1,
+            "market": 1.82,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "bw7-3",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "bw7",
+        "name": "Boundaries Crossed",
+        "series": "Black & White",
+        "printedTotal": 149,
+        "total": 153,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "BCR",
+        "releaseDate": "2012/11/07",
+        "updatedAt": "2018/03/04 10:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/bw7/symbol.png",
+          "logo": "https://images.pokemontcg.io/bw7/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Shin Nagasawa",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/bw7/3.png",
+        "large": "https://images.pokemontcg.io/bw7/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/bw7-3",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 1.7,
+            "mid": 4.01,
+            "high": 48.5,
+            "market": 4.01,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 34.99,
+            "mid": 35.6,
+            "high": 63.2,
+            "market": 7.29,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "sm12-4",
+      "name": "Vileplume-GX",
+      "subtypes": [
+        "Stage 2",
+        "GX"
+      ],
+      "set": {
+        "id": "sm12",
+        "name": "Cosmic Eclipse",
+        "series": "Sun & Moon",
+        "printedTotal": 236,
+        "total": 272,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CEC",
+        "releaseDate": "2019/11/01",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sm12/symbol.png",
+          "logo": "https://images.pokemontcg.io/sm12/logo.png"
+        }
+      },
+      "number": "4",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare Holo GX",
+      "images": {
+        "small": "https://images.pokemontcg.io/sm12/4.png",
+        "large": "https://images.pokemontcg.io/sm12/4_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sm12-4",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 23.93,
+            "mid": 27.63,
+            "high": 249.99,
+            "market": 23.32,
+            "directLow": 27.32
+          }
+        }
+      }
+    },
+    {
+      "id": "gym1-5",
+      "name": "Erika's Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "gym1",
+        "name": "Gym Heroes",
+        "series": "Gym",
+        "printedTotal": 132,
+        "total": 132,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "G1",
+        "releaseDate": "2000/08/14",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/gym1/symbol.png",
+          "logo": "https://images.pokemontcg.io/gym1/logo.png"
+        }
+      },
+      "number": "5",
+      "artist": "Ken Sugimori",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/gym1/5.png",
+        "large": "https://images.pokemontcg.io/gym1/5_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/gym1-5",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "1stEditionHolofoil": {
+            "low": 39.99,
+            "mid": 499.99,
+            "high": 600,
+            "market": 83.22,
+            "directLow": null
+          },
+          "unlimitedHolofoil": {
+            "low": 16.38,
+            "mid": 28.2,
+            "high": 312.7,
+            "market": 26.87,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "sm3-6",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "sm3",
+        "name": "Burning Shadows",
+        "series": "Sun & Moon",
+        "printedTotal": 147,
+        "total": 177,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "BUS",
+        "releaseDate": "2017/08/05",
+        "updatedAt": "2022/10/11 21:39:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sm3/symbol.png",
+          "logo": "https://images.pokemontcg.io/sm3/logo.png"
+        }
+      },
+      "number": "6",
+      "artist": "chibi",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/sm3/6.png",
+        "large": "https://images.pokemontcg.io/sm3/6_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sm3-6",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 0.3,
+            "mid": 0.79,
+            "high": 5.77,
+            "market": 0.84,
+            "directLow": 0.74
+          },
+          "reverseHolofoil": {
+            "low": 0.3,
+            "mid": 0.86,
+            "high": 18.58,
+            "market": 0.86,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "si1-17",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "si1",
+        "name": "Southern Islands",
+        "series": "Other",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2001/07/31",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/si1/symbol.png",
+          "logo": "https://images.pokemontcg.io/si1/logo.png"
+        }
+      },
+      "number": "17",
+      "artist": "Naoyo Kimura",
+      "images": {
+        "small": "https://images.pokemontcg.io/si1/17.png",
+        "large": "https://images.pokemontcg.io/si1/17_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/si1-17",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 69.96,
+            "mid": 103.41,
+            "high": 650,
+            "market": 93.97,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "sm10-8",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "sm10",
+        "name": "Unbroken Bonds",
+        "series": "Sun & Moon",
+        "printedTotal": 214,
+        "total": 234,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "UNB",
+        "releaseDate": "2019/05/03",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sm10/symbol.png",
+          "logo": "https://images.pokemontcg.io/sm10/logo.png"
+        }
+      },
+      "number": "8",
+      "artist": "Suwama Chiaki",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/sm10/8.png",
+        "large": "https://images.pokemontcg.io/sm10/8_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sm10-8",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.36,
+            "mid": 1,
+            "high": 19.98,
+            "market": 1.12,
+            "directLow": 1.38
+          },
+          "holofoil": {
+            "low": 0.5,
+            "mid": 0.87,
+            "high": 19.6,
+            "market": 0.93,
+            "directLow": 1.47
+          }
+        }
+      }
+    },
+    {
+      "id": "base5-13",
+      "name": "Dark Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "base5",
+        "name": "Team Rocket",
+        "series": "Base",
+        "printedTotal": 82,
+        "total": 83,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "TR",
+        "releaseDate": "2000/04/24",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/base5/symbol.png",
+          "logo": "https://images.pokemontcg.io/base5/logo.png"
+        }
+      },
+      "number": "13",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/base5/13.png",
+        "large": "https://images.pokemontcg.io/base5/13_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/base5-13",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "1stEditionHolofoil": {
+            "low": 50.95,
+            "mid": 100,
+            "high": 754.94,
+            "market": 64.47,
+            "directLow": 50.95
+          },
+          "unlimitedHolofoil": {
+            "low": 28,
+            "mid": 38.5,
+            "high": 4320.33,
+            "market": 39.78,
+            "directLow": 33.63
+          }
+        }
+      }
+    },
+    {
+      "id": "ex13-17",
+      "name": "Vileplume δ",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "ex13",
+        "name": "Holon Phantoms",
+        "series": "EX",
+        "printedTotal": 110,
+        "total": 111,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "HP",
+        "releaseDate": "2006/05/01",
+        "updatedAt": "2018/03/04 10:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ex13/symbol.png",
+          "logo": "https://images.pokemontcg.io/ex13/logo.png"
+        }
+      },
+      "number": "17",
+      "artist": "Mitsuhiro Arita",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/ex13/17.png",
+        "large": "https://images.pokemontcg.io/ex13/17_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ex13-17",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 15,
+            "mid": 35.44,
+            "high": 374.9,
+            "market": 28.41,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 79.99,
+            "mid": 311.89,
+            "high": 700,
+            "market": 55.7,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base2-15",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "base2",
+        "name": "Jungle",
+        "series": "Base",
+        "printedTotal": 64,
+        "total": 64,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "JU",
+        "releaseDate": "1999/06/16",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/base2/symbol.png",
+          "logo": "https://images.pokemontcg.io/base2/logo.png"
+        }
+      },
+      "number": "15",
+      "artist": "Keiji Kinebuchi",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/base2/15.png",
+        "large": "https://images.pokemontcg.io/base2/15_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/base2-15",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "1stEditionHolofoil": {
+            "low": 79.99,
+            "mid": 90,
+            "high": 929.9,
+            "market": 90.88,
+            "directLow": null
+          },
+          "unlimitedHolofoil": {
+            "low": 18.42,
+            "mid": 27.99,
+            "high": 409.9,
+            "market": 42.05,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "ecard2-H31",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "ecard2",
+        "name": "Aquapolis",
+        "series": "E-Card",
+        "printedTotal": 147,
+        "total": 182,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "AQ",
+        "releaseDate": "2003/01/15",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ecard2/symbol.png",
+          "logo": "https://images.pokemontcg.io/ecard2/logo.png"
+        }
+      },
+      "number": "H31",
+      "artist": "Kyoko Umemoto",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/ecard2/H31.png",
+        "large": "https://images.pokemontcg.io/ecard2/H31_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ecard2-H31",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 250,
+            "mid": 400.48,
+            "high": 1001.9,
+            "market": 137.95,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "hgss3-24",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "hgss3",
+        "name": "HS—Undaunted",
+        "series": "HeartGold & SoulSilver",
+        "printedTotal": 90,
+        "total": 91,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "UD",
+        "releaseDate": "2010/08/18",
+        "updatedAt": "2018/03/04 10:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/hgss3/symbol.png",
+          "logo": "https://images.pokemontcg.io/hgss3/logo.png"
+        }
+      },
+      "number": "24",
+      "artist": "Mitsuhiro Arita",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/hgss3/24.png",
+        "large": "https://images.pokemontcg.io/hgss3/24_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/hgss3-24",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "normal": {
+            "low": 3.7,
+            "mid": 9.97,
+            "high": 58,
+            "market": 4.49,
+            "directLow": 53.02
+          },
+          "reverseHolofoil": {
+            "low": 17.44,
+            "mid": 94.88,
+            "high": 151.8,
+            "market": 14.7,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base5-30",
+      "name": "Dark Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "base5",
+        "name": "Team Rocket",
+        "series": "Base",
+        "printedTotal": 82,
+        "total": 83,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "TR",
+        "releaseDate": "2000/04/24",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/base5/symbol.png",
+          "logo": "https://images.pokemontcg.io/base5/logo.png"
+        }
+      },
+      "number": "30",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/base5/30.png",
+        "large": "https://images.pokemontcg.io/base5/30_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/base5-30",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "1stEdition": {
+            "low": 9.33,
+            "mid": 11.91,
+            "high": 89.9,
+            "market": 13.05,
+            "directLow": 14.99
+          },
+          "unlimited": {
+            "low": 3,
+            "mid": 7.47,
+            "high": 73.49,
+            "market": 8.19,
+            "directLow": 72.99
+          }
+        }
+      }
+    },
+    {
+      "id": "ecard1-31",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "ecard1",
+        "name": "Expedition Base Set",
+        "series": "E-Card",
+        "printedTotal": 165,
+        "total": 165,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "EX",
+        "releaseDate": "2002/09/15",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ecard1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ecard1/logo.png"
+        }
+      },
+      "number": "31",
+      "artist": "Miki Tanaka",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/ecard1/31.png",
+        "large": "https://images.pokemontcg.io/ecard1/31_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ecard1-31",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 45.99,
+            "mid": 129.99,
+            "high": 649.9,
+            "market": 81.3,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 24,
+            "mid": 49.99,
+            "high": 65,
+            "market": 32.83,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base2-31",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "base2",
+        "name": "Jungle",
+        "series": "Base",
+        "printedTotal": 64,
+        "total": 64,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "JU",
+        "releaseDate": "1999/06/16",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/base2/symbol.png",
+          "logo": "https://images.pokemontcg.io/base2/logo.png"
+        }
+      },
+      "number": "31",
+      "artist": "Keiji Kinebuchi",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/base2/31.png",
+        "large": "https://images.pokemontcg.io/base2/31_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/base2-31",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "1stEdition": {
+            "low": 6.09,
+            "mid": 17.54,
+            "high": 167.47,
+            "market": 17.54,
+            "directLow": 59.68
+          },
+          "unlimited": {
+            "low": 4,
+            "mid": 6.31,
+            "high": 4320.33,
+            "market": 7.55,
+            "directLow": 9.97
+          }
+        }
+      }
+    },
+    {
+      "id": "dp6-45",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "dp6",
+        "name": "Legends Awakened",
+        "series": "Diamond & Pearl",
+        "printedTotal": 146,
+        "total": 146,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "LA",
+        "releaseDate": "2008/08/01",
+        "updatedAt": "2018/03/04 10:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/dp6/symbol.png",
+          "logo": "https://images.pokemontcg.io/dp6/logo.png"
+        }
+      },
+      "number": "45",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/dp6/45.png",
+        "large": "https://images.pokemontcg.io/dp6/45_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/dp6-45",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "normal": {
+            "low": 1.4,
+            "mid": 2.25,
+            "high": 35,
+            "market": 2.15,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 6.61,
+            "mid": 13.75,
+            "high": 163.1,
+            "market": 6.39,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "ecard2-43",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "ecard2",
+        "name": "Aquapolis",
+        "series": "E-Card",
+        "printedTotal": 147,
+        "total": 182,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "AQ",
+        "releaseDate": "2003/01/15",
+        "updatedAt": "2020/08/14 09:35:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ecard2/symbol.png",
+          "logo": "https://images.pokemontcg.io/ecard2/logo.png"
+        }
+      },
+      "number": "43",
+      "artist": "Kyoko Umemoto",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/ecard2/43.png",
+        "large": "https://images.pokemontcg.io/ecard2/43_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ecard2-43",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "normal": {
+            "low": 24.99,
+            "mid": 40.9,
+            "high": 409.8,
+            "market": 19.59,
+            "directLow": null
+          },
+          "reverseHolofoil": {
+            "low": 44.99,
+            "mid": 53.44,
+            "high": 60,
+            "market": 69,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "ecard1-69",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "ecard1",
+        "name": "Expedition Base Set",
+        "series": "E-Card",
+        "printedTotal": 165,
+        "total": 165,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "EX",
+        "releaseDate": "2002/09/15",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ecard1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ecard1/logo.png"
+        }
+      },
+      "number": "69",
+      "artist": "Miki Tanaka",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/ecard1/69.png",
+        "large": "https://images.pokemontcg.io/ecard1/69_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ecard1-69",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "normal": {
+            "low": 1.96,
+            "mid": 5.27,
+            "high": 93.14,
+            "market": 5.11,
+            "directLow": 5.94
+          },
+          "reverseHolofoil": {
+            "low": 169.8,
+            "mid": 211.39,
+            "high": 259.9,
+            "market": 15.15,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "ex5-100",
+      "name": "Vileplume ex",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "set": {
+        "id": "ex5",
+        "name": "Hidden Legends",
+        "series": "EX",
+        "printedTotal": 101,
+        "total": 102,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "ptcgoCode": "HL",
+        "releaseDate": "2004/06/01",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ex5/symbol.png",
+          "logo": "https://images.pokemontcg.io/ex5/logo.png"
+        }
+      },
+      "number": "100",
+      "artist": "Ryo Ueda",
+      "rarity": "Rare Holo EX",
+      "images": {
+        "small": "https://images.pokemontcg.io/ex5/100.png",
+        "large": "https://images.pokemontcg.io/ex5/100_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ex5-100",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 100,
+            "mid": 198.6,
+            "high": 1099.9,
+            "market": 135,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "sm12-211",
+      "name": "Vileplume-GX",
+      "subtypes": [
+        "Stage 2",
+        "GX"
+      ],
+      "set": {
+        "id": "sm12",
+        "name": "Cosmic Eclipse",
+        "series": "Sun & Moon",
+        "printedTotal": 236,
+        "total": 272,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CEC",
+        "releaseDate": "2019/11/01",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sm12/symbol.png",
+          "logo": "https://images.pokemontcg.io/sm12/logo.png"
+        }
+      },
+      "number": "211",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare Ultra",
+      "images": {
+        "small": "https://images.pokemontcg.io/sm12/211.png",
+        "large": "https://images.pokemontcg.io/sm12/211_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sm12-211",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 110,
+            "mid": 160.99,
+            "high": 1054.5,
+            "market": 122.83,
+            "directLow": 199.89
+          }
+        }
+      }
+    },
+    {
+      "id": "sm12-250",
+      "name": "Vileplume-GX",
+      "subtypes": [
+        "Stage 2",
+        "GX"
+      ],
+      "set": {
+        "id": "sm12",
+        "name": "Cosmic Eclipse",
+        "series": "Sun & Moon",
+        "printedTotal": 236,
+        "total": 272,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CEC",
+        "releaseDate": "2019/11/01",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sm12/symbol.png",
+          "logo": "https://images.pokemontcg.io/sm12/logo.png"
+        }
+      },
+      "number": "250",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Rare Rainbow",
+      "images": {
+        "small": "https://images.pokemontcg.io/sm12/250.png",
+        "large": "https://images.pokemontcg.io/sm12/250_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sm12-250",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 59.25,
+            "mid": 75.99,
+            "high": 470,
+            "market": 61.63,
+            "directLow": 74.95
+          }
+        }
+      }
+    },
+    {
+      "id": "swsh11-3",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "swsh11",
+        "name": "Lost Origin",
+        "series": "Sword & Shield",
+        "printedTotal": 196,
+        "total": 217,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "LOR",
+        "releaseDate": "2022/09/09",
+        "updatedAt": "2022/09/09 13:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh11/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh11/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Jiro Sasumo",
+      "rarity": "Rare Holo",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh11/3.png",
+        "large": "https://images.pokemontcg.io/swsh11/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh11-3",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.09,
+            "mid": 0.36,
+            "high": 50,
+            "market": 0.37,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.1,
+            "mid": 0.32,
+            "high": 19.9,
+            "market": 0.29,
+            "directLow": null
+          }
+        }
+      }
+    },
+    {
+      "id": "sv3pt5-45",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "sv3pt5",
+        "name": "151",
+        "series": "Scarlet & Violet",
+        "printedTotal": 165,
+        "total": 207,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2023/09/22",
+        "updatedAt": "2023/09/22 15:00:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sv3pt5/symbol.png",
+          "logo": "https://images.pokemontcg.io/sv3pt5/logo.png"
+        }
+      },
+      "number": "45",
+      "artist": "Sekio",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/sv3pt5/45.png",
+        "large": "https://images.pokemontcg.io/sv3pt5/45_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-45",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.4,
+            "mid": 0.94,
+            "high": 99,
+            "market": 0.78,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.01,
+            "mid": 0.3,
+            "high": 99,
+            "market": 0.31,
+            "directLow": 0.23
+          }
+        }
+      }
+    },
+    {
+      "id": "sv4pt5-94",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "sv4pt5",
+        "name": "Paldean Fates",
+        "series": "Scarlet & Violet",
+        "printedTotal": 91,
+        "total": 245,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2024/01/26",
+        "updatedAt": "2024/01/25 15:00:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/sv4pt5/symbol.png",
+          "logo": "https://images.pokemontcg.io/sv4pt5/logo.png"
+        }
+      },
+      "number": "94",
+      "artist": "0313",
+      "rarity": "Shiny Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/sv4pt5/94.png",
+        "large": "https://images.pokemontcg.io/sv4pt5/94_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-94",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "holofoil": {
+            "low": 5.72,
+            "mid": 8.25,
+            "high": 39.95,
+            "market": 8.26,
+            "directLow": 6.98
+          }
+        }
+      }
+    },
+    {
+      "id": "me2-3",
+      "name": "Vileplume",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "set": {
+        "id": "me2",
+        "name": "Phantasmal Flames",
+        "series": "Mega Evolution",
+        "printedTotal": 94,
+        "total": 130,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "PFL",
+        "releaseDate": "2025/11/14",
+        "updatedAt": "2025/09/25 15:00:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/me2/symbol.png",
+          "logo": "https://images.pokemontcg.io/me2/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Shibuzoh.",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.pokemontcg.io/me2/3.png",
+        "large": "https://images.pokemontcg.io/me2/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/me2-3",
+        "updatedAt": "2026/07/03",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.01,
+            "mid": 0.22,
+            "high": 30,
+            "market": 0.19,
+            "directLow": 0.02
+          },
+          "holofoil": {
+            "low": 0.01,
+            "mid": 0.15,
+            "high": 19.98,
+            "market": 0.15,
+            "directLow": 0.01
+          }
+        }
+      }
+    },
+    {
+      "id": "me2pt5-3",
+      "name": "Erika's Vileplume ex",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "set": {
+        "id": "me2pt5",
+        "name": "Ascended Heroes",
+        "series": "Mega Evolution",
+        "printedTotal": 217,
+        "total": 295,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "ASC",
+        "releaseDate": "2026/01/30",
+        "updatedAt": "2026/01/30 15:00:00",
+        "images": {
+          "symbol": "https://images.scrydex.com/pokemon/me2pt5-symbol/symbol",
+          "logo": "https://images.scrydex.com/pokemon/me2pt5-logo/logo"
+        }
+      },
+      "number": "3",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare",
+      "images": {
+        "small": "https://images.scrydex.com/pokemon/me2pt5-3/small",
+        "large": "https://images.scrydex.com/pokemon/me2pt5-3/large"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/me2pt5-3"
+      }
+    }
+  ]
 }

@@ -351,22 +351,6 @@ export async function buildVgxData(): Promise<VgxData> {
 
 const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
-// Whenever a Pokémon has both a bordered "Rare Holo V/VSTAR/VMAX" and a same-set, same-name
-// "Ultra Rare"/"Rare Ultra" full art, prefer the bordered card as the full-bleed background.
-// These full arts vary in illustration quality — some read fine full-bleed, many don't — and
-// there's no API signal for "this one looks good here", so the bordered original is the safer
-// default background image.
-const BORDERED_V_RARITIES = new Set(["Rare Holo V", "Rare Holo VSTAR", "Rare Holo VMAX"]);
-const EXTENDED_ART_RARITIES = new Set(["Ultra Rare", "Rare Ultra"]);
-
-function borderedSibling(card: RankedCard, pool: RankedCard[]): RankedCard | null {
-  if (!EXTENDED_ART_RARITIES.has(card._rarity)) return null;
-  return pool.find(b =>
-    BORDERED_V_RARITIES.has(b._rarity) && b.set.id === card.set.id &&
-    b.name === card.name && b.images?.large
-  ) ?? null;
-}
-
 export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   return data.rarities.flatMap((r, i) =>
@@ -395,8 +379,6 @@ export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgI
     ? pickBestCard(modern)
     : pickBestCardWithChain(candidates, chainSets);
   if (!winner) return null;
-  const sibling = borderedSibling(winner, candidates);
-  if (sibling) return { tcgUrl: cardImageUrl(sibling) };
   return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
 }
 
@@ -456,13 +438,19 @@ export async function fetchFormCard(
     // Ultra Rare of the same Pokémon just because that set happens to price higher.
     const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
     const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
+    // A handful of promo-set cards carry a mechanic suffix (V/GX/ex) but are still bordered,
+    // non-full-art prints — SWSH237 "Hisuian Typhlosion V" is a stamped bordered reprint
+    // reusing an existing illustration, unlike SWSH294 "Hisuian Electrode V" which is a
+    // genuine full-art. No API field distinguishes them, so exclude known cases by number.
+    const PROMO_BLACKLIST = new Set(["SWSH237"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
     // Plain reprints in these promo sets have no suffix (e.g. "Alolan Sandslash"); genuine
     // full-art promos always carry one — hyphenated for GX ("Alolan Sandslash-GX"), spaced
     // for the rest ("Hisuian Electrode V").
     const promoCandidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName)
-        && c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id) && /[\s-](ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
+        && c.rarity === "Promo" && FULL_ART_PROMO_SETS.has(c.set.id) && !PROMO_BLACKLIST.has(c.number)
+        && /[\s-](ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
       .map(c => ({ ...c, _rarity: "Trainer Gallery Rare Holo" }));
     const promoUrl = pickBest(promoCandidates);
     if (promoUrl) return { tcgUrl: promoUrl };
@@ -472,20 +460,14 @@ export async function fetchFormCard(
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const hasGx = candidates.some(c => c.rarity === "Rare Holo GX");
-    // Keep the real rarity in a separate pool for borderedSibling — it needs to see
-    // the original tiers, not the flattened ones used for the price-based pick below.
-    const rankedPool: RankedCard[] = candidates.map(c => ({ ...c, _rarity: c.rarity ?? "" }));
     const finalCandidates = (hasGx ? candidates.filter(c => c.rarity !== "Rare Ultra") : candidates)
       .map(c => ({
         ...c,
         _rarity: (TG_RE.test(c.number) || FULL_ART_TIERS.has(c.rarity))
           ? "Trainer Gallery Rare Holo" : (c.rarity ?? ""),
       }));
-    const winner = pickBestCard(finalCandidates);
-    if (!winner) return null;
-    const sibling = borderedSibling({ ...winner, _rarity: winner.rarity ?? "" }, rankedPool);
-    if (sibling) return { tcgUrl: cardImageUrl(sibling) };
-    return { tcgUrl: cardImageUrl(winner) };
+    const url = pickBest(finalCandidates);
+    return url ? { tcgUrl: url } : null;
   }
 
   if (category === "gmax") {

@@ -30,6 +30,10 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
   // #121 Starmie: swsh10tg-TG13 ($132) beats swsh10/166 which the IR pass picks instead.
   121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
+  // #210 Granbull: swsh9-57 bordered V, by preference over the same-set swsh9-159 "Rare Ultra"
+  // full art (a different illustration, not an extended reprint — verified via API artist
+  // field). No reliable signal distinguishes "looks good" full-arts from this one.
+  210: "https://images.pokemontcg.io/swsh9/57_hires.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -48,6 +52,9 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
+  // Hisuian Typhlosion: swsh10-53 bordered V, by preference over the same-set swsh10-169
+  // "Rare Ultra" full art (a different illustration — verified via API artist field).
+  "Hisuian Typhlosion": "https://images.pokemontcg.io/swsh10/53_hires.png",
 };
 
 async function main() {

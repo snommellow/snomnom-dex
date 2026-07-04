@@ -60,6 +60,10 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name
   // mismatch rather than a losing-candidate issue — not yet root-caused enough to convert safely.
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
+  // Sunny Forme Castform: sv8-195 is a genuine modern Illustration Rare full art — the only
+  // Castform weather forme with one. Picked by hand since it isn't distinguishable from the
+  // Rain/Snow-cloud formes by any automated pass (see HARDCODED_FORM_REGULAR_URLS below).
+  "Sunny Forme Castform": "https://images.pokemontcg.io/sv8/195_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
@@ -69,6 +73,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   "Attack Forme Deoxys":  "https://images.pokemontcg.io/dp6/24_hires.png",
   "Defense Forme Deoxys": "https://images.pokemontcg.io/dp6/25_hires.png",
   "Speed Forme Deoxys":   "https://images.pokemontcg.io/dp6/26_hires.png",
+  // Rain/Snow-cloud Castform: no full-art printing exists for either forme (unlike Sunny's
+  // sv8-195), so these are the highest-value bordered cards for each, picked by hand.
+  "Rainy Forme Castform": "https://images.pokemontcg.io/ex5/23_hires.png",
+  "Snowy Forme Castform": "https://images.pokemontcg.io/ex5/25_hires.png",
 };
 
 async function main() {
@@ -206,12 +214,13 @@ async function main() {
           forms.map(async (form) => {
             const hardcodedRegularUrl = HARDCODED_FORM_REGULAR_URLS[form.displayName];
             if (hardcodedRegularUrl) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegularUrl };
+            const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName];
+            if (hardcodedUrl) return { ...form, tcgUrl: hardcodedUrl, regularCardUrl: null };
 
             // "forme" cards (e.g. Deoxys' Attack/Defense/Speed formes) aren't distinguished by
             // name in the TCG — every printing is just "Deoxys" — so search by the base
             // Pokémon's display name instead of the forme-specific display name.
             const searchName = form.category === "forme" ? toDisplayName(raw[i].name) : form.displayName;
-            const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
             const irFromIndex = irSirPick(irSirCandidates(irData, searchName));
             const promoUrl = await promoSvPick(promoData, searchName);
             const trainerIrUrl = trainerIrPick(irData, searchName);
@@ -233,7 +242,7 @@ async function main() {
             const vgxResult = vgxFromIndex ?? vgxFromFormCard;
             const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
             const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
-            const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? regionalPromoUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
+            const tcgUrl = irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? regionalPromoUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(searchName))
               : null;

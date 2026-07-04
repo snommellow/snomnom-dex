@@ -173,6 +173,9 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "attack")  return { displayName: `Attack Forme ${base}`,  category: "forme" };
   if (suffix === "defense") return { displayName: `Defense Forme ${base}`, category: "forme" };
   if (suffix === "speed")   return { displayName: `Speed Forme ${base}`,   category: "forme" };
+  if (suffix === "sunny")   return { displayName: `Sunny Forme ${base}`,  category: "forme" };
+  if (suffix === "rainy")   return { displayName: `Rainy Forme ${base}`,  category: "forme" };
+  if (suffix === "snowy")   return { displayName: `Snowy Forme ${base}`,  category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

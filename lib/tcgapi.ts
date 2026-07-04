@@ -54,6 +54,11 @@ const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 // 22 (Pelipper) confirmed the same way — bordered "Paldea Evolved" design showing through.
 const SVP_BLACKLIST = new Set(["11", "22", "24", "59", "89", "122", "167", "168", "169"]);
 
+// Plain-named SVP promos confirmed to be genuine full art despite having neither an ability
+// nor an ex/V/GX suffix — the two signals promoSvPick normally requires. 52 (Mewtwo, "Reflective
+// Barrier"/"Psyslash") is a full-bleed cityscape illustration, not a plain stamp reprint.
+const SVP_ALLOWLIST = new Set(["52"]);
+
 // Early SWSH sets (Shining Fates and below) — Rare Ultra V cards from these are not alt arts
 const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "swsh45"]);
 
@@ -141,19 +146,28 @@ async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
   while (true) {
     const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,abilities,set,images,tcgplayer`;
     let data: PtcgCard[] = [];
-    for (let attempt = 0; attempt < 3; attempt++) {
+    // 5 attempts with longer backoff — wide rarity-index fetches span many pages, and silently
+    // giving up early on a transient failure truncates the index without any signal, which was
+    // causing intermittent wrong picks (e.g. Alolan Golem-GX flipping between regen runs
+    // depending on whether the page containing the winning card happened to load that run).
+    for (let attempt = 0; attempt < 5; attempt++) {
       try {
-        if (attempt > 0) await new Promise(r => setTimeout(r, 300 * attempt));
+        if (attempt > 0) await new Promise(r => setTimeout(r, 500 * attempt));
         const res = await fetch(url, {
           headers: getHeaders(),
           ...(noCache ? { cache: "no-store" } : { next: { revalidate: 86400 } }),
         });
-        if (res.status === 429 && attempt < 2) continue;
+        if (res.status === 429 && attempt < 4) continue;
         if (!res.ok) throw new Error(`pokemontcg.io ${res.status} for ${q}`);
         const json = await res.json();
         data = json.data ?? [];
         break;
-      } catch { if (attempt === 2) return results; }
+      } catch {
+        if (attempt === 4) {
+          process.stderr.write(`[fetchAllPages] giving up on page ${page} for query "${q}" after 5 attempts — results may be truncated\n`);
+          return results;
+        }
+      }
     }
     results.push(...data);
     if (data.length < 250) break;
@@ -379,7 +393,7 @@ export async function promoSvPick(data: PromoSvData, displayName: string): Promi
   const candidates = [...data.index.values()].flat().filter(c =>
     c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
     !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name) &&
-    (c.abilities?.length || /\s+(ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
+    (SVP_ALLOWLIST.has(c.number) || c.abilities?.length || /\s+(ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {

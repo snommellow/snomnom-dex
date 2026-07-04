@@ -294,7 +294,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -319,6 +319,9 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     if (displayName.startsWith("Attack Forme")) label = "Attack Forme";
     else if (displayName.startsWith("Defense Forme")) label = "Defense Forme";
     else if (displayName.startsWith("Speed Forme")) label = "Speed Forme";
+    else if (displayName.startsWith("Sunny Forme")) label = "Sunny Forme";
+    else if (displayName.startsWith("Rainy Forme")) label = "Rainy Forme";
+    else if (displayName.startsWith("Snowy Forme")) label = "Snowy Forme";
   }
   return { baseName, formLabel: label };
 }

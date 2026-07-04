@@ -4080,8 +4080,8 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "category": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/me2/108_hires.png"
       }
     ]
   },

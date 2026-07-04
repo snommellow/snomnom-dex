@@ -13,7 +13,6 @@ import {
 } from "@/lib/tcgapi";
 import { buildChainSets } from "@/lib/chains";
 import { fetchPocketImages, fetchPocketAltForm, fetchPocketFallback } from "@/lib/pocketapi";
-import { fetchChineseExclusivePromo } from "@/lib/tcgdexZh";
 import PokedexClient from "./PokedexClient";
 
 
@@ -126,13 +125,6 @@ export default async function PokedexGrid() {
     const url = trainerIrPick(irData, toDisplayName(p.name));
     return url ? [[p.id, { tcgUrl: url }]] : [];
   }));
-  const chineseExclusiveEntries = await Promise.all(
-    raw.map(async (p, i) => {
-      const { url } = await fetchChineseExclusivePromo(speciesData[i].chineseName);
-      return url ? [p.id, { tcgUrl: url }] as const : null;
-    })
-  );
-  const chineseExclusiveMap = new Map(chineseExclusiveEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const vgxMap = new Map(raw.flatMap((p, i) => {
     const r = vgxPick(vgxCandidatesList[i], vgxChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
@@ -160,7 +152,7 @@ export default async function PokedexGrid() {
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
     return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !chineseExclusiveMap.has(p.id) && !vgxMap.has(p.id);
+      !trainerIrMap.has(p.id) && !vgxMap.has(p.id);
   });
 
 
@@ -224,7 +216,7 @@ export default async function PokedexGrid() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     const hardcodedRegular = HARDCODED_REGULAR_CARD_URLS[p.id];
-    const tcgResult = hardcodedRegular ? { tcgUrl: null } : hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? chineseExclusiveMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
+    const tcgResult = hardcodedRegular ? { tcgUrl: null } : hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? promoSvMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? { tcgUrl: null });
     const fallbackCrop = hardcodedRegular ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(
       p,

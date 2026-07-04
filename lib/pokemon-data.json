@@ -2819,9 +2819,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
     "genus": "Sleeping Pok\u00e9mon",
     "bgCandidates": [
-      "https://assets.tcgdex.net/en/tcgp/A3b/091/high.webp"
+      "https://images.pokemontcg.io/svp/51_hires.png"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm9/120_hires.png",
+    "regularCardUrl": null,
     "altForms": [
       {
         "slug": "snorlax-gmax",
@@ -3254,8 +3254,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/164.png",
     "genus": "Owl Pok\u00e9mon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss1/8_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/141_hires.png"
+    ],
+    "regularCardUrl": null,
     "altForms": []
   },
   {

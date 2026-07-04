@@ -375,25 +375,30 @@ const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]
 
 export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
   const nameLower = displayName.toLowerCase();
-  return data.rarities.flatMap((r, i) =>
+  const all = data.rarities.flatMap((r, i) =>
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
-      .filter(c => {
-        if (c.name.toLowerCase() === nameLower + " ex") return false;
-        if (MISMATCHED_FULL_ART_BLACKLIST.has(c.id)) return false;
-        // SWSH "Rare Secret" cards are solid-gold shinies (e.g. swsh8 Flaaffy 280,
-        // swsh9 Galarian birds 181-183) — not alt-art illustrations
-        if (r === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
-        if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(r)) return true;
-        // Single-Pokémon "-GX" full arts in these tiers are plain swirl-background alt-arts
-        // that read poorly full-bleed — prefer the bordered "Rare Holo GX" sibling instead.
-        // TAG TEAM GX cards (name includes " & ") are the exception worth showing full-bleed.
-        if (c.name.endsWith("-GX") && !c.name.includes(" & ")) return false;
-        if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
-        if (/ V(-UNION)?$/.test(c.name) && r === "Hyper Rare") return false;
-        if (/ VMAX$/.test(c.name)) return false;
-        return true;
-      })
   );
+  // Single-Pokémon "-GX" full arts: allow through only if they share an illustrator with a
+  // bordered "Rare Holo GX" sibling here (same illustration extended, e.g. Vileplume-GX's
+  // sm12-211) — otherwise it's a genuinely different, often plain swirl-background
+  // illustration (e.g. Persian-GX, Golem-GX) that reads poorly full-bleed.
+  const borderedGxArtists = new Set(
+    all.filter(c => c._rarity === "Rare Holo GX" && c.artist).map(c => c.artist)
+  );
+  return all.filter(c => {
+    if (c.name.toLowerCase() === nameLower + " ex") return false;
+    if (MISMATCHED_FULL_ART_BLACKLIST.has(c.id)) return false;
+    // SWSH "Rare Secret" cards are solid-gold shinies (e.g. swsh8 Flaaffy 280,
+    // swsh9 Galarian birds 181-183) — not alt-art illustrations
+    if (c._rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)) return false;
+    if (!["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c._rarity)) return true;
+    if (c.name.endsWith("-GX") && !c.name.includes(" & ")
+      && !(c.artist && borderedGxArtists.has(c.artist))) return false;
+    if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
+    if (/ V(-UNION)?$/.test(c.name) && c._rarity === "Hyper Rare") return false;
+    if (/ VMAX$/.test(c.name)) return false;
+    return true;
+  });
 }
 
 export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgImageResult | null {
@@ -490,14 +495,18 @@ export async function fetchFormCard(
     // so a cheap bordered card can never out-price a full-art.
     const FULL_ART_TIERS = new Set(["Hyper Rare", "Rare Secret", "Trainer Gallery Rare Holo", "Ultra Rare", "Rare Ultra"]);
     const allCards = await fetchAllPages(`name:"${displayName}"`);
+    // Single-Pokémon "-GX" full arts: allow through only if they share an illustrator with a
+    // bordered "Rare Holo GX" sibling here (same illustration extended) — see vgxCandidates.
+    const borderedGxArtists = new Set(
+      allCards.filter(c => c.rarity === "Rare Holo GX" && c.artist).map(c => c.artist)
+    );
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName) && (TG_RE.test(c.number) || rarities.includes(c.rarity))
         && !MISMATCHED_FULL_ART_BLACKLIST.has(c.id)
-        // Single-Pokémon "-GX" full arts are plain swirl-background alt-arts that read poorly
-        // full-bleed — prefer the bordered "Rare Holo GX" sibling. TAG TEAM GX cards are the
-        // exception worth showing full-bleed.
+        // TAG TEAM GX cards (name includes " & ") are always worth showing full-bleed.
         && !(c.name.endsWith("-GX") && !c.name.includes(" & ")
-          && ["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c.rarity))
+          && ["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c.rarity)
+          && !(c.artist && borderedGxArtists.has(c.artist)))
         && !(c.rarity === "Hyper Rare" && / V(-UNION)?$/.test(c.name))
         && !(c.rarity === "Rare Secret" && /^swsh/i.test(c.set.id) && !TG_RE.test(c.number)));
     const finalCandidates = candidates

@@ -24,6 +24,7 @@ const NAME_DISPLAY: Record<string, string> = {
   "mr-mime":   "Mr. Mime",
   "ho-oh":     "Ho-Oh",
   "farfetchd": "Farfetch'd",
+  "deoxys-normal": "Deoxys",
 };
 
 function formatName(name: string): string {
@@ -293,7 +294,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -314,6 +315,10 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Paldean")) label = "Paldean";
   } else if (category === "primal") {
     label = "Primal Reversion";
+  } else if (category === "forme") {
+    if (displayName.startsWith("Attack Forme")) label = "Attack Forme";
+    else if (displayName.startsWith("Defense Forme")) label = "Defense Forme";
+    else if (displayName.startsWith("Speed Forme")) label = "Speed Forme";
   }
   return { baseName, formLabel: label };
 }

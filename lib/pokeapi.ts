@@ -24,7 +24,7 @@ export interface PokemonListItem {
   url: string;
 }
 
-export type FormCategory = "mega" | "regional" | "gmax" | "primal" | "other";
+export type FormCategory = "mega" | "regional" | "gmax" | "primal" | "forme" | "other";
 
 export interface AltForm {
   slug: string;
@@ -147,7 +147,16 @@ const FORM_BASE_NAME_OVERRIDES: Record<string, string> = {
   "ho-oh":     "Ho-Oh",
 };
 
-function parseFormSlug(slug: string, baseName: string): { displayName: string; category: FormCategory } {
+// PokeAPI's default list entry for these species isn't the plain species name (e.g. Deoxys'
+// default variety is "deoxys-normal", not "deoxys"), so form-slug prefix stripping below
+// would otherwise never match its own sibling forms ("deoxys-attack" doesn't start with
+// "deoxys-normal-").
+const BASE_SLUG_OVERRIDES: Record<string, string> = {
+  "deoxys-normal": "deoxys",
+};
+
+function parseFormSlug(slug: string, rawBaseName: string): { displayName: string; category: FormCategory } {
+  const baseName = BASE_SLUG_OVERRIDES[rawBaseName] ?? rawBaseName;
   const suffix = slug.startsWith(baseName + "-") ? slug.slice(baseName.length + 1) : slug;
   const cap = (s: string) => s.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
   const base = FORM_BASE_NAME_OVERRIDES[baseName] ?? cap(baseName);
@@ -161,6 +170,9 @@ function parseFormSlug(slug: string, baseName: string): { displayName: string; c
   if (suffix === "paldea") return { displayName: `Paldean ${base}`, category: "regional" };
   if (suffix === "gmax")   return { displayName: `Gigantamax ${base}`, category: "gmax" };
   if (suffix === "primal") return { displayName: `Primal ${base}`, category: "primal" };
+  if (suffix === "attack")  return { displayName: `Attack Forme ${base}`,  category: "forme" };
+  if (suffix === "defense") return { displayName: `Defense Forme ${base}`, category: "forme" };
+  if (suffix === "speed")   return { displayName: `Speed Forme ${base}`,   category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

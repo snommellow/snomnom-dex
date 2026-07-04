@@ -513,7 +513,7 @@ export async function fetchRegionalPromoPriority(displayName: string): Promise<s
 }
 
 export async function fetchFormCard(
-  category: "mega" | "regional" | "gmax" | "primal" | "other",
+  category: "mega" | "regional" | "gmax" | "primal" | "forme" | "other",
   _dexId: number,
   displayName: string,
   _formTypes: string[] = [],

@@ -195,21 +195,25 @@ async function main() {
       altFormsData.map((forms, i) =>
         Promise.all(
           forms.map(async (form) => {
+            // "forme" cards (e.g. Deoxys' Attack/Defense/Speed formes) aren't distinguished by
+            // name in the TCG — every printing is just "Deoxys" — so search by the base
+            // Pokémon's display name instead of the forme-specific display name.
+            const searchName = form.category === "forme" ? toDisplayName(raw[i].name) : form.displayName;
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName] ?? null;
-            const irFromIndex = irSirPick(irSirCandidates(irData, form.displayName));
-            const promoUrl = await promoSvPick(promoData, form.displayName);
-            const trainerIrUrl = trainerIrPick(irData, form.displayName);
-            const vgxFromIndex = vgxPick(vgxCandidates(vgxData, form.displayName));
-            const ancientTraitUrl = ancientTraitPick(ancientTraitData, form.displayName);
-            const fallbackUrl = fallbackArtPick(fallbackData, form.displayName);
+            const irFromIndex = irSirPick(irSirCandidates(irData, searchName));
+            const promoUrl = await promoSvPick(promoData, searchName);
+            const trainerIrUrl = trainerIrPick(irData, searchName);
+            const vgxFromIndex = vgxPick(vgxCandidates(vgxData, searchName));
+            const ancientTraitUrl = ancientTraitPick(ancientTraitData, searchName);
+            const fallbackUrl = fallbackArtPick(fallbackData, searchName);
 
             const [irFromFormCard, pocket, vgxFromFormCard, regionalPromoUrl] = await Promise.all([
-              !irFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, IR_RARITIES) : Promise.resolve(null),
-              fetchPocketAltForm(form.displayName, form.category),
-              !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, form.displayName, form.types, VGX_RARITIES) : Promise.resolve(null),
+              !irFromIndex ? fetchFormCard(form.category, raw[i].id, searchName, form.types, IR_RARITIES) : Promise.resolve(null),
+              fetchPocketAltForm(searchName, form.category),
+              !vgxFromIndex ? fetchFormCard(form.category, raw[i].id, searchName, form.types, VGX_RARITIES) : Promise.resolve(null),
               // Checked independently of vgxFromIndex — a shared-index winner shouldn't silently
               // block a curated full-art promo (e.g. Hisuian Electrode's SWSH294) from competing.
-              form.category === "regional" ? fetchRegionalPromoPriority(form.displayName) : Promise.resolve(null),
+              form.category === "regional" ? fetchRegionalPromoPriority(searchName) : Promise.resolve(null),
             ]);
 
             const irUrl = irFromIndex?.tcgUrl ?? irFromFormCard?.tcgUrl ?? null;
@@ -219,7 +223,7 @@ async function main() {
             const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
             const tcgUrl = hardcodedUrl ?? irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? regionalPromoUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
             const regularCardUrl = !tcgUrl && form.category !== "other"
-              ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(form.displayName))
+              ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(searchName))
               : null;
             return { ...form, tcgUrl, regularCardUrl };
           })

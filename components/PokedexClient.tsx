@@ -40,9 +40,8 @@ export default function PokedexClient({ pokemon }: Props) {
 
   // Family view: group by evolution family, families ordered by their lowest dex number,
   // members within a family ordered by evolution stage (baby → basic → stage 1 → stage 2).
-  // Mega/Gigantamax alt forms ride along in the main row after their base Pokémon; regional
-  // forms (Alolan/Galarian/Hisuian/Paldean) get their own second row per family since they're
-  // an alternate lineage, not a next evolution stage.
+  // All alt forms (Mega/Gigantamax/regional) ride along in the row right after their base
+  // Pokémon.
   const families = useMemo(() => {
     if (!familyView) return null;
     const groups = new Map<number, PokemonSummary[]>();
@@ -55,18 +54,12 @@ export default function PokedexClient({ pokemon }: Props) {
     return [...groups.entries()]
       .sort(([a], [b]) => a - b)
       .map(([familyId, members]) => {
-        const mainItems = members.flatMap((p) => [
+        const items = members.flatMap((p) => [
           { kind: "base" as const, key: `${p.id}`, pokemon: p },
           ...(p.altForms ?? [])
-            .filter((f) => f.category !== "regional")
             .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus })),
         ]);
-        const regionalItems = members.flatMap((p) =>
-          (p.altForms ?? [])
-            .filter((f) => f.category === "regional")
-            .map((f) => ({ kind: "form" as const, key: f.slug, form: f, baseId: p.id, genus: p.genus }))
-        );
-        return { familyId, mainItems, regionalItems };
+        return { familyId, items };
       });
   }, [filtered, familyView]);
 
@@ -161,23 +154,14 @@ export default function PokedexClient({ pokemon }: Props) {
       {filtered.length > 0 ? (
         families ? (
           <div className="flex flex-col gap-5">
-            {families.map(({ familyId, mainItems, regionalItems }) => (
-              <div key={familyId} className="flex flex-col gap-2">
-                <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
-                  {mainItems.map((item) =>
-                    item.kind === "base" ? (
-                      <PokemonCard key={item.key} pokemon={item.pokemon} />
-                    ) : (
-                      <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
-                    )
-                  )}
-                </div>
-                {regionalItems.length > 0 && (
-                  <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
-                    {regionalItems.map((item) => (
-                      <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
-                    ))}
-                  </div>
+            {families.map(({ familyId, items }) => (
+              <div key={familyId} className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
+                {items.map((item) =>
+                  item.kind === "base" ? (
+                    <PokemonCard key={item.key} pokemon={item.pokemon} />
+                  ) : (
+                    <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
+                  )
                 )}
               </div>
             ))}

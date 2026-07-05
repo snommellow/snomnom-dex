@@ -8996,8 +8996,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
     "genus": "Aura Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/17_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2/170/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/xy3/54_hires.png",
     "altForms": [
       {
         "slug": "lucario-mega",
@@ -9708,8 +9709,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/483.png",
     "genus": "Temporal Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/180_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2/205/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/bw10/65_hires.png",
     "altForms": [
       {
         "slug": "dialga-origin",
@@ -9722,7 +9724,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/svp/180_hires.png",
+        "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2/205/high.webp",
         "regularCardUrl": null
       }
     ],
@@ -9903,8 +9905,9 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/491.png",
     "genus": "Pitch-Black Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/110_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2/202/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/bw11/88_hires.png",
     "altForms": [
       {
         "slug": "darkrai-mega",

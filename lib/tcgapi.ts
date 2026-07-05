@@ -89,9 +89,7 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // bw5-107 (Darkrai-EX), xy4-122 (Dialga-EX), xy3-107 (Lucario-EX): confirmed via direct
 // feedback to show a visible border when used as a background — NOT a general BW/XY-era issue
 // (other BW/XY Rare Ultra EX cards look fine), just these three specific prints.
-// bw9-110 (Thundurus-EX), bw5-108 (Tornadus-EX): same bordered-not-full-art issue, confirmed
-// via direct feedback.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "bw9-110", "bw5-108"]);
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107"]);
 
 // These are still the correct/best card for their Pokémon — unlike MISMATCHED_FULL_ART_BLACKLIST,
 // they shouldn't be excluded from consideration — but they're bordered "Basic V" designs despite
@@ -570,8 +568,7 @@ const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
 // SWSH253-256 "Origin Forme Dialga/Palkia V/VSTAR": entire promo family is bordered (V and
 // VSTAR subtypes alike), same design as their swsh10-177/167 mainline siblings — no genuine
 // full art exists for these two Pokémon in this promo set (confirmed via direct API lookup).
-// SWSH239 "Hisuian Samurott V", SWSH297 "Hisuian Zoroark V": same bordered promo pattern.
-const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111", "SWSH255", "SWSH253", "SWSH256", "SWSH254", "SWSH239", "SWSH297"]);
+const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111", "SWSH255", "SWSH253", "SWSH256", "SWSH254"]);
 
 export async function fetchRegionalPromoPriority(displayName: string): Promise<string | null> {
   const allCards = await fetchAllPages(`name:"${displayName}"`);

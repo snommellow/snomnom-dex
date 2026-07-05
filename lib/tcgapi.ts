@@ -91,6 +91,13 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // (other BW/XY Rare Ultra EX cards look fine), just these three specific prints.
 const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107"]);
 
+// These are still the correct/best card for their Pokémon — unlike MISMATCHED_FULL_ART_BLACKLIST,
+// they shouldn't be excluded from consideration — but they're bordered "Basic V" designs despite
+// carrying "Rare Ultra" rarity (confirmed via direct feedback: swsh10-177 "Origin Forme Dialga V"
+// and swsh10-167 "Origin Forme Palkia V" show a visible border when stretched as a background),
+// so force crop treatment for them specifically rather than the whole era/tier.
+const FORCE_CROP_IDS = new Set(["swsh10-177", "swsh10-167"]);
+
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
   return (c.rarity ?? "").startsWith("Shiny") || /^SV\d/i.test(c.number);
@@ -508,7 +515,9 @@ export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgI
     ? pickBestCard(modern)
     : pickBestCardWithChain(candidates, chainSets);
   if (!winner) return null;
-  return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) };
+  // FORCE_CROP_IDS only affects render treatment, not selection — these cards still need to
+  // win the tier/price comparison normally above, or the wrong (worse) card would win instead.
+  return { tcgUrl: cardImageUrl(winner), isOldStyle: isOldStyle(winner) || FORCE_CROP_IDS.has(winner.id) };
 }
 
 // Chain reconciliation: find the best card for a Pokémon within allowed sets.

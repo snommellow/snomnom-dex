@@ -145,6 +145,13 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // (no full-art Basculin printing exists at all), distinct from Red-Striped's rsv10pt5-108.
   "Blue-Striped Basculin": "https://images.pokemontcg.io/bw2/24_hires.png",
   "White-Striped Basculin": "https://images.pokemontcg.io/bw1/35_hires.png",
+  // Zen Mode Darmanitan / Zen Mode Galarian Darmanitan: every TCG printing is just named
+  // "Darmanitan"/"Galarian Darmanitan" (Standard/Zen Mode aren't distinguished by card name),
+  // and both Zen forms were duplicating the same automated pick. User-confirmed cards:
+  // bw4-60 "Darmanitan" (Next Destinies, Zen Mode art) and swsh3-28 "Galarian Darmanitan"
+  // (Darkness Ablaze, Zen Mode Galarian art).
+  "Zen Mode Darmanitan": "https://images.pokemontcg.io/bw4/60_hires.png",
+  "Zen Mode Galarian Darmanitan": "https://images.pokemontcg.io/swsh3/28_hires.png",
 };
 
 async function main() {

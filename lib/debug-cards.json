@@ -1,0 +1,71 @@
+{
+  "Raichu": {
+    "varieties": [
+      {
+        "name": "raichu",
+        "isDefault": true
+      },
+      {
+        "name": "raichu-alola",
+        "isDefault": false
+      },
+      {
+        "name": "raichu-mega-x",
+        "isDefault": false
+      },
+      {
+        "name": "raichu-mega-y",
+        "isDefault": false
+      }
+    ],
+    "megaCards": []
+  },
+  "Victreebel": {
+    "varieties": [
+      {
+        "name": "victreebel",
+        "isDefault": true
+      },
+      {
+        "name": "victreebel-mega",
+        "isDefault": false
+      }
+    ],
+    "megaCards": []
+  },
+  "Medicham": {
+    "varieties": [
+      {
+        "name": "medicham",
+        "isDefault": true
+      },
+      {
+        "name": "medicham-mega",
+        "isDefault": false
+      }
+    ],
+    "megaCards": []
+  },
+  "Banette": {
+    "varieties": [
+      {
+        "name": "banette",
+        "isDefault": true
+      },
+      {
+        "name": "banette-mega",
+        "isDefault": false
+      }
+    ],
+    "megaCards": []
+  },
+  "Chimecho": {
+    "varieties": [
+      {
+        "name": "snorunt",
+        "isDefault": true
+      }
+    ],
+    "megaCards": []
+  }
+}

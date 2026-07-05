@@ -35,13 +35,21 @@ async function main() {
     { id: 71, name: "Victreebel" },
     { id: 308, name: "Medicham" },
     { id: 354, name: "Banette" },
-    { id: 361, name: "Chimecho" },
+    { id: 358, name: "Chimecho" },
   ];
   for (const t of targets) {
     const varieties = await speciesVarieties(t.id);
-    const cards = await fetchAll(`name:"${t.name}"`);
-    const megaCards = cards.filter(c => /mega/i.test(c.name));
-    out[t.name] = { varieties, megaCards: megaCards.map(c => ({ id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c.rarity })) };
+    const namesToTry = [
+      `${t.name} ex`, `M ${t.name}-EX`, `Mega ${t.name} ex`, `Mega ${t.name}`,
+      `Mega ${t.name} X`, `Mega ${t.name} Y`,
+    ];
+    const results: Record<string, unknown> = {};
+    for (const n of namesToTry) {
+      const cards = await fetchAll(`name:"${n}"`);
+      if (cards.length) results[n] = cards.map(c => ({ id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c.rarity }));
+    }
+    const subtypeCards = await fetchAll(`name:${t.name} subtypes:MEGA`);
+    out[t.name] = { varieties, exactNameMatches: results, subtypeMegaCards: subtypeCards.map(c => ({ id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c.rarity })) };
   }
   writeFileSync("lib/debug-cards.json", JSON.stringify(out, null, 2));
   console.log("wrote lib/debug-cards.json");

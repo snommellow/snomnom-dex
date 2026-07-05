@@ -10019,7 +10019,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/494.png",
     "genus": "Victory Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/142_hires.png"
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_208_R_EN_LG.png"
     ],
     "altForms": [],
     "familyId": 494,
@@ -11606,8 +11606,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/576.png",
     "genus": "Astral Body Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/bw2/47_hires.png",
+    "bgCandidates": [
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_211_R_EN.png"
+    ],
     "altForms": [],
     "familyId": 574,
     "familyOrder": 2
@@ -12755,7 +12756,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
     "genus": "Cyclone Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw5/108_hires.png"
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_210_R_EN.png"
     ],
     "altForms": [
       {
@@ -12768,8 +12769,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10019.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw2/98_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/bw2/98_hires.png"
       }
     ],
     "familyId": 641,
@@ -12786,7 +12787,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
     "genus": "Bolt Strike Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw9/110_hires.png"
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_209_R_EN.png"
     ],
     "altForms": [
       {
@@ -12800,8 +12801,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10020.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw2/97_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/bw2/97_hires.png"
       }
     ],
     "familyId": 642,
@@ -12866,8 +12867,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10021.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/zsv10pt5/131_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/bwp/BW79_hires.png"
       }
     ],
     "familyId": 645,
@@ -12898,7 +12899,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10022.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/bw7/145_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xyp/XY80_hires.png",
         "regularCardUrl": null
       },
       {
@@ -12912,7 +12913,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10023.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/smp/SM141_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xyp/XY81_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12976,7 +12977,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10018.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw11/RC25_hires.png",
+        "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_170_EN.png",
         "regularCardUrl": null
       }
     ],

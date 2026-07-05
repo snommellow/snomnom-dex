@@ -1,7 +1,15 @@
 {
   "victini-142": {
     "id": "svp-142",
-    "error": 404
+    "name": "Victini ex",
+    "set": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "number": "142",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic",
+      "ex"
+    ]
   },
   "victini-208": {
     "id": "svp-208",
@@ -9,7 +17,17 @@
   },
   "gothitelle-bw2-47": {
     "id": "bw2-47",
-    "error": 404
+    "name": "Gothitelle",
+    "set": "bw2",
+    "setName": "Emerging Powers",
+    "number": "47",
+    "rarity": "Rare Holo",
+    "subtypes": [
+      "Stage 2"
+    ],
+    "abilities": [
+      "Magic Room"
+    ]
   },
   "gothitelle-svp-211": {
     "id": "svp-211",
@@ -17,16 +35,110 @@
   },
   "samurott-swsh239": {
     "id": "swshp-SWSH239",
-    "error": 404
+    "name": "Hisuian Samurott V",
+    "set": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "number": "SWSH239",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic",
+      "V"
+    ]
   },
   "zoroark-swsh297": {
     "id": "swshp-SWSH297",
+    "name": "Hisuian Zoroark V",
+    "set": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "number": "SWSH297",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic",
+      "V"
+    ]
+  },
+  "thundurus-svp209": {
+    "id": "svp-209",
     "error": 404
   },
-  "hisuian-samurott-search": {
+  "thundurus-bw9-110": {
+    "id": "bw9-110",
+    "name": "Thundurus-EX",
+    "set": "bw9",
+    "setName": "Plasma Freeze",
+    "number": "110",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "EX",
+      "Team Plasma"
+    ]
+  },
+  "tornadus-svp210": {
+    "id": "svp-210",
     "error": 404
   },
-  "hisuian-zoroark-search": {
-    "error": 404
+  "tornadus-bw5-108": {
+    "id": "bw5-108",
+    "name": "Tornadus-EX",
+    "set": "bw5",
+    "setName": "Dark Explorers",
+    "number": "108",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "EX"
+    ]
+  },
+  "kyurem-white-xy81": {
+    "id": "xyp-XY81",
+    "name": "White Kyurem",
+    "set": "xyp",
+    "setName": "XY Black Star Promos",
+    "number": "XY81",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ]
+  },
+  "kyurem-black-xy80": {
+    "id": "xyp-XY80",
+    "name": "Black Kyurem",
+    "set": "xyp",
+    "setName": "XY Black Star Promos",
+    "number": "XY80",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ]
+  },
+  "kyurem-zsv10pt5-165": {
+    "id": "zsv10pt5-165",
+    "name": "Kyurem ex",
+    "set": "zsv10pt5",
+    "setName": "Black Bolt",
+    "number": "165",
+    "rarity": "Special Illustration Rare",
+    "subtypes": [
+      "Basic",
+      "ex"
+    ]
+  },
+  "kyurem-species": {
+    "id": 646,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "kyurem"
+      },
+      {
+        "is_default": false,
+        "name": "kyurem-black"
+      },
+      {
+        "is_default": false,
+        "name": "kyurem-white"
+      }
+    ]
   }
 }

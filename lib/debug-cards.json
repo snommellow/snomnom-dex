@@ -1,0 +1,258 @@
+{
+  "Darkrai": {
+    "candidates": [
+      {
+        "id": "bw5-107",
+        "name": "Darkrai-EX",
+        "set": "bw5",
+        "number": "107",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "xy9-118",
+        "name": "Darkrai-EX",
+        "set": "xy9",
+        "number": "118",
+        "rarity": "Rare Ultra",
+        "artist": "Ryo Ueda"
+      },
+      {
+        "id": "swsh10-98",
+        "name": "Darkrai V",
+        "set": "swsh10",
+        "number": "98",
+        "rarity": "Rare Holo V",
+        "artist": "takuyoa"
+      },
+      {
+        "id": "swsh10-99",
+        "name": "Darkrai VSTAR",
+        "set": "swsh10",
+        "number": "99",
+        "rarity": "Rare Holo VSTAR",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "swsh12pt5gg-GG50",
+        "name": "Darkrai VSTAR",
+        "set": "swsh12pt5gg",
+        "number": "GG50",
+        "rarity": "Rare Holo VSTAR",
+        "artist": "Pani Kobayashi"
+      },
+      {
+        "id": "sm3-88",
+        "name": "Darkrai-GX",
+        "set": "sm3",
+        "number": "88",
+        "rarity": "Rare Holo GX",
+        "artist": "PLANETA"
+      },
+      {
+        "id": "sm3-88a",
+        "name": "Darkrai-GX",
+        "set": "sm3",
+        "number": "88a",
+        "rarity": "Rare Holo GX",
+        "artist": "PLANETA"
+      },
+      {
+        "id": "sm11-125",
+        "name": "Umbreon & Darkrai-GX",
+        "set": "sm11",
+        "number": "125",
+        "rarity": "Rare Holo GX",
+        "artist": "Mitsuhiro Arita"
+      },
+      {
+        "id": "bw5-63",
+        "name": "Darkrai-EX",
+        "set": "bw5",
+        "number": "63",
+        "rarity": "Rare Holo EX",
+        "artist": "Shizurow"
+      },
+      {
+        "id": "xy9-74",
+        "name": "Darkrai-EX",
+        "set": "xy9",
+        "number": "74",
+        "rarity": "Rare Holo EX",
+        "artist": "Eske Yoshinob"
+      },
+      {
+        "id": "bw11-88",
+        "name": "Darkrai-EX",
+        "set": "bw11",
+        "number": "88",
+        "rarity": "Rare Holo EX",
+        "artist": "Shizurow"
+      }
+    ],
+    "result": {
+      "tcgUrl": "https://images.pokemontcg.io/bw5/107_hires.png",
+      "isOldStyle": false
+    }
+  },
+  "Dialga": {
+    "candidates": [
+      {
+        "id": "xy4-122",
+        "name": "Dialga-EX",
+        "set": "xy4",
+        "number": "122",
+        "rarity": "Rare Secret",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "bw10-99",
+        "name": "Dialga-EX",
+        "set": "bw10",
+        "number": "99",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm6-125",
+        "name": "Dialga-GX",
+        "set": "sm6",
+        "number": "125",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm5-146",
+        "name": "Dialga-GX",
+        "set": "sm5",
+        "number": "146",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm12-220",
+        "name": "Arceus & Dialga & Palkia-GX",
+        "set": "sm12",
+        "number": "220",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm12-221",
+        "name": "Arceus & Dialga & Palkia-GX",
+        "set": "sm12",
+        "number": "221",
+        "rarity": "Rare Ultra",
+        "artist": "Kouki Saitou"
+      },
+      {
+        "id": "sm6-82",
+        "name": "Dialga-GX",
+        "set": "sm6",
+        "number": "82",
+        "rarity": "Rare Holo GX",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm5-100",
+        "name": "Dialga-GX",
+        "set": "sm5",
+        "number": "100",
+        "rarity": "Rare Holo GX",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "sm12-156",
+        "name": "Arceus & Dialga & Palkia-GX",
+        "set": "sm12",
+        "number": "156",
+        "rarity": "Rare Holo GX",
+        "artist": "Mitsuhiro Arita"
+      },
+      {
+        "id": "bw10-65",
+        "name": "Dialga-EX",
+        "set": "bw10",
+        "number": "65",
+        "rarity": "Rare Holo EX",
+        "artist": "Eske Yoshinob"
+      },
+      {
+        "id": "xy4-62",
+        "name": "Dialga-EX",
+        "set": "xy4",
+        "number": "62",
+        "rarity": "Rare Holo EX",
+        "artist": "Ayaka Yoshida"
+      }
+    ],
+    "result": {
+      "tcgUrl": "https://images.pokemontcg.io/xy4/122_hires.png",
+      "isOldStyle": false
+    }
+  },
+  "Lucario": {
+    "candidates": [
+      {
+        "id": "xy3-107",
+        "name": "Lucario-EX",
+        "set": "xy3",
+        "number": "107",
+        "rarity": "Rare Ultra",
+        "artist": "Ryo Ueda"
+      },
+      {
+        "id": "sm10-203",
+        "name": "Lucario & Melmetal-GX",
+        "set": "sm10",
+        "number": "203",
+        "rarity": "Rare Ultra",
+        "artist": "5ban Graphics"
+      },
+      {
+        "id": "swsh35-27",
+        "name": "Lucario V",
+        "set": "swsh35",
+        "number": "27",
+        "rarity": "Rare Holo V",
+        "artist": "AKIRA EGAWA"
+      },
+      {
+        "id": "swsh8-146",
+        "name": "Lucario V",
+        "set": "swsh8",
+        "number": "146",
+        "rarity": "Rare Holo V",
+        "artist": "aky CG Works"
+      },
+      {
+        "id": "swsh10-78",
+        "name": "Lucario V",
+        "set": "swsh10",
+        "number": "78",
+        "rarity": "Rare Holo V",
+        "artist": "takuyoa"
+      },
+      {
+        "id": "sm10-120",
+        "name": "Lucario & Melmetal-GX",
+        "set": "sm10",
+        "number": "120",
+        "rarity": "Rare Holo GX",
+        "artist": "Mitsuhiro Arita"
+      },
+      {
+        "id": "xy3-54",
+        "name": "Lucario-EX",
+        "set": "xy3",
+        "number": "54",
+        "rarity": "Rare Holo EX",
+        "artist": "Eske Yoshinob"
+      }
+    ],
+    "result": {
+      "tcgUrl": "https://images.pokemontcg.io/xy3/107_hires.png",
+      "isOldStyle": false
+    }
+  }
+}

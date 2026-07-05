@@ -556,7 +556,9 @@ const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
 // are stamped bordered reprints (confirmed via API: different artist, promo-tier pricing
 // far below their full-art siblings), unlike SWSH294 "Hisuian Electrode V" which is a
 // genuine full-art. No API field distinguishes them, so exclude known cases by number.
-const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111"]);
+// SWSH255/SWSH253 "Origin Forme Dialga/Palkia V": same bordered "Basic V" design as their
+// swsh10-177/167 mainline siblings (also confirmed bordered — see FORCE_CROP_IDS).
+const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111", "SWSH255", "SWSH253"]);
 
 export async function fetchRegionalPromoPriority(displayName: string): Promise<string | null> {
   const allCards = await fetchAllPages(`name:"${displayName}"`);

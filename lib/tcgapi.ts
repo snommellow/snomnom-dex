@@ -139,6 +139,15 @@ const NAME_OVERRIDES: Record<string, string> = {
   "giratina-altered": "Giratina",
   "shaymin-land":    "Shaymin",
   "mime-jr":         "Mime Jr.",
+  "basculin-red-striped": "Basculin",
+  "darmanitan-standard":  "Darmanitan",
+  "frillish-male":        "Frillish",
+  "jellicent-male":       "Jellicent",
+  "tornadus-incarnate":   "Tornadus",
+  "thundurus-incarnate":  "Thundurus",
+  "landorus-incarnate":   "Landorus",
+  "keldeo-ordinary":      "Keldeo",
+  "meloetta-aria":        "Meloetta",
 };
 
 export function toDisplayName(slug: string): string {

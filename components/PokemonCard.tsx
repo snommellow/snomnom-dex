@@ -29,6 +29,15 @@ const NAME_DISPLAY: Record<string, string> = {
   "giratina-altered": "Giratina",
   "shaymin-land": "Shaymin",
   "mime-jr": "Mime Jr.",
+  "basculin-red-striped": "Basculin",
+  "darmanitan-standard": "Darmanitan",
+  "frillish-male": "Frillish",
+  "jellicent-male": "Jellicent",
+  "tornadus-incarnate": "Tornadus",
+  "thundurus-incarnate": "Thundurus",
+  "landorus-incarnate": "Landorus",
+  "keldeo-ordinary": "Keldeo",
+  "meloetta-aria": "Meloetta",
 };
 
 function formatName(name: string): string {
@@ -298,7 +307,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -342,6 +351,12 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Sandy Cloak")) label = "Sandy Cloak";
     else if (displayName.startsWith("Trash Cloak")) label = "Trash Cloak";
     else if (displayName.startsWith("Sky Forme")) label = "Sky Forme";
+    else if (displayName.startsWith("Therian Forme")) label = "Therian Forme";
+    else if (displayName.startsWith("Zen Mode Galarian")) label = "Zen Mode Galarian";
+    else if (displayName.startsWith("Zen Mode")) label = "Zen Mode";
+    else if (displayName.startsWith("Resolute Forme")) label = "Resolute Forme";
+    else if (displayName.startsWith("Pirouette Forme")) label = "Pirouette Forme";
+    else if (displayName.startsWith("Blue-Striped")) label = "Blue-Striped";
   }
   return { baseName, formLabel: label };
 }

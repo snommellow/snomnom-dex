@@ -157,6 +157,15 @@ const BASE_SLUG_OVERRIDES: Record<string, string> = {
   "wormadam-plant": "wormadam",
   "giratina-altered": "giratina",
   "shaymin-land": "shaymin",
+  "basculin-red-striped": "basculin",
+  "darmanitan-standard": "darmanitan",
+  "frillish-male": "frillish",
+  "jellicent-male": "jellicent",
+  "tornadus-incarnate": "tornadus",
+  "thundurus-incarnate": "thundurus",
+  "landorus-incarnate": "landorus",
+  "keldeo-ordinary": "keldeo",
+  "meloetta-aria": "meloetta",
 };
 
 function parseFormSlug(slug: string, rawBaseName: string): { displayName: string; category: FormCategory } {
@@ -201,6 +210,16 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "frost") return { displayName: `Frost ${base}`, category: "regional" };
   if (suffix === "fan")   return { displayName: `Fan ${base}`,   category: "regional" };
   if (suffix === "mow")   return { displayName: `Mow ${base}`,   category: "regional" };
+  // Tornadus/Thundurus/Landorus' Therian Formes, Darmanitan's Zen Mode, Keldeo's Resolute Forme,
+  // Meloetta's Pirouette Forme, and Basculin's Blue-Striped form aren't distinguished by card
+  // name in the TCG (same printing serves both formes), so treat as "forme" like Deoxys/Castform
+  // — auto-search can't tell them apart, so they need per-form hardcoding to differ from base.
+  if (suffix === "therian")    return { displayName: `Therian Forme ${base}`, category: "forme" };
+  if (suffix === "zen")        return { displayName: `Zen Mode ${base}`, category: "forme" };
+  if (suffix === "galar-zen")  return { displayName: `Zen Mode Galarian ${base}`, category: "forme" };
+  if (suffix === "resolute")   return { displayName: `Resolute Forme ${base}`, category: "forme" };
+  if (suffix === "pirouette")  return { displayName: `Pirouette Forme ${base}`, category: "forme" };
+  if (suffix === "blue-striped") return { displayName: `Blue-Striped ${base}`, category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

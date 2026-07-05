@@ -228,6 +228,7 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "resolute")   return { displayName: `Resolute Forme ${base}`, category: "forme" };
   if (suffix === "pirouette")  return { displayName: `Pirouette Forme ${base}`, category: "forme" };
   if (suffix === "blue-striped") return { displayName: `Blue-Striped ${base}`, category: "forme" };
+  if (suffix === "white-striped") return { displayName: `White-Striped ${base}`, category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

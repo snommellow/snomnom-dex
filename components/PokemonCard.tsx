@@ -307,7 +307,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -359,6 +359,7 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Resolute Forme")) label = "Resolute Forme";
     else if (displayName.startsWith("Pirouette Forme")) label = "Pirouette Forme";
     else if (displayName.startsWith("Blue-Striped")) label = "Blue-Striped";
+    else if (displayName.startsWith("White-Striped")) label = "White-Striped";
   }
   return { baseName, formLabel: label };
 }

@@ -101,6 +101,16 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // just duplicates the base Shaymin card. Pocket TCG A2a-081 "Shaymin" (Triumphant Light) is
   // a star-rarity full-art card that's actually illustrated as the Sky Forme.
   "Sky Forme Shaymin": "https://assets.tcgdex.net/en/tcgp/A2a/081/high.webp",
+  // Therian Forme Thundurus/Tornadus: every TCG printing is just named "Thundurus"/"Tornadus"
+  // (Incarnate/Therian aren't distinguished by card name). Picked by hand — highest-value
+  // full-art Basic from Emerging Powers, distinct from the Incarnate Forme's own automated pick
+  // (bw9-110/bw5-108).
+  "Therian Forme Thundurus": "https://images.pokemontcg.io/bw2/97_hires.png",
+  "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw2/98_hires.png",
+  // Pirouette Forme Meloetta: same naming situation — Aria/Pirouette share one card name.
+  // Aria Forme's own automated pick is zsv10pt5-167, so Pirouette gets the next-highest-value
+  // full-art candidate instead: Legendary Treasures' Meloetta-EX Rare Ultra.
+  "Pirouette Forme Meloetta": "https://images.pokemontcg.io/bw11/RC25_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
@@ -130,6 +140,11 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // Forme aren't distinguished by card name). User-confirmed card: swsh1-53 "Keldeo V" — a
   // bordered "Basic V" design, so cropped rather than full-bleed.
   "Resolute Forme Keldeo": "https://images.pokemontcg.io/swsh1/53_hires.png",
+  // Blue/White-Striped Basculin: every TCG printing is just named "Basculin" (no stripe-color
+  // text), so picked by hand — two distinct highest-value candidates, both plain Common/Uncommon
+  // (no full-art Basculin printing exists at all), distinct from Red-Striped's rsv10pt5-108.
+  "Blue-Striped Basculin": "https://images.pokemontcg.io/bw2/24_hires.png",
+  "White-Striped Basculin": "https://images.pokemontcg.io/bw1/35_hires.png",
 };
 
 async function main() {

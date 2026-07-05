@@ -89,7 +89,10 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // bw5-107 (Darkrai-EX), xy4-122 (Dialga-EX), xy3-107 (Lucario-EX): confirmed via direct
 // feedback to show a visible border when used as a background — NOT a general BW/XY-era issue
 // (other BW/XY Rare Ultra EX cards look fine), just these three specific prints.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107"]);
+// swsh1-53 "Keldeo V": bordered "Basic V" design (same one hardcoded as Resolute Forme Keldeo's
+// cropped card in HARDCODED_FORM_REGULAR_URLS) — confirmed via direct feedback to look wrong
+// stretched as a background for base (Ordinary Forme) Keldeo.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53"]);
 
 // These are still the correct/best card for their Pokémon — unlike MISMATCHED_FULL_ART_BLACKLIST,
 // they shouldn't be excluded from consideration — but they're bordered "Basic V" designs despite

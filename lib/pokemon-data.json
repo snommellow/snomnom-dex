@@ -287,8 +287,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
     "genus": "Butterfly Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/5_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh3/1_hires.png"
+    ],
     "altForms": [
       {
         "slug": "butterfree-gmax",
@@ -833,7 +834,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
     "genus": "Fairy Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/106_hires.png",
     "altForms": [
       {
         "slug": "clefable-mega",
@@ -1348,7 +1349,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
     "genus": "Legendary Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pl2/1_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/83_hires.png",
     "altForms": [
       {
         "slug": "arcanine-hisui",
@@ -1520,7 +1521,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/278/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H15_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy7/37_hires.png",
     "altForms": [
       {
         "slug": "machamp-gmax",
@@ -1958,8 +1959,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/85.png",
     "genus": "Triple Bird Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/46_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh8/201_hires.png"
+    ],
     "altForms": [],
     "familyId": 84,
     "familyOrder": 1
@@ -2134,7 +2136,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/277/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/108_hires.png",
     "altForms": [
       {
         "slug": "gengar-mega",
@@ -2240,8 +2242,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png",
     "genus": "Pincer Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/15_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9/28_hires.png"
+    ],
     "altForms": [
       {
         "slug": "kingler-gmax",
@@ -2302,7 +2305,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/235/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex5/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/107_hires.png",
     "altForms": [
       {
         "slug": "electrode-hisui",
@@ -2444,7 +2447,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/279/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl1/129_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex1/98_hires.png",
     "altForms": [],
     "familyId": 106,
     "familyOrder": 2
@@ -2493,6 +2496,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/243/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/32_hires.png",
     "altForms": [
       {
         "slug": "weezing-galar",
@@ -2693,7 +2697,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
     "genus": "Mysterious Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10/166_hires.png"
+      "https://images.pokemontcg.io/swsh10tg/TG13_hires.png"
     ],
     "altForms": [
       {
@@ -2804,7 +2808,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/126.png",
     "genus": "Spitfire Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/21_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex1/100_hires.png",
     "altForms": [],
     "familyId": 126,
     "familyOrder": 1
@@ -2927,7 +2931,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/233/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H10_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/109_hires.png",
     "altForms": [
       {
         "slug": "gyarados-mega",
@@ -2960,7 +2964,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/234/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/8_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex1/99_hires.png",
     "altForms": [
       {
         "slug": "lapras-gmax",
@@ -3039,7 +3043,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/072/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/18_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex11/110_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 1
@@ -3056,7 +3060,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/276/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H12_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex11/109_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 2
@@ -3073,7 +3077,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/087/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex11/108_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 3
@@ -3173,7 +3177,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1a/084/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/1_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex2/94_hires.png",
     "altForms": [
       {
         "slug": "aerodactyl-mega",
@@ -3248,7 +3252,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10169.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG16_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3280,7 +3284,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10170.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG19_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3300,7 +3304,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/274/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H20_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw8/14_hires.png",
     "altForms": [
       {
         "slug": "moltres-galar",
@@ -3313,7 +3317,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10171.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG20_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3364,7 +3368,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/090/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/9_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex3/90_hires.png",
     "altForms": [
       {
         "slug": "dragonite-mega",
@@ -3485,7 +3489,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/154.png",
     "genus": "Herb Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/18_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/106_hires.png",
     "altForms": [
       {
         "slug": "meganium-mega",
@@ -3560,7 +3564,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10233.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/54_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/53_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3608,7 +3612,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
     "genus": "Big Jaw Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/12_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/103_hires.png",
     "altForms": [
       {
         "slug": "feraligatr-mega",
@@ -3673,6 +3677,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/182/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG12_hires.png",
     "altForms": [],
     "familyId": 163,
     "familyOrder": 0
@@ -3825,6 +3830,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/171/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/22_hires.png",
     "altForms": [],
     "familyId": 25,
     "familyOrder": 0
@@ -3874,6 +3880,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/173/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/sm12/143_hires.png",
     "altForms": [],
     "familyId": 175,
     "familyOrder": 0
@@ -3924,7 +3931,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/174/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss2/11_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H32_hires.png",
     "altForms": [],
     "familyId": 177,
     "familyOrder": 1
@@ -4069,7 +4076,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/186.png",
     "genus": "Frog Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H23_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/107_hires.png",
     "altForms": [],
     "familyId": 60,
     "familyOrder": 3
@@ -4247,7 +4254,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/205/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/102_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 4
@@ -4264,7 +4271,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/208/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H29_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/112_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 5
@@ -4345,6 +4352,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/078/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12/66_hires.png",
     "altForms": [],
     "familyId": 201,
     "familyOrder": 0
@@ -4503,8 +4511,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/210.png",
     "genus": "Fairy Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/61_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9/57_hires.png"
+    ],
     "altForms": [],
     "familyId": 209,
     "familyOrder": 1
@@ -5128,7 +5137,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/185/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/101_hires.png",
     "altForms": [],
     "familyId": 113,
     "familyOrder": 2
@@ -5145,7 +5154,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/088/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/16_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex4/92_hires.png",
     "altForms": [],
     "familyId": 243,
     "familyOrder": 0
@@ -5162,7 +5171,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/087/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw5/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex4/91_hires.png",
     "altForms": [],
     "familyId": 244,
     "familyOrder": 0
@@ -5179,7 +5188,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/090/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H25_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex4/94_hires.png",
     "altForms": [],
     "familyId": 245,
     "familyOrder": 0
@@ -5262,7 +5271,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/211/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/14_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/105_hires.png",
     "altForms": [],
     "familyId": 249,
     "familyOrder": 0
@@ -5280,7 +5289,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/210/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/10_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/104_hires.png",
     "altForms": [],
     "familyId": 250,
     "familyOrder": 0
@@ -5298,7 +5307,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1a/085/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw7/9_hires.png",
     "altForms": [],
     "familyId": 251,
     "familyOrder": 0
@@ -5947,8 +5956,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/286.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/286.png",
     "genus": "Mushroom Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex8/3_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh8/6_hires.png"
+    ],
     "altForms": [],
     "familyId": 285,
     "familyOrder": 1
@@ -5993,8 +6003,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/289.png",
     "genus": "Lazy Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pgo/77_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/pgo/58_hires.png"
+    ],
     "altForms": [],
     "familyId": 287,
     "familyOrder": 2
@@ -6090,7 +6101,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/295.png",
     "genus": "Loud Noise Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex5/6_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex14/92_hires.png",
     "altForms": [],
     "familyId": 293,
     "familyOrder": 2
@@ -6121,7 +6132,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/297.png",
     "genus": "Arm Thrust Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex1/8_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex8/100_hires.png",
     "altForms": [],
     "familyId": 296,
     "familyOrder": 1
@@ -6185,7 +6196,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/248/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex14/91_hires.png",
     "altForms": [],
     "familyId": 300,
     "familyOrder": 1
@@ -6200,8 +6211,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png",
     "genus": "Darkness Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex2/10_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh1/120_hires.png"
+    ],
     "altForms": [
       {
         "slug": "sableye-mega",
@@ -6297,7 +6309,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png",
     "genus": "Iron Armor Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/xy5/93_hires.png"
+      "https://images.pokemontcg.io/swsh9/96_hires.png"
     ],
     "altForms": [
       {
@@ -6786,7 +6798,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/332.png",
     "genus": "Scarecrow Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex2/2_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/91_hires.png",
     "altForms": [],
     "familyId": 331,
     "familyOrder": 1
@@ -6963,7 +6975,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/342.png",
     "genus": "Rogue Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex8/6_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex13/99_hires.png",
     "altForms": [],
     "familyId": 341,
     "familyOrder": 1
@@ -7030,7 +7042,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/346.png",
     "genus": "Barnacle Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex13/2_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex4/90_hires.png",
     "altForms": [],
     "familyId": 345,
     "familyOrder": 1
@@ -7062,7 +7074,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/348.png",
     "genus": "Plate Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex13/1_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/84_hires.png",
     "altForms": [],
     "familyId": 347,
     "familyOrder": 1
@@ -7431,7 +7443,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/365.png",
     "genus": "Ice Break Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex5/15_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/89_hires.png",
     "altForms": [],
     "familyId": 363,
     "familyOrder": 2
@@ -7462,7 +7474,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/367.png",
     "genus": "Deep Sea Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/18_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy5/50_hires.png",
     "altForms": [],
     "familyId": 366,
     "familyOrder": 1
@@ -7669,7 +7681,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/378.png",
     "genus": "Iceberg Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/90_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/98_hires.png",
     "altForms": [],
     "familyId": 378,
     "familyOrder": 0
@@ -7963,7 +7975,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
     "genus": "Continent Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/17_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp1/122_hires.png",
     "altForms": [],
     "familyId": 387,
     "familyOrder": 2
@@ -8110,7 +8122,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/176/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/16_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl3/147_hires.png",
     "altForms": [
       {
         "slug": "staraptor-mega",
@@ -8142,6 +8154,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/177/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG29_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 0
@@ -8159,6 +8172,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2b/095/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG25_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 1
@@ -8237,7 +8251,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/237/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/8_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/109_hires.png",
     "altForms": [],
     "familyId": 403,
     "familyOrder": 2
@@ -8518,7 +8532,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/419.png",
     "genus": "Sea Weasel Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pl2/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/104_hires.png",
     "altForms": [],
     "familyId": 418,
     "familyOrder": 1
@@ -8548,7 +8562,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/421.png",
     "genus": "Blossom Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ru1/2_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh5/8_hires.png",
     "altForms": [],
     "familyId": 420,
     "familyOrder": 1
@@ -8710,7 +8724,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/244/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/10_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sm10/109_hires.png",
     "altForms": [],
     "familyId": 198,
     "familyOrder": 1
@@ -8953,7 +8967,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/093/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl3/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sm11/146_hires.png",
     "altForms": [
       {
         "slug": "garchomp-mega",
@@ -9017,7 +9031,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/170/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/6_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy3/54_hires.png",
     "altForms": [
       {
         "slug": "lucario-mega",
@@ -9065,6 +9079,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/241/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/107_hires.png",
     "altForms": [],
     "familyId": 449,
     "familyOrder": 1
@@ -9313,7 +9328,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/169/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/12_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/145_hires.png",
     "altForms": [],
     "familyId": 111,
     "familyOrder": 2
@@ -9330,7 +9345,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/156/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp4/10_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl4/99_hires.png",
     "altForms": [],
     "familyId": 114,
     "familyOrder": 1
@@ -9413,7 +9428,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/091/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp5/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/g1/10_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 6
@@ -9430,7 +9445,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/092/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp5/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy10/20_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 7
@@ -9446,7 +9461,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/472.png",
     "genus": "Fang Scorpion Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/141_hires.png",
     "altForms": [],
     "familyId": 207,
     "familyOrder": 1
@@ -9498,7 +9513,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/200/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/6_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy6/34_hires.png",
     "altForms": [
       {
         "slug": "gallade-mega",
@@ -9681,7 +9696,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/480.png",
     "genus": "Knowledge Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/18_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/146_hires.png",
     "altForms": [],
     "familyId": 480,
     "familyOrder": 0
@@ -9712,7 +9727,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/482.png",
     "genus": "Willpower Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/140_hires.png",
     "altForms": [],
     "familyId": 482,
     "familyOrder": 0
@@ -9730,7 +9745,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/205/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp5/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw10/65_hires.png",
     "altForms": [
       {
         "slug": "dialga-origin",
@@ -9763,7 +9778,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/204/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp5/11_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw10/66_hires.png",
     "altForms": [
       {
         "slug": "palkia-origin",
@@ -9828,7 +9843,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/179/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/15_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw4/82_hires.png",
     "altForms": [],
     "familyId": 486,
     "familyOrder": 0
@@ -9909,7 +9924,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/162/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/9_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy9/32_hires.png",
     "altForms": [],
     "familyId": 489,
     "familyOrder": 1
@@ -9926,7 +9941,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/202/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl2/3_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw11/88_hires.png",
     "altForms": [
       {
         "slug": "darkrai-mega",
@@ -9988,7 +10003,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/095/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG70_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sm12/156_hires.png",
     "altForms": [],
     "familyId": 493,
     "familyOrder": 0
@@ -10179,7 +10194,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10236.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/176_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH239_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -11137,6 +11152,19 @@
         "regularCardUrl": null
       },
       {
+        "slug": "darmanitan-galar-standard",
+        "displayName": "Galarian Darmanitan",
+        "types": [
+          "ice"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10177.png",
+        "category": "regional",
+        "tcgUrl": "https://images.pokemontcg.io/swsh4/36_hires.png",
+        "regularCardUrl": null
+      },
+      {
         "slug": "darmanitan-galar-zen",
         "displayName": "Zen Mode Galarian Darmanitan",
         "types": [
@@ -11485,7 +11513,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10239.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH298_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH297_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -11566,7 +11594,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/576.png",
     "genus": "Astral Body Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/bw6/57_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/bw2/47_hires.png",
     "altForms": [],
     "familyId": 574,
     "familyOrder": 2
@@ -12298,7 +12326,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10180.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh3/184_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh3/128_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12714,7 +12742,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
     "genus": "Cyclone Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw9/114_hires.png"
+      "https://images.pokemontcg.io/bw5/108_hires.png"
     ],
     "altForms": [
       {
@@ -12727,7 +12755,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10019.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw9/114_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/bw5/108_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12745,7 +12773,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
     "genus": "Bolt Strike Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw2/97_hires.png"
+      "https://images.pokemontcg.io/bw9/110_hires.png"
     ],
     "altForms": [
       {
@@ -12759,7 +12787,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10020.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw2/97_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/bw9/110_hires.png",
         "regularCardUrl": null
       }
     ],

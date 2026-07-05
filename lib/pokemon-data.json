@@ -16078,5 +16078,1811 @@
     ],
     "familyId": 809,
     "familyOrder": 0
+  },
+  {
+    "id": 810,
+    "name": "grookey",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/810.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/810.png",
+    "genus": "Chimp Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/fut20/3_hires.png",
+    "altForms": [],
+    "familyId": 810,
+    "familyOrder": 0
+  },
+  {
+    "id": 811,
+    "name": "thwackey",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/811.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/811.png",
+    "genus": "Beat Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/115_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 810,
+    "familyOrder": 1
+  },
+  {
+    "id": 812,
+    "name": "rillaboom",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/812.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/812.png",
+    "genus": "Drummer Pokémon",
+    "bgCandidates": [
+      "https://assets.tcgdex.net/en/tcgp/B1/229/high.webp"
+    ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/18_hires.png",
+    "altForms": [
+      {
+        "slug": "rillaboom-gmax",
+        "displayName": "Gigantamax Rillaboom",
+        "types": [
+          "grass"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10209.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10209.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10209.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh8/23_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 810,
+    "familyOrder": 2
+  },
+  {
+    "id": 813,
+    "name": "scorbunny",
+    "types": [
+      "fire"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/813.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/813.png",
+    "genus": "Rabbit Pokémon",
+    "bgCandidates": [
+      "https://images.scrydex.com/pokemon/me2pt5-225/large"
+    ],
+    "altForms": [],
+    "familyId": 813,
+    "familyOrder": 0
+  },
+  {
+    "id": 814,
+    "name": "raboot",
+    "types": [
+      "fire"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/814.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/814.png",
+    "genus": "Rabbit Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv7/147_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 813,
+    "familyOrder": 1
+  },
+  {
+    "id": 815,
+    "name": "cinderace",
+    "types": [
+      "fire"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/815.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/815.png",
+    "genus": "Striker Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh2/35_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "cinderace-gmax",
+        "displayName": "Gigantamax Cinderace",
+        "types": [
+          "fire"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10210.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10210.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10210.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh8/45_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 813,
+    "familyOrder": 2
+  },
+  {
+    "id": 816,
+    "name": "sobble",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/816.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/816.png",
+    "genus": "Water Lizard Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/fut20/5_hires.png",
+    "altForms": [],
+    "familyId": 816,
+    "familyOrder": 0
+  },
+  {
+    "id": 817,
+    "name": "drizzile",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/817.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/817.png",
+    "genus": "Water Lizard Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh1/56_hires.png",
+    "altForms": [],
+    "familyId": 816,
+    "familyOrder": 1
+  },
+  {
+    "id": 818,
+    "name": "inteleon",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/818.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/818.png",
+    "genus": "Secret Agent Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/me1/142_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "inteleon-gmax",
+        "displayName": "Gigantamax Inteleon",
+        "types": [
+          "water"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10211.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10211.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10211.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh8/266_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 816,
+    "familyOrder": 2
+  },
+  {
+    "id": 819,
+    "name": "skwovet",
+    "types": [
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/819.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/819.png",
+    "genus": "Cheeky Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv1/222_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 819,
+    "familyOrder": 0
+  },
+  {
+    "id": 820,
+    "name": "greedent",
+    "types": [
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/820.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/820.png",
+    "genus": "Greedy Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv10/205_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 819,
+    "familyOrder": 1
+  },
+  {
+    "id": 821,
+    "name": "rookidee",
+    "types": [
+      "flying"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/821.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/821.png",
+    "genus": "Tiny Bird Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv2/225_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 821,
+    "familyOrder": 0
+  },
+  {
+    "id": 822,
+    "name": "corvisquire",
+    "types": [
+      "flying"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/822.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/822.png",
+    "genus": "Raven Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh1/151_hires.png",
+    "altForms": [],
+    "familyId": 821,
+    "familyOrder": 1
+  },
+  {
+    "id": 823,
+    "name": "corviknight",
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/823.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png",
+    "genus": "Raven Pokémon",
+    "bgCandidates": [
+      "https://assets.tcgdex.net/en/tcgp/B1/246/high.webp"
+    ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12tg/TG18_hires.png",
+    "altForms": [
+      {
+        "slug": "corviknight-gmax",
+        "displayName": "Gigantamax Corviknight",
+        "types": [
+          "flying",
+          "steel"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10212.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10212.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10212.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG19_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 821,
+    "familyOrder": 2
+  },
+  {
+    "id": 824,
+    "name": "blipbug",
+    "types": [
+      "bug"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/824.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/824.png",
+    "genus": "Larva Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh11/18_hires.png",
+    "altForms": [],
+    "familyId": 824,
+    "familyOrder": 0
+  },
+  {
+    "id": 825,
+    "name": "dottler",
+    "types": [
+      "bug",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/825.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/825.png",
+    "genus": "Radome Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv4/184_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 824,
+    "familyOrder": 1
+  },
+  {
+    "id": 826,
+    "name": "orbeetle",
+    "types": [
+      "bug",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/826.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/826.png",
+    "genus": "Seven Spot Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv10/198_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "orbeetle-gmax",
+        "displayName": "Gigantamax Orbeetle",
+        "types": [
+          "bug",
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10213.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10213.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10213.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG13_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 824,
+    "familyOrder": 2
+  },
+  {
+    "id": 827,
+    "name": "nickit",
+    "types": [
+      "dark"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/827.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/827.png",
+    "genus": "Fox Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh10/103_hires.png",
+    "altForms": [],
+    "familyId": 827,
+    "familyOrder": 0
+  },
+  {
+    "id": 828,
+    "name": "thievul",
+    "types": [
+      "dark"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/828.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/828.png",
+    "genus": "Fox Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12pt5gg/GG17_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 827,
+    "familyOrder": 1
+  },
+  {
+    "id": 829,
+    "name": "gossifleur",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/829.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/829.png",
+    "genus": "Flowering Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH010_hires.png",
+    "altForms": [],
+    "familyId": 829,
+    "familyOrder": 0
+  },
+  {
+    "id": 830,
+    "name": "eldegoss",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/830.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/830.png",
+    "genus": "Cotton Bloom Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh35/5_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 829,
+    "familyOrder": 1
+  },
+  {
+    "id": 831,
+    "name": "wooloo",
+    "types": [
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/831.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/831.png",
+    "genus": "Sheep Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv9/170_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 831,
+    "familyOrder": 0
+  },
+  {
+    "id": 832,
+    "name": "dubwool",
+    "types": [
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/832.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/832.png",
+    "genus": "Sheep Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh45sv/SV120_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 831,
+    "familyOrder": 1
+  },
+  {
+    "id": 833,
+    "name": "chewtle",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/833.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/833.png",
+    "genus": "Snapping Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv7/43_hires.png",
+    "altForms": [],
+    "familyId": 833,
+    "familyOrder": 0
+  },
+  {
+    "id": 834,
+    "name": "drednaw",
+    "types": [
+      "water",
+      "rock"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/834.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/834.png",
+    "genus": "Bite Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh35/14_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "drednaw-gmax",
+        "displayName": "Gigantamax Drednaw",
+        "types": [
+          "water",
+          "rock"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10214.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10214.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10214.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh35/15_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 833,
+    "familyOrder": 1
+  },
+  {
+    "id": 835,
+    "name": "yamper",
+    "types": [
+      "electric"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/835.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/835.png",
+    "genus": "Puppy Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/me2/99_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 835,
+    "familyOrder": 0
+  },
+  {
+    "id": 836,
+    "name": "boltund",
+    "types": [
+      "electric"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/836.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/836.png",
+    "genus": "Dog Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9tg/TG13_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 835,
+    "familyOrder": 1
+  },
+  {
+    "id": 837,
+    "name": "rolycoly",
+    "types": [
+      "rock"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/837.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/837.png",
+    "genus": "Coal Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/105_hires.png",
+    "altForms": [],
+    "familyId": 837,
+    "familyOrder": 0
+  },
+  {
+    "id": 838,
+    "name": "carkol",
+    "types": [
+      "rock",
+      "fire"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/838.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/838.png",
+    "genus": "Coal Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/106_hires.png",
+    "altForms": [],
+    "familyId": 837,
+    "familyOrder": 1
+  },
+  {
+    "id": 839,
+    "name": "coalossal",
+    "types": [
+      "rock",
+      "fire"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/839.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/839.png",
+    "genus": "Coal Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh4/98_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "coalossal-gmax",
+        "displayName": "Gigantamax Coalossal",
+        "types": [
+          "rock",
+          "fire"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10215.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10215.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10215.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh4/99_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 837,
+    "familyOrder": 2
+  },
+  {
+    "id": 840,
+    "name": "applin",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/840.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/840.png",
+    "genus": "Apple Core Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6/185_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 840,
+    "familyOrder": 0
+  },
+  {
+    "id": 841,
+    "name": "flapple",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/841.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/841.png",
+    "genus": "Apple Wing Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv8/210_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "flapple-gmax",
+        "displayName": "Gigantamax Flapple",
+        "types": [
+          "grass",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10216.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10216.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10216.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh5/19_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 840,
+    "familyOrder": 1
+  },
+  {
+    "id": 842,
+    "name": "appletun",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/842.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/842.png",
+    "genus": "Apple Nectar Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv8/211_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "appletun-gmax",
+        "displayName": "Gigantamax Appletun",
+        "types": [
+          "grass",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10217.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10217.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10217.png",
+        "category": "gmax",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 840,
+    "familyOrder": 2
+  },
+  {
+    "id": 843,
+    "name": "silicobra",
+    "types": [
+      "ground"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/843.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/843.png",
+    "genus": "Sand Snake Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh1/107_hires.png",
+    "altForms": [],
+    "familyId": 843,
+    "familyOrder": 0
+  },
+  {
+    "id": 844,
+    "name": "sandaconda",
+    "types": [
+      "ground"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/844.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
+    "genus": "Sand Snake Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh8/252_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "sandaconda-gmax",
+        "displayName": "Gigantamax Sandaconda",
+        "types": [
+          "ground"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10218.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10218.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10218.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/90_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 843,
+    "familyOrder": 1
+  },
+  {
+    "id": 845,
+    "name": "cramorant",
+    "types": [
+      "flying",
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/845.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/845.png",
+    "genus": "Gulp Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6/176_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 845,
+    "familyOrder": 0
+  },
+  {
+    "id": 846,
+    "name": "arrokuda",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/846.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/846.png",
+    "genus": "Rush Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH093_hires.png",
+    "altForms": [],
+    "familyId": 846,
+    "familyOrder": 0
+  },
+  {
+    "id": 847,
+    "name": "barraskewda",
+    "types": [
+      "water"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/847.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/847.png",
+    "genus": "Skewer Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/53_hires.png",
+    "altForms": [],
+    "familyId": 846,
+    "familyOrder": 1
+  },
+  {
+    "id": 848,
+    "name": "toxel",
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/848.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/848.png",
+    "genus": "Baby Pokémon",
+    "bgCandidates": [
+      "https://assets.tcgdex.net/en/tcgp/B2/166/high.webp"
+    ],
+    "altForms": [],
+    "familyId": 848,
+    "familyOrder": 0
+  },
+  {
+    "id": 849,
+    "name": "toxtricity-amped",
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/849.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/849.png",
+    "genus": "Punk Pokémon",
+    "bgCandidates": [],
+    "altForms": [
+      {
+        "slug": "toxtricity-amped-gmax",
+        "displayName": "Gigantamax Toxtricity Amped",
+        "types": [
+          "electric",
+          "poison"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10219.png",
+        "category": "gmax",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 848,
+    "familyOrder": 1
+  },
+  {
+    "id": 850,
+    "name": "sizzlipede",
+    "types": [
+      "fire",
+      "bug"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/850.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/850.png",
+    "genus": "Radiator Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh5/29_hires.png",
+    "altForms": [],
+    "familyId": 850,
+    "familyOrder": 0
+  },
+  {
+    "id": 851,
+    "name": "centiskorch",
+    "types": [
+      "fire",
+      "bug"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/851.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/851.png",
+    "genus": "Radiator Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh11tg/TG14_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "centiskorch-gmax",
+        "displayName": "Gigantamax Centiskorch",
+        "types": [
+          "fire",
+          "bug"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10220.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10220.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10220.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG15_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 850,
+    "familyOrder": 1
+  },
+  {
+    "id": 852,
+    "name": "clobbopus",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/852.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/852.png",
+    "genus": "Tantrum Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv8/207_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 852,
+    "familyOrder": 0
+  },
+  {
+    "id": 853,
+    "name": "grapploct",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/853.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/853.png",
+    "genus": "Jujitsu Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh35/32_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 852,
+    "familyOrder": 1
+  },
+  {
+    "id": 854,
+    "name": "sinistea",
+    "types": [
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/854.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/854.png",
+    "genus": "Black Tea Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/svp/62_hires.png",
+    "altForms": [],
+    "familyId": 854,
+    "familyOrder": 0
+  },
+  {
+    "id": 855,
+    "name": "polteageist",
+    "types": [
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/855.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/855.png",
+    "genus": "Black Tea Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH021_hires.png",
+    "altForms": [],
+    "familyId": 854,
+    "familyOrder": 1
+  },
+  {
+    "id": 856,
+    "name": "hatenna",
+    "types": [
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/856.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/856.png",
+    "genus": "Calm Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH040_hires.png",
+    "altForms": [],
+    "familyId": 856,
+    "familyOrder": 0
+  },
+  {
+    "id": 857,
+    "name": "hattrem",
+    "types": [
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/857.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/857.png",
+    "genus": "Serene Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/84_hires.png",
+    "altForms": [],
+    "familyId": 856,
+    "familyOrder": 1
+  },
+  {
+    "id": 858,
+    "name": "hatterene",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/858.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
+    "genus": "Silent Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12pt5/65_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "hatterene-gmax",
+        "displayName": "Gigantamax Hatterene",
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10221.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10221.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10221.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5/66_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 856,
+    "familyOrder": 2
+  },
+  {
+    "id": 859,
+    "name": "impidimp",
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/859.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/859.png",
+    "genus": "Wily Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv7/94_hires.png",
+    "altForms": [],
+    "familyId": 859,
+    "familyOrder": 0
+  },
+  {
+    "id": 860,
+    "name": "morgrem",
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/860.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/860.png",
+    "genus": "Devious Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh2/124_hires.png",
+    "altForms": [],
+    "familyId": 859,
+    "familyOrder": 1
+  },
+  {
+    "id": 861,
+    "name": "grimmsnarl",
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/861.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
+    "genus": "Bulk Up Pokémon",
+    "bgCandidates": [
+      "https://images.scrydex.com/pokemon/me2pt5-287/large"
+    ],
+    "altForms": [
+      {
+        "slug": "grimmsnarl-gmax",
+        "displayName": "Gigantamax Grimmsnarl",
+        "types": [
+          "dark",
+          "fairy"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10222.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10222.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10222.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh3/115_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 859,
+    "familyOrder": 2
+  },
+  {
+    "id": 862,
+    "name": "obstagoon",
+    "types": [
+      "dark",
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/862.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/862.png",
+    "genus": "Blocking Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 263,
+    "familyOrder": 2
+  },
+  {
+    "id": 863,
+    "name": "perrserker",
+    "types": [
+      "steel"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/863.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/863.png",
+    "genus": "Viking Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 52,
+    "familyOrder": 2
+  },
+  {
+    "id": 864,
+    "name": "cursola",
+    "types": [
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/864.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/864.png",
+    "genus": "Coral Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 222,
+    "familyOrder": 1
+  },
+  {
+    "id": 865,
+    "name": "sirfetchd",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/865.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/865.png",
+    "genus": "Wild Duck Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 83,
+    "familyOrder": 1
+  },
+  {
+    "id": 866,
+    "name": "mr-rime",
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/866.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/866.png",
+    "genus": "Comedian Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 122,
+    "familyOrder": 2
+  },
+  {
+    "id": 867,
+    "name": "runerigus",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/867.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/867.png",
+    "genus": "Grudge Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 562,
+    "familyOrder": 2
+  },
+  {
+    "id": 868,
+    "name": "milcery",
+    "types": [
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/868.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/868.png",
+    "genus": "Cream Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv7/152_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 868,
+    "familyOrder": 0
+  },
+  {
+    "id": 869,
+    "name": "alcremie",
+    "types": [
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/869.png",
+    "genus": "Cream Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9tg/TG08_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "alcremie-gmax",
+        "displayName": "Gigantamax Alcremie",
+        "types": [
+          "fairy"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10223.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10223.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10223.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh35/23_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 868,
+    "familyOrder": 1
+  },
+  {
+    "id": 870,
+    "name": "falinks",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/870.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/870.png",
+    "genus": "Formation Pokémon",
+    "bgCandidates": [
+      "https://assets.tcgdex.net/en/tcgp/B2/172/high.webp"
+    ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG07_hires.png",
+    "altForms": [
+      {
+        "slug": "falinks-mega",
+        "displayName": "Mega Falinks",
+        "types": [
+          "fighting"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10303.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10303.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10303.png",
+        "category": "mega",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 870,
+    "familyOrder": 0
+  },
+  {
+    "id": 871,
+    "name": "pincurchin",
+    "types": [
+      "electric"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/871.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/871.png",
+    "genus": "Sea Urchin Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh2/72_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 871,
+    "familyOrder": 0
+  },
+  {
+    "id": 872,
+    "name": "snom",
+    "types": [
+      "ice",
+      "bug"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/872.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/872.png",
+    "genus": "Worm Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv5/168_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 872,
+    "familyOrder": 0
+  },
+  {
+    "id": 873,
+    "name": "frosmoth",
+    "types": [
+      "ice",
+      "bug"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/873.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/873.png",
+    "genus": "Frost Moth Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh10tg/TG04_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 872,
+    "familyOrder": 1
+  },
+  {
+    "id": 874,
+    "name": "stonjourner",
+    "types": [
+      "rock"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/874.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/874.png",
+    "genus": "Big Rock Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh1/115_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 874,
+    "familyOrder": 0
+  },
+  {
+    "id": 875,
+    "name": "eiscue-ice",
+    "types": [
+      "ice"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/875.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/875.png",
+    "genus": "Penguin Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 875,
+    "familyOrder": 0
+  },
+  {
+    "id": 876,
+    "name": "indeedee-male",
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/876.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/876.png",
+    "genus": "Emotion Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 876,
+    "familyOrder": 0
+  },
+  {
+    "id": 877,
+    "name": "morpeko-full-belly",
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/877.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/877.png",
+    "genus": "Two-Sided Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 877,
+    "familyOrder": 0
+  },
+  {
+    "id": 878,
+    "name": "cufant",
+    "types": [
+      "steel"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/878.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/878.png",
+    "genus": "Copperderm Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6pt5/76_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 878,
+    "familyOrder": 0
+  },
+  {
+    "id": 879,
+    "name": "copperajah",
+    "types": [
+      "steel"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/879.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/879.png",
+    "genus": "Copperderm Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh2/136_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "copperajah-gmax",
+        "displayName": "Gigantamax Copperajah",
+        "types": [
+          "steel"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10224.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10224.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10224.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh2/137_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 878,
+    "familyOrder": 1
+  },
+  {
+    "id": 880,
+    "name": "dracozolt",
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/880.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/880.png",
+    "genus": "Fossil Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh7/178_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 880,
+    "familyOrder": 0
+  },
+  {
+    "id": 881,
+    "name": "arctozolt",
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/881.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/881.png",
+    "genus": "Fossil Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh3/66_hires.png",
+    "altForms": [],
+    "familyId": 881,
+    "familyOrder": 0
+  },
+  {
+    "id": 882,
+    "name": "dracovish",
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/882.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/882.png",
+    "genus": "Fossil Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9/114_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 882,
+    "familyOrder": 0
+  },
+  {
+    "id": 883,
+    "name": "arctovish",
+    "types": [
+      "water",
+      "ice"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/883.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/883.png",
+    "genus": "Fossil Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh7/176_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 883,
+    "familyOrder": 0
+  },
+  {
+    "id": 884,
+    "name": "duraludon",
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/884.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/884.png",
+    "genus": "Alloy Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh7/198_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "duraludon-gmax",
+        "displayName": "Gigantamax Duraludon",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10225.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10225.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10225.png",
+        "category": "gmax",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG21_hires.png",
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 884,
+    "familyOrder": 0
+  },
+  {
+    "id": 885,
+    "name": "dreepy",
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/885.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/885.png",
+    "genus": "Lingering Pokémon",
+    "bgCandidates": [
+      "https://images.scrydex.com/pokemon/me2pt5-247/large"
+    ],
+    "altForms": [],
+    "familyId": 885,
+    "familyOrder": 0
+  },
+  {
+    "id": 886,
+    "name": "drakloak",
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/886.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/886.png",
+    "genus": "Caretaker Pokémon",
+    "bgCandidates": [
+      "https://images.scrydex.com/pokemon/me2pt5-248/large"
+    ],
+    "altForms": [],
+    "familyId": 885,
+    "familyOrder": 1
+  },
+  {
+    "id": 887,
+    "name": "dragapult",
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/887.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/887.png",
+    "genus": "Stealth Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh2/92_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 885,
+    "familyOrder": 2
+  },
+  {
+    "id": 888,
+    "name": "zacian",
+    "types": [
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/888.png",
+    "genus": "Warrior Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/me2/100_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 888,
+    "familyOrder": 0
+  },
+  {
+    "id": 889,
+    "name": "zamazenta",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/889.png",
+    "genus": "Warrior Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv10/201_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 889,
+    "familyOrder": 0
+  },
+  {
+    "id": 890,
+    "name": "eternatus",
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/890.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/890.png",
+    "genus": "Gigantic Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh11tg/TG21_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 890,
+    "familyOrder": 0
+  },
+  {
+    "id": 891,
+    "name": "kubfu",
+    "types": [
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/891.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/891.png",
+    "genus": "Wushu Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh6/93_hires.png",
+    "altForms": [],
+    "familyId": 891,
+    "familyOrder": 0
+  },
+  {
+    "id": 892,
+    "name": "urshifu-single-strike",
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/892.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/892.png",
+    "genus": "Wushu Pokémon",
+    "bgCandidates": [],
+    "altForms": [
+      {
+        "slug": "urshifu-single-strike-gmax",
+        "displayName": "Gigantamax Urshifu Single Strike",
+        "types": [
+          "fighting",
+          "dark"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10226.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10226.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10226.png",
+        "category": "gmax",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 891,
+    "familyOrder": 1
+  },
+  {
+    "id": 893,
+    "name": "zarude",
+    "types": [
+      "dark",
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/893.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/893.png",
+    "genus": "Rogue Monkey Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh9/16_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 893,
+    "familyOrder": 0
+  },
+  {
+    "id": 894,
+    "name": "regieleki",
+    "types": [
+      "electric"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/894.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/894.png",
+    "genus": "Electron Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12/175_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 894,
+    "familyOrder": 0
+  },
+  {
+    "id": 895,
+    "name": "regidrago",
+    "types": [
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/895.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/895.png",
+    "genus": "Dragon Orb Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12/184_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 895,
+    "familyOrder": 0
+  },
+  {
+    "id": 896,
+    "name": "glastrier",
+    "types": [
+      "ice"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/896.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/896.png",
+    "genus": "Wild Horse Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh11/51_hires.png",
+    "altForms": [],
+    "familyId": 896,
+    "familyOrder": 0
+  },
+  {
+    "id": 897,
+    "name": "spectrier",
+    "types": [
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/897.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/897.png",
+    "genus": "Swift Horse Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh11/81_hires.png",
+    "altForms": [],
+    "familyId": 897,
+    "familyOrder": 0
+  },
+  {
+    "id": 898,
+    "name": "calyrex",
+    "types": [
+      "psychic",
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/898.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/898.png",
+    "genus": "King Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5/17_hires.png",
+    "altForms": [],
+    "familyId": 898,
+    "familyOrder": 0
+  },
+  {
+    "id": 899,
+    "name": "wyrdeer",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/899.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/899.png",
+    "genus": "Big Horn Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh10tg/TG06_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 234,
+    "familyOrder": 1
+  },
+  {
+    "id": 900,
+    "name": "kleavor",
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/900.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/900.png",
+    "genus": "Axe Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh10tg/TG08_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 123,
+    "familyOrder": 2
+  },
+  {
+    "id": 901,
+    "name": "ursaluna",
+    "types": [
+      "ground",
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/901.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/901.png",
+    "genus": "Peat Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12/102_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 216,
+    "familyOrder": 2
+  },
+  {
+    "id": 902,
+    "name": "basculegion-male",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/902.png",
+    "genus": "Big Fish Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 550,
+    "familyOrder": 1
+  },
+  {
+    "id": 903,
+    "name": "sneasler",
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/903.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/903.png",
+    "genus": "Free Climb Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 215,
+    "familyOrder": 2
+  },
+  {
+    "id": 904,
+    "name": "overqwil",
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/904.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/904.png",
+    "genus": "Pin Cluster Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 211,
+    "familyOrder": 1
+  },
+  {
+    "id": 905,
+    "name": "enamorus-incarnate",
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/905.png",
+    "genus": "Love-Hate Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 905,
+    "familyOrder": 0
   }
 ]

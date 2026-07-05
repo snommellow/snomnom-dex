@@ -1,17 +1,18 @@
 #!/usr/bin/env tsx
 import { writeFileSync } from "fs";
-
-const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
-function getHeaders(): HeadersInit {
-  const key = process.env.POKEMONTCG_API_KEY;
-  return key ? { "X-Api-Key": key } : {};
-}
+import { buildVgxData, vgxCandidates, vgxPick } from "../lib/tcgapi";
 
 async function main() {
-  const res = await fetch(`${PTCGIO_BASE}/sets?orderBy=-releaseDate&pageSize=30`, { headers: getHeaders() });
-  const json = await res.json();
-  const sets = (json.data ?? []).map((s: any) => ({ id: s.id, name: s.name, series: s.series, releaseDate: s.releaseDate }));
-  writeFileSync("lib/debug-cards.json", JSON.stringify(sets, null, 2));
+  const out: Record<string, unknown> = {};
+  const vgxData = await buildVgxData();
+  for (const name of ["Origin Forme Dialga", "Origin Forme Palkia"]) {
+    const cands = vgxCandidates(vgxData, name);
+    out[name] = {
+      candidates: cands.map(c => ({ id: c.id, name: c.name, set: c.set.id, number: c.number, rarity: c._rarity, artist: c.artist })),
+      result: vgxPick(cands, undefined),
+    };
+  }
+  writeFileSync("lib/debug-cards.json", JSON.stringify(out, null, 2));
   console.log("wrote lib/debug-cards.json");
 }
 

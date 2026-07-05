@@ -52,7 +52,9 @@ const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 // 59 (Xatu) and 89 (Feraligatr) visibly reuse a mainline set's bordered design
 // (Paradox Rift / Temporal Forces logos baked into the art) — bordered reprints, not full-art.
 // 22 (Pelipper) confirmed the same way — bordered "Paldea Evolved" design showing through.
-const SVP_BLACKLIST = new Set(["11", "22", "24", "59", "89", "122", "167", "168", "169"]);
+// 110 (Darkrai), 180 (Dialga), 17 (Lucario): confirmed not full art despite the "ex" name
+// suffix that normally signals a full-art promo — plain bordered "ex" cards.
+const SVP_BLACKLIST = new Set(["11", "17", "22", "24", "59", "89", "110", "122", "167", "168", "169", "180"]);
 
 // Plain-named SVP promos confirmed to be genuine full art despite having neither an ability
 // nor an ex/V/GX suffix — the two signals promoSvPick normally requires. 52 (Mewtwo, "Reflective

@@ -257,11 +257,6 @@ function lookupCandidates(
   return matched.length ? matched : regionalMatched;
 }
 
-function swshSetNum(setId: string): number {
-  const m = setId.match(/^swsh(\d+)/i);
-  return m ? parseInt(m[1]) : 0;
-}
-
 // Returns true for sets older than BW era (DP, Platinum, HGSS, EX series, Base, Neo, etc.)
 // BW introduced full-bleed artwork so bw+ sets look fine as card backgrounds.
 function isPreBwSet(setId: string): boolean {
@@ -279,7 +274,6 @@ function isBwXyEraSet(setId: string): boolean {
 
 function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
-  // Rare Ultra from swsh11+ are full-art border reprints — deprioritize below Rare Holo V
   const effectiveScore = (c: RankedCard) => {
     // TG-numbered cards (Trainer Gallery) are always full-art, but pokemontcg.io's `rarity`
     // field for them is inconsistent — e.g. swsh10tg-TG13 "Starmie V" is tagged "Rare Holo V"
@@ -287,7 +281,6 @@ function pickBestCard(cards: RankedCard[]): RankedCard | null {
     // despite being the rarer, more valuable Trainer Gallery print. Number pattern is reliable
     // where the rarity field isn't.
     if (TG_RE.test(c.number)) return rarityScore("Trainer Gallery Rare Holo");
-    if (c._rarity === "Rare Ultra" && swshSetNum(c.set.id) >= 11) return rarityScore("Rare Holo V") + 1;
     return rarityScore(c._rarity);
   };
   return cards.reduce((a, b) => {

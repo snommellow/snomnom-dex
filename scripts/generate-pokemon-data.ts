@@ -96,6 +96,11 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // Castform weather forme with one. Picked by hand since it isn't distinguishable from the
   // Rain/Snow-cloud formes by any automated pass (see HARDCODED_FORM_REGULAR_URLS below).
   "Sunny Forme Castform": "https://images.pokemontcg.io/sv8/195_hires.png",
+  // Sky Forme Shaymin: every mainline TCG printing is just named "Shaymin" (Land and Sky
+  // Forme aren't distinguished by card name), so the automated pass can't tell them apart and
+  // just duplicates the base Shaymin card. Pocket TCG A2a-081 "Shaymin" (Triumphant Light) is
+  // a star-rarity full-art card that's actually illustrated as the Sky Forme.
+  "Sky Forme Shaymin": "https://assets.tcgdex.net/en/tcgp/A2a/081/high.webp",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish

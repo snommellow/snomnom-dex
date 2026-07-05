@@ -238,6 +238,20 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   // Ash-Greninja (Battle Bond power-up transformation) is literally named "Ash-Greninja" in the
   // TCG (hyphenated, no space), so auto-searchable like Rotom's appliance formes.
   if (suffix === "ash") return { displayName: `Ash-${base}`, category: "regional" };
+  // Hoopa Unbound, Zygarde's 10%/Complete Formes, and Aegislash's Blade Forme all share their
+  // base form's plain card name in the TCG (confirmed via search — no "Hoopa Unbound"/"Blade
+  // Forme Aegislash" card exists), so treated as "forme" like Deoxys/Castform.
+  if (suffix === "unbound")  return { displayName: `Hoopa Unbound`, category: "forme" };
+  if (suffix === "10")       return { displayName: `10% Forme ${base}`, category: "forme" };
+  if (suffix === "complete") return { displayName: `Complete Forme ${base}`, category: "forme" };
+  if (suffix === "blade")    return { displayName: `Blade Forme ${base}`, category: "forme" };
+  // Pumpkaboo/Gourgeist size variants: no TCG printing distinguishes sizes by name, AND no
+  // full-art printing exists for any size yet (confirmed via search — every card is a plain
+  // Common), so these get a randomized pick among the shared candidate pool instead of a price
+  // ranking — see randomFormePick in generate-pokemon-data.ts. Revisit if an IR/SIR appears.
+  if (suffix === "small") return { displayName: `Small ${base}`, category: "forme" };
+  if (suffix === "large") return { displayName: `Large ${base}`,  category: "forme" };
+  if (suffix === "super") return { displayName: `Super ${base}`,  category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

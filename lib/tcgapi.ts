@@ -866,6 +866,29 @@ export function fallbackArtPick(data: FallbackArtData, displayName: string): str
   return cardImageUrl(best);
 }
 
+// Simple string hash → deterministic "random" index, so the pick stays stable across regens
+// (only changing if the underlying candidate list itself changes) rather than reshuffling every
+// CI run for no reason.
+function stableHash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+// Pumpkaboo/Gourgeist's size variants (Small/Large/Super) aren't distinguished by card name in
+// the TCG, and no full-art printing exists for any size yet — every candidate is a plain Common.
+// Rather than always picking the same "highest value" card for every size (making them all look
+// identical), pick a deterministic pseudo-random candidate per size so they're at least visually
+// distinct. Revisit this once a real Illustration Rare/Special Illustration Rare appears for
+// either species — at that point a normal price-ranked pick should take over.
+export async function randomFormePick(displayName: string, seed: string): Promise<string | null> {
+  const cards = await fetchAllPages(`name:"${displayName}"`);
+  const candidates = cards.filter(c => c.images?.large && nameMatches(c.name, displayName));
+  if (!candidates.length) return null;
+  const idx = stableHash(seed) % candidates.length;
+  return cardImageUrl(candidates[idx]);
+}
+
 // Fetch a single card by pokemontcg.io ID (e.g. "xy8-64") and return its image URL.
 export async function fetchCardById(cardId: string): Promise<string | null> {
   try {

@@ -314,9 +314,11 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-"] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-", "10% Forme ", "Complete Forme ", "Blade Forme ", "Small ", "Large ", "Super "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
+  // Hoopa Unbound is a suffix form (base name first), unlike every other prefix-style forme.
+  if (displayName === "Hoopa Unbound") return { baseName: "Hoopa", formLabel: "Unbound" };
   let baseName = displayName;
   // Keep stripping — some forms layer two prefixes (e.g. "Blaze Breed Paldean Tauros").
   let stripped = true;
@@ -368,6 +370,12 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Pirouette Forme")) label = "Pirouette Forme";
     else if (displayName.startsWith("Blue-Striped")) label = "Blue-Striped";
     else if (displayName.startsWith("White-Striped")) label = "White-Striped";
+    else if (displayName.startsWith("10% Forme")) label = "10% Forme";
+    else if (displayName.startsWith("Complete Forme")) label = "Complete Forme";
+    else if (displayName.startsWith("Blade Forme")) label = "Blade Forme";
+    else if (displayName.startsWith("Small")) label = "Small";
+    else if (displayName.startsWith("Large")) label = "Large";
+    else if (displayName.startsWith("Super")) label = "Super";
   }
   return { baseName, formLabel: label };
 }

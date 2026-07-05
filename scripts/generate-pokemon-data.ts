@@ -12,7 +12,7 @@ import {
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
   fetchFormCard, fetchFormCardLastResort, fetchRegionalPromoPriority,
-  fetchTcgLastResort, toDisplayName,
+  fetchTcgLastResort, toDisplayName, randomFormePick,
   IR_RARITIES, VGX_RARITIES,
 } from "../lib/tcgapi";
 import { buildChainSets } from "../lib/chains";
@@ -328,6 +328,16 @@ async function main() {
             if (hardcodedRegularUrl) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegularUrl };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName];
             if (hardcodedUrl) return { ...form, tcgUrl: hardcodedUrl, regularCardUrl: null };
+
+            // Pumpkaboo/Gourgeist's Small/Large/Super forms: no card distinguishes sizes by
+            // name and no full-art printing exists yet, so pick a deterministic pseudo-random
+            // candidate per size instead of always showing the same "highest value" card for
+            // all three (see randomFormePick's comment in lib/tcgapi.ts).
+            if (/^(Small|Large|Super) (Pumpkaboo|Gourgeist)$/.test(form.displayName)) {
+              const base = toDisplayName(raw[i].name);
+              const randomUrl = await randomFormePick(base, form.displayName);
+              return { ...form, tcgUrl: null, regularCardUrl: randomUrl };
+            }
 
             // "forme" cards (e.g. Deoxys' Attack/Defense/Speed formes) aren't distinguished by
             // name in the TCG — every printing is just "Deoxys" — so search by the base

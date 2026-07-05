@@ -154,6 +154,9 @@ const FORM_BASE_NAME_OVERRIDES: Record<string, string> = {
 // "deoxys-normal-").
 const BASE_SLUG_OVERRIDES: Record<string, string> = {
   "deoxys-normal": "deoxys",
+  "wormadam-plant": "wormadam",
+  "giratina-altered": "giratina",
+  "shaymin-land": "shaymin",
 };
 
 function parseFormSlug(slug: string, rawBaseName: string): { displayName: string; category: FormCategory } {
@@ -183,6 +186,10 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "paldea-combat-breed") return { displayName: `Paldean ${base}`, category: "regional" };
   if (suffix === "paldea-blaze-breed")  return { displayName: `Blaze Breed Paldean ${base}`, category: "forme" };
   if (suffix === "paldea-aqua-breed")   return { displayName: `Aqua Breed Paldean ${base}`,  category: "forme" };
+  if (suffix === "sandy") return { displayName: `Sandy Cloak ${base}`, category: "forme" };
+  if (suffix === "trash") return { displayName: `Trash Cloak ${base}`, category: "forme" };
+  if (suffix === "origin") return { displayName: `Origin Forme ${base}`, category: "forme" };
+  if (suffix === "sky") return { displayName: `Sky Forme ${base}`, category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

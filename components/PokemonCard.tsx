@@ -294,7 +294,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   let baseName = displayName;
@@ -329,6 +329,10 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Snowy Forme")) label = "Snowy Forme";
     else if (displayName.startsWith("Blaze Breed")) label = "Blaze Breed";
     else if (displayName.startsWith("Aqua Breed")) label = "Aqua Breed";
+    else if (displayName.startsWith("Sandy Cloak")) label = "Sandy Cloak";
+    else if (displayName.startsWith("Trash Cloak")) label = "Trash Cloak";
+    else if (displayName.startsWith("Origin Forme")) label = "Origin Forme";
+    else if (displayName.startsWith("Sky Forme")) label = "Sky Forme";
   }
   return { baseName, formLabel: label };
 }

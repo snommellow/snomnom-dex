@@ -122,6 +122,11 @@ const NAME_OVERRIDES: Record<string, string> = {
   // PokeAPI's default list entry for Deoxys is "deoxys-normal" (its base form is not
   // just "deoxys" like other multi-form species), which doesn't match any card name.
   "deoxys-normal": "Deoxys",
+  // Same issue for other species whose default list entry carries a forme suffix.
+  "wormadam-plant":  "Wormadam",
+  "giratina-altered": "Giratina",
+  "shaymin-land":    "Shaymin",
+  "mime-jr":         "Mime Jr.",
 };
 
 export function toDisplayName(slug: string): string {

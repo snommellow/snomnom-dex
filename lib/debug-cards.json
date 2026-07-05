@@ -1,0 +1,97 @@
+{
+  "victini-blackbolt": [
+    {
+      "id": "zsv10pt5-12",
+      "name": "Victini",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "12",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ]
+    },
+    {
+      "id": "zsv10pt5-171",
+      "name": "Victini",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "171",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ]
+    }
+  ],
+  "victini-whiteflare": [
+    {
+      "id": "rsv10pt5-172",
+      "name": "Victini",
+      "set": "rsv10pt5",
+      "setName": "White Flare",
+      "number": "172",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ]
+    }
+  ],
+  "gothitelle-blackbolt": [],
+  "gothitelle-whiteflare": [
+    {
+      "id": "rsv10pt5-43",
+      "name": "Gothitelle",
+      "set": "rsv10pt5",
+      "setName": "White Flare",
+      "number": "43",
+      "rarity": "Rare",
+      "subtypes": [
+        "Stage 2"
+      ]
+    }
+  ],
+  "thundurus-blackbolt": [
+    {
+      "id": "zsv10pt5-33",
+      "name": "Thundurus",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "33",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ]
+    }
+  ],
+  "thundurus-whiteflare": [],
+  "tornadus-blackbolt": [],
+  "tornadus-whiteflare": [
+    {
+      "id": "rsv10pt5-78",
+      "name": "Tornadus",
+      "set": "rsv10pt5",
+      "setName": "White Flare",
+      "number": "78",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ]
+    }
+  ],
+  "direct-208": {
+    "id": "zsv10pt5-208",
+    "error": 404
+  },
+  "direct-209": {
+    "id": "rsv10pt5-209",
+    "error": 404
+  },
+  "direct-210": {
+    "id": "rsv10pt5-210",
+    "error": 404
+  },
+  "direct-211": {
+    "id": "zsv10pt5-211",
+    "error": 404
+  }
+}

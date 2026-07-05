@@ -1,0 +1,184 @@
+{
+  "varieties": [
+    {
+      "name": "tauros",
+      "isDefault": true
+    },
+    {
+      "name": "tauros-paldea-combat-breed",
+      "isDefault": false
+    },
+    {
+      "name": "tauros-paldea-blaze-breed",
+      "isDefault": false
+    },
+    {
+      "name": "tauros-paldea-aqua-breed",
+      "isDefault": false
+    }
+  ],
+  "cards": [
+    {
+      "id": "sv2-218",
+      "name": "Paldean Tauros",
+      "set": "Paldea Evolved",
+      "setId": "sv2",
+      "number": "218",
+      "rarity": "Illustration Rare",
+      "artist": "Anesaki Dynamic",
+      "attacks": [
+        "Raging Horns",
+        "Combat Tackle"
+      ],
+      "price": 18.26,
+      "image": "https://images.pokemontcg.io/sv2/218_hires.png"
+    },
+    {
+      "id": "sv4pt5-111",
+      "name": "Paldean Tauros",
+      "set": "Paldean Fates",
+      "setId": "sv4pt5",
+      "number": "111",
+      "rarity": "Shiny Rare",
+      "artist": "Hitoshi Ariga",
+      "attacks": [
+        "Raging Horns",
+        "Blaze Dash"
+      ],
+      "price": 3.83,
+      "image": "https://images.pokemontcg.io/sv4pt5/111_hires.png"
+    },
+    {
+      "id": "sv4pt5-120",
+      "name": "Paldean Tauros",
+      "set": "Paldean Fates",
+      "setId": "sv4pt5",
+      "number": "120",
+      "rarity": "Shiny Rare",
+      "artist": "GOSSAN",
+      "attacks": [
+        "Raging Horns",
+        "Aqua Dive"
+      ],
+      "price": 3.4,
+      "image": "https://images.pokemontcg.io/sv4pt5/120_hires.png"
+    },
+    {
+      "id": "sv4pt5-172",
+      "name": "Paldean Tauros",
+      "set": "Paldean Fates",
+      "setId": "sv4pt5",
+      "number": "172",
+      "rarity": "Shiny Rare",
+      "artist": "nagimiso",
+      "attacks": [
+        "Raging Horns",
+        "Combat Tackle"
+      ],
+      "price": 3.24,
+      "image": "https://images.pokemontcg.io/sv4pt5/172_hires.png"
+    },
+    {
+      "id": "sv8-101",
+      "name": "Paldean Tauros",
+      "set": "Surging Sparks",
+      "setId": "sv8",
+      "number": "101",
+      "rarity": "Uncommon",
+      "attacks": [
+        "Smash Kick",
+        "Blocking Stomp"
+      ],
+      "price": 0.28,
+      "image": "https://images.pokemontcg.io/sv8/101_hires.png"
+    },
+    {
+      "id": "sv2-41",
+      "name": "Paldean Tauros",
+      "set": "Paldea Evolved",
+      "setId": "sv2",
+      "number": "41",
+      "rarity": "Uncommon",
+      "artist": "Oswaldo KATO",
+      "attacks": [
+        "Raging Horns",
+        "Aqua Dive"
+      ],
+      "price": 0.27,
+      "image": "https://images.pokemontcg.io/sv2/41_hires.png"
+    },
+    {
+      "id": "sv8-39",
+      "name": "Paldean Tauros",
+      "set": "Surging Sparks",
+      "setId": "sv8",
+      "number": "39",
+      "rarity": "Uncommon",
+      "attacks": [
+        "Upthrusting Horns",
+        "Jet Headbutt"
+      ],
+      "price": 0.26,
+      "image": "https://images.pokemontcg.io/sv8/39_hires.png"
+    },
+    {
+      "id": "sv2-28",
+      "name": "Paldean Tauros",
+      "set": "Paldea Evolved",
+      "setId": "sv2",
+      "number": "28",
+      "rarity": "Uncommon",
+      "artist": "AKIRA EGAWA",
+      "attacks": [
+        "Raging Horns",
+        "Blaze Dash"
+      ],
+      "price": 0.24,
+      "image": "https://images.pokemontcg.io/sv2/28_hires.png"
+    },
+    {
+      "id": "sv8-18",
+      "name": "Paldean Tauros",
+      "set": "Surging Sparks",
+      "setId": "sv8",
+      "number": "18",
+      "rarity": "Uncommon",
+      "attacks": [
+        "Rear Kick",
+        "Spirited Tackle"
+      ],
+      "price": 0.24,
+      "image": "https://images.pokemontcg.io/sv8/18_hires.png"
+    },
+    {
+      "id": "sv2-108",
+      "name": "Paldean Tauros",
+      "set": "Paldea Evolved",
+      "setId": "sv2",
+      "number": "108",
+      "rarity": "Uncommon",
+      "artist": "Shin Nagasawa",
+      "attacks": [
+        "Raging Horns",
+        "Combat Tackle"
+      ],
+      "price": 0.21,
+      "image": "https://images.pokemontcg.io/sv2/108_hires.png"
+    },
+    {
+      "id": "me2-48",
+      "name": "Paldean Tauros",
+      "set": "Phantasmal Flames",
+      "setId": "me2",
+      "number": "48",
+      "rarity": "Uncommon",
+      "artist": "Souichirou Gunjima",
+      "attacks": [
+        "Raging Charge",
+        "Double-Edge"
+      ],
+      "price": 0.12,
+      "image": "https://images.pokemontcg.io/me2/48_hires.png"
+    }
+  ]
+}

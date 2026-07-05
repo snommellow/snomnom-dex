@@ -1,20 +1,12 @@
 {
-  "greninja_species": [
+  "ash-greninja": [
     {
-      "is_default": true,
-      "name": "greninja"
-    },
-    {
-      "is_default": false,
-      "name": "greninja-battle-bond"
-    },
-    {
-      "is_default": false,
-      "name": "greninja-ash"
-    },
-    {
-      "is_default": false,
-      "name": "greninja-mega"
+      "id": "xyp-XY133",
+      "name": "Ash-Greninja-EX",
+      "set": "xyp",
+      "number": "XY133",
+      "rarity": "Promo"
     }
-  ]
+  ],
+  "ash-greninja2": []
 }

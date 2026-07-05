@@ -47,10 +47,6 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
   // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.
   22: "https://images.pokemontcg.io/xyp/XY57_hires.png",
-  // #121 Starmie: swsh10tg-TG13 ($132) isn't found by any automated pass at all (confirmed via
-  // debug: vgxCandidates never surfaces it, for a reason not yet root-caused) — beats swsh10/166
-  // which vgxPick picks instead in its absence.
-  121: "https://images.pokemontcg.io/swsh10tg/TG13_hires.png",
   // #077 Ponyta: Mainland China-exclusive promo full art. Not indexed by pokemontcg.io or
   // TCGdex (checked both — no data for this card/set), so pinned directly by URL.
   77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",

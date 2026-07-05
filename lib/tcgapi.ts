@@ -267,6 +267,12 @@ function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
   // Rare Ultra from swsh11+ are full-art border reprints — deprioritize below Rare Holo V
   const effectiveScore = (c: RankedCard) => {
+    // TG-numbered cards (Trainer Gallery) are always full-art, but pokemontcg.io's `rarity`
+    // field for them is inconsistent — e.g. swsh10tg-TG13 "Starmie V" is tagged "Rare Holo V"
+    // rather than "Trainer Gallery Rare Holo", so it lost to a same-set Rare Ultra by tier
+    // despite being the rarer, more valuable Trainer Gallery print. Number pattern is reliable
+    // where the rarity field isn't.
+    if (TG_RE.test(c.number)) return rarityScore("Trainer Gallery Rare Holo");
     if (c._rarity === "Rare Ultra" && swshSetNum(c.set.id) >= 11) return rarityScore("Rare Holo V") + 1;
     return rarityScore(c._rarity);
   };

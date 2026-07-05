@@ -86,7 +86,10 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // sm4-102 (Alolan Golem-GX full art) shares its artist with the bordered sm4-34 sibling
 // (both "5ban Graphics"), which normally signals a safe extended illustration — but confirmed
 // by direct user feedback to look wrong in this specific card template.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102"]);
+// bw5-107 (Darkrai-EX), xy4-122 (Dialga-EX), xy3-107 (Lucario-EX): confirmed via direct
+// feedback to show a visible border when used as a background — NOT a general BW/XY-era issue
+// (other BW/XY Rare Ultra EX cards look fine), just these three specific prints.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
@@ -263,15 +266,6 @@ function lookupCandidates(
 // BW introduced full-bleed artwork so bw+ sets look fine as card backgrounds.
 function isPreBwSet(setId: string): boolean {
   return !/^(bw|xy|sm|swsh|sv)/i.test(setId);
-}
-
-// BW/XY-era "Rare Ultra"/"Rare Holo EX" full-art cards (2012-2016, e.g. bw5-107 Darkrai-EX,
-// xy4-122 Dialga-EX, xy3-107 Lucario-EX) are real full-art cards but their design still has a
-// visible colored border baked in, unlike SM+ era full arts - confirmed via direct feedback
-// (Darkrai/Dialga/Lucario all showed the border when stretched as a background). Crop these
-// like the pre-BW era instead of treating them as background-worthy.
-function isBwXyEraSet(setId: string): boolean {
-  return /^(bw|xy)/i.test(setId);
 }
 
 function pickBestCard(cards: RankedCard[]): RankedCard | null {
@@ -507,7 +501,7 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
 
 export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgImageResult | null {
   if (!candidates.length) return null;
-  const isOldStyle = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && (isPreBwSet(c.set.id) || isBwXyEraSet(c.set.id));
+  const isOldStyle = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id);
   // Modern full-art cards (GX, V, TAG TEAM etc.) don't need chain set coherence
   const modern = candidates.filter(c => !isOldStyle(c));
   const winner = modern.length

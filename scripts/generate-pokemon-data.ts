@@ -77,6 +77,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   93: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_027_R_EN.png",
   // #653 Fennekin: user-provided Mega Evolution Black Star Promos card (MEP 080).
   653: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_080_R_EN.png",
+  // #652 Chesnaught, #655 Delphox: user-provided full-art V cards.
+  652: "https://images.pokemontcg.io/swsh12/15_hires.png",
+  655: "https://images.pokemontcg.io/swsh11/27_hires.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.

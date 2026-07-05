@@ -66,6 +66,12 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // one pass or another despite per-card blacklisting — hardcoding sidesteps that entirely.
   150: "https://images.pokemontcg.io/svp/52_hires.png",
   143: "https://images.pokemontcg.io/svp/51_hires.png",
+  // #576 Gothitelle, #494 Victini, #642 Thundurus, #641 Tornadus: user-provided full-art SVP
+  // promos (#211/#208/#209/#210), not yet indexed by pokemontcg.io — pinned directly by URL.
+  576: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_211_R_EN.png",
+  494: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_208_R_EN_LG.png",
+  642: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_209_R_EN.png",
+  641: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_210_R_EN.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -104,16 +110,9 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // just duplicates the base Shaymin card. Pocket TCG A2a-081 "Shaymin" (Triumphant Light) is
   // a star-rarity full-art card that's actually illustrated as the Sky Forme.
   "Sky Forme Shaymin": "https://assets.tcgdex.net/en/tcgp/A2a/081/high.webp",
-  // Therian Forme Thundurus/Tornadus: every TCG printing is just named "Thundurus"/"Tornadus"
-  // (Incarnate/Therian aren't distinguished by card name). Picked by hand — highest-value
-  // full-art Basic from Emerging Powers, distinct from the Incarnate Forme's own automated pick
-  // (bw9-110/bw5-108).
-  "Therian Forme Thundurus": "https://images.pokemontcg.io/bw2/97_hires.png",
-  "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw2/98_hires.png",
-  // Pirouette Forme Meloetta: same naming situation — Aria/Pirouette share one card name.
-  // Aria Forme's own automated pick is zsv10pt5-167, so Pirouette gets the next-highest-value
-  // full-art candidate instead: Legendary Treasures' Meloetta-EX Rare Ultra.
-  "Pirouette Forme Meloetta": "https://images.pokemontcg.io/bw11/RC25_hires.png",
+  // Pirouette Forme Meloetta: every printing shares Aria Forme's card name. User-provided
+  // full-art Pocket TCG card (Genetic Apex sibling set) actually depicts the Pirouette design.
+  "Pirouette Forme Meloetta": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_170_EN.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
@@ -155,6 +154,13 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // (Darkness Ablaze, Zen Mode Galarian art).
   "Zen Mode Darmanitan": "https://images.pokemontcg.io/bw4/60_hires.png",
   "Zen Mode Galarian Darmanitan": "https://images.pokemontcg.io/swsh3/28_hires.png",
+  // Therian Forme Thundurus/Tornadus/Landorus: every TCG printing is just named "Thundurus"/
+  // "Tornadus"/"Landorus" (Incarnate/Therian aren't distinguished by card name), and no full-art
+  // printing exists for any of them — user-confirmed, so cropped rather than full-bleed. Picked
+  // by highest market value, distinct from each Incarnate Forme's own hardcoded SVP promo pick.
+  "Therian Forme Thundurus": "https://images.pokemontcg.io/bw2/97_hires.png",
+  "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw2/98_hires.png",
+  "Therian Forme Landorus":  "https://images.pokemontcg.io/bwp/BW79_hires.png",
 };
 
 async function main() {

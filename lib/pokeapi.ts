@@ -221,6 +221,10 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "therian")    return { displayName: `Therian Forme ${base}`, category: "forme" };
   if (suffix === "zen")        return { displayName: `Zen Mode ${base}`, category: "forme" };
   if (suffix === "galar-zen")  return { displayName: `Zen Mode Galarian ${base}`, category: "forme" };
+  // Darmanitan's plain Galarian variety slug carries a "-standard" suffix (unlike other
+  // regional forms), so the generic "galar" branch above never matches it — same root cause as
+  // the "-zen"/"-galar-zen" cases.
+  if (suffix === "galar-standard") return { displayName: `Galarian ${base}`, category: "regional" };
   if (suffix === "resolute")   return { displayName: `Resolute Forme ${base}`, category: "forme" };
   if (suffix === "pirouette")  return { displayName: `Pirouette Forme ${base}`, category: "forme" };
   if (suffix === "blue-striped") return { displayName: `Blue-Striped ${base}`, category: "forme" };

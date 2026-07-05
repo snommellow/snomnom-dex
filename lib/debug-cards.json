@@ -1,0 +1,182 @@
+[
+  {
+    "id": "me4",
+    "name": "Chaos Rising",
+    "series": "Mega Evolution",
+    "releaseDate": "2026/05/22"
+  },
+  {
+    "id": "me3",
+    "name": "Perfect Order",
+    "series": "Mega Evolution",
+    "releaseDate": "2026/03/27"
+  },
+  {
+    "id": "me2pt5",
+    "name": "Ascended Heroes",
+    "series": "Mega Evolution",
+    "releaseDate": "2026/01/30"
+  },
+  {
+    "id": "me2",
+    "name": "Phantasmal Flames",
+    "series": "Mega Evolution",
+    "releaseDate": "2025/11/14"
+  },
+  {
+    "id": "me1",
+    "name": "Mega Evolution",
+    "series": "Mega Evolution",
+    "releaseDate": "2025/09/26"
+  },
+  {
+    "id": "zsv10pt5",
+    "name": "Black Bolt",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2025/07/18"
+  },
+  {
+    "id": "rsv10pt5",
+    "name": "White Flare",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2025/07/18"
+  },
+  {
+    "id": "sv10",
+    "name": "Destined Rivals",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2025/05/30"
+  },
+  {
+    "id": "sv9",
+    "name": "Journey Together",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2025/03/28"
+  },
+  {
+    "id": "sv8pt5",
+    "name": "Prismatic Evolutions",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2025/01/17"
+  },
+  {
+    "id": "sv8",
+    "name": "Surging Sparks",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/11/08"
+  },
+  {
+    "id": "sv7",
+    "name": "Stellar Crown",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/09/13"
+  },
+  {
+    "id": "sv6pt5",
+    "name": "Shrouded Fable",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/08/02"
+  },
+  {
+    "id": "sv6",
+    "name": "Twilight Masquerade",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/05/24"
+  },
+  {
+    "id": "sv5",
+    "name": "Temporal Forces",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/03/22"
+  },
+  {
+    "id": "sv4pt5",
+    "name": "Paldean Fates",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2024/01/26"
+  },
+  {
+    "id": "sv4",
+    "name": "Paradox Rift",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/11/03"
+  },
+  {
+    "id": "sv3pt5",
+    "name": "151",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/09/22"
+  },
+  {
+    "id": "sv3",
+    "name": "Obsidian Flames",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/08/11"
+  },
+  {
+    "id": "sv2",
+    "name": "Paldea Evolved",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/06/09"
+  },
+  {
+    "id": "sv1",
+    "name": "Scarlet & Violet",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/03/31"
+  },
+  {
+    "id": "sve",
+    "name": "Scarlet & Violet Energies",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/03/31"
+  },
+  {
+    "id": "swsh12pt5",
+    "name": "Crown Zenith",
+    "series": "Sword & Shield",
+    "releaseDate": "2023/01/20"
+  },
+  {
+    "id": "swsh12pt5gg",
+    "name": "Crown Zenith Galarian Gallery",
+    "series": "Sword & Shield",
+    "releaseDate": "2023/01/20"
+  },
+  {
+    "id": "svp",
+    "name": "Scarlet & Violet Black Star Promos",
+    "series": "Scarlet & Violet",
+    "releaseDate": "2023/01/01"
+  },
+  {
+    "id": "swsh12tg",
+    "name": "Silver Tempest Trainer Gallery",
+    "series": "Sword & Shield",
+    "releaseDate": "2022/11/11"
+  },
+  {
+    "id": "swsh12",
+    "name": "Silver Tempest",
+    "series": "Sword & Shield",
+    "releaseDate": "2022/11/11"
+  },
+  {
+    "id": "swsh11",
+    "name": "Lost Origin",
+    "series": "Sword & Shield",
+    "releaseDate": "2022/09/09"
+  },
+  {
+    "id": "swsh11tg",
+    "name": "Lost Origin Trainer Gallery",
+    "series": "Sword & Shield",
+    "releaseDate": "2022/09/09"
+  },
+  {
+    "id": "mcd22",
+    "name": "McDonald's Collection 2022",
+    "series": "Other",
+    "releaseDate": "2022/08/03"
+  }
+]

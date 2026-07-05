@@ -72,6 +72,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   494: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_208_R_EN_LG.png",
   642: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_209_R_EN.png",
   641: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_210_R_EN.png",
+  // #93 Haunter: user-provided Mega Evolution Powers promo (MEP 027), not indexed by
+  // pokemontcg.io or tcgdex — pinned directly by URL, full-bleed per user confirmation.
+  93: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_027_R_EN.png",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -89,9 +92,6 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   // in-game appearance) needs to be hardcoded directly instead of losing its card entirely.
   412: "https://images.pokemontcg.io/dp3/78_hires.png",
   413: "https://images.pokemontcg.io/dp3/41_hires.png",
-  // #93 Haunter: user-provided Mega Evolution Powers promo (MEP 027), not indexed by
-  // pokemontcg.io or tcgdex — pinned directly by URL, same as Fearow/Jirachi/Ponyta.
-  93: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_027_R_EN.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.

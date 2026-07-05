@@ -25,6 +25,10 @@ const NAME_DISPLAY: Record<string, string> = {
   "ho-oh":     "Ho-Oh",
   "farfetchd": "Farfetch'd",
   "deoxys-normal": "Deoxys",
+  "wormadam-plant": "Wormadam",
+  "giratina-altered": "Giratina",
+  "shaymin-land": "Shaymin",
+  "mime-jr": "Mime Jr.",
 };
 
 function formatName(name: string): string {

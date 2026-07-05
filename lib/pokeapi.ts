@@ -35,6 +35,7 @@ export interface AltForm {
   tcgUrl: string | null;
   regularCardUrl?: string | null;
   formSpriteUrl?: string | null;
+  homeSpriteUrl: string | null;
 }
 
 export async function fetchPokemonList(
@@ -203,6 +204,9 @@ export async function fetchAltForms(
           types: (p.types as PokemonType[]).map(t => t.type.name),
           artworkUrl: p.sprites?.other?.["official-artwork"]?.front_default ?? null,
           formSpriteUrl: p.sprites?.other?.["official-artwork"]?.front_default ?? p.sprites?.front_default ?? null,
+          // The base Pokémon's HOME sprite (keyed by national dex ID) would show the wrong
+          // form here — each alt form has its own numeric id with its own HOME sprite.
+          homeSpriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${p.id}.png`,
           category,
           tcgUrl: null,
         } as AltForm;

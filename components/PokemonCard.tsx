@@ -229,7 +229,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
             ) : (
               <div className="absolute bottom-1 right-1 w-10 h-10" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
                 <Image
-                  src={pokemon.artworkUrl ?? HOME_SPRITE(pokemon.id)}
+                  src={pokemon.spriteUrl ?? pokemon.artworkUrl ?? HOME_SPRITE(pokemon.id)}
                   alt={pokemon.name}
                   fill
                   sizes="64px"
@@ -340,7 +340,7 @@ export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: nu
     id: baseId,
     name: baseName,
     types: form.types,
-    spriteUrl: null,
+    spriteUrl: form.homeSpriteUrl,
     artworkUrl: form.artworkUrl,
     genus: genus ?? null,
     bgCandidates: form.regularCardUrl

@@ -151,6 +151,7 @@ async function main() {
               displayName: tcgOnly.displayName,
               types: tcgOnly.types,
               artworkUrl: null,
+              homeSpriteUrl: null,
               category: "mega",
               tcgUrl: null,
             } satisfies AltForm);

@@ -92,6 +92,10 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   // in-game appearance) needs to be hardcoded directly instead of losing its card entirely.
   412: "https://images.pokemontcg.io/dp3/78_hires.png",
   413: "https://images.pokemontcg.io/dp3/41_hires.png",
+  // #139 Omastar: user-confirmed base6-58 (Legendary Collection, $93.10) over the automated
+  // pass's swsh12-174 "Omastar V" — modern V/GX/EX tiers are normally favored over old-era cards
+  // regardless of price, but the user wants the vintage card here specifically.
+  139: "https://images.pokemontcg.io/base6/58_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.

@@ -127,6 +127,12 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // no-op, letting yet other candidates win instead.
   "Hisuian Samurott": "https://images.pokemontcg.io/swsh12pt5gg/GG51_hires.png",
   "Hisuian Zoroark": "https://images.pokemontcg.io/swsh12pt5gg/GG56_hires.png",
+  // Therian Forme Thundurus/Tornadus/Landorus: every TCG printing is just named "Thundurus"/
+  // "Tornadus"/"Landorus" (Incarnate/Therian aren't distinguished by card name). User-provided
+  // full-art Plasma Freeze/Boundaries Crossed EX cards, full-bleed rather than cropped.
+  "Therian Forme Thundurus": "https://images.pokemontcg.io/bw9/110_hires.png",
+  "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw9/114_hires.png",
+  "Therian Forme Landorus":  "https://images.pokemontcg.io/bw7/144_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
@@ -164,13 +170,6 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // (Darkness Ablaze, Zen Mode Galarian art).
   "Zen Mode Darmanitan": "https://images.pokemontcg.io/bw4/60_hires.png",
   "Zen Mode Galarian Darmanitan": "https://images.pokemontcg.io/swsh3/28_hires.png",
-  // Therian Forme Thundurus/Tornadus/Landorus: every TCG printing is just named "Thundurus"/
-  // "Tornadus"/"Landorus" (Incarnate/Therian aren't distinguished by card name), and no full-art
-  // printing exists for any of them — user-confirmed, so cropped rather than full-bleed. Picked
-  // by highest market value, distinct from each Incarnate Forme's own hardcoded SVP promo pick.
-  "Therian Forme Thundurus": "https://images.pokemontcg.io/bw2/97_hires.png",
-  "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw2/98_hires.png",
-  "Therian Forme Landorus":  "https://images.pokemontcg.io/bwp/BW79_hires.png",
 };
 
 async function main() {

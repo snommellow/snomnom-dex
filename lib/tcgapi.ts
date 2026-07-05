@@ -55,7 +55,8 @@ const MAIN_GIMMICK_RE = /\b(VMAX|VSTAR|V-UNION)\b/i;
 // 22 (Pelipper) confirmed the same way — bordered "Paldea Evolved" design showing through.
 // 110 (Darkrai), 180 (Dialga), 17 (Lucario): confirmed not full art despite the "ex" name
 // suffix that normally signals a full-art promo — plain bordered "ex" cards.
-const SVP_BLACKLIST = new Set(["11", "17", "22", "24", "59", "89", "110", "122", "167", "168", "169", "180"]);
+// 7 (Hawlucha): confirmed bordered "Scarlet & Violet" reprint despite having an ability.
+const SVP_BLACKLIST = new Set(["11", "17", "22", "24", "59", "89", "110", "122", "167", "168", "169", "180", "7"]);
 
 // Plain-named SVP promos confirmed to be genuine full art despite having neither an ability
 // nor an ex/V/GX suffix — the two signals promoSvPick normally requires. 52 (Mewtwo, "Reflective

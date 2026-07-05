@@ -176,6 +176,12 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "sunny")   return { displayName: `Sunny Forme ${base}`,  category: "forme" };
   if (suffix === "rainy")   return { displayName: `Rainy Forme ${base}`,  category: "forme" };
   if (suffix === "snowy")   return { displayName: `Snowy Forme ${base}`,  category: "forme" };
+  // Paldean Tauros' three breeds: Combat is the plain "Paldean Tauros" (auto-resolves via the
+  // generic regional search below); Blaze/Aqua share that same card name in the TCG with no
+  // distinguishing text, so they're hardcoded like Deoxys'/Castform's forme-only variants.
+  if (suffix === "paldea-combat-breed") return { displayName: `Paldean ${base}`, category: "regional" };
+  if (suffix === "paldea-blaze-breed")  return { displayName: `Blaze Breed Paldean ${base}`, category: "forme" };
+  if (suffix === "paldea-aqua-breed")   return { displayName: `Aqua Breed Paldean ${base}`,  category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

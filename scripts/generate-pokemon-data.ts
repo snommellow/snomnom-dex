@@ -95,6 +95,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // sv8-195), so these are the highest-value bordered cards for each, picked by hand.
   "Rainy Forme Castform": "https://images.pokemontcg.io/ex5/23_hires.png",
   "Snowy Forme Castform": "https://images.pokemontcg.io/ex5/25_hires.png",
+  // Blaze/Aqua Breed Paldean Tauros: every TCG printing is just named "Paldean Tauros" with no
+  // breed-distinguishing text, so picked by hand — highest-value Paldea Evolved print for each.
+  "Blaze Breed Paldean Tauros": "https://images.pokemontcg.io/sv2/28_hires.png",
+  "Aqua Breed Paldean Tauros":  "https://images.pokemontcg.io/sv2/41_hires.png",
 };
 
 async function main() {

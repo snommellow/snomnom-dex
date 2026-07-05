@@ -1124,7 +1124,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10105.png",
         "category": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/sm5/78_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/sm8/122_hires.png"
       }
     ],
     "familyId": 50,
@@ -11022,8 +11022,24 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/550.png",
     "genus": "Hostile Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/rsv10pt5/108_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "basculin-blue-striped",
+        "displayName": "Blue-Striped Basculin",
+        "types": [
+          "water"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10016.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10016.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10016.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/rsv10pt5/108_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 550,
     "familyOrder": 0
   },
@@ -11117,8 +11133,39 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/555.png",
     "genus": "Blazing Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/zsv10pt5/98_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "darmanitan-zen",
+        "displayName": "Zen Mode Darmanitan",
+        "types": [
+          "fire",
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10017.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10017.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10017.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/zsv10pt5/98_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "darmanitan-galar-zen",
+        "displayName": "Zen Mode Galarian Darmanitan",
+        "types": [
+          "ice",
+          "fire"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10178.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10178.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10178.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/zsv10pt5/98_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 554,
     "familyOrder": 1
   },
@@ -11797,7 +11844,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/592.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/592.png",
     "genus": "Floating Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/rsv10pt5/126_hires.png"
+    ],
     "altForms": [],
     "familyId": 592,
     "familyOrder": 0
@@ -11812,7 +11861,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/593.png",
     "genus": "Floating Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/rsv10pt5/168_hires.png"
+    ],
     "altForms": [],
     "familyId": 592,
     "familyOrder": 1
@@ -12677,8 +12728,24 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
     "genus": "Cyclone Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/bw5/108_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "tornadus-therian",
+        "displayName": "Therian Forme Tornadus",
+        "types": [
+          "flying"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10019.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/bw5/108_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 641,
     "familyOrder": 0
   },
@@ -12692,8 +12759,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
     "genus": "Bolt Strike Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/bw9/110_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "thundurus-therian",
+        "displayName": "Therian Forme Thundurus",
+        "types": [
+          "electric",
+          "flying"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10020.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/bw9/110_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 642,
     "familyOrder": 0
   },
@@ -12741,8 +12825,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/645.png",
     "genus": "Abundance Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/zsv10pt5/131_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "landorus-therian",
+        "displayName": "Therian Forme Landorus",
+        "types": [
+          "ground",
+          "flying"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10021.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/zsv10pt5/131_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 645,
     "familyOrder": 0
   },
@@ -12773,8 +12874,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/647.png",
     "genus": "Colt Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/rsv10pt5/167_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "keldeo-resolute",
+        "displayName": "Resolute Forme Keldeo",
+        "types": [
+          "water",
+          "fighting"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10024.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/rsv10pt5/167_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 647,
     "familyOrder": 0
   },
@@ -12788,8 +12906,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/648.png",
     "genus": "Melody Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/zsv10pt5/167_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "meloetta-pirouette",
+        "displayName": "Pirouette Forme Meloetta",
+        "types": [
+          "normal",
+          "fighting"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10018.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/zsv10pt5/167_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 648,
     "familyOrder": 0
   },

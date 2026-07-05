@@ -113,6 +113,10 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // Pirouette Forme Meloetta: every printing shares Aria Forme's card name. User-provided
   // full-art Pocket TCG card (Genetic Apex sibling set) actually depicts the Pirouette design.
   "Pirouette Forme Meloetta": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_170_EN.png",
+  // White/Black Kyurem: user-confirmed XY Black Star Promos full arts, overriding whatever the
+  // automated "regional" search (auto-searches by full displayName) picks instead.
+  "White Kyurem": "https://images.pokemontcg.io/xyp/XY81_hires.png",
+  "Black Kyurem": "https://images.pokemontcg.io/xyp/XY80_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish

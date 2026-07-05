@@ -66,7 +66,7 @@ export async function fetchPokemon(
 }
 
 export async function fetchFirst151(): Promise<Pokemon[]> {
-  const list = await fetchPokemonList(905);
+  const list = await fetchPokemonList(1025);
   const results = await Promise.all(list.map((p) => fetchPokemon(p.name)));
   return results.filter((p): p is Pokemon => p !== null);
 }

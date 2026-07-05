@@ -13348,8 +13348,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/668.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
     "genus": "Royal Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv2/200_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "pyroar-mega",
+        "displayName": "Mega Pyroar",
+        "types": [
+          "fire",
+          "normal"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10295.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10295.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10295.png",
+        "category": "mega",
+        "tcgUrl": "https://images.scrydex.com/pokemon/me4-99/large",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 667,
     "familyOrder": 1
   },
@@ -13363,6 +13380,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/669.png",
     "genus": "Single Bloom Pokémon",
     "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/g1/RC17_hires.png",
     "altForms": [],
     "familyId": 669,
     "familyOrder": 0
@@ -13516,21 +13534,8 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
     "genus": "Constraint Pokémon",
     "bgCandidates": [],
-    "altForms": [
-      {
-        "slug": "meowstic-male-mega",
-        "displayName": "Mega Meowstic Male",
-        "types": [
-          "psychic"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10314.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10314.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10314.png",
-        "category": "mega",
-        "tcgUrl": null,
-        "regularCardUrl": null
-      }
-    ],
+    "regularCardUrl": "https://images.pokemontcg.io/g1/37_hires.png",
+    "altForms": [],
     "familyId": 677,
     "familyOrder": 1
   },
@@ -13577,7 +13582,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/681.png",
     "genus": "Royal Sword Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv4/210_hires.png"
+    ],
     "altForms": [],
     "familyId": 679,
     "familyOrder": 2
@@ -13948,7 +13955,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/701.png",
     "genus": "Wrestling Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/svp/7_hires.png"
+      "https://images.pokemontcg.io/xy3/64_hires.png"
     ],
     "altForms": [
       {
@@ -14140,6 +14147,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/710.png",
     "genus": "Pumpkin Pokémon",
     "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy4/44_hires.png",
     "altForms": [],
     "familyId": 710,
     "familyOrder": 0
@@ -14155,6 +14163,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/711.png",
     "genus": "Pumpkin Pokémon",
     "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy1/57_hires.png",
     "altForms": [],
     "familyId": 710,
     "familyOrder": 1
@@ -14281,8 +14290,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/718.png",
     "genus": "Order Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm6/123_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "zygarde-mega",
+        "displayName": "Mega Zygarde",
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10301.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10301.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10301.png",
+        "category": "mega",
+        "tcgUrl": "https://images.scrydex.com/pokemon/me3-120/large",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 718,
     "familyOrder": 0
   },

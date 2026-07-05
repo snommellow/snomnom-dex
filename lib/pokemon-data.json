@@ -2801,7 +2801,46 @@
     "bgCandidates": [
       "https://images.scrydex.com/pokemon/me4-96/large"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "tauros-paldea-combat-breed",
+        "displayName": "Paldean Tauros",
+        "types": [
+          "fighting"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10250.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10250.png",
+        "category": "regional",
+        "tcgUrl": "https://images.pokemontcg.io/sv2/218_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "tauros-paldea-blaze-breed",
+        "displayName": "Blaze Breed Paldean Tauros",
+        "types": [
+          "fighting",
+          "fire"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sv2/28_hires.png"
+      },
+      {
+        "slug": "tauros-paldea-aqua-breed",
+        "displayName": "Aqua Breed Paldean Tauros",
+        "types": [
+          "fighting",
+          "water"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sv2/41_hires.png"
+      }
+    ],
     "familyId": 128,
     "familyOrder": 0
   },
@@ -3149,7 +3188,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG16_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3180,7 +3219,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG19_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -3212,7 +3251,7 @@
         "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG20_hires.png",
         "regularCardUrl": null
       }
     ],

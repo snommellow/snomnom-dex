@@ -1,56 +1,197 @@
 {
-  "victini-blackbolt": [
+  "landorus-all": {
+    "error": 504
+  },
+  "thundurus-all": [
     {
-      "id": "zsv10pt5-12",
-      "name": "Victini",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "12",
-      "rarity": "Rare",
+      "id": "bw9-110",
+      "name": "Thundurus-EX",
+      "set": "bw9",
+      "setName": "Plasma Freeze",
+      "number": "110",
+      "rarity": "Rare Ultra",
       "subtypes": [
-        "Basic"
-      ]
+        "Basic",
+        "EX",
+        "Team Plasma"
+      ],
+      "price": 121.91
     },
     {
-      "id": "zsv10pt5-171",
-      "name": "Victini",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "171",
+      "id": "bw2-97",
+      "name": "Thundurus",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "97",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 24.4
+    },
+    {
+      "id": "xy6-98",
+      "name": "Thundurus-EX",
+      "set": "xy6",
+      "setName": "Roaring Skies",
+      "number": "98",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 18.86
+    },
+    {
+      "id": "bw9-38",
+      "name": "Thundurus-EX",
+      "set": "bw9",
+      "setName": "Plasma Freeze",
+      "number": "38",
+      "rarity": "Rare Holo EX",
+      "subtypes": [
+        "Basic",
+        "EX",
+        "Team Plasma"
+      ],
+      "price": 10.79
+    },
+    {
+      "id": "bwp-BW81",
+      "name": "Thundurus-EX",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW81",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "EX",
+        "Team Plasma"
+      ],
+      "price": 4.42
+    },
+    {
+      "id": "bwp-BW41",
+      "name": "Thundurus",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW41",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 3.96
+    },
+    {
+      "id": "bw2-35",
+      "name": "Thundurus",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "35",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 3.62
+    },
+    {
+      "id": "smp-SM133",
+      "name": "Thundurus-GX",
+      "set": "smp",
+      "setName": "SM Black Star Promos",
+      "number": "SM133",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "GX"
+      ],
+      "price": 3.47
+    },
+    {
+      "id": "sv4pt5-139",
+      "name": "Thundurus",
+      "set": "sv4pt5",
+      "setName": "Paldean Fates",
+      "number": "139",
+      "rarity": "Shiny Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 2.64
+    },
+    {
+      "id": "xy6-26",
+      "name": "Thundurus-EX",
+      "set": "xy6",
+      "setName": "Roaring Skies",
+      "number": "26",
+      "rarity": "Rare Holo EX",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 2.35
+    },
+    {
+      "id": "bw11-50",
+      "name": "Thundurus",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "50",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.93
+    },
+    {
+      "id": "xy3-33",
+      "name": "Thundurus",
+      "set": "xy3",
+      "setName": "Furious Fists",
+      "number": "33",
       "rarity": "Rare",
       "subtypes": [
         "Basic"
-      ]
-    }
-  ],
-  "victini-whiteflare": [
+      ],
+      "price": 0.8
+    },
     {
-      "id": "rsv10pt5-172",
-      "name": "Victini",
-      "set": "rsv10pt5",
-      "setName": "White Flare",
-      "number": "172",
+      "id": "sm11-68",
+      "name": "Thundurus",
+      "set": "sm11",
+      "setName": "Unified Minds",
+      "number": "68",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.44
+    },
+    {
+      "id": "sv3-70",
+      "name": "Thundurus",
+      "set": "sv3",
+      "setName": "Obsidian Flames",
+      "number": "70",
       "rarity": "Rare",
       "subtypes": [
         "Basic"
-      ]
-    }
-  ],
-  "gothitelle-blackbolt": [],
-  "gothitelle-whiteflare": [
+      ],
+      "price": 0.26
+    },
     {
-      "id": "rsv10pt5-43",
-      "name": "Gothitelle",
-      "set": "rsv10pt5",
-      "setName": "White Flare",
-      "number": "43",
-      "rarity": "Rare",
+      "id": "swsh6-52",
+      "name": "Thundurus",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "52",
+      "rarity": "Rare Holo",
       "subtypes": [
-        "Stage 2"
-      ]
-    }
-  ],
-  "thundurus-blackbolt": [
+        "Basic"
+      ],
+      "price": 0.23
+    },
     {
       "id": "zsv10pt5-33",
       "name": "Thundurus",
@@ -60,12 +201,243 @@
       "rarity": "Rare",
       "subtypes": [
         "Basic"
-      ]
+      ],
+      "price": 0.2
     }
   ],
-  "thundurus-whiteflare": [],
-  "tornadus-blackbolt": [],
-  "tornadus-whiteflare": [
+  "tornadus-all": [
+    {
+      "id": "bw5-108",
+      "name": "Tornadus-EX",
+      "set": "bw5",
+      "setName": "Dark Explorers",
+      "number": "108",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 99.99
+    },
+    {
+      "id": "bw9-114",
+      "name": "Tornadus-EX",
+      "set": "bw9",
+      "setName": "Plasma Freeze",
+      "number": "114",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "EX",
+        "Team Plasma"
+      ],
+      "price": 97.79
+    },
+    {
+      "id": "swsh6-185",
+      "name": "Tornadus V",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "185",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "V",
+        "Single Strike"
+      ],
+      "price": 32.18
+    },
+    {
+      "id": "bw2-98",
+      "name": "Tornadus",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "98",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 22.6
+    },
+    {
+      "id": "bw5-90",
+      "name": "Tornadus-EX",
+      "set": "bw5",
+      "setName": "Dark Explorers",
+      "number": "90",
+      "rarity": "Rare Holo EX",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 18.67
+    },
+    {
+      "id": "bwp-BW96",
+      "name": "Tornadus-EX",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW96",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 17.29
+    },
+    {
+      "id": "bw9-98",
+      "name": "Tornadus-EX",
+      "set": "bw9",
+      "setName": "Plasma Freeze",
+      "number": "98",
+      "rarity": "Rare Holo EX",
+      "subtypes": [
+        "Basic",
+        "EX",
+        "Team Plasma"
+      ],
+      "price": 16.02
+    },
+    {
+      "id": "swsh6-209",
+      "name": "Tornadus VMAX",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "209",
+      "rarity": "Rare Rainbow",
+      "subtypes": [
+        "VMAX",
+        "Single Strike"
+      ],
+      "price": 7.49
+    },
+    {
+      "id": "bw11-108",
+      "name": "Tornadus",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "108",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 3.89
+    },
+    {
+      "id": "bwp-BW42",
+      "name": "Tornadus",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW42",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 3.59
+    },
+    {
+      "id": "smp-SM134",
+      "name": "Tornadus-GX",
+      "set": "smp",
+      "setName": "SM Black Star Promos",
+      "number": "SM134",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "GX"
+      ],
+      "price": 3.11
+    },
+    {
+      "id": "swsh6-184",
+      "name": "Tornadus V",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "184",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "V",
+        "Single Strike"
+      ],
+      "price": 3.07
+    },
+    {
+      "id": "bw2-89",
+      "name": "Tornadus",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "89",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.52
+    },
+    {
+      "id": "swsh6-125",
+      "name": "Tornadus VMAX",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "125",
+      "rarity": "Rare Holo VMAX",
+      "subtypes": [
+        "VMAX",
+        "Single Strike"
+      ],
+      "price": 1.5
+    },
+    {
+      "id": "xy3-86",
+      "name": "Tornadus",
+      "set": "xy3",
+      "setName": "Furious Fists",
+      "number": "86",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.88
+    },
+    {
+      "id": "swsh6-124",
+      "name": "Tornadus V",
+      "set": "swsh6",
+      "setName": "Chilling Reign",
+      "number": "124",
+      "rarity": "Rare Holo V",
+      "subtypes": [
+        "Basic",
+        "V",
+        "Single Strike"
+      ],
+      "price": 0.64
+    },
+    {
+      "id": "sm11-178",
+      "name": "Tornadus",
+      "set": "sm11",
+      "setName": "Unified Minds",
+      "number": "178",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.38
+    },
+    {
+      "id": "swsh9-126",
+      "name": "Tornadus",
+      "set": "swsh9",
+      "setName": "Brilliant Stars",
+      "number": "126",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.28
+    },
     {
       "id": "rsv10pt5-78",
       "name": "Tornadus",
@@ -75,23 +447,396 @@
       "rarity": "Rare",
       "subtypes": [
         "Basic"
-      ]
+      ],
+      "price": 0.25
+    },
+    {
+      "id": "swsh4-142",
+      "name": "Tornadus",
+      "set": "swsh4",
+      "setName": "Vivid Voltage",
+      "number": "142",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.22
+    },
+    {
+      "id": "sv7-120",
+      "name": "Tornadus",
+      "set": "sv7",
+      "setName": "Stellar Crown",
+      "number": "120",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.07
     }
   ],
-  "direct-208": {
-    "id": "zsv10pt5-208",
-    "error": 404
+  "meloetta-all": [
+    {
+      "id": "zsv10pt5-167",
+      "name": "Meloetta ex",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "167",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "price": 44.81
+    },
+    {
+      "id": "bw11-RC25",
+      "name": "Meloetta-EX",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "RC25",
+      "rarity": "Rare Ultra",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 40.4
+    },
+    {
+      "id": "xyp-XY120",
+      "name": "Meloetta",
+      "set": "xyp",
+      "setName": "XY Black Star Promos",
+      "number": "XY120",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 25.46
+    },
+    {
+      "id": "bw11-RC11",
+      "name": "Meloetta-EX",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "RC11",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 14.13
+    },
+    {
+      "id": "bw7-77",
+      "name": "Meloetta",
+      "set": "bw7",
+      "setName": "Boundaries Crossed",
+      "number": "77",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 11.47
+    },
+    {
+      "id": "bw11-86",
+      "name": "Meloetta",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "86",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 10.61
+    },
+    {
+      "id": "xyp-XY193",
+      "name": "Meloetta",
+      "set": "xyp",
+      "setName": "XY Black Star Promos",
+      "number": "XY193",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 7.22
+    },
+    {
+      "id": "bw11-78",
+      "name": "Meloetta",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
+      "number": "78",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 6.03
+    },
+    {
+      "id": "bwp-BW68",
+      "name": "Meloetta",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW68",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 5.08
+    },
+    {
+      "id": "xy8-85",
+      "name": "Meloetta",
+      "set": "xy8",
+      "setName": "BREAKthrough",
+      "number": "85",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.6
+    },
+    {
+      "id": "zsv10pt5-159",
+      "name": "Meloetta ex",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "159",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "price": 1.53
+    },
+    {
+      "id": "sm11-123",
+      "name": "Meloetta",
+      "set": "sm11",
+      "setName": "Unified Minds",
+      "number": "123",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.06
+    },
+    {
+      "id": "sm8-104",
+      "name": "Meloetta",
+      "set": "sm8",
+      "setName": "Lost Thunder",
+      "number": "104",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.05
+    },
+    {
+      "id": "bwp-BW69",
+      "name": "Meloetta",
+      "set": "bwp",
+      "setName": "BW Black Star Promos",
+      "number": "BW69",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.85
+    },
+    {
+      "id": "zsv10pt5-44",
+      "name": "Meloetta ex",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "44",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "price": 0.64
+    },
+    {
+      "id": "swsh8-124",
+      "name": "Meloetta",
+      "set": "swsh8",
+      "setName": "Fusion Strike",
+      "number": "124",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic",
+        "Fusion Strike"
+      ],
+      "price": 0.27
+    },
+    {
+      "id": "me2-40",
+      "name": "Meloetta",
+      "set": "me2",
+      "setName": "Phantasmal Flames",
+      "number": "40",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.22
+    }
+  ],
+  "basculin-species": {
+    "id": 550,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "basculin-red-striped"
+      },
+      {
+        "is_default": false,
+        "name": "basculin-blue-striped"
+      },
+      {
+        "is_default": false,
+        "name": "basculin-white-striped"
+      }
+    ]
   },
-  "direct-209": {
-    "id": "rsv10pt5-209",
-    "error": 404
-  },
-  "direct-210": {
-    "id": "rsv10pt5-210",
-    "error": 404
-  },
-  "direct-211": {
-    "id": "zsv10pt5-211",
-    "error": 404
-  }
+  "basculin-all": [
+    {
+      "id": "rsv10pt5-108",
+      "name": "Basculin",
+      "set": "rsv10pt5",
+      "setName": "White Flare",
+      "number": "108",
+      "rarity": "Illustration Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 10.13
+    },
+    {
+      "id": "bw2-24",
+      "name": "Basculin",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "24",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 2.87
+    },
+    {
+      "id": "bw1-35",
+      "name": "Basculin",
+      "set": "bw1",
+      "setName": "Black & White",
+      "number": "35",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 1.44
+    },
+    {
+      "id": "bw2-25",
+      "name": "Basculin",
+      "set": "bw2",
+      "setName": "Emerging Powers",
+      "number": "25",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.95
+    },
+    {
+      "id": "bw4-30",
+      "name": "Basculin",
+      "set": "bw4",
+      "setName": "Next Destinies",
+      "number": "30",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.71
+    },
+    {
+      "id": "sm11-43",
+      "name": "Basculin",
+      "set": "sm11",
+      "setName": "Unified Minds",
+      "number": "43",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.39
+    },
+    {
+      "id": "swsh8-70",
+      "name": "Basculin",
+      "set": "swsh8",
+      "setName": "Fusion Strike",
+      "number": "70",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic",
+        "Rapid Strike"
+      ],
+      "price": 0.28
+    },
+    {
+      "id": "swshp-SWSH273",
+      "name": "Hisuian Basculin",
+      "set": "swshp",
+      "setName": "SWSH Black Star Promos",
+      "number": "SWSH273",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.28
+    },
+    {
+      "id": "swsh11-44",
+      "name": "Hisuian Basculin",
+      "set": "swsh11",
+      "setName": "Lost Origin",
+      "number": "44",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.25
+    },
+    {
+      "id": "rsv10pt5-24",
+      "name": "Basculin",
+      "set": "rsv10pt5",
+      "setName": "White Flare",
+      "number": "24",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.22
+    },
+    {
+      "id": "swsh10-43",
+      "name": "Hisuian Basculin",
+      "set": "swsh10",
+      "setName": "Astral Radiance",
+      "number": "43",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.21
+    }
+  ]
 }

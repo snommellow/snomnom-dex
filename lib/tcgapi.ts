@@ -562,7 +562,11 @@ const FULL_ART_PROMO_SETS = new Set(["swshp", "smp", "xyp"]);
 // SWSH253-256 "Origin Forme Dialga/Palkia V/VSTAR": entire promo family is bordered (V and
 // VSTAR subtypes alike), same design as their swsh10-177/167 mainline siblings — no genuine
 // full art exists for these two Pokémon in this promo set (confirmed via direct API lookup).
-const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111", "SWSH255", "SWSH253", "SWSH256", "SWSH254"]);
+// SWSH239 "Hisuian Samurott V", SWSH297 "Hisuian Zoroark V": user confirmed they actually want
+// the Crown Zenith Galarian Gallery cards (swsh12pt5-GG51/GG56) for these two Hisuian alt forms
+// instead — this promo-priority path was short-circuiting vgxPick's shared-index pick before it
+// got a chance to win, regardless of any MISMATCHED_FULL_ART_BLACKLIST entry on the Gallery side.
+const PROMO_BLACKLIST = new Set(["SWSH237", "SWSH111", "SWSH255", "SWSH253", "SWSH256", "SWSH254", "SWSH239", "SWSH297"]);
 
 export async function fetchRegionalPromoPriority(displayName: string): Promise<string | null> {
   const allCards = await fetchAllPages(`name:"${displayName}"`);

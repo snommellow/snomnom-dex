@@ -19714,5 +19714,169 @@
     "altForms": [],
     "familyId": 1012,
     "familyOrder": 0
+  },
+  {
+    "id": 1013,
+    "name": "sinistcha",
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png",
+    "genus": "Matcha Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6/210_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1012,
+    "familyOrder": 1
+  },
+  {
+    "id": 1014,
+    "name": "okidogi",
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1014.png",
+    "genus": "Retainer Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6pt5/90_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1014,
+    "familyOrder": 0
+  },
+  {
+    "id": 1015,
+    "name": "munkidori",
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1015.png",
+    "genus": "Retainer Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6pt5/91_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1015,
+    "familyOrder": 0
+  },
+  {
+    "id": 1016,
+    "name": "fezandipiti",
+    "types": [
+      "poison",
+      "fairy"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1016.png",
+    "genus": "Retainer Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv6pt5/92_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1016,
+    "familyOrder": 0
+  },
+  {
+    "id": 1017,
+    "name": "ogerpon",
+    "types": [
+      "grass"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1017.png",
+    "genus": "Mask Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv6/211_hires.png",
+    "altForms": [],
+    "familyId": 1017,
+    "familyOrder": 0
+  },
+  {
+    "id": 1018,
+    "name": "archaludon",
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png",
+    "genus": "Alloy Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv8/241_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 884,
+    "familyOrder": 1
+  },
+  {
+    "id": 1019,
+    "name": "hydrapple",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
+    "genus": "Apple Hydra Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv7/167_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 840,
+    "familyOrder": 4
+  },
+  {
+    "id": 1020,
+    "name": "gouging-fire",
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
+    "genus": "Paradox Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 1020,
+    "familyOrder": 0
+  },
+  {
+    "id": 1021,
+    "name": "raging-bolt",
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1021.png",
+    "genus": "Paradox Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv5/208_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1021,
+    "familyOrder": 0
+  },
+  {
+    "id": 1023,
+    "name": "iron-crown",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
+    "genus": "Paradox Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 1023,
+    "familyOrder": 0
   }
 ]

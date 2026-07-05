@@ -3677,6 +3677,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/182/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG12_hires.png",
     "altForms": [],
     "familyId": 163,
     "familyOrder": 0
@@ -4351,7 +4352,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/078/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12/177_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12/66_hires.png",
     "altForms": [],
     "familyId": 201,
     "familyOrder": 0
@@ -8153,6 +8154,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/177/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG29_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 0
@@ -8170,6 +8172,7 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2b/095/high.webp"
     ],
+    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG25_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 1
@@ -10191,7 +10194,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10236.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH239_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/176_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -11497,7 +11500,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10239.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH297_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH298_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12726,7 +12729,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
     "genus": "Cyclone Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw5/108_hires.png"
+      "https://images.pokemontcg.io/bw9/114_hires.png"
     ],
     "altForms": [
       {
@@ -12739,7 +12742,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10019.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw5/108_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/bw9/114_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12757,7 +12760,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
     "genus": "Bolt Strike Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw9/110_hires.png"
+      "https://images.pokemontcg.io/bw2/97_hires.png"
     ],
     "altForms": [
       {
@@ -12771,7 +12774,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10020.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/bw9/110_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/bw2/97_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -12857,7 +12860,36 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/zsv10pt5/165_hires.png"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "kyurem-black",
+        "displayName": "Black Kyurem",
+        "types": [
+          "dragon",
+          "ice"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10022.png",
+        "category": "regional",
+        "tcgUrl": "https://images.pokemontcg.io/bw7/145_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "kyurem-white",
+        "displayName": "White Kyurem",
+        "types": [
+          "dragon",
+          "ice"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10023.png",
+        "category": "regional",
+        "tcgUrl": "https://images.pokemontcg.io/smp/SM141_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 646,
     "familyOrder": 0
   },
@@ -12886,8 +12918,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10024.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/rsv10pt5/167_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/swsh1/53_hires.png"
       }
     ],
     "familyId": 647,

@@ -327,6 +327,7 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Frost")) label = "Frost";
     else if (displayName.startsWith("Fan")) label = "Fan";
     else if (displayName.startsWith("Mow")) label = "Mow";
+    else if (displayName.startsWith("Origin Forme")) label = "Origin Forme";
   } else if (category === "primal") {
     label = "Primal Reversion";
   } else if (category === "forme") {
@@ -340,7 +341,6 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Aqua Breed")) label = "Aqua Breed";
     else if (displayName.startsWith("Sandy Cloak")) label = "Sandy Cloak";
     else if (displayName.startsWith("Trash Cloak")) label = "Trash Cloak";
-    else if (displayName.startsWith("Origin Forme")) label = "Origin Forme";
     else if (displayName.startsWith("Sky Forme")) label = "Sky Forme";
   }
   return { baseName, formLabel: label };

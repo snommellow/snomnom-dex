@@ -39,6 +39,14 @@ const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> =
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
 };
 
+// Burmy's Sandy/Trash Cloak aren't separate PokeAPI species varieties (unlike Wormadam's, since
+// Burmy's cloak is cosmetic-only until it evolves), so fetchAltForms never surfaces them even
+// though real, distinctly-named TCG cards exist for both (see HARDCODED_FORM_REGULAR_URLS).
+const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: string[] }> = [
+  { slug: "burmy-sandy", displayName: "Sandy Cloak Burmy", types: ["bug", "ground"] },
+  { slug: "burmy-trash", displayName: "Trash Cloak Burmy", types: ["bug", "steel"] },
+];
+
 // Direct background card URLs for base Pokémon where automated lookup fails or picks wrong card.
 // Keyed by dex ID. These bypass tcgResult and go directly into bgCandidates.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
@@ -69,6 +77,12 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   123: "https://images.pokemontcg.io/ex1/102_hires.png",
   // #125 Electabuzz: ex1-97 Electabuzz ex Ruby & Sapphire ($62) — same stale-price issue as Scyther.
   125: "https://images.pokemontcg.io/ex1/97_hires.png",
+  // #412 Burmy, #413 Wormadam: every TCG card for these species is suffixed "X Cloak", which
+  // nameMatches now excludes from the bare-species search (see FORME_VARIANT_SUFFIX_RE) to stop
+  // Sandy/Trash Cloak cards winning the base entry — so the base (Plant Cloak, the default
+  // in-game appearance) needs to be hardcoded directly instead of losing its card entirely.
+  412: "https://images.pokemontcg.io/dp3/78_hires.png",
+  413: "https://images.pokemontcg.io/dp3/41_hires.png",
 };
 
 // Direct image URLs for forms where the automated lookup picks a wrong/inferior card.
@@ -99,6 +113,14 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // breed-distinguishing text, so picked by hand — highest-value Paldea Evolved print for each.
   "Blaze Breed Paldean Tauros": "https://images.pokemontcg.io/sv2/28_hires.png",
   "Aqua Breed Paldean Tauros":  "https://images.pokemontcg.io/sv2/41_hires.png",
+  // Sandy/Trash Cloak Wormadam: real cards are named "Wormadam Sandy Cloak"/"Wormadam Trash
+  // Cloak" (suffix-style, unlike our prefix-style displayName), so they aren't auto-searchable
+  // the way Rotom's or Origin Forme's cards are — picked by hand, highest value per cloak.
+  "Sandy Cloak Wormadam": "https://images.pokemontcg.io/pop7/10_hires.png",
+  "Trash Cloak Wormadam": "https://images.pokemontcg.io/dp3/43_hires.png",
+  // Sandy/Trash Cloak Burmy: same naming situation as Wormadam's cloaks above.
+  "Sandy Cloak Burmy": "https://images.pokemontcg.io/pl4/57_hires.png",
+  "Trash Cloak Burmy": "https://images.pokemontcg.io/dp3/80_hires.png",
 };
 
 async function main() {
@@ -155,6 +177,19 @@ async function main() {
               category: "mega",
               tcgUrl: null,
             } satisfies AltForm);
+          }
+          if (p.id === 412) {
+            for (const form of BURMY_CLOAK_FORMS) {
+              filtered.push({
+                slug: form.slug,
+                displayName: form.displayName,
+                types: form.types,
+                artworkUrl: null,
+                homeSpriteUrl: null,
+                category: "forme",
+                tcgUrl: null,
+              } satisfies AltForm);
+            }
           }
           return filtered;
         })

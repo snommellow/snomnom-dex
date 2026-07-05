@@ -153,7 +153,7 @@ function rarityScore(rarity: string): number {
 // Card names with these trailing words are forme-specific variants (e.g. Castform's "Castform
 // Sunny Form"), not a generic mechanic suffix like "ex"/"V"/"GX" — a bare species-name query
 // must not match them, or the base Pokémon picks up a card meant for one of its alt forms.
-const FORME_VARIANT_SUFFIX_RE = /\s+(Sunny|Rainy|Rain|Snowy|Snow-Cloud)\s+Forme?$/i;
+const FORME_VARIANT_SUFFIX_RE = /\s+(Sunny|Rainy|Rain|Snowy|Snow-Cloud)\s+Forme?$|\s+(Plant|Sandy|Trash)\s+Cloak$/i;
 
 function nameMatches(cardName: string, query: string): boolean {
   const cn = cardName.toLowerCase();

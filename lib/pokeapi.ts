@@ -188,7 +188,10 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "paldea-aqua-breed")   return { displayName: `Aqua Breed Paldean ${base}`,  category: "forme" };
   if (suffix === "sandy") return { displayName: `Sandy Cloak ${base}`, category: "forme" };
   if (suffix === "trash") return { displayName: `Trash Cloak ${base}`, category: "forme" };
-  if (suffix === "origin") return { displayName: `Origin Forme ${base}`, category: "forme" };
+  // Dialga/Palkia/Giratina's Origin Formes are literally named "Origin Forme Dialga VSTAR"/
+  // etc in the TCG (unlike Shaymin's Sky Forme, which shares its card name with Land Forme) —
+  // auto-searchable, so reuse "regional"'s full-displayName search instead of "forme".
+  if (suffix === "origin") return { displayName: `Origin Forme ${base}`, category: "regional" };
   if (suffix === "sky") return { displayName: `Sky Forme ${base}`, category: "forme" };
   // Rotom's appliance formes are literally named "Heat Rotom"/"Wash Rotom"/etc in the TCG, so
   // (unlike Deoxys/Castform) they're auto-searchable — reuse "regional"'s prefix+base search

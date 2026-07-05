@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
         hostname: "s3.pokeos.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "limitlesstcg.nyc3.cdn.digitaloceanspaces.com",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -190,6 +190,14 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "trash") return { displayName: `Trash Cloak ${base}`, category: "forme" };
   if (suffix === "origin") return { displayName: `Origin Forme ${base}`, category: "forme" };
   if (suffix === "sky") return { displayName: `Sky Forme ${base}`, category: "forme" };
+  // Rotom's appliance formes are literally named "Heat Rotom"/"Wash Rotom"/etc in the TCG, so
+  // (unlike Deoxys/Castform) they're auto-searchable — reuse "regional"'s prefix+base search
+  // behavior instead of hardcoding, even though it's not a real-world region.
+  if (suffix === "heat")  return { displayName: `Heat ${base}`,  category: "regional" };
+  if (suffix === "wash")  return { displayName: `Wash ${base}`,  category: "regional" };
+  if (suffix === "frost") return { displayName: `Frost ${base}`, category: "regional" };
+  if (suffix === "fan")   return { displayName: `Fan ${base}`,   category: "regional" };
+  if (suffix === "mow")   return { displayName: `Mow ${base}`,   category: "regional" };
   return { displayName: cap(slug), category: "other" };
 }
 

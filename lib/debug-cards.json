@@ -1,0 +1,20 @@
+{
+  "greninja_species": [
+    {
+      "is_default": true,
+      "name": "greninja"
+    },
+    {
+      "is_default": false,
+      "name": "greninja-battle-bond"
+    },
+    {
+      "is_default": false,
+      "name": "greninja-ash"
+    },
+    {
+      "is_default": false,
+      "name": "greninja-mega"
+    }
+  ]
+}

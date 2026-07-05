@@ -1,0 +1,460 @@
+{
+  "hoopa-species": {
+    "id": 720,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "hoopa"
+      },
+      {
+        "is_default": false,
+        "name": "hoopa-unbound"
+      }
+    ]
+  },
+  "zygarde-species": {
+    "id": 718,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "zygarde-50"
+      },
+      {
+        "is_default": false,
+        "name": "zygarde-10-power-construct"
+      },
+      {
+        "is_default": false,
+        "name": "zygarde-50-power-construct"
+      },
+      {
+        "is_default": false,
+        "name": "zygarde-complete"
+      },
+      {
+        "is_default": false,
+        "name": "zygarde-10"
+      },
+      {
+        "is_default": false,
+        "name": "zygarde-mega"
+      }
+    ]
+  },
+  "aegislash-species": {
+    "id": 681,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "aegislash-shield"
+      },
+      {
+        "is_default": false,
+        "name": "aegislash-blade"
+      }
+    ]
+  },
+  "pumpkaboo-species": {
+    "id": 710,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "pumpkaboo-average"
+      },
+      {
+        "is_default": false,
+        "name": "pumpkaboo-small"
+      },
+      {
+        "is_default": false,
+        "name": "pumpkaboo-large"
+      },
+      {
+        "is_default": false,
+        "name": "pumpkaboo-super"
+      }
+    ]
+  },
+  "gourgeist-species": {
+    "id": 711,
+    "varieties": [
+      {
+        "is_default": true,
+        "name": "gourgeist-average"
+      },
+      {
+        "is_default": false,
+        "name": "gourgeist-small"
+      },
+      {
+        "is_default": false,
+        "name": "gourgeist-large"
+      },
+      {
+        "is_default": false,
+        "name": "gourgeist-super"
+      }
+    ]
+  },
+  "hoopa-unbound-search": [],
+  "hoopa-confined-search": [],
+  "hoopa-search": [
+    {
+      "id": "xy7-36",
+      "name": "Hoopa-EX",
+      "set": "xy7",
+      "number": "36",
+      "rarity": "Rare Holo EX"
+    },
+    {
+      "id": "xy11-51",
+      "name": "Hoopa",
+      "set": "xy11",
+      "number": "51",
+      "rarity": "Rare"
+    },
+    {
+      "id": "sm6-54",
+      "name": "Hoopa",
+      "set": "sm6",
+      "number": "54",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "sm35-55",
+      "name": "Hoopa",
+      "set": "sm35",
+      "number": "55",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "xyp-XY71",
+      "name": "Hoopa-EX",
+      "set": "xyp",
+      "number": "XY71",
+      "rarity": "Promo"
+    },
+    {
+      "id": "xy7-89",
+      "name": "Hoopa-EX",
+      "set": "xy7",
+      "number": "89",
+      "rarity": "Rare Ultra"
+    },
+    {
+      "id": "xyp-XY85",
+      "name": "Hoopa-EX",
+      "set": "xyp",
+      "number": "XY85",
+      "rarity": "Promo"
+    },
+    {
+      "id": "sm9-96",
+      "name": "Hoopa-GX",
+      "set": "sm9",
+      "number": "96",
+      "rarity": "Rare Holo GX"
+    },
+    {
+      "id": "xyp-XY90",
+      "name": "Hoopa",
+      "set": "xyp",
+      "number": "XY90",
+      "rarity": "Promo"
+    },
+    {
+      "id": "swsh3-111",
+      "name": "Hoopa",
+      "set": "swsh3",
+      "number": "111",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "sm11-140",
+      "name": "Hoopa",
+      "set": "sm11",
+      "number": "140",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "xyp-XY147",
+      "name": "Hoopa",
+      "set": "xyp",
+      "number": "XY147",
+      "rarity": "Promo"
+    },
+    {
+      "id": "sm9-166",
+      "name": "Hoopa-GX",
+      "set": "sm9",
+      "number": "166",
+      "rarity": "Rare Ultra"
+    },
+    {
+      "id": "sm9-187",
+      "name": "Hoopa-GX",
+      "set": "sm9",
+      "number": "187",
+      "rarity": "Rare Rainbow"
+    },
+    {
+      "id": "swsh8-253",
+      "name": "Hoopa V",
+      "set": "swsh8",
+      "number": "253",
+      "rarity": "Rare Ultra"
+    },
+    {
+      "id": "swshp-SWSH176",
+      "name": "Hoopa V",
+      "set": "swshp",
+      "number": "SWSH176",
+      "rarity": "Promo"
+    },
+    {
+      "id": "swsh11-122",
+      "name": "Hoopa",
+      "set": "swsh11",
+      "number": "122",
+      "rarity": "Rare"
+    },
+    {
+      "id": "swsh12pt5-83",
+      "name": "Hoopa",
+      "set": "swsh12pt5",
+      "number": "83",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "swsh12pt5gg-GG53",
+      "name": "Hoopa V",
+      "set": "swsh12pt5gg",
+      "number": "GG53",
+      "rarity": "Rare Holo V"
+    },
+    {
+      "id": "sv4-98",
+      "name": "Hoopa ex",
+      "set": "sv4",
+      "number": "98",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "sv4-226",
+      "name": "Hoopa ex",
+      "set": "sv4",
+      "number": "226",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2pt5-141",
+      "name": "Hoopa",
+      "set": "me2pt5",
+      "number": "141",
+      "rarity": "Rare"
+    }
+  ],
+  "aegislash-blade-search": [
+    {
+      "id": "sm6-49",
+      "name": "Aegislash",
+      "set": "sm6",
+      "number": "49",
+      "rarity": "Rare"
+    },
+    {
+      "id": "xy9-62",
+      "name": "Aegislash",
+      "set": "xy9",
+      "number": "62",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "xy4-65",
+      "name": "Aegislash-EX",
+      "set": "xy4",
+      "number": "65",
+      "rarity": "Rare Holo EX"
+    },
+    {
+      "id": "xy4-65a",
+      "name": "Aegislash-EX",
+      "set": "xy4",
+      "number": "65a",
+      "rarity": "Rare Ultra"
+    },
+    {
+      "id": "xy1-85",
+      "name": "Aegislash",
+      "set": "xy1",
+      "number": "85",
+      "rarity": "Rare"
+    },
+    {
+      "id": "xy1-86",
+      "name": "Aegislash",
+      "set": "xy1",
+      "number": "86",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "xy5-100",
+      "name": "Aegislash",
+      "set": "xy5",
+      "number": "100",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "sm11-95",
+      "name": "Aegislash",
+      "set": "sm11",
+      "number": "95",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "sm9-109",
+      "name": "Aegislash",
+      "set": "sm9",
+      "number": "109",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "swsh4-126",
+      "name": "Aegislash V",
+      "set": "swsh4",
+      "number": "126",
+      "rarity": "Rare Holo V"
+    },
+    {
+      "id": "swsh4-127",
+      "name": "Aegislash VMAX",
+      "set": "swsh4",
+      "number": "127",
+      "rarity": "Rare Holo VMAX"
+    },
+    {
+      "id": "swsh2-135",
+      "name": "Aegislash",
+      "set": "swsh2",
+      "number": "135",
+      "rarity": "Rare"
+    },
+    {
+      "id": "swsh4-177",
+      "name": "Aegislash V",
+      "set": "swsh4",
+      "number": "177",
+      "rarity": "Rare Ultra"
+    },
+    {
+      "id": "swsh4-190",
+      "name": "Aegislash VMAX",
+      "set": "swsh4",
+      "number": "190",
+      "rarity": "Rare Rainbow"
+    },
+    {
+      "id": "swsh5-107",
+      "name": "Aegislash",
+      "set": "swsh5",
+      "number": "107",
+      "rarity": "Rare Holo"
+    },
+    {
+      "id": "swsh5-108",
+      "name": "Aegislash",
+      "set": "swsh5",
+      "number": "108",
+      "rarity": "Rare"
+    },
+    {
+      "id": "sv4-134",
+      "name": "Aegislash",
+      "set": "sv4",
+      "number": "134",
+      "rarity": "Rare"
+    },
+    {
+      "id": "sv4-135",
+      "name": "Aegislash ex",
+      "set": "sv4",
+      "number": "135",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "sv4-210",
+      "name": "Aegislash",
+      "set": "sv4",
+      "number": "210",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "sv4-230",
+      "name": "Aegislash ex",
+      "set": "sv4",
+      "number": "230",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "svp-60",
+      "name": "Aegislash",
+      "set": "svp",
+      "number": "60",
+      "rarity": "Promo"
+    },
+    {
+      "id": "me3-58",
+      "name": "Aegislash",
+      "set": "me3",
+      "number": "58",
+      "rarity": "Uncommon"
+    }
+  ],
+  "pumpkaboo-search": [
+    {
+      "id": "xy4-44",
+      "name": "Pumpkaboo",
+      "set": "xy4",
+      "number": "44",
+      "rarity": "Common"
+    },
+    {
+      "id": "sm4-44",
+      "name": "Pumpkaboo",
+      "set": "sm4",
+      "number": "44",
+      "rarity": "Common"
+    },
+    {
+      "id": "xy1-56",
+      "name": "Pumpkaboo",
+      "set": "xy1",
+      "number": "56",
+      "rarity": "Common"
+    },
+    {
+      "id": "swsh7-76",
+      "name": "Pumpkaboo",
+      "set": "swsh7",
+      "number": "76",
+      "rarity": "Common"
+    },
+    {
+      "id": "sv4-77",
+      "name": "Pumpkaboo",
+      "set": "sv4",
+      "number": "77",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-40",
+      "name": "Pumpkaboo",
+      "set": "me4",
+      "number": "40",
+      "rarity": "Common"
+    }
+  ],
+  "gourgeist-search": {
+    "error": 404
+  }
+}

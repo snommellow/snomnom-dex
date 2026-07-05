@@ -92,10 +92,7 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // swsh1-53 "Keldeo V": bordered "Basic V" design (same one hardcoded as Resolute Forme Keldeo's
 // cropped card in HARDCODED_FORM_REGULAR_URLS) — confirmed via direct feedback to look wrong
 // stretched as a background for base (Ordinary Forme) Keldeo.
-// swsh12pt5-GG51/GG56 "Hisuian Samurott/Zoroark V/VSTAR" (Crown Zenith Galarian Gallery):
-// bordered non-full-art Gallery reprints outcompeting the desired swshp-SWSH239/297 V promos
-// for these two Pokémon's Hisuian alt forms — confirmed via direct feedback.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh12pt5-GG51", "swsh12pt5-GG56"]);
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53"]);
 
 // These are still the correct/best card for their Pokémon — unlike MISMATCHED_FULL_ART_BLACKLIST,
 // they shouldn't be excluded from consideration — but they're bordered "Basic V" designs despite

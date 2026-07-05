@@ -235,6 +235,9 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "pirouette")  return { displayName: `Pirouette Forme ${base}`, category: "forme" };
   if (suffix === "blue-striped") return { displayName: `Blue-Striped ${base}`, category: "forme" };
   if (suffix === "white-striped") return { displayName: `White-Striped ${base}`, category: "forme" };
+  // Ash-Greninja (Battle Bond power-up transformation) is literally named "Ash-Greninja" in the
+  // TCG (hyphenated, no space), so auto-searchable like Rotom's appliance formes.
+  if (suffix === "ash") return { displayName: `Ash-${base}`, category: "regional" };
   return { displayName: cap(slug), category: "other" };
 }
 

@@ -166,6 +166,12 @@ const BASE_SLUG_OVERRIDES: Record<string, string> = {
   "landorus-incarnate": "landorus",
   "keldeo-ordinary": "keldeo",
   "meloetta-aria": "meloetta",
+  "pyroar-male": "pyroar",
+  "meowstic-male": "meowstic",
+  "aegislash-shield": "aegislash",
+  "pumpkaboo-average": "pumpkaboo",
+  "gourgeist-average": "gourgeist",
+  "zygarde-50": "zygarde",
 };
 
 function parseFormSlug(slug: string, rawBaseName: string): { displayName: string; category: FormCategory } {

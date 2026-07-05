@@ -149,6 +149,13 @@ const NAME_OVERRIDES: Record<string, string> = {
   "landorus-incarnate":   "Landorus",
   "keldeo-ordinary":      "Keldeo",
   "meloetta-aria":        "Meloetta",
+  "pyroar-male":          "Pyroar",
+  "flabebe":              "Flabébé",
+  "meowstic-male":        "Meowstic",
+  "aegislash-shield":     "Aegislash",
+  "pumpkaboo-average":    "Pumpkaboo",
+  "gourgeist-average":    "Gourgeist",
+  "zygarde-50":           "Zygarde",
 };
 
 export function toDisplayName(slug: string): string {

@@ -65,7 +65,7 @@ export default function Home() {
                 Snomnom Dex
               </h1>
               <p className="text-red-200 text-[11px] font-medium leading-none mt-0.5">
-                Generation I–V · 649 Pokémon
+                Generation I–VI · 721 Pokémon
               </p>
             </div>
 

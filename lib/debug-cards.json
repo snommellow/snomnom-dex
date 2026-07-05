@@ -1,842 +1,713 @@
 {
-  "landorus-all": {
-    "error": 504
-  },
-  "thundurus-all": [
+  "landorus-all": [
     {
-      "id": "bw9-110",
-      "name": "Thundurus-EX",
-      "set": "bw9",
-      "setName": "Plasma Freeze",
-      "number": "110",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "EX",
-        "Team Plasma"
-      ],
-      "price": 121.91
-    },
-    {
-      "id": "bw2-97",
-      "name": "Thundurus",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "97",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 24.4
-    },
-    {
-      "id": "xy6-98",
-      "name": "Thundurus-EX",
-      "set": "xy6",
-      "setName": "Roaring Skies",
-      "number": "98",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 18.86
-    },
-    {
-      "id": "bw9-38",
-      "name": "Thundurus-EX",
-      "set": "bw9",
-      "setName": "Plasma Freeze",
-      "number": "38",
-      "rarity": "Rare Holo EX",
-      "subtypes": [
-        "Basic",
-        "EX",
-        "Team Plasma"
-      ],
-      "price": 10.79
-    },
-    {
-      "id": "bwp-BW81",
-      "name": "Thundurus-EX",
+      "id": "bwp-BW79",
+      "name": "Landorus",
       "set": "bwp",
       "setName": "BW Black Star Promos",
-      "number": "BW81",
+      "number": "BW79",
       "rarity": "Promo",
       "subtypes": [
         "Basic",
-        "EX",
         "Team Plasma"
       ],
-      "price": 4.42
+      "price": 119.99
     },
     {
-      "id": "bwp-BW41",
-      "name": "Thundurus",
-      "set": "bwp",
-      "setName": "BW Black Star Promos",
-      "number": "BW41",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 3.96
-    },
-    {
-      "id": "bw2-35",
-      "name": "Thundurus",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "35",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 3.62
-    },
-    {
-      "id": "smp-SM133",
-      "name": "Thundurus-GX",
-      "set": "smp",
-      "setName": "SM Black Star Promos",
-      "number": "SM133",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic",
-        "GX"
-      ],
-      "price": 3.47
-    },
-    {
-      "id": "sv4pt5-139",
-      "name": "Thundurus",
-      "set": "sv4pt5",
-      "setName": "Paldean Fates",
-      "number": "139",
-      "rarity": "Shiny Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 2.64
-    },
-    {
-      "id": "xy6-26",
-      "name": "Thundurus-EX",
-      "set": "xy6",
-      "setName": "Roaring Skies",
-      "number": "26",
-      "rarity": "Rare Holo EX",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 2.35
-    },
-    {
-      "id": "bw11-50",
-      "name": "Thundurus",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "50",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 1.93
-    },
-    {
-      "id": "xy3-33",
-      "name": "Thundurus",
-      "set": "xy3",
-      "setName": "Furious Fists",
-      "number": "33",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.8
-    },
-    {
-      "id": "sm11-68",
-      "name": "Thundurus",
-      "set": "sm11",
-      "setName": "Unified Minds",
-      "number": "68",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.44
-    },
-    {
-      "id": "sv3-70",
-      "name": "Thundurus",
-      "set": "sv3",
-      "setName": "Obsidian Flames",
-      "number": "70",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.26
-    },
-    {
-      "id": "swsh6-52",
-      "name": "Thundurus",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "52",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.23
-    },
-    {
-      "id": "zsv10pt5-33",
-      "name": "Thundurus",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "33",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.2
-    }
-  ],
-  "tornadus-all": [
-    {
-      "id": "bw5-108",
-      "name": "Tornadus-EX",
-      "set": "bw5",
-      "setName": "Dark Explorers",
-      "number": "108",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 99.99
-    },
-    {
-      "id": "bw9-114",
-      "name": "Tornadus-EX",
-      "set": "bw9",
-      "setName": "Plasma Freeze",
-      "number": "114",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "EX",
-        "Team Plasma"
-      ],
-      "price": 97.79
-    },
-    {
-      "id": "swsh6-185",
-      "name": "Tornadus V",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "185",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "V",
-        "Single Strike"
-      ],
-      "price": 32.18
-    },
-    {
-      "id": "bw2-98",
-      "name": "Tornadus",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "98",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 22.6
-    },
-    {
-      "id": "bw5-90",
-      "name": "Tornadus-EX",
-      "set": "bw5",
-      "setName": "Dark Explorers",
-      "number": "90",
-      "rarity": "Rare Holo EX",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 18.67
-    },
-    {
-      "id": "bwp-BW96",
-      "name": "Tornadus-EX",
-      "set": "bwp",
-      "setName": "BW Black Star Promos",
-      "number": "BW96",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 17.29
-    },
-    {
-      "id": "bw9-98",
-      "name": "Tornadus-EX",
-      "set": "bw9",
-      "setName": "Plasma Freeze",
-      "number": "98",
-      "rarity": "Rare Holo EX",
-      "subtypes": [
-        "Basic",
-        "EX",
-        "Team Plasma"
-      ],
-      "price": 16.02
-    },
-    {
-      "id": "swsh6-209",
-      "name": "Tornadus VMAX",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "209",
-      "rarity": "Rare Rainbow",
-      "subtypes": [
-        "VMAX",
-        "Single Strike"
-      ],
-      "price": 7.49
-    },
-    {
-      "id": "bw11-108",
-      "name": "Tornadus",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "108",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 3.89
-    },
-    {
-      "id": "bwp-BW42",
-      "name": "Tornadus",
-      "set": "bwp",
-      "setName": "BW Black Star Promos",
-      "number": "BW42",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 3.59
-    },
-    {
-      "id": "smp-SM134",
-      "name": "Tornadus-GX",
-      "set": "smp",
-      "setName": "SM Black Star Promos",
-      "number": "SM134",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic",
-        "GX"
-      ],
-      "price": 3.11
-    },
-    {
-      "id": "swsh6-184",
-      "name": "Tornadus V",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "184",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "V",
-        "Single Strike"
-      ],
-      "price": 3.07
-    },
-    {
-      "id": "bw2-89",
-      "name": "Tornadus",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "89",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 1.52
-    },
-    {
-      "id": "swsh6-125",
-      "name": "Tornadus VMAX",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "125",
-      "rarity": "Rare Holo VMAX",
-      "subtypes": [
-        "VMAX",
-        "Single Strike"
-      ],
-      "price": 1.5
-    },
-    {
-      "id": "xy3-86",
-      "name": "Tornadus",
-      "set": "xy3",
-      "setName": "Furious Fists",
-      "number": "86",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.88
-    },
-    {
-      "id": "swsh6-124",
-      "name": "Tornadus V",
-      "set": "swsh6",
-      "setName": "Chilling Reign",
-      "number": "124",
-      "rarity": "Rare Holo V",
-      "subtypes": [
-        "Basic",
-        "V",
-        "Single Strike"
-      ],
-      "price": 0.64
-    },
-    {
-      "id": "sm11-178",
-      "name": "Tornadus",
-      "set": "sm11",
-      "setName": "Unified Minds",
-      "number": "178",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.38
-    },
-    {
-      "id": "swsh9-126",
-      "name": "Tornadus",
-      "set": "swsh9",
-      "setName": "Brilliant Stars",
-      "number": "126",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.28
-    },
-    {
-      "id": "rsv10pt5-78",
-      "name": "Tornadus",
-      "set": "rsv10pt5",
-      "setName": "White Flare",
-      "number": "78",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.25
-    },
-    {
-      "id": "swsh4-142",
-      "name": "Tornadus",
-      "set": "swsh4",
-      "setName": "Vivid Voltage",
-      "number": "142",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.22
-    },
-    {
-      "id": "sv7-120",
-      "name": "Tornadus",
-      "set": "sv7",
-      "setName": "Stellar Crown",
-      "number": "120",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.07
-    }
-  ],
-  "meloetta-all": [
-    {
-      "id": "zsv10pt5-167",
-      "name": "Meloetta ex",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "167",
-      "rarity": "Special Illustration Rare",
-      "subtypes": [
-        "Basic",
-        "ex"
-      ],
-      "price": 44.81
-    },
-    {
-      "id": "bw11-RC25",
-      "name": "Meloetta-EX",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "RC25",
-      "rarity": "Rare Ultra",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 40.4
-    },
-    {
-      "id": "xyp-XY120",
-      "name": "Meloetta",
-      "set": "xyp",
-      "setName": "XY Black Star Promos",
-      "number": "XY120",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 25.46
-    },
-    {
-      "id": "bw11-RC11",
-      "name": "Meloetta-EX",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "RC11",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
-      "price": 14.13
-    },
-    {
-      "id": "bw7-77",
-      "name": "Meloetta",
+      "id": "bw7-144",
+      "name": "Landorus-EX",
       "set": "bw7",
       "setName": "Boundaries Crossed",
-      "number": "77",
-      "rarity": "Rare Holo",
+      "number": "144",
+      "rarity": "Rare Ultra",
       "subtypes": [
-        "Basic"
+        "Basic",
+        "EX"
       ],
-      "price": 11.47
+      "price": 89.98
     },
     {
-      "id": "bw11-86",
-      "name": "Meloetta",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "86",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 10.61
-    },
-    {
-      "id": "xyp-XY193",
-      "name": "Meloetta",
-      "set": "xyp",
-      "setName": "XY Black Star Promos",
-      "number": "XY193",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 7.22
-    },
-    {
-      "id": "bw11-78",
-      "name": "Meloetta",
-      "set": "bw11",
-      "setName": "Legendary Treasures",
-      "number": "78",
-      "rarity": "Rare Holo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 6.03
-    },
-    {
-      "id": "bwp-BW68",
-      "name": "Meloetta",
+      "id": "bwp-BW43",
+      "name": "Landorus",
       "set": "bwp",
       "setName": "BW Black Star Promos",
-      "number": "BW68",
+      "number": "BW43",
       "rarity": "Promo",
       "subtypes": [
         "Basic"
       ],
-      "price": 5.08
+      "price": 35.25
     },
     {
-      "id": "xy8-85",
-      "name": "Meloetta",
-      "set": "xy8",
-      "setName": "BREAKthrough",
+      "id": "zsv10pt5-131",
+      "name": "Landorus",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "131",
+      "rarity": "Illustration Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 31.44
+    },
+    {
+      "id": "bw7-89",
+      "name": "Landorus-EX",
+      "set": "bw7",
+      "setName": "Boundaries Crossed",
+      "number": "89",
+      "rarity": "Rare Holo EX",
+      "subtypes": [
+        "Basic",
+        "EX"
+      ],
+      "price": 15.32
+    },
+    {
+      "id": "bw3-74",
+      "name": "Landorus",
+      "set": "bw3",
+      "setName": "Noble Victories",
+      "number": "74",
+      "rarity": "Rare Holo",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 5.82
+    },
+    {
+      "id": "bw11-85",
+      "name": "Landorus",
+      "set": "bw11",
+      "setName": "Legendary Treasures",
       "number": "85",
       "rarity": "Rare Holo",
       "subtypes": [
         "Basic"
       ],
-      "price": 1.6
+      "price": 1.86
     },
     {
-      "id": "zsv10pt5-159",
-      "name": "Meloetta ex",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "159",
-      "rarity": "Ultra Rare",
-      "subtypes": [
-        "Basic",
-        "ex"
-      ],
-      "price": 1.53
-    },
-    {
-      "id": "sm11-123",
-      "name": "Meloetta",
-      "set": "sm11",
-      "setName": "Unified Minds",
-      "number": "123",
-      "rarity": "Rare",
+      "id": "xy3-58",
+      "name": "Landorus",
+      "set": "xy3",
+      "setName": "Furious Fists",
+      "number": "58",
+      "rarity": "Rare Holo",
       "subtypes": [
         "Basic"
       ],
-      "price": 1.06
+      "price": 0.84
     },
     {
-      "id": "sm8-104",
-      "name": "Meloetta",
-      "set": "sm8",
-      "setName": "Lost Thunder",
-      "number": "104",
-      "rarity": "Rare",
+      "id": "sm10-103",
+      "name": "Landorus",
+      "set": "sm10",
+      "setName": "Unbroken Bonds",
+      "number": "103",
+      "rarity": "Rare Holo",
       "subtypes": [
         "Basic"
       ],
-      "price": 1.05
+      "price": 0.41
     },
     {
-      "id": "bwp-BW69",
-      "name": "Meloetta",
-      "set": "bwp",
-      "setName": "BW Black Star Promos",
-      "number": "BW69",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.85
-    },
-    {
-      "id": "zsv10pt5-44",
-      "name": "Meloetta ex",
-      "set": "zsv10pt5",
-      "setName": "Black Bolt",
-      "number": "44",
-      "rarity": "Double Rare",
-      "subtypes": [
-        "Basic",
-        "ex"
-      ],
-      "price": 0.64
-    },
-    {
-      "id": "swsh8-124",
-      "name": "Meloetta",
+      "id": "swsh8-148",
+      "name": "Landorus",
       "set": "swsh8",
       "setName": "Fusion Strike",
-      "number": "124",
-      "rarity": "Rare",
-      "subtypes": [
-        "Basic",
-        "Fusion Strike"
-      ],
-      "price": 0.27
-    },
-    {
-      "id": "me2-40",
-      "name": "Meloetta",
-      "set": "me2",
-      "setName": "Phantasmal Flames",
-      "number": "40",
-      "rarity": "Uncommon",
+      "number": "148",
+      "rarity": "Rare Holo",
       "subtypes": [
         "Basic"
       ],
-      "price": 0.22
-    }
-  ],
-  "basculin-species": {
-    "id": 550,
-    "varieties": [
-      {
-        "is_default": true,
-        "name": "basculin-red-striped"
-      },
-      {
-        "is_default": false,
-        "name": "basculin-blue-striped"
-      },
-      {
-        "is_default": false,
-        "name": "basculin-white-striped"
-      }
-    ]
-  },
-  "basculin-all": [
-    {
-      "id": "rsv10pt5-108",
-      "name": "Basculin",
-      "set": "rsv10pt5",
-      "setName": "White Flare",
-      "number": "108",
-      "rarity": "Illustration Rare",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 10.13
+      "price": 0.24
     },
     {
-      "id": "bw2-24",
-      "name": "Basculin",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "24",
-      "rarity": "Common",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 2.87
-    },
-    {
-      "id": "bw1-35",
-      "name": "Basculin",
-      "set": "bw1",
-      "setName": "Black & White",
-      "number": "35",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 1.44
-    },
-    {
-      "id": "bw2-25",
-      "name": "Basculin",
-      "set": "bw2",
-      "setName": "Emerging Powers",
-      "number": "25",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.95
-    },
-    {
-      "id": "bw4-30",
-      "name": "Basculin",
-      "set": "bw4",
-      "setName": "Next Destinies",
-      "number": "30",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.71
-    },
-    {
-      "id": "sm11-43",
-      "name": "Basculin",
-      "set": "sm11",
-      "setName": "Unified Minds",
-      "number": "43",
-      "rarity": "Uncommon",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.39
-    },
-    {
-      "id": "swsh8-70",
-      "name": "Basculin",
-      "set": "swsh8",
-      "setName": "Fusion Strike",
-      "number": "70",
-      "rarity": "Common",
-      "subtypes": [
-        "Basic",
-        "Rapid Strike"
-      ],
-      "price": 0.28
-    },
-    {
-      "id": "swshp-SWSH273",
-      "name": "Hisuian Basculin",
-      "set": "swshp",
-      "setName": "SWSH Black Star Promos",
-      "number": "SWSH273",
-      "rarity": "Promo",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.28
-    },
-    {
-      "id": "swsh11-44",
-      "name": "Hisuian Basculin",
+      "id": "swsh11-105",
+      "name": "Landorus",
       "set": "swsh11",
       "setName": "Lost Origin",
-      "number": "44",
-      "rarity": "Common",
-      "subtypes": [
-        "Basic"
-      ],
-      "price": 0.25
-    },
-    {
-      "id": "rsv10pt5-24",
-      "name": "Basculin",
-      "set": "rsv10pt5",
-      "setName": "White Flare",
-      "number": "24",
-      "rarity": "Common",
+      "number": "105",
+      "rarity": "Rare",
       "subtypes": [
         "Basic"
       ],
       "price": 0.22
     },
     {
-      "id": "swsh10-43",
-      "name": "Hisuian Basculin",
-      "set": "swsh10",
-      "setName": "Astral Radiance",
-      "number": "43",
-      "rarity": "Common",
+      "id": "sv8-110",
+      "name": "Landorus",
+      "set": "sv8",
+      "setName": "Surging Sparks",
+      "number": "110",
+      "rarity": "Rare",
       "subtypes": [
         "Basic"
       ],
       "price": 0.21
+    },
+    {
+      "id": "zsv10pt5-53",
+      "name": "Landorus",
+      "set": "zsv10pt5",
+      "setName": "Black Bolt",
+      "number": "53",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0.21
+    },
+    {
+      "id": "me3-41",
+      "name": "Landorus",
+      "set": "me3",
+      "setName": "Perfect Order",
+      "number": "41",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "price": 0
+    }
+  ],
+  "gg56": {
+    "id": "swsh12pt5-GG56",
+    "error": 404
+  },
+  "tcgdex-victini": [
+    {
+      "id": "2022swsh-5",
+      "localId": "5",
+      "name": "Victini"
+    },
+    {
+      "id": "swsh3.5-7",
+      "localId": "7",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh3.5/7"
+    },
+    {
+      "id": "sm7.5-7",
+      "localId": "7",
+      "name": "Victini ◇"
+    },
+    {
+      "id": "sm2-10",
+      "localId": "10",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/10"
+    },
+    {
+      "id": "sv10.5b-012",
+      "localId": "012",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5b/012"
+    },
+    {
+      "id": "xy6-13",
+      "localId": "13",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/xy/xy6/13"
+    },
+    {
+      "id": "bw3-14",
+      "localId": "14",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw3/14"
+    },
+    {
+      "id": "bw3-15",
+      "localId": "15",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw3/15"
+    },
+    {
+      "id": "bw8-18",
+      "localId": "18",
+      "name": "Victini-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw8/18"
+    },
+    {
+      "id": "swsh7-20",
+      "localId": "20",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh7/20"
+    },
+    {
+      "id": "swsh5-21",
+      "localId": "21",
+      "name": "Victini V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/21"
+    },
+    {
+      "id": "sv08-021",
+      "localId": "021",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sv/sv08/021"
+    },
+    {
+      "id": "swsh5-22",
+      "localId": "22",
+      "name": "Victini VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/22"
+    },
+    {
+      "id": "bw7-23",
+      "localId": "23",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw7/23"
+    },
+    {
+      "id": "bw11-23",
+      "localId": "23",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw11/23"
+    },
+    {
+      "id": "swsh12-023",
+      "localId": "023",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh12/023"
+    },
+    {
+      "id": "bw11-24",
+      "localId": "24",
+      "name": "Victini-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw11/24"
+    },
+    {
+      "id": "swsh1-25",
+      "localId": "25",
+      "name": "Victini V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh1/25"
+    },
+    {
+      "id": "sm11-26",
+      "localId": "26",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sm/sm11/26"
+    },
+    {
+      "id": "sm12-30",
+      "localId": "30",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sm/sm12/30"
+    },
+    {
+      "id": "sv05-030",
+      "localId": "030",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sv/sv05/030"
+    },
+    {
+      "id": "sv03-033",
+      "localId": "033",
+      "name": "Victini ex",
+      "image": "https://assets.tcgdex.net/en/sv/sv03/033"
+    },
+    {
+      "id": "swsh8-36",
+      "localId": "36",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh8/36"
+    },
+    {
+      "id": "bw3-43",
+      "localId": "43",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw3/43"
+    },
+    {
+      "id": "sm8-49",
+      "localId": "49",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sm/sm8/49"
+    },
+    {
+      "id": "bw3-98",
+      "localId": "98",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bw3/98"
+    },
+    {
+      "id": "bw8-131",
+      "localId": "131",
+      "name": "Victini-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw8/131"
+    },
+    {
+      "id": "svp-142",
+      "localId": "142",
+      "name": "Victini ex",
+      "image": "https://assets.tcgdex.net/en/sv/svp/142"
+    },
+    {
+      "id": "swsh5-144",
+      "localId": "144",
+      "name": "Victini V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/144"
+    },
+    {
+      "id": "swsh5-165",
+      "localId": "165",
+      "name": "Victini VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/165"
+    },
+    {
+      "id": "sv10.5b-171",
+      "localId": "171",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5b/171"
+    },
+    {
+      "id": "sv10.5w-172",
+      "localId": "172",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5w/172"
+    },
+    {
+      "id": "svp-208",
+      "localId": "208",
+      "name": "Victini"
+    },
+    {
+      "id": "bwp-BW32",
+      "localId": "BW32",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/bw/bwp/BW32"
+    },
+    {
+      "id": "smp-SM225",
+      "localId": "SM225",
+      "name": "Victini"
+    },
+    {
+      "id": "swshp-SWSH104",
+      "localId": "SWSH104",
+      "name": "Victini V",
+      "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH104"
+    },
+    {
+      "id": "xyp-XY117",
+      "localId": "XY117",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/xy/xyp/XY117"
+    },
+    {
+      "id": "xyp-XY189",
+      "localId": "XY189",
+      "name": "Victini",
+      "image": "https://assets.tcgdex.net/en/xy/xyp/XY189"
+    }
+  ],
+  "tcgdex-gothitelle": [
+    {
+      "id": "xy3-41",
+      "localId": "41",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/xy/xy3/41"
+    },
+    {
+      "id": "sv10.5w-043",
+      "localId": "043",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5w/043"
+    },
+    {
+      "id": "bw2-47",
+      "localId": "47",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/47"
+    },
+    {
+      "id": "bw2-48",
+      "localId": "48",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/48"
+    },
+    {
+      "id": "sm2-54",
+      "localId": "54",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/54"
+    },
+    {
+      "id": "bw6-57",
+      "localId": "57",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/bw/bw6/57"
+    },
+    {
+      "id": "bw11-72",
+      "localId": "72",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/bw/bw11/72"
+    },
+    {
+      "id": "swsh3-75",
+      "localId": "75",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh3/75"
+    },
+    {
+      "id": "sv02-092",
+      "localId": "092",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/sv/sv02/092"
+    },
+    {
+      "id": "B1-114",
+      "localId": "114",
+      "name": "Gothitelle",
+      "image": "https://assets.tcgdex.net/en/tcgp/B1/114"
+    },
+    {
+      "id": "svp-211",
+      "localId": "211",
+      "name": "Gothitelle"
+    }
+  ],
+  "tcgdex-thundurus": [
+    {
+      "id": "xy6-26",
+      "localId": "26",
+      "name": "Thundurus EX",
+      "image": "https://assets.tcgdex.net/en/xy/xy6/26"
+    },
+    {
+      "id": "xy3-33",
+      "localId": "33",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/xy/xy3/33"
+    },
+    {
+      "id": "sv10.5b-033",
+      "localId": "033",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5b/033"
+    },
+    {
+      "id": "bw2-35",
+      "localId": "35",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/35"
+    },
+    {
+      "id": "bw9-38",
+      "localId": "38",
+      "name": "Thundurus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw9/38"
+    },
+    {
+      "id": "bw11-50",
+      "localId": "50",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/bw/bw11/50"
+    },
+    {
+      "id": "swsh6-52",
+      "localId": "52",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/52"
+    },
+    {
+      "id": "sm11-68",
+      "localId": "68",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/sm/sm11/68"
+    },
+    {
+      "id": "sv03-070",
+      "localId": "070",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/sv/sv03/070"
+    },
+    {
+      "id": "bw2-97",
+      "localId": "97",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/97"
+    },
+    {
+      "id": "xy6-98",
+      "localId": "98",
+      "name": "Thundurus EX",
+      "image": "https://assets.tcgdex.net/en/xy/xy6/98"
+    },
+    {
+      "id": "bw9-110",
+      "localId": "110",
+      "name": "Thundurus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw9/110"
+    },
+    {
+      "id": "sv04.5-139",
+      "localId": "139",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/sv/sv04.5/139"
+    },
+    {
+      "id": "svp-209",
+      "localId": "209",
+      "name": "Thundurus"
+    },
+    {
+      "id": "bwp-BW41",
+      "localId": "BW41",
+      "name": "Thundurus",
+      "image": "https://assets.tcgdex.net/en/bw/bwp/BW41"
+    },
+    {
+      "id": "bwp-BW81",
+      "localId": "BW81",
+      "name": "Thundurus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bwp/BW81"
+    },
+    {
+      "id": "smp-SM133",
+      "localId": "SM133",
+      "name": "Thundurus GX",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM133"
+    }
+  ],
+  "tcgdex-tornadus": [
+    {
+      "id": "sv10.5w-078",
+      "localId": "078",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/sv/sv10.5w/078"
+    },
+    {
+      "id": "xy3-86",
+      "localId": "86",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/xy/xy3/86"
+    },
+    {
+      "id": "bw2-89",
+      "localId": "89",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/89"
+    },
+    {
+      "id": "bw5-90",
+      "localId": "90",
+      "name": "Tornadus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw5/90"
+    },
+    {
+      "id": "bw2-98",
+      "localId": "98",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/bw/bw2/98"
+    },
+    {
+      "id": "bw9-98",
+      "localId": "98",
+      "name": "Tornadus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw9/98"
+    },
+    {
+      "id": "bw5-108",
+      "localId": "108",
+      "name": "Tornadus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw5/108"
+    },
+    {
+      "id": "bw11-108",
+      "localId": "108",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/bw/bw11/108"
+    },
+    {
+      "id": "bw9-114",
+      "localId": "114",
+      "name": "Tornadus-EX",
+      "image": "https://assets.tcgdex.net/en/bw/bw9/114"
+    },
+    {
+      "id": "sv07-120",
+      "localId": "120",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/sv/sv07/120"
+    },
+    {
+      "id": "swsh6-124",
+      "localId": "124",
+      "name": "Tornadus V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/124"
+    },
+    {
+      "id": "swsh6-125",
+      "localId": "125",
+      "name": "Tornadus VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/125"
+    },
+    {
+      "id": "swsh9-126",
+      "localId": "126",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh9/126"
+    },
+    {
+      "id": "B2-138",
+      "localId": "138",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/tcgp/B2/138"
+    },
+    {
+      "id": "swsh4-142",
+      "localId": "142",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh4/142"
+    },
+    {
+      "id": "sm11-178",
+      "localId": "178",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/sm/sm11/178"
+    },
+    {
+      "id": "swsh6-184",
+      "localId": "184",
+      "name": "Tornadus V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/184"
+    },
+    {
+      "id": "swsh6-185",
+      "localId": "185",
+      "name": "Tornadus V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/185"
+    },
+    {
+      "id": "swsh6-209",
+      "localId": "209",
+      "name": "Tornadus VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/209"
+    },
+    {
+      "id": "svp-210",
+      "localId": "210",
+      "name": "Tornadus"
+    },
+    {
+      "id": "bwp-BW42",
+      "localId": "BW42",
+      "name": "Tornadus",
+      "image": "https://assets.tcgdex.net/en/bw/bwp/BW42"
+    },
+    {
+      "id": "bwp-BW96",
+      "localId": "BW96",
+      "name": "Tornadus-EX"
+    },
+    {
+      "id": "smp-SM134",
+      "localId": "SM134",
+      "name": "Tornadus GX",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM134"
     }
   ]
 }

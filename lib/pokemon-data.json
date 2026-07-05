@@ -8379,7 +8379,37 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/413.png",
     "genus": "Bagworm Pokémon",
     "bgCandidates": [],
-    "altForms": [],
+    "regularCardUrl": "https://images.pokemontcg.io/pop7/10_hires.png",
+    "altForms": [
+      {
+        "slug": "wormadam-sandy",
+        "displayName": "Sandy Cloak Wormadam",
+        "types": [
+          "bug",
+          "ground"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10004.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10004.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10004.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/pop7/10_hires.png"
+      },
+      {
+        "slug": "wormadam-trash",
+        "displayName": "Trash Cloak Wormadam",
+        "types": [
+          "bug",
+          "steel"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10005.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10005.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10005.png",
+        "category": "forme",
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/pop7/10_hires.png"
+      }
+    ],
     "familyId": 412,
     "familyOrder": 1
   },
@@ -8811,6 +8841,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/439.png",
     "genus": "Mime Pokémon",
     "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/dpp/DP22_hires.png",
     "altForms": [],
     "familyId": 122,
     "familyOrder": 0
@@ -9615,7 +9646,22 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/svp/180_hires.png"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "dialga-origin",
+        "displayName": "Origin Forme Dialga",
+        "types": [
+          "steel",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/svp/180_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 483,
     "familyOrder": 0
   },
@@ -9633,7 +9679,22 @@
       "https://assets.tcgdex.net/en/tcgp/A2/204/high.webp"
     ],
     "regularCardUrl": "https://images.pokemontcg.io/bw10/66_hires.png",
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "palkia-origin",
+        "displayName": "Origin Forme Palkia",
+        "types": [
+          "water",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10246.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10246.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10246.png",
+        "category": "forme",
+        "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2/204/high.webp",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 484,
     "familyOrder": 0
   },
@@ -9697,8 +9758,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png",
     "genus": "Renegade Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/bw6/124_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "giratina-origin",
+        "displayName": "Origin Forme Giratina",
+        "types": [
+          "ghost",
+          "dragon"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10007.png",
+        "category": "forme",
+        "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2b/096/high.webp",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 487,
     "familyOrder": 0
   },
@@ -9790,8 +9868,25 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/492.png",
     "genus": "Gratitude Pokémon",
-    "bgCandidates": [],
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv10/185_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "shaymin-sky",
+        "displayName": "Sky Forme Shaymin",
+        "types": [
+          "grass",
+          "flying"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10006.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/sv10/185_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 492,
     "familyOrder": 0
   },

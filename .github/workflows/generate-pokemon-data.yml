@@ -31,19 +31,6 @@ jobs:
 
       - run: npm ci
 
-      - name: Debug cards
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
-        run: npx tsx scripts/debug-cards.ts
-
-      - name: Commit debug data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/debug-cards.json
-          git commit -m "chore: debug cards" || echo "no changes"
-          git push --force-with-lease
-
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}

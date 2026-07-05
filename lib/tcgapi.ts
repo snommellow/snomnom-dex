@@ -268,6 +268,15 @@ function isPreBwSet(setId: string): boolean {
   return !/^(bw|xy|sm|swsh|sv)/i.test(setId);
 }
 
+// BW/XY-era "Rare Ultra"/"Rare Holo EX" full-art cards (2012-2016, e.g. bw5-107 Darkrai-EX,
+// xy4-122 Dialga-EX, xy3-107 Lucario-EX) are real full-art cards but their design still has a
+// visible colored border baked in, unlike SM+ era full arts - confirmed via direct feedback
+// (Darkrai/Dialga/Lucario all showed the border when stretched as a background). Crop these
+// like the pre-BW era instead of treating them as background-worthy.
+function isBwXyEraSet(setId: string): boolean {
+  return /^(bw|xy)/i.test(setId);
+}
+
 function pickBestCard(cards: RankedCard[]): RankedCard | null {
   if (!cards.length) return null;
   // Rare Ultra from swsh11+ are full-art border reprints — deprioritize below Rare Holo V
@@ -503,7 +512,7 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
 
 export function vgxPick(candidates: RankedCard[], chainSets?: Set<string>): TcgImageResult | null {
   if (!candidates.length) return null;
-  const isOldStyle = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id);
+  const isOldStyle = (c: RankedCard) => OLD_STYLE_RARITIES.has(c._rarity) && (isPreBwSet(c.set.id) || isBwXyEraSet(c.set.id));
   // Modern full-art cards (GX, V, TAG TEAM etc.) don't need chain set coherence
   const modern = candidates.filter(c => !isOldStyle(c));
   const winner = modern.length

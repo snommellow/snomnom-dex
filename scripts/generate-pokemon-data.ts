@@ -117,6 +117,16 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // automated "regional" search (auto-searches by full displayName) picks instead.
   "White Kyurem": "https://images.pokemontcg.io/xyp/XY81_hires.png",
   "Black Kyurem": "https://images.pokemontcg.io/xyp/XY80_hires.png",
+  // Resolute Forme Keldeo: user confirmed swsh1-53 "Keldeo V" should render full-bleed, not
+  // cropped (previously miscategorized as a bordered design — same correction as Origin Forme
+  // Dialga/Palkia's FORCE_CROP_IDS revert).
+  "Resolute Forme Keldeo": "https://images.pokemontcg.io/swsh1/53_hires.png",
+  // Hisuian Samurott/Zoroark: user-confirmed Crown Zenith Galarian Gallery cards. Pinned
+  // directly rather than relying on the automated pass — the real set id is "swsh12pt5gg" (not
+  // "swsh12pt5" as first assumed), so an earlier blacklist attempt on the wrong id was a silent
+  // no-op, letting yet other candidates win instead.
+  "Hisuian Samurott": "https://images.pokemontcg.io/swsh12pt5gg/GG51_hires.png",
+  "Hisuian Zoroark": "https://images.pokemontcg.io/swsh12pt5gg/GG56_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish
@@ -142,10 +152,6 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // Sandy/Trash Cloak Burmy: same naming situation as Wormadam's cloaks above.
   "Sandy Cloak Burmy": "https://images.pokemontcg.io/pl4/57_hires.png",
   "Trash Cloak Burmy": "https://images.pokemontcg.io/dp3/80_hires.png",
-  // Resolute Forme Keldeo: every mainline TCG printing is just named "Keldeo" (Ordinary/Resolute
-  // Forme aren't distinguished by card name). User-confirmed card: swsh1-53 "Keldeo V" — a
-  // bordered "Basic V" design, so cropped rather than full-bleed.
-  "Resolute Forme Keldeo": "https://images.pokemontcg.io/swsh1/53_hires.png",
   // Blue/White-Striped Basculin: every TCG printing is just named "Basculin" (no stripe-color
   // text), so picked by hand — two distinct highest-value candidates, both plain Common/Uncommon
   // (no full-art Basculin printing exists at all), distinct from Red-Striped's rsv10pt5-108.

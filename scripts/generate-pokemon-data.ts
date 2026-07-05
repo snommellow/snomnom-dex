@@ -126,6 +126,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // Sandy/Trash Cloak Burmy: same naming situation as Wormadam's cloaks above.
   "Sandy Cloak Burmy": "https://images.pokemontcg.io/pl4/57_hires.png",
   "Trash Cloak Burmy": "https://images.pokemontcg.io/dp3/80_hires.png",
+  // Resolute Forme Keldeo: every mainline TCG printing is just named "Keldeo" (Ordinary/Resolute
+  // Forme aren't distinguished by card name). User-confirmed card: swsh1-53 "Keldeo V" — a
+  // bordered "Basic V" design, so cropped rather than full-bleed.
+  "Resolute Forme Keldeo": "https://images.pokemontcg.io/swsh1/53_hires.png",
 };
 
 async function main() {

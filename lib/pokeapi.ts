@@ -210,6 +210,10 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "frost") return { displayName: `Frost ${base}`, category: "regional" };
   if (suffix === "fan")   return { displayName: `Fan ${base}`,   category: "regional" };
   if (suffix === "mow")   return { displayName: `Mow ${base}`,   category: "regional" };
+  // Kyurem's fusion formes are literally named "White Kyurem"/"Black Kyurem" in the TCG
+  // (no "Forme" text), so auto-searchable like Rotom's appliance formes above.
+  if (suffix === "white") return { displayName: `White ${base}`, category: "regional" };
+  if (suffix === "black") return { displayName: `Black ${base}`, category: "regional" };
   // Tornadus/Thundurus/Landorus' Therian Formes, Darmanitan's Zen Mode, Keldeo's Resolute Forme,
   // Meloetta's Pirouette Forme, and Basculin's Blue-Striped form aren't distinguished by card
   // name in the TCG (same printing serves both formes), so treat as "forme" like Deoxys/Castform

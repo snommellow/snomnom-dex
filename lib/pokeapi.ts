@@ -270,6 +270,50 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "small") return { displayName: `Small ${base}`, category: "forme" };
   if (suffix === "large") return { displayName: `Large ${base}`,  category: "forme" };
   if (suffix === "super") return { displayName: `Super ${base}`,  category: "forme" };
+  // Necrozma/Zacian/Zamazenta/Eternatus/Calyrex/Urshifu/Ogerpon's alt formes are all literally
+  // named that way in the TCG (e.g. "Dusk Mane Necrozma", "Crowned Sword Zacian", "Ice Rider
+  // Calyrex", "Rapid Strike Urshifu", "Wellspring Mask Ogerpon"), so auto-searchable.
+  if (suffix === "dusk" && base !== "Lycanroc") return { displayName: `Dusk Mane ${base}`, category: "regional" };
+  if (suffix === "dawn")   return { displayName: `Dawn Wings ${base}`, category: "regional" };
+  if (suffix === "ultra")  return { displayName: `Ultra ${base}`, category: "regional" };
+  if (suffix === "crowned") return { displayName: `Crowned ${base === "Zacian" ? "Sword" : "Shield"} ${base}`, category: "regional" };
+  if (suffix === "eternamax") return { displayName: `Eternamax ${base}`, category: "regional" };
+  if (suffix === "rapid-strike") return { displayName: `Rapid Strike ${base}`, category: "regional" };
+  if (suffix === "ice")    return { displayName: `Ice Rider ${base}`, category: "regional" };
+  if (suffix === "shadow") return { displayName: `Shadow Rider ${base}`, category: "regional" };
+  if (suffix === "bloodmoon") return { displayName: `Bloodmoon ${base}`, category: "regional" };
+  if (suffix === "wellspring-mask")  return { displayName: `Wellspring Mask ${base}`, category: "regional" };
+  if (suffix === "hearthflame-mask") return { displayName: `Hearthflame Mask ${base}`, category: "regional" };
+  if (suffix === "cornerstone-mask") return { displayName: `Cornerstone Mask ${base}`, category: "regional" };
+  // Gigantamax Urshifu/Toxtricity have two distinct Gigantamax forms (one per base variant),
+  // unlike every other Gigantamax species which only has one — so these need their own suffix
+  // branches rather than the generic "gmax" one, to keep both distinct.
+  if (suffix === "single-strike-gmax") return { displayName: `Gigantamax Single Strike ${base}`, category: "gmax" };
+  if (suffix === "rapid-strike-gmax")  return { displayName: `Gigantamax Rapid Strike ${base}`, category: "gmax" };
+  if (suffix === "amped-gmax")  return { displayName: `Gigantamax Amped ${base}`, category: "gmax" };
+  if (suffix === "low-key-gmax") return { displayName: `Gigantamax Low Key ${base}`, category: "gmax" };
+  // These cosmetic/gender/color variants aren't distinguished by card name in the TCG (every
+  // printing shares the base form's card name), so treated as "forme" like Deoxys/Castform.
+  if (suffix === "female")        return { displayName: `Female ${base}`, category: "forme" };
+  if (suffix === "family-of-three") return { displayName: `Family of Three ${base}`, category: "forme" };
+  if (suffix === "blue-plumage")   return { displayName: `Blue Plumage ${base}`, category: "forme" };
+  if (suffix === "yellow-plumage") return { displayName: `Yellow Plumage ${base}`, category: "forme" };
+  if (suffix === "white-plumage")  return { displayName: `White Plumage ${base}`, category: "forme" };
+  if (suffix === "droopy")   return { displayName: `Droopy Form ${base}`, category: "forme" };
+  if (suffix === "stretchy") return { displayName: `Stretchy Form ${base}`, category: "forme" };
+  if (suffix === "three-segment") return { displayName: `Three-Segment Form ${base}`, category: "forme" };
+  if (suffix === "hero") return { displayName: `Hero Form ${base}`, category: "forme" };
+  if (suffix === "roaming") return { displayName: `Roaming Form ${base}`, category: "forme" };
+  if (suffix === "low-key") return { displayName: `Low Key Form ${base}`, category: "forme" };
+  if (suffix === "noice")   return { displayName: `Noice Face ${base}`, category: "forme" };
+  if (suffix === "hangry")  return { displayName: `Hangry Mode ${base}`, category: "forme" };
+  if (suffix === "pom-pom") return { displayName: `Pom-Pom Style ${base}`, category: "forme" };
+  if (suffix === "pau")     return { displayName: `Pa'u Style ${base}`, category: "forme" };
+  if (suffix === "sensu")   return { displayName: `Sensu Style ${base}`, category: "forme" };
+  if (suffix === "midnight") return { displayName: `Midnight Form ${base}`, category: "forme" };
+  if (suffix === "dusk" && base === "Lycanroc") return { displayName: `Dusk Form ${base}`, category: "forme" };
+  if (suffix === "school") return { displayName: `School Form ${base}`, category: "forme" };
+  if (suffix === "busted") return { displayName: `Busted Form ${base}`, category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

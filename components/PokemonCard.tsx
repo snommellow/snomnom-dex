@@ -364,7 +364,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-", "10% Forme ", "Complete Forme ", "Blade Forme ", "Small ", "Large ", "Super "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-", "10% Forme ", "Complete Forme ", "Blade Forme ", "Small ", "Large ", "Super ", "Dusk Mane ", "Dawn Wings ", "Ultra ", "Crowned Sword ", "Crowned Shield ", "Eternamax ", "Rapid Strike ", "Single Strike ", "Ice Rider ", "Shadow Rider ", "Bloodmoon ", "Wellspring Mask ", "Hearthflame Mask ", "Cornerstone Mask ", "Teal Mask ", "Female ", "Family of Three ", "Blue Plumage ", "Yellow Plumage ", "White Plumage ", "Droopy Form ", "Stretchy Form ", "Three-Segment Form ", "Hero Form ", "Roaming Form ", "Low Key Form ", "Amped ", "Low Key ", "Noice Face ", "Hangry Mode ", "Pom-Pom Style ", "Pa'u Style ", "Sensu Style ", "Midnight Form ", "Dusk Form ", "School Form ", "Busted Form "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   // Hoopa Unbound is a suffix form (base name first), unlike every other prefix-style forme.
@@ -384,7 +384,11 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
   if (category === "mega") {
     label = displayName.endsWith(" X") ? "Mega X" : displayName.endsWith(" Y") ? "Mega Y" : "Mega";
   } else if (category === "gmax") {
-    label = "Gigantamax";
+    if (displayName.includes("Single Strike")) label = "Gigantamax Single Strike";
+    else if (displayName.includes("Rapid Strike")) label = "Gigantamax Rapid Strike";
+    else if (displayName.includes("Amped")) label = "Gigantamax Amped";
+    else if (displayName.includes("Low Key")) label = "Gigantamax Low Key";
+    else label = "Gigantamax";
   } else if (category === "regional") {
     if (displayName.startsWith("Alolan")) label = "Alolan";
     else if (displayName.startsWith("Galarian")) label = "Galarian";
@@ -399,6 +403,19 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("White")) label = "White";
     else if (displayName.startsWith("Black")) label = "Black";
     else if (displayName.startsWith("Ash-")) label = "Battle Bond";
+    else if (displayName.startsWith("Dusk Mane")) label = "Dusk Mane";
+    else if (displayName.startsWith("Dawn Wings")) label = "Dawn Wings";
+    else if (displayName.startsWith("Ultra")) label = "Ultra";
+    else if (displayName.startsWith("Crowned Sword")) label = "Crowned Sword";
+    else if (displayName.startsWith("Crowned Shield")) label = "Crowned Shield";
+    else if (displayName.startsWith("Eternamax")) label = "Eternamax";
+    else if (displayName.startsWith("Rapid Strike")) label = "Rapid Strike";
+    else if (displayName.startsWith("Ice Rider")) label = "Ice Rider";
+    else if (displayName.startsWith("Shadow Rider")) label = "Shadow Rider";
+    else if (displayName.startsWith("Bloodmoon")) label = "Bloodmoon";
+    else if (displayName.startsWith("Wellspring Mask")) label = "Wellspring Mask";
+    else if (displayName.startsWith("Hearthflame Mask")) label = "Hearthflame Mask";
+    else if (displayName.startsWith("Cornerstone Mask")) label = "Cornerstone Mask";
   } else if (category === "primal") {
     label = "Primal Reversion";
   } else if (category === "forme") {
@@ -426,6 +443,26 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Small")) label = "Small";
     else if (displayName.startsWith("Large")) label = "Large";
     else if (displayName.startsWith("Super")) label = "Super";
+    else if (displayName.startsWith("Female")) label = "Female";
+    else if (displayName.startsWith("Family of Three")) label = "Family of Three";
+    else if (displayName.startsWith("Blue Plumage")) label = "Blue Plumage";
+    else if (displayName.startsWith("Yellow Plumage")) label = "Yellow Plumage";
+    else if (displayName.startsWith("White Plumage")) label = "White Plumage";
+    else if (displayName.startsWith("Droopy Form")) label = "Droopy Form";
+    else if (displayName.startsWith("Stretchy Form")) label = "Stretchy Form";
+    else if (displayName.startsWith("Three-Segment Form")) label = "Three-Segment Form";
+    else if (displayName.startsWith("Hero Form")) label = "Hero Form";
+    else if (displayName.startsWith("Roaming Form")) label = "Roaming Form";
+    else if (displayName.startsWith("Low Key Form")) label = "Low Key Form";
+    else if (displayName.startsWith("Noice Face")) label = "Noice Face";
+    else if (displayName.startsWith("Hangry Mode")) label = "Hangry Mode";
+    else if (displayName.startsWith("Pom-Pom Style")) label = "Pom-Pom Style";
+    else if (displayName.startsWith("Pa'u Style")) label = "Pa'u Style";
+    else if (displayName.startsWith("Sensu Style")) label = "Sensu Style";
+    else if (displayName.startsWith("Midnight Form")) label = "Midnight Form";
+    else if (displayName.startsWith("Dusk Form")) label = "Dusk Form";
+    else if (displayName.startsWith("School Form")) label = "School Form";
+    else if (displayName.startsWith("Busted Form")) label = "Busted Form";
   }
   return { baseName, formLabel: label };
 }

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import PokedexGrid from "@/components/PokedexGrid";
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 function GridSkeleton() {
   return (
@@ -65,7 +65,7 @@ export default function Home() {
                 Snomnom Dex
               </h1>
               <p className="text-red-200 text-[11px] font-medium leading-none mt-0.5">
-                Generation I–II · 251 Pokémon
+                Generation I–IV · 493 Pokémon
               </p>
             </div>
 

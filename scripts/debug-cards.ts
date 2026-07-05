@@ -1,31 +1,26 @@
 import fs from "fs";
 
-const API_KEY = process.env.POKEMONTCG_API_KEY;
-const headers: Record<string, string> = API_KEY ? { "X-Api-Key": API_KEY } : {};
-
-async function getCard(id: string) {
-  try {
-    const res = await fetch(`https://api.pokemontcg.io/v2/cards/${id}`, { headers });
-    if (!res.ok) return { id, error: res.status };
-    const data = await res.json();
-    const c = data.data;
-    return { id: c.id, name: c.name, set: c.set?.id, number: c.number, rarity: c.rarity, subtypes: c.subtypes };
-  } catch (e) { return { id, error: String(e) }; }
-}
-
-async function search(name: string) {
-  const res = await fetch(`https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(`name:"${name}"`)}&pageSize=20`, { headers });
-  if (!res.ok) return { error: res.status };
+async function getSpecies(id: number) {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+  if (!res.ok) return { id, error: res.status };
   const data = await res.json();
-  return (data.data as any[]).map(c => ({ id: c.id, name: c.name, set: c.set?.id, number: c.number, rarity: c.rarity }));
+  return { id, varieties: (data.varieties as any[]).map(v => ({ is_default: v.is_default, name: v.pokemon.name })) };
 }
+
+const ids: Record<string, number> = {
+  decidueye: 724, necrozma: 800, zacian: 888, zamazenta: 889, eternatus: 890,
+  urshifu: 892, calyrex: 898, ursaluna: 901, indeedee: 876, basculegion: 902,
+  oinkologne: 916, maushold: 925, squawkabilly: 931, tatsugiri: 978,
+  dudunsparce: 982, palafin: 964, ogerpon: 1017, gimmighoul: 999,
+  toxtricity: 849, eiscue: 875, morpeko: 877, minior: 774, oricorio: 741,
+  lycanroc: 745, wishiwashi: 746, mimikyu: 778,
+};
 
 async function main() {
   const out: Record<string, unknown> = {};
-  out["sm12-75"] = await getCard("sm12-75");
-  out["appletun-vmax"] = await search("Appletun VMAX");
-  out["toxtricity-vmax"] = await search("Toxtricity VMAX");
-  out["urshifu-single-vmax"] = await search("Single Strike Urshifu VMAX");
+  for (const [name, id] of Object.entries(ids)) {
+    out[name] = await getSpecies(id);
+  }
   fs.writeFileSync("lib/debug-cards.json", JSON.stringify(out, null, 2));
 }
 

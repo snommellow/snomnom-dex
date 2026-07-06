@@ -1,30 +1,23 @@
-import { writeFileSync } from "fs";
-
-const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
-function authHeaders() {
-  const key = process.env.POKEMONTCG_API_KEY;
-  return key ? { "X-Api-Key": key } : {};
-}
+import { writeFileSync, mkdirSync } from "fs";
 
 async function main() {
-  const res = await fetch(`${PTCGIO_BASE}/cards?q=name:Basculin&pageSize=250`, {
-    headers: authHeaders(),
-  });
-  const data = await res.json();
-  const cards = (data.data ?? []).map((c: any) => ({
-    id: c.id,
-    name: c.name,
-    set: c.set?.name,
-    setId: c.set?.id,
-    number: c.number,
-    rarity: c.rarity,
-    subtypes: c.subtypes,
-    supertype: c.supertype,
-    tcgplayer: c.tcgplayer?.prices,
-    images: c.images,
-  }));
-  writeFileSync("lib/debug-cards.json", JSON.stringify(cards, null, 2));
-  console.log(`Wrote ${cards.length} cards`);
+  mkdirSync("lib/debug-images", { recursive: true });
+  const urls: Record<string, string> = {
+    "bw4-30": "https://images.pokemontcg.io/bw4/30_hires.png",
+    "bw2-24": "https://images.pokemontcg.io/bw2/24_hires.png",
+    "bw2-25": "https://images.pokemontcg.io/bw2/25_hires.png",
+    "bw1-35": "https://images.pokemontcg.io/bw1/35_hires.png",
+    "sm11-43": "https://images.pokemontcg.io/sm11/43_hires.png",
+    "swsh8-70": "https://images.pokemontcg.io/swsh8/70_hires.png",
+    "rsv10pt5-24": "https://images.pokemontcg.io/rsv10pt5/24_hires.png",
+    "rsv10pt5-108": "https://images.pokemontcg.io/rsv10pt5/108_hires.png",
+  };
+  for (const [id, url] of Object.entries(urls)) {
+    const res = await fetch(url);
+    const buf = Buffer.from(await res.arrayBuffer());
+    writeFileSync(`lib/debug-images/${id}.png`, buf);
+    console.log(`Wrote ${id} (${buf.length} bytes)`);
+  }
 }
 
 main();

@@ -115,6 +115,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Basculin's base entity is the Red-Striped variety (Blue/White-Striped are separate alt
   // forms); give it a matching subtitle so all three are distinguishable in the grid.
   if (pokemon.name === "basculin-red-striped" && !formLabel) formLabel = "Red-Striped";
+  // Aegislash's base entity is the Shield Forme (Blade Forme is a separate alt form); give it
+  // a matching subtitle so the two aren't visually indistinguishable in the grid.
+  if (pokemon.name === "aegislash-shield" && !formLabel) formLabel = "Shield Forme";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

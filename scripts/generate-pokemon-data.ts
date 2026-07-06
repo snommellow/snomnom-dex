@@ -116,6 +116,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // Using URLs directly avoids a per-card API call that can fail under rate limits.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
+  "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
   // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name
   // mismatch rather than a losing-candidate issue — not yet root-caused enough to convert safely.
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",

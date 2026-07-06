@@ -14850,7 +14850,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/741.png",
     "genus": "Dancing Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/mep/24_hires.png"
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_024_R_EN.png"
     ],
     "altForms": [
       {
@@ -17796,7 +17796,22 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/me2/100_hires.png"
     ],
-    "altForms": [],
+    "altForms": [
+      {
+        "slug": "zacian-crowned",
+        "displayName": "Crowned Sword Zacian",
+        "types": [
+          "fairy",
+          "steel"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10188.png",
+        "category": "regional",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 888,
     "familyOrder": 0
   },

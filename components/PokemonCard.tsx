@@ -414,6 +414,7 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     if (displayName.startsWith("Alolan")) label = "Alolan";
     else if (displayName.startsWith("Galarian")) label = "Galarian";
     else if (displayName.startsWith("Hisuian")) label = "Hisuian";
+    else if (displayName === "Paldean Tauros") label = "Combat Breed";
     else if (displayName.startsWith("Paldean")) label = "Paldean";
     else if (displayName.startsWith("Heat")) label = "Heat";
     else if (displayName.startsWith("Wash")) label = "Wash";

@@ -112,6 +112,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",
   "Hoopa Unbound": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
   "Complete Forme Zygarde": "https://images.pokemontcg.io/sm6/73_hires.png",
   // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name

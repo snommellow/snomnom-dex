@@ -118,6 +118,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Aegislash's base entity is the Shield Forme (Blade Forme is a separate alt form); give it
   // a matching subtitle so the two aren't visually indistinguishable in the grid.
   if (pokemon.name === "aegislash-shield" && !formLabel) formLabel = "Shield Forme";
+  // Pumpkaboo/Gourgeist's base entity is the Average size (Small/Large/Super are separate alt
+  // forms); give it a matching subtitle so all four sizes are distinguishable in the grid.
+  if ((pokemon.name === "pumpkaboo-average" || pokemon.name === "gourgeist-average") && !formLabel) formLabel = "Average Size";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

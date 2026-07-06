@@ -53,21 +53,46 @@ export async function fetchPokemonList(
   } catch { return []; }
 }
 
+// Retries, like fetchAllPages/imageExists in lib/tcgapi.ts — firing 1025+ concurrent requests
+// at once (see fetchFirst151 below) was silently dropping a handful of Pokémon under load with
+// no retry, since a single transient failure here just returns null and gets filtered out with
+// no trace (confirmed as the root cause of dex 1022-1025 going missing despite the PokeAPI list
+// and individual fetches both working fine in isolation).
 export async function fetchPokemon(
   nameOrId: string | number
 ): Promise<Pokemon | null> {
-  try {
-    const res = await fetch(`${BASE_URL}/pokemon/${nameOrId}`, {
-      next: { revalidate: 86400 },
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch { return null; }
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      if (attempt > 0) await new Promise(r => setTimeout(r, 500 * attempt));
+      const res = await fetch(`${BASE_URL}/pokemon/${nameOrId}`, {
+        next: { revalidate: 86400 },
+      });
+      if (!res.ok) continue;
+      return await res.json();
+    } catch { /* retry */ }
+  }
+  process.stderr.write(`[fetchPokemon] giving up on "${nameOrId}" after 4 attempts\n`);
+  return null;
+}
+
+// Bounds concurrency so 1000+ Pokémon don't all hit pokeapi.co at once — reduces the rate of
+// transient failures fetchPokemon's retries above have to absorb in the first place.
+async function mapWithConcurrency<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results: R[] = new Array(items.length);
+  let next = 0;
+  async function worker() {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await fn(items[i]);
+    }
+  }
+  await Promise.all(Array.from({ length: limit }, worker));
+  return results;
 }
 
 export async function fetchFirst151(): Promise<Pokemon[]> {
   const list = await fetchPokemonList(1025);
-  const results = await Promise.all(list.map((p) => fetchPokemon(p.name)));
+  const results = await mapWithConcurrency(list, 20, (p) => fetchPokemon(p.name));
   return results.filter((p): p is Pokemon => p !== null);
 }
 

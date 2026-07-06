@@ -13639,7 +13639,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10026.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10026.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv4/210_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh4/126_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -14526,7 +14526,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/720.png",
     "genus": "Mischief Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/xy7/89_hires.png"
+      "https://images.scrydex.com/pokemon/xyp_ja-155/medium"
     ],
     "altForms": [
       {
@@ -14540,7 +14540,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10086.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10086.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/xy7/89_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
         "regularCardUrl": null
       }
     ],

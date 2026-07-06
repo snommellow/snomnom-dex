@@ -190,8 +190,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // Blue/White-Striped Basculin: every TCG printing is just named "Basculin" (no stripe-color
   // text), so picked by hand — two distinct highest-value candidates, both plain Common/Uncommon
   // (no full-art Basculin printing exists at all), distinct from Red-Striped's rsv10pt5-108.
-  "Blue-Striped Basculin": "https://images.pokemontcg.io/bw2/24_hires.png",
-  "White-Striped Basculin": "https://images.pokemontcg.io/bw1/35_hires.png",
+  // swsh8-70's art and flavor text ("fights with schools of red-striped Basculin") both confirm
+  // this depicts the Blue-Striped variety specifically, unlike bw2-24/bw1-35/bw2-25/rsv10pt5-24
+  // which all show the red-striped color scheme despite generic "Basculin" naming.
+  "Blue-Striped Basculin": "https://images.pokemontcg.io/swsh8/70_hires.png",
   // Zen Mode Darmanitan / Zen Mode Galarian Darmanitan: every TCG printing is just named
   // "Darmanitan"/"Galarian Darmanitan" (Standard/Zen Mode aren't distinguished by card name),
   // and both Zen forms were duplicating the same automated pick. User-confirmed cards:

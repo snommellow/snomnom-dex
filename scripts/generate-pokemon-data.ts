@@ -68,17 +68,17 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // Fearow above — outside promoSvPick's scope, structurally unreachable by any automated pass.
   385: "https://images.pokemontcg.io/xyp/XY67a_hires.png",
   // #82 Magneton, #164 Noctowl, #230 Kingdra, #374 Beldum, #658 Greninja, #991 Iron Bundle:
-  // pinned to freeze their current automated SV Promo pick in place.
+  // pinned full-art picks.
   82: "https://images.pokemontcg.io/svp/159_hires.png",
   164: "https://images.pokemontcg.io/svp/141_hires.png",
   230: "https://images.pokemontcg.io/svp/131_hires.png",
   374: "https://images.pokemontcg.io/svp/207_hires.png",
   658: "https://images.pokemontcg.io/svp/132_hires.png",
   991: "https://images.pokemontcg.io/svp/66_hires.png",
-  // #150 Mewtwo: pinned directly to the plain SVP promo the user wants. Trainer-owned cards
+  // #150 Mewtwo: pinned directly to the promo the user wants. Trainer-owned cards
   // ("Team Rocket's Mewtwo ex") kept winning via one pass or another despite per-card
   // blacklisting — hardcoding sidesteps that entirely. Snorlax's equivalent hardcode was
-  // dropped so it falls through to the automated SV Promo tier instead.
+  // dropped so it falls through to the automated pick instead.
   150: "https://images.pokemontcg.io/svp/52_hires.png",
   // #576 Gothitelle, #494 Victini, #642 Thundurus, #641 Tornadus: user-provided full-art SVP
   // promos (#211/#208/#209/#210), not yet indexed by pokemontcg.io — pinned directly by URL.
@@ -422,10 +422,10 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
-    // by the automated tiers, not to override a genuinely better automated pick. Hardcode and SV
-    // Promo are the same kind of pick (a single promo card), so they're merged into one tier —
-    // hardcode wins if set, otherwise the automated SV Promo pick is used — ranked above the
-    // trainer/VGX/ancient-trait tiers below it.
+    // by the automated tiers, not to override a genuinely better automated pick. Hardcode and the
+    // automated promo pick are the same kind of pick (a single promo card), so they're merged
+    // into one tier — hardcode wins if set, otherwise the automated pick is used — ranked above
+    // the trainer/VGX/ancient-trait tiers below it.
     const tcgResult = irMap.get(p.id)
       ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
       ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)

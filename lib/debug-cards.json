@@ -1,0 +1,330 @@
+{
+  "lele": [
+    {
+      "id": "sm2-60",
+      "localId": "60",
+      "name": "Tapu Lele GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/60"
+    },
+    {
+      "id": "cel25-60A",
+      "localId": "60A",
+      "name": "Tapu Lele GX"
+    },
+    {
+      "id": "swsh12.5-064",
+      "localId": "064",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh12.5/064"
+    },
+    {
+      "id": "A3-084",
+      "localId": "084",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/084"
+    },
+    {
+      "id": "sv08-092",
+      "localId": "092",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/sv/sv08/092"
+    },
+    {
+      "id": "sm5-94",
+      "localId": "94",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/sm/sm5/94"
+    },
+    {
+      "id": "sm2-137",
+      "localId": "137",
+      "name": "Tapu Lele GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/137"
+    },
+    {
+      "id": "sm8-150",
+      "localId": "150",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/sm/sm8/150"
+    },
+    {
+      "id": "sm2-155",
+      "localId": "155",
+      "name": "Tapu Lele GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/155"
+    },
+    {
+      "id": "A3-170",
+      "localId": "170",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/170"
+    },
+    {
+      "id": "smp-SM152",
+      "localId": "SM152",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM152"
+    },
+    {
+      "id": "smp-SM45",
+      "localId": "SM45",
+      "name": "Tapu Lele",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM45"
+    },
+    {
+      "id": "sma-SV94",
+      "localId": "SV94",
+      "name": "Tapu Lele-GX",
+      "image": "https://assets.tcgdex.net/en/sm/sma/SV94"
+    }
+  ],
+  "fini": [
+    {
+      "id": "sm3-39",
+      "localId": "39",
+      "name": "Tapu Fini GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm3/39"
+    },
+    {
+      "id": "swsh6-40",
+      "localId": "40",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh6/40"
+    },
+    {
+      "id": "sm11-53",
+      "localId": "53",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/sm/sm11/53"
+    },
+    {
+      "id": "A3-056",
+      "localId": "056",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/056"
+    },
+    {
+      "id": "sm3-133",
+      "localId": "133",
+      "name": "Tapu Fini GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm3/133"
+    },
+    {
+      "id": "sm8-151",
+      "localId": "151",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/sm/sm8/151"
+    },
+    {
+      "id": "sm3-152",
+      "localId": "152",
+      "name": "Tapu Fini GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm3/152"
+    },
+    {
+      "id": "A3-164",
+      "localId": "164",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/164"
+    },
+    {
+      "id": "smp-SM203",
+      "localId": "SM203",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM203"
+    },
+    {
+      "id": "smp-SM92",
+      "localId": "SM92",
+      "name": "Tapu Fini",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM92"
+    },
+    {
+      "id": "sma-SV92",
+      "localId": "SV92",
+      "name": "Tapu Fini-GX",
+      "image": "https://assets.tcgdex.net/en/sm/sma/SV92"
+    }
+  ],
+  "koko": [
+    {
+      "id": "A3a-019",
+      "localId": "019",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3a/019"
+    },
+    {
+      "id": "sm2-47",
+      "localId": "47",
+      "name": "Tapu Koko GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/47"
+    },
+    {
+      "id": "swsh5-50",
+      "localId": "50",
+      "name": "Tapu Koko V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/50"
+    },
+    {
+      "id": "sm9-51",
+      "localId": "51",
+      "name": "Tapu Koko ◇",
+      "image": "https://assets.tcgdex.net/en/sm/sm9/51"
+    },
+    {
+      "id": "swsh5-51",
+      "localId": "51",
+      "name": "Tapu Koko VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/51"
+    },
+    {
+      "id": "sv09-051",
+      "localId": "051",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/sv/sv09/051"
+    },
+    {
+      "id": "swsh3-61",
+      "localId": "61",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh3/61"
+    },
+    {
+      "id": "sv08-065",
+      "localId": "065",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/sv/sv08/065"
+    },
+    {
+      "id": "me02.5-067",
+      "localId": "067",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/me/me02.5/067"
+    },
+    {
+      "id": "A3-068",
+      "localId": "068",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/068"
+    },
+    {
+      "id": "sv04-068",
+      "localId": "068",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/sv/sv04/068"
+    },
+    {
+      "id": "sm11-69",
+      "localId": "69",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/sm/sm11/69"
+    },
+    {
+      "id": "swsh1-72",
+      "localId": "72",
+      "name": "Tapu Koko V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh1/72"
+    },
+    {
+      "id": "A3a-077",
+      "localId": "077",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3a/077"
+    },
+    {
+      "id": "P-A-084",
+      "localId": "084",
+      "name": "Tapu Koko ex"
+    },
+    {
+      "id": "A3a-084",
+      "localId": "084",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3a/084"
+    },
+    {
+      "id": "sm8-85",
+      "localId": "85",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/sm/sm8/85"
+    },
+    {
+      "id": "sm2-135",
+      "localId": "135",
+      "name": "Tapu Koko GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/135"
+    },
+    {
+      "id": "swsh5-147",
+      "localId": "147",
+      "name": "Tapu Koko V",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/147"
+    },
+    {
+      "id": "sm2-153",
+      "localId": "153",
+      "name": "Tapu Koko GX",
+      "image": "https://assets.tcgdex.net/en/sm/sm2/153"
+    },
+    {
+      "id": "A3-166",
+      "localId": "166",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/tcgp/A3/166"
+    },
+    {
+      "id": "swsh5-166",
+      "localId": "166",
+      "name": "Tapu Koko VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh5/166"
+    },
+    {
+      "id": "sv04-222",
+      "localId": "222",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/sv/sv04/222"
+    },
+    {
+      "id": "sv04-247",
+      "localId": "247",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/sv/sv04/247"
+    },
+    {
+      "id": "B1-322",
+      "localId": "322",
+      "name": "Tapu Koko ex",
+      "image": "https://assets.tcgdex.net/en/tcgp/B1/322"
+    },
+    {
+      "id": "smp-SM30",
+      "localId": "SM30",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM30"
+    },
+    {
+      "id": "smp-SM31",
+      "localId": "SM31",
+      "name": "Tapu Koko",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM31"
+    },
+    {
+      "id": "smp-SM33",
+      "localId": "SM33",
+      "name": "Tapu Koko GX",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM33"
+    },
+    {
+      "id": "smp-SM50",
+      "localId": "SM50",
+      "name": "Tapu Koko GX",
+      "image": "https://assets.tcgdex.net/en/sm/smp/SM50"
+    },
+    {
+      "id": "sma-SV93",
+      "localId": "SV93",
+      "name": "Tapu Koko-GX",
+      "image": "https://assets.tcgdex.net/en/sm/sma/SV93"
+    }
+  ]
+}

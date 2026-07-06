@@ -55,6 +55,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
+  720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
   // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo ($61 full-art). The "xyp" set is
   // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
   // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.
@@ -117,6 +118,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  "Hoopa Unbound": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
   // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name
   // mismatch rather than a losing-candidate issue — not yet root-caused enough to convert safely.
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",

@@ -39,6 +39,13 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
+  // #786 Tapu Lele, #788 Tapu Fini: both have a real "One Star" Pocket TCG card (A3-170/A3-164,
+  // same tier as Tapu Koko's A3-166), but TCGdex's per-rarity search query consistently returns
+  // no results for these two specific name+rarity combos despite the cards existing (confirmed
+  // via direct card-detail lookup) — a third-party API search quirk, not a bug in our filtering
+  // logic. Hardcoded directly rather than reworking the whole Pocket-fetch pipeline for it.
+  786: "https://assets.tcgdex.net/en/tcgp/A3/170/high.webp", // Tapu Lele
+  788: "https://assets.tcgdex.net/en/tcgp/A3/164/high.webp", // Tapu Fini
   796: "https://images.pokemontcg.io/smp/SM68_hires.png", // Xurkitree-GX, SM Black Star Promos
   718: "https://images.pokemontcg.io/smp/SM122_hires.png", // Zygarde (50% Forme)
   139: "https://images.pokemontcg.io/swsh12/35_hires.png", // Omastar V, Silver Tempest

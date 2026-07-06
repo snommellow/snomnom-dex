@@ -756,7 +756,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/240/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H21_hires.png",
     "altForms": [],
     "familyId": 29,
     "familyOrder": 2
@@ -1413,7 +1412,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/089/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H24_hires.png",
     "altForms": [],
     "familyId": 60,
     "familyOrder": 2
@@ -1521,7 +1519,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/278/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy7/37_hires.png",
     "altForms": [
       {
         "slug": "machamp-gmax",
@@ -1880,7 +1877,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/080/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/242_hires.png",
     "altForms": [],
     "familyId": 81,
     "familyOrder": 0
@@ -2137,7 +2133,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/277/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/108_hires.png",
     "altForms": [
       {
         "slug": "gengar-mega",
@@ -2306,7 +2301,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/235/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/107_hires.png",
     "altForms": [
       {
         "slug": "electrode-hisui",
@@ -2448,7 +2442,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/279/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex1/98_hires.png",
     "altForms": [],
     "familyId": 106,
     "familyOrder": 2
@@ -2497,7 +2490,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/243/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/32_hires.png",
     "altForms": [
       {
         "slug": "weezing-galar",
@@ -2932,7 +2924,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/233/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/109_hires.png",
     "altForms": [
       {
         "slug": "gyarados-mega",
@@ -2965,7 +2956,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/234/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex1/99_hires.png",
     "altForms": [
       {
         "slug": "lapras-gmax",
@@ -2997,7 +2987,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/247/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/4_hires.png",
     "altForms": [],
     "familyId": 132,
     "familyOrder": 0
@@ -3044,7 +3033,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/072/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/110_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 1
@@ -3061,7 +3049,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/276/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/109_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 2
@@ -3078,7 +3065,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/087/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex11/108_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 3
@@ -3177,7 +3163,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1a/084/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex2/94_hires.png",
     "altForms": [
       {
         "slug": "aerodactyl-mega",
@@ -3304,7 +3289,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1/274/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw8/14_hires.png",
     "altForms": [
       {
         "slug": "moltres-galar",
@@ -3368,7 +3352,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/090/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex3/90_hires.png",
     "altForms": [
       {
         "slug": "dragonite-mega",
@@ -3677,7 +3660,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/182/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG12_hires.png",
     "altForms": [],
     "familyId": 163,
     "familyOrder": 0
@@ -3762,7 +3744,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1a/070/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/2_hires.png",
     "altForms": [],
     "familyId": 167,
     "familyOrder": 1
@@ -3813,7 +3794,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/204/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H15_hires.png",
     "altForms": [],
     "familyId": 170,
     "familyOrder": 1
@@ -3830,7 +3810,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/171/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/22_hires.png",
     "altForms": [],
     "familyId": 25,
     "familyOrder": 0
@@ -3880,7 +3859,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/173/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/143_hires.png",
     "altForms": [],
     "familyId": 175,
     "familyOrder": 0
@@ -3931,7 +3909,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/174/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H32_hires.png",
     "altForms": [],
     "familyId": 177,
     "familyOrder": 1
@@ -4011,7 +3988,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/163/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/3_hires.png",
     "altForms": [],
     "familyId": 43,
     "familyOrder": 3
@@ -4126,7 +4102,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/086/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H13_hires.png",
     "altForms": [],
     "familyId": 187,
     "familyOrder": 2
@@ -4254,7 +4229,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/205/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/102_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 4
@@ -4271,7 +4245,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/208/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/112_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 5
@@ -4352,7 +4325,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/078/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12/66_hires.png",
     "altForms": [],
     "familyId": 201,
     "familyOrder": 0
@@ -4369,7 +4341,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/175/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/hgss1/13_hires.png",
     "altForms": [],
     "familyId": 202,
     "familyOrder": 1
@@ -4815,7 +4786,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/169/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard2/H20_hires.png",
     "altForms": [],
     "familyId": 223,
     "familyOrder": 1
@@ -5026,7 +4996,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/184/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/col1/21_hires.png",
     "altForms": [],
     "familyId": 235,
     "familyOrder": 0
@@ -5137,7 +5106,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/185/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/101_hires.png",
     "altForms": [],
     "familyId": 113,
     "familyOrder": 2
@@ -5154,7 +5122,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/088/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex4/92_hires.png",
     "altForms": [],
     "familyId": 243,
     "familyOrder": 0
@@ -5171,7 +5138,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/087/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex4/91_hires.png",
     "altForms": [],
     "familyId": 244,
     "familyOrder": 0
@@ -5188,7 +5154,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4a/090/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex4/94_hires.png",
     "altForms": [],
     "familyId": 245,
     "familyOrder": 0
@@ -5271,7 +5236,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/211/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/105_hires.png",
     "altForms": [],
     "familyId": 249,
     "familyOrder": 0
@@ -5289,7 +5253,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A4/210/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/104_hires.png",
     "altForms": [],
     "familyId": 250,
     "familyOrder": 0
@@ -5307,7 +5270,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A1a/085/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw7/9_hires.png",
     "altForms": [],
     "familyId": 251,
     "familyOrder": 0
@@ -6196,7 +6158,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/248/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/ex14/91_hires.png",
     "altForms": [],
     "familyId": 300,
     "familyOrder": 1
@@ -8122,7 +8083,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/176/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl3/147_hires.png",
     "altForms": [
       {
         "slug": "staraptor-mega",
@@ -8154,7 +8114,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/177/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG29_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 0
@@ -8172,7 +8131,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2b/095/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG25_hires.png",
     "altForms": [],
     "familyId": 399,
     "familyOrder": 1
@@ -8251,7 +8209,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/237/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl2/109_hires.png",
     "altForms": [],
     "familyId": 403,
     "familyOrder": 2
@@ -8286,7 +8243,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B2/157/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/13_hires.png",
     "altForms": [],
     "familyId": 315,
     "familyOrder": 2
@@ -8595,7 +8551,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/161/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/8_hires.png",
     "altForms": [],
     "familyId": 422,
     "familyOrder": 1
@@ -8724,7 +8679,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/244/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/109_hires.png",
     "altForms": [],
     "familyId": 198,
     "familyOrder": 1
@@ -8967,7 +8921,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/093/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm11/146_hires.png",
     "altForms": [
       {
         "slug": "garchomp-mega",
@@ -9031,7 +8984,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/170/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy3/54_hires.png",
     "altForms": [
       {
         "slug": "lucario-mega",
@@ -9079,7 +9031,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/241/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl2/107_hires.png",
     "altForms": [],
     "familyId": 449,
     "familyOrder": 1
@@ -9310,7 +9261,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/203/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp3/12_hires.png",
     "altForms": [],
     "familyId": 108,
     "familyOrder": 1
@@ -9328,7 +9278,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/169/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/145_hires.png",
     "altForms": [],
     "familyId": 111,
     "familyOrder": 2
@@ -9345,7 +9294,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/156/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/pl4/99_hires.png",
     "altForms": [],
     "familyId": 114,
     "familyOrder": 1
@@ -9428,7 +9376,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/091/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/g1/10_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 6
@@ -9445,7 +9392,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/092/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy10/20_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 7
@@ -9479,7 +9425,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/160/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/9_hires.png",
     "altForms": [],
     "familyId": 220,
     "familyOrder": 2
@@ -9513,7 +9458,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/200/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy6/34_hires.png",
     "altForms": [
       {
         "slug": "gallade-mega",
@@ -9745,7 +9689,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/205/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw10/65_hires.png",
     "altForms": [
       {
         "slug": "dialga-origin",
@@ -9778,7 +9721,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/204/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw10/66_hires.png",
     "altForms": [
       {
         "slug": "palkia-origin",
@@ -9811,7 +9753,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/174/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw9/13_hires.png",
     "altForms": [
       {
         "slug": "heatran-mega",
@@ -9843,7 +9784,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/179/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw4/82_hires.png",
     "altForms": [],
     "familyId": 486,
     "familyOrder": 0
@@ -9924,7 +9864,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/162/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy9/32_hires.png",
     "altForms": [],
     "familyId": 489,
     "familyOrder": 1
@@ -9941,7 +9880,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2/202/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/bw11/88_hires.png",
     "altForms": [
       {
         "slug": "darkrai-mega",
@@ -10003,7 +9941,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A2a/095/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/156_hires.png",
     "altForms": [],
     "familyId": 493,
     "familyOrder": 0
@@ -13831,7 +13768,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/281/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy9/86_hires.png",
     "altForms": [
       {
         "slug": "dragalge-mega",
@@ -13946,7 +13882,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B2/171/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm6/69_hires.png",
     "altForms": [],
     "familyId": 696,
     "familyOrder": 1
@@ -13996,7 +13931,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/089/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/g1/RC21_hires.png",
     "altForms": [],
     "familyId": 133,
     "familyOrder": 8
@@ -14610,7 +14544,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/198/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm1/12_hires.png",
     "altForms": [
       {
         "slug": "decidueye-hisui",
@@ -14674,7 +14607,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/200/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm1/27_hires.png",
     "altForms": [],
     "familyId": 725,
     "familyOrder": 2
@@ -14722,7 +14654,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3b/088/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm1/42_hires.png",
     "altForms": [],
     "familyId": 728,
     "familyOrder": 2
@@ -15009,7 +14940,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/172/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12tg/TG07_hires.png",
     "altForms": [],
     "familyId": 744,
     "familyOrder": 0
@@ -15358,7 +15288,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/158/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh8/21_hires.png",
     "altForms": [],
     "familyId": 761,
     "familyOrder": 2
@@ -15375,7 +15304,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/168/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG14_hires.png",
     "altForms": [],
     "familyId": 764,
     "familyOrder": 0
@@ -15409,7 +15337,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/205/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12tg/TG08_hires.png",
     "altForms": [],
     "familyId": 766,
     "familyOrder": 0
@@ -15540,7 +15467,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3a/074/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/184_hires.png",
     "altForms": [],
     "familyId": 772,
     "familyOrder": 1
@@ -15706,7 +15632,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/199/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh45/10_hires.png",
     "altForms": [],
     "familyId": 781,
     "familyOrder": 0
@@ -15871,7 +15796,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/207/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/75_hires.png",
     "altForms": [],
     "familyId": 789,
     "familyOrder": 2
@@ -15889,7 +15813,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/204/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/75_hires.png",
     "altForms": [],
     "familyId": 789,
     "familyOrder": 3
@@ -15924,7 +15847,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3a/088/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/1_hires.png",
     "altForms": [],
     "familyId": 794,
     "familyOrder": 0
@@ -15942,7 +15864,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3a/071/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/1_hires.png",
     "altForms": [],
     "familyId": 795,
     "familyOrder": 0
@@ -15975,7 +15896,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3a/075/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/163_hires.png",
     "altForms": [],
     "familyId": 797,
     "familyOrder": 0
@@ -16010,7 +15930,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3a/086/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm12/158_hires.png",
     "altForms": [],
     "familyId": 799,
     "familyOrder": 0
@@ -16087,7 +16006,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/A3/175/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/xy11/75_hires.png",
     "altForms": [
       {
         "slug": "magearna-mega",
@@ -16186,7 +16104,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B2/195/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/sm8/52_hires.png",
     "altForms": [],
     "familyId": 806,
     "familyOrder": 0
@@ -16310,7 +16227,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/229/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh2/18_hires.png",
     "altForms": [
       {
         "slug": "rillaboom-gmax",
@@ -16527,7 +16443,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B1/246/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12tg/TG18_hires.png",
     "altForms": [
       {
         "slug": "corviknight-gmax",
@@ -17488,7 +17403,6 @@
     "bgCandidates": [
       "https://assets.tcgdex.net/en/tcgp/B2/172/high.webp"
     ],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh10tg/TG07_hires.png",
     "altForms": [
       {
         "slug": "falinks-mega",

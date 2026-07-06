@@ -11037,7 +11037,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10016.png",
         "category": "forme",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/bw2/24_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swsh8/70_hires.png"
       },
       {
         "slug": "basculin-white-striped",
@@ -11050,7 +11050,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10247.png",
         "category": "forme",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/bw1/35_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH273_hires.png"
       }
     ],
     "familyId": 550,

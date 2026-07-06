@@ -130,6 +130,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Hoopa's base entity is the Confined form (Unbound is a separate alt form); give it a
   // matching subtitle so the two are distinguishable in the grid.
   if (pokemon.name === "hoopa" && !formLabel) formLabel = "Confined";
+  // Morpeko's base entity is Full Belly Mode (Hangry Mode is a separate alt form); give it a
+  // matching subtitle so the two are distinguishable in the grid.
+  if (pokemon.name === "morpeko-full-belly" && !formLabel) formLabel = "Full Belly Mode";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

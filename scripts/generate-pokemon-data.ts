@@ -54,6 +54,7 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   385: "https://images.pokemontcg.io/xyp/XY67a_hires.png",
   // #82 Magneton, #164 Noctowl, #230 Kingdra, #374 Beldum, #658 Greninja, #991 Iron Bundle:
   // pinned full-art picks.
+  877: "https://images.pokemontcg.io/svp/206_hires.png", // Morpeko (Full Belly Mode) — Marnie's Morpeko
   82: "https://images.pokemontcg.io/svp/159_hires.png",
   164: "https://images.pokemontcg.io/svp/141_hires.png",
   230: "https://images.pokemontcg.io/svp/131_hires.png",

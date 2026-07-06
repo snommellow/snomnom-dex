@@ -67,6 +67,14 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // #385 Jirachi: xyp-XY67a ($191.65) is an XY Black Star Promo full art, same "xyp" set as
   // Fearow above — outside promoSvPick's scope, structurally unreachable by any automated pass.
   385: "https://images.pokemontcg.io/xyp/XY67a_hires.png",
+  // #82 Magneton, #164 Noctowl, #230 Kingdra, #374 Beldum, #658 Greninja, #991 Iron Bundle:
+  // pinned to freeze their current automated SV Promo pick in place.
+  82: "https://images.pokemontcg.io/svp/159_hires.png",
+  164: "https://images.pokemontcg.io/svp/141_hires.png",
+  230: "https://images.pokemontcg.io/svp/131_hires.png",
+  374: "https://images.pokemontcg.io/svp/207_hires.png",
+  658: "https://images.pokemontcg.io/svp/132_hires.png",
+  991: "https://images.pokemontcg.io/svp/66_hires.png",
   // #150 Mewtwo: pinned directly to the plain SVP promo the user wants. Trainer-owned cards
   // ("Team Rocket's Mewtwo ex") kept winning via one pass or another despite per-card
   // blacklisting — hardcoding sidesteps that entirely. Snorlax's equivalent hardcode was

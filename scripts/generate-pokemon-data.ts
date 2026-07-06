@@ -414,15 +414,17 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
-    // by the automated tiers, not to override a genuinely better automated pick. Hardcode still
-    // outranks SV Promo/trainer/VGX/ancient-trait tiers below it.
+    // by the automated tiers, not to override a genuinely better automated pick. Hardcode and SV
+    // Promo are the same kind of pick (a single promo card), so they're merged into one tier —
+    // hardcode wins if set, otherwise the automated SV Promo pick is used — ranked above the
+    // trainer/VGX/ancient-trait tiers below it.
     const tcgResult = irMap.get(p.id)
       ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
       ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
+      ?? promoSvMap.get(p.id)
       ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
       ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined)
       ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
-      ?? promoSvMap.get(p.id)
       ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
       ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)
       ?? { tcgUrl: null };

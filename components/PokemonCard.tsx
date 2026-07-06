@@ -124,6 +124,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Tornadus/Thundurus/Landorus's base entity is the Incarnate Forme (Therian is a separate alt
   // form); give it a matching subtitle so the two are distinguishable in the grid.
   if ((pokemon.name === "tornadus-incarnate" || pokemon.name === "thundurus-incarnate" || pokemon.name === "landorus-incarnate") && !formLabel) formLabel = "Incarnate Forme";
+  // Zygarde's base entity is the 50% Forme (10%/Complete are separate alt forms); give it a
+  // matching subtitle so all three are distinguishable in the grid.
+  if (pokemon.name === "zygarde-50" && !formLabel) formLabel = "50% Forme";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

@@ -37,6 +37,9 @@ async function mapWithConcurrency<T, R>(items: T[], limit: number, fn: (item: T)
 
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
+  // No card image confirmed yet; entry exists so the automated search picks it up once the
+  // TCG API indexes the card, without needing another manual pass.
+  678: { displayName: "Mega Meowstic", types: ["psychic"] },
 };
 
 // Burmy's Sandy/Trash Cloak aren't separate PokeAPI species varieties (unlike Wormadam's, since

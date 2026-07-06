@@ -80,6 +80,11 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // #652 Chesnaught, #655 Delphox: user-provided full-art V cards.
   652: "https://images.pokemontcg.io/swsh12/15_hires.png",
   655: "https://images.pokemontcg.io/swsh11/27_hires.png",
+  // #487 Giratina (Altered Forme): user-confirmed swap — this Pocket TCG card actually depicts
+  // the Altered Forme design, while swsh11-186 (the automated pick) actually depicts Origin
+  // Forme's design despite being a plain "Giratina V" card name — see "Origin Forme Giratina"
+  // hardcode below for the other half of the swap.
+  487: "https://assets.tcgdex.net/en/tcgp/A2b/096/high.webp",
 };
 
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
@@ -142,6 +147,11 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Therian Forme Thundurus": "https://images.pokemontcg.io/bw9/110_hires.png",
   "Therian Forme Tornadus":  "https://images.pokemontcg.io/bw9/114_hires.png",
   "Therian Forme Landorus":  "https://images.pokemontcg.io/bw7/144_hires.png",
+  // Origin Forme Giratina: user-confirmed swap — swsh11-186 "Giratina V" actually depicts the
+  // Origin Forme design, while the automated "regional" search's own pick (A2b-096, a Pocket
+  // card) actually depicts Altered Forme and is now hardcoded to base Giratina instead (dex 487
+  // in HARDCODED_BG_URLS above).
+  "Origin Forme Giratina": "https://images.pokemontcg.io/swsh11/186_hires.png",
 };
 
 // Curated cropped (non-full-art) card URLs for forms where no automated pass can distinguish

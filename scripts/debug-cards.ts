@@ -28,8 +28,9 @@ async function fetchCards(name: string) {
 async function main() {
   const salazzle = await fetchCards("Salazzle");
   const helioptile = await fetchCards("Helioptile");
-  writeFileSync("lib/debug-cards.json", JSON.stringify({ salazzle, helioptile }, null, 2));
-  console.log(`Wrote ${salazzle.length} Salazzle cards, ${helioptile.length} Helioptile cards`);
+  const carbink = await fetchCards("Carbink");
+  writeFileSync("lib/debug-cards.json", JSON.stringify({ salazzle, helioptile, carbink }, null, 2));
+  console.log(`Wrote ${salazzle.length} Salazzle, ${helioptile.length} Helioptile, ${carbink.length} Carbink cards`);
 }
 
 main();

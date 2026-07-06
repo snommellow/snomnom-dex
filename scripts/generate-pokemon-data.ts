@@ -118,6 +118,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
   "Hisuian Zorua": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
+  "Busted Form Mimikyu": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
   "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",
   "Pom-Pom Style Oricorio": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/A3/A3_165_EN_SM.webp",
   "Pa'u Style Oricorio": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_166_EN_SM.webp",

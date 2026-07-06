@@ -194,6 +194,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   // this depicts the Blue-Striped variety specifically, unlike bw2-24/bw1-35/bw2-25/rsv10pt5-24
   // which all show the red-striped color scheme despite generic "Basculin" naming.
   "Blue-Striped Basculin": "https://images.pokemontcg.io/swsh8/70_hires.png",
+  // White-Striped Basculin is the variety with the hidden ability that evolves into
+  // Basculegion in Hisui, and the TCG printed it under the distinct name "Hisuian Basculin"
+  // (SWSH Black Star Promos SWSH273) rather than plain "Basculin" like the other two forms.
+  "White-Striped Basculin": "https://images.pokemontcg.io/swshp/SWSH273_hires.png",
   // Zen Mode Darmanitan / Zen Mode Galarian Darmanitan: every TCG printing is just named
   // "Darmanitan"/"Galarian Darmanitan" (Standard/Zen Mode aren't distinguished by card name),
   // and both Zen forms were duplicating the same automated pick. User-confirmed cards:

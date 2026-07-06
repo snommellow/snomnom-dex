@@ -6,12 +6,12 @@ function authHeaders() {
   return key ? { "X-Api-Key": key } : {};
 }
 
-async function main() {
-  const res = await fetch(`${PTCGIO_BASE}/cards?q=name:Salazzle&pageSize=250`, {
+async function fetchCards(name: string) {
+  const res = await fetch(`${PTCGIO_BASE}/cards?q=name:${name}&pageSize=250`, {
     headers: authHeaders(),
   });
   const data = await res.json();
-  const cards = (data.data ?? []).map((c: any) => ({
+  return (data.data ?? []).map((c: any) => ({
     id: c.id,
     name: c.name,
     set: c.set?.name,
@@ -23,8 +23,13 @@ async function main() {
     tcgplayer: c.tcgplayer?.prices,
     images: c.images,
   }));
-  writeFileSync("lib/debug-cards.json", JSON.stringify(cards, null, 2));
-  console.log(`Wrote ${cards.length} cards`);
+}
+
+async function main() {
+  const salazzle = await fetchCards("Salazzle");
+  const helioptile = await fetchCards("Helioptile");
+  writeFileSync("lib/debug-cards.json", JSON.stringify({ salazzle, helioptile }, null, 2));
+  console.log(`Wrote ${salazzle.length} Salazzle cards, ${helioptile.length} Helioptile cards`);
 }
 
 main();

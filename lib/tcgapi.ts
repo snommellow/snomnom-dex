@@ -251,9 +251,10 @@ function nameMatches(cardName: string, query: string): boolean {
 async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
   const results: PtcgCard[] = [];
   let page = 1;
+  let totalCount: number | null = null;
   while (true) {
     const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,subtypes,artist,abilities,set,images,tcgplayer`;
-    let data: PtcgCard[] = [];
+    let data: PtcgCard[] | null = null;
     // 5 attempts with longer backoff — wide rarity-index fetches span many pages, and silently
     // giving up early on a transient failure truncates the index without any signal, which was
     // causing intermittent wrong picks (e.g. Alolan Golem-GX flipping between regen runs
@@ -269,16 +270,33 @@ async function fetchAllPages(q: string, noCache = false): Promise<PtcgCard[]> {
         if (!res.ok) throw new Error(`pokemontcg.io ${res.status} for ${q}`);
         const json = await res.json();
         data = json.data ?? [];
+        if (typeof json.totalCount === "number") totalCount = json.totalCount;
         break;
       } catch {
         if (attempt === 4) {
-          process.stderr.write(`[fetchAllPages] giving up on page ${page} for query "${q}" after 5 attempts — results may be truncated\n`);
-          return results;
+          // Previously this returned early and silently truncated every page after this one —
+          // e.g. a transient failure on page 15 of a 30-page "Illustration Rare" scan would drop
+          // every newer-set card from page 16 onward, with cards from later-added sets (like the
+          // "me*" Mega Evolution sets) disappearing from the index despite existing. Skipping just
+          // the failed page and continuing keeps the rest of the index intact; we still know when
+          // to stop via totalCount from an earlier successful page rather than this page's (empty)
+          // result length.
+          process.stderr.write(`[fetchAllPages] giving up on page ${page} for query "${q}" after 5 attempts — this page's results will be missing\n`);
+          data = null;
         }
       }
     }
-    results.push(...data);
-    if (data.length < 250) break;
+    if (data) results.push(...data);
+    const fetchedPages = page;
+    const knownLastPage = totalCount !== null ? Math.ceil(totalCount / 250) : null;
+    if (knownLastPage !== null) {
+      if (fetchedPages >= knownLastPage) break;
+    } else if (data !== null && data.length < 250) {
+      break;
+    } else if (data === null && totalCount === null) {
+      // Failed on page 1 with no totalCount to know how far to go — nothing more we can do.
+      break;
+    }
     page++;
   }
   return results;

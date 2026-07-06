@@ -57,6 +57,7 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   877: "https://images.pokemontcg.io/svp/206_hires.png", // Morpeko (Full Belly Mode) — Marnie's Morpeko
   1017: "https://images.pokemontcg.io/svp/123_hires.png", // Ogerpon (Teal Mask)
   778: "https://images.pokemontcg.io/svp/75_hires.png", // Mimikyu
+  741: "https://images.pokemontcg.io/mep/24_hires.png", // Oricorio (Baile Style)
   82: "https://images.pokemontcg.io/svp/159_hires.png",
   164: "https://images.pokemontcg.io/svp/141_hires.png",
   230: "https://images.pokemontcg.io/svp/131_hires.png",

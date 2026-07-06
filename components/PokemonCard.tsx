@@ -133,6 +133,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Morpeko's base entity is Full Belly Mode (Hangry Mode is a separate alt form); give it a
   // matching subtitle so the two are distinguishable in the grid.
   if (pokemon.name === "morpeko-full-belly" && !formLabel) formLabel = "Full Belly Mode";
+  // Oricorio's base entity is the Baile Style (Pom-Pom/Pa'u/Sensu are separate alt forms); give
+  // it a matching subtitle so all four styles are distinguishable in the grid.
+  if (pokemon.name === "oricorio-baile" && !formLabel) formLabel = "Baile Style";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

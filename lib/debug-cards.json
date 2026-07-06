@@ -1,267 +1,10 @@
 [
   {
-    "id": "bw4-30",
-    "name": "Basculin",
-    "set": "Next Destinies",
-    "setId": "bw4",
-    "number": "30",
-    "rarity": "Uncommon",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.06,
-        "mid": 0.27,
-        "high": 5,
-        "market": 0.29,
-        "directLow": 0.1
-      },
-      "reverseHolofoil": {
-        "low": 0.5,
-        "mid": 0.77,
-        "high": 19.98,
-        "market": 0.71,
-        "directLow": null
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/bw4/30.png",
-      "large": "https://images.pokemontcg.io/bw4/30_hires.png"
-    }
-  },
-  {
-    "id": "bw2-24",
-    "name": "Basculin",
-    "set": "Emerging Powers",
-    "setId": "bw2",
-    "number": "24",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.04,
-        "mid": 0.25,
-        "high": 19.98,
-        "market": 0.28,
-        "directLow": null
-      },
-      "reverseHolofoil": {
-        "low": 1.75,
-        "mid": 3.99,
-        "high": 42.3,
-        "market": 2.87,
-        "directLow": null
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/bw2/24.png",
-      "large": "https://images.pokemontcg.io/bw2/24_hires.png"
-    }
-  },
-  {
-    "id": "bw2-25",
-    "name": "Basculin",
-    "set": "Emerging Powers",
-    "setId": "bw2",
-    "number": "25",
-    "rarity": "Uncommon",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.1,
-        "mid": 0.32,
-        "high": 19.98,
-        "market": 0.32,
-        "directLow": null
-      },
-      "reverseHolofoil": {
-        "low": 0.63,
-        "mid": 1.03,
-        "high": 19.98,
-        "market": 0.95,
-        "directLow": null
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/bw2/25.png",
-      "large": "https://images.pokemontcg.io/bw2/25_hires.png"
-    }
-  },
-  {
-    "id": "bw1-35",
-    "name": "Basculin",
-    "set": "Black & White",
-    "setId": "bw1",
-    "number": "35",
-    "rarity": "Uncommon",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.01,
-        "mid": 0.31,
-        "high": 19.98,
-        "market": 0.31,
-        "directLow": 0.27
-      },
-      "reverseHolofoil": {
-        "low": 1,
-        "mid": 2.64,
-        "high": 19.98,
-        "market": 1.44,
-        "directLow": null
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/bw1/35.png",
-      "large": "https://images.pokemontcg.io/bw1/35_hires.png"
-    }
-  },
-  {
-    "id": "sm11-43",
-    "name": "Basculin",
-    "set": "Unified Minds",
-    "setId": "sm11",
-    "number": "43",
-    "rarity": "Uncommon",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "reverseHolofoil": {
-        "low": 0.25,
-        "mid": 0.46,
-        "high": 19.98,
-        "market": 0.39,
-        "directLow": null
-      },
-      "normal": {
-        "low": 0.07,
-        "mid": 0.25,
-        "high": 1.49,
-        "market": 0.22,
-        "directLow": 0.11
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/sm11/43.png",
-      "large": "https://images.pokemontcg.io/sm11/43_hires.png"
-    }
-  },
-  {
-    "id": "swsh8-70",
-    "name": "Basculin",
-    "set": "Fusion Strike",
-    "setId": "swsh8",
-    "number": "70",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic",
-      "Rapid Strike"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.01,
-        "mid": 0.15,
-        "high": 2.99,
-        "market": 0.08,
-        "directLow": 0.05
-      },
-      "reverseHolofoil": {
-        "low": 0.1,
-        "mid": 0.29,
-        "high": 1.99,
-        "market": 0.28,
-        "directLow": 0.23
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh8/70.png",
-      "large": "https://images.pokemontcg.io/swsh8/70_hires.png"
-    }
-  },
-  {
-    "id": "swsh10-43",
-    "name": "Hisuian Basculin",
-    "set": "Astral Radiance",
-    "setId": "swsh10",
-    "number": "43",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.01,
-        "mid": 0.15,
-        "high": 20,
-        "market": 0.09,
-        "directLow": 0.04
-      },
-      "reverseHolofoil": {
-        "low": 0.05,
-        "mid": 0.24,
-        "high": 19.98,
-        "market": 0.21,
-        "directLow": null
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh10/43.png",
-      "large": "https://images.pokemontcg.io/swsh10/43_hires.png"
-    }
-  },
-  {
-    "id": "swsh11-44",
-    "name": "Hisuian Basculin",
-    "set": "Lost Origin",
-    "setId": "swsh11",
-    "number": "44",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "reverseHolofoil": {
-        "low": 0.1,
-        "mid": 0.27,
-        "high": 19.98,
-        "market": 0.25,
-        "directLow": null
-      },
-      "normal": {
-        "low": 0.01,
-        "mid": 0.15,
-        "high": 20,
-        "market": 0.11,
-        "directLow": 0.03
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/swsh11/44.png",
-      "large": "https://images.pokemontcg.io/swsh11/44_hires.png"
-    }
-  },
-  {
-    "id": "swshp-SWSH273",
-    "name": "Hisuian Basculin",
-    "set": "SWSH Black Star Promos",
-    "setId": "swshp",
-    "number": "SWSH273",
+    "id": "smp-SM15",
+    "name": "Zygarde",
+    "set": "SM Black Star Promos",
+    "setId": "smp",
+    "number": "SM15",
     "rarity": "Promo",
     "subtypes": [
       "Basic"
@@ -269,73 +12,715 @@
     "supertype": "Pokémon",
     "tcgplayer": {
       "holofoil": {
-        "low": 0.09,
-        "mid": 0.3,
-        "high": 17.76,
-        "market": 0.28,
-        "directLow": 0.09
+        "low": 0.71,
+        "mid": 1.25,
+        "high": 19.92,
+        "market": 1.2,
+        "directLow": 1.19
       }
     },
     "images": {
-      "small": "https://images.pokemontcg.io/swshp/SWSH273.png",
-      "large": "https://images.pokemontcg.io/swshp/SWSH273_hires.png"
+      "small": "https://images.pokemontcg.io/smp/SM15.png",
+      "large": "https://images.pokemontcg.io/smp/SM15_hires.png"
     }
   },
   {
-    "id": "rsv10pt5-24",
-    "name": "Basculin",
-    "set": "White Flare",
-    "setId": "rsv10pt5",
-    "number": "24",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "supertype": "Pokémon",
-    "tcgplayer": {
-      "normal": {
-        "low": 0.01,
-        "mid": 0.15,
-        "high": 19.98,
-        "market": 0.06,
-        "directLow": 0.01
-      },
-      "reverseHolofoil": {
-        "low": 0.01,
-        "mid": 0.21,
-        "high": 19.98,
-        "market": 0.22,
-        "directLow": 0.1
-      }
-    },
-    "images": {
-      "small": "https://images.pokemontcg.io/rsv10pt5/24.png",
-      "large": "https://images.pokemontcg.io/rsv10pt5/24_hires.png"
-    }
-  },
-  {
-    "id": "rsv10pt5-108",
-    "name": "Basculin",
-    "set": "White Flare",
-    "setId": "rsv10pt5",
-    "number": "108",
-    "rarity": "Illustration Rare",
+    "id": "swsh35-28",
+    "name": "Zygarde",
+    "set": "Champion's Path",
+    "setId": "swsh35",
+    "number": "28",
+    "rarity": "Rare Holo",
     "subtypes": [
       "Basic"
     ],
     "supertype": "Pokémon",
     "tcgplayer": {
       "holofoil": {
-        "low": 5.41,
-        "mid": 14.11,
-        "high": 75,
-        "market": 10.13,
+        "low": 0.05,
+        "mid": 0.25,
+        "high": 5,
+        "market": 0.24,
+        "directLow": 0.1
+      },
+      "reverseHolofoil": {
+        "low": 0.1,
+        "mid": 0.32,
+        "high": 6.58,
+        "market": 0.31,
+        "directLow": 0.19
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh35/28.png",
+      "large": "https://images.pokemontcg.io/swsh35/28_hires.png"
+    }
+  },
+  {
+    "id": "sm75-49",
+    "name": "Zygarde",
+    "set": "Dragon Majesty",
+    "setId": "sm75",
+    "number": "49",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.1,
+        "mid": 0.38,
+        "high": 1.9,
+        "market": 0.38,
+        "directLow": 0.5
+      },
+      "reverseHolofoil": {
+        "low": 0.5,
+        "mid": 1.45,
+        "high": 19.98,
+        "market": 1.64,
+        "directLow": 2.84
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm75/49.png",
+      "large": "https://images.pokemontcg.io/sm75/49_hires.png"
+    }
+  },
+  {
+    "id": "xy10-52",
+    "name": "Zygarde",
+    "set": "Fates Collide",
+    "setId": "xy10",
+    "number": "52",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.1,
+        "mid": 0.25,
+        "high": 10.2,
+        "market": 0.3,
+        "directLow": 0.18
+      },
+      "reverseHolofoil": {
+        "low": 0.25,
+        "mid": 0.59,
+        "high": 19.98,
+        "market": 0.61,
         "directLow": null
       }
     },
     "images": {
-      "small": "https://images.pokemontcg.io/rsv10pt5/108.png",
-      "large": "https://images.pokemontcg.io/rsv10pt5/108_hires.png"
+      "small": "https://images.pokemontcg.io/xy10/52.png",
+      "large": "https://images.pokemontcg.io/xy10/52_hires.png"
+    }
+  },
+  {
+    "id": "xy10-53",
+    "name": "Zygarde",
+    "set": "Fates Collide",
+    "setId": "xy10",
+    "number": "53",
+    "rarity": "Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.15,
+        "mid": 0.4,
+        "high": 19.98,
+        "market": 0.44,
+        "directLow": 0.48
+      },
+      "reverseHolofoil": {
+        "low": 0.25,
+        "mid": 0.66,
+        "high": 19.98,
+        "market": 0.64,
+        "directLow": 0.69
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/53.png",
+      "large": "https://images.pokemontcg.io/xy10/53_hires.png"
+    }
+  },
+  {
+    "id": "xy10-54",
+    "name": "Zygarde-EX",
+    "set": "Fates Collide",
+    "setId": "xy10",
+    "number": "54",
+    "rarity": "Rare Holo EX",
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 2.41,
+        "mid": 3.84,
+        "high": 40.31,
+        "market": 5.43,
+        "directLow": 5.19
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/54.png",
+      "large": "https://images.pokemontcg.io/xy10/54_hires.png"
+    }
+  },
+  {
+    "id": "smp-SM48",
+    "name": "Zygarde",
+    "set": "SM Black Star Promos",
+    "setId": "smp",
+    "number": "SM48",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 12.49,
+        "mid": 17.97,
+        "high": 149.54,
+        "market": 15.28,
+        "directLow": 12.72
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/smp/SM48.png",
+      "large": "https://images.pokemontcg.io/smp/SM48_hires.png"
+    }
+  },
+  {
+    "id": "xy10-54a",
+    "name": "Zygarde-EX",
+    "set": "Fates Collide",
+    "setId": "xy10",
+    "number": "54a",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "supertype": "Pokémon",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/54a.png",
+      "large": "https://images.pokemontcg.io/xy10/54a_hires.png"
+    }
+  },
+  {
+    "id": "sma-SV65",
+    "name": "Zygarde-GX",
+    "set": "Hidden Fates Shiny Vault",
+    "setId": "sma",
+    "number": "SV65",
+    "rarity": "Rare Shiny GX",
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 30,
+        "mid": 43.54,
+        "high": 679.8,
+        "market": 38.79,
+        "directLow": 43.97
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sma/SV65.png",
+      "large": "https://images.pokemontcg.io/sma/SV65_hires.png"
+    }
+  },
+  {
+    "id": "sm6-71",
+    "name": "Zygarde",
+    "set": "Forbidden Light",
+    "setId": "sm6",
+    "number": "71",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.1,
+        "mid": 0.28,
+        "high": 19.98,
+        "market": 0.28,
+        "directLow": null
+      },
+      "reverseHolofoil": {
+        "low": 0.18,
+        "mid": 0.5,
+        "high": 19.98,
+        "market": 0.48,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/71.png",
+      "large": "https://images.pokemontcg.io/sm6/71_hires.png"
+    }
+  },
+  {
+    "id": "sm6-72",
+    "name": "Zygarde",
+    "set": "Forbidden Light",
+    "setId": "sm6",
+    "number": "72",
+    "rarity": "Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.33,
+        "mid": 0.6,
+        "high": 19.98,
+        "market": 0.66,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.25,
+        "mid": 0.4,
+        "high": 19.98,
+        "market": 0.37,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/72.png",
+      "large": "https://images.pokemontcg.io/sm6/72_hires.png"
+    }
+  },
+  {
+    "id": "sm6-73",
+    "name": "Zygarde-GX",
+    "set": "Forbidden Light",
+    "setId": "sm6",
+    "number": "73",
+    "rarity": "Rare Holo GX",
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 8.32,
+        "mid": 12,
+        "high": 217.07,
+        "market": 11.88,
+        "directLow": 12.14
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/73.png",
+      "large": "https://images.pokemontcg.io/sm6/73_hires.png"
+    }
+  },
+  {
+    "id": "swsh4-93",
+    "name": "Zygarde",
+    "set": "Vivid Voltage",
+    "setId": "swsh4",
+    "number": "93",
+    "rarity": "Rare Holo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.15,
+        "mid": 0.37,
+        "high": 19.64,
+        "market": 0.36,
+        "directLow": 0.27
+      },
+      "holofoil": {
+        "low": 0.09,
+        "mid": 0.35,
+        "high": 999.99,
+        "market": 0.34,
+        "directLow": 0.29
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh4/93.png",
+      "large": "https://images.pokemontcg.io/swsh4/93_hires.png"
+    }
+  },
+  {
+    "id": "sm3-100",
+    "name": "Zygarde",
+    "set": "Burning Shadows",
+    "setId": "sm3",
+    "number": "100",
+    "rarity": "Rare Holo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 0.12,
+        "mid": 0.5,
+        "high": 19.98,
+        "market": 0.49,
+        "directLow": null
+      },
+      "reverseHolofoil": {
+        "low": 0.2,
+        "mid": 0.5,
+        "high": 19.98,
+        "market": 0.49,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/100.png",
+      "large": "https://images.pokemontcg.io/sm3/100_hires.png"
+    }
+  },
+  {
+    "id": "smp-SM122",
+    "name": "Zygarde-GX",
+    "set": "SM Black Star Promos",
+    "setId": "smp",
+    "number": "SM122",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 11.69,
+        "mid": 23.19,
+        "high": 376.43,
+        "market": 19.08,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/smp/SM122.png",
+      "large": "https://images.pokemontcg.io/smp/SM122_hires.png"
+    }
+  },
+  {
+    "id": "sm11-124",
+    "name": "Zygarde",
+    "set": "Unified Minds",
+    "setId": "sm11",
+    "number": "124",
+    "rarity": "Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.19,
+        "mid": 0.45,
+        "high": 19.98,
+        "market": 0.44,
+        "directLow": null
+      },
+      "reverseHolofoil": {
+        "low": 0.25,
+        "mid": 0.8,
+        "high": 19.98,
+        "market": 0.83,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/124.png",
+      "large": "https://images.pokemontcg.io/sm11/124_hires.png"
+    }
+  },
+  {
+    "id": "xyp-XY129",
+    "name": "Zygarde",
+    "set": "XY Black Star Promos",
+    "setId": "xyp",
+    "number": "XY129",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 10.28,
+        "mid": 14.87,
+        "high": 102.8,
+        "market": 13.24,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY129.png",
+      "large": "https://images.pokemontcg.io/xyp/XY129_hires.png"
+    }
+  },
+  {
+    "id": "sm6-123",
+    "name": "Zygarde-GX",
+    "set": "Forbidden Light",
+    "setId": "sm6",
+    "number": "123",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 15,
+        "mid": 23.61,
+        "high": 224.7,
+        "market": 23.52,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/123.png",
+      "large": "https://images.pokemontcg.io/sm6/123_hires.png"
+    }
+  },
+  {
+    "id": "sm6-136",
+    "name": "Zygarde-GX",
+    "set": "Forbidden Light",
+    "setId": "sm6",
+    "number": "136",
+    "rarity": "Rare Rainbow",
+    "subtypes": [
+      "Basic",
+      "GX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 45.49,
+        "mid": 74,
+        "high": 519.9,
+        "market": 57.09,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/136.png",
+      "large": "https://images.pokemontcg.io/sm6/136_hires.png"
+    }
+  },
+  {
+    "id": "xyp-XY151",
+    "name": "Zygarde-EX",
+    "set": "XY Black Star Promos",
+    "setId": "xyp",
+    "number": "XY151",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic",
+      "EX"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 3.3,
+        "mid": 5.61,
+        "high": 95.66,
+        "market": 6.28,
+        "directLow": 6.25
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY151.png",
+      "large": "https://images.pokemontcg.io/xyp/XY151_hires.png"
+    }
+  },
+  {
+    "id": "xyp-XY152",
+    "name": "Zygarde",
+    "set": "XY Black Star Promos",
+    "setId": "xyp",
+    "number": "XY152",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 1.5,
+        "mid": 3,
+        "high": 4321,
+        "market": 2.34,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY152.png",
+      "large": "https://images.pokemontcg.io/xyp/XY152_hires.png"
+    }
+  },
+  {
+    "id": "swsh7-118",
+    "name": "Zygarde",
+    "set": "Evolving Skies",
+    "setId": "swsh7",
+    "number": "118",
+    "rarity": "Rare Holo",
+    "subtypes": [
+      "Basic",
+      "Rapid Strike"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 0.08,
+        "mid": 0.29,
+        "high": 9.99,
+        "market": 0.28,
+        "directLow": 0.11
+      },
+      "reverseHolofoil": {
+        "low": 0.15,
+        "mid": 0.34,
+        "high": 17.72,
+        "market": 0.31,
+        "directLow": 0.21
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh7/118.png",
+      "large": "https://images.pokemontcg.io/swsh7/118_hires.png"
+    }
+  },
+  {
+    "id": "swsh12-134",
+    "name": "Zygarde",
+    "set": "Silver Tempest",
+    "setId": "swsh12",
+    "number": "134",
+    "rarity": "Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.2,
+        "mid": 0.36,
+        "high": 1.99,
+        "market": 0.33,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.05,
+        "mid": 0.24,
+        "high": 2.99,
+        "market": 0.22,
+        "directLow": 0.1
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12/134.png",
+      "large": "https://images.pokemontcg.io/swsh12/134_hires.png"
+    }
+  },
+  {
+    "id": "me3-47",
+    "name": "Mega Zygarde ex",
+    "set": "Perfect Order",
+    "setId": "me3",
+    "number": "47",
+    "rarity": "Double Rare",
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "supertype": "Pokémon",
+    "images": {
+      "small": "https://images.scrydex.com/pokemon/me3-47/small",
+      "large": "https://images.scrydex.com/pokemon/me3-47/large"
+    }
+  },
+  {
+    "id": "me3-104",
+    "name": "Mega Zygarde ex",
+    "set": "Perfect Order",
+    "setId": "me3",
+    "number": "104",
+    "rarity": "Ultra Rare",
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "supertype": "Pokémon",
+    "images": {
+      "small": "https://images.scrydex.com/pokemon/me3-104/small",
+      "large": "https://images.scrydex.com/pokemon/me3-104/large"
+    }
+  },
+  {
+    "id": "me3-120",
+    "name": "Mega Zygarde ex",
+    "set": "Perfect Order",
+    "setId": "me3",
+    "number": "120",
+    "rarity": "Special Illustration Rare",
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "supertype": "Pokémon",
+    "images": {
+      "small": "https://images.scrydex.com/pokemon/me3-120/small",
+      "large": "https://images.scrydex.com/pokemon/me3-120/large"
+    }
+  },
+  {
+    "id": "me3-124",
+    "name": "Mega Zygarde ex",
+    "set": "Perfect Order",
+    "setId": "me3",
+    "number": "124",
+    "rarity": "Mega Hyper Rare",
+    "subtypes": [
+      "Basic",
+      "MEGA",
+      "ex"
+    ],
+    "supertype": "Pokémon",
+    "images": {
+      "small": "https://images.scrydex.com/pokemon/me3-124/small",
+      "large": "https://images.scrydex.com/pokemon/me3-124/large"
     }
   }
 ]

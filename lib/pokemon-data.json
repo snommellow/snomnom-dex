@@ -20408,6 +20408,21 @@
     "familyOrder": 4
   },
   {
+    "id": 1020,
+    "name": "gouging-fire",
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
+    "genus": "Paradox Pokémon",
+    "bgCandidates": [],
+    "altForms": [],
+    "familyId": 1020,
+    "familyOrder": 0
+  },
+  {
     "id": 1021,
     "name": "raging-bolt",
     "types": [
@@ -20452,6 +20467,38 @@
     "bgCandidates": [],
     "altForms": [],
     "familyId": 1023,
+    "familyOrder": 0
+  },
+  {
+    "id": 1024,
+    "name": "terapagos",
+    "types": [
+      "normal"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1024.png",
+    "genus": "Tera Pokémon",
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv7/170_hires.png",
+    "altForms": [],
+    "familyId": 1024,
+    "familyOrder": 0
+  },
+  {
+    "id": 1025,
+    "name": "pecharunt",
+    "types": [
+      "poison",
+      "ghost"
+    ],
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
+    "genus": "Subjugation Pokémon",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv8pt5/163_hires.png"
+    ],
+    "altForms": [],
+    "familyId": 1025,
     "familyOrder": 0
   }
 ]

@@ -56,6 +56,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
+  718: "https://images.pokemontcg.io/smp/SM122_hires.png", // Zygarde (50% Forme)
   // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo ($61 full-art). The "xyp" set is
   // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
   // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.
@@ -119,6 +120,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
   "Hoopa Unbound": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
+  "Complete Forme Zygarde": "https://images.pokemontcg.io/sm6/73_hires.png",
   // Mega Mewtwo X: automated pass returns xy8-160 instead, which may be an X/Y-variant name
   // mismatch rather than a losing-candidate issue — not yet root-caused enough to convert safely.
   "Mega Mewtwo X":   "https://images.pokemontcg.io/xy8/63_hires.png",
@@ -165,6 +167,7 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
 // the form at all — every "Deoxys" TCG printing shares one name regardless of battle forme,
 // so these are the only cards literally named per forme (Legends Awakened, dp6), picked by hand.
 const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
+  "10% Forme Zygarde": "https://images.pokemontcg.io/sm11/124_hires.png",
   "Attack Forme Deoxys":  "https://images.pokemontcg.io/dp6/24_hires.png",
   "Defense Forme Deoxys": "https://images.pokemontcg.io/dp6/25_hires.png",
   "Speed Forme Deoxys":   "https://images.pokemontcg.io/dp6/26_hires.png",

@@ -1,0 +1,341 @@
+[
+  {
+    "id": "bw4-30",
+    "name": "Basculin",
+    "set": "Next Destinies",
+    "setId": "bw4",
+    "number": "30",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.06,
+        "mid": 0.27,
+        "high": 5,
+        "market": 0.29,
+        "directLow": 0.1
+      },
+      "reverseHolofoil": {
+        "low": 0.5,
+        "mid": 0.77,
+        "high": 19.98,
+        "market": 0.71,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/bw4/30.png",
+      "large": "https://images.pokemontcg.io/bw4/30_hires.png"
+    }
+  },
+  {
+    "id": "bw2-24",
+    "name": "Basculin",
+    "set": "Emerging Powers",
+    "setId": "bw2",
+    "number": "24",
+    "rarity": "Common",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.04,
+        "mid": 0.25,
+        "high": 19.98,
+        "market": 0.28,
+        "directLow": null
+      },
+      "reverseHolofoil": {
+        "low": 1.75,
+        "mid": 3.99,
+        "high": 42.3,
+        "market": 2.87,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/bw2/24.png",
+      "large": "https://images.pokemontcg.io/bw2/24_hires.png"
+    }
+  },
+  {
+    "id": "bw2-25",
+    "name": "Basculin",
+    "set": "Emerging Powers",
+    "setId": "bw2",
+    "number": "25",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.1,
+        "mid": 0.32,
+        "high": 19.98,
+        "market": 0.32,
+        "directLow": null
+      },
+      "reverseHolofoil": {
+        "low": 0.63,
+        "mid": 1.03,
+        "high": 19.98,
+        "market": 0.95,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/bw2/25.png",
+      "large": "https://images.pokemontcg.io/bw2/25_hires.png"
+    }
+  },
+  {
+    "id": "bw1-35",
+    "name": "Basculin",
+    "set": "Black & White",
+    "setId": "bw1",
+    "number": "35",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.01,
+        "mid": 0.31,
+        "high": 19.98,
+        "market": 0.31,
+        "directLow": 0.27
+      },
+      "reverseHolofoil": {
+        "low": 1,
+        "mid": 2.64,
+        "high": 19.98,
+        "market": 1.44,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/bw1/35.png",
+      "large": "https://images.pokemontcg.io/bw1/35_hires.png"
+    }
+  },
+  {
+    "id": "sm11-43",
+    "name": "Basculin",
+    "set": "Unified Minds",
+    "setId": "sm11",
+    "number": "43",
+    "rarity": "Uncommon",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.25,
+        "mid": 0.46,
+        "high": 19.98,
+        "market": 0.39,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.07,
+        "mid": 0.25,
+        "high": 1.49,
+        "market": 0.22,
+        "directLow": 0.11
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/43.png",
+      "large": "https://images.pokemontcg.io/sm11/43_hires.png"
+    }
+  },
+  {
+    "id": "swsh8-70",
+    "name": "Basculin",
+    "set": "Fusion Strike",
+    "setId": "swsh8",
+    "number": "70",
+    "rarity": "Common",
+    "subtypes": [
+      "Basic",
+      "Rapid Strike"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.01,
+        "mid": 0.15,
+        "high": 2.99,
+        "market": 0.08,
+        "directLow": 0.05
+      },
+      "reverseHolofoil": {
+        "low": 0.1,
+        "mid": 0.29,
+        "high": 1.99,
+        "market": 0.28,
+        "directLow": 0.23
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh8/70.png",
+      "large": "https://images.pokemontcg.io/swsh8/70_hires.png"
+    }
+  },
+  {
+    "id": "swsh10-43",
+    "name": "Hisuian Basculin",
+    "set": "Astral Radiance",
+    "setId": "swsh10",
+    "number": "43",
+    "rarity": "Common",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.01,
+        "mid": 0.15,
+        "high": 20,
+        "market": 0.09,
+        "directLow": 0.04
+      },
+      "reverseHolofoil": {
+        "low": 0.05,
+        "mid": 0.24,
+        "high": 19.98,
+        "market": 0.21,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh10/43.png",
+      "large": "https://images.pokemontcg.io/swsh10/43_hires.png"
+    }
+  },
+  {
+    "id": "swsh11-44",
+    "name": "Hisuian Basculin",
+    "set": "Lost Origin",
+    "setId": "swsh11",
+    "number": "44",
+    "rarity": "Common",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.1,
+        "mid": 0.27,
+        "high": 19.98,
+        "market": 0.25,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.01,
+        "mid": 0.15,
+        "high": 20,
+        "market": 0.11,
+        "directLow": 0.03
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh11/44.png",
+      "large": "https://images.pokemontcg.io/swsh11/44_hires.png"
+    }
+  },
+  {
+    "id": "swshp-SWSH273",
+    "name": "Hisuian Basculin",
+    "set": "SWSH Black Star Promos",
+    "setId": "swshp",
+    "number": "SWSH273",
+    "rarity": "Promo",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 0.09,
+        "mid": 0.3,
+        "high": 17.76,
+        "market": 0.28,
+        "directLow": 0.09
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH273.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH273_hires.png"
+    }
+  },
+  {
+    "id": "rsv10pt5-24",
+    "name": "Basculin",
+    "set": "White Flare",
+    "setId": "rsv10pt5",
+    "number": "24",
+    "rarity": "Common",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "normal": {
+        "low": 0.01,
+        "mid": 0.15,
+        "high": 19.98,
+        "market": 0.06,
+        "directLow": 0.01
+      },
+      "reverseHolofoil": {
+        "low": 0.01,
+        "mid": 0.21,
+        "high": 19.98,
+        "market": 0.22,
+        "directLow": 0.1
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/rsv10pt5/24.png",
+      "large": "https://images.pokemontcg.io/rsv10pt5/24_hires.png"
+    }
+  },
+  {
+    "id": "rsv10pt5-108",
+    "name": "Basculin",
+    "set": "White Flare",
+    "setId": "rsv10pt5",
+    "number": "108",
+    "rarity": "Illustration Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "supertype": "Pokémon",
+    "tcgplayer": {
+      "holofoil": {
+        "low": 5.41,
+        "mid": 14.11,
+        "high": 75,
+        "market": 10.13,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/rsv10pt5/108.png",
+      "large": "https://images.pokemontcg.io/rsv10pt5/108_hires.png"
+    }
+  }
+]

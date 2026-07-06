@@ -413,9 +413,21 @@ async function main() {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
-    const tcgResult = hardcodedBg ? { tcgUrl: hardcodedBg } : (irMap.get(p.id) ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined) ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined) ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined) ?? promoSvMap.get(p.id) ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined) ?? (!pocketUrl ? vgxMap.get(p.id) : undefined) ?? { tcgUrl: null });
-    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!hardcodedBg && !tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
-    return toPokemonSummary(p, tcgResult, pocketUrl ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
+    // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
+    // by the automated tiers, not to override a genuinely better automated pick. Hardcode still
+    // outranks SV Promo/trainer/VGX/ancient-trait tiers below it.
+    const tcgResult = irMap.get(p.id)
+      ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
+      ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
+      ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
+      ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined)
+      ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
+      ?? promoSvMap.get(p.id)
+      ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
+      ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)
+      ?? { tcgUrl: null };
+    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
+    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
   });
 
   // Preserve cards from previous run when the new run returned null.

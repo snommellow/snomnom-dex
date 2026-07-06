@@ -39,6 +39,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
+  796: "https://images.pokemontcg.io/smp/SM68_hires.png", // Xurkitree-GX, SM Black Star Promos
   718: "https://images.pokemontcg.io/smp/SM122_hires.png", // Zygarde (50% Forme)
   139: "https://images.pokemontcg.io/swsh12/35_hires.png", // Omastar V, Silver Tempest
   985: "https://images.pokemontcg.io/svp/65_hires.png", // Scream Tail

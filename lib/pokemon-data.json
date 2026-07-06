@@ -9859,7 +9859,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png",
     "genus": "Renegade Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh11/186_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2b/096/high.webp"
     ],
     "altForms": [
       {
@@ -9873,7 +9873,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10007.png",
         "category": "regional",
-        "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2b/096/high.webp",
+        "tcgUrl": "https://images.pokemontcg.io/swsh11/186_hires.png",
         "regularCardUrl": null
       }
     ],

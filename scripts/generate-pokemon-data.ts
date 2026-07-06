@@ -57,6 +57,7 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
   718: "https://images.pokemontcg.io/smp/SM122_hires.png", // Zygarde (50% Forme)
+  139: "https://images.pokemontcg.io/swsh12/35_hires.png", // Omastar V, Silver Tempest
   // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo ($61 full-art). The "xyp" set is
   // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
   // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.

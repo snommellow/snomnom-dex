@@ -13548,8 +13548,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
     "genus": "Constraint Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/g1/37_hires.png",
+    "bgCandidates": [
+      "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp"
+    ],
     "altForms": [
       {
         "slug": "meowstic-female",
@@ -13563,6 +13564,18 @@
         "category": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/g1/37_hires.png"
+      },
+      {
+        "slug": "meowstic-male-mega",
+        "displayName": "Mega Meowstic",
+        "types": [
+          "psychic"
+        ],
+        "artworkUrl": null,
+        "homeSpriteUrl": null,
+        "category": "mega",
+        "tcgUrl": null,
+        "regularCardUrl": null
       }
     ],
     "familyId": 677,

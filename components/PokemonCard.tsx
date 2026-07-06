@@ -127,6 +127,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Zygarde's base entity is the 50% Forme (10%/Complete are separate alt forms); give it a
   // matching subtitle so all three are distinguishable in the grid.
   if (pokemon.name === "zygarde-50" && !formLabel) formLabel = "50% Forme";
+  // Hoopa's base entity is the Confined form (Unbound is a separate alt form); give it a
+  // matching subtitle so the two are distinguishable in the grid.
+  if (pokemon.name === "hoopa" && !formLabel) formLabel = "Confined";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

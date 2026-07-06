@@ -1353,5 +1353,263 @@
         "large": "https://images.scrydex.com/pokemon/me2pt5-242/large"
       }
     }
+  ],
+  "sliggoo": [
+    {
+      "id": "xy7-59",
+      "name": "Sliggoo",
+      "set": "Ancient Origins",
+      "setId": "xy7",
+      "number": "59",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.06,
+          "mid": 0.23,
+          "high": 19.98,
+          "market": 0.21,
+          "directLow": null
+        },
+        "reverseHolofoil": {
+          "low": 0.15,
+          "mid": 0.5,
+          "high": 23.49,
+          "market": 0.54,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/xy7/59.png",
+        "large": "https://images.pokemontcg.io/xy7/59_hires.png"
+      }
+    },
+    {
+      "id": "xy2-73",
+      "name": "Sliggoo",
+      "set": "Flashfire",
+      "setId": "xy2",
+      "number": "73",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.12,
+          "mid": 0.35,
+          "high": 19.99,
+          "market": 0.35,
+          "directLow": 0.23
+        },
+        "reverseHolofoil": {
+          "low": 0.42,
+          "mid": 1.03,
+          "high": 96.86,
+          "market": 1.09,
+          "directLow": 96.86
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/xy2/73.png",
+        "large": "https://images.pokemontcg.io/xy2/73_hires.png"
+      }
+    },
+    {
+      "id": "xy4-76",
+      "name": "Sliggoo",
+      "set": "Phantom Forces",
+      "setId": "xy4",
+      "number": "76",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.09,
+          "mid": 0.31,
+          "high": 19.98,
+          "market": 0.29,
+          "directLow": null
+        },
+        "reverseHolofoil": {
+          "low": 0.37,
+          "mid": 0.69,
+          "high": 19.98,
+          "market": 0.81,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/xy4/76.png",
+        "large": "https://images.pokemontcg.io/xy4/76_hires.png"
+      }
+    },
+    {
+      "id": "sm2-95",
+      "name": "Sliggoo",
+      "set": "Guardians Rising",
+      "setId": "sm2",
+      "number": "95",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.1,
+          "mid": 0.33,
+          "high": 19.98,
+          "market": 0.33,
+          "directLow": 0.25
+        },
+        "reverseHolofoil": {
+          "low": 0.3,
+          "mid": 0.95,
+          "high": 19.98,
+          "market": 0.96,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sm2/95.png",
+        "large": "https://images.pokemontcg.io/sm2/95_hires.png"
+      }
+    },
+    {
+      "id": "sm6-93",
+      "name": "Sliggoo",
+      "set": "Forbidden Light",
+      "setId": "sm6",
+      "number": "93",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.16,
+          "mid": 0.36,
+          "high": 19.98,
+          "market": 0.32,
+          "directLow": null
+        },
+        "reverseHolofoil": {
+          "low": 3.25,
+          "mid": 5.36,
+          "high": 29.1,
+          "market": 4.44,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sm6/93.png",
+        "large": "https://images.pokemontcg.io/sm6/93_hires.png"
+      }
+    },
+    {
+      "id": "swsh8-196",
+      "name": "Sliggoo",
+      "set": "Fusion Strike",
+      "setId": "swsh8",
+      "number": "196",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "reverseHolofoil": {
+          "low": 0.2,
+          "mid": 0.37,
+          "high": 2,
+          "market": 0.29,
+          "directLow": null
+        },
+        "normal": {
+          "low": 0.01,
+          "mid": 0.2,
+          "high": 2.99,
+          "market": 0.13,
+          "directLow": 0.07
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh8/196.png",
+        "large": "https://images.pokemontcg.io/swsh8/196_hires.png"
+      }
+    },
+    {
+      "id": "swsh11-133",
+      "name": "Hisuian Sliggoo",
+      "set": "Lost Origin",
+      "setId": "swsh11",
+      "number": "133",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "tcgplayer": {
+        "normal": {
+          "low": 0.01,
+          "mid": 0.19,
+          "high": 2.99,
+          "market": 0.14,
+          "directLow": 0.08
+        },
+        "reverseHolofoil": {
+          "low": 0.08,
+          "mid": 0.39,
+          "high": 2.38,
+          "market": 0.38,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh11/133.png",
+        "large": "https://images.pokemontcg.io/swsh11/133_hires.png"
+      }
+    },
+    {
+      "id": "me4-67",
+      "name": "Sliggoo",
+      "set": "Chaos Rising",
+      "setId": "me4",
+      "number": "67",
+      "rarity": "Common",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "images": {
+        "small": "https://images.scrydex.com/pokemon/me4-67/small",
+        "large": "https://images.scrydex.com/pokemon/me4-67/large"
+      }
+    },
+    {
+      "id": "me4-95",
+      "name": "Sliggoo",
+      "set": "Chaos Rising",
+      "setId": "me4",
+      "number": "95",
+      "rarity": "Illustration Rare",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "supertype": "Pokémon",
+      "images": {
+        "small": "https://images.scrydex.com/pokemon/me4-95/small",
+        "large": "https://images.scrydex.com/pokemon/me4-95/large"
+      }
+    }
   ]
 }

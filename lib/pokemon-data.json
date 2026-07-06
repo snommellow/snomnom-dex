@@ -15717,7 +15717,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/786.png",
     "genus": "Land Spirit Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sma/SV94_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A3/170/high.webp"
     ],
     "altForms": [],
     "familyId": 786,
@@ -15751,7 +15751,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/788.png",
     "genus": "Land Spirit Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sma/SV92_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A3/164/high.webp"
     ],
     "altForms": [],
     "familyId": 788,
@@ -17796,22 +17796,7 @@
     "bgCandidates": [
       "https://images.pokemontcg.io/me2/100_hires.png"
     ],
-    "altForms": [
-      {
-        "slug": "zacian-crowned",
-        "displayName": "Crowned Sword Zacian",
-        "types": [
-          "fairy",
-          "steel"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10188.png",
-        "category": "regional",
-        "tcgUrl": null,
-        "regularCardUrl": null
-      }
-    ],
+    "altForms": [],
     "familyId": 888,
     "familyOrder": 0
   },

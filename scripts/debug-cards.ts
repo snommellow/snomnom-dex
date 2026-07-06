@@ -2,19 +2,19 @@ import { writeFileSync } from "fs";
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
-async function fetchAll(name: string) {
-  const url = `${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  return data;
+async function fetchDetail(id: string) {
+  const res = await fetch(`${TCGDEX_BASE}/cards/${id}`);
+  return res.json();
 }
 
 async function main() {
-  const lele = await fetchAll("Tapu Lele");
-  const fini = await fetchAll("Tapu Fini");
-  const koko = await fetchAll("Tapu Koko");
-  writeFileSync("lib/debug-cards.json", JSON.stringify({ lele, fini, koko }, null, 2));
-  console.log(`Wrote ${lele.length} Lele, ${fini.length} Fini, ${koko.length} Koko cards`);
+  const ids = ["A3-084", "A3-170", "A3-056", "A3-164", "A3-068", "A3-166", "A3a-019", "A3a-077", "A3a-084", "B1-322"];
+  const results: Record<string, any> = {};
+  for (const id of ids) {
+    results[id] = await fetchDetail(id);
+  }
+  writeFileSync("lib/debug-cards.json", JSON.stringify(results, null, 2));
+  console.log(`Wrote ${Object.keys(results).length} card details`);
 }
 
 main();

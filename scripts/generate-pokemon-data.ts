@@ -49,9 +49,14 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   // #077 Ponyta: Mainland China-exclusive promo full art. Not indexed by pokemontcg.io or
   // TCGdex (checked both — no data for this card/set), so pinned directly by URL.
   77: "https://s3.pokeos.com/pokeos-uploads/tcg/chn/574/107.webp?v=2026-04-01T20:23:04.000Z",
-  // #385 Jirachi: xyp-XY67a ($191.65) is an XY Black Star Promo full art, same "xyp" set as
-  // Fearow above — outside promoSvPick's scope, structurally unreachable by any automated pass.
-  385: "https://images.pokemontcg.io/xyp/XY67a_hires.png",
+  385: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_025_EN_SM.webp", // Jirachi
+  443: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_046_EN_SM.webp", // Gible
+  935: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_022_R_EN_LG.png", // Charcadet
+  390: "https://images.scrydex.com/pokemon/mep-41/medium", // Chimchar
+  728: "https://images.scrydex.com/pokemon/mep-45/medium", // Popplio
+  816: "https://images.scrydex.com/pokemon/mep-54/medium", // Sobble
+  810: "https://images.scrydex.com/pokemon/mep-52/medium", // Grookey
+  696: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_070_R_EN_LG.png", // Tyrunt
   // #82 Magneton, #164 Noctowl, #230 Kingdra, #374 Beldum, #658 Greninja, #991 Iron Bundle:
   // pinned full-art picks.
   877: "https://images.pokemontcg.io/svp/206_hires.png", // Morpeko (Full Belly Mode) — Marnie's Morpeko
@@ -112,6 +117,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  "Hisuian Zorua": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
   "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",
   "Pom-Pom Style Oricorio": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/A3/A3_165_EN_SM.webp",
   "Pa'u Style Oricorio": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_166_EN_SM.webp",

@@ -14434,7 +14434,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/718.png",
     "genus": "Order Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sm6/123_hires.png"
+      "https://images.pokemontcg.io/smp/SM122_hires.png"
     ],
     "altForms": [
       {
@@ -14448,7 +14448,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10120.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10120.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sm6/123_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm6/73_hires.png",
         "regularCardUrl": null
       },
       {
@@ -14462,8 +14462,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10181.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10181.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sm6/123_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sm11/124_hires.png"
       },
       {
         "slug": "zygarde-mega",

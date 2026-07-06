@@ -7,7 +7,7 @@ import { join } from "path";
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
 import {
   buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
-  buildPromoSvData, promoSvPick, trainerPromoPick,
+  buildPromoSvData, promoSvPick,
   buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
@@ -17,23 +17,6 @@ import {
 } from "../lib/tcgapi";
 import { buildChainSets } from "../lib/chains";
 import { fetchPocketImages, fetchPocketAltForm, fetchPocketFallback } from "../lib/pocketapi";
-
-// Firing ~380+ concurrent promoSvPick calls (each doing its own imageExists HEAD request)
-// was sustained enough to overwhelm pokemontcg.io's rate limit past our retry budget —
-// isolated single-Pokémon calls always succeeded, but the full run consistently failed for
-// specific Pokémon depending on request ordering. Batching keeps concurrency bounded instead.
-async function mapWithConcurrency<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-  const results: R[] = new Array(items.length);
-  let next = 0;
-  async function worker() {
-    while (next < items.length) {
-      const i = next++;
-      results[i] = await fn(items[i]);
-    }
-  }
-  await Promise.all(Array.from({ length: limit }, worker));
-  return results;
-}
 
 const TCG_ONLY_MEGAS: Record<number, { displayName: string; types: string[] }> = {
   149: { displayName: "Mega Dragonite", types: ["dragon", "flying"] },
@@ -299,20 +282,10 @@ async function main() {
     const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
   }));
-  const promoSvEntries = await mapWithConcurrency(raw, 10, async p => {
-    const url = await promoSvPick(promoData, toDisplayName(p.name));
-    return url ? [p.id, { tcgUrl: url }] as const : null;
-  });
-  const promoSvMap = new Map(promoSvEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const trainerIrMap = new Map(raw.flatMap(p => {
     const url = trainerIrPick(irData, toDisplayName(p.name));
     return url ? [[p.id, { tcgUrl: url }]] : [];
   }));
-  const trainerPromoEntries = await mapWithConcurrency(raw, 10, async p => {
-    const url = await trainerPromoPick(promoData, toDisplayName(p.name));
-    return url ? [p.id, { tcgUrl: url }] as const : null;
-  });
-  const trainerPromoMap = new Map(trainerPromoEntries.filter((e): e is NonNullable<typeof e> => e !== null));
   const trainerVgxMap = new Map(raw.flatMap(p => {
     const url = trainerVgxPick(vgxData, toDisplayName(p.name));
     return url ? [[p.id, { tcgUrl: url }]] : [];
@@ -334,15 +307,15 @@ async function main() {
   const allPocketResults = await pocketPromise;
   const pocketMap = new Map<number, string>();
   raw.forEach((p, j) => {
-    if (allPocketResults[j]?.url && !irMap.has(p.id) && !promoSvMap.has(p.id)) {
+    if (allPocketResults[j]?.url && !irMap.has(p.id)) {
       pocketMap.set(p.id, allPocketResults[j].url!);
     }
   });
 
   const noCardPokemon = raw.filter((p) => {
     const pocketUrl = pocketMap.get(p.id);
-    return !irMap.has(p.id) && !promoSvMap.has(p.id) && !pocketUrl &&
-      !trainerIrMap.has(p.id) && !trainerPromoMap.has(p.id) && !trainerVgxMap.has(p.id) && !vgxMap.has(p.id);
+    return !irMap.has(p.id) && !pocketUrl &&
+      !trainerIrMap.has(p.id) && !trainerVgxMap.has(p.id) && !vgxMap.has(p.id);
   });
 
   // Run fetchTcgLastResort before alt-form queries to avoid competing with them for rate limits.
@@ -420,16 +393,13 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
-    // by the automated tiers, not to override a genuinely better automated pick. Hardcode and the
-    // automated promo pick are the same kind of pick (a single promo card), so they're merged
-    // into one tier — hardcode wins if set, otherwise the automated pick is used — ranked above
-    // the trainer/VGX/ancient-trait tiers below it.
+    // by the automated tiers, not to override a genuinely better automated pick. The automated
+    // SV Promo and Trainer Promo picks are dropped entirely — hardcode covers that need directly,
+    // so there's no reason to keep them running.
     const tcgResult = irMap.get(p.id)
       ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
       ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
-      ?? promoSvMap.get(p.id)
       ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
-      ?? (!pocketUrl ? trainerPromoMap.get(p.id) : undefined)
       ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
       ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
       ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)

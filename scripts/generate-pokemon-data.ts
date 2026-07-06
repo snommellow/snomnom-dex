@@ -51,6 +51,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 // Keyed by dex ID. These bypass tcgResult and go directly into bgCandidates.
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
+  678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   // #022 Fearow: xyp-XY57 is the θ Evolution Black Star Promo ($61 full-art). The "xyp" set is
   // outside promoSvPick's scope (only scans "svp"), so this card is structurally unreachable by
   // any automated pass, not just losing a comparison — can't be converted to a blacklist entry.

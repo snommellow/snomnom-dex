@@ -134,6 +134,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  "Eternamax Eternatus": "https://images.pokemontcg.io/swsh11tg/TG22_hires.png",
   "Crowned Sword Zacian": "https://images.pokemontcg.io/me2/100_hires.png",
   "Crowned Shield Zamazenta": "https://images.pokemontcg.io/sv10/201_hires.png",
   "Female Indeedee": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B1/B1_278_EN_SM.webp",

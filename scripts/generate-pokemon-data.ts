@@ -39,6 +39,9 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
+  // #855 Polteageist: swshp-SWSH021's crop treatment showed border/text bleeding through
+  // (confirmed by user); switched to full-bleed background instead.
+  855: "https://images.pokemontcg.io/swshp/SWSH021_hires.png",
   832: "https://images.pokemontcg.io/swshp/SWSH049_hires.png", // Dubwool V, SWSH Black Star Promos
   // #786 Tapu Lele, #788 Tapu Fini: both have a real "One Star" Pocket TCG card (A3-170/A3-164,
   // same tier as Tapu Koko's A3-166), but TCGdex's per-rarity search query consistently returns

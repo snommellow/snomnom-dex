@@ -7,19 +7,27 @@ function authHeaders() {
 }
 
 async function fetchCards(name: string) {
-  const res = await fetch(`${PTCGIO_BASE}/cards?q=name:${name}&pageSize=250`, {
-    headers: authHeaders(),
-  });
-  const data = await res.json();
-  return (data.data ?? []).map((c: any) => ({
-    id: c.id,
-    name: c.name,
-    set: c.set?.name,
-    number: c.number,
-    rarity: c.rarity,
-    tcgplayer: c.tcgplayer?.prices,
-    images: c.images,
-  }));
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      if (attempt > 0) await new Promise(r => setTimeout(r, 500 * attempt));
+      const res = await fetch(`${PTCGIO_BASE}/cards?q=name:${name}&pageSize=250`, {
+        headers: authHeaders(),
+      });
+      const data = await res.json();
+      return (data.data ?? []).map((c: any) => ({
+        id: c.id,
+        name: c.name,
+        set: c.set?.name,
+        number: c.number,
+        rarity: c.rarity,
+        tcgplayer: c.tcgplayer?.prices,
+        images: c.images,
+      }));
+    } catch (e) {
+      if (attempt === 2) throw e;
+    }
+  }
+  return [];
 }
 
 async function main() {

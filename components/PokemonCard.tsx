@@ -56,26 +56,26 @@ const NAME_DISPLAY: Record<string, string> = {
   "tapu-lele": "Tapu Lele",
   "tapu-bulu": "Tapu Bulu",
   "tapu-fini": "Tapu Fini",
-  "obstagoon": "Galarian Obstagoon",
-  "perrserker": "Galarian Perrserker",
-  "cursola": "Galarian Cursola",
-  "sirfetchd": "Galarian Sirfetch'd",
-  "mr-rime": "Galarian Mr. Rime",
-  "runerigus": "Galarian Runerigus",
+  "obstagoon": "Obstagoon",
+  "perrserker": "Perrserker",
+  "cursola": "Cursola",
+  "sirfetchd": "Sirfetch'd",
+  "mr-rime": "Mr. Rime",
+  "runerigus": "Runerigus",
   "eiscue-ice": "Eiscue",
   "indeedee-male": "Indeedee",
   "morpeko-full-belly": "Morpeko",
   "urshifu-single-strike": "Single Strike Urshifu",
-  "basculegion-male": "Hisuian Basculegion",
-  "sneasler": "Hisuian Sneasler",
-  "overqwil": "Hisuian Overqwil",
+  "basculegion-male": "Basculegion",
+  "sneasler": "Sneasler",
+  "overqwil": "Overqwil",
   "enamorus-incarnate": "Enamorus",
   "oinkologne-male": "Oinkologne",
   "maushold-family-of-four": "Maushold",
   "squawkabilly-green-plumage": "Squawkabilly",
   "palafin-zero": "Palafin",
   "tatsugiri-curly": "Tatsugiri",
-  "clodsire": "Paldean Clodsire",
+  "clodsire": "Clodsire",
   "dudunsparce-two-segment": "Dudunsparce",
   "great-tusk": "Great Tusk",
   "scream-tail": "Scream Tail",
@@ -95,6 +95,17 @@ const NAME_DISPLAY: Record<string, string> = {
   "iron-leaves": "Iron Leaves",
   "raging-bolt": "Raging Bolt",
   "ogerpon": "Teal Mask Ogerpon",
+};
+
+// Galar/Hisui/Paldea-exclusive evolutions (no non-regional base form exists in-game) have their
+// region baked into the TCG card name, but showing it as part of the title truncates awkwardly
+// on the fixed-width card — show it as a subtitle instead, matching every other regional-form
+// label in this file.
+const REGIONAL_ONLY_LABELS: Record<string, string> = {
+  "obstagoon": "Galarian", "perrserker": "Galarian", "cursola": "Galarian",
+  "sirfetchd": "Galarian", "mr-rime": "Galarian", "runerigus": "Galarian",
+  "basculegion-male": "Hisuian", "sneasler": "Hisuian", "overqwil": "Hisuian",
+  "clodsire": "Paldean",
 };
 
 function formatName(name: string): string {
@@ -142,6 +153,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Toxtricity's base entity is the Amped Form (Low Key is a separate alt form); give it a
   // matching subtitle so the two are distinguishable in the grid.
   if (pokemon.name === "toxtricity-amped" && !formLabel) formLabel = "Amped Form";
+  if (REGIONAL_ONLY_LABELS[pokemon.name] && !formLabel) formLabel = REGIONAL_ONLY_LABELS[pokemon.name];
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

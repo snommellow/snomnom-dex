@@ -1,27 +1,19 @@
-import { writeFileSync } from "fs";
-
-const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
-function authHeaders() {
-  const key = process.env.POKEMONTCG_API_KEY;
-  return key ? { "X-Api-Key": key } : {};
-}
+import { writeFileSync, mkdirSync } from "fs";
 
 async function main() {
-  const res = await fetch(`${PTCGIO_BASE}/cards?q=name:Oinkologne&pageSize=250`, {
-    headers: authHeaders(),
-  });
-  const data = await res.json();
-  const cards = (data.data ?? []).map((c: any) => ({
-    id: c.id,
-    name: c.name,
-    set: c.set?.name,
-    number: c.number,
-    rarity: c.rarity,
-    tcgplayer: c.tcgplayer?.prices,
-    images: c.images,
-  }));
-  writeFileSync("lib/debug-cards.json", JSON.stringify(cards, null, 2));
-  console.log(`Wrote ${cards.length} cards`);
+  mkdirSync("lib/debug-images", { recursive: true });
+  const urls: Record<string, string> = {
+    "sv1-157": "https://images.pokemontcg.io/sv1/157_hires.png",
+    "sv3-184": "https://images.pokemontcg.io/sv3/184_hires.png",
+    "sv3-183": "https://images.pokemontcg.io/sv3/183_hires.png",
+    "sv9-140": "https://images.pokemontcg.io/sv9/140_hires.png",
+  };
+  for (const [id, url] of Object.entries(urls)) {
+    const res = await fetch(url);
+    const buf = Buffer.from(await res.arrayBuffer());
+    writeFileSync(`lib/debug-images/${id}.png`, buf);
+    console.log(`Wrote ${id} (${buf.length} bytes)`);
+  }
 }
 
 main();

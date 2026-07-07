@@ -188,6 +188,7 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
 // the form at all — every "Deoxys" TCG printing shares one name regardless of battle forme,
 // so these are the only cards literally named per forme (Legends Awakened, dp6), picked by hand.
 const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
+  "Noice Face Eiscue": "https://images.pokemontcg.io/swsh9/44_hires.png",
   "10% Forme Zygarde": "https://images.pokemontcg.io/sm11/124_hires.png",
   "Attack Forme Deoxys":  "https://images.pokemontcg.io/dp6/24_hires.png",
   "Defense Forme Deoxys": "https://images.pokemontcg.io/dp6/25_hires.png",

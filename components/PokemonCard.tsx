@@ -147,6 +147,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Indeedee's base entity is the Male variety (Female is a separate alt form); give it a
   // matching subtitle so the two are distinguishable in the grid.
   if (pokemon.name === "indeedee-male" && !formLabel) formLabel = "Male";
+  // Zacian/Zamazenta's base entity is Hero of Many Battles (Crowned Sword/Shield are separate
+  // alt forms); give it a matching subtitle so the two are distinguishable in the grid.
+  if ((pokemon.name === "zacian" || pokemon.name === "zamazenta") && !formLabel) formLabel = "Hero of Many Battles";
   // Oricorio's base entity is the Baile Style (Pom-Pom/Pa'u/Sensu are separate alt forms); give
   // it a matching subtitle so all four styles are distinguishable in the grid.
   if (pokemon.name === "oricorio-baile" && !formLabel) formLabel = "Baile Style";

@@ -117,6 +117,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
 // Keyed by dex ID. These override fallbackCrop so the correct card shows cropped.
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
+  // #916 Oinkologne (Male): sv1-234 "Oinkologne ex" cropped with border/text bleeding through
+  // (confirmed by user); sv1-157 is a plain Stage 1 card with no ability box, crops cleanly.
+  916: "https://images.pokemontcg.io/sv1/157_hires.png",
   // #123 Scyther: ex1-102 Scyther ex Ruby & Sapphire ($101) — pokemontcg.io shows $0 market
   // price for this card (stale data for old EX-era sets), so no price-based blacklist fix is
   // possible: excluding the current wrong pick would just promote a different wrong one.
@@ -209,6 +212,8 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
 // so these are the only cards literally named per forme (Legends Awakened, dp6), picked by hand.
 const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   "Noice Face Eiscue": "https://images.pokemontcg.io/swsh9/44_hires.png",
+  // Distinct art from base Oinkologne's sv1-157 (this one actually depicts the Female design).
+  "Female Oinkologne": "https://images.pokemontcg.io/sv3/184_hires.png",
   "10% Forme Zygarde": "https://images.pokemontcg.io/sm11/124_hires.png",
   "Attack Forme Deoxys":  "https://images.pokemontcg.io/dp6/24_hires.png",
   "Defense Forme Deoxys": "https://images.pokemontcg.io/dp6/25_hires.png",

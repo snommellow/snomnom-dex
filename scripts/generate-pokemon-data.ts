@@ -40,7 +40,7 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   904: "https://images.pokemontcg.io/swsh10/91_hires.png", // Overqwil (Hisuian), Astral Radiance
   894: "https://images.pokemontcg.io/swshp/SWSH280_hires.png", // Regieleki V, SWSH Black Star Promos
-  892: "https://images.pokemontcg.io/swsh7/151_hires.png", // Urshifu (Single Strike Style V), Battle Styles
+  892: "https://images.pokemontcg.io/swsh5/151_hires.png", // Urshifu (Single Strike Style V), Battle Styles
   // Zacian/Zamazenta: automated pass was assigning me2-100/sv10-201 to the base (Hero of Many
   // Battles) entity, but those cards belong to the Crowned Sword/Shield forms instead (moved
   // below via HARDCODED_FORM_URLS) — user confirmed the swap. Base now has no card pinned until
@@ -142,9 +142,9 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Therian Forme Enamorus": "https://images.pokemontcg.io/swsh11tg/TG18_hires.png",
   "Ice Rider Calyrex": "https://images.pokemontcg.io/swsh6/164_hires.png",
   "Shadow Rider Calyrex": "https://images.pokemontcg.io/swsh6/172_hires.png",
-  "Rapid Strike Urshifu": "https://images.pokemontcg.io/swsh7/153_hires.png",
-  "Gigantamax Single Strike Urshifu": "https://images.pokemontcg.io/swsh7/168_hires.png",
-  "Gigantamax Rapid Strike Urshifu": "https://images.pokemontcg.io/swsh7/170_hires.png",
+  "Rapid Strike Urshifu": "https://images.pokemontcg.io/swsh5/153_hires.png",
+  "Gigantamax Single Strike Urshifu": "https://images.pokemontcg.io/swsh5/168_hires.png",
+  "Gigantamax Rapid Strike Urshifu": "https://images.pokemontcg.io/swsh5/170_hires.png",
   "Eternamax Eternatus": "https://images.pokemontcg.io/swsh11tg/TG22_hires.png",
   "Crowned Sword Zacian": "https://images.pokemontcg.io/me2/100_hires.png",
   "Crowned Shield Zamazenta": "https://images.pokemontcg.io/sv10/201_hires.png",

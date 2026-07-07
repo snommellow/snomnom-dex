@@ -531,9 +531,13 @@ export async function promoSvPick(data: PromoSvData, displayName: string): Promi
   // Scan every index key rather than an exact Map.get(displayName) — suffixed promos like
   // "Kingdra ex" are indexed under their full card name ("kingdra ex"), so an exact lookup for
   // "kingdra" always misses even though nameMatches() below would correctly match it.
+  // Skip the REGIONAL_RE exclusion when the query itself already names a regional form (e.g.
+  // "Hisuian Overqwil") — otherwise a region-exclusive species with no non-regional form to
+  // protect against gets every one of its real cards excluded.
+  const queryIsRegional = REGIONAL_RE.test(displayName);
   const candidates = [...data.index.values()].flat().filter(c =>
     c.images?.large && !SVP_BLACKLIST.has(c.number) && nameMatches(c.name, displayName) &&
-    !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name) &&
+    (queryIsRegional || !REGIONAL_RE.test(c.name)) && !TRAINER_OWNED_RE.test(c.name) &&
     (SVP_ALLOWLIST.has(c.number) || c.abilities?.length || /\s+(ex|V|GX|EX|VMAX|VSTAR|V-UNION)$/.test(c.name))
   );
   if (!candidates.length) return null;
@@ -866,10 +870,15 @@ export async function fetchTcgLastResort(
       // Stagger requests to avoid simultaneous rate-limit hits
       await new Promise(r => setTimeout(r, i * 50));
       const cards = await fetchAllPages(`name:"${displayName}"`, true);
+      // Skip the REGIONAL_RE exclusion when the query itself already names a regional form
+      // (e.g. "Hisuian Overqwil") — otherwise a region-exclusive species with no non-regional
+      // form to protect against gets every one of its real cards excluded (confirmed root
+      // cause of Overqwil having no card at all despite real prints existing).
+      const queryIsRegional = REGIONAL_RE.test(displayName);
       const candidates = cards.filter(c =>
         (c.images?.large || c.images?.small) &&
         nameMatches(c.name, displayName) &&
-        !REGIONAL_RE.test(c.name) &&
+        (queryIsRegional || !REGIONAL_RE.test(c.name)) &&
         !TRAINER_OWNED_RE.test(c.name) &&
         !isShinyCard(c) &&
         !isGenOneEraSet(c.set.id)
@@ -911,8 +920,11 @@ const AT_RARITY_SCORE: Record<string, number> = {
 };
 
 export function ancientTraitPick(data: AncientTraitData, displayName: string): string | null {
+  // Skip the REGIONAL_RE exclusion when the query itself already names a regional form — see
+  // the identical guard in promoSvPick/fetchTcgLastResort.
+  const queryIsRegional = REGIONAL_RE.test(displayName);
   const candidates = (data.index.get(displayName.toLowerCase()) ?? []).filter(c =>
-    c.images?.large && nameMatches(c.name, displayName) && !REGIONAL_RE.test(c.name) && !TRAINER_OWNED_RE.test(c.name)
+    c.images?.large && nameMatches(c.name, displayName) && (queryIsRegional || !REGIONAL_RE.test(c.name)) && !TRAINER_OWNED_RE.test(c.name)
   );
   if (!candidates.length) return null;
   const best = candidates.reduce((a, b) => {

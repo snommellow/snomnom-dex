@@ -39,6 +39,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
+  832: "https://images.pokemontcg.io/swshp/SWSH049_hires.png", // Dubwool V, SWSH Black Star Promos
   // #786 Tapu Lele, #788 Tapu Fini: both have a real "One Star" Pocket TCG card (A3-170/A3-164,
   // same tier as Tapu Koko's A3-166), but TCGdex's per-rarity search query consistently returns
   // no results for these two specific name+rarity combos despite the cards existing (confirmed
@@ -126,6 +127,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
   "Midnight Form Lycanroc": "https://images.pokemontcg.io/sm2/74_hires.png",
+  "Gigantamax Hatterene": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
   "Hisuian Zorua": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
   "Busted Form Mimikyu": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
   "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",

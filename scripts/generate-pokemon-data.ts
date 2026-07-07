@@ -481,6 +481,35 @@ async function main() {
     if (regularUrl) { p.regularCardUrl = regularUrl; p.bgCandidates = []; }
   }
 
+  // User-requested swap: Crowned Sword/Shield become the primary entity shown in the main grid,
+  // with Hero of Many Battles demoted to an alt form — the reverse of PokéAPI's default variety
+  // assignment (which treats Hero of Many Battles as the base species). Swaps types/artwork/
+  // sprites/cards between the base entry and its Crowned alt form, and relabels the alt form.
+  for (const [dexId, crownedSlug, heroLabel] of [
+    [888, "zacian-crowned", "Zacian Hero of Many Battles"],
+    [889, "zamazenta-crowned", "Zamazenta Hero of Many Battles"],
+  ] as const) {
+    const p = pokemon.find(x => x.id === dexId);
+    const crownedForm = p?.altForms.find(f => f.slug === crownedSlug);
+    if (!p || !crownedForm) continue;
+    const heroSnapshot = {
+      types: p.types, artworkUrl: p.artworkUrl, spriteUrl: p.spriteUrl,
+      bgCandidates: p.bgCandidates, regularCardUrl: p.regularCardUrl,
+    };
+    p.types = crownedForm.types;
+    p.artworkUrl = crownedForm.artworkUrl;
+    p.spriteUrl = crownedForm.homeSpriteUrl ?? crownedForm.formSpriteUrl ?? p.spriteUrl;
+    p.bgCandidates = crownedForm.tcgUrl ? [crownedForm.tcgUrl] : [];
+    p.regularCardUrl = crownedForm.regularCardUrl ?? undefined;
+    crownedForm.displayName = heroLabel;
+    crownedForm.types = heroSnapshot.types;
+    crownedForm.artworkUrl = heroSnapshot.artworkUrl;
+    crownedForm.homeSpriteUrl = heroSnapshot.spriteUrl;
+    crownedForm.formSpriteUrl = heroSnapshot.spriteUrl;
+    crownedForm.tcgUrl = heroSnapshot.bgCandidates[0] ?? null;
+    crownedForm.regularCardUrl = heroSnapshot.regularCardUrl ?? null;
+  }
+
   writeFileSync(outPath, JSON.stringify(pokemon, null, 2));
   console.log(`Written ${pokemon.length} Pokémon to lib/pokemon-data.json`);
 }

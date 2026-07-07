@@ -149,7 +149,10 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   if (pokemon.name === "indeedee-male" && !formLabel) formLabel = "Male";
   // Zacian/Zamazenta's base entity is Hero of Many Battles (Crowned Sword/Shield are separate
   // alt forms); give it a matching subtitle so the two are distinguishable in the grid.
-  if ((pokemon.name === "zacian" || pokemon.name === "zamazenta") && !formLabel) formLabel = "Hero of Many Battles";
+  // Base entity now depicts the Crowned Sword/Shield form (Hero of Many Battles was demoted to
+  // an alt form) per user request — see the swap in scripts/generate-pokemon-data.ts.
+  if (pokemon.name === "zacian" && !formLabel) formLabel = "Crowned Sword";
+  if (pokemon.name === "zamazenta" && !formLabel) formLabel = "Crowned Shield";
   // Oricorio's base entity is the Baile Style (Pom-Pom/Pa'u/Sensu are separate alt forms); give
   // it a matching subtitle so all four styles are distinguishable in the grid.
   if (pokemon.name === "oricorio-baile" && !formLabel) formLabel = "Baile Style";
@@ -420,6 +423,10 @@ const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Palde
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   // Hoopa Unbound is a suffix form (base name first), unlike every other prefix-style forme.
   if (displayName === "Hoopa Unbound") return { baseName: "Hoopa", formLabel: "Unbound" };
+  // Zacian/Zamazenta's Hero of Many Battles alt form (demoted from base per user request) is
+  // also suffix-style.
+  if (displayName === "Zacian Hero of Many Battles") return { baseName: "Zacian", formLabel: "Hero of Many Battles" };
+  if (displayName === "Zamazenta Hero of Many Battles") return { baseName: "Zamazenta", formLabel: "Hero of Many Battles" };
   let baseName = displayName;
   // Keep stripping — some forms layer two prefixes (e.g. "Blaze Breed Paldean Tauros").
   let stripped = true;

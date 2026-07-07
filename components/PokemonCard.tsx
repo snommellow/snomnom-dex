@@ -65,7 +65,7 @@ const NAME_DISPLAY: Record<string, string> = {
   "eiscue-ice": "Eiscue",
   "indeedee-male": "Indeedee",
   "morpeko-full-belly": "Morpeko",
-  "urshifu-single-strike": "Single Strike Urshifu",
+  "urshifu-single-strike": "Urshifu",
   "basculegion-male": "Basculegion",
   "sneasler": "Sneasler",
   "overqwil": "Overqwil",
@@ -94,7 +94,7 @@ const NAME_DISPLAY: Record<string, string> = {
   "walking-wake": "Walking Wake",
   "iron-leaves": "Iron Leaves",
   "raging-bolt": "Raging Bolt",
-  "ogerpon": "Teal Mask Ogerpon",
+  "ogerpon": "Ogerpon",
 };
 
 // Galar/Hisui/Paldea-exclusive evolutions (no non-regional base form exists in-game) have their
@@ -162,6 +162,12 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Toxtricity's base entity is the Amped Form (Low Key is a separate alt form); give it a
   // matching subtitle so the two are distinguishable in the grid.
   if (pokemon.name === "toxtricity-amped" && !formLabel) formLabel = "Amped Form";
+  // Urshifu's base entity is the Single Strike Style (Rapid Strike is a separate alt form);
+  // Ogerpon's base entity is the Teal Mask (Wellspring/Hearthflame/Cornerstone are separate alt
+  // forms). Both had their style/mask baked into the title, causing the same truncation issue
+  // as the regional-only evolutions above — moved to a subtitle instead.
+  if (pokemon.name === "urshifu-single-strike" && !formLabel) formLabel = "Single Strike Style";
+  if (pokemon.name === "ogerpon" && !formLabel) formLabel = "Teal Mask";
   if (REGIONAL_ONLY_LABELS[pokemon.name] && !formLabel) formLabel = REGIONAL_ONLY_LABELS[pokemon.name];
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";

@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
         hostname: "limitlesstcg.nyc3.cdn.digitaloceanspaces.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "static.tcgcollector.com",
+        pathname: "/**",
+      },
     ],
   },
 };

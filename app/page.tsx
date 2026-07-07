@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import PokedexGrid from "@/components/PokedexGrid";
 
+export const dynamic = "force-dynamic";
+
 function GridSkeleton() {
   return (
     <div className="flex flex-col gap-6">

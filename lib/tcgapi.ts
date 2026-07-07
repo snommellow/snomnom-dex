@@ -102,7 +102,12 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // sm4-106 "Kartana-GX", swsh5-149 "Necrozma", sm7-159 "Stakataka-GX", swsh7-178 "Dracozolt",
 // swsh7-176 "Arctovish": confirmed bordered/non-full-art despite picking as the winning
 // candidate — visible card frame bleeding through as a background.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176"]);
+// me2-100/sv10-201: not a border issue — these are genuinely full-art Zacian/Zamazenta cards,
+// but user-confirmed they depict the Crowned Sword/Shield forms specifically and were wrongly
+// winning as the base (Hero of Many Battles) entity's card. Moved to HARDCODED_FORM_URLS for
+// the Crowned forms instead; blacklisted here so the base entity's automated pass (IR/SIR in
+// particular — this list is checked there too, not just VGX) doesn't just re-select them.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176", "me2-100", "sv10-201"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {
@@ -445,7 +450,7 @@ export async function buildIrSirData(): Promise<IrSirData> {
 export function irSirCandidates(data: IrSirData, displayName: string): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   return data.rarities.flatMap((r, i) => {
-    const cands = lookupCandidates(data.indexes[i], displayName, r);
+    const cands = lookupCandidates(data.indexes[i], displayName, r).filter(c => !MISMATCHED_FULL_ART_BLACKLIST.has(c.id));
     // For IR (not SIR): exclude SV-era "Pokémon ex" cards — distinct identities from the base form
     return r === "Illustration Rare" ? cands.filter(c => c.name.toLowerCase() !== nameLower + " ex") : cands;
   });

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "swsh10-90",
+    "name": "Hisuian Overqwil",
+    "set": "Astral Radiance",
+    "number": "90",
+    "rarity": "Uncommon",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.1,
+        "mid": 0.29,
+        "high": 19.98,
+        "market": 0.3,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.01,
+        "mid": 0.18,
+        "high": 2.99,
+        "market": 0.16,
+        "directLow": 0.05
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh10/90.png",
+      "large": "https://images.pokemontcg.io/swsh10/90_hires.png"
+    }
+  },
+  {
+    "id": "swsh10-91",
+    "name": "Hisuian Overqwil",
+    "set": "Astral Radiance",
+    "number": "91",
+    "rarity": "Rare",
+    "tcgplayer": {
+      "reverseHolofoil": {
+        "low": 0.09,
+        "mid": 0.35,
+        "high": 19.98,
+        "market": 0.38,
+        "directLow": null
+      },
+      "normal": {
+        "low": 0.01,
+        "mid": 0.2,
+        "high": 19.98,
+        "market": 0.1,
+        "directLow": null
+      }
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh10/91.png",
+      "large": "https://images.pokemontcg.io/swsh10/91_hires.png"
+    }
+  }
+]

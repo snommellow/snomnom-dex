@@ -136,6 +136,9 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // Oricorio's base entity is the Baile Style (Pom-Pom/Pa'u/Sensu are separate alt forms); give
   // it a matching subtitle so all four styles are distinguishable in the grid.
   if (pokemon.name === "oricorio-baile" && !formLabel) formLabel = "Baile Style";
+  // Lycanroc's base entity is the Midday Form (Midnight/Dusk are separate alt forms); give it
+  // a matching subtitle so all three are distinguishable in the grid.
+  if (pokemon.name === "lycanroc-midday" && !formLabel) formLabel = "Midday Form";
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";
 

@@ -104,8 +104,30 @@ const NAME_DISPLAY: Record<string, string> = {
 const REGIONAL_ONLY_LABELS: Record<string, string> = {
   "obstagoon": "Galarian", "perrserker": "Galarian", "cursola": "Galarian",
   "sirfetchd": "Galarian", "mr-rime": "Galarian", "runerigus": "Galarian",
-  "basculegion-male": "Hisuian", "sneasler": "Hisuian", "overqwil": "Hisuian",
+  "sneasler": "Hisuian", "overqwil": "Hisuian",
   "clodsire": "Paldean",
+};
+
+// Base entities with a same-named alt-form sibling (e.g. "Attack Forme Deoxys") that had no
+// subtitle at all, making them visually indistinguishable from their own alt form in the grid.
+const BASE_FORM_LABELS: Record<string, string> = {
+  "deoxys-normal": "Normal Forme",
+  "wormadam-plant": "Plant Cloak",
+  "giratina-altered": "Altered Forme",
+  "shaymin-land": "Land Forme",
+  "darmanitan-standard": "Standard Mode",
+  "keldeo-ordinary": "Ordinary Forme",
+  "meloetta-aria": "Aria Forme",
+  "wishiwashi-solo": "Solo Form",
+  "mimikyu-disguised": "Disguised Form",
+  "eiscue-ice": "Ice Face",
+  "enamorus-incarnate": "Incarnate Forme",
+  "oinkologne-male": "Male",
+  "maushold-family-of-four": "Family of Four",
+  "squawkabilly-green-plumage": "Green Plumage",
+  "palafin-zero": "Zero Form",
+  "tatsugiri-curly": "Curly Form",
+  "dudunsparce-two-segment": "Two-Segment Form",
 };
 
 function formatName(name: string): string {
@@ -168,6 +190,11 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   // as the regional-only evolutions above — moved to a subtitle instead.
   if (pokemon.name === "urshifu-single-strike" && !formLabel) formLabel = "Single Strike Style";
   if (pokemon.name === "ogerpon" && !formLabel) formLabel = "Teal Mask";
+  // Remaining base entities with a same-named alt-form sibling that had no subtitle at all.
+  if (BASE_FORM_LABELS[pokemon.name] && !formLabel) formLabel = BASE_FORM_LABELS[pokemon.name];
+  // Basculegion is both Hisuian-only AND has a separate Female alt form — needs both qualifiers,
+  // not just the generic regional label below.
+  if (pokemon.name === "basculegion-male" && !formLabel) formLabel = "Hisuian Male";
   if (REGIONAL_ONLY_LABELS[pokemon.name] && !formLabel) formLabel = REGIONAL_ONLY_LABELS[pokemon.name];
   const primaryType = pokemon.types[0] ?? "normal";
   const typeColor = TYPE_COLOR[primaryType] ?? "#828282";

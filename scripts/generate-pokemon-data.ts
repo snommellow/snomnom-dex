@@ -38,6 +38,7 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
+  876: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B2/B2_169_EN_SM.webp", // Indeedee (Male)
   720: "https://images.scrydex.com/pokemon/xyp_ja-155/medium", // Hoopa (Confined)
   // #855 Polteageist: swshp-SWSH021's crop treatment showed border/text bleeding through
   // (confirmed by user); switched to full-bleed background instead.
@@ -129,6 +130,7 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  "Female Indeedee": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B1/B1_278_EN_SM.webp",
   "Midnight Form Lycanroc": "https://images.pokemontcg.io/sm2/74_hires.png",
   "Gigantamax Hatterene": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
   // Only one real Toxtricity VMAX print exists (no separate Amped/Low Key Gigantamax cards).

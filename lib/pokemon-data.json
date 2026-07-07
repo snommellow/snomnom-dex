@@ -17789,27 +17789,27 @@
     "id": 888,
     "name": "zacian",
     "types": [
-      "fairy"
+      "fairy",
+      "steel"
     ],
-    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
-    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/888.png",
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10188.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
     "genus": "Warrior Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv9/186_hires.png"
+      "https://images.pokemontcg.io/me2/100_hires.png"
     ],
     "altForms": [
       {
         "slug": "zacian-crowned",
-        "displayName": "Crowned Sword Zacian",
+        "displayName": "Zacian Hero of Many Battles",
         "types": [
-          "fairy",
-          "steel"
+          "fairy"
         ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10188.png",
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/888.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/me2/100_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv9/186_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -17820,27 +17820,27 @@
     "id": 889,
     "name": "zamazenta",
     "types": [
-      "fighting"
+      "fighting",
+      "steel"
     ],
-    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
-    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/889.png",
+    "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10189.png",
+    "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10189.png",
     "genus": "Warrior Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10tg/TG22_hires.png"
+      "https://images.pokemontcg.io/sv10/201_hires.png"
     ],
     "altForms": [
       {
         "slug": "zamazenta-crowned",
-        "displayName": "Crowned Shield Zamazenta",
+        "displayName": "Zamazenta Hero of Many Battles",
         "types": [
-          "fighting",
-          "steel"
+          "fighting"
         ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10189.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10189.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10189.png",
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/889.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv10/201_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG22_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -17872,7 +17872,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10190.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10190.png",
         "category": "regional",
-        "tcgUrl": null,
+        "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG22_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -17905,7 +17905,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/892.png",
     "genus": "Wushu Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh9tg/TG18_hires.png"
+      "https://images.pokemontcg.io/swsh7/151_hires.png"
     ],
     "altForms": [
       {
@@ -17919,7 +17919,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10191.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10191.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH107_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh7/153_hires.png",
         "regularCardUrl": null
       },
       {
@@ -17933,7 +17933,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10226.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10226.png",
         "category": "gmax",
-        "tcgUrl": "https://images.pokemontcg.io/swsh9tg/TG19_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh7/168_hires.png",
         "regularCardUrl": null
       },
       {
@@ -17947,7 +17947,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10227.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10227.png",
         "category": "gmax",
-        "tcgUrl": "https://images.pokemontcg.io/swsh9tg/TG21_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh7/170_hires.png",
         "regularCardUrl": null
       }
     ],
@@ -17981,7 +17981,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/894.png",
     "genus": "Electron Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh12/175_hires.png"
+      "https://images.pokemontcg.io/swshp/SWSH280_hires.png"
     ],
     "altForms": [],
     "familyId": 894,
@@ -18057,7 +18057,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10193.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10193.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH130_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/164_hires.png",
         "regularCardUrl": null
       },
       {
@@ -18071,7 +18071,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10194.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10194.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH131_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/172_hires.png",
         "regularCardUrl": null
       }
     ],

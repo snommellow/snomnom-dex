@@ -128,6 +128,9 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
   "Midnight Form Lycanroc": "https://images.pokemontcg.io/sm2/74_hires.png",
   "Gigantamax Hatterene": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
+  // Only one real Toxtricity VMAX print exists (no separate Amped/Low Key Gigantamax cards).
+  "Gigantamax Amped Toxtricity": "https://images.pokemontcg.io/swsh2/71_hires.png",
+  "Gigantamax Low Key Toxtricity": "https://images.pokemontcg.io/swsh2/71_hires.png",
   "Hisuian Zorua": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
   "Busted Form Mimikyu": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
   "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",

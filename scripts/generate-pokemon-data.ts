@@ -131,6 +131,7 @@ const HARDCODED_FORM_URLS: Record<string, string> = {
   // Only one real Toxtricity VMAX print exists (no separate Amped/Low Key Gigantamax cards).
   "Gigantamax Amped Toxtricity": "https://images.pokemontcg.io/swsh2/71_hires.png",
   "Gigantamax Low Key Toxtricity": "https://images.pokemontcg.io/swsh2/71_hires.png",
+  "Low Key Form Toxtricity": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B2/B2_198_EN.png",
   "Hisuian Zorua": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
   "Busted Form Mimikyu": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
   "Sensu Style Oricorio": "https://images.pokemontcg.io/sm12/95_hires.png",

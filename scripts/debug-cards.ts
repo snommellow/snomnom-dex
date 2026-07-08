@@ -32,7 +32,7 @@ async function fetchAllPages(q: string): Promise<any[]> {
 }
 
 async function main() {
-  const names = ["Wellspring Mask Ogerpon", "Hearthflame Mask Ogerpon", "Cornerstone Mask Ogerpon", "Teal Mask Ogerpon", "Annihilape", "Clodsire", "Maschiff", "Glimmora"];
+  const names = ["Wellspring Mask Ogerpon", "Hearthflame Mask Ogerpon", "Cornerstone Mask Ogerpon", "Teal Mask Ogerpon", "Annihilape", "Clodsire", "Maschiff", "Glimmora", "Squawkabilly"];
   const out: Record<string, any[]> = {};
   for (const name of names) {
     const cards = await fetchAllPages(`name:"${name}"`);

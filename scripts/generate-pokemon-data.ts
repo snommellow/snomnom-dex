@@ -7,7 +7,6 @@ import { join } from "path";
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
 import {
   buildIrSirData, buildTeraIrSirData, irSirCandidates, irSirPick, trainerIrPick,
-  buildPromoSvData, promoSvPick,
   buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
   buildAncientTraitData, ancientTraitPick,
   buildFallbackArtData, fallbackArtPick,
@@ -266,6 +265,32 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
   "Zen Mode Galarian Darmanitan": "https://images.pokemontcg.io/swsh3/28_hires.png",
 };
 
+// Shared priority order for resolving a Pokémon's (or alt form's) card image url — used
+// identically whether it's a base Pokémon or an alt form, so there's exactly one place that
+// defines "what beats what". Once Pocket has an image, no lower automated/manual tier is
+// allowed to override it — they only fill the gap when Pocket has nothing.
+function pickTcgUrl(tiers: {
+  ir: string | null;
+  pocket: string | null;
+  hardcoded: string | null;
+  trainerIr: string | null;
+  trainerVgx: string | null;
+  ancientTrait: string | null;
+  vgx: string | null;
+  teraIr: string | null;
+}): string | null {
+  const { ir, pocket, hardcoded, trainerIr, trainerVgx, ancientTrait, vgx, teraIr } = tiers;
+  return ir
+    ?? pocket
+    ?? hardcoded
+    ?? (!pocket ? trainerIr : null)
+    ?? (!pocket ? trainerVgx : null)
+    ?? (!pocket ? ancientTrait : null)
+    ?? (!pocket ? vgx : null)
+    ?? (!pocket ? teraIr : null)
+    ?? null;
+}
+
 async function main() {
   console.log("Fetching Pokémon list...");
   const raw = await fetchFirst151();
@@ -299,10 +324,9 @@ async function main() {
   });
 
   console.log("Fetching TCG indexes + alt forms...");
-  const [irData, teraIrData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
+  const [irData, teraIrData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
     buildIrSirData(),
     buildTeraIrSirData(),
-    buildPromoSvData(),
     buildVgxData(),
     buildAncientTraitData(),
     buildFallbackArtData(),
@@ -431,8 +455,9 @@ async function main() {
             // Pokémon's display name instead of the forme-specific display name.
             const searchName = form.category === "forme" ? toDisplayName(raw[i].name) : form.displayName;
             const irFromIndex = irSirPick(irSirCandidates(irData, searchName));
-            const promoUrl = await promoSvPick(promoData, searchName);
+            const teraIrFromIndex = irSirPick(irSirCandidates(teraIrData, searchName));
             const trainerIrUrl = trainerIrPick(irData, searchName);
+            const trainerVgxUrl = trainerVgxPick(vgxData, searchName);
             const vgxFromIndex = vgxPick(vgxCandidates(vgxData, searchName));
             const ancientTraitUrl = ancientTraitPick(ancientTraitData, searchName);
             const fallbackUrl = fallbackArtPick(fallbackData, searchName);
@@ -451,7 +476,21 @@ async function main() {
             const vgxResult = vgxFromIndex ?? vgxFromFormCard;
             const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
             const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
-            const tcgUrl = irUrl ?? promoUrl ?? (pocket.url || null) ?? trainerIrUrl ?? regionalPromoUrl ?? vgxUrl ?? ancientTraitUrl ?? null;
+            const pocketUrl = pocket.url || null;
+
+            // Same pickTcgUrl priority order used for base Pokémon — regional promo (a curated,
+            // manual lookup, no base-Pokémon equivalent) folds into the "hardcoded" tier slot
+            // since it plays the same role: a manual pick filling a gap the automated tiers miss.
+            const tcgUrl = pickTcgUrl({
+              ir: irUrl,
+              pocket: pocketUrl,
+              hardcoded: regionalPromoUrl ?? null,
+              trainerIr: trainerIrUrl,
+              trainerVgx: trainerVgxUrl,
+              ancientTrait: ancientTraitUrl,
+              vgx: vgxUrl,
+              teraIr: teraIrFromIndex?.tcgUrl ?? null,
+            });
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(searchName))
               : null;
@@ -474,21 +513,19 @@ async function main() {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
-    // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
-    // by the automated tiers, not to override a genuinely better automated pick. The automated
-    // SV Promo and Trainer Promo picks are dropped entirely — hardcode covers that need directly,
-    // so there's no reason to keep them running. Tera-type IR/SIR sits after VGX — a Tera
-    // reprint shouldn't outrank a real full-art illustration, the ancient-trait sets, or a VGX
-    // pick, but still beats showing nothing.
-    const tcgResult = irMap.get(p.id)
-      ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
-      ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
-      ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
-      ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
-      ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
-      ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)
-      ?? (!pocketUrl ? teraIrMap.get(p.id) : undefined)
-      ?? { tcgUrl: null };
+    // Uses the same pickTcgUrl priority order shared with alt forms below — see its comment.
+    const tcgResult = {
+      tcgUrl: pickTcgUrl({
+        ir: irMap.get(p.id)?.tcgUrl ?? null,
+        pocket: pocketUrl ?? null,
+        hardcoded: hardcodedBg ?? null,
+        trainerIr: trainerIrMap.get(p.id)?.tcgUrl ?? null,
+        trainerVgx: trainerVgxMap.get(p.id)?.tcgUrl ?? null,
+        ancientTrait: ancientTraitUrl ?? null,
+        vgx: vgxMap.get(p.id)?.tcgUrl ?? null,
+        teraIr: teraIrMap.get(p.id)?.tcgUrl ?? null,
+      }),
+    };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
   });

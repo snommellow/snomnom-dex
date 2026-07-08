@@ -429,8 +429,8 @@ function pickBestCardWithChain(cards: RankedCard[], chainSets: Set<string> | und
 }
 
 // Fetch all cards of a given rarity (non-Tera) and return a name index.
-async function fetchRarityIndex(rarity: string, allowTeraEx = false, excludeMeSets = false): Promise<Map<string, PtcgCard[]>> {
-  const teraFilter = allowTeraEx ? "" : " -subtypes:Tera";
+async function fetchRarityIndex(rarity: string, allowTeraEx = false, excludeMeSets = false, onlyTera = false): Promise<Map<string, PtcgCard[]>> {
+  const teraFilter = onlyTera ? " subtypes:Tera" : (allowTeraEx ? "" : " -subtypes:Tera");
   const meFilter = excludeMeSets ? " -set.id:me*" : "";
   const cards = await fetchAllPages(`rarity:"${rarity}"${teraFilter}${meFilter}`);
   return buildNameIndex(cards);
@@ -448,6 +448,16 @@ interface FetchOptions {
 export async function buildIrSirData(): Promise<IrSirData> {
   const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
   const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r)));
+  return { rarities, indexes };
+}
+
+// Tera-type IR/SIR cards, kept as a separate lower-priority tier rather than blended into the
+// main IR/SIR index — a Tera reprint of an otherwise-ordinary Pokémon shouldn't outrank a
+// genuine full-art illustration the way it would if included in the primary tier, but it's
+// still worth showing if nothing else (VGX, Ancient Trait) has already claimed a background.
+export async function buildTeraIrSirData(): Promise<IrSirData> {
+  const rarities = RARITY_ORDER.filter(r => IR_RARITIES.has(r));
+  const indexes = await Promise.all(rarities.map(r => fetchRarityIndex(r, false, false, true)));
   return { rarities, indexes };
 }
 

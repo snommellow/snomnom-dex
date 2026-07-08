@@ -6,7 +6,7 @@ import { writeFileSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
 import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
 import {
-  buildIrSirData, irSirCandidates, irSirPick, trainerIrPick,
+  buildIrSirData, buildTeraIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildPromoSvData, promoSvPick,
   buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
   buildAncientTraitData, ancientTraitPick,
@@ -294,8 +294,9 @@ async function main() {
   });
 
   console.log("Fetching TCG indexes + alt forms...");
-  const [irData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
+  const [irData, teraIrData, promoData, vgxData, ancientTraitData, fallbackData, altFormsData] = await Promise.all([
     buildIrSirData(),
+    buildTeraIrSirData(),
     buildPromoSvData(),
     buildVgxData(),
     buildAncientTraitData(),
@@ -339,12 +340,23 @@ async function main() {
   const irSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(irCandidatesList[i].map(c => c.set.id))]));
   const irChainSetsMap = buildChainSets(irSetsByDex, chainsByDex);
 
+  const teraIrCandidatesList = raw.map(p => irSirCandidates(teraIrData, toDisplayName(p.name)));
+  const teraIrSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(teraIrCandidatesList[i].map(c => c.set.id))]));
+  const teraIrChainSetsMap = buildChainSets(teraIrSetsByDex, chainsByDex);
+
   const vgxCandidatesList = raw.map(p => vgxCandidates(vgxData, toDisplayName(p.name)));
   const vgxSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(vgxCandidatesList[i].map(c => c.set.id))]));
   const vgxChainSetsMap = buildChainSets(vgxSetsByDex, chainsByDex);
 
   const irMap = new Map(raw.flatMap((p, i) => {
     const r = irSirPick(irCandidatesList[i], irChainSetsMap.get(p.id));
+    return r ? [[p.id, r]] : [];
+  }));
+  // Tera-type IR/SIR: a separate, lower-priority tier (positioned after Ancient Trait in the
+  // main chain below) — Tera reprints shouldn't outrank a genuine full-art illustration, but are
+  // still worth showing over nothing.
+  const teraIrMap = new Map(raw.flatMap((p, i) => {
+    const r = irSirPick(teraIrCandidatesList[i], teraIrChainSetsMap.get(p.id));
     return r ? [[p.id, r]] : [];
   }));
   const trainerIrMap = new Map(raw.flatMap(p => {
@@ -460,13 +472,16 @@ async function main() {
     // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
     // by the automated tiers, not to override a genuinely better automated pick. The automated
     // SV Promo and Trainer Promo picks are dropped entirely — hardcode covers that need directly,
-    // so there's no reason to keep them running.
+    // so there's no reason to keep them running. Tera-type IR/SIR sits after Ancient Trait — a
+    // Tera reprint shouldn't outrank a real full-art illustration or beat the ancient-trait sets,
+    // but still beats showing nothing.
     const tcgResult = irMap.get(p.id)
       ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
       ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
       ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
       ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
       ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
+      ?? (!pocketUrl ? teraIrMap.get(p.id) : undefined)
       ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)
       ?? { tcgUrl: null };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);

@@ -38,6 +38,10 @@ const BURMY_CLOAK_FORMS: Array<{ slug: string; displayName: string; types: strin
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_BG_URLS: Record<number, string> = {
   678: "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_165_EN_SM.webp", // Meowstic (Male), full art
+  // #987 Flutter Mane, #995 Iron Thorns: svp-97/98's crop treatment showed border/text bleeding
+  // through (confirmed by user); switched to full-bleed background instead.
+  987: "https://images.pokemontcg.io/svp/97_hires.png",
+  995: "https://images.pokemontcg.io/svp/98_hires.png",
   894: "https://images.pokemontcg.io/swshp/SWSH280_hires.png", // Regieleki V, SWSH Black Star Promos
   892: "https://images.pokemontcg.io/swsh5/151_hires.png", // Urshifu (Single Strike Style V), Battle Styles
   // Zacian/Zamazenta: automated pass was assigning me2-100/sv10-201 to the base (Hero of Many

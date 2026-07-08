@@ -218,6 +218,12 @@ const NAME_OVERRIDES: Record<string, string> = {
   "walking-wake":   "Walking Wake",
   "iron-leaves":    "Iron Leaves",
   "raging-bolt":    "Raging Bolt",
+  // Indigo Disk DLC Paradox Pokémon — missed in the original batch above, causing toDisplayName's
+  // fallback (which only capitalizes the first letter, leaving "gouging-fire" as "Gouging-fire")
+  // to never match real card names at all.
+  "gouging-fire":   "Gouging Fire",
+  "iron-boulder":   "Iron Boulder",
+  "iron-crown":     "Iron Crown",
   // Ogerpon's default variety (Teal Mask) is the only one PokeAPI marks default; its other
   // masks are real distinct alt forms (see BASE_SLUG_OVERRIDES/parseFormSlug in lib/pokeapi.ts).
   "ogerpon":        "Teal Mask Ogerpon",

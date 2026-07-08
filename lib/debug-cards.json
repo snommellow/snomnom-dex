@@ -518,5 +518,135 @@
       "market": 0.2,
       "image": "https://images.pokemontcg.io/sv8/115_hires.png"
     }
+  ],
+  "Squawkabilly": [
+    {
+      "id": "sv1-162",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "set": "sv1",
+      "number": "162",
+      "market": 0.16,
+      "image": "https://images.pokemontcg.io/sv1/162_hires.png"
+    },
+    {
+      "id": "sv2-169",
+      "name": "Squawkabilly ex",
+      "rarity": "Double Rare",
+      "set": "sv2",
+      "number": "169",
+      "market": 0.85,
+      "image": "https://images.pokemontcg.io/sv2/169_hires.png"
+    },
+    {
+      "id": "sv2-247",
+      "name": "Squawkabilly ex",
+      "rarity": "Ultra Rare",
+      "set": "sv2",
+      "number": "247",
+      "market": 1.62,
+      "image": "https://images.pokemontcg.io/sv2/247_hires.png"
+    },
+    {
+      "id": "sv2-264",
+      "name": "Squawkabilly ex",
+      "rarity": "Special Illustration Rare",
+      "set": "sv2",
+      "number": "264",
+      "market": 11.48,
+      "image": "https://images.pokemontcg.io/sv2/264_hires.png"
+    },
+    {
+      "id": "sv4pt5-75",
+      "name": "Squawkabilly ex",
+      "rarity": "Double Rare",
+      "set": "sv4pt5",
+      "number": "75",
+      "market": 0.7,
+      "image": "https://images.pokemontcg.io/sv4pt5/75_hires.png"
+    },
+    {
+      "id": "sv4pt5-223",
+      "name": "Squawkabilly ex",
+      "rarity": "Shiny Ultra Rare",
+      "set": "sv4pt5",
+      "number": "223",
+      "market": 1.1,
+      "image": "https://images.pokemontcg.io/sv4pt5/223_hires.png"
+    },
+    {
+      "id": "svp-160",
+      "name": "Squawkabilly ex",
+      "rarity": "Promo",
+      "set": "svp",
+      "number": "160",
+      "market": 0.96,
+      "image": "https://images.pokemontcg.io/svp/160_hires.png"
+    },
+    {
+      "id": "sv9-141",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "set": "sv9",
+      "number": "141",
+      "market": 0.25,
+      "image": "https://images.pokemontcg.io/sv9/141_hires.png"
+    },
+    {
+      "id": "sv10-160",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "set": "sv10",
+      "number": "160",
+      "market": 0.23,
+      "image": "https://images.pokemontcg.io/sv10/160_hires.png"
+    }
+  ],
+  "Arboliva": [
+    {
+      "id": "sv1-23",
+      "name": "Arboliva",
+      "rarity": "Rare",
+      "set": "sv1",
+      "number": "23",
+      "market": 0.2,
+      "image": "https://images.pokemontcg.io/sv1/23_hires.png"
+    },
+    {
+      "id": "sv3-21",
+      "name": "Arboliva",
+      "rarity": "Uncommon",
+      "set": "sv3",
+      "number": "21",
+      "market": 0.21,
+      "image": "https://images.pokemontcg.io/sv3/21_hires.png"
+    },
+    {
+      "id": "sv4pt5-104",
+      "name": "Arboliva",
+      "rarity": "Shiny Rare",
+      "set": "sv4pt5",
+      "number": "104",
+      "market": 2.79,
+      "image": "https://images.pokemontcg.io/sv4pt5/104_hires.png"
+    },
+    {
+      "id": "sv10-23",
+      "name": "Arboliva ex",
+      "rarity": "Double Rare",
+      "set": "sv10",
+      "number": "23",
+      "market": 0.85,
+      "image": "https://images.pokemontcg.io/sv10/23_hires.png"
+    },
+    {
+      "id": "sv10-207",
+      "name": "Arboliva ex",
+      "rarity": "Ultra Rare",
+      "set": "sv10",
+      "number": "207",
+      "market": 2.65,
+      "image": "https://images.pokemontcg.io/sv10/207_hires.png"
+    }
   ]
 }

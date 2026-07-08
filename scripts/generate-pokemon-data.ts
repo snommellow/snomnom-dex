@@ -155,6 +155,12 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  // Squawkabilly's Blue/Yellow/White Plumage forms: no real TCG card depicts anything but Green
+  // Plumage (checked every card across all sets) — sv2-264 is the only card that actually shows
+  // all four colors (in the background), so it's used for these three too (user-confirmed).
+  "Blue Plumage Squawkabilly": "https://images.pokemontcg.io/sv2/264_hires.png",
+  "Yellow Plumage Squawkabilly": "https://images.pokemontcg.io/sv2/264_hires.png",
+  "White Plumage Squawkabilly": "https://images.pokemontcg.io/sv2/264_hires.png",
   // Terapagos' formes aren't distinguished by card name — base (Normal Forme) is auto-found via
   // sv7-170 (SIR, Stellar Crown); these two are pinned to distinct cards from the same species
   // to avoid duplicating it.
@@ -457,16 +463,6 @@ async function main() {
             if (/^(Small|Large|Super) (Pumpkaboo|Gourgeist)$/.test(form.displayName)) {
               const base = toDisplayName(raw[i].name);
               const randomUrl = await randomFormePick(base, form.displayName);
-              return { ...form, tcgUrl: null, regularCardUrl: randomUrl };
-            }
-
-            // Squawkabilly's Blue/Yellow/White Plumage forms: every real TCG printing depicts
-            // only the Green Plumage (default) coloring — no card distinguishes the other three
-            // by name or art — so the automated search collapsing to the base name was showing
-            // the exact same Green card for all of them. Same treatment as Pumpkaboo/Gourgeist:
-            // a deterministic pseudo-random pick so they at least don't all show one identical URL.
-            if (/^(Blue|Yellow|White) Plumage Squawkabilly$/.test(form.displayName)) {
-              const randomUrl = await randomFormePick("Squawkabilly", form.displayName);
               return { ...form, tcgUrl: null, regularCardUrl: randomUrl };
             }
 

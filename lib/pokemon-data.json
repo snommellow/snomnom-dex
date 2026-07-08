@@ -18668,7 +18668,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/930.png",
     "genus": "Olive Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv10/207_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/23_hires.png",
     "altForms": [],
     "familyId": 928,
     "familyOrder": 2
@@ -18698,8 +18698,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10260.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10260.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sv10/160_hires.png"
       },
       {
         "slug": "squawkabilly-yellow-plumage",
@@ -18712,8 +18712,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10261.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10261.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sv2/169_hires.png"
       },
       {
         "slug": "squawkabilly-white-plumage",
@@ -18726,8 +18726,8 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10262.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10262.png",
         "category": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.pokemontcg.io/sv1/162_hires.png"
       }
     ],
     "familyId": 931,
@@ -18905,7 +18905,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/942.png",
     "genus": "Rascal Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/svp/71_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/135_hires.png",
     "altForms": [],
     "familyId": 942,
     "familyOrder": 0
@@ -19392,7 +19392,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/970.png",
     "genus": "Ore Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv3/213_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/126_hires.png",
     "altForms": [
       {
         "slug": "glimmora-mega",
@@ -19582,7 +19582,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/979.png",
     "genus": "Rage Monkey Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv2/242_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/109_hires.png",
     "altForms": [],
     "familyId": 56,
     "familyOrder": 2
@@ -19598,7 +19598,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/980.png",
     "genus": "Spiny Fish Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv2/244_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv3/128_hires.png",
     "altForms": [],
     "familyId": 194,
     "familyOrder": 2
@@ -20280,7 +20280,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10273.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv6/194_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/152_hires.png",
         "regularCardUrl": null
       },
       {
@@ -20294,7 +20294,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10274.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv6/192_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/148_hires.png",
         "regularCardUrl": null
       },
       {
@@ -20308,7 +20308,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10275.png",
         "category": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/sv6/199_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/160_hires.png",
         "regularCardUrl": null
       }
     ],

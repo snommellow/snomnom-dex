@@ -735,6 +735,10 @@ export async function fetchFormCard(
     const candidates = allCards
       .filter(c => c.images?.large && nameMatches(c.name, displayName) && (TG_RE.test(c.number) || rarities.includes(c.rarity))
         && !MISMATCHED_FULL_ART_BLACKLIST.has(c.id)
+        // Tera-subtype cards are excluded here too, mirroring buildVgxData's bulk index — they
+        // compete in the dedicated Tera IR/SIR tier instead, so a merely-Ultra-Rare Tera card
+        // can't outrank a genuine Special Illustration Rare Tera card sitting in that tier.
+        && !c.subtypes?.includes("Tera")
         // TAG TEAM GX cards (name includes " & ") are always worth showing full-bleed.
         && !(c.name.endsWith("-GX") && !c.name.includes(" & ")
           && ["Rare Ultra", "Rare Secret", "Hyper Rare", "Rare Holo VMAX"].includes(c.rarity)

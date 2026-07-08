@@ -126,6 +126,16 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
   // #916 Oinkologne (Male): sv1-234 "Oinkologne ex" cropped with border/text bleeding through
   // (confirmed by user); sv1-157 is a plain Stage 1 card with no ability box, crops cleanly.
   916: "https://images.pokemontcg.io/sv1/157_hires.png",
+  // #930 Arboliva, #942 Maschiff, #970 Glimmora, #979 Annihilape, #980 Clodsire: the highest-
+  // market-value candidate for each is a full-art "ex" card with ability/attack text overlapping
+  // the illustration, which bleeds through when center-cropped for the regular-card treatment
+  // (confirmed by user screenshot). Picked a plain, bounded-illustration card instead — same
+  // fix pattern as Oinkologne above.
+  930: "https://images.pokemontcg.io/sv1/23_hires.png",
+  942: "https://images.pokemontcg.io/sv1/135_hires.png",
+  970: "https://images.pokemontcg.io/sv2/126_hires.png",
+  979: "https://images.pokemontcg.io/sv1/109_hires.png",
+  980: "https://images.pokemontcg.io/sv3/128_hires.png",
   // #123 Scyther: ex1-102 Scyther ex Ruby & Sapphire ($101) — pokemontcg.io shows $0 market
   // price for this card (stale data for old EX-era sets), so no price-based blacklist fix is
   // possible: excluding the current wrong pick would just promote a different wrong one.
@@ -447,6 +457,16 @@ async function main() {
             if (/^(Small|Large|Super) (Pumpkaboo|Gourgeist)$/.test(form.displayName)) {
               const base = toDisplayName(raw[i].name);
               const randomUrl = await randomFormePick(base, form.displayName);
+              return { ...form, tcgUrl: null, regularCardUrl: randomUrl };
+            }
+
+            // Squawkabilly's Blue/Yellow/White Plumage forms: every real TCG printing depicts
+            // only the Green Plumage (default) coloring — no card distinguishes the other three
+            // by name or art — so the automated search collapsing to the base name was showing
+            // the exact same Green card for all of them. Same treatment as Pumpkaboo/Gourgeist:
+            // a deterministic pseudo-random pick so they at least don't all show one identical URL.
+            if (/^(Blue|Yellow|White) Plumage Squawkabilly$/.test(form.displayName)) {
+              const randomUrl = await randomFormePick("Squawkabilly", form.displayName);
               return { ...form, tcgUrl: null, regularCardUrl: randomUrl };
             }
 

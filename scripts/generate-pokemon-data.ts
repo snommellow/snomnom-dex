@@ -477,17 +477,17 @@ async function main() {
     // IR/SIR and Pocket art both win over a manual hardcode — hardcodes exist to fill gaps left
     // by the automated tiers, not to override a genuinely better automated pick. The automated
     // SV Promo and Trainer Promo picks are dropped entirely — hardcode covers that need directly,
-    // so there's no reason to keep them running. Tera-type IR/SIR sits after Ancient Trait — a
-    // Tera reprint shouldn't outrank a real full-art illustration or beat the ancient-trait sets,
-    // but still beats showing nothing.
+    // so there's no reason to keep them running. Tera-type IR/SIR sits after VGX — a Tera
+    // reprint shouldn't outrank a real full-art illustration, the ancient-trait sets, or a VGX
+    // pick, but still beats showing nothing.
     const tcgResult = irMap.get(p.id)
       ?? (pocketUrl ? { tcgUrl: pocketUrl } : undefined)
       ?? (hardcodedBg ? { tcgUrl: hardcodedBg } : undefined)
       ?? (!pocketUrl ? trainerIrMap.get(p.id) : undefined)
       ?? (!pocketUrl ? trainerVgxMap.get(p.id) : undefined)
       ?? (!pocketUrl && ancientTraitUrl ? { tcgUrl: ancientTraitUrl } : undefined)
-      ?? (!pocketUrl ? teraIrMap.get(p.id) : undefined)
       ?? (!pocketUrl ? vgxMap.get(p.id) : undefined)
+      ?? (!pocketUrl ? teraIrMap.get(p.id) : undefined)
       ?? { tcgUrl: null };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));

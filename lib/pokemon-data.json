@@ -1705,8 +1705,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png",
     "genus": "Megaton Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/148_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/ecard3/148_hires.png"
+    ],
     "altForms": [
       {
         "slug": "golem-alola",
@@ -1908,8 +1909,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
     "genus": "Wild Duck Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex9/107_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/ex9/107_hires.png"
+    ],
     "altForms": [
       {
         "slug": "farfetchd-galar",
@@ -3144,8 +3146,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png",
     "genus": "Shellfish Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/150_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/ecard3/150_hires.png"
+    ],
     "altForms": [],
     "familyId": 140,
     "familyOrder": 1

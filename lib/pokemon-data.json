@@ -19725,8 +19725,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/987.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/987.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/svp/97_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/97_hires.png"
+    ],
     "altForms": [],
     "familyId": 987,
     "familyOrder": 0
@@ -19860,8 +19861,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/995.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/995.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/svp/98_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/svp/98_hires.png"
+    ],
     "altForms": [],
     "familyId": 995,
     "familyOrder": 0
@@ -20354,7 +20356,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv5/204_hires.png"
+    ],
     "altForms": [],
     "familyId": 1020,
     "familyOrder": 0
@@ -20386,7 +20390,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1022.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv5/207_hires.png"
+    ],
     "altForms": [],
     "familyId": 1022,
     "familyOrder": 0
@@ -20401,7 +20407,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv5/206_hires.png"
+    ],
     "altForms": [],
     "familyId": 1023,
     "familyOrder": 0
@@ -20415,9 +20423,37 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1024.png",
     "genus": "Tera Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv7/170_hires.png",
-    "altForms": [],
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sv7/170_hires.png"
+    ],
+    "altForms": [
+      {
+        "slug": "terapagos-terastal",
+        "displayName": "Terastal Forme Terapagos",
+        "types": [
+          "normal"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10276.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/sv7/173_hires.png",
+        "regularCardUrl": null
+      },
+      {
+        "slug": "terapagos-stellar",
+        "displayName": "Stellar Forme Terapagos",
+        "types": [
+          "normal"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10277.png",
+        "category": "forme",
+        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
+        "regularCardUrl": null
+      }
+    ],
     "familyId": 1024,
     "familyOrder": 0
   },

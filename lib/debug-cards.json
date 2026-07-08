@@ -267,5 +267,256 @@
       "market": 4.57,
       "image": "https://images.pokemontcg.io/svp/166_hires.png"
     }
+  ],
+  "Annihilape": [
+    {
+      "id": "sv1-109",
+      "name": "Annihilape",
+      "rarity": "Rare",
+      "set": "sv1",
+      "number": "109",
+      "market": 0.23,
+      "image": "https://images.pokemontcg.io/sv1/109_hires.png"
+    },
+    {
+      "id": "sv2-242",
+      "name": "Annihilape ex",
+      "rarity": "Ultra Rare",
+      "set": "sv2",
+      "number": "242",
+      "market": 4.96,
+      "image": "https://images.pokemontcg.io/sv2/242_hires.png"
+    },
+    {
+      "id": "svp-32",
+      "name": "Annihilape ex",
+      "rarity": "Promo",
+      "set": "svp",
+      "number": "32",
+      "market": 0.87,
+      "image": "https://images.pokemontcg.io/svp/32_hires.png"
+    },
+    {
+      "id": "sv4pt5-47",
+      "name": "Annihilape",
+      "rarity": "Rare",
+      "set": "sv4pt5",
+      "number": "47",
+      "market": 0.23,
+      "image": "https://images.pokemontcg.io/sv4pt5/47_hires.png"
+    },
+    {
+      "id": "sv4pt5-171",
+      "name": "Annihilape",
+      "rarity": "Shiny Rare",
+      "set": "sv4pt5",
+      "number": "171",
+      "market": 3.91,
+      "image": "https://images.pokemontcg.io/sv4pt5/171_hires.png"
+    },
+    {
+      "id": "sv8-100",
+      "name": "Annihilape",
+      "rarity": "Uncommon",
+      "set": "sv8",
+      "number": "100",
+      "market": 0.26,
+      "image": "https://images.pokemontcg.io/sv8/100_hires.png"
+    },
+    {
+      "id": "sv10-92",
+      "name": "Annihilape",
+      "rarity": "Rare",
+      "set": "sv10",
+      "number": "92",
+      "market": 0.3,
+      "image": "https://images.pokemontcg.io/sv10/92_hires.png"
+    }
+  ],
+  "Clodsire": [
+    {
+      "id": "sv2-130",
+      "name": "Paldean Clodsire ex",
+      "rarity": "Double Rare",
+      "set": "sv2",
+      "number": "130",
+      "market": 0.75,
+      "image": "https://images.pokemontcg.io/sv2/130_hires.png"
+    },
+    {
+      "id": "sv2-244",
+      "name": "Paldean Clodsire ex",
+      "rarity": "Ultra Rare",
+      "set": "sv2",
+      "number": "244",
+      "market": 2.69,
+      "image": "https://images.pokemontcg.io/sv2/244_hires.png"
+    },
+    {
+      "id": "sv3-129",
+      "name": "Paldean Clodsire",
+      "rarity": "Uncommon",
+      "set": "sv3",
+      "number": "129",
+      "market": 0.33,
+      "image": "https://images.pokemontcg.io/sv3/129_hires.png"
+    },
+    {
+      "id": "sv3-128",
+      "name": "Paldean Clodsire",
+      "rarity": "Uncommon",
+      "set": "sv3",
+      "number": "128",
+      "market": 0.34,
+      "image": "https://images.pokemontcg.io/sv3/128_hires.png"
+    },
+    {
+      "id": "sv4pt5-59",
+      "name": "Paldean Clodsire ex",
+      "rarity": "Double Rare",
+      "set": "sv4pt5",
+      "number": "59",
+      "market": 0.63,
+      "image": "https://images.pokemontcg.io/sv4pt5/59_hires.png"
+    },
+    {
+      "id": "sv4pt5-219",
+      "name": "Paldean Clodsire ex",
+      "rarity": "Shiny Ultra Rare",
+      "set": "sv4pt5",
+      "number": "219",
+      "market": 2.29,
+      "image": "https://images.pokemontcg.io/sv4pt5/219_hires.png"
+    },
+    {
+      "id": "sv9-94",
+      "name": "Paldean Clodsire ex",
+      "rarity": "Double Rare",
+      "set": "sv9",
+      "number": "94",
+      "market": 0.65,
+      "image": "https://images.pokemontcg.io/sv9/94_hires.png"
+    }
+  ],
+  "Maschiff": [
+    {
+      "id": "sv1-135",
+      "name": "Maschiff",
+      "rarity": "Common",
+      "set": "sv1",
+      "number": "135",
+      "market": 0.21,
+      "image": "https://images.pokemontcg.io/sv1/135_hires.png"
+    },
+    {
+      "id": "sv1-136",
+      "name": "Maschiff",
+      "rarity": "Common",
+      "set": "sv1",
+      "number": "136",
+      "market": 0.2,
+      "image": "https://images.pokemontcg.io/sv1/136_hires.png"
+    },
+    {
+      "id": "sv2-141",
+      "name": "Maschiff",
+      "rarity": "Common",
+      "set": "sv2",
+      "number": "141",
+      "market": 0.19,
+      "image": "https://images.pokemontcg.io/sv2/141_hires.png"
+    },
+    {
+      "id": "sv2-142",
+      "name": "Maschiff",
+      "rarity": "Common",
+      "set": "sv2",
+      "number": "142",
+      "market": 0.27,
+      "image": "https://images.pokemontcg.io/sv2/142_hires.png"
+    },
+    {
+      "id": "sv4pt5-62",
+      "name": "Maschiff",
+      "rarity": "Common",
+      "set": "sv4pt5",
+      "number": "62",
+      "market": 0.13,
+      "image": "https://images.pokemontcg.io/sv4pt5/62_hires.png"
+    },
+    {
+      "id": "svp-71",
+      "name": "Maschiff",
+      "rarity": "Promo",
+      "set": "svp",
+      "number": "71",
+      "market": 0.48,
+      "image": "https://images.pokemontcg.io/svp/71_hires.png"
+    },
+    {
+      "id": "sv10-138",
+      "name": "Arven's Maschiff",
+      "rarity": "Common",
+      "set": "sv10",
+      "number": "138",
+      "market": 0.26,
+      "image": "https://images.pokemontcg.io/sv10/138_hires.png"
+    }
+  ],
+  "Glimmora": [
+    {
+      "id": "sv2-126",
+      "name": "Glimmora",
+      "rarity": "Rare",
+      "set": "sv2",
+      "number": "126",
+      "market": 0.17,
+      "image": "https://images.pokemontcg.io/sv2/126_hires.png"
+    },
+    {
+      "id": "sv3-123",
+      "name": "Glimmora ex",
+      "rarity": "Double Rare",
+      "set": "sv3",
+      "number": "123",
+      "market": 0.82,
+      "image": "https://images.pokemontcg.io/sv3/123_hires.png"
+    },
+    {
+      "id": "sv3-213",
+      "name": "Glimmora ex",
+      "rarity": "Ultra Rare",
+      "set": "sv3",
+      "number": "213",
+      "market": 1.17,
+      "image": "https://images.pokemontcg.io/sv3/213_hires.png"
+    },
+    {
+      "id": "sv4pt5-218",
+      "name": "Glimmora ex",
+      "rarity": "Shiny Ultra Rare",
+      "set": "sv4pt5",
+      "number": "218",
+      "market": 1.15,
+      "image": "https://images.pokemontcg.io/sv4pt5/218_hires.png"
+    },
+    {
+      "id": "sv6-109",
+      "name": "Glimmora",
+      "rarity": "Uncommon",
+      "set": "sv6",
+      "number": "109",
+      "market": 0.3,
+      "image": "https://images.pokemontcg.io/sv6/109_hires.png"
+    },
+    {
+      "id": "sv8-115",
+      "name": "Glimmora",
+      "rarity": "Common",
+      "set": "sv8",
+      "number": "115",
+      "market": 0.2,
+      "image": "https://images.pokemontcg.io/sv8/115_hires.png"
+    }
   ]
 }

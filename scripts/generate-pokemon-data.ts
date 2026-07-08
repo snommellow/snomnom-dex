@@ -117,6 +117,9 @@ const HARDCODED_BG_URLS: Record<number, string> = {
 // Direct fallback (cropped) card URLs for base Pokémon where automated lookup picks wrong card.
 // Keyed by dex ID. These override fallbackCrop so the correct card shows cropped.
 const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
+  // #084 Doduo: xy12-112 "Imakuni?'s Doduo" (a novelty/gag card) was winning as a full-bleed
+  // background; moved to cropped treatment instead (user confirmed).
+  84: "https://images.pokemontcg.io/xy12/112_hires.png",
   // #916 Oinkologne (Male): sv1-234 "Oinkologne ex" cropped with border/text bleeding through
   // (confirmed by user); sv1-157 is a plain Stage 1 card with no ability box, crops cleanly.
   916: "https://images.pokemontcg.io/sv1/157_hires.png",

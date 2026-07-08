@@ -1,0 +1,216 @@
+{
+  "varieties": [
+    {
+      "is_default": true,
+      "pokemon": {
+        "name": "terapagos",
+        "url": "https://pokeapi.co/api/v2/pokemon/1024/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "terapagos-terastal",
+        "url": "https://pokeapi.co/api/v2/pokemon/10276/"
+      }
+    },
+    {
+      "is_default": false,
+      "pokemon": {
+        "name": "terapagos-stellar",
+        "url": "https://pokeapi.co/api/v2/pokemon/10277/"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "sv7-128",
+      "name": "Terapagos ex",
+      "set": "Stellar Crown",
+      "number": "128",
+      "rarity": "Double Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 0.4,
+          "mid": 1,
+          "high": 50,
+          "market": 0.75,
+          "directLow": 0.84
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv7/128.png",
+        "large": "https://images.pokemontcg.io/sv7/128_hires.png"
+      }
+    },
+    {
+      "id": "sv7-170",
+      "name": "Terapagos ex",
+      "set": "Stellar Crown",
+      "number": "170",
+      "rarity": "Special Illustration Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 38.99,
+          "mid": 58.05,
+          "high": 315.6,
+          "market": 48.12,
+          "directLow": 57.58
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv7/170.png",
+        "large": "https://images.pokemontcg.io/sv7/170_hires.png"
+      }
+    },
+    {
+      "id": "sv7-173",
+      "name": "Terapagos ex",
+      "set": "Stellar Crown",
+      "number": "173",
+      "rarity": "Hyper Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 8.78,
+          "mid": 12.29,
+          "high": 101.06,
+          "market": 11.82,
+          "directLow": 15.08
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv7/173.png",
+        "large": "https://images.pokemontcg.io/sv7/173_hires.png"
+      }
+    },
+    {
+      "id": "sv8-161",
+      "name": "Terapagos",
+      "set": "Surging Sparks",
+      "number": "161",
+      "rarity": "Rare",
+      "tcgplayer": {
+        "reverseHolofoil": {
+          "low": 0.04,
+          "mid": 0.26,
+          "high": 10,
+          "market": 0.25,
+          "directLow": 0.1
+        },
+        "holofoil": {
+          "low": 0.01,
+          "mid": 0.19,
+          "high": 19.98,
+          "market": 0.13,
+          "directLow": 0.01
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv8/161.png",
+        "large": "https://images.pokemontcg.io/sv8/161_hires.png"
+      }
+    },
+    {
+      "id": "svp-165",
+      "name": "Terapagos ex",
+      "set": "Scarlet & Violet Black Star Promos",
+      "number": "165",
+      "rarity": "Promo",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 3.5,
+          "mid": 5,
+          "high": 47.12,
+          "market": 4.15,
+          "directLow": 4.97
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/svp/165.png",
+        "large": "https://images.pokemontcg.io/svp/165_hires.png"
+      }
+    },
+    {
+      "id": "sv8pt5-92",
+      "name": "Terapagos ex",
+      "set": "Prismatic Evolutions",
+      "number": "92",
+      "rarity": "Double Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 0.29,
+          "mid": 0.95,
+          "high": 80,
+          "market": 0.78,
+          "directLow": 0.75
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv8pt5/92.png",
+        "large": "https://images.pokemontcg.io/sv8pt5/92_hires.png"
+      }
+    },
+    {
+      "id": "sv8pt5-169",
+      "name": "Terapagos ex",
+      "set": "Prismatic Evolutions",
+      "number": "169",
+      "rarity": "Special Illustration Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 36,
+          "mid": 44.99,
+          "high": 359.76,
+          "market": 39.63,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv8pt5/169.png",
+        "large": "https://images.pokemontcg.io/sv8pt5/169_hires.png"
+      }
+    },
+    {
+      "id": "sv8pt5-180",
+      "name": "Terapagos ex",
+      "set": "Prismatic Evolutions",
+      "number": "180",
+      "rarity": "Hyper Rare",
+      "tcgplayer": {
+        "holofoil": {
+          "low": 8,
+          "mid": 11.84,
+          "high": 125,
+          "market": 10.32,
+          "directLow": null
+        }
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/sv8pt5/180.png",
+        "large": "https://images.pokemontcg.io/sv8pt5/180_hires.png"
+      }
+    },
+    {
+      "id": "me2pt5-178",
+      "name": "Terapagos",
+      "set": "Ascended Heroes",
+      "number": "178",
+      "rarity": "Rare",
+      "images": {
+        "small": "https://images.scrydex.com/pokemon/me2pt5-178/small",
+        "large": "https://images.scrydex.com/pokemon/me2pt5-178/large"
+      }
+    },
+    {
+      "id": "me2pt5-179",
+      "name": "Terapagos ex",
+      "set": "Ascended Heroes",
+      "number": "179",
+      "rarity": "Double Rare",
+      "images": {
+        "small": "https://images.scrydex.com/pokemon/me2pt5-179/small",
+        "large": "https://images.scrydex.com/pokemon/me2pt5-179/large"
+      }
+    }
+  ]
+}

@@ -1,278 +1,12 @@
 {
-  "Wellspring Mask Ogerpon": [
-    {
-      "id": "sv6-64",
-      "name": "Wellspring Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv6",
-      "number": "64",
-      "market": 0.95,
-      "image": "https://images.pokemontcg.io/sv6/64_hires.png"
-    },
-    {
-      "id": "sv6-194",
-      "name": "Wellspring Mask Ogerpon ex",
-      "rarity": "Ultra Rare",
-      "set": "sv6",
-      "number": "194",
-      "market": 3.72,
-      "image": "https://images.pokemontcg.io/sv6/194_hires.png"
-    },
-    {
-      "id": "sv6-213",
-      "name": "Wellspring Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv6",
-      "number": "213",
-      "market": 18.07,
-      "image": "https://images.pokemontcg.io/sv6/213_hires.png"
-    },
-    {
-      "id": "sv8pt5-27",
-      "name": "Wellspring Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv8pt5",
-      "number": "27",
-      "market": 0.83,
-      "image": "https://images.pokemontcg.io/sv8pt5/27_hires.png"
-    },
-    {
-      "id": "sv8pt5-152",
-      "name": "Wellspring Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv8pt5",
-      "number": "152",
-      "market": 19.09,
-      "image": "https://images.pokemontcg.io/sv8pt5/152_hires.png"
-    },
-    {
-      "id": "sv10-67",
-      "name": "Wellspring Mask Ogerpon",
-      "rarity": "Uncommon",
-      "set": "sv10",
-      "number": "67",
-      "market": 0.29,
-      "image": "https://images.pokemontcg.io/sv10/67_hires.png"
-    }
-  ],
-  "Hearthflame Mask Ogerpon": [
-    {
-      "id": "sv6-40",
-      "name": "Hearthflame Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv6",
-      "number": "40",
-      "market": 0.64,
-      "image": "https://images.pokemontcg.io/sv6/40_hires.png"
-    },
-    {
-      "id": "sv6-192",
-      "name": "Hearthflame Mask Ogerpon ex",
-      "rarity": "Ultra Rare",
-      "set": "sv6",
-      "number": "192",
-      "market": 2.5,
-      "image": "https://images.pokemontcg.io/sv6/192_hires.png"
-    },
-    {
-      "id": "sv6-212",
-      "name": "Hearthflame Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv6",
-      "number": "212",
-      "market": 13.82,
-      "image": "https://images.pokemontcg.io/sv6/212_hires.png"
-    },
-    {
-      "id": "sv8pt5-17",
-      "name": "Hearthflame Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv8pt5",
-      "number": "17",
-      "market": 0.64,
-      "image": "https://images.pokemontcg.io/sv8pt5/17_hires.png"
-    },
-    {
-      "id": "sv8pt5-148",
-      "name": "Hearthflame Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv8pt5",
-      "number": "148",
-      "market": 20.1,
-      "image": "https://images.pokemontcg.io/sv8pt5/148_hires.png"
-    },
-    {
-      "id": "sv10-44",
-      "name": "Hearthflame Mask Ogerpon",
-      "rarity": "Uncommon",
-      "set": "sv10",
-      "number": "44",
-      "market": 0.26,
-      "image": "https://images.pokemontcg.io/sv10/44_hires.png"
-    }
-  ],
-  "Cornerstone Mask Ogerpon": [
-    {
-      "id": "sv6-112",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv6",
-      "number": "112",
-      "market": 0.73,
-      "image": "https://images.pokemontcg.io/sv6/112_hires.png"
-    },
-    {
-      "id": "sv6-199",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "rarity": "Ultra Rare",
-      "set": "sv6",
-      "number": "199",
-      "market": 3.55,
-      "image": "https://images.pokemontcg.io/sv6/199_hires.png"
-    },
-    {
-      "id": "sv6-215",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv6",
-      "number": "215",
-      "market": 15.36,
-      "image": "https://images.pokemontcg.io/sv6/215_hires.png"
-    },
-    {
-      "id": "sv8pt5-58",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv8pt5",
-      "number": "58",
-      "market": 0.85,
-      "image": "https://images.pokemontcg.io/sv8pt5/58_hires.png"
-    },
-    {
-      "id": "sv8pt5-160",
-      "name": "Cornerstone Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv8pt5",
-      "number": "160",
-      "market": 17.19,
-      "image": "https://images.pokemontcg.io/sv8pt5/160_hires.png"
-    },
-    {
-      "id": "sv10-111",
-      "name": "Cornerstone Mask Ogerpon",
-      "rarity": "Uncommon",
-      "set": "sv10",
-      "number": "111",
-      "market": 0.26,
-      "image": "https://images.pokemontcg.io/sv10/111_hires.png"
-    }
-  ],
-  "Teal Mask Ogerpon": [
-    {
-      "id": "sv6-24",
-      "name": "Teal Mask Ogerpon",
-      "rarity": "Rare",
-      "set": "sv6",
-      "number": "24",
-      "market": 0.25,
-      "image": "https://images.pokemontcg.io/sv6/24_hires.png"
-    },
-    {
-      "id": "sv6-25",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv6",
-      "number": "25",
-      "market": 3.02,
-      "image": "https://images.pokemontcg.io/sv6/25_hires.png"
-    },
-    {
-      "id": "sv6-190",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Ultra Rare",
-      "set": "sv6",
-      "number": "190",
-      "market": 6.23,
-      "image": "https://images.pokemontcg.io/sv6/190_hires.png"
-    },
-    {
-      "id": "sv6-211",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv6",
-      "number": "211",
-      "market": 26.65,
-      "image": "https://images.pokemontcg.io/sv6/211_hires.png"
-    },
-    {
-      "id": "sv6-221",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Hyper Rare",
-      "set": "sv6",
-      "number": "221",
-      "market": 11.09,
-      "image": "https://images.pokemontcg.io/sv6/221_hires.png"
-    },
-    {
-      "id": "svp-123",
-      "name": "Teal Mask Ogerpon",
-      "rarity": "Promo",
-      "set": "svp",
-      "number": "123",
-      "market": 0.58,
-      "image": "https://images.pokemontcg.io/svp/123_hires.png"
-    },
-    {
-      "id": "sv8pt5-12",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Double Rare",
-      "set": "sv8pt5",
-      "number": "12",
-      "market": 3.22,
-      "image": "https://images.pokemontcg.io/sv8pt5/12_hires.png"
-    },
-    {
-      "id": "sv8pt5-145",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv8pt5",
-      "number": "145",
-      "market": 24.45,
-      "image": "https://images.pokemontcg.io/sv8pt5/145_hires.png"
-    },
-    {
-      "id": "sv8pt5-177",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Hyper Rare",
-      "set": "sv8pt5",
-      "number": "177",
-      "market": 11.73,
-      "image": "https://images.pokemontcg.io/sv8pt5/177_hires.png"
-    },
-    {
-      "id": "sv10-26",
-      "name": "Teal Mask Ogerpon",
-      "rarity": "Uncommon",
-      "set": "sv10",
-      "number": "26",
-      "market": 0.33,
-      "image": "https://images.pokemontcg.io/sv10/26_hires.png"
-    },
-    {
-      "id": "svp-166",
-      "name": "Teal Mask Ogerpon ex",
-      "rarity": "Promo",
-      "set": "svp",
-      "number": "166",
-      "market": 4.57,
-      "image": "https://images.pokemontcg.io/svp/166_hires.png"
-    }
-  ],
   "Annihilape": [
     {
       "id": "sv1-109",
       "name": "Annihilape",
       "rarity": "Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv1",
       "number": "109",
       "market": 0.23,
@@ -282,6 +16,10 @@
       "id": "sv2-242",
       "name": "Annihilape ex",
       "rarity": "Ultra Rare",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
       "set": "sv2",
       "number": "242",
       "market": 4.96,
@@ -291,6 +29,10 @@
       "id": "svp-32",
       "name": "Annihilape ex",
       "rarity": "Promo",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
       "set": "svp",
       "number": "32",
       "market": 0.87,
@@ -300,6 +42,9 @@
       "id": "sv4pt5-47",
       "name": "Annihilape",
       "rarity": "Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv4pt5",
       "number": "47",
       "market": 0.23,
@@ -309,6 +54,9 @@
       "id": "sv4pt5-171",
       "name": "Annihilape",
       "rarity": "Shiny Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv4pt5",
       "number": "171",
       "market": 3.91,
@@ -318,6 +66,9 @@
       "id": "sv8-100",
       "name": "Annihilape",
       "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv8",
       "number": "100",
       "market": 0.26,
@@ -327,6 +78,9 @@
       "id": "sv10-92",
       "name": "Annihilape",
       "rarity": "Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv10",
       "number": "92",
       "market": 0.3,
@@ -338,6 +92,10 @@
       "id": "sv2-130",
       "name": "Paldean Clodsire ex",
       "rarity": "Double Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv2",
       "number": "130",
       "market": 0.75,
@@ -347,6 +105,10 @@
       "id": "sv2-244",
       "name": "Paldean Clodsire ex",
       "rarity": "Ultra Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv2",
       "number": "244",
       "market": 2.69,
@@ -356,6 +118,9 @@
       "id": "sv3-129",
       "name": "Paldean Clodsire",
       "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
       "set": "sv3",
       "number": "129",
       "market": 0.33,
@@ -365,6 +130,9 @@
       "id": "sv3-128",
       "name": "Paldean Clodsire",
       "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
       "set": "sv3",
       "number": "128",
       "market": 0.34,
@@ -374,6 +142,10 @@
       "id": "sv4pt5-59",
       "name": "Paldean Clodsire ex",
       "rarity": "Double Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv4pt5",
       "number": "59",
       "market": 0.63,
@@ -383,6 +155,10 @@
       "id": "sv4pt5-219",
       "name": "Paldean Clodsire ex",
       "rarity": "Shiny Ultra Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv4pt5",
       "number": "219",
       "market": 2.29,
@@ -392,6 +168,10 @@
       "id": "sv9-94",
       "name": "Paldean Clodsire ex",
       "rarity": "Double Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv9",
       "number": "94",
       "market": 0.65,
@@ -403,6 +183,9 @@
       "id": "sv1-135",
       "name": "Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv1",
       "number": "135",
       "market": 0.21,
@@ -412,6 +195,9 @@
       "id": "sv1-136",
       "name": "Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv1",
       "number": "136",
       "market": 0.2,
@@ -421,6 +207,9 @@
       "id": "sv2-141",
       "name": "Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv2",
       "number": "141",
       "market": 0.19,
@@ -430,6 +219,9 @@
       "id": "sv2-142",
       "name": "Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv2",
       "number": "142",
       "market": 0.27,
@@ -439,6 +231,9 @@
       "id": "sv4pt5-62",
       "name": "Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv4pt5",
       "number": "62",
       "market": 0.13,
@@ -448,6 +243,9 @@
       "id": "svp-71",
       "name": "Maschiff",
       "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "svp",
       "number": "71",
       "market": 0.48,
@@ -457,6 +255,9 @@
       "id": "sv10-138",
       "name": "Arven's Maschiff",
       "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
       "set": "sv10",
       "number": "138",
       "market": 0.26,
@@ -468,6 +269,9 @@
       "id": "sv2-126",
       "name": "Glimmora",
       "rarity": "Rare",
+      "subtypes": [
+        "Stage 1"
+      ],
       "set": "sv2",
       "number": "126",
       "market": 0.17,
@@ -477,6 +281,10 @@
       "id": "sv3-123",
       "name": "Glimmora ex",
       "rarity": "Double Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv3",
       "number": "123",
       "market": 0.82,
@@ -486,6 +294,10 @@
       "id": "sv3-213",
       "name": "Glimmora ex",
       "rarity": "Ultra Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv3",
       "number": "213",
       "market": 1.17,
@@ -495,6 +307,10 @@
       "id": "sv4pt5-218",
       "name": "Glimmora ex",
       "rarity": "Shiny Ultra Rare",
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
       "set": "sv4pt5",
       "number": "218",
       "market": 1.15,
@@ -504,6 +320,9 @@
       "id": "sv6-109",
       "name": "Glimmora",
       "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 1"
+      ],
       "set": "sv6",
       "number": "109",
       "market": 0.3,
@@ -513,93 +332,13 @@
       "id": "sv8-115",
       "name": "Glimmora",
       "rarity": "Common",
+      "subtypes": [
+        "Stage 1"
+      ],
       "set": "sv8",
       "number": "115",
       "market": 0.2,
       "image": "https://images.pokemontcg.io/sv8/115_hires.png"
-    }
-  ],
-  "Squawkabilly": [
-    {
-      "id": "sv1-162",
-      "name": "Squawkabilly",
-      "rarity": "Common",
-      "set": "sv1",
-      "number": "162",
-      "market": 0.16,
-      "image": "https://images.pokemontcg.io/sv1/162_hires.png"
-    },
-    {
-      "id": "sv2-169",
-      "name": "Squawkabilly ex",
-      "rarity": "Double Rare",
-      "set": "sv2",
-      "number": "169",
-      "market": 0.85,
-      "image": "https://images.pokemontcg.io/sv2/169_hires.png"
-    },
-    {
-      "id": "sv2-247",
-      "name": "Squawkabilly ex",
-      "rarity": "Ultra Rare",
-      "set": "sv2",
-      "number": "247",
-      "market": 1.62,
-      "image": "https://images.pokemontcg.io/sv2/247_hires.png"
-    },
-    {
-      "id": "sv2-264",
-      "name": "Squawkabilly ex",
-      "rarity": "Special Illustration Rare",
-      "set": "sv2",
-      "number": "264",
-      "market": 11.48,
-      "image": "https://images.pokemontcg.io/sv2/264_hires.png"
-    },
-    {
-      "id": "sv4pt5-75",
-      "name": "Squawkabilly ex",
-      "rarity": "Double Rare",
-      "set": "sv4pt5",
-      "number": "75",
-      "market": 0.7,
-      "image": "https://images.pokemontcg.io/sv4pt5/75_hires.png"
-    },
-    {
-      "id": "sv4pt5-223",
-      "name": "Squawkabilly ex",
-      "rarity": "Shiny Ultra Rare",
-      "set": "sv4pt5",
-      "number": "223",
-      "market": 1.1,
-      "image": "https://images.pokemontcg.io/sv4pt5/223_hires.png"
-    },
-    {
-      "id": "svp-160",
-      "name": "Squawkabilly ex",
-      "rarity": "Promo",
-      "set": "svp",
-      "number": "160",
-      "market": 0.96,
-      "image": "https://images.pokemontcg.io/svp/160_hires.png"
-    },
-    {
-      "id": "sv9-141",
-      "name": "Squawkabilly",
-      "rarity": "Common",
-      "set": "sv9",
-      "number": "141",
-      "market": 0.25,
-      "image": "https://images.pokemontcg.io/sv9/141_hires.png"
-    },
-    {
-      "id": "sv10-160",
-      "name": "Squawkabilly",
-      "rarity": "Common",
-      "set": "sv10",
-      "number": "160",
-      "market": 0.23,
-      "image": "https://images.pokemontcg.io/sv10/160_hires.png"
     }
   ],
   "Arboliva": [
@@ -607,6 +346,9 @@
       "id": "sv1-23",
       "name": "Arboliva",
       "rarity": "Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv1",
       "number": "23",
       "market": 0.2,
@@ -616,6 +358,9 @@
       "id": "sv3-21",
       "name": "Arboliva",
       "rarity": "Uncommon",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv3",
       "number": "21",
       "market": 0.21,
@@ -625,6 +370,9 @@
       "id": "sv4pt5-104",
       "name": "Arboliva",
       "rarity": "Shiny Rare",
+      "subtypes": [
+        "Stage 2"
+      ],
       "set": "sv4pt5",
       "number": "104",
       "market": 2.79,
@@ -634,6 +382,10 @@
       "id": "sv10-23",
       "name": "Arboliva ex",
       "rarity": "Double Rare",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
       "set": "sv10",
       "number": "23",
       "market": 0.85,
@@ -643,10 +395,503 @@
       "id": "sv10-207",
       "name": "Arboliva ex",
       "rarity": "Ultra Rare",
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
       "set": "sv10",
       "number": "207",
       "market": 2.65,
       "image": "https://images.pokemontcg.io/sv10/207_hires.png"
+    }
+  ],
+  "Squawkabilly": [
+    {
+      "id": "sv1-162",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv1",
+      "number": "162",
+      "market": 0.16,
+      "image": "https://images.pokemontcg.io/sv1/162_hires.png"
+    },
+    {
+      "id": "sv2-169",
+      "name": "Squawkabilly ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "sv2",
+      "number": "169",
+      "market": 0.85,
+      "image": "https://images.pokemontcg.io/sv2/169_hires.png"
+    },
+    {
+      "id": "sv2-247",
+      "name": "Squawkabilly ex",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "sv2",
+      "number": "247",
+      "market": 1.62,
+      "image": "https://images.pokemontcg.io/sv2/247_hires.png"
+    },
+    {
+      "id": "sv2-264",
+      "name": "Squawkabilly ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "sv2",
+      "number": "264",
+      "market": 11.48,
+      "image": "https://images.pokemontcg.io/sv2/264_hires.png"
+    },
+    {
+      "id": "sv4pt5-75",
+      "name": "Squawkabilly ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "sv4pt5",
+      "number": "75",
+      "market": 0.7,
+      "image": "https://images.pokemontcg.io/sv4pt5/75_hires.png"
+    },
+    {
+      "id": "sv4pt5-223",
+      "name": "Squawkabilly ex",
+      "rarity": "Shiny Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "sv4pt5",
+      "number": "223",
+      "market": 1.1,
+      "image": "https://images.pokemontcg.io/sv4pt5/223_hires.png"
+    },
+    {
+      "id": "svp-160",
+      "name": "Squawkabilly ex",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "set": "svp",
+      "number": "160",
+      "market": 0.96,
+      "image": "https://images.pokemontcg.io/svp/160_hires.png"
+    },
+    {
+      "id": "sv9-141",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv9",
+      "number": "141",
+      "market": 0.25,
+      "image": "https://images.pokemontcg.io/sv9/141_hires.png"
+    },
+    {
+      "id": "sv10-160",
+      "name": "Squawkabilly",
+      "rarity": "Common",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv10",
+      "number": "160",
+      "market": 0.23,
+      "image": "https://images.pokemontcg.io/sv10/160_hires.png"
+    }
+  ],
+  "Wellspring Mask Ogerpon": [
+    {
+      "id": "sv6-64",
+      "name": "Wellspring Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "64",
+      "market": 0.95
+    },
+    {
+      "id": "sv6-194",
+      "name": "Wellspring Mask Ogerpon ex",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "194",
+      "market": 3.72
+    },
+    {
+      "id": "sv6-213",
+      "name": "Wellspring Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "213",
+      "market": 18.07
+    },
+    {
+      "id": "sv8pt5-27",
+      "name": "Wellspring Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "27",
+      "market": 0.83
+    },
+    {
+      "id": "sv8pt5-152",
+      "name": "Wellspring Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "152",
+      "market": 19.09
+    },
+    {
+      "id": "sv10-67",
+      "name": "Wellspring Mask Ogerpon",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv10",
+      "number": "67",
+      "market": 0.29
+    }
+  ],
+  "Hearthflame Mask Ogerpon": [
+    {
+      "id": "sv6-40",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "40",
+      "market": 0.64
+    },
+    {
+      "id": "sv6-192",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "192",
+      "market": 2.5
+    },
+    {
+      "id": "sv6-212",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "212",
+      "market": 13.82
+    },
+    {
+      "id": "sv8pt5-17",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "17",
+      "market": 0.64
+    },
+    {
+      "id": "sv8pt5-148",
+      "name": "Hearthflame Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "148",
+      "market": 20.1
+    },
+    {
+      "id": "sv10-44",
+      "name": "Hearthflame Mask Ogerpon",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv10",
+      "number": "44",
+      "market": 0.26
+    }
+  ],
+  "Cornerstone Mask Ogerpon": [
+    {
+      "id": "sv6-112",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "112",
+      "market": 0.73
+    },
+    {
+      "id": "sv6-199",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "199",
+      "market": 3.55
+    },
+    {
+      "id": "sv6-215",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "215",
+      "market": 15.36
+    },
+    {
+      "id": "sv8pt5-58",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "58",
+      "market": 0.85
+    },
+    {
+      "id": "sv8pt5-160",
+      "name": "Cornerstone Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "160",
+      "market": 17.19
+    },
+    {
+      "id": "sv10-111",
+      "name": "Cornerstone Mask Ogerpon",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv10",
+      "number": "111",
+      "market": 0.26
+    }
+  ],
+  "Teal Mask Ogerpon": [
+    {
+      "id": "sv6-24",
+      "name": "Teal Mask Ogerpon",
+      "rarity": "Rare",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv6",
+      "number": "24",
+      "market": 0.25
+    },
+    {
+      "id": "sv6-25",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "25",
+      "market": 3.02
+    },
+    {
+      "id": "sv6-190",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Ultra Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "190",
+      "market": 6.23
+    },
+    {
+      "id": "sv6-211",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "211",
+      "market": 26.65
+    },
+    {
+      "id": "sv6-221",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Hyper Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv6",
+      "number": "221",
+      "market": 11.09
+    },
+    {
+      "id": "svp-123",
+      "name": "Teal Mask Ogerpon",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "svp",
+      "number": "123",
+      "market": 0.58
+    },
+    {
+      "id": "sv8pt5-12",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Double Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "12",
+      "market": 3.22
+    },
+    {
+      "id": "sv8pt5-145",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Special Illustration Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "145",
+      "market": 24.45
+    },
+    {
+      "id": "sv8pt5-177",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Hyper Rare",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "sv8pt5",
+      "number": "177",
+      "market": 11.73
+    },
+    {
+      "id": "sv10-26",
+      "name": "Teal Mask Ogerpon",
+      "rarity": "Uncommon",
+      "subtypes": [
+        "Basic"
+      ],
+      "set": "sv10",
+      "number": "26",
+      "market": 0.33
+    },
+    {
+      "id": "svp-166",
+      "name": "Teal Mask Ogerpon ex",
+      "rarity": "Promo",
+      "subtypes": [
+        "Basic",
+        "Tera",
+        "ex"
+      ],
+      "set": "svp",
+      "number": "166",
+      "market": 4.57
     }
   ]
 }

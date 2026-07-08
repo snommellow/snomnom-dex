@@ -128,6 +128,7 @@ const BASE_FORM_LABELS: Record<string, string> = {
   "palafin-zero": "Zero Form",
   "tatsugiri-curly": "Curly Form",
   "dudunsparce-two-segment": "Two-Segment Form",
+  "terapagos": "Normal Forme",
 };
 
 function formatName(name: string): string {
@@ -451,7 +452,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
 }
 
 
-const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-", "10% Forme ", "Complete Forme ", "Blade Forme ", "Small ", "Large ", "Super ", "Dusk Mane ", "Dawn Wings ", "Ultra ", "Crowned Sword ", "Crowned Shield ", "Eternamax ", "Rapid Strike ", "Single Strike ", "Ice Rider ", "Shadow Rider ", "Bloodmoon ", "Wellspring Mask ", "Hearthflame Mask ", "Cornerstone Mask ", "Teal Mask ", "Female ", "Family of Three ", "Blue Plumage ", "Yellow Plumage ", "White Plumage ", "Droopy Form ", "Stretchy Form ", "Three-Segment Form ", "Hero Form ", "Roaming Form ", "Low Key Form ", "Amped ", "Low Key ", "Noice Face ", "Hangry Mode ", "Pom-Pom Style ", "Pa'u Style ", "Sensu Style ", "Midnight Form ", "Dusk Form ", "School Form ", "Busted Form "] as const;
+const FORM_PREFIXES = ["Gigantamax ", "Alolan ", "Galarian ", "Hisuian ", "Paldean ", "Mega ", "Primal ", "Attack Forme ", "Defense Forme ", "Speed Forme ", "Sunny Forme ", "Rainy Forme ", "Snowy Forme ", "Blaze Breed ", "Aqua Breed ", "Sandy Cloak ", "Trash Cloak ", "Origin Forme ", "Sky Forme ", "Heat ", "Wash ", "Frost ", "Fan ", "Mow ", "White ", "Black ", "Therian Forme ", "Zen Mode ", "Resolute Forme ", "Pirouette Forme ", "Blue-Striped ", "White-Striped ", "Ash-", "10% Forme ", "Complete Forme ", "Blade Forme ", "Small ", "Large ", "Super ", "Dusk Mane ", "Dawn Wings ", "Ultra ", "Crowned Sword ", "Crowned Shield ", "Eternamax ", "Rapid Strike ", "Single Strike ", "Ice Rider ", "Shadow Rider ", "Bloodmoon ", "Wellspring Mask ", "Hearthflame Mask ", "Cornerstone Mask ", "Teal Mask ", "Female ", "Family of Three ", "Blue Plumage ", "Yellow Plumage ", "White Plumage ", "Droopy Form ", "Stretchy Form ", "Three-Segment Form ", "Hero Form ", "Roaming Form ", "Low Key Form ", "Amped ", "Low Key ", "Noice Face ", "Hangry Mode ", "Pom-Pom Style ", "Pa'u Style ", "Sensu Style ", "Midnight Form ", "Dusk Form ", "School Form ", "Busted Form ", "Terastal Forme ", "Stellar Forme "] as const;
 
 function extractAltFormParts(displayName: string, category: AltForm["category"]): { baseName: string; formLabel: string } {
   // Hoopa Unbound is a suffix form (base name first), unlike every other prefix-style forme.
@@ -555,6 +556,8 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
     else if (displayName.startsWith("Dusk Form")) label = "Dusk Form";
     else if (displayName.startsWith("School Form")) label = "School Form";
     else if (displayName.startsWith("Busted Form")) label = "Busted Form";
+    else if (displayName.startsWith("Terastal Forme")) label = "Terastal Forme";
+    else if (displayName.startsWith("Stellar Forme")) label = "Stellar Forme";
   }
   return { baseName, formLabel: label };
 }

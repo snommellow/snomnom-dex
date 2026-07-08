@@ -339,6 +339,11 @@ function parseFormSlug(slug: string, rawBaseName: string): { displayName: string
   if (suffix === "dusk" && base === "Lycanroc") return { displayName: `Dusk Form ${base}`, category: "forme" };
   if (suffix === "school") return { displayName: `School Form ${base}`, category: "forme" };
   if (suffix === "busted") return { displayName: `Busted Form ${base}`, category: "forme" };
+  // Terapagos' Terastal/Stellar Formes aren't distinguished by card name in the TCG (every
+  // printing is just plain "Terapagos"/"Terapagos ex"), so treated as "forme" like Deoxys/
+  // Castform — needs manual hardcoding to differ from the Normal Form base.
+  if (suffix === "terastal") return { displayName: `Terastal Forme ${base}`, category: "forme" };
+  if (suffix === "stellar")  return { displayName: `Stellar Forme ${base}`,  category: "forme" };
   return { displayName: cap(slug), category: "other" };
 }
 

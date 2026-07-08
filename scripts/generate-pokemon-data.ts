@@ -146,6 +146,11 @@ const HARDCODED_REGULAR_CARD_URLS: Record<number, string> = {
 // URL pattern: https://images.pokemontcg.io/{setId}/{cardNumber}_hires.png
 const HARDCODED_FORM_URLS: Record<string, string> = {
   "Blade Forme Aegislash": "https://images.pokemontcg.io/swsh4/126_hires.png",
+  // Terapagos' formes aren't distinguished by card name — base (Normal Forme) is auto-found via
+  // sv7-170 (SIR, Stellar Crown); these two are pinned to distinct cards from the same species
+  // to avoid duplicating it.
+  "Terastal Forme Terapagos": "https://images.pokemontcg.io/sv7/173_hires.png",
+  "Stellar Forme Terapagos": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
   "Family of Three Maushold": "https://static.tcgcollector.com/content/images/8f/8b/a4/8f8ba478216673d31a6772e2d122f0e276bc4eaaa16e0dcd560a528b1bcaf52d.webp",
   // Therian Forme isn't distinguished by name in the TCG, so it was duplicating base Enamorus's
   // own sv6-180 pick — pinned to a different, distinct Enamorus V print instead.

@@ -20,10 +20,12 @@ async function main() {
   const imgDir = join(import.meta.dirname, "../lib/debug-images");
   if (!existsSync(imgDir)) mkdirSync(imgDir, { recursive: true });
   const targets = [
-    ["articuno", "https://images.pokemontcg.io/sv9/161_hires.png"],
-    ["zapdos", "https://images.pokemontcg.io/sv3pt5/202_hires.png"],
-    ["flaaffy", "https://images.pokemontcg.io/swsh12tg/TG03_hires.png"],
-    ["moltres", "https://assets.tcgdex.net/en/tcgp/A1/274/high.webp"],
+    ["galarian-articuno-swsh6-170", "https://images.pokemontcg.io/swsh6/170_hires.png"],
+    ["galarian-zapdos-swsh6-174", "https://images.pokemontcg.io/swsh6/174_hires.png"],
+    ["galarian-moltres-swsh6-177", "https://images.pokemontcg.io/swsh6/177_hires.png"],
+    ["galarian-articuno-tg16", "https://images.pokemontcg.io/swsh10tg/TG16_hires.png"],
+    ["galarian-zapdos-tg19", "https://images.pokemontcg.io/swsh10tg/TG19_hires.png"],
+    ["galarian-moltres-tg20", "https://images.pokemontcg.io/swsh10tg/TG20_hires.png"],
   ] as const;
   for (const [name, url] of targets) {
     await downloadImage(url, join(imgDir, `${name}.png`));

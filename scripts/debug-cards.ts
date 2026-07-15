@@ -1,48 +1,34 @@
 #!/usr/bin/env tsx
-import { writeFileSync } from "fs";
+import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
 
-const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
-
-async function fetchAllPages(q: string): Promise<any[]> {
-  const results: any[] = [];
-  let page = 1;
-  while (true) {
-    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}`;
-    let data: any = null;
-    for (let attempt = 0; attempt < 5; attempt++) {
-      try {
-        const headers: Record<string, string> = {};
-        if (process.env.POKEMONTCG_API_KEY) headers["X-Api-Key"] = process.env.POKEMONTCG_API_KEY;
-        const res = await fetch(url, { headers });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        data = json.data;
-        break;
-      } catch (e) {
-        await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
-      }
+async function downloadImage(url: string, path: string) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const buf = Buffer.from(await res.arrayBuffer());
+      writeFileSync(path, buf);
+      return;
+    } catch (e) {
+      await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
     }
-    if (!data || data.length === 0) break;
-    results.push(...data);
-    if (data.length < 250) break;
-    page++;
   }
-  return results;
 }
 
 async function main() {
-  const ids = ["sv9-161", "sv3pt5-202", "swsh8-280"];
-  const out: any[] = [];
-  for (const id of ids) {
-    const res = await fetch(`${PTCGIO_BASE}/cards/${id}`, {
-      headers: process.env.POKEMONTCG_API_KEY ? { "X-Api-Key": process.env.POKEMONTCG_API_KEY } : {},
-    });
-    const json = await res.json();
-    const c = json.data;
-    out.push({ id: c.id, name: c.name, rarity: c.rarity, subtypes: c.subtypes, set: c.set?.id });
+  const imgDir = join(import.meta.dirname, "../lib/debug-images");
+  if (!existsSync(imgDir)) mkdirSync(imgDir, { recursive: true });
+  const targets = [
+    ["articuno", "https://images.pokemontcg.io/sv9/161_hires.png"],
+    ["zapdos", "https://images.pokemontcg.io/sv3pt5/202_hires.png"],
+    ["flaaffy", "https://images.pokemontcg.io/swsh12tg/TG03_hires.png"],
+    ["moltres", "https://assets.tcgdex.net/en/tcgp/A1/274/high.webp"],
+  ] as const;
+  for (const [name, url] of targets) {
+    await downloadImage(url, join(imgDir, `${name}.png`));
   }
-  writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify(out, null, 2));
+  writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify({ done: true }));
   console.log("done");
 }
 

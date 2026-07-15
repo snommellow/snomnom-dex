@@ -320,6 +320,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 aria-hidden
                 fill
                 sizes="300px"
+                unoptimized={bgUrl.includes("githubusercontent.com")}
                 className="object-cover object-top"
                 style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
                 loading="lazy"
@@ -380,6 +381,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   alt={pokemon.name}
                   fill
                   sizes="64px"
+                  unoptimized
                   className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]"
                   loading="lazy"
                 />
@@ -391,6 +393,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                   alt={pokemon.name}
                   fill
                   sizes="64px"
+                  unoptimized
                   className="object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]"
                   loading="lazy"
                 />

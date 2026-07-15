@@ -107,7 +107,15 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // winning as the base (Hero of Many Battles) entity's card. Moved to HARDCODED_FORM_URLS for
 // the Crowned forms instead; blacklisted here so the base entity's automated pass (IR/SIR in
 // particular — this list is checked there too, not just VGX) doesn't just re-select them.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176", "me2-100", "sv10-201"]);
+// sm5-145 "Dusk Mane Necrozma-GX", sm5-143 "Dawn Wings Necrozma-GX": confirmed via direct image
+// inspection to be a boxed/bordered layout (plain background box + separate text panel below),
+// not full art — despite sharing an artist with a bordered sibling (the usual safe-extension
+// signal). sm6-95 "Ultra Necrozma-GX" is a genuine full-bleed illustration and is NOT blacklisted.
+// swsh11-172 "Hisuian Electrode V": technically full-bleed (no box), but the character only
+// fills the top ~60% of the card, so the attack-text panel below bleeds into the visible crop
+// window — confirmed via direct image inspection. Lets the curated SWSH294 regional promo
+// (see fetchRegionalPromoPriority) win instead, as originally intended.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176", "me2-100", "sv10-201", "sm5-145", "sm5-143", "swsh11-172"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {

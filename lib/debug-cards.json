@@ -1,0 +1,49 @@
+[
+  {
+    "id": "sm5-145",
+    "name": "Dusk Mane Necrozma-GX",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "set": "sm5",
+    "artist": "5ban Graphics"
+  },
+  {
+    "id": "sm5-143",
+    "name": "Dawn Wings Necrozma-GX",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "set": "sm5",
+    "artist": "5ban Graphics"
+  },
+  {
+    "id": "sm6-95",
+    "name": "Ultra Necrozma-GX",
+    "rarity": "Rare Holo GX",
+    "subtypes": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "set": "sm6",
+    "artist": "PLANETA Otani"
+  },
+  {
+    "id": "swsh11-172",
+    "name": "Hisuian Electrode V",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "V"
+    ],
+    "set": "swsh11",
+    "artist": "5ban Graphics"
+  }
+]

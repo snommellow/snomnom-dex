@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sv9-161",
+    "name": "Articuno",
+    "rarity": "Illustration Rare",
+    "subtypes": [
+      "Basic"
+    ],
+    "set": "sv9"
+  },
+  {
+    "id": "sv3pt5-202",
+    "name": "Zapdos ex",
+    "rarity": "Special Illustration Rare",
+    "subtypes": [
+      "Basic",
+      "ex"
+    ],
+    "set": "sv3pt5"
+  },
+  {
+    "id": "swsh8-280",
+    "name": "Flaaffy",
+    "rarity": "Rare Secret",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "set": "swsh8"
+  }
+]

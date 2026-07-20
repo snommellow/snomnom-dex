@@ -3618,7 +3618,8 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/63_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "mewtwo-mega-y",
@@ -7497,7 +7498,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8/195_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "castform-rainy",
@@ -10368,7 +10370,8 @@
         "category": "regional",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/swsh11/186_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 487,
@@ -10485,7 +10488,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2a/081/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 492,
@@ -10708,7 +10712,8 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG51_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 501,
@@ -12095,7 +12100,8 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 570,
@@ -12128,7 +12134,8 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG56_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 570,
@@ -13450,7 +13457,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw9/114_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 641,
@@ -13484,7 +13492,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw9/110_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 642,
@@ -13554,7 +13563,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw7/144_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 645,
@@ -13588,7 +13598,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY80_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "kyurem-white",
@@ -13603,7 +13614,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY81_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 646,
@@ -13637,7 +13649,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/53_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 647,
@@ -13671,7 +13684,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_170_EN.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 648,
@@ -14370,7 +14384,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/126_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 679,
@@ -15216,7 +15231,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm6/73_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "zygarde-10",
@@ -15316,7 +15332,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 720,
@@ -15721,7 +15738,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/A3/A3_165_EN_SM.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "oricorio-pau",
@@ -15736,7 +15754,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_166_EN_SM.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "oricorio-sensu",
@@ -15751,7 +15770,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm12/95_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 741,
@@ -15836,7 +15856,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm2/74_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "lycanroc-dusk",
@@ -16465,7 +16486,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 778,
@@ -17968,7 +17990,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B2/B2_198_EN.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "toxtricity-amped-gmax",
@@ -17983,7 +18006,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/71_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "toxtricity-low-key-gmax",
@@ -17998,7 +18022,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/71_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 848,
@@ -18179,7 +18204,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 856,
@@ -18565,7 +18591,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B1/B1_278_EN_SM.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 876,
@@ -18847,7 +18874,8 @@
       }
     ],
     "familyId": 888,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 889,
@@ -18880,7 +18908,8 @@
       }
     ],
     "familyId": 889,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 890,
@@ -18909,7 +18938,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG22_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 890,
@@ -18958,7 +18988,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/153_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "urshifu-single-strike-gmax",
@@ -18973,7 +19004,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/168_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "urshifu-rapid-strike-gmax",
@@ -18988,7 +19020,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/170_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 891,
@@ -19103,7 +19136,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/164_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "calyrex-shadow",
@@ -19118,7 +19152,8 @@
         "category": "regional",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/172_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 898,
@@ -19288,7 +19323,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG18_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 905,
@@ -19656,7 +19692,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://static.tcgcollector.com/content/images/8f/8b/a4/8f8ba478216673d31a6772e2d122f0e276bc4eaaa16e0dcd560a528b1bcaf52d.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 924,
@@ -19774,7 +19811,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "squawkabilly-yellow-plumage",
@@ -19789,7 +19827,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "squawkabilly-white-plumage",
@@ -19804,7 +19843,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 931,
@@ -21618,7 +21658,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv7/173_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "terapagos-stellar",
@@ -21632,7 +21673,8 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 1024,

@@ -464,7 +464,10 @@ async function main() {
             const hardcodedRegularUrl = HARDCODED_FORM_REGULAR_URLS[form.displayName];
             if (hardcodedRegularUrl) return { ...form, tcgUrl: null, regularCardUrl: hardcodedRegularUrl };
             const hardcodedUrl = HARDCODED_FORM_URLS[form.displayName];
-            if (hardcodedUrl) return { ...form, tcgUrl: hardcodedUrl, regularCardUrl: null };
+            // Same "hardcoded" tier rank as pickTcgUrl's TIER_ORDER — this branch bypasses
+            // pickTcgUrl entirely (it's a direct full-bleed override), but still needs a rank so
+            // the alt-forms filter's "show the better card even when hidden" comparison can see it.
+            if (hardcodedUrl) return { ...form, tcgUrl: hardcodedUrl, regularCardUrl: null, cardRank: TIER_ORDER.indexOf("hardcoded") };
 
             // Pumpkaboo/Gourgeist's Small/Large/Super forms: no card distinguishes sizes by
             // name and no full-art printing exists yet, so pick a deterministic pseudo-random

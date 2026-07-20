@@ -2,29 +2,30 @@
 
 import { useState, useMemo, useRef, useEffect, type CSSProperties } from "react";
 import { Search, X, GitBranch, LayoutGrid, SlidersHorizontal } from "lucide-react";
-import type { PokemonSummary, AltForm, FormCategory } from "@/lib/pokeapi";
+import type { PokemonSummary, AltForm, DisplayCategory } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import PokemonCard, { AltFormCard } from "./PokemonCard";
 
-// "other" never actually appears on an AltForm (filtered out upstream in fetchAltForms), so
-// "primal" is the only category left to cover under the catch-all "Other" filter chip.
-const ALT_FORM_FILTERS: { category: FormCategory; label: string }[] = [
+// Filters use displayCategory (UI grouping), not category (card-search strategy) — see
+// DisplayCategory in lib/pokeapi.ts for why those two differ. Mega/Primal/Origin Forme are
+// grouped under one "Mega" chip per user request. "other" never appears on a real AltForm
+// (filtered out upstream), so there's no catch-all chip needed beyond these four.
+const ALT_FORM_FILTERS: { category: DisplayCategory; label: string }[] = [
   { category: "regional", label: "Regional" },
   { category: "mega", label: "Mega" },
   { category: "gmax", label: "Gigantamax" },
   { category: "forme", label: "Forme" },
-  { category: "primal", label: "Other" },
 ];
 
 // When a category is hidden, its alt-form card/tab disappears from view — but if that alt
 // form's card outranks the base entity's own card (by the same priority tiers used during
 // generation), the base entity shows that better card instead of losing it.
-function applyAltFormFilter(p: PokemonSummary, hidden: Set<FormCategory>): PokemonSummary {
+function applyAltFormFilter(p: PokemonSummary, hidden: Set<DisplayCategory>): PokemonSummary {
   if (!p.altForms.length) return p;
   const visibleForms: AltForm[] = [];
   let bestHidden: AltForm | undefined;
   for (const f of p.altForms) {
-    if (hidden.has(f.category)) {
+    if (hidden.has(f.displayCategory)) {
       if (f.cardRank !== undefined && f.tcgUrl && (bestHidden?.cardRank === undefined || f.cardRank < bestHidden.cardRank)) {
         bestHidden = f;
       }
@@ -65,7 +66,7 @@ export default function PokedexClient({ pokemon }: Props) {
   const [query, setQuery] = useState("");
   const [activeType, setActiveType] = useState<string | null>(null);
   const [familyView, setFamilyView] = useState(false);
-  const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<FormCategory>>(new Set());
+  const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<DisplayCategory>>(new Set());
   const [altFormMenuOpen, setAltFormMenuOpen] = useState(false);
   const altFormMenuRef = useRef<HTMLDivElement>(null);
 

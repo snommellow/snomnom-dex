@@ -367,6 +367,7 @@ async function main() {
               artworkUrl: null,
               homeSpriteUrl: null,
               category: "mega",
+              displayCategory: "mega",
               tcgUrl: null,
             } satisfies AltForm);
           }
@@ -379,6 +380,7 @@ async function main() {
                 artworkUrl: null,
                 homeSpriteUrl: null,
                 category: "forme",
+                displayCategory: "forme",
                 tcgUrl: null,
               } satisfies AltForm);
             }
@@ -598,13 +600,14 @@ async function main() {
     if (!p || !crownedForm) continue;
     const heroSnapshot = {
       types: p.types, artworkUrl: p.artworkUrl, spriteUrl: p.spriteUrl,
-      bgCandidates: p.bgCandidates, regularCardUrl: p.regularCardUrl,
+      bgCandidates: p.bgCandidates, regularCardUrl: p.regularCardUrl, cardRank: p.cardRank,
     };
     p.types = crownedForm.types;
     p.artworkUrl = crownedForm.artworkUrl;
     p.spriteUrl = crownedForm.homeSpriteUrl ?? crownedForm.formSpriteUrl ?? p.spriteUrl;
     p.bgCandidates = crownedForm.tcgUrl ? [crownedForm.tcgUrl] : [];
     p.regularCardUrl = crownedForm.regularCardUrl ?? undefined;
+    p.cardRank = crownedForm.cardRank;
     crownedForm.displayName = heroLabel;
     crownedForm.types = heroSnapshot.types;
     crownedForm.artworkUrl = heroSnapshot.artworkUrl;
@@ -612,6 +615,7 @@ async function main() {
     crownedForm.formSpriteUrl = heroSnapshot.spriteUrl;
     crownedForm.tcgUrl = heroSnapshot.bgCandidates[0] ?? null;
     crownedForm.regularCardUrl = heroSnapshot.regularCardUrl ?? null;
+    crownedForm.cardRank = heroSnapshot.cardRank;
   }
 
   writeFileSync(outPath, JSON.stringify(pokemon, null, 2));

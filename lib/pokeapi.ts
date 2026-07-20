@@ -26,12 +26,36 @@ export interface PokemonListItem {
 
 export type FormCategory = "mega" | "regional" | "gmax" | "primal" | "forme" | "other";
 
+// FormCategory (above) drives card-search STRATEGY, not display grouping — "regional" is reused
+// as a catch-all for any alt form that's auto-searchable by its own full display name (Kyurem's
+// colors, Calyrex's Riders, Necrozma's fusions, Rotom's appliances, Zacian/Zamazenta's Crowned
+// forms, Ogerpon's masks, Ash-Greninja, etc.), regardless of whether it's a real-world region.
+// DisplayCategory is the correct, separate classification for UI filtering/grouping purposes.
+export type DisplayCategory = "regional" | "mega" | "gmax" | "forme" | "other";
+const REGIONAL_DISPLAY_RE = /^(Alolan|Galarian|Hisuian|Paldean)\s/;
+export function deriveDisplayCategory(category: FormCategory, displayName: string): DisplayCategory {
+  if (category === "mega" || category === "primal") return "mega";
+  if (category === "gmax") return "gmax";
+  if (category === "forme") return "forme";
+  if (category === "regional") {
+    if (REGIONAL_DISPLAY_RE.test(displayName)) return "regional";
+    // Origin Forme (Dialga/Palkia/Giratina) groups with Mega/Primal per user request; every
+    // other "regional"-tagged form here is really just a same-species forme with no distinct
+    // real-world region (Kyurem colors, Calyrex Riders, Crowned Zacian/Zamazenta, etc.).
+    if (displayName.startsWith("Origin Forme ")) return "mega";
+    return "forme";
+  }
+  return "other";
+}
+
 export interface AltForm {
   slug: string;
   displayName: string;
   types: string[];
   artworkUrl: string | null;
   category: FormCategory;
+  // UI filter/display bucket — see DisplayCategory for why this differs from `category`.
+  displayCategory: DisplayCategory;
   tcgUrl: string | null;
   regularCardUrl?: string | null;
   formSpriteUrl?: string | null;
@@ -376,6 +400,7 @@ export async function fetchAltForms(
           // form here — each alt form has its own numeric id with its own HOME sprite.
           homeSpriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${p.id}.png`,
           category,
+          displayCategory: deriveDisplayCategory(category, displayName),
           tcgUrl: null,
         } as AltForm;
       } catch { return null; }

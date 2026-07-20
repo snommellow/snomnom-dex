@@ -60,6 +60,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10033.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10033.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/177_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -75,6 +76,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10195.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10195.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH102_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -143,6 +145,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10034.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10034.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/125_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -158,6 +161,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10035.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/087/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -173,6 +177,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10196.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10196.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH261_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -239,6 +244,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10036.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10036.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/084/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -253,6 +259,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10197.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10197.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH103_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -319,6 +326,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10198.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10198.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/2_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -385,6 +393,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10090.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY158_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -455,6 +464,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10073.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10073.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy12/105_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -487,6 +497,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10091.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10091.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm7/84_hires.png"
       }
@@ -518,6 +529,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10092.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm7/85_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -618,6 +630,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10199.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10199.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -651,6 +664,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10100.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10100.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/203/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -665,6 +679,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10304.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10304.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       },
@@ -678,6 +693,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10305.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10305.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -710,6 +726,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10101.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10101.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/mcd19/4_hires.png"
       }
@@ -741,6 +758,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10102.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM236_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -885,6 +903,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10278.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10278.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-119/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -916,6 +935,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10103.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10103.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/162/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -949,6 +969,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10104.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10104.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/196/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -1174,6 +1195,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10105.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10105.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm8/122_hires.png"
       }
@@ -1206,6 +1228,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10106.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10106.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv8/208_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -1238,6 +1261,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10107.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10107.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3a/073/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -1252,6 +1276,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10161.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10161.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh2/126_hires.png"
       },
@@ -1265,6 +1290,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10200.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10200.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH005_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -1297,6 +1323,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10108.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10108.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm12/129_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1392,6 +1419,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10229.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv6/181_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -1424,6 +1452,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10230.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG08_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1535,6 +1564,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10037.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10037.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy10/118_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1599,6 +1629,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10201.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10201.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/73_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -1664,6 +1695,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10279.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10279.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -1729,6 +1761,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10109.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10109.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm9/35_hires.png"
       }
@@ -1760,6 +1793,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10110.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10110.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm9/36_hires.png"
       }
@@ -1792,6 +1826,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10111.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm4/34_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1824,6 +1859,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10162.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10162.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/167/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -1857,6 +1893,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10163.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10163.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/168_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1890,6 +1927,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10164.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH126_hires.png"
       }
@@ -1923,6 +1961,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10071.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10071.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy12/27_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -1938,6 +1977,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10165.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10165.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/99_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -2006,6 +2046,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10166.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10166.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh2/94_hires.png"
       }
@@ -2104,6 +2145,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10112.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10112.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm11/127_hires.png"
       }
@@ -2135,6 +2177,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10113.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10113.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/206/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -2236,6 +2279,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10038.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10038.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-284/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2251,6 +2295,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10202.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10202.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/271_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2348,6 +2393,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10203.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10203.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh9/29_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2380,6 +2426,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10231.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG01_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -2412,6 +2459,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10232.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -2464,6 +2512,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10114.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10114.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/156/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -2513,6 +2562,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10115.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10115.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/160/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -2611,6 +2661,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10167.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10167.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh2/113_hires.png"
       }
@@ -2708,6 +2759,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10039.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10039.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/182_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2821,6 +2873,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10280.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10280.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-118/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2855,6 +2908,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10168.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10168.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5/30_hires.png"
       }
@@ -2952,6 +3006,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10040.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10040.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/272/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -2984,6 +3039,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10250.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10250.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv2/218_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -2999,6 +3055,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10251.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sv2/28_hires.png"
       },
@@ -3013,6 +3070,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10252.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sv2/41_hires.png"
       }
@@ -3063,6 +3121,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10041.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10041.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/285/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -3097,6 +3156,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10204.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10204.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/50_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -3146,6 +3206,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10205.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10205.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH087_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -3316,6 +3377,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10042.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10042.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY98_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3348,6 +3410,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10206.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10206.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/142_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -3382,6 +3445,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10169.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3416,6 +3480,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10170.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3450,6 +3515,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10171.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3516,6 +3582,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10281.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10281.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-290/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -3549,6 +3616,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10043.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10043.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/63_hires.png",
         "regularCardUrl": null
       },
@@ -3562,6 +3630,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10044.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10044.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/160_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3643,6 +3712,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10282.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10282.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-272/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -3707,6 +3777,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10233.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/53_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -3771,6 +3842,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10283.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10283.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-274/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -4150,6 +4222,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10045.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/277/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -4385,6 +4458,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10253.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10253.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv2/221_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -4485,6 +4559,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10172.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10172.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/179_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -4651,6 +4726,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10072.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10072.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/086/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -4719,6 +4795,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10234.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh10/89_hires.png"
       }
@@ -4752,6 +4829,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10046.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy9/120_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -4804,6 +4882,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10047.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -4838,6 +4917,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10235.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh10/92_hires.png"
       }
@@ -4966,6 +5046,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10173.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10173.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh2/78_hires.png"
       }
@@ -5064,6 +5145,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10284.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10284.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-106/large",
         "regularCardUrl": null,
         "cardRank": 6
@@ -5116,6 +5198,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10048.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10048.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/154_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -5450,6 +5533,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10049.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/92_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -5567,6 +5651,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10065.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10065.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/85_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -5634,6 +5719,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10050.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10050.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/284/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -5699,6 +5785,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10064.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10064.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/197/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -5765,6 +5852,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10174.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10174.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh1/117_hires.png"
       }
@@ -5795,6 +5883,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10175.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10175.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh1/118_hires.png"
       }
@@ -6109,6 +6198,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10051.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10051.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/178_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -6453,6 +6543,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10066.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10066.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/sm11/226_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -6487,6 +6578,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10052.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/201/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -6554,6 +6646,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10053.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10053.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy5/154_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -6606,6 +6699,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10054.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10054.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -6654,6 +6748,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10055.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/158_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -6816,6 +6911,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10070.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10070.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/127_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -6900,6 +6996,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10087.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10087.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/156_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -7098,6 +7195,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10067.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10067.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/286/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -7397,6 +7495,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10013.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8/195_hires.png",
         "regularCardUrl": null
       },
@@ -7410,6 +7509,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10014.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/ex5/23_hires.png"
       },
@@ -7423,6 +7523,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10015.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/ex5/25_hires.png"
       }
@@ -7486,6 +7587,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10056.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10056.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -7570,6 +7672,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10306.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10306.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -7601,6 +7704,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10057.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/180_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -7665,6 +7769,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10074.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10074.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/156_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -7861,6 +7966,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10089.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10089.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY171_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -7931,6 +8037,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10076.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10076.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY35_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -8014,6 +8121,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10062.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10062.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/181_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -8048,6 +8156,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10063.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10063.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy6/102_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -8080,6 +8189,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10077.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10077.png",
         "category": "primal",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/96_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -8113,6 +8223,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10078.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10078.png",
         "category": "primal",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/97_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -8147,6 +8258,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10079.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10079.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/98_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -8197,6 +8309,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10001.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/dp6/24_hires.png"
       },
@@ -8210,6 +8323,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10002.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/dp6/25_hires.png"
       },
@@ -8223,6 +8337,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10003.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/dp6/26_hires.png"
       }
@@ -8441,6 +8556,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10308.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10308.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -8687,6 +8803,7 @@
         "artworkUrl": null,
         "homeSpriteUrl": null,
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pl4/57_hires.png"
       },
@@ -8700,6 +8817,7 @@
         "artworkUrl": null,
         "homeSpriteUrl": null,
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/dp3/80_hires.png"
       }
@@ -8731,6 +8849,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10004.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10004.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pop7/10_hires.png"
       },
@@ -8745,6 +8864,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10005.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10005.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/dp3/43_hires.png"
       }
@@ -9007,6 +9127,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10088.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10088.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/128_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -9308,6 +9429,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10058.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY168_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -9374,6 +9496,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10059.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/179_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -9597,6 +9720,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10060.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/157_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -9874,6 +9998,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10068.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10068.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy6/100_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -9943,6 +10068,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10285.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10285.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-275/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -9977,6 +10103,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10008.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10008.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pl2/RT3_hires.png"
       },
@@ -9991,6 +10118,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10009.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10009.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pl2/RT5_hires.png"
       },
@@ -10005,6 +10133,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10010.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10010.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pl2/RT2_hires.png"
       },
@@ -10019,6 +10148,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10011.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10011.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-250/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -10034,6 +10164,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10012.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10012.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/pl2/RT4_hires.png"
       }
@@ -10114,6 +10245,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
         "category": "regional",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/177_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -10148,6 +10280,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10246.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10246.png",
         "category": "regional",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/167_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -10182,6 +10315,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10311.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10311.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -10232,6 +10366,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10007.png",
         "category": "regional",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/swsh11/186_hires.png",
         "regularCardUrl": null
       }
@@ -10314,6 +10449,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10312.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10312.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-116/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -10347,6 +10483,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10006.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A2a/081/high.webp",
         "regularCardUrl": null
       }
@@ -10501,6 +10638,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10286.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10286.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-273/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -10568,6 +10706,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10236.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG51_hires.png",
         "regularCardUrl": null
       }
@@ -11048,6 +11187,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10287.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10287.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-103/large",
         "regularCardUrl": null,
         "cardRank": 6
@@ -11081,6 +11221,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10069.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10069.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-253/large",
         "regularCardUrl": null,
         "cardRank": 6
@@ -11343,6 +11484,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10288.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10288.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -11428,6 +11570,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10237.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10237.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/163_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -11460,6 +11603,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10016.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10016.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh8/70_hires.png"
       },
@@ -11473,6 +11617,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10247.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10247.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swshp/SWSH273_hires.png"
       }
@@ -11558,6 +11703,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10176.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10176.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh2/47_hires.png"
       }
@@ -11590,6 +11736,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10017.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10017.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/bw4/60_hires.png"
       },
@@ -11603,6 +11750,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10177.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/36_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -11618,6 +11766,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10178.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10178.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh3/28_hires.png"
       }
@@ -11722,6 +11871,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10289.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10289.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-285/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -11773,6 +11923,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10179.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10179.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh6/82_hires.png"
       }
@@ -11908,6 +12059,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10207.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10207.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh7/101_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -11941,6 +12093,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10238.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-B/P-B_076_EN_SM.webp",
         "regularCardUrl": null
       }
@@ -11973,6 +12126,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10239.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG56_hires.png",
         "regularCardUrl": null
       }
@@ -12006,13 +12160,13 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/573.png",
-    "genus": null,
+    "genus": "Scarf Pokémon",
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/183_hires.png"
     ],
     "altForms": [],
-    "familyId": 573,
-    "familyOrder": 0,
+    "familyId": 572,
+    "familyOrder": 1,
     "cardRank": 0
   },
   {
@@ -12057,13 +12211,13 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/576.png",
-    "genus": null,
+    "genus": "Astral Body Pokémon",
     "bgCandidates": [
       "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_211_R_EN.png"
     ],
     "altForms": [],
-    "familyId": 576,
-    "familyOrder": 0,
+    "familyId": 574,
+    "familyOrder": 2,
     "cardRank": 2
   },
   {
@@ -12562,6 +12716,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10290.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10290.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-278/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -12666,6 +12821,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10291.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10291.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-115/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -12836,6 +12992,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10180.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/128_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -12939,6 +13096,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10313.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10313.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -13043,6 +13201,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10240.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh12/149_hires.png"
       }
@@ -13289,6 +13448,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10019.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw9/114_hires.png",
         "regularCardUrl": null
       }
@@ -13322,6 +13482,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10020.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw9/110_hires.png",
         "regularCardUrl": null
       }
@@ -13391,6 +13552,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10021.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/bw7/144_hires.png",
         "regularCardUrl": null
       }
@@ -13424,6 +13586,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10022.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY80_hires.png",
         "regularCardUrl": null
       },
@@ -13438,6 +13601,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10023.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY81_hires.png",
         "regularCardUrl": null
       }
@@ -13471,6 +13635,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10024.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/53_hires.png",
         "regularCardUrl": null
       }
@@ -13504,6 +13669,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10018.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_170_EN.png",
         "regularCardUrl": null
       }
@@ -13587,6 +13753,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10292.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10292.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -13638,13 +13805,30 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/655.png",
-    "genus": null,
+    "genus": "Fox Pokémon",
     "bgCandidates": [
       "https://images.pokemontcg.io/swsh11/27_hires.png"
     ],
-    "altForms": [],
-    "familyId": 655,
-    "familyOrder": 0,
+    "altForms": [
+      {
+        "slug": "delphox-mega",
+        "displayName": "Mega Delphox",
+        "types": [
+          "fire",
+          "psychic"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10293.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10293.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10293.png",
+        "category": "mega",
+        "displayCategory": "mega",
+        "tcgUrl": "https://images.scrydex.com/pokemon/me5-8/large",
+        "regularCardUrl": null,
+        "cardRank": 6
+      }
+    ],
+    "familyId": 653,
+    "familyOrder": 2,
     "cardRank": 2
   },
   {
@@ -13706,6 +13890,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10117.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10117.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY133_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -13721,6 +13906,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10294.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10294.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-116/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -13908,6 +14094,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10295.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10295.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-99/large",
         "regularCardUrl": null,
         "cardRank": 6
@@ -13954,6 +14141,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10296.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10296.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-117/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -14099,6 +14287,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10025.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10025.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/g1/37_hires.png"
       },
@@ -14111,6 +14300,7 @@
         "artworkUrl": null,
         "homeSpriteUrl": null,
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -14178,6 +14368,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10026.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10026.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/126_hires.png",
         "regularCardUrl": null
       }
@@ -14289,6 +14480,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10297.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10297.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -14322,12 +14514,28 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/689.png",
-    "genus": null,
+    "genus": "Collective Pokémon",
     "bgCandidates": [],
     "regularCardUrl": "https://images.pokemontcg.io/swsh11/107_hires.png",
-    "altForms": [],
-    "familyId": 689,
-    "familyOrder": 0
+    "altForms": [
+      {
+        "slug": "barbaracle-mega",
+        "displayName": "Mega Barbaracle",
+        "types": [
+          "rock",
+          "fighting"
+        ],
+        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10298.png",
+        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10298.png",
+        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10298.png",
+        "category": "mega",
+        "displayCategory": "mega",
+        "tcgUrl": null,
+        "regularCardUrl": null
+      }
+    ],
+    "familyId": 688,
+    "familyOrder": 1
   },
   {
     "id": 690,
@@ -14370,6 +14578,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10299.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10299.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-118/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -14404,13 +14613,13 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/693.png",
-    "genus": null,
+    "genus": "Howitzer Pokémon",
     "bgCandidates": [
       "https://images.pokemontcg.io/me1/141_hires.png"
     ],
     "altForms": [],
-    "familyId": 693,
-    "familyOrder": 0,
+    "familyId": 692,
+    "familyOrder": 1,
     "cardRank": 0
   },
   {
@@ -14561,6 +14770,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10300.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10300.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-283/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -14647,6 +14857,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10241.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10241.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh11/133_hires.png"
       }
@@ -14678,6 +14889,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10242.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG21_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
@@ -14760,6 +14972,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10027.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10027.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm4/44_hires.png"
       },
@@ -14774,6 +14987,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10028.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10028.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh7/76_hires.png"
       },
@@ -14788,6 +15002,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10029.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10029.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.scrydex.com/pokemon/me4-40/large"
       }
@@ -14819,6 +15034,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10030.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10030.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.scrydex.com/pokemon/me4-41/large"
       },
@@ -14833,6 +15049,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10031.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10031.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/xy1/57_hires.png"
       },
@@ -14847,6 +15064,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10032.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10032.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/xy4/45_hires.png"
       }
@@ -14892,6 +15110,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10243.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh10/48_hires.png"
       }
@@ -14995,6 +15214,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10120.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10120.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm6/73_hires.png",
         "regularCardUrl": null
       },
@@ -15009,6 +15229,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10181.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10181.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sm11/124_hires.png"
       },
@@ -15023,6 +15244,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10301.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10301.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-120/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -15057,6 +15279,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10075.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10075.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-282/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -15091,6 +15314,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10086.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10086.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG53_hires.png",
         "regularCardUrl": null
       }
@@ -15176,6 +15400,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10244.png",
         "category": "regional",
+        "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH238_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -15460,6 +15685,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10315.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10315.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -15493,6 +15719,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10123.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10123.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/A3/A3_165_EN_SM.webp",
         "regularCardUrl": null
       },
@@ -15507,6 +15734,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10124.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10124.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B3/B3_166_EN_SM.webp",
         "regularCardUrl": null
       },
@@ -15521,6 +15749,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10125.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10125.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm12/95_hires.png",
         "regularCardUrl": null
       }
@@ -15605,6 +15834,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10126.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10126.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sm2/74_hires.png",
         "regularCardUrl": null
       },
@@ -15618,6 +15848,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10152.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10152.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv9/166_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -15650,6 +15881,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10127.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10127.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/202/high.webp",
         "regularCardUrl": null,
         "cardRank": 1
@@ -16041,6 +16273,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10316.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10316.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -16230,6 +16463,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10143.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10143.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/P-A/P-A_066_EN_SM.webp",
         "regularCardUrl": null
       }
@@ -16281,6 +16515,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10302.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10302.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -16645,6 +16880,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10155.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10155.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM102_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -16660,6 +16896,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10156.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10156.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM101_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -16675,6 +16912,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10157.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10157.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM126_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
@@ -16709,6 +16947,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10317.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10317.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -16827,6 +17066,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10319.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10319.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-114/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -16876,6 +17116,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10208.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10208.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/pgo/48_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -16940,6 +17181,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10209.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10209.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/23_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17006,6 +17248,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10210.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10210.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/45_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17070,6 +17313,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10211.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10211.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/266_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17170,6 +17414,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10212.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10212.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG19_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17237,6 +17482,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10213.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10213.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG13_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17384,6 +17630,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10214.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10214.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh35/15_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17483,6 +17730,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10215.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10215.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/99_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17535,6 +17783,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10216.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10216.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/19_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17569,6 +17818,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10217.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10217.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -17615,6 +17865,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10218.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10218.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/90_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17715,6 +17966,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10184.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10184.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B2/B2_198_EN.png",
         "regularCardUrl": null
       },
@@ -17729,6 +17981,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10219.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/71_hires.png",
         "regularCardUrl": null
       },
@@ -17743,6 +17996,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10228.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10228.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/71_hires.png",
         "regularCardUrl": null
       }
@@ -17792,6 +18046,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10220.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10220.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG15_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -17922,6 +18177,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10221.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10221.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
         "regularCardUrl": null
       }
@@ -17987,6 +18243,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10222.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10222.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/115_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18137,6 +18394,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10223.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10223.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh35/23_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18169,6 +18427,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10303.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10303.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -18270,6 +18529,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10185.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10185.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh9/44_hires.png"
       }
@@ -18303,6 +18563,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10186.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10186.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B1/B1_278_EN_SM.webp",
         "regularCardUrl": null
       }
@@ -18336,6 +18597,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10187.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10187.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-117/large",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18385,6 +18647,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10224.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10224.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/137_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18489,6 +18752,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10225.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10225.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG21_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18576,13 +18840,14 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/888.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv9/186_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 3
       }
     ],
     "familyId": 888,
-    "familyOrder": 0,
-    "cardRank": 3
+    "familyOrder": 0
   },
   {
     "id": 889,
@@ -18608,13 +18873,14 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh10tg/TG22_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 889,
-    "familyOrder": 0,
-    "cardRank": 6
+    "familyOrder": 0
   },
   {
     "id": 890,
@@ -18641,6 +18907,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10190.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10190.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG22_hires.png",
         "regularCardUrl": null
       }
@@ -18689,6 +18956,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10191.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10191.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/153_hires.png",
         "regularCardUrl": null
       },
@@ -18703,6 +18971,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10226.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10226.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/168_hires.png",
         "regularCardUrl": null
       },
@@ -18717,6 +18986,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10227.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10227.png",
         "category": "gmax",
+        "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/170_hires.png",
         "regularCardUrl": null
       }
@@ -18831,6 +19101,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10193.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10193.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/164_hires.png",
         "regularCardUrl": null
       },
@@ -18845,6 +19116,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10194.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10194.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/172_hires.png",
         "regularCardUrl": null
       }
@@ -18913,6 +19185,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10272.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10272.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -18946,6 +19219,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10248.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10248.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/swsh11/45_hires.png"
       }
@@ -19012,6 +19286,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10249.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10249.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG18_hires.png",
         "regularCardUrl": null
       }
@@ -19215,6 +19490,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10254.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10254.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": null,
         "regularCardUrl": "https://images.pokemontcg.io/sv3/184_hires.png"
       }
@@ -19378,6 +19654,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10257.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10257.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://static.tcgcollector.com/content/images/8f/8b/a4/8f8ba478216673d31a6772e2d122f0e276bc4eaaa16e0dcd560a528b1bcaf52d.webp",
         "regularCardUrl": null
       }
@@ -19495,6 +19772,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10260.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10260.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
         "regularCardUrl": null
       },
@@ -19509,6 +19787,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10261.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10261.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
         "regularCardUrl": null
       },
@@ -19523,6 +19802,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10262.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10262.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
         "regularCardUrl": null
       }
@@ -19896,6 +20176,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10320.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10320.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -20113,6 +20394,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10256.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10256.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/151_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -20233,6 +20515,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10321.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10321.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -20384,6 +20667,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10258.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10258.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv6/186_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -20399,6 +20683,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10259.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10259.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv6/186_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -20481,6 +20766,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10255.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10255.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/229_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -20785,6 +21071,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10325.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10325.png",
         "category": "mega",
+        "displayCategory": "mega",
         "tcgUrl": null,
         "regularCardUrl": null
       }
@@ -20816,6 +21103,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10263.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10263.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv4/198_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
@@ -21155,6 +21443,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10273.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv6/213_hires.png",
         "regularCardUrl": null,
         "cardRank": 7
@@ -21170,6 +21459,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10274.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/148_hires.png",
         "regularCardUrl": null,
         "cardRank": 7
@@ -21185,6 +21475,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10275.png",
         "category": "regional",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/160_hires.png",
         "regularCardUrl": null,
         "cardRank": 7
@@ -21325,6 +21616,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10276.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv7/173_hires.png",
         "regularCardUrl": null
       },
@@ -21338,6 +21630,7 @@
         "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10277.png",
         "category": "forme",
+        "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
         "regularCardUrl": null
       }

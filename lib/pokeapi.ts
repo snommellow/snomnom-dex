@@ -36,6 +36,11 @@ export interface AltForm {
   regularCardUrl?: string | null;
   formSpriteUrl?: string | null;
   homeSpriteUrl: string | null;
+  // Priority-tier rank of tcgUrl (lower = better), using the same tier order as the base
+  // Pokémon's own card. Undefined when tcgUrl is null or came from a manual/random pick not
+  // ranked against the shared tiers. Lets the alt-forms filter show this card on the base
+  // entity when its category is hidden but its card outranks the base's own card.
+  cardRank?: number;
 }
 
 export async function fetchPokemonList(
@@ -115,6 +120,8 @@ export interface PokemonSummary {
   // order (baby → basic → stage 1 → stage 2), used to order members within the group.
   familyId: number;
   familyOrder: number;
+  // Priority-tier rank of this entity's own card (see AltForm.cardRank for the full explanation).
+  cardRank?: number;
 }
 
 // Single species fetch: returns genus + non-default form slots + evolution chain URL
@@ -386,6 +393,7 @@ export function toPokemonSummary(
   altForms: AltForm[] = [],
   regularCardUrl?: string,
   family?: { familyId: number; familyOrder: number },
+  cardRank?: number,
 ): PokemonSummary {
   const bg: string[] = [];
   let resolvedRegularCard = regularCardUrl;
@@ -410,5 +418,6 @@ export function toPokemonSummary(
     altForms,
     familyId: family?.familyId ?? p.id,
     familyOrder: family?.familyOrder ?? 0,
+    cardRank,
   };
 }

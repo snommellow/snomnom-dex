@@ -2,9 +2,47 @@
 
 import { useState, useMemo, type CSSProperties } from "react";
 import { Search, X, GitBranch, LayoutGrid } from "lucide-react";
-import type { PokemonSummary } from "@/lib/pokeapi";
+import type { PokemonSummary, AltForm, FormCategory } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import PokemonCard, { AltFormCard } from "./PokemonCard";
+
+// "other" never actually appears on an AltForm (filtered out upstream in fetchAltForms), so
+// "primal" is the only category left to cover under the catch-all "Other" filter chip.
+const ALT_FORM_FILTERS: { category: FormCategory; label: string }[] = [
+  { category: "regional", label: "Regional" },
+  { category: "mega", label: "Mega" },
+  { category: "gmax", label: "Gigantamax" },
+  { category: "forme", label: "Forme" },
+  { category: "primal", label: "Other" },
+];
+
+// When a category is hidden, its alt-form card/tab disappears from view — but if that alt
+// form's card outranks the base entity's own card (by the same priority tiers used during
+// generation), the base entity shows that better card instead of losing it.
+function applyAltFormFilter(p: PokemonSummary, hidden: Set<FormCategory>): PokemonSummary {
+  if (!p.altForms.length) return p;
+  const visibleForms: AltForm[] = [];
+  let bestHidden: AltForm | undefined;
+  for (const f of p.altForms) {
+    if (hidden.has(f.category)) {
+      if (f.cardRank !== undefined && f.tcgUrl && (bestHidden?.cardRank === undefined || f.cardRank < bestHidden.cardRank)) {
+        bestHidden = f;
+      }
+    } else {
+      visibleForms.push(f);
+    }
+  }
+  const baseRank = p.cardRank ?? Infinity;
+  if (bestHidden && bestHidden.cardRank !== undefined && bestHidden.cardRank < baseRank && bestHidden.tcgUrl) {
+    return {
+      ...p,
+      altForms: visibleForms,
+      bgCandidates: [bestHidden.tcgUrl, ...p.bgCandidates.filter((u) => u !== bestHidden!.tcgUrl)],
+      cardRank: bestHidden.cardRank,
+    };
+  }
+  return visibleForms.length === p.altForms.length ? p : { ...p, altForms: visibleForms };
+}
 
 // Fixed-width cards, same as the normal dex order — never flexed wider to fill a row.
 const SHELF_GRID_STYLE: CSSProperties = {
@@ -27,16 +65,19 @@ export default function PokedexClient({ pokemon }: Props) {
   const [query, setQuery] = useState("");
   const [activeType, setActiveType] = useState<string | null>(null);
   const [familyView, setFamilyView] = useState(false);
+  const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<FormCategory>>(new Set());
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return pokemon.filter((p) => {
-      const matchesQuery =
-        !q || p.name.includes(q) || p.types.some((t) => t.includes(q));
-      const matchesType = !activeType || p.types.includes(activeType);
-      return matchesQuery && matchesType;
-    });
-  }, [pokemon, query, activeType]);
+    return pokemon
+      .filter((p) => {
+        const matchesQuery =
+          !q || p.name.includes(q) || p.types.some((t) => t.includes(q));
+        const matchesType = !activeType || p.types.includes(activeType);
+        return matchesQuery && matchesType;
+      })
+      .map((p) => applyAltFormFilter(p, hiddenAltFormCategories));
+  }, [pokemon, query, activeType, hiddenAltFormCategories]);
 
   // Family view: group by evolution family, families ordered by their lowest dex number,
   // members within a family ordered by evolution stage (baby → basic → stage 1 → stage 2).
@@ -147,6 +188,35 @@ export default function PokedexClient({ pokemon }: Props) {
                 className="w-3.5 h-3.5 flex-shrink-0 mr-1 object-contain"
               />
               {type}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Alt form category filter pills */}
+      <div className="flex flex-wrap gap-1.5">
+        {ALT_FORM_FILTERS.map(({ category, label }) => {
+          const hidden = hiddenAltFormCategories.has(category);
+          return (
+            <button
+              key={category}
+              onClick={() =>
+                setHiddenAltFormCategories((prev) => {
+                  const next = new Set(prev);
+                  if (next.has(category)) next.delete(category);
+                  else next.add(category);
+                  return next;
+                })
+              }
+              aria-pressed={!hidden}
+              className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide transition-all ${
+                hidden
+                  ? "bg-amber-100/70 text-amber-900/40 line-through"
+                  : "bg-amber-900 text-white shadow"
+              }`}
+              title={hidden ? `Show ${label} alt forms` : `Hide ${label} alt forms`}
+            >
+              {label}
             </button>
           );
         })}

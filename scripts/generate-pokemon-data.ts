@@ -285,6 +285,10 @@ const HARDCODED_FORM_REGULAR_URLS: Record<string, string> = {
 // identically whether it's a base Pokémon or an alt form, so there's exactly one place that
 // defines "what beats what". Once Pocket has an image, no lower automated/manual tier is
 // allowed to override it — they only fill the gap when Pocket has nothing.
+// The returned rank (lower = better) mirrors this exact tier order and is stored alongside the
+// card so the client can compare a base entity's card against its alt forms' cards — needed for
+// the alt-forms filter's "show the better card even if its category is hidden" rule.
+const TIER_ORDER = ["ir", "pocket", "hardcoded", "trainerIr", "trainerVgx", "ancientTrait", "vgx", "teraIr"] as const;
 function pickTcgUrl(tiers: {
   ir: string | null;
   pocket: string | null;
@@ -294,9 +298,9 @@ function pickTcgUrl(tiers: {
   ancientTrait: string | null;
   vgx: string | null;
   teraIr: string | null;
-}): string | null {
+}): { url: string | null; rank: number } {
   const { ir, pocket, hardcoded, trainerIr, trainerVgx, ancientTrait, vgx, teraIr } = tiers;
-  return ir
+  const url = ir
     ?? pocket
     ?? hardcoded
     ?? (!pocket ? trainerIr : null)
@@ -305,6 +309,10 @@ function pickTcgUrl(tiers: {
     ?? (!pocket ? vgx : null)
     ?? (!pocket ? teraIr : null)
     ?? null;
+  if (!url) return { url: null, rank: TIER_ORDER.length };
+  const values = { ir, pocket, hardcoded, trainerIr, trainerVgx, ancientTrait, vgx, teraIr };
+  const rank = TIER_ORDER.findIndex(t => values[t] === url);
+  return { url, rank: rank === -1 ? TIER_ORDER.length : rank };
 }
 
 async function main() {
@@ -497,7 +505,7 @@ async function main() {
             // Same pickTcgUrl priority order used for base Pokémon — regional promo (a curated,
             // manual lookup, no base-Pokémon equivalent) folds into the "hardcoded" tier slot
             // since it plays the same role: a manual pick filling a gap the automated tiers miss.
-            const tcgUrl = pickTcgUrl({
+            const { url: tcgUrl, rank: cardRank } = pickTcgUrl({
               ir: irUrl,
               pocket: pocketUrl,
               hardcoded: regionalPromoUrl ?? null,
@@ -510,7 +518,7 @@ async function main() {
             const regularCardUrl = !tcgUrl && form.category !== "other"
               ? (vgxCropUrl ?? fallbackUrl ?? await fetchFormCardLastResort(searchName))
               : null;
-            return { ...form, tcgUrl, regularCardUrl };
+            return { ...form, tcgUrl, regularCardUrl, cardRank: tcgUrl ? cardRank : undefined };
           })
         )
       )
@@ -530,20 +538,19 @@ async function main() {
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
     // Uses the same pickTcgUrl priority order shared with alt forms below — see its comment.
-    const tcgResult = {
-      tcgUrl: pickTcgUrl({
-        ir: irMap.get(p.id)?.tcgUrl ?? null,
-        pocket: pocketUrl ?? null,
-        hardcoded: hardcodedBg ?? null,
-        trainerIr: trainerIrMap.get(p.id)?.tcgUrl ?? null,
-        trainerVgx: trainerVgxMap.get(p.id)?.tcgUrl ?? null,
-        ancientTrait: ancientTraitUrl ?? null,
-        vgx: vgxMap.get(p.id)?.tcgUrl ?? null,
-        teraIr: teraIrMap.get(p.id)?.tcgUrl ?? null,
-      }),
-    };
+    const { url: pickedTcgUrl, rank: cardRank } = pickTcgUrl({
+      ir: irMap.get(p.id)?.tcgUrl ?? null,
+      pocket: pocketUrl ?? null,
+      hardcoded: hardcodedBg ?? null,
+      trainerIr: trainerIrMap.get(p.id)?.tcgUrl ?? null,
+      trainerVgx: trainerVgxMap.get(p.id)?.tcgUrl ?? null,
+      ancientTrait: ancientTraitUrl ?? null,
+      vgx: vgxMap.get(p.id)?.tcgUrl ?? null,
+      teraIr: teraIrMap.get(p.id)?.tcgUrl ?? null,
+    });
+    const tcgResult = { tcgUrl: pickedTcgUrl };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
-    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id));
+    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined);
   });
 
   // Preserve cards from previous run when the new run returned null.

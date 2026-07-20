@@ -12,9 +12,11 @@ const HOME_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
 
 const SPRITES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items";
+// No Dynamax/Gigantamax item sprite exists in this asset repo (checked many name variants —
+// dynamax-band, dynamax-crystal, dynite-ore, etc. all 404), so "gmax" is intentionally omitted
+// here rather than pointing at a broken URL (which was rendering as a tiny broken-image glyph).
 const FORM_ICON_URL: Record<string, string> = {
   mega:     `${SPRITES}/key-stone.png`,
-  gmax:     `${SPRITES}/dynamax-band.png`,
   regional: `${SPRITES}/oval-charm.png`,
 };
 
@@ -343,7 +345,7 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
                 <img
                   src={FORM_ICON_URL[formCategory]}
                   alt={formCategory}
-                  style={{ width: 9, height: 9, objectFit: "contain", imageRendering: "pixelated" }}
+                  style={{ width: 13, height: 13, objectFit: "contain", imageRendering: "pixelated" }}
                 />
               )}
               <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>

@@ -17,6 +17,51 @@ const ALT_FORM_FILTERS: { category: DisplayCategory; label: string }[] = [
   { category: "forme", label: "Forme" },
 ];
 
+type CardTypeFilter = "oldEx" | "cropped";
+const CARD_TYPE_FILTERS: { key: CardTypeFilter; label: string }[] = [
+  { key: "oldEx", label: "Old EX Cards" },
+  { key: "cropped", label: "Cropped Cards" },
+];
+
+// Old-era "Pokémon-ex" cards (EX Ruby & Sapphire through EX Power Keepers — pokemontcg.io set
+// ids "ex1".."ex16") — NOT the modern lowercase "ex" cards from the Scarlet & Violet era, which
+// this filter leaves untouched.
+const OLD_EX_SET_RE = /pokemontcg\.io\/ex\d+\//i;
+function isOldExCard(url: string | null | undefined): boolean {
+  return !!url && OLD_EX_SET_RE.test(url);
+}
+
+// Removes a disallowed card from an alt form; whatever's left just falls through the normal
+// candidate chain, landing on the Pokémon's own official artwork if nothing else survives.
+function applyCardTypeFilterToAltForm(f: AltForm, hidden: Set<CardTypeFilter>): AltForm {
+  if (!hidden.size) return f;
+  let tcgUrl = f.tcgUrl;
+  let regularCardUrl = f.regularCardUrl;
+  let cardRank = f.cardRank;
+  if (hidden.has("oldEx")) {
+    if (isOldExCard(tcgUrl)) { tcgUrl = null; cardRank = undefined; }
+    if (isOldExCard(regularCardUrl)) regularCardUrl = null;
+  }
+  if (hidden.has("cropped") && !tcgUrl && regularCardUrl) regularCardUrl = null;
+  if (tcgUrl === f.tcgUrl && regularCardUrl === f.regularCardUrl) return f;
+  return { ...f, tcgUrl, regularCardUrl, cardRank };
+}
+
+function applyCardTypeFilterToPokemon(p: PokemonSummary, hidden: Set<CardTypeFilter>): PokemonSummary {
+  if (!hidden.size) return p;
+  let bgCandidates = p.bgCandidates;
+  let regularCardUrl = p.regularCardUrl;
+  let cardRank = p.cardRank;
+  if (hidden.has("oldEx")) {
+    const next = bgCandidates.filter((u) => !isOldExCard(u));
+    if (next.length !== bgCandidates.length) { bgCandidates = next; cardRank = undefined; }
+    if (isOldExCard(regularCardUrl)) regularCardUrl = undefined;
+  }
+  if (hidden.has("cropped") && bgCandidates.length === 0 && regularCardUrl) regularCardUrl = undefined;
+  if (bgCandidates === p.bgCandidates && regularCardUrl === p.regularCardUrl) return p;
+  return { ...p, bgCandidates, regularCardUrl, cardRank };
+}
+
 // When a category is hidden, its alt-form card/tab disappears from view — but if that alt
 // form's card outranks the base entity's own card (by the same priority tiers used during
 // generation), the base entity shows that better card instead of losing it.
@@ -67,9 +112,10 @@ export default function PokedexClient({ pokemon }: Props) {
   const [activeType, setActiveType] = useState<string | null>(null);
   const [familyView, setFamilyView] = useState(false);
   const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<DisplayCategory>>(new Set());
+  const [hiddenCardTypes, setHiddenCardTypes] = useState<Set<CardTypeFilter>>(new Set());
   const [filterMenuOpen, setFilterMenuOpen] = useState(false);
   const filterMenuRef = useRef<HTMLDivElement>(null);
-  const activeFilterCount = (activeType ? 1 : 0) + hiddenAltFormCategories.size;
+  const activeFilterCount = (activeType ? 1 : 0) + hiddenAltFormCategories.size + hiddenCardTypes.size;
 
   useEffect(() => {
     if (!filterMenuOpen) return;
@@ -91,8 +137,14 @@ export default function PokedexClient({ pokemon }: Props) {
         const matchesType = !activeType || p.types.includes(activeType);
         return matchesQuery && matchesType;
       })
-      .map((p) => applyAltFormFilter(p, hiddenAltFormCategories));
-  }, [pokemon, query, activeType, hiddenAltFormCategories]);
+      .map((p) => {
+        // Card-type filtering runs on alt forms first so a disallowed card can never win the
+        // category-swap comparison below, then again on the (possibly swapped) base entity.
+        const withFilteredForms = { ...p, altForms: p.altForms.map((f) => applyCardTypeFilterToAltForm(f, hiddenCardTypes)) };
+        const withCategoryFilter = applyAltFormFilter(withFilteredForms, hiddenAltFormCategories);
+        return applyCardTypeFilterToPokemon(withCategoryFilter, hiddenCardTypes);
+      });
+  }, [pokemon, query, activeType, hiddenAltFormCategories, hiddenCardTypes]);
 
   // Family view: group by evolution family, families ordered by their lowest dex number,
   // members within a family ordered by evolution stage (baby → basic → stage 1 → stage 2).
@@ -235,6 +287,35 @@ export default function PokedexClient({ pokemon }: Props) {
                             const next = new Set(prev);
                             if (next.has(category)) next.delete(category);
                             else next.add(category);
+                            return next;
+                          })
+                        }
+                        className={`flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                          hidden ? "text-amber-900/40" : "text-amber-950 hover:bg-amber-100/70"
+                        }`}
+                      >
+                        <span className={hidden ? "line-through" : ""}>{label}</span>
+                        {!hidden && <span className="text-red-600 text-[10px] font-black">✓</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-wide text-amber-900/50 mb-1.5">Card Type</p>
+                <div className="flex flex-col gap-0.5">
+                  {CARD_TYPE_FILTERS.map(({ key, label }) => {
+                    const hidden = hiddenCardTypes.has(key);
+                    return (
+                      <button
+                        key={key}
+                        role="menuitemcheckbox"
+                        aria-checked={!hidden}
+                        onClick={() =>
+                          setHiddenCardTypes((prev) => {
+                            const next = new Set(prev);
+                            if (next.has(key)) next.delete(key);
+                            else next.add(key);
                             return next;
                           })
                         }

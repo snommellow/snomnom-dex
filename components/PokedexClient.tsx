@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo, type CSSProperties } from "react";
-import { Search, X, GitBranch, LayoutGrid } from "lucide-react";
+import { useState, useMemo, useRef, useEffect, type CSSProperties } from "react";
+import { Search, X, GitBranch, LayoutGrid, SlidersHorizontal } from "lucide-react";
 import type { PokemonSummary, AltForm, FormCategory } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import PokemonCard, { AltFormCard } from "./PokemonCard";
@@ -66,6 +66,19 @@ export default function PokedexClient({ pokemon }: Props) {
   const [activeType, setActiveType] = useState<string | null>(null);
   const [familyView, setFamilyView] = useState(false);
   const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<FormCategory>>(new Set());
+  const [altFormMenuOpen, setAltFormMenuOpen] = useState(false);
+  const altFormMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!altFormMenuOpen) return;
+    function onPointerDown(e: PointerEvent) {
+      if (altFormMenuRef.current && !altFormMenuRef.current.contains(e.target as Node)) {
+        setAltFormMenuOpen(false);
+      }
+    }
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [altFormMenuOpen]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -193,33 +206,57 @@ export default function PokedexClient({ pokemon }: Props) {
         })}
       </div>
 
-      {/* Alt form category filter pills */}
-      <div className="flex flex-wrap gap-1.5">
-        {ALT_FORM_FILTERS.map(({ category, label }) => {
-          const hidden = hiddenAltFormCategories.has(category);
-          return (
-            <button
-              key={category}
-              onClick={() =>
-                setHiddenAltFormCategories((prev) => {
-                  const next = new Set(prev);
-                  if (next.has(category)) next.delete(category);
-                  else next.add(category);
-                  return next;
-                })
-              }
-              aria-pressed={!hidden}
-              className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide transition-all ${
-                hidden
-                  ? "bg-amber-100/70 text-amber-900/40 line-through"
-                  : "bg-amber-900 text-white shadow"
-              }`}
-              title={hidden ? `Show ${label} alt forms` : `Hide ${label} alt forms`}
-            >
-              {label}
-            </button>
-          );
-        })}
+      {/* Alt form category filter popup */}
+      <div className="relative inline-block" ref={altFormMenuRef}>
+        <button
+          onClick={() => setAltFormMenuOpen((v) => !v)}
+          className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+            hiddenAltFormCategories.size > 0
+              ? "bg-amber-900 text-white shadow"
+              : "bg-amber-100/70 text-amber-900/70 hover:bg-amber-200/80"
+          }`}
+          aria-expanded={altFormMenuOpen}
+          aria-haspopup="menu"
+        >
+          <SlidersHorizontal size={14} />
+          Alt Forms
+          {hiddenAltFormCategories.size > 0 && (
+            <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-white text-amber-900 text-[9px] font-black">
+              {hiddenAltFormCategories.size}
+            </span>
+          )}
+        </button>
+        {altFormMenuOpen && (
+          <div
+            role="menu"
+            className="absolute z-20 mt-1.5 left-0 w-44 rounded-xl border border-amber-800/20 bg-white shadow-lg p-1.5 flex flex-col gap-0.5"
+          >
+            {ALT_FORM_FILTERS.map(({ category, label }) => {
+              const hidden = hiddenAltFormCategories.has(category);
+              return (
+                <button
+                  key={category}
+                  role="menuitemcheckbox"
+                  aria-checked={!hidden}
+                  onClick={() =>
+                    setHiddenAltFormCategories((prev) => {
+                      const next = new Set(prev);
+                      if (next.has(category)) next.delete(category);
+                      else next.add(category);
+                      return next;
+                    })
+                  }
+                  className={`flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                    hidden ? "text-amber-900/40" : "text-amber-950 hover:bg-amber-100/70"
+                  }`}
+                >
+                  <span className={hidden ? "line-through" : ""}>{label}</span>
+                  {!hidden && <span className="text-red-600 text-[10px] font-black">✓</span>}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Book shelf grid */}

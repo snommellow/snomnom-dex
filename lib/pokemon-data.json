@@ -14,7 +14,8 @@
     ],
     "altForms": [],
     "familyId": 1,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 2,
@@ -31,7 +32,8 @@
     ],
     "altForms": [],
     "familyId": 1,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 3,
@@ -59,7 +61,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10033.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/177_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "venusaur-gmax",
@@ -73,11 +76,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10195.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH102_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 1,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 4,
@@ -93,7 +98,8 @@
     ],
     "altForms": [],
     "familyId": 4,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 5,
@@ -109,7 +115,8 @@
     ],
     "altForms": [],
     "familyId": 4,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 6,
@@ -137,7 +144,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10034.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/125_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "charizard-mega-y",
@@ -151,7 +159,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10035.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/087/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       },
       {
         "slug": "charizard-gmax",
@@ -165,11 +174,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10196.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH261_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 4,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 7,
@@ -185,7 +196,8 @@
     ],
     "altForms": [],
     "familyId": 7,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 8,
@@ -201,7 +213,8 @@
     ],
     "altForms": [],
     "familyId": 7,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 9,
@@ -227,7 +240,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10036.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/084/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       },
       {
         "slug": "blastoise-gmax",
@@ -240,11 +254,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10197.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH103_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 7,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 10,
@@ -260,7 +276,8 @@
     ],
     "altForms": [],
     "familyId": 10,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 11,
@@ -303,11 +320,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10198.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/2_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 10,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 13,
@@ -367,11 +386,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10090.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY158_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 13,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 16,
@@ -388,7 +409,8 @@
     ],
     "altForms": [],
     "familyId": 16,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 17,
@@ -405,7 +427,8 @@
     ],
     "altForms": [],
     "familyId": 16,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 18,
@@ -433,11 +456,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10073.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy12/105_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 16,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 19,
@@ -494,11 +519,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10092.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm7/85_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 19,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 21,
@@ -515,7 +542,8 @@
     ],
     "altForms": [],
     "familyId": 21,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 22,
@@ -532,7 +560,8 @@
     ],
     "altForms": [],
     "familyId": 21,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 23,
@@ -563,7 +592,8 @@
     ],
     "altForms": [],
     "familyId": 23,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 25,
@@ -589,11 +619,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10199.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 25,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 26,
@@ -620,7 +652,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10100.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/203/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       },
       {
         "slug": "raichu-mega-x",
@@ -650,7 +683,8 @@
       }
     ],
     "familyId": 25,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 27,
@@ -681,7 +715,8 @@
       }
     ],
     "familyId": 27,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 28,
@@ -707,7 +742,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10102.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM236_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 27,
@@ -758,7 +794,8 @@
     ],
     "altForms": [],
     "familyId": 29,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 32,
@@ -805,7 +842,8 @@
     ],
     "altForms": [],
     "familyId": 32,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 35,
@@ -821,7 +859,8 @@
     ],
     "altForms": [],
     "familyId": 35,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 36,
@@ -847,7 +886,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10278.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-119/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 35,
@@ -877,11 +917,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10103.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/162/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 37,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 38,
@@ -908,11 +950,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10104.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/196/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 37,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 39,
@@ -929,7 +973,8 @@
     ],
     "altForms": [],
     "familyId": 39,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 40,
@@ -946,7 +991,8 @@
     ],
     "altForms": [],
     "familyId": 39,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 41,
@@ -979,7 +1025,8 @@
     ],
     "altForms": [],
     "familyId": 41,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 43,
@@ -1012,7 +1059,8 @@
     ],
     "altForms": [],
     "familyId": 43,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 45,
@@ -1029,7 +1077,8 @@
     ],
     "altForms": [],
     "familyId": 43,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 46,
@@ -1046,7 +1095,8 @@
     ],
     "altForms": [],
     "familyId": 46,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 47,
@@ -1063,7 +1113,8 @@
     ],
     "altForms": [],
     "familyId": 46,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 48,
@@ -1096,7 +1147,8 @@
     ],
     "altForms": [],
     "familyId": 48,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 50,
@@ -1127,7 +1179,8 @@
       }
     ],
     "familyId": 50,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 51,
@@ -1154,11 +1207,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10106.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv8/208_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 50,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 52,
@@ -1184,7 +1239,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10107.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3a/073/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       },
       {
         "slug": "meowth-galar",
@@ -1210,11 +1266,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10200.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH005_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 52,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 53,
@@ -1240,11 +1298,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10108.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm12/129_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 52,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 54,
@@ -1260,7 +1320,8 @@
     ],
     "altForms": [],
     "familyId": 54,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 55,
@@ -1332,11 +1393,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10229.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv6/181_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 58,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 59,
@@ -1362,7 +1425,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10230.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG08_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 58,
@@ -1397,7 +1461,8 @@
     ],
     "altForms": [],
     "familyId": 60,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 62,
@@ -1414,7 +1479,8 @@
     ],
     "altForms": [],
     "familyId": 60,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 63,
@@ -1470,11 +1536,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10037.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy10/118_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 63,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 66,
@@ -1505,7 +1573,8 @@
     ],
     "altForms": [],
     "familyId": 66,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 68,
@@ -1531,11 +1600,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10201.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/73_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 66,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 69,
@@ -1615,7 +1686,8 @@
     ],
     "altForms": [],
     "familyId": 72,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 5
   },
   {
     "id": 73,
@@ -1721,11 +1793,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10111.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sm4/34_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 74,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 77,
@@ -1751,11 +1825,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10162.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/167/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 77,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 78,
@@ -1782,11 +1858,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10163.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/168_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 77,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 79,
@@ -1817,7 +1895,8 @@
       }
     ],
     "familyId": 79,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 80,
@@ -1845,7 +1924,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10071.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy12/27_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       },
       {
         "slug": "slowbro-galar",
@@ -1859,11 +1939,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10165.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/99_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 79,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 81,
@@ -1880,7 +1962,8 @@
     ],
     "altForms": [],
     "familyId": 81,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 82,
@@ -1897,7 +1980,8 @@
     ],
     "altForms": [],
     "familyId": 81,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 83,
@@ -1943,7 +2027,8 @@
     "regularCardUrl": "https://images.pokemontcg.io/xy12/112_hires.png",
     "altForms": [],
     "familyId": 84,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 4
   },
   {
     "id": 85,
@@ -1960,7 +2045,8 @@
     ],
     "altForms": [],
     "familyId": 84,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 86,
@@ -1992,7 +2078,8 @@
     ],
     "altForms": [],
     "familyId": 86,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 88,
@@ -2049,11 +2136,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10113.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/206/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 88,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 90,
@@ -2101,7 +2190,8 @@
     ],
     "altForms": [],
     "familyId": 92,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 93,
@@ -2118,7 +2208,8 @@
     ],
     "altForms": [],
     "familyId": 92,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 94,
@@ -2146,7 +2237,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10038.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-284/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "gengar-gmax",
@@ -2160,11 +2252,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10202.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/271_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 92,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 95,
@@ -2181,7 +2275,8 @@
     ],
     "altForms": [],
     "familyId": 95,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 96,
@@ -2197,7 +2292,8 @@
     ],
     "altForms": [],
     "familyId": 96,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 97,
@@ -2253,11 +2349,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10203.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh9/29_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 98,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 100,
@@ -2283,7 +2381,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10231.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG01_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 100,
@@ -2314,11 +2413,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10232.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 100,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 102,
@@ -2335,7 +2436,8 @@
     ],
     "altForms": [],
     "familyId": 102,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 103,
@@ -2363,11 +2465,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10114.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/156/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 102,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 104,
@@ -2383,7 +2487,8 @@
     ],
     "altForms": [],
     "familyId": 104,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 105,
@@ -2409,7 +2514,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10115.png",
         "category": "regional",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/160/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 104,
@@ -2444,7 +2550,8 @@
     ],
     "altForms": [],
     "familyId": 106,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 108,
@@ -2460,7 +2567,8 @@
     ],
     "altForms": [],
     "familyId": 108,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 109,
@@ -2476,7 +2584,8 @@
     ],
     "altForms": [],
     "familyId": 109,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 110,
@@ -2507,7 +2616,8 @@
       }
     ],
     "familyId": 109,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 111,
@@ -2555,7 +2665,8 @@
     ],
     "altForms": [],
     "familyId": 113,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 114,
@@ -2571,7 +2682,8 @@
     ],
     "altForms": [],
     "familyId": 114,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 115,
@@ -2597,11 +2709,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10039.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/182_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 115,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 116,
@@ -2617,7 +2731,8 @@
     ],
     "altForms": [],
     "familyId": 116,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 117,
@@ -2648,7 +2763,8 @@
     ],
     "altForms": [],
     "familyId": 118,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 119,
@@ -2706,11 +2822,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10280.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-118/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 120,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 122,
@@ -2742,7 +2860,8 @@
       }
     ],
     "familyId": 122,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 123,
@@ -2758,7 +2877,8 @@
     "regularCardUrl": "https://images.pokemontcg.io/ex1/102_hires.png",
     "altForms": [],
     "familyId": 123,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 4
   },
   {
     "id": 124,
@@ -2775,7 +2895,8 @@
     ],
     "altForms": [],
     "familyId": 124,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 125,
@@ -2832,11 +2953,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10040.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/272/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 127,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 128,
@@ -2862,7 +2985,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10250.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv2/218_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "tauros-paldea-blaze-breed",
@@ -2894,7 +3018,8 @@
       }
     ],
     "familyId": 128,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 129,
@@ -2910,7 +3035,8 @@
     ],
     "altForms": [],
     "familyId": 129,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 130,
@@ -2938,11 +3064,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10041.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/285/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 129,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 131,
@@ -2970,11 +3098,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10204.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/50_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 131,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 132,
@@ -2990,7 +3120,8 @@
     ],
     "altForms": [],
     "familyId": 132,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 133,
@@ -3016,11 +3147,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10205.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH087_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 133,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 134,
@@ -3036,7 +3169,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 135,
@@ -3052,7 +3186,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 136,
@@ -3068,7 +3203,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 1
   },
   {
     "id": 137,
@@ -3084,7 +3220,8 @@
     ],
     "altForms": [],
     "familyId": 137,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 138,
@@ -3101,7 +3238,8 @@
     ],
     "altForms": [],
     "familyId": 138,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 139,
@@ -3118,7 +3256,8 @@
     ],
     "altForms": [],
     "familyId": 138,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 140,
@@ -3178,11 +3317,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10042.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY98_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 142,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 143,
@@ -3208,11 +3349,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10206.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/142_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 143,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 144,
@@ -3240,11 +3383,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10169.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 144,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 145,
@@ -3272,11 +3417,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10170.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 145,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 146,
@@ -3304,11 +3451,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10171.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 146,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 147,
@@ -3339,7 +3488,8 @@
     ],
     "altForms": [],
     "familyId": 147,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 149,
@@ -3367,11 +3517,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10281.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-290/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 147,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 150,
@@ -3411,11 +3563,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10044.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/160_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 150,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 151,
@@ -3431,7 +3585,8 @@
     ],
     "altForms": [],
     "familyId": 151,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 152,
@@ -3447,7 +3602,8 @@
     ],
     "altForms": [],
     "familyId": 152,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 153,
@@ -3488,7 +3644,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10282.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-272/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 152,
@@ -3508,7 +3665,8 @@
     ],
     "altForms": [],
     "familyId": 155,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 156,
@@ -3550,11 +3708,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10233.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/53_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 155,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 3
   },
   {
     "id": 158,
@@ -3570,7 +3730,8 @@
     ],
     "altForms": [],
     "familyId": 158,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 159,
@@ -3611,7 +3772,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10283.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-274/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 158,
@@ -3631,7 +3793,8 @@
     ],
     "altForms": [],
     "familyId": 161,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 162,
@@ -3647,7 +3810,8 @@
     ],
     "altForms": [],
     "familyId": 161,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 163,
@@ -3664,7 +3828,8 @@
     ],
     "altForms": [],
     "familyId": 163,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 164,
@@ -3681,7 +3846,8 @@
     ],
     "altForms": [],
     "familyId": 163,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 165,
@@ -3714,7 +3880,8 @@
     ],
     "altForms": [],
     "familyId": 165,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 167,
@@ -3731,7 +3898,8 @@
     ],
     "altForms": [],
     "familyId": 167,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 168,
@@ -3748,7 +3916,8 @@
     ],
     "altForms": [],
     "familyId": 167,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 169,
@@ -3765,7 +3934,8 @@
     ],
     "altForms": [],
     "familyId": 41,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 170,
@@ -3798,7 +3968,8 @@
     ],
     "altForms": [],
     "familyId": 170,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 172,
@@ -3814,7 +3985,8 @@
     ],
     "altForms": [],
     "familyId": 25,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 173,
@@ -3830,7 +4002,8 @@
     ],
     "altForms": [],
     "familyId": 35,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 174,
@@ -3847,7 +4020,8 @@
     ],
     "altForms": [],
     "familyId": 39,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 175,
@@ -3863,7 +4037,8 @@
     ],
     "altForms": [],
     "familyId": 175,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 176,
@@ -3896,7 +4071,8 @@
     ],
     "altForms": [],
     "familyId": 177,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 5
   },
   {
     "id": 178,
@@ -3913,7 +4089,8 @@
     ],
     "altForms": [],
     "familyId": 177,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 179,
@@ -3929,7 +4106,8 @@
     ],
     "altForms": [],
     "familyId": 179,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 180,
@@ -3945,7 +4123,8 @@
     ],
     "altForms": [],
     "familyId": 179,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 181,
@@ -3972,11 +4151,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10045.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/277/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 179,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 182,
@@ -3992,7 +4173,8 @@
     ],
     "altForms": [],
     "familyId": 43,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 1
   },
   {
     "id": 183,
@@ -4009,7 +4191,8 @@
     ],
     "altForms": [],
     "familyId": 183,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 184,
@@ -4026,7 +4209,8 @@
     ],
     "altForms": [],
     "familyId": 183,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 5
   },
   {
     "id": 185,
@@ -4042,7 +4226,8 @@
     ],
     "altForms": [],
     "familyId": 185,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 186,
@@ -4106,7 +4291,8 @@
     ],
     "altForms": [],
     "familyId": 187,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 190,
@@ -4122,7 +4308,8 @@
     ],
     "altForms": [],
     "familyId": 190,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 191,
@@ -4153,7 +4340,8 @@
     ],
     "altForms": [],
     "familyId": 191,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 193,
@@ -4170,7 +4358,8 @@
     ],
     "altForms": [],
     "familyId": 193,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 194,
@@ -4197,7 +4386,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10253.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv2/221_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 194,
@@ -4233,7 +4423,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 4
+    "familyOrder": 4,
+    "cardRank": 1
   },
   {
     "id": 197,
@@ -4249,7 +4440,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 5
+    "familyOrder": 5,
+    "cardRank": 1
   },
   {
     "id": 198,
@@ -4266,7 +4458,8 @@
     ],
     "altForms": [],
     "familyId": 198,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 199,
@@ -4293,7 +4486,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10172.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/179_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 79,
@@ -4313,7 +4507,8 @@
     ],
     "altForms": [],
     "familyId": 200,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 201,
@@ -4329,7 +4524,8 @@
     ],
     "altForms": [],
     "familyId": 201,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 202,
@@ -4345,7 +4541,8 @@
     ],
     "altForms": [],
     "familyId": 202,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 203,
@@ -4408,7 +4605,8 @@
     ],
     "altForms": [],
     "familyId": 206,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 207,
@@ -4425,7 +4623,8 @@
     ],
     "altForms": [],
     "familyId": 207,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 208,
@@ -4453,11 +4652,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10072.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1a/086/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 95,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 209,
@@ -4473,7 +4674,8 @@
     ],
     "altForms": [],
     "familyId": 209,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 210,
@@ -4489,7 +4691,8 @@
     ],
     "altForms": [],
     "familyId": 209,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 211,
@@ -4521,7 +4724,8 @@
       }
     ],
     "familyId": 211,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 212,
@@ -4549,11 +4753,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10046.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy9/120_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 123,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 213,
@@ -4570,7 +4776,8 @@
     ],
     "altForms": [],
     "familyId": 213,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 214,
@@ -4598,11 +4805,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10047.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 214,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 215,
@@ -4634,7 +4843,8 @@
       }
     ],
     "familyId": 215,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 4
   },
   {
     "id": 216,
@@ -4696,7 +4906,8 @@
     ],
     "altForms": [],
     "familyId": 218,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 220,
@@ -4713,7 +4924,8 @@
     ],
     "altForms": [],
     "familyId": 220,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 221,
@@ -4790,7 +5002,8 @@
     ],
     "altForms": [],
     "familyId": 223,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 225,
@@ -4807,7 +5020,8 @@
     ],
     "altForms": [],
     "familyId": 225,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 226,
@@ -4851,11 +5065,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10284.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-106/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 227,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 228,
@@ -4872,7 +5088,8 @@
     ],
     "altForms": [],
     "familyId": 228,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 229,
@@ -4900,11 +5117,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10048.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/154_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 228,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 230,
@@ -4921,7 +5140,8 @@
     ],
     "altForms": [],
     "familyId": 116,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 231,
@@ -4937,7 +5157,8 @@
     ],
     "altForms": [],
     "familyId": 231,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 232,
@@ -4953,7 +5174,8 @@
     ],
     "altForms": [],
     "familyId": 231,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 233,
@@ -4984,7 +5206,8 @@
     ],
     "altForms": [],
     "familyId": 234,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 235,
@@ -5000,7 +5223,8 @@
     ],
     "altForms": [],
     "familyId": 235,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 236,
@@ -5031,7 +5255,8 @@
     ],
     "altForms": [],
     "familyId": 106,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 0
   },
   {
     "id": 238,
@@ -5078,7 +5303,8 @@
     ],
     "altForms": [],
     "familyId": 126,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 241,
@@ -5094,7 +5320,8 @@
     ],
     "altForms": [],
     "familyId": 241,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 242,
@@ -5110,7 +5337,8 @@
     ],
     "altForms": [],
     "familyId": 113,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 243,
@@ -5126,7 +5354,8 @@
     ],
     "altForms": [],
     "familyId": 243,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 244,
@@ -5142,7 +5371,8 @@
     ],
     "altForms": [],
     "familyId": 244,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 245,
@@ -5158,7 +5388,8 @@
     ],
     "altForms": [],
     "familyId": 245,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 246,
@@ -5175,7 +5406,8 @@
     ],
     "altForms": [],
     "familyId": 246,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 247,
@@ -5219,11 +5451,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10049.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/92_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 246,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 249,
@@ -5240,7 +5474,8 @@
     ],
     "altForms": [],
     "familyId": 249,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 250,
@@ -5257,7 +5492,8 @@
     ],
     "altForms": [],
     "familyId": 250,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 251,
@@ -5274,7 +5510,8 @@
     ],
     "altForms": [],
     "familyId": 251,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 252,
@@ -5331,11 +5568,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10065.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/85_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 252,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 5
   },
   {
     "id": 255,
@@ -5351,7 +5590,8 @@
     ],
     "altForms": [],
     "familyId": 255,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 5
   },
   {
     "id": 256,
@@ -5395,11 +5635,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10050.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/284/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 255,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 258,
@@ -5458,11 +5700,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10064.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/197/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 258,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 5
   },
   {
     "id": 261,
@@ -5478,7 +5722,8 @@
     ],
     "altForms": [],
     "familyId": 261,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 262,
@@ -5494,7 +5739,8 @@
     ],
     "altForms": [],
     "familyId": 261,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 263,
@@ -5601,7 +5847,8 @@
     ],
     "altForms": [],
     "familyId": 265,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 268,
@@ -5633,7 +5880,8 @@
     ],
     "altForms": [],
     "familyId": 265,
-    "familyOrder": 4
+    "familyOrder": 4,
+    "cardRank": 0
   },
   {
     "id": 270,
@@ -5682,7 +5930,8 @@
     ],
     "altForms": [],
     "familyId": 270,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 273,
@@ -5730,7 +5979,8 @@
     ],
     "altForms": [],
     "familyId": 273,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 276,
@@ -5763,7 +6013,8 @@
     ],
     "altForms": [],
     "familyId": 276,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 5
   },
   {
     "id": 278,
@@ -5812,7 +6063,8 @@
     ],
     "altForms": [],
     "familyId": 280,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 281,
@@ -5829,7 +6081,8 @@
     ],
     "altForms": [],
     "familyId": 280,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 282,
@@ -5857,11 +6110,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10051.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/178_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 280,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 283,
@@ -5925,7 +6180,8 @@
     ],
     "altForms": [],
     "familyId": 285,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 287,
@@ -5941,7 +6197,8 @@
     ],
     "altForms": [],
     "familyId": 287,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 288,
@@ -5972,7 +6229,8 @@
     ],
     "altForms": [],
     "familyId": 287,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 290,
@@ -6005,7 +6263,8 @@
     ],
     "altForms": [],
     "familyId": 290,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 292,
@@ -6022,7 +6281,8 @@
     ],
     "altForms": [],
     "familyId": 290,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 293,
@@ -6053,7 +6313,8 @@
     ],
     "altForms": [],
     "familyId": 293,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 295,
@@ -6084,7 +6345,8 @@
     ],
     "altForms": [],
     "familyId": 296,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 297,
@@ -6116,7 +6378,8 @@
     ],
     "altForms": [],
     "familyId": 183,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 299,
@@ -6162,7 +6425,8 @@
     ],
     "altForms": [],
     "familyId": 300,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 302,
@@ -6190,11 +6454,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10066.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/sm11/226_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 302,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 303,
@@ -6222,11 +6488,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10052.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B2/201/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 303,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 304,
@@ -6259,7 +6527,8 @@
     ],
     "altForms": [],
     "familyId": 304,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 306,
@@ -6286,11 +6555,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10053.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy5/154_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 304,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 307,
@@ -6307,7 +6578,8 @@
     ],
     "altForms": [],
     "familyId": 307,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 308,
@@ -6339,7 +6611,8 @@
       }
     ],
     "familyId": 307,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 309,
@@ -6355,7 +6628,8 @@
     ],
     "altForms": [],
     "familyId": 309,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 310,
@@ -6381,11 +6655,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10055.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/158_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 309,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 311,
@@ -6401,7 +6677,8 @@
     ],
     "altForms": [],
     "familyId": 311,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 312,
@@ -6417,7 +6694,8 @@
     ],
     "altForms": [],
     "familyId": 312,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 313,
@@ -6479,7 +6757,8 @@
     ],
     "altForms": [],
     "familyId": 316,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 317,
@@ -6538,11 +6817,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10070.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/127_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 318,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 320,
@@ -6573,7 +6854,8 @@
     ],
     "altForms": [],
     "familyId": 320,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 322,
@@ -6590,7 +6872,8 @@
     ],
     "altForms": [],
     "familyId": 322,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 323,
@@ -6618,11 +6901,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10087.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/156_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 322,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 324,
@@ -6638,7 +6923,8 @@
     ],
     "altForms": [],
     "familyId": 324,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 325,
@@ -6715,7 +7001,8 @@
     ],
     "altForms": [],
     "familyId": 328,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 330,
@@ -6732,7 +7019,8 @@
     ],
     "altForms": [],
     "familyId": 328,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 331,
@@ -6748,7 +7036,8 @@
     ],
     "altForms": [],
     "familyId": 331,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 332,
@@ -6781,7 +7070,8 @@
     ],
     "altForms": [],
     "familyId": 333,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 334,
@@ -6809,11 +7099,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10067.png",
         "category": "mega",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/B1/286/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 333,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 335,
@@ -6860,7 +7152,8 @@
     ],
     "altForms": [],
     "familyId": 337,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 338,
@@ -6877,7 +7170,8 @@
     ],
     "altForms": [],
     "familyId": 338,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 339,
@@ -6910,7 +7204,8 @@
     ],
     "altForms": [],
     "familyId": 339,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 5
   },
   {
     "id": 341,
@@ -6958,7 +7253,8 @@
     ],
     "altForms": [],
     "familyId": 343,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 5
   },
   {
     "id": 344,
@@ -6975,7 +7271,8 @@
     ],
     "altForms": [],
     "familyId": 343,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 345,
@@ -6992,7 +7289,8 @@
     ],
     "altForms": [],
     "familyId": 345,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 346,
@@ -7056,7 +7354,8 @@
     ],
     "altForms": [],
     "familyId": 349,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 350,
@@ -7072,7 +7371,8 @@
     ],
     "altForms": [],
     "familyId": 349,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 351,
@@ -7128,7 +7428,8 @@
       }
     ],
     "familyId": 351,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 352,
@@ -7144,7 +7445,8 @@
     ],
     "altForms": [],
     "familyId": 352,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 353,
@@ -7189,7 +7491,8 @@
       }
     ],
     "familyId": 353,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 355,
@@ -7205,7 +7508,8 @@
     ],
     "altForms": [],
     "familyId": 355,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 356,
@@ -7221,7 +7525,8 @@
     ],
     "altForms": [],
     "familyId": 355,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 357,
@@ -7238,7 +7543,8 @@
     ],
     "altForms": [],
     "familyId": 357,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 358,
@@ -7269,7 +7575,8 @@
       }
     ],
     "familyId": 358,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 359,
@@ -7295,11 +7602,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10057.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/180_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 359,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 360,
@@ -7330,7 +7639,8 @@
     ],
     "altForms": [],
     "familyId": 361,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 362,
@@ -7356,11 +7666,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10074.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy8/156_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 361,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 363,
@@ -7377,7 +7689,8 @@
     ],
     "altForms": [],
     "familyId": 363,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 364,
@@ -7425,7 +7738,8 @@
     ],
     "altForms": [],
     "familyId": 366,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 367,
@@ -7456,7 +7770,8 @@
     ],
     "altForms": [],
     "familyId": 366,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 5
   },
   {
     "id": 369,
@@ -7473,7 +7788,8 @@
     ],
     "altForms": [],
     "familyId": 369,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 370,
@@ -7546,11 +7862,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10089.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY171_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 371,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 374,
@@ -7567,7 +7885,8 @@
     ],
     "altForms": [],
     "familyId": 374,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 375,
@@ -7584,7 +7903,8 @@
     ],
     "altForms": [],
     "familyId": 374,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 376,
@@ -7612,11 +7932,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10076.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY35_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 374,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 377,
@@ -7632,7 +7954,8 @@
     ],
     "altForms": [],
     "familyId": 377,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 378,
@@ -7663,7 +7986,8 @@
     ],
     "altForms": [],
     "familyId": 379,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 380,
@@ -7691,11 +8015,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10062.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/181_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 380,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 381,
@@ -7723,11 +8049,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10063.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy6/102_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 381,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 382,
@@ -7753,11 +8081,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10077.png",
         "category": "primal",
         "tcgUrl": "https://images.pokemontcg.io/xy7/96_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 382,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 4
   },
   {
     "id": 383,
@@ -7784,11 +8114,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10078.png",
         "category": "primal",
         "tcgUrl": "https://images.pokemontcg.io/xy7/97_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 383,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 384,
@@ -7816,11 +8148,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10079.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy7/98_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 384,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 385,
@@ -7837,7 +8171,8 @@
     ],
     "altForms": [],
     "familyId": 385,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 386,
@@ -7893,7 +8228,8 @@
       }
     ],
     "familyId": 386,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 387,
@@ -7909,7 +8245,8 @@
     ],
     "altForms": [],
     "familyId": 387,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 388,
@@ -7925,7 +8262,8 @@
     ],
     "altForms": [],
     "familyId": 387,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 389,
@@ -7957,7 +8295,8 @@
     ],
     "altForms": [],
     "familyId": 390,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 391,
@@ -7990,7 +8329,8 @@
     ],
     "altForms": [],
     "familyId": 390,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 393,
@@ -8006,7 +8346,8 @@
     ],
     "altForms": [],
     "familyId": 393,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 394,
@@ -8038,7 +8379,8 @@
     ],
     "altForms": [],
     "familyId": 393,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 396,
@@ -8055,7 +8397,8 @@
     ],
     "altForms": [],
     "familyId": 396,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 397,
@@ -8103,7 +8446,8 @@
       }
     ],
     "familyId": 396,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 399,
@@ -8119,7 +8463,8 @@
     ],
     "altForms": [],
     "familyId": 399,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 400,
@@ -8136,7 +8481,8 @@
     ],
     "altForms": [],
     "familyId": 399,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 401,
@@ -8167,7 +8513,8 @@
     ],
     "altForms": [],
     "familyId": 401,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 403,
@@ -8183,7 +8530,8 @@
     ],
     "altForms": [],
     "familyId": 403,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 404,
@@ -8214,7 +8562,8 @@
     ],
     "altForms": [],
     "familyId": 403,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 406,
@@ -8231,7 +8580,8 @@
     ],
     "altForms": [],
     "familyId": 315,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 407,
@@ -8248,7 +8598,8 @@
     ],
     "altForms": [],
     "familyId": 315,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 408,
@@ -8311,7 +8662,8 @@
     ],
     "altForms": [],
     "familyId": 410,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 412,
@@ -8431,7 +8783,8 @@
     ],
     "altForms": [],
     "familyId": 415,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 416,
@@ -8448,7 +8801,8 @@
     ],
     "altForms": [],
     "familyId": 415,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 5
   },
   {
     "id": 417,
@@ -8464,7 +8818,8 @@
     ],
     "altForms": [],
     "familyId": 417,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 418,
@@ -8480,7 +8835,8 @@
     ],
     "altForms": [],
     "familyId": 418,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 419,
@@ -8557,7 +8913,8 @@
     ],
     "altForms": [],
     "familyId": 422,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 424,
@@ -8573,7 +8930,8 @@
     ],
     "altForms": [],
     "familyId": 190,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 425,
@@ -8590,7 +8948,8 @@
     ],
     "altForms": [],
     "familyId": 425,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 426,
@@ -8622,7 +8981,8 @@
     ],
     "altForms": [],
     "familyId": 427,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 428,
@@ -8648,7 +9008,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10088.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me2/128_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 427,
@@ -8668,7 +9029,8 @@
     ],
     "altForms": [],
     "familyId": 200,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 430,
@@ -8685,7 +9047,8 @@
     ],
     "altForms": [],
     "familyId": 198,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 431,
@@ -8701,7 +9064,8 @@
     ],
     "altForms": [],
     "familyId": 431,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 432,
@@ -8764,7 +9128,8 @@
     ],
     "altForms": [],
     "familyId": 434,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 436,
@@ -8781,7 +9146,8 @@
     ],
     "altForms": [],
     "familyId": 436,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 437,
@@ -8798,7 +9164,8 @@
     ],
     "altForms": [],
     "familyId": 436,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 438,
@@ -8861,7 +9228,8 @@
     ],
     "altForms": [],
     "familyId": 441,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 442,
@@ -8878,7 +9246,8 @@
     ],
     "altForms": [],
     "familyId": 442,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 443,
@@ -8895,7 +9264,8 @@
     ],
     "altForms": [],
     "familyId": 443,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 444,
@@ -8939,11 +9309,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10058.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY168_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 443,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 446,
@@ -8974,7 +9346,8 @@
     ],
     "altForms": [],
     "familyId": 447,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 448,
@@ -9002,11 +9375,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10059.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/179_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 447,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 449,
@@ -9022,7 +9397,8 @@
     ],
     "altForms": [],
     "familyId": 449,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 450,
@@ -9038,7 +9414,8 @@
     ],
     "altForms": [],
     "familyId": 449,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 451,
@@ -9071,7 +9448,8 @@
     ],
     "altForms": [],
     "familyId": 451,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 453,
@@ -9088,7 +9466,8 @@
     ],
     "altForms": [],
     "familyId": 453,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 454,
@@ -9105,7 +9484,8 @@
     ],
     "altForms": [],
     "familyId": 453,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 455,
@@ -9121,7 +9501,8 @@
     ],
     "altForms": [],
     "familyId": 455,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 456,
@@ -9152,7 +9533,8 @@
     ],
     "altForms": [],
     "familyId": 456,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 458,
@@ -9169,7 +9551,8 @@
     ],
     "altForms": [],
     "familyId": 226,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 459,
@@ -9186,7 +9569,8 @@
     ],
     "altForms": [],
     "familyId": 459,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 460,
@@ -9214,11 +9598,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10060.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/me1/157_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 459,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 461,
@@ -9235,7 +9621,8 @@
     ],
     "altForms": [],
     "familyId": 215,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 462,
@@ -9252,7 +9639,8 @@
     ],
     "altForms": [],
     "familyId": 81,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 463,
@@ -9268,7 +9656,8 @@
     ],
     "altForms": [],
     "familyId": 108,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 464,
@@ -9285,7 +9674,8 @@
     ],
     "altForms": [],
     "familyId": 111,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 465,
@@ -9301,7 +9691,8 @@
     ],
     "altForms": [],
     "familyId": 114,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 466,
@@ -9317,7 +9708,8 @@
     ],
     "altForms": [],
     "familyId": 125,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 467,
@@ -9333,7 +9725,8 @@
     ],
     "altForms": [],
     "familyId": 126,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 468,
@@ -9350,7 +9743,8 @@
     ],
     "altForms": [],
     "familyId": 175,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 469,
@@ -9367,7 +9761,8 @@
     ],
     "altForms": [],
     "familyId": 193,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 470,
@@ -9383,7 +9778,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 6
+    "familyOrder": 6,
+    "cardRank": 1
   },
   {
     "id": 471,
@@ -9399,7 +9795,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 7
+    "familyOrder": 7,
+    "cardRank": 1
   },
   {
     "id": 472,
@@ -9432,7 +9829,8 @@
     ],
     "altForms": [],
     "familyId": 220,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 474,
@@ -9448,7 +9846,8 @@
     ],
     "altForms": [],
     "familyId": 137,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 475,
@@ -9476,11 +9875,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10068.png",
         "category": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy6/100_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 280,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 1
   },
   {
     "id": 476,
@@ -9497,7 +9898,8 @@
     ],
     "altForms": [],
     "familyId": 299,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 477,
@@ -9513,7 +9915,8 @@
     ],
     "altForms": [],
     "familyId": 355,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 478,
@@ -9541,11 +9944,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10285.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-275/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 361,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 479,
@@ -9615,7 +10020,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10011.png",
         "category": "regional",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-250/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "rotom-mow",
@@ -9633,7 +10039,8 @@
       }
     ],
     "familyId": 479,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 480,
@@ -9664,7 +10071,8 @@
     ],
     "altForms": [],
     "familyId": 481,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 482,
@@ -9707,11 +10115,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/177_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 483,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 484,
@@ -9739,11 +10149,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10246.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/167_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 484,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 485,
@@ -9775,7 +10187,8 @@
       }
     ],
     "familyId": 485,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 486,
@@ -9791,7 +10204,8 @@
     ],
     "altForms": [],
     "familyId": 486,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 487,
@@ -9823,7 +10237,8 @@
       }
     ],
     "familyId": 487,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 488,
@@ -9839,7 +10254,8 @@
     ],
     "altForms": [],
     "familyId": 488,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 489,
@@ -9855,7 +10271,8 @@
     ],
     "altForms": [],
     "familyId": 489,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 490,
@@ -9871,7 +10288,8 @@
     ],
     "altForms": [],
     "familyId": 489,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 491,
@@ -9897,11 +10315,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10312.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-116/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 491,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 492,
@@ -9932,7 +10352,8 @@
       }
     ],
     "familyId": 492,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 493,
@@ -9948,7 +10369,8 @@
     ],
     "altForms": [],
     "familyId": 493,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 494,
@@ -9965,7 +10387,8 @@
     ],
     "altForms": [],
     "familyId": 494,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 495,
@@ -9981,7 +10404,8 @@
     ],
     "altForms": [],
     "familyId": 495,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 496,
@@ -9997,7 +10421,8 @@
     ],
     "altForms": [],
     "familyId": 495,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 497,
@@ -10013,7 +10438,8 @@
     ],
     "altForms": [],
     "familyId": 495,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 498,
@@ -10029,7 +10455,8 @@
     ],
     "altForms": [],
     "familyId": 498,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 499,
@@ -10046,7 +10473,8 @@
     ],
     "altForms": [],
     "familyId": 498,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 500,
@@ -10074,11 +10502,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10286.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-273/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 498,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 501,
@@ -10094,7 +10524,8 @@
     ],
     "altForms": [],
     "familyId": 501,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 502,
@@ -10110,7 +10541,8 @@
     ],
     "altForms": [],
     "familyId": 501,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 503,
@@ -10141,7 +10573,8 @@
       }
     ],
     "familyId": 501,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 504,
@@ -10157,7 +10590,8 @@
     ],
     "altForms": [],
     "familyId": 504,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 505,
@@ -10173,7 +10607,8 @@
     ],
     "altForms": [],
     "familyId": 504,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 506,
@@ -10189,7 +10624,8 @@
     ],
     "altForms": [],
     "familyId": 506,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 507,
@@ -10205,7 +10641,8 @@
     ],
     "altForms": [],
     "familyId": 506,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 508,
@@ -10221,7 +10658,8 @@
     ],
     "altForms": [],
     "familyId": 506,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 509,
@@ -10237,7 +10675,8 @@
     ],
     "altForms": [],
     "familyId": 509,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 510,
@@ -10253,7 +10692,8 @@
     ],
     "altForms": [],
     "familyId": 509,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 511,
@@ -10269,7 +10709,8 @@
     ],
     "altForms": [],
     "familyId": 511,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 512,
@@ -10285,7 +10726,8 @@
     ],
     "altForms": [],
     "familyId": 511,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 513,
@@ -10301,7 +10743,8 @@
     ],
     "altForms": [],
     "familyId": 513,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 514,
@@ -10317,7 +10760,8 @@
     ],
     "altForms": [],
     "familyId": 513,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 515,
@@ -10333,7 +10777,8 @@
     ],
     "altForms": [],
     "familyId": 515,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 516,
@@ -10349,7 +10794,8 @@
     ],
     "altForms": [],
     "familyId": 515,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 517,
@@ -10365,7 +10811,8 @@
     ],
     "altForms": [],
     "familyId": 517,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 518,
@@ -10381,7 +10828,8 @@
     ],
     "altForms": [],
     "familyId": 517,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 519,
@@ -10398,7 +10846,8 @@
     ],
     "altForms": [],
     "familyId": 519,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 520,
@@ -10415,7 +10864,8 @@
     ],
     "altForms": [],
     "familyId": 519,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 521,
@@ -10432,7 +10882,8 @@
     ],
     "altForms": [],
     "familyId": 519,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 522,
@@ -10448,7 +10899,8 @@
     ],
     "altForms": [],
     "familyId": 522,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 523,
@@ -10464,7 +10916,8 @@
     ],
     "altForms": [],
     "familyId": 522,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 524,
@@ -10480,7 +10933,8 @@
     ],
     "altForms": [],
     "familyId": 524,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 525,
@@ -10496,7 +10950,8 @@
     ],
     "altForms": [],
     "familyId": 524,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 526,
@@ -10512,7 +10967,8 @@
     ],
     "altForms": [],
     "familyId": 524,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 527,
@@ -10529,7 +10985,8 @@
     ],
     "altForms": [],
     "familyId": 527,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 528,
@@ -10546,7 +11003,8 @@
     ],
     "altForms": [],
     "familyId": 527,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 529,
@@ -10562,7 +11020,8 @@
     ],
     "altForms": [],
     "familyId": 529,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 530,
@@ -10590,11 +11049,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10287.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-103/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 529,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 531,
@@ -10621,11 +11082,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10069.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-253/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 531,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 532,
@@ -10641,7 +11104,8 @@
     ],
     "altForms": [],
     "familyId": 532,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 533,
@@ -10657,7 +11121,8 @@
     ],
     "altForms": [],
     "familyId": 532,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 534,
@@ -10673,7 +11138,8 @@
     ],
     "altForms": [],
     "familyId": 532,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 535,
@@ -10689,7 +11155,8 @@
     ],
     "altForms": [],
     "familyId": 535,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 536,
@@ -10706,7 +11173,8 @@
     ],
     "altForms": [],
     "familyId": 535,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 537,
@@ -10723,7 +11191,8 @@
     ],
     "altForms": [],
     "familyId": 535,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 538,
@@ -10739,7 +11208,8 @@
     ],
     "altForms": [],
     "familyId": 538,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 539,
@@ -10755,7 +11225,8 @@
     ],
     "altForms": [],
     "familyId": 539,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 540,
@@ -10772,7 +11243,8 @@
     ],
     "altForms": [],
     "familyId": 540,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 541,
@@ -10789,7 +11261,8 @@
     ],
     "altForms": [],
     "familyId": 540,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 542,
@@ -10806,7 +11279,8 @@
     ],
     "altForms": [],
     "familyId": 540,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 543,
@@ -10823,7 +11297,8 @@
     ],
     "altForms": [],
     "familyId": 543,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 544,
@@ -10840,7 +11315,8 @@
     ],
     "altForms": [],
     "familyId": 543,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 545,
@@ -10872,7 +11348,8 @@
       }
     ],
     "familyId": 543,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 546,
@@ -10889,7 +11366,8 @@
     ],
     "altForms": [],
     "familyId": 546,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 547,
@@ -10906,7 +11384,8 @@
     ],
     "altForms": [],
     "familyId": 546,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 548,
@@ -10922,7 +11401,8 @@
     ],
     "altForms": [],
     "familyId": 548,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 549,
@@ -10949,11 +11429,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10237.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/163_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 548,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 550,
@@ -10996,7 +11478,8 @@
       }
     ],
     "familyId": 550,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 551,
@@ -11013,7 +11496,8 @@
     ],
     "altForms": [],
     "familyId": 551,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 552,
@@ -11030,7 +11514,8 @@
     ],
     "altForms": [],
     "familyId": 551,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 553,
@@ -11047,7 +11532,8 @@
     ],
     "altForms": [],
     "familyId": 551,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 554,
@@ -11077,7 +11563,8 @@
       }
     ],
     "familyId": 554,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 555,
@@ -11117,7 +11604,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10177.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/36_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       },
       {
         "slug": "darmanitan-galar-zen",
@@ -11135,7 +11623,8 @@
       }
     ],
     "familyId": 554,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 556,
@@ -11151,7 +11640,8 @@
     ],
     "altForms": [],
     "familyId": 556,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 557,
@@ -11168,7 +11658,8 @@
     ],
     "altForms": [],
     "familyId": 557,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 558,
@@ -11185,7 +11676,8 @@
     ],
     "altForms": [],
     "familyId": 557,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 559,
@@ -11202,7 +11694,8 @@
     ],
     "altForms": [],
     "familyId": 559,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 560,
@@ -11230,11 +11723,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10289.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-285/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 559,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 561,
@@ -11251,7 +11746,8 @@
     ],
     "altForms": [],
     "familyId": 561,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 562,
@@ -11282,7 +11778,8 @@
       }
     ],
     "familyId": 562,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 563,
@@ -11298,7 +11795,8 @@
     ],
     "altForms": [],
     "familyId": 562,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 564,
@@ -11315,7 +11813,8 @@
     ],
     "altForms": [],
     "familyId": 564,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 565,
@@ -11332,7 +11831,8 @@
     ],
     "altForms": [],
     "familyId": 564,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 566,
@@ -11365,7 +11865,8 @@
     ],
     "altForms": [],
     "familyId": 566,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 568,
@@ -11381,7 +11882,8 @@
     ],
     "altForms": [],
     "familyId": 568,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 569,
@@ -11407,11 +11909,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10207.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh7/101_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 568,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 570,
@@ -11442,7 +11946,8 @@
       }
     ],
     "familyId": 570,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 571,
@@ -11473,7 +11978,8 @@
       }
     ],
     "familyId": 570,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 572,
@@ -11489,7 +11995,8 @@
     ],
     "altForms": [],
     "familyId": 572,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 573,
@@ -11499,13 +12006,14 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/573.png",
-    "genus": "Scarf Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/183_hires.png"
     ],
     "altForms": [],
-    "familyId": 572,
-    "familyOrder": 1
+    "familyId": 573,
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 574,
@@ -11521,7 +12029,8 @@
     ],
     "altForms": [],
     "familyId": 574,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 575,
@@ -11537,7 +12046,8 @@
     ],
     "altForms": [],
     "familyId": 574,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 576,
@@ -11547,13 +12057,14 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/576.png",
-    "genus": "Astral Body Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/SVP/SVP_211_R_EN.png"
     ],
     "altForms": [],
-    "familyId": 574,
-    "familyOrder": 2
+    "familyId": 576,
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 577,
@@ -11569,7 +12080,8 @@
     ],
     "altForms": [],
     "familyId": 577,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 578,
@@ -11585,7 +12097,8 @@
     ],
     "altForms": [],
     "familyId": 577,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 579,
@@ -11601,7 +12114,8 @@
     ],
     "altForms": [],
     "familyId": 577,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 580,
@@ -11618,7 +12132,8 @@
     ],
     "altForms": [],
     "familyId": 580,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 581,
@@ -11635,7 +12150,8 @@
     ],
     "altForms": [],
     "familyId": 580,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 582,
@@ -11651,7 +12167,8 @@
     ],
     "altForms": [],
     "familyId": 582,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 583,
@@ -11667,7 +12184,8 @@
     ],
     "altForms": [],
     "familyId": 582,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 584,
@@ -11683,7 +12201,8 @@
     ],
     "altForms": [],
     "familyId": 582,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 585,
@@ -11700,7 +12219,8 @@
     ],
     "altForms": [],
     "familyId": 585,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 586,
@@ -11717,7 +12237,8 @@
     ],
     "altForms": [],
     "familyId": 585,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 587,
@@ -11734,7 +12255,8 @@
     ],
     "altForms": [],
     "familyId": 587,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 588,
@@ -11750,7 +12272,8 @@
     ],
     "altForms": [],
     "familyId": 588,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 589,
@@ -11767,7 +12290,8 @@
     ],
     "altForms": [],
     "familyId": 588,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 590,
@@ -11784,7 +12308,8 @@
     ],
     "altForms": [],
     "familyId": 590,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 591,
@@ -11801,7 +12326,8 @@
     ],
     "altForms": [],
     "familyId": 590,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 592,
@@ -11818,7 +12344,8 @@
     ],
     "altForms": [],
     "familyId": 592,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 593,
@@ -11835,7 +12362,8 @@
     ],
     "altForms": [],
     "familyId": 592,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 594,
@@ -11851,7 +12379,8 @@
     ],
     "altForms": [],
     "familyId": 594,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 595,
@@ -11868,7 +12397,8 @@
     ],
     "altForms": [],
     "familyId": 595,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 596,
@@ -11885,7 +12415,8 @@
     ],
     "altForms": [],
     "familyId": 595,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 597,
@@ -11902,7 +12433,8 @@
     ],
     "altForms": [],
     "familyId": 597,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 598,
@@ -11919,7 +12451,8 @@
     ],
     "altForms": [],
     "familyId": 597,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 599,
@@ -11935,7 +12468,8 @@
     ],
     "altForms": [],
     "familyId": 599,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 600,
@@ -11951,7 +12485,8 @@
     ],
     "altForms": [],
     "familyId": 599,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 601,
@@ -11967,7 +12502,8 @@
     ],
     "altForms": [],
     "familyId": 599,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 602,
@@ -11983,7 +12519,8 @@
     ],
     "altForms": [],
     "familyId": 602,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 603,
@@ -11999,7 +12536,8 @@
     ],
     "altForms": [],
     "familyId": 602,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 604,
@@ -12025,11 +12563,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10290.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-278/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 602,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 605,
@@ -12045,7 +12585,8 @@
     ],
     "altForms": [],
     "familyId": 605,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 606,
@@ -12061,7 +12602,8 @@
     ],
     "altForms": [],
     "familyId": 605,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 607,
@@ -12078,7 +12620,8 @@
     ],
     "altForms": [],
     "familyId": 607,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 608,
@@ -12095,7 +12638,8 @@
     ],
     "altForms": [],
     "familyId": 607,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 609,
@@ -12123,11 +12667,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10291.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-115/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 607,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 610,
@@ -12143,7 +12689,8 @@
     ],
     "altForms": [],
     "familyId": 610,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 611,
@@ -12159,7 +12706,8 @@
     ],
     "altForms": [],
     "familyId": 610,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 612,
@@ -12175,7 +12723,8 @@
     ],
     "altForms": [],
     "familyId": 610,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 613,
@@ -12191,7 +12740,8 @@
     ],
     "altForms": [],
     "familyId": 613,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 614,
@@ -12207,7 +12757,8 @@
     ],
     "altForms": [],
     "familyId": 613,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 615,
@@ -12223,7 +12774,8 @@
     ],
     "altForms": [],
     "familyId": 615,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 616,
@@ -12239,7 +12791,8 @@
     ],
     "altForms": [],
     "familyId": 616,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 617,
@@ -12255,7 +12808,8 @@
     ],
     "altForms": [],
     "familyId": 616,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 618,
@@ -12283,11 +12837,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10180.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/128_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 618,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 619,
@@ -12303,7 +12859,8 @@
     ],
     "altForms": [],
     "familyId": 619,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 620,
@@ -12319,7 +12876,8 @@
     ],
     "altForms": [],
     "familyId": 619,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 621,
@@ -12335,7 +12893,8 @@
     ],
     "altForms": [],
     "familyId": 621,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 622,
@@ -12352,7 +12911,8 @@
     ],
     "altForms": [],
     "familyId": 622,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 623,
@@ -12384,7 +12944,8 @@
       }
     ],
     "familyId": 622,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 624,
@@ -12401,7 +12962,8 @@
     ],
     "altForms": [],
     "familyId": 624,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 625,
@@ -12418,7 +12980,8 @@
     ],
     "altForms": [],
     "familyId": 624,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 626,
@@ -12434,7 +12997,8 @@
     ],
     "altForms": [],
     "familyId": 626,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 627,
@@ -12451,7 +13015,8 @@
     ],
     "altForms": [],
     "familyId": 627,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 628,
@@ -12483,7 +13048,8 @@
       }
     ],
     "familyId": 627,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 629,
@@ -12500,7 +13066,8 @@
     ],
     "altForms": [],
     "familyId": 629,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 630,
@@ -12517,7 +13084,8 @@
     ],
     "altForms": [],
     "familyId": 629,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 631,
@@ -12533,7 +13101,8 @@
     ],
     "altForms": [],
     "familyId": 631,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 632,
@@ -12550,7 +13119,8 @@
     ],
     "altForms": [],
     "familyId": 632,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 633,
@@ -12567,7 +13137,8 @@
     ],
     "altForms": [],
     "familyId": 633,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 634,
@@ -12584,7 +13155,8 @@
     ],
     "altForms": [],
     "familyId": 633,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 635,
@@ -12601,7 +13173,8 @@
     ],
     "altForms": [],
     "familyId": 633,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 636,
@@ -12618,7 +13191,8 @@
     ],
     "altForms": [],
     "familyId": 636,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 637,
@@ -12635,7 +13209,8 @@
     ],
     "altForms": [],
     "familyId": 636,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 638,
@@ -12652,7 +13227,8 @@
     ],
     "altForms": [],
     "familyId": 638,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 639,
@@ -12669,7 +13245,8 @@
     ],
     "altForms": [],
     "familyId": 639,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 640,
@@ -12686,7 +13263,8 @@
     ],
     "altForms": [],
     "familyId": 640,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 641,
@@ -12716,7 +13294,8 @@
       }
     ],
     "familyId": 641,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 642,
@@ -12748,7 +13327,8 @@
       }
     ],
     "familyId": 642,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 643,
@@ -12765,7 +13345,8 @@
     ],
     "altForms": [],
     "familyId": 643,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 644,
@@ -12782,7 +13363,8 @@
     ],
     "altForms": [],
     "familyId": 644,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 645,
@@ -12814,7 +13396,8 @@
       }
     ],
     "familyId": 645,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 646,
@@ -12860,7 +13443,8 @@
       }
     ],
     "familyId": 646,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 647,
@@ -12892,7 +13476,8 @@
       }
     ],
     "familyId": 647,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 648,
@@ -12924,7 +13509,8 @@
       }
     ],
     "familyId": 648,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 649,
@@ -12941,7 +13527,8 @@
     ],
     "altForms": [],
     "familyId": 649,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 650,
@@ -12957,7 +13544,8 @@
     ],
     "altForms": [],
     "familyId": 650,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 651,
@@ -13004,7 +13592,8 @@
       }
     ],
     "familyId": 650,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 2
   },
   {
     "id": 653,
@@ -13020,7 +13609,8 @@
     ],
     "altForms": [],
     "familyId": 653,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 654,
@@ -13036,7 +13626,8 @@
     ],
     "altForms": [],
     "familyId": 653,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 655,
@@ -13047,28 +13638,14 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/655.png",
-    "genus": "Fox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/swsh11/27_hires.png"
     ],
-    "altForms": [
-      {
-        "slug": "delphox-mega",
-        "displayName": "Mega Delphox",
-        "types": [
-          "fire",
-          "psychic"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10293.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10293.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10293.png",
-        "category": "mega",
-        "tcgUrl": "https://images.scrydex.com/pokemon/me5-8/large",
-        "regularCardUrl": null
-      }
-    ],
-    "familyId": 653,
-    "familyOrder": 2
+    "altForms": [],
+    "familyId": 655,
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 656,
@@ -13084,7 +13661,8 @@
     ],
     "altForms": [],
     "familyId": 656,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 657,
@@ -13100,7 +13678,8 @@
     ],
     "altForms": [],
     "familyId": 656,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 658,
@@ -13128,7 +13707,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10117.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY133_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "greninja-mega",
@@ -13142,11 +13722,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10294.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-116/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 656,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 659,
@@ -13162,7 +13744,8 @@
     ],
     "altForms": [],
     "familyId": 659,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 5
   },
   {
     "id": 660,
@@ -13211,7 +13794,8 @@
     ],
     "altForms": [],
     "familyId": 661,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 663,
@@ -13228,7 +13812,8 @@
     ],
     "altForms": [],
     "familyId": 661,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 664,
@@ -13259,7 +13844,8 @@
     ],
     "altForms": [],
     "familyId": 664,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 666,
@@ -13276,7 +13862,8 @@
     ],
     "altForms": [],
     "familyId": 664,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 667,
@@ -13293,7 +13880,8 @@
     ],
     "altForms": [],
     "familyId": 667,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 668,
@@ -13321,11 +13909,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10295.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-99/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 667,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 669,
@@ -13365,7 +13955,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10296.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-117/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 669,
@@ -13385,7 +13976,8 @@
     ],
     "altForms": [],
     "familyId": 669,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 672,
@@ -13401,7 +13993,8 @@
     ],
     "altForms": [],
     "familyId": 672,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 673,
@@ -13432,7 +14025,8 @@
     ],
     "altForms": [],
     "familyId": 674,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 675,
@@ -13479,7 +14073,8 @@
     ],
     "altForms": [],
     "familyId": 677,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 678,
@@ -13521,7 +14116,8 @@
       }
     ],
     "familyId": 677,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 679,
@@ -13554,7 +14150,8 @@
     ],
     "altForms": [],
     "familyId": 679,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 681,
@@ -13586,7 +14183,8 @@
       }
     ],
     "familyId": 679,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 682,
@@ -13647,7 +14245,8 @@
     ],
     "altForms": [],
     "familyId": 684,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 686,
@@ -13695,7 +14294,8 @@
       }
     ],
     "familyId": 686,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 688,
@@ -13722,27 +14322,12 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/689.png",
-    "genus": "Collective Pokémon",
+    "genus": null,
     "bgCandidates": [],
     "regularCardUrl": "https://images.pokemontcg.io/swsh11/107_hires.png",
-    "altForms": [
-      {
-        "slug": "barbaracle-mega",
-        "displayName": "Mega Barbaracle",
-        "types": [
-          "rock",
-          "fighting"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10298.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10298.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10298.png",
-        "category": "mega",
-        "tcgUrl": null,
-        "regularCardUrl": null
-      }
-    ],
-    "familyId": 688,
-    "familyOrder": 1
+    "altForms": [],
+    "familyId": 689,
+    "familyOrder": 0
   },
   {
     "id": 690,
@@ -13786,11 +14371,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10299.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me4-118/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 690,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 692,
@@ -13806,7 +14393,8 @@
     ],
     "altForms": [],
     "familyId": 692,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 693,
@@ -13816,13 +14404,14 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/693.png",
-    "genus": "Howitzer Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/me1/141_hires.png"
     ],
     "altForms": [],
-    "familyId": 692,
-    "familyOrder": 1
+    "familyId": 693,
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 694,
@@ -13839,7 +14428,8 @@
     ],
     "altForms": [],
     "familyId": 694,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 695,
@@ -13856,7 +14446,8 @@
     ],
     "altForms": [],
     "familyId": 694,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 696,
@@ -13873,7 +14464,8 @@
     ],
     "altForms": [],
     "familyId": 696,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 697,
@@ -13890,7 +14482,8 @@
     ],
     "altForms": [],
     "familyId": 696,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 1
   },
   {
     "id": 698,
@@ -13923,7 +14516,8 @@
     ],
     "altForms": [],
     "familyId": 698,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 700,
@@ -13939,7 +14533,8 @@
     ],
     "altForms": [],
     "familyId": 133,
-    "familyOrder": 8
+    "familyOrder": 8,
+    "cardRank": 1
   },
   {
     "id": 701,
@@ -13967,11 +14562,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10300.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-283/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 701,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 702,
@@ -13988,7 +14585,8 @@
     ],
     "altForms": [],
     "familyId": 702,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 703,
@@ -14005,7 +14603,8 @@
     ],
     "altForms": [],
     "familyId": 703,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 704,
@@ -14021,7 +14620,8 @@
     ],
     "altForms": [],
     "familyId": 704,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 705,
@@ -14052,7 +14652,8 @@
       }
     ],
     "familyId": 704,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 706,
@@ -14078,7 +14679,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10242.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG21_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 704,
@@ -14131,7 +14733,8 @@
     ],
     "altForms": [],
     "familyId": 708,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 710,
@@ -14311,7 +14914,8 @@
     ],
     "altForms": [],
     "familyId": 714,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 715,
@@ -14328,7 +14932,8 @@
     ],
     "altForms": [],
     "familyId": 714,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 716,
@@ -14344,7 +14949,8 @@
     ],
     "altForms": [],
     "familyId": 716,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 717,
@@ -14361,7 +14967,8 @@
     ],
     "altForms": [],
     "familyId": 717,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 718,
@@ -14417,11 +15024,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10301.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me3-120/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 718,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 719,
@@ -14449,11 +15058,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10075.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me2pt5-282/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 719,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 720,
@@ -14485,7 +15096,8 @@
       }
     ],
     "familyId": 720,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 721,
@@ -14502,7 +15114,8 @@
     ],
     "altForms": [],
     "familyId": 721,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 722,
@@ -14519,7 +15132,8 @@
     ],
     "altForms": [],
     "familyId": 722,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 723,
@@ -14563,11 +15177,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10244.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH238_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 722,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 725,
@@ -14583,7 +15199,8 @@
     ],
     "altForms": [],
     "familyId": 725,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 726,
@@ -14615,7 +15232,8 @@
     ],
     "altForms": [],
     "familyId": 725,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 728,
@@ -14631,7 +15249,8 @@
     ],
     "altForms": [],
     "familyId": 728,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 729,
@@ -14663,7 +15282,8 @@
     ],
     "altForms": [],
     "familyId": 728,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 731,
@@ -14680,7 +15300,8 @@
     ],
     "altForms": [],
     "familyId": 731,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 732,
@@ -14713,7 +15334,8 @@
     ],
     "altForms": [],
     "familyId": 731,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 734,
@@ -14744,7 +15366,8 @@
     ],
     "altForms": [],
     "familyId": 734,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 736,
@@ -14776,7 +15399,8 @@
     ],
     "altForms": [],
     "familyId": 736,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 738,
@@ -14793,7 +15417,8 @@
     ],
     "altForms": [],
     "familyId": 736,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 739,
@@ -14840,7 +15465,8 @@
       }
     ],
     "familyId": 739,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 741,
@@ -14900,7 +15526,8 @@
       }
     ],
     "familyId": 741,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 742,
@@ -14917,7 +15544,8 @@
     ],
     "altForms": [],
     "familyId": 742,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 743,
@@ -14934,7 +15562,8 @@
     ],
     "altForms": [],
     "familyId": 742,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 744,
@@ -14950,7 +15579,8 @@
     ],
     "altForms": [],
     "familyId": 744,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 745,
@@ -14989,11 +15619,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10152.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv9/166_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 744,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 746,
@@ -15019,11 +15651,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10127.png",
         "category": "forme",
         "tcgUrl": "https://assets.tcgdex.net/en/tcgp/A3/202/high.webp",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 1
       }
     ],
     "familyId": 746,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 747,
@@ -15056,7 +15690,8 @@
     ],
     "altForms": [],
     "familyId": 747,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 749,
@@ -15087,7 +15722,8 @@
     ],
     "altForms": [],
     "familyId": 749,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 751,
@@ -15135,7 +15771,8 @@
     ],
     "altForms": [],
     "familyId": 753,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 754,
@@ -15151,7 +15788,8 @@
     ],
     "altForms": [],
     "familyId": 753,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 755,
@@ -15168,7 +15806,8 @@
     ],
     "altForms": [],
     "familyId": 755,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 756,
@@ -15185,7 +15824,8 @@
     ],
     "altForms": [],
     "familyId": 755,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 757,
@@ -15202,7 +15842,8 @@
     ],
     "altForms": [],
     "familyId": 757,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 758,
@@ -15219,7 +15860,8 @@
     ],
     "altForms": [],
     "familyId": 757,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 759,
@@ -15236,7 +15878,8 @@
     ],
     "altForms": [],
     "familyId": 759,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 760,
@@ -15253,7 +15896,8 @@
     ],
     "altForms": [],
     "familyId": 759,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 761,
@@ -15299,7 +15943,8 @@
     ],
     "altForms": [],
     "familyId": 761,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 764,
@@ -15315,7 +15960,8 @@
     ],
     "altForms": [],
     "familyId": 764,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 765,
@@ -15332,7 +15978,8 @@
     ],
     "altForms": [],
     "familyId": 765,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 766,
@@ -15348,7 +15995,8 @@
     ],
     "altForms": [],
     "familyId": 766,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 767,
@@ -15365,7 +16013,8 @@
     ],
     "altForms": [],
     "familyId": 767,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 768,
@@ -15397,7 +16046,8 @@
       }
     ],
     "familyId": 767,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 769,
@@ -15414,7 +16064,8 @@
     ],
     "altForms": [],
     "familyId": 769,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 770,
@@ -15431,7 +16082,8 @@
     ],
     "altForms": [],
     "familyId": 769,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 771,
@@ -15447,7 +16099,8 @@
     ],
     "altForms": [],
     "familyId": 771,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 772,
@@ -15478,7 +16131,8 @@
     ],
     "altForms": [],
     "familyId": 772,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 774,
@@ -15495,7 +16149,8 @@
     ],
     "altForms": [],
     "familyId": 774,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 775,
@@ -15511,7 +16166,8 @@
     ],
     "altForms": [],
     "familyId": 775,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 776,
@@ -15528,7 +16184,8 @@
     ],
     "altForms": [],
     "familyId": 776,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 777,
@@ -15545,7 +16202,8 @@
     ],
     "altForms": [],
     "familyId": 777,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 778,
@@ -15577,7 +16235,8 @@
       }
     ],
     "familyId": 778,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 779,
@@ -15594,7 +16253,8 @@
     ],
     "altForms": [],
     "familyId": 779,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 780,
@@ -15626,7 +16286,8 @@
       }
     ],
     "familyId": 780,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 781,
@@ -15643,7 +16304,8 @@
     ],
     "altForms": [],
     "familyId": 781,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 782,
@@ -15691,7 +16353,8 @@
     ],
     "altForms": [],
     "familyId": 782,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 785,
@@ -15708,7 +16371,8 @@
     ],
     "altForms": [],
     "familyId": 785,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 786,
@@ -15725,7 +16389,8 @@
     ],
     "altForms": [],
     "familyId": 786,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 787,
@@ -15742,7 +16407,8 @@
     ],
     "altForms": [],
     "familyId": 787,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 788,
@@ -15759,7 +16425,8 @@
     ],
     "altForms": [],
     "familyId": 788,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 789,
@@ -15775,7 +16442,8 @@
     ],
     "altForms": [],
     "familyId": 789,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 790,
@@ -15807,7 +16475,8 @@
     ],
     "altForms": [],
     "familyId": 789,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 792,
@@ -15824,7 +16493,8 @@
     ],
     "altForms": [],
     "familyId": 789,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 1
   },
   {
     "id": 793,
@@ -15841,7 +16511,8 @@
     ],
     "altForms": [],
     "familyId": 793,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 794,
@@ -15858,7 +16529,8 @@
     ],
     "altForms": [],
     "familyId": 794,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 795,
@@ -15875,7 +16547,8 @@
     ],
     "altForms": [],
     "familyId": 795,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 796,
@@ -15891,7 +16564,8 @@
     ],
     "altForms": [],
     "familyId": 796,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 797,
@@ -15908,7 +16582,8 @@
     ],
     "altForms": [],
     "familyId": 797,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 798,
@@ -15925,7 +16600,8 @@
     ],
     "altForms": [],
     "familyId": 798,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 799,
@@ -15942,7 +16618,8 @@
     ],
     "altForms": [],
     "familyId": 799,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 800,
@@ -15969,7 +16646,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10155.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM102_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "necrozma-dawn",
@@ -15983,7 +16661,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10156.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM101_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       },
       {
         "slug": "necrozma-ultra",
@@ -15997,11 +16676,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10157.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM126_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 2
       }
     ],
     "familyId": 800,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 801,
@@ -16033,7 +16714,8 @@
       }
     ],
     "familyId": 801,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 802,
@@ -16050,7 +16732,8 @@
     ],
     "altForms": [],
     "familyId": 802,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 803,
@@ -16082,7 +16765,8 @@
     ],
     "altForms": [],
     "familyId": 803,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 805,
@@ -16099,7 +16783,8 @@
     ],
     "altForms": [],
     "familyId": 805,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 806,
@@ -16116,7 +16801,8 @@
     ],
     "altForms": [],
     "familyId": 806,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 807,
@@ -16142,11 +16828,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10319.png",
         "category": "mega",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-114/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 807,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 808,
@@ -16162,7 +16850,8 @@
     ],
     "altForms": [],
     "familyId": 808,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 809,
@@ -16188,11 +16877,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10208.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/pgo/48_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 809,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 810,
@@ -16208,7 +16899,8 @@
     ],
     "altForms": [],
     "familyId": 810,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 811,
@@ -16249,11 +16941,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10209.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/23_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 810,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 813,
@@ -16269,7 +16963,8 @@
     ],
     "altForms": [],
     "familyId": 813,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 814,
@@ -16285,7 +16980,8 @@
     ],
     "altForms": [],
     "familyId": 813,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 815,
@@ -16311,11 +17007,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10210.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/45_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 813,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 816,
@@ -16331,7 +17029,8 @@
     ],
     "altForms": [],
     "familyId": 816,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 817,
@@ -16372,11 +17071,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10211.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh8/266_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 816,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 819,
@@ -16392,7 +17093,8 @@
     ],
     "altForms": [],
     "familyId": 819,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 820,
@@ -16408,7 +17110,8 @@
     ],
     "altForms": [],
     "familyId": 819,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 821,
@@ -16424,7 +17127,8 @@
     ],
     "altForms": [],
     "familyId": 821,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 822,
@@ -16467,11 +17171,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10212.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG19_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 821,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 1
   },
   {
     "id": 824,
@@ -16503,7 +17209,8 @@
     ],
     "altForms": [],
     "familyId": 824,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 826,
@@ -16531,11 +17238,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10213.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG13_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 824,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 3
   },
   {
     "id": 827,
@@ -16566,7 +17275,8 @@
     ],
     "altForms": [],
     "familyId": 827,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 829,
@@ -16597,7 +17307,8 @@
     ],
     "altForms": [],
     "familyId": 829,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 831,
@@ -16613,7 +17324,8 @@
     ],
     "altForms": [],
     "familyId": 831,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 3
   },
   {
     "id": 832,
@@ -16629,7 +17341,8 @@
     ],
     "altForms": [],
     "familyId": 831,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 833,
@@ -16672,11 +17385,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10214.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh35/15_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 833,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 835,
@@ -16692,7 +17407,8 @@
     ],
     "altForms": [],
     "familyId": 835,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 836,
@@ -16708,7 +17424,8 @@
     ],
     "altForms": [],
     "familyId": 835,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 837,
@@ -16767,11 +17484,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10215.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/99_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 837,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 840,
@@ -16788,7 +17507,8 @@
     ],
     "altForms": [],
     "familyId": 840,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 841,
@@ -16816,11 +17536,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10216.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh5/19_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 840,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 842,
@@ -16852,7 +17574,8 @@
       }
     ],
     "familyId": 840,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 843,
@@ -16893,11 +17616,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10218.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh6/90_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 843,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 845,
@@ -16914,7 +17639,8 @@
     ],
     "altForms": [],
     "familyId": 845,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 846,
@@ -16961,7 +17687,8 @@
     ],
     "altForms": [],
     "familyId": 848,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 849,
@@ -17021,7 +17748,8 @@
       }
     ],
     "familyId": 848,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 850,
@@ -17065,11 +17793,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10220.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG15_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 850,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 852,
@@ -17085,7 +17815,8 @@
     ],
     "altForms": [],
     "familyId": 852,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 853,
@@ -17101,7 +17832,8 @@
     ],
     "altForms": [],
     "familyId": 852,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 854,
@@ -17132,7 +17864,8 @@
     ],
     "altForms": [],
     "familyId": 854,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 856,
@@ -17194,7 +17927,8 @@
       }
     ],
     "familyId": 856,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 859,
@@ -17254,11 +17988,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10222.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/115_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 859,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 3
   },
   {
     "id": 862,
@@ -17275,7 +18011,8 @@
     ],
     "altForms": [],
     "familyId": 263,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 863,
@@ -17291,7 +18028,8 @@
     ],
     "altForms": [],
     "familyId": 52,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 864,
@@ -17307,7 +18045,8 @@
     ],
     "altForms": [],
     "familyId": 222,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 865,
@@ -17339,7 +18078,8 @@
     ],
     "altForms": [],
     "familyId": 122,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 867,
@@ -17371,7 +18111,8 @@
     ],
     "altForms": [],
     "familyId": 868,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 869,
@@ -17397,11 +18138,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10223.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh35/23_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 868,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 870,
@@ -17431,7 +18174,8 @@
       }
     ],
     "familyId": 870,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 1
   },
   {
     "id": 871,
@@ -17447,7 +18191,8 @@
     ],
     "altForms": [],
     "familyId": 871,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 872,
@@ -17464,7 +18209,8 @@
     ],
     "altForms": [],
     "familyId": 872,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 873,
@@ -17481,7 +18227,8 @@
     ],
     "altForms": [],
     "familyId": 872,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 874,
@@ -17497,7 +18244,8 @@
     ],
     "altForms": [],
     "familyId": 874,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 875,
@@ -17527,7 +18275,8 @@
       }
     ],
     "familyId": 875,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 876,
@@ -17559,7 +18308,8 @@
       }
     ],
     "familyId": 876,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 877,
@@ -17587,11 +18337,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10187.png",
         "category": "forme",
         "tcgUrl": "https://images.scrydex.com/pokemon/me5-117/large",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 877,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 878,
@@ -17607,7 +18359,8 @@
     ],
     "altForms": [],
     "familyId": 878,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 879,
@@ -17633,11 +18386,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10224.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh2/137_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 878,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 880,
@@ -17654,7 +18409,8 @@
     ],
     "altForms": [],
     "familyId": 880,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 881,
@@ -17687,7 +18443,8 @@
     ],
     "altForms": [],
     "familyId": 882,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 883,
@@ -17704,7 +18461,8 @@
     ],
     "altForms": [],
     "familyId": 883,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 884,
@@ -17732,11 +18490,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10225.png",
         "category": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG21_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 884,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 885,
@@ -17753,7 +18513,8 @@
     ],
     "altForms": [],
     "familyId": 885,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 886,
@@ -17770,7 +18531,8 @@
     ],
     "altForms": [],
     "familyId": 885,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 887,
@@ -17787,7 +18549,8 @@
     ],
     "altForms": [],
     "familyId": 885,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 888,
@@ -17818,7 +18581,8 @@
       }
     ],
     "familyId": 888,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 3
   },
   {
     "id": 889,
@@ -17849,7 +18613,8 @@
       }
     ],
     "familyId": 889,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 890,
@@ -17881,7 +18646,8 @@
       }
     ],
     "familyId": 890,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 891,
@@ -17956,7 +18722,8 @@
       }
     ],
     "familyId": 891,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 2
   },
   {
     "id": 893,
@@ -17973,7 +18740,8 @@
     ],
     "altForms": [],
     "familyId": 893,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 894,
@@ -17989,7 +18757,8 @@
     ],
     "altForms": [],
     "familyId": 894,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 895,
@@ -18005,7 +18774,8 @@
     ],
     "altForms": [],
     "familyId": 895,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 6
   },
   {
     "id": 896,
@@ -18097,7 +18867,8 @@
     ],
     "altForms": [],
     "familyId": 234,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 6
   },
   {
     "id": 900,
@@ -18114,7 +18885,8 @@
     ],
     "altForms": [],
     "familyId": 123,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 901,
@@ -18142,11 +18914,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10272.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/168_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 216,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 902,
@@ -18194,7 +18968,8 @@
     ],
     "altForms": [],
     "familyId": 215,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 6
   },
   {
     "id": 904,
@@ -18242,7 +19017,8 @@
       }
     ],
     "familyId": 905,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 906,
@@ -18258,7 +19034,8 @@
     ],
     "altForms": [],
     "familyId": 906,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 907,
@@ -18274,7 +19051,8 @@
     ],
     "altForms": [],
     "familyId": 906,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 908,
@@ -18291,7 +19069,8 @@
     ],
     "altForms": [],
     "familyId": 906,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 909,
@@ -18307,7 +19086,8 @@
     ],
     "altForms": [],
     "familyId": 909,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 910,
@@ -18323,7 +19103,8 @@
     ],
     "altForms": [],
     "familyId": 909,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 911,
@@ -18340,7 +19121,8 @@
     ],
     "altForms": [],
     "familyId": 909,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 912,
@@ -18356,7 +19138,8 @@
     ],
     "altForms": [],
     "familyId": 912,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 913,
@@ -18372,7 +19155,8 @@
     ],
     "altForms": [],
     "familyId": 912,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 914,
@@ -18389,7 +19173,8 @@
     ],
     "altForms": [],
     "familyId": 912,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 915,
@@ -18405,7 +19190,8 @@
     ],
     "altForms": [],
     "familyId": 915,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 916,
@@ -18450,7 +19236,8 @@
     ],
     "altForms": [],
     "familyId": 917,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 918,
@@ -18466,7 +19253,8 @@
     ],
     "altForms": [],
     "familyId": 917,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 919,
@@ -18482,7 +19270,8 @@
     ],
     "altForms": [],
     "familyId": 919,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 920,
@@ -18514,7 +19303,8 @@
     ],
     "altForms": [],
     "familyId": 921,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 922,
@@ -18547,7 +19337,8 @@
     ],
     "altForms": [],
     "familyId": 921,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 924,
@@ -18592,7 +19383,8 @@
       }
     ],
     "familyId": 924,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 926,
@@ -18608,7 +19400,8 @@
     ],
     "altForms": [],
     "familyId": 926,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 927,
@@ -18624,7 +19417,8 @@
     ],
     "altForms": [],
     "familyId": 926,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 928,
@@ -18657,7 +19451,8 @@
     ],
     "altForms": [],
     "familyId": 928,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 930,
@@ -18733,7 +19528,8 @@
       }
     ],
     "familyId": 931,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 932,
@@ -18749,7 +19545,8 @@
     ],
     "altForms": [],
     "familyId": 932,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 933,
@@ -18780,7 +19577,8 @@
     ],
     "altForms": [],
     "familyId": 932,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 935,
@@ -18796,7 +19594,8 @@
     ],
     "altForms": [],
     "familyId": 935,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 936,
@@ -18813,7 +19612,8 @@
     ],
     "altForms": [],
     "familyId": 935,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 937,
@@ -18830,7 +19630,8 @@
     ],
     "altForms": [],
     "familyId": 935,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 938,
@@ -18861,7 +19662,8 @@
     ],
     "altForms": [],
     "familyId": 938,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 940,
@@ -18878,7 +19680,8 @@
     ],
     "altForms": [],
     "familyId": 940,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 941,
@@ -18895,7 +19698,8 @@
     ],
     "altForms": [],
     "familyId": 940,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 3
   },
   {
     "id": 942,
@@ -18926,7 +19730,8 @@
     ],
     "altForms": [],
     "familyId": 942,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 944,
@@ -18943,7 +19748,8 @@
     ],
     "altForms": [],
     "familyId": 944,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 945,
@@ -18960,7 +19766,8 @@
     ],
     "altForms": [],
     "familyId": 944,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 946,
@@ -18977,7 +19784,8 @@
     ],
     "altForms": [],
     "familyId": 946,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 947,
@@ -19010,7 +19818,8 @@
     ],
     "altForms": [],
     "familyId": 948,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 949,
@@ -19027,7 +19836,8 @@
     ],
     "altForms": [],
     "familyId": 948,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 950,
@@ -19043,7 +19853,8 @@
     ],
     "altForms": [],
     "familyId": 950,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 951,
@@ -19090,7 +19901,8 @@
       }
     ],
     "familyId": 951,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 953,
@@ -19122,7 +19934,8 @@
     ],
     "altForms": [],
     "familyId": 953,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 955,
@@ -19153,7 +19966,8 @@
     ],
     "altForms": [],
     "familyId": 955,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 957,
@@ -19170,7 +19984,8 @@
     ],
     "altForms": [],
     "familyId": 957,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 958,
@@ -19187,7 +20002,8 @@
     ],
     "altForms": [],
     "familyId": 957,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 959,
@@ -19204,7 +20020,8 @@
     ],
     "altForms": [],
     "familyId": 957,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 960,
@@ -19220,7 +20037,8 @@
     ],
     "altForms": [],
     "familyId": 960,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 961,
@@ -19236,7 +20054,8 @@
     ],
     "altForms": [],
     "familyId": 960,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 962,
@@ -19253,7 +20072,8 @@
     ],
     "altForms": [],
     "familyId": 962,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 963,
@@ -19294,11 +20114,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10256.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/151_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 963,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 965,
@@ -19315,7 +20137,8 @@
     ],
     "altForms": [],
     "familyId": 965,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 966,
@@ -19332,7 +20155,8 @@
     ],
     "altForms": [],
     "familyId": 965,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 967,
@@ -19349,7 +20173,8 @@
     ],
     "altForms": [],
     "familyId": 967,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 968,
@@ -19365,7 +20190,8 @@
     ],
     "altForms": [],
     "familyId": 968,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 969,
@@ -19428,7 +20254,8 @@
     ],
     "altForms": [],
     "familyId": 971,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 972,
@@ -19444,7 +20271,8 @@
     ],
     "altForms": [],
     "familyId": 971,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 973,
@@ -19461,7 +20289,8 @@
     ],
     "altForms": [],
     "familyId": 973,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 974,
@@ -19492,7 +20321,8 @@
     ],
     "altForms": [],
     "familyId": 974,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 976,
@@ -19509,7 +20339,8 @@
     ],
     "altForms": [],
     "familyId": 976,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 977,
@@ -19525,7 +20356,8 @@
     ],
     "altForms": [],
     "familyId": 977,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 978,
@@ -19553,7 +20385,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10258.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv6/186_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       },
       {
         "slug": "tatsugiri-stretchy",
@@ -19567,11 +20400,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10259.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv6/186_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 978,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 979,
@@ -19620,7 +20455,8 @@
     ],
     "altForms": [],
     "familyId": 203,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 982,
@@ -19646,11 +20482,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10255.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv2/229_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 206,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 983,
@@ -19667,7 +20505,8 @@
     ],
     "altForms": [],
     "familyId": 624,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 984,
@@ -19684,7 +20523,8 @@
     ],
     "altForms": [],
     "familyId": 984,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 985,
@@ -19701,7 +20541,8 @@
     ],
     "altForms": [],
     "familyId": 985,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 986,
@@ -19718,7 +20559,8 @@
     ],
     "altForms": [],
     "familyId": 986,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 987,
@@ -19735,7 +20577,8 @@
     ],
     "altForms": [],
     "familyId": 987,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 988,
@@ -19752,7 +20595,8 @@
     ],
     "altForms": [],
     "familyId": 988,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 989,
@@ -19769,7 +20613,8 @@
     ],
     "altForms": [],
     "familyId": 989,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 990,
@@ -19786,7 +20631,8 @@
     ],
     "altForms": [],
     "familyId": 990,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 991,
@@ -19803,7 +20649,8 @@
     ],
     "altForms": [],
     "familyId": 991,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 992,
@@ -19820,7 +20667,8 @@
     ],
     "altForms": [],
     "familyId": 992,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 993,
@@ -19837,7 +20685,8 @@
     ],
     "altForms": [],
     "familyId": 993,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 994,
@@ -19854,7 +20703,8 @@
     ],
     "altForms": [],
     "familyId": 994,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 995,
@@ -19871,7 +20721,8 @@
     ],
     "altForms": [],
     "familyId": 995,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 996,
@@ -19888,7 +20739,8 @@
     ],
     "altForms": [],
     "familyId": 996,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 997,
@@ -19905,7 +20757,8 @@
     ],
     "altForms": [],
     "familyId": 996,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 998,
@@ -19937,7 +20790,8 @@
       }
     ],
     "familyId": 996,
-    "familyOrder": 2
+    "familyOrder": 2,
+    "cardRank": 0
   },
   {
     "id": 999,
@@ -19963,11 +20817,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10263.png",
         "category": "forme",
         "tcgUrl": "https://images.pokemontcg.io/sv4/198_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 999,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1000,
@@ -19984,7 +20840,8 @@
     ],
     "altForms": [],
     "familyId": 999,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 1001,
@@ -20001,7 +20858,8 @@
     ],
     "altForms": [],
     "familyId": 1001,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1002,
@@ -20018,7 +20876,8 @@
     ],
     "altForms": [],
     "familyId": 1002,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1003,
@@ -20035,7 +20894,8 @@
     ],
     "altForms": [],
     "familyId": 1003,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1004,
@@ -20052,7 +20912,8 @@
     ],
     "altForms": [],
     "familyId": 1004,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1005,
@@ -20069,7 +20930,8 @@
     ],
     "altForms": [],
     "familyId": 1005,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1006,
@@ -20086,7 +20948,8 @@
     ],
     "altForms": [],
     "familyId": 1006,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1007,
@@ -20103,7 +20966,8 @@
     ],
     "altForms": [],
     "familyId": 1007,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1008,
@@ -20120,7 +20984,8 @@
     ],
     "altForms": [],
     "familyId": 1008,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1009,
@@ -20137,7 +21002,8 @@
     ],
     "altForms": [],
     "familyId": 1009,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1010,
@@ -20154,7 +21020,8 @@
     ],
     "altForms": [],
     "familyId": 1010,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1011,
@@ -20171,7 +21038,8 @@
     ],
     "altForms": [],
     "familyId": 840,
-    "familyOrder": 3
+    "familyOrder": 3,
+    "cardRank": 0
   },
   {
     "id": 1012,
@@ -20188,7 +21056,8 @@
     ],
     "altForms": [],
     "familyId": 1012,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1013,
@@ -20205,7 +21074,8 @@
     ],
     "altForms": [],
     "familyId": 1012,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 1014,
@@ -20222,7 +21092,8 @@
     ],
     "altForms": [],
     "familyId": 1014,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1015,
@@ -20239,7 +21110,8 @@
     ],
     "altForms": [],
     "familyId": 1015,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1016,
@@ -20256,7 +21128,8 @@
     ],
     "altForms": [],
     "familyId": 1016,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1017,
@@ -20283,7 +21156,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10273.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv6/213_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 7
       },
       {
         "slug": "ogerpon-hearthflame-mask",
@@ -20297,7 +21171,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10274.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/148_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 7
       },
       {
         "slug": "ogerpon-cornerstone-mask",
@@ -20311,11 +21186,13 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10275.png",
         "category": "regional",
         "tcgUrl": "https://images.pokemontcg.io/sv8pt5/160_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 7
       }
     ],
     "familyId": 1017,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 2
   },
   {
     "id": 1018,
@@ -20332,7 +21209,8 @@
     ],
     "altForms": [],
     "familyId": 884,
-    "familyOrder": 1
+    "familyOrder": 1,
+    "cardRank": 0
   },
   {
     "id": 1019,
@@ -20349,7 +21227,8 @@
     ],
     "altForms": [],
     "familyId": 840,
-    "familyOrder": 4
+    "familyOrder": 4,
+    "cardRank": 0
   },
   {
     "id": 1020,
@@ -20366,7 +21245,8 @@
     ],
     "altForms": [],
     "familyId": 1020,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1021,
@@ -20383,7 +21263,8 @@
     ],
     "altForms": [],
     "familyId": 1021,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1022,
@@ -20400,7 +21281,8 @@
     ],
     "altForms": [],
     "familyId": 1022,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1023,
@@ -20417,7 +21299,8 @@
     ],
     "altForms": [],
     "familyId": 1023,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   },
   {
     "id": 1024,
@@ -20460,7 +21343,8 @@
       }
     ],
     "familyId": 1024,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 7
   },
   {
     "id": 1025,
@@ -20477,6 +21361,7 @@
     ],
     "altForms": [],
     "familyId": 1025,
-    "familyOrder": 0
+    "familyOrder": 0,
+    "cardRank": 0
   }
 ]

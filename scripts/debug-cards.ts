@@ -4,12 +4,25 @@ import { join } from "path";
 
 const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
 
-async function main() {
+async function fetchCard(id: string): Promise<any> {
   const headers: Record<string, string> = {};
   if (process.env.POKEMONTCG_API_KEY) headers["X-Api-Key"] = process.env.POKEMONTCG_API_KEY;
-  const res = await fetch(`${PTCGIO_BASE}/cards/ex7-103`, { headers });
-  const json = await res.json();
-  const c = json.data;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      const res = await fetch(`${PTCGIO_BASE}/cards/${id}`, { headers });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      if (!text) throw new Error("empty body");
+      return JSON.parse(text).data;
+    } catch (e) {
+      if (attempt === 4) throw e;
+      await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+    }
+  }
+}
+
+async function main() {
+  const c = await fetchCard("ex7-103");
   writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify({
     id: c.id, name: c.name, rarity: c.rarity, subtypes: c.subtypes, set: c.set?.id, artist: c.artist,
   }, null, 2));

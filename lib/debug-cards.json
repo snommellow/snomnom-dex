@@ -1,311 +1,51 @@
-[
-  {
-    "id": "neo3-24",
-    "name": "Sneasel",
-    "rarity": "Rare",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "neo3",
-    "artist": "Sumiyoshi Kizuki",
-    "market": 18.31
-  },
-  {
-    "id": "neo1-25",
-    "name": "Sneasel",
-    "rarity": "Rare",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "neo1",
-    "artist": "Ken Sugimori",
-    "market": 15.65
-  },
-  {
-    "id": "sm12-43",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sm12",
-    "artist": "ryoma uratsuka",
-    "market": 0.37
-  },
-  {
-    "id": "xy2-50",
-    "name": "Sneasel",
-    "rarity": "Uncommon",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "xy2",
-    "artist": "Mizue",
-    "market": 1.26
-  },
-  {
-    "id": "xy2-51",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "xy2",
-    "artist": "match",
-    "market": 0.52
-  },
-  {
-    "id": "xy11-60",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "xy11",
-    "artist": "Hajime Kusajima",
-    "market": 0.35
-  },
-  {
-    "id": "bw9-65",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "bw9",
-    "artist": "Sumiyoshi Kizuki",
-    "market": 0.65
-  },
-  {
-    "id": "bw4-69",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "bw4",
-    "artist": "Masakazu Fukuda",
-    "market": 1.05
-  },
-  {
-    "id": "hgss3-68",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "hgss3",
-    "artist": "Aya Kusube",
-    "market": 6.83
-  },
-  {
-    "id": "sm5-73",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sm5",
-    "artist": "Masakazu Fukuda",
-    "market": 0.95
-  },
-  {
-    "id": "sm7-86",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sm7",
-    "artist": "Ken Sugimori",
-    "market": 0.53
-  },
-  {
-    "id": "sm3-85",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sm3",
-    "artist": "Hasuno",
-    "market": 0.31
-  },
-  {
-    "id": "dp1-100",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "dp1",
-    "artist": "Ken Sugimori",
-    "market": 3.1
-  },
-  {
-    "id": "ex7-103",
-    "name": "Rocket's Sneasel ex",
-    "rarity": "Rare Holo EX",
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "set": "ex7",
-    "artist": "Ryo Ueda",
-    "market": 339.99
-  },
-  {
-    "id": "ex1-103",
-    "name": "Sneasel ex",
-    "rarity": "Rare Holo EX",
-    "subtypes": [
-      "Basic",
-      "ex"
-    ],
-    "set": "ex1",
-    "artist": "Ryo Ueda",
-    "market": 85.51
-  },
-  {
-    "id": "dp6-120",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "dp6",
-    "artist": "Midori Harada",
-    "market": 4.14
-  },
-  {
-    "id": "ecard2-110",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "ecard2",
-    "artist": "Midori Harada",
-    "market": 50
-  },
-  {
-    "id": "sm11-131",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sm11",
-    "artist": "sui",
-    "market": 0.43
-  },
-  {
-    "id": "swsh6-30",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic",
-      "Rapid Strike"
-    ],
-    "set": "swsh6",
-    "artist": "NC Empire",
-    "market": 0.24
-  },
-  {
-    "id": "bp-5",
-    "name": "Rocket's Sneasel",
-    "rarity": "Promo",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "bp",
-    "artist": "Katsura Tabata",
-    "market": 19.39
-  },
-  {
-    "id": "swsh9-86",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "swsh9",
-    "artist": "yuu",
-    "market": 0.22
-  },
-  {
-    "id": "swsh10-92",
-    "name": "Hisuian Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "swsh10",
-    "artist": "Mizue",
-    "market": 0.22
-  },
-  {
-    "id": "sv2-133",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sv2",
-    "artist": "Kagemaru Himeno",
-    "market": 0.13
-  },
-  {
-    "id": "sv4pt5-182",
-    "name": "Sneasel",
-    "rarity": "Shiny Rare",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sv4pt5",
-    "artist": "Kagemaru Himeno",
-    "market": 3.91
-  },
-  {
-    "id": "sv6pt5-13",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sv6pt5",
-    "market": 0.13
-  },
-  {
-    "id": "sv8pt5-61",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sv8pt5",
-    "market": 0.19
-  },
-  {
-    "id": "sv10-128",
-    "name": "Team Rocket's Sneasel",
-    "rarity": "Rare",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "sv10",
-    "artist": "GIDORA",
-    "market": 0.38
-  },
-  {
-    "id": "me2pt5-44",
-    "name": "Sneasel",
-    "rarity": "Common",
-    "subtypes": [
-      "Basic"
-    ],
-    "set": "me2pt5",
-    "artist": "Krgc",
-    "market": 0
-  }
-]
+{
+  "ability": "https://pokeapi.co/api/v2/ability/",
+  "berry": "https://pokeapi.co/api/v2/berry/",
+  "berry-firmness": "https://pokeapi.co/api/v2/berry-firmness/",
+  "berry-flavor": "https://pokeapi.co/api/v2/berry-flavor/",
+  "characteristic": "https://pokeapi.co/api/v2/characteristic/",
+  "contest-effect": "https://pokeapi.co/api/v2/contest-effect/",
+  "contest-type": "https://pokeapi.co/api/v2/contest-type/",
+  "egg-group": "https://pokeapi.co/api/v2/egg-group/",
+  "encounter-condition": "https://pokeapi.co/api/v2/encounter-condition/",
+  "encounter-condition-value": "https://pokeapi.co/api/v2/encounter-condition-value/",
+  "encounter-method": "https://pokeapi.co/api/v2/encounter-method/",
+  "evolution-chain": "https://pokeapi.co/api/v2/evolution-chain/",
+  "evolution-trigger": "https://pokeapi.co/api/v2/evolution-trigger/",
+  "gender": "https://pokeapi.co/api/v2/gender/",
+  "generation": "https://pokeapi.co/api/v2/generation/",
+  "growth-rate": "https://pokeapi.co/api/v2/growth-rate/",
+  "item": "https://pokeapi.co/api/v2/item/",
+  "item-attribute": "https://pokeapi.co/api/v2/item-attribute/",
+  "item-category": "https://pokeapi.co/api/v2/item-category/",
+  "item-fling-effect": "https://pokeapi.co/api/v2/item-fling-effect/",
+  "item-pocket": "https://pokeapi.co/api/v2/item-pocket/",
+  "language": "https://pokeapi.co/api/v2/language/",
+  "location": "https://pokeapi.co/api/v2/location/",
+  "location-area": "https://pokeapi.co/api/v2/location-area/",
+  "machine": "https://pokeapi.co/api/v2/machine/",
+  "meta": "https://pokeapi.co/api/v2/meta/",
+  "move": "https://pokeapi.co/api/v2/move/",
+  "move-ailment": "https://pokeapi.co/api/v2/move-ailment/",
+  "move-battle-style": "https://pokeapi.co/api/v2/move-battle-style/",
+  "move-category": "https://pokeapi.co/api/v2/move-category/",
+  "move-damage-class": "https://pokeapi.co/api/v2/move-damage-class/",
+  "move-learn-method": "https://pokeapi.co/api/v2/move-learn-method/",
+  "move-target": "https://pokeapi.co/api/v2/move-target/",
+  "nature": "https://pokeapi.co/api/v2/nature/",
+  "pal-park-area": "https://pokeapi.co/api/v2/pal-park-area/",
+  "pokeathlon-stat": "https://pokeapi.co/api/v2/pokeathlon-stat/",
+  "pokedex": "https://pokeapi.co/api/v2/pokedex/",
+  "pokemon": "https://pokeapi.co/api/v2/pokemon/",
+  "pokemon-color": "https://pokeapi.co/api/v2/pokemon-color/",
+  "pokemon-form": "https://pokeapi.co/api/v2/pokemon-form/",
+  "pokemon-habitat": "https://pokeapi.co/api/v2/pokemon-habitat/",
+  "pokemon-shape": "https://pokeapi.co/api/v2/pokemon-shape/",
+  "pokemon-species": "https://pokeapi.co/api/v2/pokemon-species/",
+  "region": "https://pokeapi.co/api/v2/region/",
+  "stat": "https://pokeapi.co/api/v2/stat/",
+  "super-contest-effect": "https://pokeapi.co/api/v2/super-contest-effect/",
+  "type": "https://pokeapi.co/api/v2/type/",
+  "version": "https://pokeapi.co/api/v2/version/",
+  "version-group": "https://pokeapi.co/api/v2/version-group/"
+}

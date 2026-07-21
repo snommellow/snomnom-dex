@@ -2,23 +2,17 @@
 import { writeFileSync } from "fs";
 import { join } from "path";
 
+const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
+
 async function main() {
-  const res = await fetch("https://pokeapi.co/api/v2/pokedex/?limit=100");
+  const headers: Record<string, string> = {};
+  if (process.env.POKEMONTCG_API_KEY) headers["X-Api-Key"] = process.env.POKEMONTCG_API_KEY;
+  const res = await fetch(`${PTCGIO_BASE}/cards/ex7-103`, { headers });
   const json = await res.json();
-  const list = json.results as { name: string; url: string }[];
-  const out: any[] = [];
-  for (const { name, url } of list) {
-    const r = await fetch(url);
-    const d = await r.json();
-    out.push({
-      name: d.name,
-      region: d.region?.name ?? null,
-      is_main_series: d.is_main_series,
-      descriptions: (d.descriptions as any[])?.find((x) => x.language.name === "en")?.description ?? null,
-      count: (d.pokemon_entries as any[])?.length ?? 0,
-    });
-  }
-  writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify(out, null, 2));
+  const c = json.data;
+  writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify({
+    id: c.id, name: c.name, rarity: c.rarity, subtypes: c.subtypes, set: c.set?.id, artist: c.artist,
+  }, null, 2));
   console.log("done");
 }
 

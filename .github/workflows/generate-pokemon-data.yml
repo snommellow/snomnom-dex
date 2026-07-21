@@ -32,6 +32,8 @@ jobs:
       - run: npm ci
 
       - name: Debug cards
+        env:
+          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
         run: npx tsx scripts/debug-cards.ts
 
       - name: Commit debug data

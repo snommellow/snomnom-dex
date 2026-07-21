@@ -9,6 +9,7 @@ on:
       - 'lib/tcgapi.ts'
       - 'lib/pocketapi.ts'
       - 'lib/pokeapi.ts'
+      - 'lib/trainerapi.ts'
       - 'lib/chains.ts'
       - 'scripts/**'
       - '.github/workflows/generate-pokemon-data.yml'
@@ -31,32 +32,24 @@ jobs:
 
       - run: npm ci
 
-      - name: Debug cards
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
-        run: npx tsx scripts/debug-cards.ts
-
-      - name: Commit debug data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/debug-cards.json
-          git commit -m "debug: list Supporter/Trainer card names" || true
-          git push --force-with-lease || true
-
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
         run: npm run generate
 
+      - name: Generate trainer-data.json
+        env:
+          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
+        run: npm run generate:trainers
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/pokemon-data.json
+          git add lib/pokemon-data.json lib/trainer-data.json
           if git diff --cached --quiet; then
-            echo "No changes to pokemon-data.json"
+            echo "No changes to generated data"
           else
-            git commit -m "chore: regenerate pokemon-data.json"
+            git commit -m "chore: regenerate pokemon/trainer data"
             git push --force-with-lease
           fi

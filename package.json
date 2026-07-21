@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate": "tsx scripts/generate-pokemon-data.ts"
+    "generate": "tsx scripts/generate-pokemon-data.ts",
+    "generate:trainers": "tsx scripts/generate-trainer-data.ts"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",

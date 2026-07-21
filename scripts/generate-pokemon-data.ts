@@ -4,7 +4,7 @@
 
 import { writeFileSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, fetchAllAbilityEffects, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, fetchEvolutionChainDetails, fetchAllAbilityEffects, toPokemonSummary, type AltForm, type PokemonSummary, type EvolutionStep } from "../lib/pokeapi";
 import {
   buildIrSirData, buildTeraIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
@@ -330,12 +330,16 @@ async function main() {
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
   const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
+  const chainDetailResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainDetails(url)));
+  const urlToSteps = new Map(uniqueChainUrls.map((url, i) => [url, chainDetailResults[i]]));
 
   const chainsByDex = new Map<number, number[]>();
+  const evolutionStepsByDex = new Map<number, EvolutionStep[]>();
   speciesData.forEach((s, i) => {
     if (s.evolutionChainUrl) {
       const ids = urlToIds.get(s.evolutionChainUrl) ?? [];
       if (ids.length > 1) chainsByDex.set(raw[i].id, ids);
+      evolutionStepsByDex.set(raw[i].id, urlToSteps.get(s.evolutionChainUrl) ?? []);
     }
   });
 
@@ -566,7 +570,7 @@ async function main() {
     });
     const tcgResult = { tcgUrl: pickedTcgUrl };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (vgxCropUrl ?? fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
-    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined, speciesData[i].flavorText, abilityEffects);
+    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined, speciesData[i].flavorText, abilityEffects, speciesData[i].eggGroups, evolutionStepsByDex.get(p.id));
   });
 
   // Preserve cards from previous run when the new run returned null.

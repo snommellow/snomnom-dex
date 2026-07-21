@@ -21,6 +21,10 @@ export interface Pokemon {
   weight: number;
   stats: { base_stat: number; stat: { name: string } }[];
   abilities: { ability: { name: string }; is_hidden: boolean }[];
+  moves: {
+    move: { name: string };
+    version_group_details: { level_learned_at: number; move_learn_method: { name: string }; version_group: { name: string } }[];
+  }[];
 }
 
 export interface PokemonListItem {
@@ -159,6 +163,9 @@ export interface PokemonSummary {
   weightKg?: number;
   abilities?: { name: string; isHidden: boolean; effect: string | null }[];
   stats?: { name: string; value: number }[];
+  eggGroups?: string[];
+  levelUpMoves?: { name: string; level: number }[];
+  evolutionSteps?: EvolutionStep[];
 }
 
 // Single species fetch: returns genus + non-default form slots + evolution chain URL
@@ -167,16 +174,18 @@ export async function fetchSpeciesData(id: number): Promise<{
   altFormSlots: Array<{ name: string; url: string }>;
   evolutionChainUrl: string | null;
   flavorText: string | null;
+  eggGroups: string[];
 }> {
   try {
     const res = await fetch(`${BASE_URL}/pokemon-species/${id}`, { next: { revalidate: 86400 } });
-    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null };
+    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null, eggGroups: [] };
     const data = await res.json();
     const entry = (data.genera as { genus: string; language: { name: string } }[])
       .find((g) => g.language.name === "en");
     const alts = (data.varieties as Array<{ is_default: boolean; pokemon: { name: string; url: string } }>)
       .filter(v => !v.is_default)
       .map(v => v.pokemon);
+    const eggGroups = (data.egg_groups as { name: string }[] ?? []).map((g) => g.name);
     const flavorEntry = (data.flavor_text_entries as { flavor_text: string; language: { name: string } }[])
       .find((f) => f.language.name === "en");
     const flavorText = flavorEntry ? flavorEntry.flavor_text.replace(/[\n\f\r]+/g, " ").trim() : null;
@@ -185,13 +194,15 @@ export async function fetchSpeciesData(id: number): Promise<{
       altFormSlots: alts,
       evolutionChainUrl: (data.evolution_chain as { url: string } | null)?.url ?? null,
       flavorText,
+      eggGroups,
     };
-  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null }; }
+  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null, eggGroups: [] }; }
 }
 
 interface EvolutionNode {
-  species: { url: string };
+  species: { name: string; url: string };
   evolves_to: EvolutionNode[];
+  evolution_details: { min_level: number | null; trigger: { name: string } | null; item: { name: string } | null }[];
 }
 
 function extractChainIds(node: EvolutionNode): number[] {
@@ -207,6 +218,39 @@ export async function fetchEvolutionChainIds(url: string): Promise<number[]> {
     if (!res.ok) return [];
     const data = await res.json();
     return extractChainIds(data.chain as EvolutionNode);
+  } catch { return []; }
+}
+
+export interface EvolutionStep {
+  id: number;
+  name: string;
+  minLevel: number | null;
+  trigger: string | null;
+  item: string | null;
+}
+
+// Flattened evolution steps (branches like Eevee's are listed side by side, not grouped) — each
+// entry after the first (baby/basic stage) carries the trigger that evolves it FROM its parent.
+function extractChainDetails(node: EvolutionNode, details: EvolutionNode["evolution_details"][number] | null): EvolutionStep[] {
+  const parts = node.species.url.split("/").filter(Boolean);
+  const id = parseInt(parts[parts.length - 1] ?? "0");
+  const step: EvolutionStep = {
+    id,
+    name: node.species.name,
+    minLevel: details?.min_level ?? null,
+    trigger: details?.trigger?.name ?? null,
+    item: details?.item?.name ?? null,
+  };
+  return [step, ...node.evolves_to.flatMap((child) => extractChainDetails(child, child.evolution_details[0] ?? null))];
+}
+
+// Fetch the evolution chain with per-step trigger/level/item detail (for the Evolution tab).
+export async function fetchEvolutionChainDetails(url: string): Promise<EvolutionStep[]> {
+  try {
+    const res = await fetch(url, { next: { revalidate: 86400 } });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return extractChainDetails(data.chain as EvolutionNode, null);
   } catch { return []; }
 }
 
@@ -448,6 +492,21 @@ export async function fetchAllAbilityEffects(pokemon: Pokemon[]): Promise<Map<st
   return new Map(uniqueNames.map((name, i) => [name, effects[i]]));
 }
 
+// Level-up moves, one entry per move — when a move has level-up data across multiple version
+// groups (games), the last one wins (PokeAPI orders version_group_details chronologically, so
+// this favors the most recent game's learnset over older ones).
+function extractLevelUpMoves(p: Pokemon): { name: string; level: number }[] {
+  const byName = new Map<string, number>();
+  for (const m of p.moves) {
+    for (const d of m.version_group_details) {
+      if (d.move_learn_method.name === "level-up") byName.set(m.move.name, d.level_learned_at);
+    }
+  }
+  return [...byName.entries()]
+    .map(([name, level]) => ({ name, level }))
+    .sort((a, b) => a.level - b.level);
+}
+
 const STAT_LABELS: Record<string, string> = {
   hp: "HP",
   attack: "Attack",
@@ -468,6 +527,8 @@ export function toPokemonSummary(
   cardRank?: number,
   flavorText: string | null = null,
   abilityEffects: Map<string, string | null> = new Map(),
+  eggGroups: string[] = [],
+  evolutionSteps: EvolutionStep[] = [],
 ): PokemonSummary {
   const bg: string[] = [];
   let resolvedRegularCard = regularCardUrl;
@@ -506,5 +567,8 @@ export function toPokemonSummary(
       name: STAT_LABELS[s.stat.name] ?? s.stat.name,
       value: s.base_stat,
     })),
+    eggGroups,
+    levelUpMoves: extractLevelUpMoves(p),
+    evolutionSteps,
   };
 }

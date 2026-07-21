@@ -62,28 +62,31 @@ function applyCardTypeFilterToPokemon(p: PokemonSummary, hidden: Set<CardTypeFil
   return { ...p, bgCandidates, regularCardUrl, cardRank };
 }
 
-// When a category is hidden, its alt-form card/tab disappears from view — but if that alt
-// form's card outranks the base entity's own card (by the same priority tiers used during
-// generation), the base entity shows that better card instead of losing it.
+// When a category is hidden, its alt-form card/tab disappears from view. If the base entity has
+// no full-art card of its own (no bgCandidates — every tier, IR/SIR, Pocket, Trainer IR/VGX,
+// hardcode, VGX, and Tera IR/SIR, produces one when it wins), the base entity shows the hidden
+// alt form's card instead of losing it entirely. But once the base already has ANY tier's
+// full-art card, it's never second-guessed or swapped out — a hidden category never overrides
+// an existing real card, no matter how the two would rank against each other.
 function applyAltFormFilter(p: PokemonSummary, hidden: Set<DisplayCategory>): PokemonSummary {
   if (!p.altForms.length) return p;
   const visibleForms: AltForm[] = [];
   let bestHidden: AltForm | undefined;
+  const baseHasCard = p.bgCandidates.length > 0;
   for (const f of p.altForms) {
     if (hidden.has(f.displayCategory)) {
-      if (f.cardRank !== undefined && f.tcgUrl && (bestHidden?.cardRank === undefined || f.cardRank < bestHidden.cardRank)) {
+      if (!baseHasCard && f.cardRank !== undefined && f.tcgUrl && (bestHidden?.cardRank === undefined || f.cardRank < bestHidden.cardRank)) {
         bestHidden = f;
       }
     } else {
       visibleForms.push(f);
     }
   }
-  const baseRank = p.cardRank ?? Infinity;
-  if (bestHidden && bestHidden.cardRank !== undefined && bestHidden.cardRank < baseRank && bestHidden.tcgUrl) {
+  if (!baseHasCard && bestHidden?.tcgUrl) {
     return {
       ...p,
       altForms: visibleForms,
-      bgCandidates: [bestHidden.tcgUrl, ...p.bgCandidates.filter((u) => u !== bestHidden!.tcgUrl)],
+      bgCandidates: [bestHidden.tcgUrl],
       cardRank: bestHidden.cardRank,
     };
   }

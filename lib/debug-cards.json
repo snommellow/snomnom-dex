@@ -1,0 +1,247 @@
+[
+  {
+    "name": "national",
+    "region": null,
+    "is_main_series": true,
+    "descriptions": "Entire National dex",
+    "count": 1025
+  },
+  {
+    "name": "kanto",
+    "region": "kanto",
+    "is_main_series": true,
+    "descriptions": "Red/Blue/Yellow Kanto dex",
+    "count": 151
+  },
+  {
+    "name": "original-johto",
+    "region": "johto",
+    "is_main_series": true,
+    "descriptions": "Gold/Silver/Crystal Johto dex—called the \"New\" Pokédex in-game",
+    "count": 251
+  },
+  {
+    "name": "hoenn",
+    "region": "hoenn",
+    "is_main_series": true,
+    "descriptions": "Ruby/Sapphire/Emerald Hoenn dex",
+    "count": 202
+  },
+  {
+    "name": "original-sinnoh",
+    "region": "sinnoh",
+    "is_main_series": true,
+    "descriptions": "Diamond/Pearl Sinnoh dex",
+    "count": 151
+  },
+  {
+    "name": "extended-sinnoh",
+    "region": "sinnoh",
+    "is_main_series": true,
+    "descriptions": "Platinum Sinnoh dex—an extended version of Diamond and Pearl’s",
+    "count": 210
+  },
+  {
+    "name": "updated-johto",
+    "region": "johto",
+    "is_main_series": true,
+    "descriptions": "HeartGold/SoulSilver Johto dex—Gold/Silver/Crystal’s, extended to add move-based Generation IV evolutions",
+    "count": 256
+  },
+  {
+    "name": "original-unova",
+    "region": "unova",
+    "is_main_series": true,
+    "descriptions": "Black/White Unova dex",
+    "count": 156
+  },
+  {
+    "name": "updated-unova",
+    "region": "unova",
+    "is_main_series": true,
+    "descriptions": "Black 2/White 2 Unova dex",
+    "count": 301
+  },
+  {
+    "name": "conquest-gallery",
+    "region": null,
+    "is_main_series": false,
+    "descriptions": "Pokémon Conquest gallery order",
+    "count": 200
+  },
+  {
+    "name": "kalos-central",
+    "region": "kalos",
+    "is_main_series": true,
+    "descriptions": "",
+    "count": 150
+  },
+  {
+    "name": "kalos-coastal",
+    "region": "kalos",
+    "is_main_series": true,
+    "descriptions": "",
+    "count": 153
+  },
+  {
+    "name": "kalos-mountain",
+    "region": "kalos",
+    "is_main_series": true,
+    "descriptions": "",
+    "count": 151
+  },
+  {
+    "name": "updated-hoenn",
+    "region": "hoenn",
+    "is_main_series": true,
+    "descriptions": "Omega Ruby/Alpha Sapphire Hoenn Dex—Ruby/Sapphire/Emerald’s, updated to add new evolutions",
+    "count": 211
+  },
+  {
+    "name": "original-alola",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Sun/Moon Alola dex",
+    "count": 302
+  },
+  {
+    "name": "original-melemele",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Sun/Moon Melemele dex",
+    "count": 120
+  },
+  {
+    "name": "original-akala",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Sun/Moon Akala dex",
+    "count": 130
+  },
+  {
+    "name": "original-ulaula",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Sun/Moon Ula’ula dex",
+    "count": 130
+  },
+  {
+    "name": "original-poni",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Sun/Moon Poni dex",
+    "count": 100
+  },
+  {
+    "name": "updated-alola",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Ultra Sun/Ultra Moon Alola dex",
+    "count": 403
+  },
+  {
+    "name": "updated-melemele",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Ultra Sun/Ultra Moon Melemele dex",
+    "count": 150
+  },
+  {
+    "name": "updated-akala",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Ultra Sun/Ultra Moon Akala dex",
+    "count": 160
+  },
+  {
+    "name": "updated-ulaula",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Ultra Sun/Ultra Moon Ula’ula dex",
+    "count": 160
+  },
+  {
+    "name": "updated-poni",
+    "region": "alola",
+    "is_main_series": true,
+    "descriptions": "Ultra Sun/Ultra Moon Poni dex",
+    "count": 130
+  },
+  {
+    "name": "letsgo-kanto",
+    "region": "kanto",
+    "is_main_series": true,
+    "descriptions": "Let’s Go: Pikachu/Let’s Go: Eevee Kanto dex",
+    "count": 153
+  },
+  {
+    "name": "galar",
+    "region": "galar",
+    "is_main_series": true,
+    "descriptions": "Sword/Shield Galar dex",
+    "count": 400
+  },
+  {
+    "name": "isle-of-armor",
+    "region": "galar",
+    "is_main_series": true,
+    "descriptions": "Isle of Armor dex",
+    "count": 211
+  },
+  {
+    "name": "crown-tundra",
+    "region": "galar",
+    "is_main_series": true,
+    "descriptions": "Crown Tundra dex",
+    "count": 210
+  },
+  {
+    "name": "hisui",
+    "region": "hisui",
+    "is_main_series": true,
+    "descriptions": "Hisui dex",
+    "count": 242
+  },
+  {
+    "name": "paldea",
+    "region": "paldea",
+    "is_main_series": true,
+    "descriptions": "Paldea dex",
+    "count": 400
+  },
+  {
+    "name": "kitakami",
+    "region": "paldea",
+    "is_main_series": true,
+    "descriptions": "Kitakami dex",
+    "count": 200
+  },
+  {
+    "name": "blueberry",
+    "region": "paldea",
+    "is_main_series": true,
+    "descriptions": "Blueberry Academy dex",
+    "count": 243
+  },
+  {
+    "name": "lumiose-city",
+    "region": "kalos",
+    "is_main_series": true,
+    "descriptions": "Lumiose City dex",
+    "count": 232
+  },
+  {
+    "name": "hyperspace",
+    "region": "kalos",
+    "is_main_series": true,
+    "descriptions": "Hyperspace dex",
+    "count": 132
+  },
+  {
+    "name": "champions",
+    "region": null,
+    "is_main_series": false,
+    "descriptions": "Champions dex",
+    "count": 208
+  }
+]

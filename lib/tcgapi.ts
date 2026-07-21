@@ -513,7 +513,12 @@ export function trainerVgxPick(data: VgxData, displayName: string): string | nul
       }
     }
   }
-  return pickBest(candidates);
+  // Same old-style/bordered exclusion as the regular vgxPick (e.g. ex7-103 "Rocket's Sneasel
+  // ex", a $339 Rare Holo EX, is a plain bordered card despite the price — not full art). Unlike
+  // vgxPick there's no cropped-fallback slot for the trainer-VGX tier, so these are dropped
+  // entirely rather than routed to a crop treatment, letting a lower tier take over instead.
+  const filtered = candidates.filter(c => !(OLD_STYLE_RARITIES.has(c._rarity) && isPreBwSet(c.set.id)));
+  return pickBest(filtered);
 }
 
 // SV-era full-art promo set IDs — add new promo sets here as they release

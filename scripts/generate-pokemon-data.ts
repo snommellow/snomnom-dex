@@ -542,6 +542,14 @@ async function main() {
     const pocketUrl = pocketMap.get(p.id) ?? pocketFallbackMap.get(p.id);
     const ancientTraitUrl = ancientTraitMap.get(p.id);
     const hardcodedBg = HARDCODED_BG_URLS[p.id];
+    // isOldStyle = extended-art detection picked the bordered sibling: crop it, don't full-bleed
+    // it — mirrors the same split already applied to alt forms below. Previously this base-
+    // Pokémon path only read vgxMap's .tcgUrl and silently dropped .isOldStyle, letting old
+    // bordered "sparkly" EX/Secret cards (e.g. g1-46 Golem, ex7-103 Sneasel) through as if they
+    // were genuine full-art backgrounds.
+    const vgxResult = vgxMap.get(p.id);
+    const vgxUrl = vgxResult && !vgxResult.isOldStyle ? vgxResult.tcgUrl : null;
+    const vgxCropUrl = vgxResult?.isOldStyle ? vgxResult.tcgUrl : null;
     // Uses the same pickTcgUrl priority order shared with alt forms below — see its comment.
     const { url: pickedTcgUrl, rank: cardRank } = pickTcgUrl({
       ir: irMap.get(p.id)?.tcgUrl ?? null,
@@ -550,11 +558,11 @@ async function main() {
       trainerIr: trainerIrMap.get(p.id)?.tcgUrl ?? null,
       trainerVgx: trainerVgxMap.get(p.id)?.tcgUrl ?? null,
       ancientTrait: ancientTraitUrl ?? null,
-      vgx: vgxMap.get(p.id)?.tcgUrl ?? null,
+      vgx: vgxUrl,
       teraIr: teraIrMap.get(p.id)?.tcgUrl ?? null,
     });
     const tcgResult = { tcgUrl: pickedTcgUrl };
-    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
+    const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (vgxCropUrl ?? fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
     return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined);
   });
 

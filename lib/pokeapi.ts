@@ -17,6 +17,10 @@ export interface Pokemon {
   name: string;
   types: PokemonType[];
   sprites: PokemonSprites;
+  height: number;
+  weight: number;
+  stats: { base_stat: number; stat: { name: string } }[];
+  abilities: { ability: { name: string }; is_hidden: boolean }[];
 }
 
 export interface PokemonListItem {
@@ -146,6 +150,15 @@ export interface PokemonSummary {
   familyOrder: number;
   // Priority-tier rank of this entity's own card (see AltForm.cardRank for the full explanation).
   cardRank?: number;
+  // Detail-view fields (Pokédex entry description, physical stats, abilities, base stats).
+  // Optional because alt forms (synthesized client-side from AltForm data, not their own
+  // species fetch) don't have their own copy of these — the detail modal falls back to
+  // showing what's available.
+  flavorText?: string | null;
+  heightM?: number;
+  weightKg?: number;
+  abilities?: { name: string; isHidden: boolean; effect: string | null }[];
+  stats?: { name: string; value: number }[];
 }
 
 // Single species fetch: returns genus + non-default form slots + evolution chain URL
@@ -153,22 +166,27 @@ export async function fetchSpeciesData(id: number): Promise<{
   genus: string | null;
   altFormSlots: Array<{ name: string; url: string }>;
   evolutionChainUrl: string | null;
+  flavorText: string | null;
 }> {
   try {
     const res = await fetch(`${BASE_URL}/pokemon-species/${id}`, { next: { revalidate: 86400 } });
-    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null };
+    if (!res.ok) return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null };
     const data = await res.json();
     const entry = (data.genera as { genus: string; language: { name: string } }[])
       .find((g) => g.language.name === "en");
     const alts = (data.varieties as Array<{ is_default: boolean; pokemon: { name: string; url: string } }>)
       .filter(v => !v.is_default)
       .map(v => v.pokemon);
+    const flavorEntry = (data.flavor_text_entries as { flavor_text: string; language: { name: string } }[])
+      .find((f) => f.language.name === "en");
+    const flavorText = flavorEntry ? flavorEntry.flavor_text.replace(/[\n\f\r]+/g, " ").trim() : null;
     return {
       genus: entry?.genus ?? null,
       altFormSlots: alts,
       evolutionChainUrl: (data.evolution_chain as { url: string } | null)?.url ?? null,
+      flavorText,
     };
-  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null }; }
+  } catch { return { genus: null, altFormSlots: [], evolutionChainUrl: null, flavorText: null }; }
 }
 
 interface EvolutionNode {
@@ -410,6 +428,35 @@ export async function fetchAltForms(
   return forms.filter((f): f is AltForm => f !== null && f.category !== "other");
 }
 
+// Fetches the short English effect text for a single ability.
+export async function fetchAbilityEffect(name: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${BASE_URL}/ability/${name}`, { next: { revalidate: 86400 } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const entry = (data.effect_entries as { short_effect: string; language: { name: string } }[])
+      .find((e) => e.language.name === "en");
+    return entry?.short_effect ?? null;
+  } catch { return null; }
+}
+
+// Builds a name → effect map for every unique ability across the given Pokémon list — far fewer
+// network calls than fetching per-Pokémon, since abilities repeat heavily across species.
+export async function fetchAllAbilityEffects(pokemon: Pokemon[]): Promise<Map<string, string | null>> {
+  const uniqueNames = [...new Set(pokemon.flatMap((p) => p.abilities.map((a) => a.ability.name)))];
+  const effects = await mapWithConcurrency(uniqueNames, 20, fetchAbilityEffect);
+  return new Map(uniqueNames.map((name, i) => [name, effects[i]]));
+}
+
+const STAT_LABELS: Record<string, string> = {
+  hp: "HP",
+  attack: "Attack",
+  defense: "Defense",
+  "special-attack": "Sp. Atk",
+  "special-defense": "Sp. Def",
+  speed: "Speed",
+};
+
 export function toPokemonSummary(
   p: Pokemon,
   tcgResult: { tcgUrl: string | null; isOldStyle?: boolean } = { tcgUrl: null },
@@ -419,6 +466,8 @@ export function toPokemonSummary(
   regularCardUrl?: string,
   family?: { familyId: number; familyOrder: number },
   cardRank?: number,
+  flavorText: string | null = null,
+  abilityEffects: Map<string, string | null> = new Map(),
 ): PokemonSummary {
   const bg: string[] = [];
   let resolvedRegularCard = regularCardUrl;
@@ -444,5 +493,18 @@ export function toPokemonSummary(
     familyId: family?.familyId ?? p.id,
     familyOrder: family?.familyOrder ?? 0,
     cardRank,
+    flavorText,
+    // PokeAPI reports height in decimeters, weight in hectograms.
+    heightM: p.height / 10,
+    weightKg: p.weight / 10,
+    abilities: p.abilities.map((a) => ({
+      name: a.ability.name,
+      isHidden: a.is_hidden,
+      effect: abilityEffects.get(a.ability.name) ?? null,
+    })),
+    stats: p.stats.map((s) => ({
+      name: STAT_LABELS[s.stat.name] ?? s.stat.name,
+      value: s.base_stat,
+    })),
   };
 }

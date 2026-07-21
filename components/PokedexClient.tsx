@@ -5,6 +5,7 @@ import { Search, X, GitBranch, LayoutGrid, SlidersHorizontal } from "lucide-reac
 import type { PokemonSummary, AltForm, DisplayCategory } from "@/lib/pokeapi";
 import { TYPE_COLOR, typeIconUrl } from "@/lib/typeColors";
 import PokemonCard, { AltFormCard } from "./PokemonCard";
+import PokemonDetailModal from "./PokemonDetailModal";
 
 // Filters use displayCategory (UI grouping), not category (card-search strategy) — see
 // DisplayCategory in lib/pokeapi.ts for why those two differ. Mega/Primal/Origin Forme are
@@ -115,6 +116,7 @@ export default function PokedexClient({ pokemon }: Props) {
   const [activeType, setActiveType] = useState<string | null>(null);
   const [familyView, setFamilyView] = useState(false);
   const [hiddenAltFormCategories, setHiddenAltFormCategories] = useState<Set<DisplayCategory>>(new Set());
+  const [selected, setSelected] = useState<{ pokemon: PokemonSummary; formLabel?: string } | null>(null);
   const [hiddenCardTypes, setHiddenCardTypes] = useState<Set<CardTypeFilter>>(new Set());
   const [filterMenuOpen, setFilterMenuOpen] = useState(false);
   const filterMenuRef = useRef<HTMLDivElement>(null);
@@ -360,9 +362,9 @@ export default function PokedexClient({ pokemon }: Props) {
               <div key={familyId} className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
                 {items.map((item) =>
                   item.kind === "base" ? (
-                    <PokemonCard key={item.key} pokemon={item.pokemon} />
+                    <PokemonCard key={item.key} pokemon={item.pokemon} onSelect={(pokemon, formLabel) => setSelected({ pokemon, formLabel })} />
                   ) : (
-                    <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} />
+                    <AltFormCard key={item.key} form={item.form} baseId={item.baseId} genus={item.genus} onSelect={(pokemon, formLabel) => setSelected({ pokemon, formLabel })} />
                   )
                 )}
               </div>
@@ -371,9 +373,9 @@ export default function PokedexClient({ pokemon }: Props) {
         ) : (
           <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
             {filtered.flatMap((p) => [
-              <PokemonCard key={p.id} pokemon={p} />,
+              <PokemonCard key={p.id} pokemon={p} onSelect={(pokemon, formLabel) => setSelected({ pokemon, formLabel })} />,
               ...(p.altForms ?? []).map((form) => (
-                <AltFormCard key={form.slug} form={form} baseId={p.id} genus={p.genus} />
+                <AltFormCard key={form.slug} form={form} baseId={p.id} genus={p.genus} onSelect={(pokemon, formLabel) => setSelected({ pokemon, formLabel })} />
               )),
             ])}
           </div>
@@ -389,6 +391,14 @@ export default function PokedexClient({ pokemon }: Props) {
             Clear filters
           </button>
         </div>
+      )}
+
+      {selected && (
+        <PokemonDetailModal
+          pokemon={selected.pokemon}
+          formLabel={selected.formLabel}
+          onClose={() => setSelected(null)}
+        />
       )}
     </div>
   );

@@ -4,7 +4,7 @@
 
 import { writeFileSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
+import { fetchFirst151, fetchSpeciesData, fetchAltForms, fetchEvolutionChainIds, fetchAllAbilityEffects, toPokemonSummary, type AltForm, type PokemonSummary } from "../lib/pokeapi";
 import {
   buildIrSirData, buildTeraIrSirData, irSirCandidates, irSirPick, trainerIrPick,
   buildVgxData, vgxCandidates, vgxPick, trainerVgxPick,
@@ -324,6 +324,9 @@ async function main() {
   console.log("Fetching species data...");
   const speciesData = await Promise.all(raw.map((p) => fetchSpeciesData(p.id)));
 
+  console.log("Fetching ability effects...");
+  const abilityEffects = await fetchAllAbilityEffects(raw);
+
   const uniqueChainUrls = [...new Set(speciesData.map(s => s.evolutionChainUrl).filter(Boolean) as string[])];
   const chainResults = await Promise.all(uniqueChainUrls.map(url => fetchEvolutionChainIds(url)));
   const urlToIds = new Map(uniqueChainUrls.map((url, i) => [url, chainResults[i]]));
@@ -563,7 +566,7 @@ async function main() {
     });
     const tcgResult = { tcgUrl: pickedTcgUrl };
     const fallbackCrop = HARDCODED_REGULAR_CARD_URLS[p.id] ?? (!tcgResult.tcgUrl ? (vgxCropUrl ?? fallbackArtMap.get(p.id) ?? lastResortMap.get(p.id)?.tcgUrl ?? undefined) : undefined);
-    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined);
+    return toPokemonSummary(p, tcgResult, (pocketUrl && tcgResult.tcgUrl !== pocketUrl) ? [pocketUrl] : [], speciesData[i].genus, altFormsWithCards[i], fallbackCrop, familyByDex.get(p.id), pickedTcgUrl ? cardRank : undefined, speciesData[i].flavorText, abilityEffects);
   });
 
   // Preserve cards from previous run when the new run returned null.

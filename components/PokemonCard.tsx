@@ -142,9 +142,10 @@ interface Props {
   pokemon: PokemonSummary;
   formCategory?: AltForm["category"];
   formLabel?: string;
+  onSelect?: (pokemon: PokemonSummary, formLabel?: string) => void;
 }
 
-export default function PokemonCard({ pokemon, formCategory, formLabel }: Props) {
+export default function PokemonCard({ pokemon, formCategory, formLabel, onSelect }: Props) {
   // Meowstic's base entity is the Male variety (Female is a separate alt form); give it a
   // matching "The Male." subtitle so the two aren't visually indistinguishable in the grid.
   if (pokemon.name === "meowstic-male" && !formLabel) formLabel = "Male";
@@ -245,7 +246,13 @@ export default function PokemonCard({ pokemon, formCategory, formLabel }: Props)
   const DEPTH = 32;
 
   return (
-    <article className="group cursor-pointer select-none h-full">
+    <article
+      className="group cursor-pointer select-none h-full"
+      onClick={() => onSelect?.(pokemon, formLabel)}
+      role={onSelect ? "button" : undefined}
+      tabIndex={onSelect ? 0 : undefined}
+      onKeyDown={onSelect ? (e) => { if (e.key === "Enter" || e.key === " ") onSelect(pokemon, formLabel); } : undefined}
+    >
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -568,7 +575,7 @@ function extractAltFormParts(displayName: string, category: AltForm["category"])
 }
 
 // Alt form card: converts AltForm data into a PokemonSummary and renders the exact same PokemonCard
-export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: number; genus?: string | null }) {
+export function AltFormCard({ form, baseId, genus, onSelect }: { form: AltForm; baseId: number; genus?: string | null; onSelect?: (pokemon: PokemonSummary, formLabel?: string) => void }) {
   const { baseName, formLabel } = extractAltFormParts(form.displayName, form.category);
   const summary: PokemonSummary = {
     id: baseId,
@@ -585,5 +592,5 @@ export function AltFormCard({ form, baseId, genus }: { form: AltForm; baseId: nu
     familyId: baseId,
     familyOrder: 0,
   };
-  return <PokemonCard pokemon={summary} formCategory={form.category} formLabel={formLabel} />;
+  return <PokemonCard pokemon={summary} formCategory={form.category} formLabel={formLabel} onSelect={onSelect} />;
 }

@@ -28,6 +28,11 @@ export interface TrainerEntry {
   slug: string;
   region: string;
   imageUrl: string | null;
+  // Whether imageUrl is a borderless full-art illustration vs a plain bordered card with a
+  // rules text box — most Supporter cards are the latter, so they need the same "cropped"
+  // scale-and-shift treatment the Pokémon pipeline uses for non-full-art cards (regularCardUrl),
+  // not the full-bleed background treatment, or the rules text bleeds through mid-card.
+  isFullArt: boolean;
 }
 
 // Same rarity-tier idea as the Pokémon pipeline's RARITY_ORDER, but scoped to what Supporter
@@ -46,6 +51,17 @@ const SUPPORTER_RARITY_ORDER = [
   "Common",
   "Promo",
 ];
+
+// Same idea as IR_RARITIES/VGX_RARITIES in tcgapi.ts — the tiers that print as a borderless
+// full-bleed illustration rather than the classic bordered card with a rules text box.
+const FULL_ART_RARITIES = new Set([
+  "Special Illustration Rare",
+  "Illustration Rare",
+  "Hyper Rare",
+  "Rare Secret",
+  "Ultra Rare",
+  "Rare Ultra",
+]);
 
 function rarityScore(rarity: string): number {
   const idx = SUPPORTER_RARITY_ORDER.indexOf(rarity);
@@ -189,13 +205,14 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
 
   return KANTO_ROSTER.map(({ name, searchNames }) => {
     let imageUrl: string | null = null;
+    let isFullArt = false;
     for (const candidate of searchNames) {
       const group = byName.get(candidate.toLowerCase());
       if (group) {
         const best = pickBestCard(group);
-        if (best) { imageUrl = cardImageUrl(best); break; }
+        if (best) { imageUrl = cardImageUrl(best); isFullArt = FULL_ART_RARITIES.has(best.rarity); break; }
       }
     }
-    return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl };
+    return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl, isFullArt };
   });
 }

@@ -115,7 +115,7 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
             transition: "mask-image 0.2s",
           }}>
-            {trainer.imageUrl ? (
+            {trainer.imageUrl && trainer.isFullArt ? (
               <Image
                 src={trainer.imageUrl}
                 alt=""
@@ -125,6 +125,24 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
                 className="object-cover object-top"
                 style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
                 loading="lazy"
+              />
+            ) : trainer.imageUrl ? (
+              // Plain bordered card: scale up from top so only the name + art fits in the
+              // frame, hiding the rules text box below — same crop as PokemonCard's
+              // regularCardUrl treatment.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={trainer.imageUrl}
+                alt=""
+                aria-hidden
+                loading="lazy"
+                style={{
+                  position: "absolute", top: 0, left: "50%",
+                  width: "100%", height: "auto",
+                  transform: "translateX(-50%) translateY(6%) scale(1.75)",
+                  transformOrigin: "top center",
+                  opacity: 0.8,
+                }}
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">

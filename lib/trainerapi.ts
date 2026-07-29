@@ -35,6 +35,14 @@ export interface TrainerEntry {
   isFullArt: boolean;
 }
 
+// pokemontcg.io set IDs for the original WotC-era prints (1998-2003) — Base Set through Neo
+// Destiny plus the Expedition/Aquapolis/Skyridge e-Card sets. These predate the "Supporter"
+// subtype mechanic entirely (introduced in EX Ruby & Sapphire, 2003), so a card search scoped to
+// subtypes:Supporter silently excludes every classic trainer-class card from the pool — the
+// bug behind every match coming back as a modern anime-style reimagining instead of the
+// period-accurate Gen 1 look.
+const CLASSIC_SET_RE = /^(base|gym|neo|ecard)/i;
+
 // Same rarity-tier idea as the Pokémon pipeline's RARITY_ORDER, but scoped to what Supporter
 // cards actually carry — full-art illustration tiers first, then holo/secret tiers, then plain.
 const SUPPORTER_RARITY_ORDER = [
@@ -190,10 +198,13 @@ function baseTrainerName(cardName: string): string {
   return possessiveMatch ? possessiveMatch[1] : noVariantTag;
 }
 
-// Builds the Kanto trainer roster with portrait art pulled from pokemontcg.io Supporter cards
+// Builds the Kanto trainer roster with portrait art pulled from pokemontcg.io Trainer cards
 // where a name matches — the card catalog is art lookup only, not the trainer list itself.
+// Queries all supertype:Trainer cards, not just subtypes:Supporter, since the classic 1998-2003
+// WotC-era cards that best represent the original Gen 1 look predate the Supporter subtype and
+// would otherwise be invisible to a Supporter-scoped search.
 export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
-  const cards = await fetchAllPages("supertype:Trainer subtypes:Supporter");
+  const cards = await fetchAllPages("supertype:Trainer");
   const byName = new Map<string, PtcgCard[]>();
   for (const c of cards) {
     if (!c.images?.large) continue;
@@ -208,9 +219,17 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
     let isFullArt = false;
     for (const candidate of searchNames) {
       const group = byName.get(candidate.toLowerCase());
-      if (group) {
-        const best = pickBestCard(group);
-        if (best) { imageUrl = cardImageUrl(best); isFullArt = FULL_ART_RARITIES.has(best.rarity); break; }
+      if (!group) continue;
+      // Prefer the original WotC-era print when one exists — period-accurate for a Kanto dex —
+      // and only fall back to the full (modern-inclusive) pool if no classic print was ever made.
+      const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
+      const pool = classicCards.length ? classicCards : group;
+      const best = pickBestCard(pool);
+      if (best) {
+        imageUrl = cardImageUrl(best);
+        // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
+        isFullArt = classicCards.length ? false : FULL_ART_RARITIES.has(best.rarity);
+        break;
       }
     }
     return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl, isFullArt };

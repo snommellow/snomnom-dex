@@ -1,6 +1,10 @@
-// pokemontcg.io Trainer/Supporter card catalog — doubles as both the name list and the
-// artwork source for the Trainers page, since PokeAPI has no trainer data or sprites at all
-// (verified: zero trainer resources, and PokeAPI/sprites has no trainer image path).
+// Trainer roster source: PokeAPI has zero trainer data, and Bulbapedia isn't reachable from
+// this environment, so the actual trainer list comes from pret/pokered — the open-source
+// decompilation of Pokémon Red/Blue (constants/trainer_constants.asm lists every trainer class
+// and named character, e.g. Brock/Misty/gym leaders are each their own "class" of one).
+// pokemontcg.io's Trainer/Supporter cards are used ONLY for portrait art where a name matches —
+// they no longer define who counts as a trainer, per the point of this page being a dex of
+// trainers, not a catalog of every card that happens to exist.
 
 const PTCGIO_BASE = "https://api.pokemontcg.io/v2";
 
@@ -22,7 +26,8 @@ interface PtcgCard {
 export interface TrainerEntry {
   name: string;
   slug: string;
-  imageUrl: string;
+  region: string;
+  imageUrl: string | null;
 }
 
 // Same rarity-tier idea as the Pokémon pipeline's RARITY_ORDER, but scoped to what Supporter
@@ -99,41 +104,98 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
 export function toTrainerSlug(name: string): string {
   return name
     .toLowerCase()
+    .replace(/♂/g, "-m")
+    .replace(/♀/g, "-f")
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
+// Kanto (Gen 1) roster, sourced from pret/pokered's constants/trainer_constants.asm — every
+// trainer class and named character the games define, in their original order. RIVAL2/RIVAL3
+// are the same person as RIVAL1 at later battle stages, so they collapse into one "Rival"
+// entry rather than three. searchNames are the candidate TCG Supporter-card names to try for
+// portrait art, tried in order — a miss just means no art, not a missing trainer.
+const KANTO_ROSTER: { name: string; searchNames: string[] }[] = [
+  { name: "Youngster", searchNames: ["Youngster"] },
+  { name: "Bug Catcher", searchNames: ["Bug Catcher"] },
+  { name: "Lass", searchNames: ["Lass"] },
+  { name: "Sailor", searchNames: ["Sailor"] },
+  { name: "Jr. Trainer♂", searchNames: ["Jr. Trainer"] },
+  { name: "Jr. Trainer♀", searchNames: ["Jr. Trainer"] },
+  { name: "Pokémaniac", searchNames: ["Pokemaniac", "Pokémaniac"] },
+  { name: "Super Nerd", searchNames: ["Super Nerd"] },
+  { name: "Hiker", searchNames: ["Hiker"] },
+  { name: "Biker", searchNames: ["Biker"] },
+  { name: "Burglar", searchNames: ["Burglar"] },
+  { name: "Engineer", searchNames: ["Engineer"] },
+  { name: "Fisherman", searchNames: ["Fisherman", "Fisher"] },
+  { name: "Swimmer", searchNames: ["Swimmer"] },
+  { name: "Cue Ball", searchNames: ["Cue Ball"] },
+  { name: "Gambler", searchNames: ["Gambler"] },
+  { name: "Beauty", searchNames: ["Beauty"] },
+  { name: "Psychic", searchNames: ["Psychic"] },
+  { name: "Rocker", searchNames: ["Rocker"] },
+  { name: "Juggler", searchNames: ["Juggler"] },
+  { name: "Tamer", searchNames: ["Tamer"] },
+  { name: "Bird Keeper", searchNames: ["Bird Keeper"] },
+  { name: "Blackbelt", searchNames: ["Black Belt", "Blackbelt"] },
+  { name: "Rival", searchNames: ["Rival"] },
+  { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"] },
+  { name: "Chief", searchNames: ["Chief"] },
+  { name: "Scientist", searchNames: ["Scientist"] },
+  { name: "Giovanni", searchNames: ["Giovanni"] },
+  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"] },
+  { name: "Cooltrainer♂", searchNames: ["Cooltrainer"] },
+  { name: "Cooltrainer♀", searchNames: ["Cooltrainer"] },
+  { name: "Bruno", searchNames: ["Bruno"] },
+  { name: "Brock", searchNames: ["Brock"] },
+  { name: "Misty", searchNames: ["Misty"] },
+  { name: "Lt. Surge", searchNames: ["Lt. Surge", "Surge"] },
+  { name: "Erika", searchNames: ["Erika"] },
+  { name: "Koga", searchNames: ["Koga"] },
+  { name: "Blaine", searchNames: ["Blaine"] },
+  { name: "Sabrina", searchNames: ["Sabrina"] },
+  { name: "Gentleman", searchNames: ["Gentleman"] },
+  { name: "Lorelei", searchNames: ["Lorelei"] },
+  { name: "Channeler", searchNames: ["Channeler"] },
+  { name: "Agatha", searchNames: ["Agatha"] },
+  { name: "Lance", searchNames: ["Lance"] },
+];
+
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
 // names most Supporter cards after their signature move ("Bill's Analysis", "Bill's
 // Maintenance", "Bill's Transfer"), so the possessive prefix is the trainer's actual name.
-// Stripping "'s ..." collapses those down to the base person ("Bill"). Plain names and trainer
-// classes with no possessive ("Acerola", "Ace Trainer", "Anthea & Concordia") pass through as-is.
-// A trailing parenthetical variant tag ("Boss's Orders (Ghetsis)") is stripped first so it
-// merges with its un-tagged sibling instead of forming its own group.
+// Used here to collapse a matched trainer's cards down to their base name before ranking.
 function baseTrainerName(cardName: string): string {
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
   const possessiveMatch = noVariantTag.match(/^(.+?)['']s\s+.+$/);
   return possessiveMatch ? possessiveMatch[1] : noVariantTag;
 }
 
-// Fetches every Supporter card, groups by base trainer name, and picks the single best card
-// per trainer — the same rank-then-tiebreak-by-price shape as pickBestCard in tcgapi.ts.
+// Builds the Kanto trainer roster with portrait art pulled from pokemontcg.io Supporter cards
+// where a name matches — the card catalog is art lookup only, not the trainer list itself.
 export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   const cards = await fetchAllPages("supertype:Trainer subtypes:Supporter");
   const byName = new Map<string, PtcgCard[]>();
   for (const c of cards) {
     if (!c.images?.large) continue;
-    const name = baseTrainerName(c.name);
+    const name = baseTrainerName(c.name).toLowerCase();
     const list = byName.get(name);
     if (list) list.push(c);
     else byName.set(name, [c]);
   }
-  const entries: TrainerEntry[] = [];
-  for (const [name, group] of byName) {
-    const best = pickBestCard(group);
-    if (best) entries.push({ name, slug: toTrainerSlug(name), imageUrl: cardImageUrl(best) });
-  }
-  return entries.sort((a, b) => a.name.localeCompare(b.name));
+
+  return KANTO_ROSTER.map(({ name, searchNames }) => {
+    let imageUrl: string | null = null;
+    for (const candidate of searchNames) {
+      const group = byName.get(candidate.toLowerCase());
+      if (group) {
+        const best = pickBestCard(group);
+        if (best) { imageUrl = cardImageUrl(best); break; }
+      }
+    }
+    return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl };
+  });
 }

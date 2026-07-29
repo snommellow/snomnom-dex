@@ -1,13 +1,16 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, type CSSProperties } from "react";
 import Image from "next/image";
-import { Search, X } from "lucide-react";
+import { Search, X, UserCircle } from "lucide-react";
 import type { TrainerEntry } from "@/lib/trainerapi";
 import TrainerCard from "./TrainerCard";
 
-const GRID_STYLE = {
-  gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
+// Same fixed-width shelf grid as the Pokédex — never flexed wider to fill a row.
+const SHELF_GRID_STYLE: CSSProperties = {
+  gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+  backgroundImage:
+    "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
 };
 
 interface Props {
@@ -41,37 +44,37 @@ export default function TrainersClient({ trainers }: Props) {
     <div className="flex flex-col gap-5">
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
         <div className="relative flex-1 max-w-sm">
-          <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
+          <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-amber-900/50 pointer-events-none" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search trainers…"
-            className="w-full pl-9 pr-9 py-2 rounded-xl border border-white/15 bg-white/10 shadow-inner text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder:text-white/30"
+            className="w-full pl-9 pr-9 py-2 rounded-xl border border-amber-800/30 bg-amber-50/80 shadow-inner text-sm text-amber-950 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent placeholder:text-amber-800/40"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-amber-800/50 hover:text-amber-900"
               aria-label="Clear search"
             >
               <X size={13} />
             </button>
           )}
         </div>
-        <p className="text-xs font-semibold text-white/50 whitespace-nowrap">
+        <p className="text-xs font-semibold text-amber-900/60 whitespace-nowrap">
           {filtered.length} / {trainers.length} Trainers
         </p>
       </div>
 
       {filtered.length > 0 ? (
-        <div className="grid gap-x-3 gap-y-5" style={GRID_STYLE}>
+        <div className="grid gap-x-3 gap-y-4" style={SHELF_GRID_STYLE}>
           {filtered.map((t) => (
             <TrainerCard key={t.slug} trainer={t} onSelect={setSelected} />
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-24 text-white/40 gap-3">
+        <div className="flex flex-col items-center justify-center py-24 text-amber-800/50 gap-3">
           <Search size={40} strokeWidth={1.5} />
           <p className="text-sm font-semibold">No trainers match your search.</p>
         </div>
@@ -83,10 +86,15 @@ export default function TrainersClient({ trainers }: Props) {
           onClick={() => setSelected(null)}
         >
           <div className="flex flex-col items-center gap-3" onClick={(e) => e.stopPropagation()}>
-            <div className="relative w-[280px] aspect-[5/7] rounded-2xl overflow-hidden shadow-2xl">
-              <Image src={selected.imageUrl} alt={selected.name} fill sizes="280px" className="object-cover" unoptimized />
+            <div className="relative w-[240px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-100/80 bg-amber-900/20 flex items-center justify-center">
+              {selected.imageUrl ? (
+                <Image src={selected.imageUrl} alt={selected.name} fill sizes="240px" className="object-cover" />
+              ) : (
+                <UserCircle size={72} strokeWidth={1.25} className="text-amber-100/60" />
+              )}
             </div>
             <p className="text-white font-bold text-lg">{selected.name}</p>
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-wide">{selected.region}</p>
             <button
               onClick={() => setSelected(null)}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold bg-white/10 text-white hover:bg-white/20 transition-colors"

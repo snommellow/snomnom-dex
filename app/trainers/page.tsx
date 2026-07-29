@@ -18,9 +18,23 @@ export default function TrainersPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: "linear-gradient(160deg, #2E3192 0%, #1a1c5c 50%, #12143f 100%)" }}
+      style={{
+        background: `
+          repeating-linear-gradient(
+            180deg,
+            transparent 0px,
+            transparent 58px,
+            rgba(139,90,43,0.08) 58px,
+            rgba(139,90,43,0.08) 60px
+          ),
+          linear-gradient(160deg, #c8955a 0%, #b5793a 30%, #c9904f 60%, #b87035 100%)
+        `,
+      }}
     >
-      <header className="sticky top-0 z-20 shadow-lg" style={{ background: "linear-gradient(90deg,#1a1c5c 0%,#2E3192 50%,#1a1c5c 100%)" }}>
+      <header
+        className="sticky top-0 z-20 shadow-lg"
+        style={{ background: "linear-gradient(90deg,#8b1a1a 0%,#c0392b 50%,#8b1a1a 100%)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
           <Link
             href="/"
@@ -32,12 +46,17 @@ export default function TrainersPage() {
           <UserCircle size={30} className="text-white flex-shrink-0" />
           <div>
             <h1 className="text-white text-xl font-extrabold tracking-tight leading-none drop-shadow">Trainers</h1>
-            <p className="text-indigo-200 text-[11px] font-medium leading-none mt-0.5">
-              {trainers.length} Trainers &amp; Trainer Classes
+            <p className="text-red-200 text-[11px] font-medium leading-none mt-0.5">
+              {trainers.length} Trainers · Kanto
             </p>
           </div>
         </div>
       </header>
+
+      <div
+        className="h-3 shadow-md"
+        style={{ background: "linear-gradient(180deg,#7a4a1e 0%,#a0622a 100%)" }}
+      />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <TrainersClient trainers={trainers} />

@@ -3,19 +3,19 @@
     "name": "Youngster",
     "slug": "youngster",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sv1/198_hires.png"
   },
   {
     "name": "Bug Catcher",
     "slug": "bug-catcher",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm11/189_hires.png"
   },
   {
     "name": "Lass",
     "slug": "lass",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/xy10/103_hires.png"
   },
   {
     "name": "Sailor",
@@ -51,7 +51,7 @@
     "name": "Hiker",
     "slug": "hiker",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sma/SV85_hires.png"
   },
   {
     "name": "Biker",
@@ -69,13 +69,13 @@
     "name": "Engineer",
     "slug": "engineer",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/hgss2/75_hires.png"
   },
   {
     "name": "Fisherman",
     "slug": "fisherman",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sma/SV83_hires.png"
   },
   {
     "name": "Swimmer",
@@ -99,13 +99,13 @@
     "name": "Beauty",
     "slug": "beauty",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/swsh4/181_hires.png"
   },
   {
     "name": "Psychic",
     "slug": "psychic",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/xy9/108_hires.png"
   },
   {
     "name": "Rocker",
@@ -117,7 +117,7 @@
     "name": "Juggler",
     "slug": "juggler",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/ecard2/126_hires.png"
   },
   {
     "name": "Tamer",
@@ -129,25 +129,25 @@
     "name": "Bird Keeper",
     "slug": "bird-keeper",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/swsh45/66_hires.png"
   },
   {
     "name": "Blackbelt",
     "slug": "blackbelt",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/hgss4/85_hires.png"
   },
   {
     "name": "Rival",
     "slug": "rival",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/dp1/113_hires.png"
   },
   {
     "name": "Professor Oak",
     "slug": "professor-oak",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png"
   },
   {
     "name": "Chief",
@@ -165,7 +165,7 @@
     "name": "Giovanni",
     "slug": "giovanni",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png"
   },
   {
     "name": "Team Rocket Grunt",
@@ -189,49 +189,49 @@
     "name": "Bruno",
     "slug": "bruno",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/swsh5/158_hires.png"
   },
   {
     "name": "Brock",
     "slug": "brock",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm115/55_hires.png"
   },
   {
     "name": "Misty",
     "slug": "misty",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm115/63_hires.png"
   },
   {
     "name": "Lt. Surge",
     "slug": "lt-surge",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png"
   },
   {
     "name": "Erika",
     "slug": "erika",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png"
   },
   {
     "name": "Koga",
     "slug": "koga",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm10/211_hires.png"
   },
   {
     "name": "Blaine",
     "slug": "blaine",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm75/58_hires.png"
   },
   {
     "name": "Sabrina",
     "slug": "sabrina",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm9/181_hires.png"
   },
   {
     "name": "Gentleman",
@@ -249,18 +249,18 @@
     "name": "Channeler",
     "slug": "channeler",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/sm11/232_hires.png"
   },
   {
     "name": "Agatha",
     "slug": "agatha",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/swsh6/186_hires.png"
   },
   {
     "name": "Lance",
     "slug": "lance",
     "region": "Kanto",
-    "imageUrl": null
+    "imageUrl": "https://images.pokemontcg.io/swsh12/192_hires.png"
   }
 ]

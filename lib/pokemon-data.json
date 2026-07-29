@@ -2132,7 +2132,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
     "genus": "Poison Bee Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10/1_hires.png"
+      "https://images.pokemontcg.io/swsh10/161_hires.png"
     ],
     "altForms": [
       {
@@ -3435,7 +3435,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
     "genus": "Snake Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/108_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex7/55_hires.png",
     "altForms": [],
     "familyId": 23,
     "familyOrder": 0,
@@ -8295,7 +8295,7 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/sm8/122_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/sm5/78_hires.png"
       }
     ],
     "familyId": 50,
@@ -15232,7 +15232,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png",
     "genus": "Sludge Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex7/56_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/79_hires.png",
     "altForms": [
       {
         "slug": "grimer-alola",
@@ -16990,7 +16990,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/98.png",
     "genus": "River Crab Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/115_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex14/54_hires.png",
     "altForms": [],
     "familyId": 98,
     "familyOrder": 0,
@@ -21233,7 +21233,7 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5/30_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swsh2/37_hires.png"
       }
     ],
     "familyId": 122,
@@ -23066,7 +23066,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH087_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 133,
@@ -25361,7 +25361,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10169.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/58_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -25539,7 +25539,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10170.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/80_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -25705,7 +25705,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10171.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/97_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -27833,7 +27833,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/159.png",
     "genus": "Big Jaw Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex15/27_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/38_hires.png",
     "altForms": [],
     "familyId": 158,
     "familyOrder": 1,
@@ -32597,7 +32597,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/188.png",
     "genus": "Cottonweed Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex7/49_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/60_hires.png",
     "altForms": [],
     "familyId": 187,
     "familyOrder": 1,
@@ -34586,7 +34586,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10172.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/99_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/179_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -36483,7 +36483,7 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh10/89_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swsh10/88_hires.png"
       }
     ],
     "familyId": 211,
@@ -45461,7 +45461,7 @@
     "altForms": [],
     "familyId": 265,
     "familyOrder": 0,
-    "flavorText": "Using the spikes on its rear end,   WURMPLE peels the bark off trees and feeds on the sap that oozes out. This POKéMON’s feet are tipped with suction pads that allow it to cling to glass without slipping.",
+    "flavorText": "Using the spikes on its rear end, WURMPLE peels the bark off trees and feeds on the sap that oozes out. This POKéMON’s feet are tipped with suction pads that allow it to cling to glass without slipping.",
     "heightM": 0.3,
     "weightKg": 3.6,
     "abilities": [
@@ -45575,7 +45575,7 @@
     "altForms": [],
     "familyId": 265,
     "familyOrder": 1,
-    "flavorText": "SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POKéMON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
+    "flavorText": "SILCOON tethers itself to a tree branch using silk to keep from falling. There, this POKéMON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
     "heightM": 0.6,
     "weightKg": 10,
     "abilities": [
@@ -47010,7 +47010,7 @@
     "familyId": 273,
     "familyOrder": 2,
     "cardRank": 0,
-    "flavorText": "SHIFTRY is a mysterious POKéMON that is said to live atop towering trees  dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
+    "flavorText": "SHIFTRY is a mysterious POKéMON that is said to live atop towering trees dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
     "heightM": 1.3,
     "weightKg": 59.6,
     "abilities": [
@@ -48669,7 +48669,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/285.png",
     "genus": "Mushroom Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex8/72_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/63_hires.png",
     "altForms": [],
     "familyId": 285,
     "familyOrder": 0,
@@ -51338,7 +51338,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10066.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/sm11/225_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm11/226_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -51670,7 +51670,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/304.png",
     "genus": "Iron Armor Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex12/48_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex1/25_hires.png",
     "altForms": [],
     "familyId": 304,
     "familyOrder": 0,
@@ -55903,7 +55903,7 @@
     "familyId": 328,
     "familyOrder": 2,
     "cardRank": 0,
-    "flavorText": "FLYGON is nicknamed “the elemental  spirit of the desert.” Because its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in a sandstorm while flying.",
+    "flavorText": "FLYGON is nicknamed “the elemental spirit of the desert.” Because its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in a sandstorm while flying.",
     "heightM": 2,
     "weightKg": 82,
     "abilities": [
@@ -61138,7 +61138,7 @@
     "familyId": 363,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "SPHEAL is much faster rolling than  walking to get around. When groups of this POKéMON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
+    "flavorText": "SPHEAL is much faster rolling than walking to get around. When groups of this POKéMON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
     "heightM": 0.8,
     "weightKg": 39.5,
     "abilities": [
@@ -62379,7 +62379,7 @@
     "altForms": [],
     "familyId": 371,
     "familyOrder": 0,
-    "flavorText": "BAGON has a dream of one day soaring in the sky. In doomed efforts to fly, this POKéMON hurls itself off cliffs. As a result of its dives, its head has  grown tough and as hard as tempered steel.",
+    "flavorText": "BAGON has a dream of one day soaring in the sky. In doomed efforts to fly, this POKéMON hurls itself off cliffs. As a result of its dives, its head has grown tough and as hard as tempered steel.",
     "heightM": 0.6,
     "weightKg": 42.1,
     "abilities": [
@@ -64183,7 +64183,7 @@
     "familyId": 383,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "GROUDON has long been described in  mythology as the POKéMON that raised lands and expanded continents. This POKéMON took to sleep after a cataclysmic battle with KYOGRE.",
+    "flavorText": "GROUDON has long been described in mythology as the POKéMON that raised lands and expanded continents. This POKéMON took to sleep after a cataclysmic battle with KYOGRE.",
     "heightM": 3.5,
     "weightKg": 950,
     "abilities": [
@@ -64305,7 +64305,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
     "genus": "Sky High Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw6/123_hires.png"
+      "https://images.pokemontcg.io/swsh7/194_hires.png"
     ],
     "altForms": [
       {
@@ -64328,7 +64328,7 @@
     "familyId": 384,
     "familyOrder": 0,
     "cardRank": 6,
-    "flavorText": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer,  never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
+    "flavorText": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer, never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
     "heightM": 7,
     "weightKg": 206.5,
     "abilities": [
@@ -66125,7 +66125,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/395.png",
     "genus": "Emperor Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh5/40_hires.png"
+      "https://images.pokemontcg.io/swsh5/146_hires.png"
     ],
     "altForms": [],
     "familyId": 393,
@@ -76410,7 +76410,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/457.png",
     "genus": "Neon Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh12pt5gg/GG39_hires.png"
+      "https://images.pokemontcg.io/swsh9/156_hires.png"
     ],
     "altForms": [],
     "familyId": 456,
@@ -79786,9 +79786,8 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10068.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy6/100_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 6
+        "tcgUrl": null,
+        "regularCardUrl": "https://images.scrydex.com/pokemon/me4-48/large"
       }
     ],
     "familyId": 280,
@@ -81269,7 +81268,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
         "category": "regional",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/113_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/177_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -81423,7 +81422,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10246.png",
         "category": "regional",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/39_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/167_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -91244,7 +91243,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10237.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/17_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/163_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -95050,7 +95049,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/572.png",
     "genus": "Chinchilla Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/182_hires.png"
+      "https://images.pokemontcg.io/zsv10pt5/152_hires.png"
     ],
     "altForms": [],
     "familyId": 572,
@@ -108929,7 +108928,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/660.png",
     "genus": "Digging Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/xy4/88_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy1/112_hires.png",
     "altForms": [],
     "familyId": 659,
     "familyOrder": 1,
@@ -117501,7 +117500,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/715.png",
     "genus": "Sound Wave Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sm3/141_hires.png"
+      "https://images.pokemontcg.io/swsh7/196_hires.png"
     ],
     "altForms": [],
     "familyId": 714,
@@ -122837,7 +122836,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/749.png",
     "genus": "Donkey Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm2/75_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sm3/77_hires.png",
     "altForms": [],
     "familyId": 749,
     "familyOrder": 0,
@@ -124609,7 +124608,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/761.png",
     "genus": "Fruit Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm11/17_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh3/14_hires.png",
     "altForms": [],
     "familyId": 761,
     "familyOrder": 0,
@@ -133477,7 +133476,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh12tg/TG19_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 821,
@@ -136391,7 +136390,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
     "genus": "Sand Snake Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh2/108_hires.png"
+      "https://images.pokemontcg.io/swsh8/252_hires.png"
     ],
     "altForms": [
       {
@@ -138672,7 +138671,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/860.png",
     "genus": "Devious Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh2/124_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv7/95_hires.png",
     "altForms": [],
     "familyId": 859,
     "familyOrder": 1,
@@ -139176,7 +139175,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/863.png",
     "genus": "Viking Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh11/129_hires.png"
+      "https://images.pokemontcg.io/swsh11/184_hires.png"
     ],
     "altForms": [],
     "familyId": 52,
@@ -142133,7 +142132,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/884.png",
     "genus": "Alloy Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh35/47_hires.png"
+      "https://images.pokemontcg.io/swsh7/198_hires.png"
     ],
     "altForms": [
       {
@@ -144984,7 +144983,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/903.png",
     "genus": "Free Climb Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10/94_hires.png"
+      "https://images.pokemontcg.io/swsh10/175_hires.png"
     ],
     "altForms": [],
     "familyId": 215,
@@ -148136,7 +148135,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/924.png",
     "genus": "Couple Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv1/159_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/160_hires.png",
     "altForms": [],
     "familyId": 924,
     "familyOrder": 0,
@@ -153790,7 +153789,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/963.png",
     "genus": "Dolphin Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sv3/61_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/sv3/60_hires.png",
     "altForms": [],
     "familyId": 963,
     "familyOrder": 0,
@@ -161299,7 +161298,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10273.png",
         "category": "regional",
         "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/152_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv6/213_hires.png",
         "regularCardUrl": null,
         "cardRank": 7
       },
@@ -161601,15 +161600,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
-    "genus": "Apple Hydra Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv7/167_hires.png"
     ],
     "altForms": [],
-    "familyId": 840,
-    "familyOrder": 4,
+    "familyId": 1019,
+    "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Seven syrpents live inside an apple made of syrup. The syrpent in the center is the commander.",
+    "flavorText": null,
     "heightM": 1.8,
     "weightKg": 93,
     "abilities": [
@@ -161655,10 +161654,7 @@
         "value": 44
       }
     ],
-    "eggGroups": [
-      "plant",
-      "dragon"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "fickle-beam",
@@ -161725,43 +161721,7 @@
         "level": 54
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 840,
-        "name": "applin",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 841,
-        "name": "flapple",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "tart-apple"
-      },
-      {
-        "id": 842,
-        "name": "appletun",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "sweet-apple"
-      },
-      {
-        "id": 1011,
-        "name": "dipplin",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "syrupy-apple"
-      },
-      {
-        "id": 1019,
-        "name": "hydrapple",
-        "minLevel": null,
-        "trigger": "level-up",
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1020,
@@ -161908,7 +161868,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1021.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/208_hires.png"
     ],
@@ -161916,7 +161876,7 @@
     "familyId": 1021,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It's said to incinerate everything around it with lightning launched from its fur. Very little is known about this creature.",
+    "flavorText": null,
     "heightM": 5.2,
     "weightKg": 480,
     "abilities": [
@@ -161952,9 +161912,7 @@
         "value": 75
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "stomp",
@@ -162025,15 +161983,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1021,
-        "name": "raging-bolt",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1022,
@@ -162044,7 +161994,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1022.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/207_hires.png"
     ],
@@ -162052,7 +162002,7 @@
     "familyId": 1022,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
+    "flavorText": null,
     "heightM": 1.5,
     "weightKg": 162.5,
     "abilities": [
@@ -162088,9 +162038,7 @@
         "value": 124
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "horn-attack",
@@ -162161,15 +162109,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1022,
-        "name": "iron-boulder",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1023,
@@ -162180,7 +162120,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/206_hires.png"
     ],
@@ -162188,7 +162128,7 @@
     "familyId": 1023,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It resembles a mysterious object introduced in a paranormal magazine as a cutting-edge weapon shaped like a Cobalion.",
+    "flavorText": null,
     "heightM": 1.6,
     "weightKg": 156,
     "abilities": [
@@ -162224,9 +162164,7 @@
         "value": 98
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "leer",
@@ -162297,15 +162235,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1023,
-        "name": "iron-crown",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1024,
@@ -162315,46 +162245,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1024.png",
-    "genus": "Tera Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv7/170_hires.png"
     ],
-    "altForms": [
-      {
-        "slug": "terapagos-terastal",
-        "displayName": "Terastal Forme Terapagos",
-        "types": [
-          "normal"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10276.png",
-        "category": "forme",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv7/173_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 2
-      },
-      {
-        "slug": "terapagos-stellar",
-        "displayName": "Stellar Forme Terapagos",
-        "types": [
-          "normal"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10277.png",
-        "category": "forme",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 2
-      }
-    ],
+    "altForms": [],
     "familyId": 1024,
     "familyOrder": 0,
     "cardRank": 7,
-    "flavorText": "Terapagos protects itself using its power to transform energy into hard crystals. This Pokémon is the source of the Terastal phenomenon.",
+    "flavorText": null,
     "heightM": 0.2,
     "weightKg": 6.5,
     "abilities": [
@@ -162390,9 +162289,7 @@
         "value": 60
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "withdraw",
@@ -162443,15 +162340,7 @@
         "level": 90
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1024,
-        "name": "terapagos",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1025,
@@ -162462,7 +162351,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
-    "genus": "Subjugation Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv8pt5/163_hires.png"
     ],
@@ -162470,7 +162359,7 @@
     "familyId": 1025,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
+    "flavorText": null,
     "heightM": 0.3,
     "weightKg": 0.3,
     "abilities": [
@@ -162506,9 +162395,7 @@
         "value": 88
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "smog",
@@ -162563,14 +162450,6 @@
         "level": 72
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1025,
-        "name": "pecharunt",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   }
 ]

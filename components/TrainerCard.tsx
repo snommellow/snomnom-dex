@@ -5,8 +5,9 @@ import { useState, useRef, useEffect } from "react";
 import { UserCircle } from "lucide-react";
 import type { TrainerEntry } from "@/lib/trainerapi";
 
-// Same 3D tilt/holo "book card" rendering as PokemonCard — trainers don't have a type color,
-// so a fixed accent (matching the header's red) stands in for typeColor there.
+// Structural 1:1 copy of PokemonCard's book-tilt rendering — same masthead/name/portrait/pill
+// row dimensions, so cards are the exact same height/proportions in a mixed or side-by-side
+// grid. Trainers have no type color, so a fixed accent stands in for typeColor throughout.
 const ACCENT = "#c0392b";
 
 interface Props {
@@ -115,21 +116,9 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               : "linear-gradient(to bottom, transparent 0%, transparent 10%, black 26%, black 78%, transparent 94%, transparent 100%)",
             transition: "mask-image 0.2s",
           }}>
-            {trainer.imageUrl && trainer.isFullArt ? (
-              <Image
-                src={trainer.imageUrl}
-                alt=""
-                aria-hidden
-                fill
-                sizes="300px"
-                className="object-cover object-top"
-                style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
-                loading="lazy"
-              />
-            ) : trainer.imageUrl ? (
-              // Plain bordered card: scale up from top so only the name + art fits in the
-              // frame, hiding the rules text box below — same crop as PokemonCard's
-              // regularCardUrl treatment.
+            {trainer.imageUrl && !trainer.isFullArt ? (
+              /* Plain bordered card: scale up from top so only name + art fits in container,
+                 hiding the rules text box — same crop as PokemonCard's regularCardUrl branch */
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={trainer.imageUrl}
@@ -144,11 +133,18 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
                   opacity: 0.8,
                 }}
               />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <UserCircle size={56} strokeWidth={1} style={{ color: `${ACCENT}55` }} />
-              </div>
-            )}
+            ) : trainer.imageUrl ? (
+              <Image
+                src={trainer.imageUrl}
+                alt=""
+                aria-hidden
+                fill
+                sizes="300px"
+                className="object-cover object-top"
+                style={{ opacity: 0.55, transform: "scale(1.05) translateY(5%)", transformOrigin: "top center" }}
+                loading="lazy"
+              />
+            ) : null}
           </div>
 
           {/* Masthead */}
@@ -160,13 +156,13 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               TRAINERS
             </span>
             <span className="flex items-center gap-1">
-              <span className="text-white font-black uppercase leading-none" style={{ fontSize: 8, letterSpacing: ".06em" }}>
+              <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
                 {trainer.region}
               </span>
             </span>
           </div>
 
-          {/* Name */}
+          {/* Name + tagline */}
           <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
             <p
               className="font-black leading-tight truncate"
@@ -174,10 +170,22 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
             >
               {trainer.name}
             </p>
+            <p
+              className="font-semibold leading-none text-gray-500"
+              style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}
+            >
+              Trainer of {trainer.region}.
+            </p>
           </div>
 
           {/* Portrait area */}
-          <div className="relative z-10 flex-1" style={{ minHeight: 120 }} />
+          <div className="relative z-10 flex-1" style={{ minHeight: 120 }}>
+            {!trainer.imageUrl && (
+              <div className="absolute bottom-1 right-1 w-10 h-10" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
+                <UserCircle size={40} strokeWidth={1} style={{ color: `${ACCENT}88` }} />
+              </div>
+            )}
+          </div>
 
           {/* Sparkles */}
           <div className="absolute inset-0 z-[11] pointer-events-none">
@@ -208,6 +216,16 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
             background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.28) 0%, transparent 55%)`,
             mixBlendMode: "overlay",
           }} />
+
+          {/* Region pill — same slot/dimensions as the Pokédex's type-pill row */}
+          <div className="relative z-10 px-1.5 py-1.5 flex flex-row gap-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
+            <span
+              className="flex items-center justify-center rounded-full text-white uppercase font-extrabold"
+              style={{ backgroundColor: ACCENT, fontSize: 7, letterSpacing: "0.03em", padding: "3px 4px 3px 4px", width: 58, textShadow: "0 1px 2px rgba(0,0,0,.45)" }}
+            >
+              {trainer.region}
+            </span>
+          </div>
         </div>
       </div>
     </article>

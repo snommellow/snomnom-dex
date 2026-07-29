@@ -8,7 +8,7 @@ import TrainerCard from "./TrainerCard";
 
 // Same fixed-width shelf grid as the Pokédex — never flexed wider to fill a row.
 const SHELF_GRID_STYLE: CSSProperties = {
-  gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
   backgroundImage:
     "repeating-linear-gradient(transparent, transparent calc(100% - 6px), #7a4a1e calc(100% - 6px), #9a6030 100%)",
 };

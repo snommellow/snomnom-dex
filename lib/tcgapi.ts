@@ -1034,8 +1034,4 @@ export async function fetchCardById(cardId: string): Promise<string | null> {
     if (!json.data?.images) return null;
     return cardImageUrl(json.data);
   } catch { return null; }
-}
-
-
-
-
+} 

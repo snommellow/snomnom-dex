@@ -105,16 +105,30 @@ export function toTrainerSlug(name: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
-// Fetches every Supporter card, groups by name, and picks the best card per trainer —
-// the same rank-then-tiebreak-by-price shape as pickBestCard in tcgapi.ts.
+// The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
+// names most Supporter cards after their signature move ("Bill's Analysis", "Bill's
+// Maintenance", "Bill's Transfer"), so the possessive prefix is the trainer's actual name.
+// Stripping "'s ..." collapses those down to the base person ("Bill"). Plain names and trainer
+// classes with no possessive ("Acerola", "Ace Trainer", "Anthea & Concordia") pass through as-is.
+// A trailing parenthetical variant tag ("Boss's Orders (Ghetsis)") is stripped first so it
+// merges with its un-tagged sibling instead of forming its own group.
+function baseTrainerName(cardName: string): string {
+  const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
+  const possessiveMatch = noVariantTag.match(/^(.+?)['']s\s+.+$/);
+  return possessiveMatch ? possessiveMatch[1] : noVariantTag;
+}
+
+// Fetches every Supporter card, groups by base trainer name, and picks the single best card
+// per trainer — the same rank-then-tiebreak-by-price shape as pickBestCard in tcgapi.ts.
 export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   const cards = await fetchAllPages("supertype:Trainer subtypes:Supporter");
   const byName = new Map<string, PtcgCard[]>();
   for (const c of cards) {
     if (!c.images?.large) continue;
-    const list = byName.get(c.name);
+    const name = baseTrainerName(c.name);
+    const list = byName.get(name);
     if (list) list.push(c);
-    else byName.set(c.name, [c]);
+    else byName.set(name, [c]);
   }
   const entries: TrainerEntry[] = [];
   for (const [name, group] of byName) {

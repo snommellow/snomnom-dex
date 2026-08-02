@@ -1309,6 +1309,62 @@
     "isFullArt": true
   },
   {
+    "name": "Professor Laventon",
+    "slug": "professor-laventon",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh12/162_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Cyllene",
+    "slug": "cyllene",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh10/183_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Adaman",
+    "slug": "adaman",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG57_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Irida",
+    "slug": "irida",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh10/186_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Volo",
+    "slug": "volo",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh11/196_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cogita",
+    "slug": "cogita",
+    "region": "Hisui",
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Ingo",
+    "slug": "ingo",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/sm9/176_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Kamado",
+    "slug": "kamado",
+    "region": "Hisui",
+    "imageUrl": "https://images.pokemontcg.io/swsh10/187_hires.png",
+    "isFullArt": true
+  },
+  {
     "name": "Youngster",
     "slug": "youngster",
     "region": "Universal",

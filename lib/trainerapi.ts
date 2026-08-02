@@ -151,7 +151,7 @@ export function toTrainerSlug(name: string): string {
 // Professor Oak, Team Rocket/Giovanni) — these get the single best/most valuable card regardless
 // of era, unlike generic trainer classes which prefer the period-accurate 1998-2003 WotC-era
 // print.
-const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[] = [
+const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; region?: string }[] = [
   // Gym Leaders
   { name: "Brock", searchNames: ["Brock"], special: true },
   { name: "Misty", searchNames: ["Misty"], special: true },
@@ -179,6 +179,28 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Mr. Fuji", searchNames: ["Mr. Fuji", "Fuji"], special: true },
   { name: "Daisy", searchNames: ["Daisy"], special: true },
   { name: "Copycat", searchNames: ["Copycat"], special: true },
+  // Johto (Gen 2) named characters. Bruno, Koga, and Lance are NOT repeated here — they're the
+  // same people already listed above, canonically reappearing as Johto's Elite Four (Bruno,
+  // Koga) and Champion (Lance).
+  { name: "Falkner", searchNames: ["Falkner"], special: true, region: "Johto" },
+  { name: "Bugsy", searchNames: ["Bugsy"], special: true, region: "Johto" },
+  { name: "Whitney", searchNames: ["Whitney"], special: true, region: "Johto" },
+  { name: "Morty", searchNames: ["Morty"], special: true, region: "Johto" },
+  { name: "Chuck", searchNames: ["Chuck"], special: true, region: "Johto" },
+  { name: "Jasmine", searchNames: ["Jasmine"], special: true, region: "Johto" },
+  { name: "Pryce", searchNames: ["Pryce"], special: true, region: "Johto" },
+  { name: "Clair", searchNames: ["Clair"], special: true, region: "Johto" },
+  { name: "Will", searchNames: ["Will"], special: true, region: "Johto" },
+  { name: "Karen", searchNames: ["Karen"], special: true, region: "Johto" },
+  { name: "Silver", searchNames: ["Silver"], special: true, region: "Johto" },
+  { name: "Professor Elm", searchNames: ["Professor Elm", "Elm"], special: true, region: "Johto" },
+  { name: "Ariana", searchNames: ["Ariana"], special: true, region: "Johto" },
+  { name: "Proton", searchNames: ["Proton"], special: true, region: "Johto" },
+  { name: "Petrel", searchNames: ["Petrel"], special: true, region: "Johto" },
+  { name: "Archer", searchNames: ["Archer"], special: true, region: "Johto" },
+  { name: "Eusine", searchNames: ["Eusine"], special: true, region: "Johto" },
+  { name: "Mr. Pokémon", searchNames: ["Mr. Pokémon", "Mr. Pokemon"], special: true, region: "Johto" },
+  { name: "Kurt", searchNames: ["Kurt"], special: true, region: "Johto" },
   // Generic trainer classes — not Kanto-specific (every region has these), tagged "Universal".
   // Kanto's own roster (Gen 1) first, then every other generic class introduced across Gen
   // 2-9, deduplicated where a later game reused an earlier class name.
@@ -421,7 +443,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   }
 
   return Promise.all(
-    KANTO_ROSTER.map(async ({ name, searchNames, special }) => {
+    KANTO_ROSTER.map(async ({ name, searchNames, special, region }) => {
       let imageUrl: string | null = null;
       let isFullArt = false;
       // Solo cards always win first — a co-starring tag-team card is only used if the trainer
@@ -440,10 +462,10 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         imageUrl = pocket.url;
         isFullArt = pocket.isFullArt;
       }
-      // Generic trainer classes (Youngster, Sailor, etc.) aren't Kanto-specific — every region
-      // has its own Youngsters and Sailors — so only named individuals actually tied to Kanto
-      // (gym leaders, Elite Four, Champion, etc.) carry the "Kanto" region tag.
-      return { name, slug: toTrainerSlug(name), region: special ? "Kanto" : "Universal", imageUrl, isFullArt };
+      // Generic trainer classes (Youngster, Sailor, etc.) aren't region-specific — every region
+      // has its own Youngsters and Sailors — so only named individuals get a real region tag,
+      // defaulting to Kanto when not overridden (Johto entries set region explicitly).
+      return { name, slug: toTrainerSlug(name), region: region ?? (special ? "Kanto" : "Universal"), imageUrl, isFullArt };
     })
   );
 }

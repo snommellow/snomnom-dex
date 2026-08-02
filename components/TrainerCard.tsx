@@ -8,9 +8,10 @@ import type { TrainerEntry } from "@/lib/trainerapi";
 // Structural 1:1 copy of PokemonCard's book-tilt rendering — same masthead/name/portrait/pill
 // row dimensions, so cards are the exact same height/proportions in a mixed or side-by-side
 // grid. Trainers have no type color, so a fixed accent stands in for typeColor throughout —
-// red for Kanto-specific named characters, slate for generic classes that exist in every region.
+// per-region color for named characters, slate for generic classes that exist in every region.
 const REGION_ACCENT: Record<string, string> = {
   Kanto: "#c0392b",
+  Johto: "#2c6e8f",
   Universal: "#546778",
 };
 

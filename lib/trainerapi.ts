@@ -110,17 +110,29 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
   while (true) {
     const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,set,images,tcgplayer`;
     let data: PtcgCard[] | null = null;
+    let succeeded = false;
     for (let attempt = 0; attempt < 5; attempt++) {
       try {
         const res = await fetch(url, { headers: getHeaders() });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const text = await res.text();
         if (!text) throw new Error("empty body");
-        data = JSON.parse(text).data;
+        const parsed = JSON.parse(text).data;
+        // A 200 response with an empty/missing data array on page 1 is indistinguishable from
+        // "query legitimately has zero matches" at the HTTP level, but for a broad query like
+        // supertype:Trainer that's always known to have thousands of results — treating it as
+        // success here silently truncated the entire card catalog to nothing with no error
+        // logged, breaking pagination on the very first page. Retry instead of accepting it.
+        if (page === 1 && (!parsed || parsed.length === 0)) throw new Error("empty data on page 1");
+        data = parsed;
+        succeeded = true;
         break;
       } catch {
         await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
       }
+    }
+    if (!succeeded) {
+      console.log(`[fetchAllPages] giving up on page ${page} for query "${q}" after 5 attempts — this page's results will be missing`);
     }
     if (!data || data.length === 0) break;
     results.push(...data);

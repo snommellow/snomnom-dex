@@ -45,15 +45,20 @@ const CLASSIC_SET_RE = /^(base|gym|neo|ecard)/i;
 
 // Same rarity-tier idea as the Pokémon pipeline's RARITY_ORDER, but scoped to what Supporter
 // cards actually carry — full-art illustration tiers first, then holo/secret tiers, then plain.
+// "Ultra Rare" (modern SV/SWSH naming) and "Rare Ultra" (older EX/pre-SWSH naming) are the same
+// tier under two different strings pokemontcg.io has used across eras — both must be listed, or
+// a card tagged with whichever one is missing scores a fallback 99 (worse than Uncommon), which
+// let vintage bordered cards win over modern full-art ones for named trainers.
 const SUPPORTER_RARITY_ORDER = [
   "Special Illustration Rare",
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
   "Rare Shiny",
-  "Rare Holo",
-  "Rare Holo Star",
+  "Ultra Rare",
   "Rare Ultra",
+  "Rare Holo Star",
+  "Rare Holo",
   "Rare",
   "Uncommon",
   "Common",

@@ -59,7 +59,7 @@
     "name": "Lorelei",
     "slug": "lorelei",
     "region": "Kanto",
-    "imageUrl": null,
+    "imageUrl": "https://images.pokemontcg.io/sm12/199_hires.png",
     "isFullArt": false
   },
   {
@@ -84,11 +84,25 @@
     "isFullArt": true
   },
   {
-    "name": "Rival",
-    "slug": "rival",
+    "name": "Red",
+    "slug": "red",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/dp1/113_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sm12/234_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Blue",
+    "slug": "blue",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm12/234_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Green",
+    "slug": "green",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm10/209_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Professor Oak",
@@ -101,8 +115,36 @@
     "name": "Team Rocket Grunt",
     "slug": "team-rocket-grunt",
     "region": "Kanto",
-    "imageUrl": null,
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2b/091/high.webp",
+    "isFullArt": true
+  },
+  {
+    "name": "Bill",
+    "slug": "bill",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/194_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Mr. Fuji",
+    "slug": "mr-fuji",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/base3/58_hires.png",
     "isFullArt": false
+  },
+  {
+    "name": "Daisy",
+    "slug": "daisy",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/195_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Copycat",
+    "slug": "copycat",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm7/163_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Youngster",

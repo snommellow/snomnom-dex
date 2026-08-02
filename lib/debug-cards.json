@@ -6,6 +6,7 @@
       "Basic",
       "V"
     ],
+    "artist": "Narumi Sato",
     "set": "swsh10",
     "images": {
       "small": "https://images.pokemontcg.io/swsh10/161.png",
@@ -19,6 +20,7 @@
       "Basic",
       "V"
     ],
+    "artist": "Uta",
     "set": "swsh6",
     "images": {
       "small": "https://images.pokemontcg.io/swsh6/170.png",
@@ -32,6 +34,7 @@
       "Basic",
       "V"
     ],
+    "artist": "Akira Komayama",
     "set": "swsh6",
     "images": {
       "small": "https://images.pokemontcg.io/swsh6/174.png",
@@ -45,6 +48,7 @@
       "Basic",
       "V"
     ],
+    "artist": "Shibuzoh.",
     "set": "swsh6",
     "images": {
       "small": "https://images.pokemontcg.io/swsh6/177.png",
@@ -57,6 +61,7 @@
     "subtypes": [
       "Basic"
     ],
+    "artist": "Kuroimori",
     "set": "sv9",
     "images": {
       "small": "https://images.pokemontcg.io/sv9/161.png",
@@ -70,10 +75,39 @@
       "Basic",
       "ex"
     ],
+    "artist": "Shiburingaru",
     "set": "sv3pt5",
     "images": {
       "small": "https://images.pokemontcg.io/sv3pt5/202.png",
       "large": "https://images.pokemontcg.io/sv3pt5/202_hires.png"
+    }
+  },
+  "sv10-192": {
+    "name": "Blaziken",
+    "rarity": "Illustration Rare",
+    "subtypes": [
+      "Stage 2"
+    ],
+    "artist": "kodama",
+    "set": "sv10",
+    "images": {
+      "small": "https://images.pokemontcg.io/sv10/192.png",
+      "large": "https://images.pokemontcg.io/sv10/192_hires.png"
+    }
+  },
+  "swsh7-194": {
+    "name": "Rayquaza V",
+    "rarity": "Rare Ultra",
+    "subtypes": [
+      "Basic",
+      "V",
+      "Rapid Strike"
+    ],
+    "artist": "Ryuta Fuse",
+    "set": "swsh7",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh7/194.png",
+      "large": "https://images.pokemontcg.io/swsh7/194_hires.png"
     }
   }
 }

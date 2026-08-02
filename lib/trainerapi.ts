@@ -166,8 +166,12 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Bruno", searchNames: ["Bruno"], special: true },
   { name: "Agatha", searchNames: ["Agatha"], special: true },
   { name: "Lance", searchNames: ["Lance"], special: true },
-  // Champion
-  { name: "Rival", searchNames: ["Rival"], special: true },
+  // Protagonist & Rival — RIVAL1/RIVAL2/RIVAL3 collapse to "Blue" (their canon English name)
+  // rather than the generic constant name "Rival"; "Red" is the player character and "Green"
+  // is the rival's Japanese-canon name, both with their own TCG cards.
+  { name: "Red", searchNames: ["Red"], special: true },
+  { name: "Blue", searchNames: ["Blue"], special: true },
+  { name: "Green", searchNames: ["Green"], special: true },
   // Other named characters
   { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
   { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },

@@ -141,7 +141,10 @@ export function toTrainerSlug(name: string): string {
 // are the same person as RIVAL1 at later battle stages, so they collapse into one "Rival"
 // entry rather than three. searchNames are the candidate TCG Supporter-card names to try for
 // portrait art, tried in order — a miss just means no art, not a missing trainer.
-const KANTO_ROSTER: { name: string; searchNames: string[] }[] = [
+// special marks named individuals (gym leaders, Elite Four, Champion, Rival, Professor Oak,
+// Team Rocket/Giovanni) — these get the single best/most valuable card regardless of era, unlike
+// generic trainer classes which prefer the period-accurate 1998-2003 WotC-era print.
+const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[] = [
   { name: "Youngster", searchNames: ["Youngster"] },
   { name: "Bug Catcher", searchNames: ["Bug Catcher"] },
   { name: "Lass", searchNames: ["Lass"] },
@@ -165,27 +168,27 @@ const KANTO_ROSTER: { name: string; searchNames: string[] }[] = [
   { name: "Tamer", searchNames: ["Tamer"] },
   { name: "Bird Keeper", searchNames: ["Bird Keeper"] },
   { name: "Blackbelt", searchNames: ["Black Belt", "Blackbelt"] },
-  { name: "Rival", searchNames: ["Rival"] },
-  { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"] },
+  { name: "Rival", searchNames: ["Rival"], special: true },
+  { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
   { name: "Chief", searchNames: ["Chief"] },
   { name: "Scientist", searchNames: ["Scientist"] },
-  { name: "Giovanni", searchNames: ["Giovanni"] },
-  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"] },
+  { name: "Giovanni", searchNames: ["Giovanni"], special: true },
+  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },
   { name: "Cooltrainer♂", searchNames: ["Cooltrainer"] },
   { name: "Cooltrainer♀", searchNames: ["Cooltrainer"] },
-  { name: "Bruno", searchNames: ["Bruno"] },
-  { name: "Brock", searchNames: ["Brock"] },
-  { name: "Misty", searchNames: ["Misty"] },
-  { name: "Lt. Surge", searchNames: ["Lt. Surge", "Surge"] },
-  { name: "Erika", searchNames: ["Erika"] },
-  { name: "Koga", searchNames: ["Koga"] },
-  { name: "Blaine", searchNames: ["Blaine"] },
-  { name: "Sabrina", searchNames: ["Sabrina"] },
+  { name: "Bruno", searchNames: ["Bruno"], special: true },
+  { name: "Brock", searchNames: ["Brock"], special: true },
+  { name: "Misty", searchNames: ["Misty"], special: true },
+  { name: "Lt. Surge", searchNames: ["Lt. Surge", "Surge"], special: true },
+  { name: "Erika", searchNames: ["Erika"], special: true },
+  { name: "Koga", searchNames: ["Koga"], special: true },
+  { name: "Blaine", searchNames: ["Blaine"], special: true },
+  { name: "Sabrina", searchNames: ["Sabrina"], special: true },
   { name: "Gentleman", searchNames: ["Gentleman"] },
-  { name: "Lorelei", searchNames: ["Lorelei"] },
+  { name: "Lorelei", searchNames: ["Lorelei"], special: true },
   { name: "Channeler", searchNames: ["Channeler"] },
-  { name: "Agatha", searchNames: ["Agatha"] },
-  { name: "Lance", searchNames: ["Lance"] },
+  { name: "Agatha", searchNames: ["Agatha"], special: true },
+  { name: "Lance", searchNames: ["Lance"], special: true },
 ];
 
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
@@ -214,21 +217,29 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
     else byName.set(name, [c]);
   }
 
-  return KANTO_ROSTER.map(({ name, searchNames }) => {
+  return KANTO_ROSTER.map(({ name, searchNames, special }) => {
     let imageUrl: string | null = null;
     let isFullArt = false;
     for (const candidate of searchNames) {
       const group = byName.get(candidate.toLowerCase());
       if (!group) continue;
-      // Prefer the original WotC-era print when one exists — period-accurate for a Kanto dex —
-      // and only fall back to the full (modern-inclusive) pool if no classic print was ever made.
-      const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
-      const pool = classicCards.length ? classicCards : group;
-      const best = pickBestCard(pool);
+      let best: PtcgCard | null;
+      let usedClassic = false;
+      if (special) {
+        // Named individuals get whatever card is most valuable, any era — their best modern
+        // full-art illustrations are the point, not a vintage-accurate print.
+        best = pickBestCard(group);
+      } else {
+        // Generic trainer classes prefer the original WotC-era print when one exists —
+        // period-accurate for a Kanto dex — falling back to the full pool otherwise.
+        const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
+        usedClassic = classicCards.length > 0;
+        best = pickBestCard(usedClassic ? classicCards : group);
+      }
       if (best) {
         imageUrl = cardImageUrl(best);
         // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
-        isFullArt = classicCards.length ? false : FULL_ART_RARITIES.has(best.rarity);
+        isFullArt = usedClassic ? false : FULL_ART_RARITIES.has(best.rarity);
         break;
       }
     }

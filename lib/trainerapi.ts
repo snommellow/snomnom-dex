@@ -207,8 +207,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Blackbelt", searchNames: ["Black Belt", "Blackbelt"] },
   { name: "Chief", searchNames: ["Chief"] },
   { name: "Scientist", searchNames: ["Scientist"] },
-  { name: "Cooltrainer♂", searchNames: ["Cooltrainer"] },
-  { name: "Cooltrainer♀", searchNames: ["Cooltrainer"] },
+  { name: "Cooltrainer♂", searchNames: ["Cooltrainer", "Ace Trainer"] },
+  { name: "Cooltrainer♀", searchNames: ["Cooltrainer", "Ace Trainer"] },
   { name: "Gentleman", searchNames: ["Gentleman"] },
   { name: "Channeler", searchNames: ["Channeler"] },
   // Gen 2 (Johto)
@@ -222,7 +222,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Medium", searchNames: ["Medium"] },
   { name: "Kimono Girl", searchNames: ["Kimono Girl"] },
   { name: "Sage", searchNames: ["Sage"] },
-  { name: "Officer", searchNames: ["Officer"] },
+  { name: "Officer", searchNames: ["Officer", "Policeman"] },
   { name: "Firebreather", searchNames: ["Firebreather"] },
   { name: "Guitarist", searchNames: ["Guitarist"] },
   // Gen 3 (Hoenn)
@@ -244,8 +244,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Twins", searchNames: ["Twins"] },
   { name: "Team Aqua Grunt", searchNames: ["Team Aqua Grunt", "Aqua Grunt"] },
   { name: "Team Magma Grunt", searchNames: ["Team Magma Grunt", "Magma Grunt"] },
-  // Gen 4 (Sinnoh)
-  { name: "Ace Trainer", searchNames: ["Ace Trainer"] },
+  // Gen 4 (Sinnoh) — "Ace Trainer" is the modern rename of Cooltrainer (merged above), and
+  // "Policeman" the same NPC archetype as Officer (merged above), so neither gets its own entry.
   { name: "Battle Girl", searchNames: ["Battle Girl"] },
   { name: "Cyclist", searchNames: ["Cyclist"] },
   { name: "Dragon Tamer", searchNames: ["Dragon Tamer"] },
@@ -253,7 +253,6 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Veteran", searchNames: ["Veteran"] },
   { name: "Waitress", searchNames: ["Waitress"] },
   { name: "Worker", searchNames: ["Worker"] },
-  { name: "Policeman", searchNames: ["Policeman"] },
   { name: "Team Galactic Grunt", searchNames: ["Team Galactic Grunt", "Galactic Grunt"] },
   // Gen 5 (Unova)
   { name: "Artist", searchNames: ["Artist"] },

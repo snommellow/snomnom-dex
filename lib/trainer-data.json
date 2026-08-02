@@ -234,29 +234,29 @@
     "name": "Ariana",
     "slug": "ariana",
     "region": "Johto",
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv10/237_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Proton",
     "slug": "proton",
     "region": "Johto",
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv10/227_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Petrel",
     "slug": "petrel",
     "region": "Johto",
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv10/226_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Archer",
     "slug": "archer",
     "region": "Johto",
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv10/223_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Eusine",

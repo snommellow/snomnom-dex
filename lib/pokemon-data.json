@@ -14543,7 +14543,6 @@
     "altForms": [],
     "familyId": 84,
     "familyOrder": 0,
-    "cardRank": 4,
     "flavorText": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
     "heightM": 1.4,
     "weightKg": 39.2,
@@ -18949,13 +18948,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/109.png",
     "genus": "Poison Gas Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sm12/243_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sm12/243_hires.png",
     "altForms": [],
     "familyId": 109,
     "familyOrder": 0,
-    "cardRank": 6,
     "flavorText": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning.",
     "heightM": 0.6,
     "weightKg": 1,
@@ -23066,7 +23063,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH087_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 133,
@@ -53484,7 +53481,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/315.png",
     "genus": "Thorn Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex3/9_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/42_hires.png",
     "altForms": [],
     "familyId": 315,
     "familyOrder": 1,
@@ -62221,7 +62218,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/370.png",
     "genus": "Rendezvous Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex14/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/53_hires.png",
     "altForms": [],
     "familyId": 370,
     "familyOrder": 0,
@@ -64031,7 +64028,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10077.png",
         "category": "primal",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy7/96_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy5/149_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -64175,7 +64172,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10078.png",
         "category": "primal",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy7/97_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy5/151_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -68379,7 +68376,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/409.png",
     "genus": "Head Butt Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pl1/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/11_hires.png",
     "altForms": [],
     "familyId": 408,
     "familyOrder": 1,
@@ -122406,7 +122403,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/746.png",
     "genus": "Small Fry Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sm12/240_hires.png"
+      "https://images.pokemontcg.io/sm2/133_hires.png"
     ],
     "altForms": [
       {

@@ -369,6 +369,15 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Atticus", searchNames: ["Atticus"], special: true, region: "Paldea" },
   { name: "Ortega", searchNames: ["Ortega"], special: true, region: "Paldea" },
   { name: "Eri", searchNames: ["Eri"], special: true, region: "Paldea" },
+  // Hisui (Legends: Arceus) named characters
+  { name: "Professor Laventon", searchNames: ["Professor Laventon", "Laventon"], special: true, region: "Hisui" },
+  { name: "Cyllene", searchNames: ["Cyllene"], special: true, region: "Hisui" },
+  { name: "Adaman", searchNames: ["Adaman"], special: true, region: "Hisui" },
+  { name: "Irida", searchNames: ["Irida"], special: true, region: "Hisui" },
+  { name: "Volo", searchNames: ["Volo"], special: true, region: "Hisui" },
+  { name: "Cogita", searchNames: ["Cogita"], special: true, region: "Hisui" },
+  { name: "Ingo", searchNames: ["Ingo"], special: true, region: "Hisui" },
+  { name: "Kamado", searchNames: ["Kamado"], special: true, region: "Hisui" },
   // Generic trainer classes — not Kanto-specific (every region has these), tagged "Universal".
   // Kanto's own roster (Gen 1) first, then every other generic class introduced across Gen
   // 2-9, deduplicated where a later game reused an earlier class name.

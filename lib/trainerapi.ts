@@ -142,14 +142,36 @@ export function toTrainerSlug(name: string): string {
 }
 
 // Kanto (Gen 1) roster, sourced from pret/pokered's constants/trainer_constants.asm — every
-// trainer class and named character the games define, in their original order. RIVAL2/RIVAL3
-// are the same person as RIVAL1 at later battle stages, so they collapse into one "Rival"
-// entry rather than three. searchNames are the candidate TCG Supporter-card names to try for
-// portrait art, tried in order — a miss just means no art, not a missing trainer.
-// special marks named individuals (gym leaders, Elite Four, Champion, Rival, Professor Oak,
-// Team Rocket/Giovanni) — these get the single best/most valuable card regardless of era, unlike
-// generic trainer classes which prefer the period-accurate 1998-2003 WotC-era print.
+// trainer class and named character the games define. Ordered by importance rather than the
+// game's internal constant order: Elite Four → Champion → Gym Leaders → other named characters
+// → generic trainer classes last. RIVAL2/RIVAL3 are the same person as RIVAL1 at later battle
+// stages, so they collapse into one "Rival" entry rather than three. searchNames are the
+// candidate TCG Supporter-card names to try for portrait art, tried in order — a miss just
+// means no art, not a missing trainer. special marks named individuals (gym leaders, Elite Four,
+// Champion, Rival, Professor Oak, Team Rocket/Giovanni) — these get the single best/most
+// valuable card regardless of era, unlike generic trainer classes which prefer the
+// period-accurate 1998-2003 WotC-era print.
 const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[] = [
+  // Elite Four
+  { name: "Lorelei", searchNames: ["Lorelei"], special: true },
+  { name: "Bruno", searchNames: ["Bruno"], special: true },
+  { name: "Agatha", searchNames: ["Agatha"], special: true },
+  { name: "Lance", searchNames: ["Lance"], special: true },
+  // Champion
+  { name: "Rival", searchNames: ["Rival"], special: true },
+  // Gym Leaders
+  { name: "Brock", searchNames: ["Brock"], special: true },
+  { name: "Misty", searchNames: ["Misty"], special: true },
+  { name: "Lt. Surge", searchNames: ["Lt. Surge", "Surge"], special: true },
+  { name: "Erika", searchNames: ["Erika"], special: true },
+  { name: "Koga", searchNames: ["Koga"], special: true },
+  { name: "Sabrina", searchNames: ["Sabrina"], special: true },
+  { name: "Blaine", searchNames: ["Blaine"], special: true },
+  { name: "Giovanni", searchNames: ["Giovanni"], special: true },
+  // Other named characters
+  { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
+  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },
+  // Generic trainer classes
   { name: "Youngster", searchNames: ["Youngster"] },
   { name: "Bug Catcher", searchNames: ["Bug Catcher"] },
   { name: "Lass", searchNames: ["Lass"] },
@@ -173,27 +195,12 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Tamer", searchNames: ["Tamer"] },
   { name: "Bird Keeper", searchNames: ["Bird Keeper"] },
   { name: "Blackbelt", searchNames: ["Black Belt", "Blackbelt"] },
-  { name: "Rival", searchNames: ["Rival"], special: true },
-  { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
   { name: "Chief", searchNames: ["Chief"] },
   { name: "Scientist", searchNames: ["Scientist"] },
-  { name: "Giovanni", searchNames: ["Giovanni"], special: true },
-  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },
   { name: "Cooltrainer♂", searchNames: ["Cooltrainer"] },
   { name: "Cooltrainer♀", searchNames: ["Cooltrainer"] },
-  { name: "Bruno", searchNames: ["Bruno"], special: true },
-  { name: "Brock", searchNames: ["Brock"], special: true },
-  { name: "Misty", searchNames: ["Misty"], special: true },
-  { name: "Lt. Surge", searchNames: ["Lt. Surge", "Surge"], special: true },
-  { name: "Erika", searchNames: ["Erika"], special: true },
-  { name: "Koga", searchNames: ["Koga"], special: true },
-  { name: "Blaine", searchNames: ["Blaine"], special: true },
-  { name: "Sabrina", searchNames: ["Sabrina"], special: true },
   { name: "Gentleman", searchNames: ["Gentleman"] },
-  { name: "Lorelei", searchNames: ["Lorelei"], special: true },
   { name: "Channeler", searchNames: ["Channeler"] },
-  { name: "Agatha", searchNames: ["Agatha"], special: true },
-  { name: "Lance", searchNames: ["Lance"], special: true },
 ];
 
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io

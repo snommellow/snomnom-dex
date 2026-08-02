@@ -341,6 +341,13 @@ function soloIndexName(cardName: string): string {
   return (possessiveMatch ? possessiveMatch[1] : noVariantTag).toLowerCase();
 }
 
+// Organizations whose Supporter cards flip the usual possessive pattern: instead of "Ariana's
+// Something" (person's signature move — the standard shape soloIndexName handles), these are
+// "Team Rocket's Ariana" (org's member) — the actual person's name is what comes AFTER 's, not
+// before. Missing this meant Ariana/Proton/Petrel/Archer's cards indexed under "team rocket"
+// and never matched their own roster entries at all.
+const ORG_POSSESSIVE_PREFIXES = ["Team Rocket", "Team Aqua", "Team Magma", "Team Galactic", "Team Plasma", "Team Flare", "Team Skull", "Team Yell"];
+
 // Tag-team/combo cards ("Misty & Lorelei", "Red & Blue") indexed under each individual name
 // they contain — kept in a SEPARATE map from solo cards, and only ever consulted as a fallback
 // when a trainer has no solo card. Mixing them into the same pool let a co-starring card (which
@@ -349,8 +356,15 @@ function soloIndexName(cardName: string): string {
 // "Red & Blue" tag-team card this way before the split).
 function comboIndexNames(cardName: string): string[] {
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
-  if (!/ & /.test(noVariantTag)) return [];
-  return noVariantTag.split(" & ").map((p) => p.trim().toLowerCase()).filter(Boolean);
+  const names: string[] = [];
+  if (/ & /.test(noVariantTag)) {
+    names.push(...noVariantTag.split(" & ").map((p) => p.trim().toLowerCase()).filter(Boolean));
+  }
+  for (const org of ORG_POSSESSIVE_PREFIXES) {
+    const match = noVariantTag.match(new RegExp(`^${org}['’]s\\s+(.+)$`, "i"));
+    if (match) names.push(match[1].trim().toLowerCase());
+  }
+  return names;
 }
 
 // --- Pocket (TCGdex) fallback — used only when no paper-TCG card matches a trainer ---

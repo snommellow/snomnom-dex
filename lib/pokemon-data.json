@@ -2148,7 +2148,8 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY158_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 13,
@@ -5785,7 +5786,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
     "genus": "Fairy Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/106_hires.png",
     "altForms": [
       {
         "slug": "clefable-mega",
@@ -24734,7 +24735,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png",
     "genus": "Shellfish Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex2/97_hires.png",
     "altForms": [],
     "familyId": 140,
     "familyOrder": 1,
@@ -27989,7 +27990,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
     "genus": "Big Jaw Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard1/12_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/103_hires.png",
     "altForms": [
       {
         "slug": "feraligatr-mega",
@@ -32264,7 +32265,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/186.png",
     "genus": "Frog Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H23_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex10/107_hires.png",
     "altForms": [],
     "familyId": 60,
     "familyOrder": 3,
@@ -43995,7 +43996,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/257.png",
     "genus": "Blaze Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv10/192_hires.png"
+      "https://images.pokemontcg.io/swsh12tg/TG14_hires.png"
     ],
     "altForms": [
       {
@@ -44017,7 +44018,7 @@
     ],
     "familyId": 255,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Flames spout from its wrists, enveloping its knuckles. Its punches scorch its foes.",
     "heightM": 1.9,
     "weightKg": 52,
@@ -64304,7 +64305,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
     "genus": "Sky High Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh7/194_hires.png"
+      "https://images.pokemontcg.io/bw6/123_hires.png"
     ],
     "altForms": [
       {
@@ -70276,7 +70277,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/421.png",
     "genus": "Blossom Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ru1/2_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh5/8_hires.png",
     "altForms": [],
     "familyId": 420,
     "familyOrder": 1,
@@ -79192,7 +79193,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/472.png",
     "genus": "Fang Scorpion Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp6/5_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/141_hires.png",
     "altForms": [],
     "familyId": 207,
     "familyOrder": 1,
@@ -80827,7 +80828,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/480.png",
     "genus": "Knowledge Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/18_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/146_hires.png",
     "altForms": [],
     "familyId": 480,
     "familyOrder": 0,
@@ -81115,7 +81116,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/482.png",
     "genus": "Willpower Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp2/4_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp6/140_hires.png",
     "altForms": [],
     "familyId": 482,
     "familyOrder": 0,
@@ -138835,7 +138836,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh3/115_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 859,
@@ -139829,7 +139830,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/867.png",
     "genus": "Grudge Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh2/102_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh6/83_hires.png",
     "altForms": [],
     "familyId": 562,
     "familyOrder": 2,

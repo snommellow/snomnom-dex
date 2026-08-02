@@ -175,6 +175,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   // Other named characters
   { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
   { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },
+  { name: "Bill", searchNames: ["Bill"], special: true },
+  { name: "Mr. Fuji", searchNames: ["Mr. Fuji", "Fuji"], special: true },
+  { name: "Daisy", searchNames: ["Daisy"], special: true },
+  { name: "Copycat", searchNames: ["Copycat"], special: true },
   // Generic trainer classes
   { name: "Youngster", searchNames: ["Youngster"] },
   { name: "Bug Catcher", searchNames: ["Bug Catcher"] },

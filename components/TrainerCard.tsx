@@ -7,8 +7,12 @@ import type { TrainerEntry } from "@/lib/trainerapi";
 
 // Structural 1:1 copy of PokemonCard's book-tilt rendering — same masthead/name/portrait/pill
 // row dimensions, so cards are the exact same height/proportions in a mixed or side-by-side
-// grid. Trainers have no type color, so a fixed accent stands in for typeColor throughout.
-const ACCENT = "#c0392b";
+// grid. Trainers have no type color, so a fixed accent stands in for typeColor throughout —
+// red for Kanto-specific named characters, slate for generic classes that exist in every region.
+const REGION_ACCENT: Record<string, string> = {
+  Kanto: "#c0392b",
+  Universal: "#546778",
+};
 
 interface Props {
   trainer: TrainerEntry;
@@ -16,6 +20,7 @@ interface Props {
 }
 
 export default function TrainerCard({ trainer, onSelect }: Props) {
+  const ACCENT = REGION_ACCENT[trainer.region] ?? "#c0392b";
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [mouse, setMouse] = useState({ x: 50, y: 50 });

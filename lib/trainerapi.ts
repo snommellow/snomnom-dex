@@ -353,7 +353,10 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         imageUrl = pocket.url;
         isFullArt = pocket.isFullArt;
       }
-      return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl, isFullArt };
+      // Generic trainer classes (Youngster, Sailor, etc.) aren't Kanto-specific — every region
+      // has its own Youngsters and Sailors — so only named individuals actually tied to Kanto
+      // (gym leaders, Elite Four, Champion, etc.) carry the "Kanto" region tag.
+      return { name, slug: toTrainerSlug(name), region: special ? "Kanto" : "Universal", imageUrl, isFullArt };
     })
   );
 }

@@ -214,20 +214,22 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
 // names most Supporter cards after their signature move ("Bill's Analysis", "Bill's
 // Maintenance", "Bill's Transfer"), so the possessive prefix is the trainer's actual name.
-// Tag-team/combo cards ("Misty & Lorelei") are also indexed under each individual name they
-// contain, so a trainer with no solo card can still surface via a card they co-star in.
-function derivedIndexNames(cardName: string): string[] {
+function soloIndexName(cardName: string): string {
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
-  const names = new Set<string>();
   const possessiveMatch = noVariantTag.match(/^(.+?)['']s\s+.+$/);
-  names.add((possessiveMatch ? possessiveMatch[1] : noVariantTag).toLowerCase());
-  if (/ & /.test(noVariantTag)) {
-    for (const part of noVariantTag.split(" & ")) {
-      const p = part.trim();
-      if (p) names.add(p.toLowerCase());
-    }
-  }
-  return [...names];
+  return (possessiveMatch ? possessiveMatch[1] : noVariantTag).toLowerCase();
+}
+
+// Tag-team/combo cards ("Misty & Lorelei", "Red & Blue") indexed under each individual name
+// they contain — kept in a SEPARATE map from solo cards, and only ever consulted as a fallback
+// when a trainer has no solo card. Mixing them into the same pool let a co-starring card (which
+// can be pricier/rarer, e.g. a Tag Team GX) outrank and steal a trainer's own dedicated card
+// (Red's "Red's Challenge" and Blue's "Blue's Tactics" were both getting replaced by the shared
+// "Red & Blue" tag-team card this way before the split).
+function comboIndexNames(cardName: string): string[] {
+  const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
+  if (!/ & /.test(noVariantTag)) return [];
+  return noVariantTag.split(" & ").map((p) => p.trim().toLowerCase()).filter(Boolean);
 }
 
 // --- Pocket (TCGdex) fallback — used only when no paper-TCG card matches a trainer ---
@@ -294,41 +296,56 @@ async function fetchPocketTrainerImage(searchNames: string[]): Promise<{ url: st
 // otherwise be invisible to a Supporter-scoped search.
 export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   const cards = await fetchAllPages("supertype:Trainer");
-  const byName = new Map<string, PtcgCard[]>();
+  const soloByName = new Map<string, PtcgCard[]>();
+  const comboByName = new Map<string, PtcgCard[]>();
   for (const c of cards) {
     if (!c.images?.large) continue;
-    for (const name of derivedIndexNames(c.name)) {
-      const list = byName.get(name);
-      if (list) list.push(c);
-      else byName.set(name, [c]);
+    const soloKey = soloIndexName(c.name);
+    const soloList = soloByName.get(soloKey);
+    if (soloList) soloList.push(c);
+    else soloByName.set(soloKey, [c]);
+    for (const comboKey of comboIndexNames(c.name)) {
+      const comboList = comboByName.get(comboKey);
+      if (comboList) comboList.push(c);
+      else comboByName.set(comboKey, [c]);
     }
+  }
+
+  function pickFromGroup(group: PtcgCard[], special: boolean | undefined): { imageUrl: string; isFullArt: boolean } | null {
+    let best: PtcgCard | null;
+    let usedClassic = false;
+    if (special) {
+      // Named individuals get whatever card is most valuable, any era — their best modern
+      // full-art illustrations are the point, not a vintage-accurate print.
+      best = pickBestCard(group);
+    } else {
+      // Generic trainer classes prefer the original WotC-era print when one exists —
+      // period-accurate for a Kanto dex — falling back to the full pool otherwise.
+      const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
+      usedClassic = classicCards.length > 0;
+      best = pickBestCard(usedClassic ? classicCards : group);
+    }
+    if (!best) return null;
+    return {
+      imageUrl: cardImageUrl(best),
+      // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
+      isFullArt: usedClassic ? false : FULL_ART_RARITIES.has(best.rarity),
+    };
   }
 
   return Promise.all(
     KANTO_ROSTER.map(async ({ name, searchNames, special }) => {
       let imageUrl: string | null = null;
       let isFullArt = false;
-      for (const candidate of searchNames) {
-        const group = byName.get(candidate.toLowerCase());
-        if (!group) continue;
-        let best: PtcgCard | null;
-        let usedClassic = false;
-        if (special) {
-          // Named individuals get whatever card is most valuable, any era — their best modern
-          // full-art illustrations are the point, not a vintage-accurate print.
-          best = pickBestCard(group);
-        } else {
-          // Generic trainer classes prefer the original WotC-era print when one exists —
-          // period-accurate for a Kanto dex — falling back to the full pool otherwise.
-          const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
-          usedClassic = classicCards.length > 0;
-          best = pickBestCard(usedClassic ? classicCards : group);
-        }
-        if (best) {
-          imageUrl = cardImageUrl(best);
-          // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
-          isFullArt = usedClassic ? false : FULL_ART_RARITIES.has(best.rarity);
-          break;
+      // Solo cards always win first — a co-starring tag-team card is only used if the trainer
+      // has no dedicated card of their own at all.
+      for (const map of [soloByName, comboByName]) {
+        if (imageUrl) break;
+        for (const candidate of searchNames) {
+          const group = map.get(candidate.toLowerCase());
+          if (!group) continue;
+          const picked = pickFromGroup(group, special);
+          if (picked) { imageUrl = picked.imageUrl; isFullArt = picked.isFullArt; break; }
         }
       }
       if (!imageUrl) {

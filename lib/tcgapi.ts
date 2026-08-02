@@ -115,7 +115,11 @@ const SWSH_EARLY_SETS = new Set(["swsh1", "swsh2", "swsh3", "swsh35", "swsh4", "
 // fills the top ~60% of the card, so the attack-text panel below bleeds into the visible crop
 // window — confirmed via direct image inspection. Lets the curated SWSH294 regional promo
 // (see fetchRegionalPromoPriority) win instead, as originally intended.
-const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176", "me2-100", "sv10-201", "sm5-145", "sm5-143", "swsh11-172"]);
+// swsh7-194 "Rayquaza V": confirmed via API metadata to carry the "Rapid Strike" subtype — a
+// Chilling Reign card style that depicts a Rapid Strike Dojo trainer alongside the Pokémon by
+// design, not a mismatched crop. sv10-192 "Blaziken": a Destined Rivals-era Illustration Rare
+// that also depicts a trainer partner in the art, same category.
+const MISMATCHED_FULL_ART_BLACKLIST = new Set(["swsh9-159", "swsh10-169", "sm10-193", "xy5-153", "sm4-102", "bw5-107", "xy4-122", "xy3-107", "swsh1-53", "swsh10tg-TG16", "swsh10tg-TG19", "swsh10tg-TG20", "sm2-136", "sm1-138", "sm2-141", "sm4-103", "sm4-106", "swsh5-149", "sm7-159", "swsh7-178", "swsh7-176", "me2-100", "sv10-201", "sm5-145", "sm5-143", "swsh11-172", "swsh7-194", "sv10-192"]);
 
 // Shiny vault cards use SV-prefixed numbers (SV086, SV1/SV94, etc.); newer sets use "Shiny*" rarities.
 function isShinyCard(c: PtcgCard): boolean {

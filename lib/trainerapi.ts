@@ -206,55 +206,129 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
 // names most Supporter cards after their signature move ("Bill's Analysis", "Bill's
 // Maintenance", "Bill's Transfer"), so the possessive prefix is the trainer's actual name.
-// Used here to collapse a matched trainer's cards down to their base name before ranking.
-function baseTrainerName(cardName: string): string {
+// Tag-team/combo cards ("Misty & Lorelei") are also indexed under each individual name they
+// contain, so a trainer with no solo card can still surface via a card they co-star in.
+function derivedIndexNames(cardName: string): string[] {
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
+  const names = new Set<string>();
   const possessiveMatch = noVariantTag.match(/^(.+?)['']s\s+.+$/);
-  return possessiveMatch ? possessiveMatch[1] : noVariantTag;
+  names.add((possessiveMatch ? possessiveMatch[1] : noVariantTag).toLowerCase());
+  if (/ & /.test(noVariantTag)) {
+    for (const part of noVariantTag.split(" & ")) {
+      const p = part.trim();
+      if (p) names.add(p.toLowerCase());
+    }
+  }
+  return [...names];
+}
+
+// --- Pocket (TCGdex) fallback — used only when no paper-TCG card matches a trainer ---
+
+const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
+
+interface TcgdexCard {
+  id: string;
+  localId: string;
+  name: string;
+  image?: string;
+  rarity?: string;
+  category?: string;
+  trainerType?: string;
+}
+
+const POCKET_STAR_SCORE: Record<string, number> = { "Three Star": 0, "Two Star": 1, "One Star": 2 };
+
+function isPocketSetId(setId: string): boolean {
+  return /^[AB]\d/i.test(setId);
+}
+
+async function fetchTcgdexJson<T>(url: string): Promise<T | null> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * attempt));
+      const res = await fetch(url, { next: { revalidate: 86400 } } as RequestInit);
+      if (!res.ok) return null;
+      return (await res.json()) as T;
+    } catch { /* retry */ }
+  }
+  return null;
+}
+
+async function fetchPocketTrainerImage(searchNames: string[]): Promise<{ url: string | null; isFullArt: boolean }> {
+  for (const name of searchNames) {
+    const list = await fetchTcgdexJson<TcgdexCard[]>(`${TCGDEX_BASE}/cards?name=${encodeURIComponent(name)}`);
+    const candidates = (list ?? []).filter(
+      (c) => c.name.toLowerCase() === name.toLowerCase() && isPocketSetId(c.id.split("-")[0] ?? "")
+    );
+    if (!candidates.length) continue;
+    const details = await Promise.all(candidates.map((c) => fetchTcgdexJson<TcgdexCard>(`${TCGDEX_BASE}/cards/${c.id}`)));
+    const supporterCards = details.filter(
+      (d): d is TcgdexCard => !!d && d.category === "Trainer" && d.trainerType === "Supporter" && !!d.image
+    );
+    if (!supporterCards.length) continue;
+    const best = supporterCards.reduce((a, b) => {
+      const ra = POCKET_STAR_SCORE[a.rarity ?? ""] ?? 99;
+      const rb = POCKET_STAR_SCORE[b.rarity ?? ""] ?? 99;
+      if (ra !== rb) return ra < rb ? a : b;
+      return b.id > a.id ? b : a;
+    });
+    // Pocket has no bordered/plain print style — every card is a full-bleed illustration.
+    return { url: `${best.image}/high.webp`, isFullArt: true };
+  }
+  return { url: null, isFullArt: false };
 }
 
 // Builds the Kanto trainer roster with portrait art pulled from pokemontcg.io Trainer cards
-// where a name matches — the card catalog is art lookup only, not the trainer list itself.
-// Queries all supertype:Trainer cards, not just subtypes:Supporter, since the classic 1998-2003
-// WotC-era cards that best represent the original Gen 1 look predate the Supporter subtype and
-// would otherwise be invisible to a Supporter-scoped search.
+// where a name matches, falling back to Pocket (TCGdex) only when the paper TCG has nothing —
+// the card catalogs are art lookup only, not the trainer list itself. Queries all
+// supertype:Trainer cards, not just subtypes:Supporter, since the classic 1998-2003 WotC-era
+// cards that best represent the original Gen 1 look predate the Supporter subtype and would
+// otherwise be invisible to a Supporter-scoped search.
 export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   const cards = await fetchAllPages("supertype:Trainer");
   const byName = new Map<string, PtcgCard[]>();
   for (const c of cards) {
     if (!c.images?.large) continue;
-    const name = baseTrainerName(c.name).toLowerCase();
-    const list = byName.get(name);
-    if (list) list.push(c);
-    else byName.set(name, [c]);
+    for (const name of derivedIndexNames(c.name)) {
+      const list = byName.get(name);
+      if (list) list.push(c);
+      else byName.set(name, [c]);
+    }
   }
 
-  return KANTO_ROSTER.map(({ name, searchNames, special }) => {
-    let imageUrl: string | null = null;
-    let isFullArt = false;
-    for (const candidate of searchNames) {
-      const group = byName.get(candidate.toLowerCase());
-      if (!group) continue;
-      let best: PtcgCard | null;
-      let usedClassic = false;
-      if (special) {
-        // Named individuals get whatever card is most valuable, any era — their best modern
-        // full-art illustrations are the point, not a vintage-accurate print.
-        best = pickBestCard(group);
-      } else {
-        // Generic trainer classes prefer the original WotC-era print when one exists —
-        // period-accurate for a Kanto dex — falling back to the full pool otherwise.
-        const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
-        usedClassic = classicCards.length > 0;
-        best = pickBestCard(usedClassic ? classicCards : group);
+  return Promise.all(
+    KANTO_ROSTER.map(async ({ name, searchNames, special }) => {
+      let imageUrl: string | null = null;
+      let isFullArt = false;
+      for (const candidate of searchNames) {
+        const group = byName.get(candidate.toLowerCase());
+        if (!group) continue;
+        let best: PtcgCard | null;
+        let usedClassic = false;
+        if (special) {
+          // Named individuals get whatever card is most valuable, any era — their best modern
+          // full-art illustrations are the point, not a vintage-accurate print.
+          best = pickBestCard(group);
+        } else {
+          // Generic trainer classes prefer the original WotC-era print when one exists —
+          // period-accurate for a Kanto dex — falling back to the full pool otherwise.
+          const classicCards = group.filter((c) => CLASSIC_SET_RE.test(c.set.id));
+          usedClassic = classicCards.length > 0;
+          best = pickBestCard(usedClassic ? classicCards : group);
+        }
+        if (best) {
+          imageUrl = cardImageUrl(best);
+          // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
+          isFullArt = usedClassic ? false : FULL_ART_RARITIES.has(best.rarity);
+          break;
+        }
       }
-      if (best) {
-        imageUrl = cardImageUrl(best);
-        // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
-        isFullArt = usedClassic ? false : FULL_ART_RARITIES.has(best.rarity);
-        break;
+      if (!imageUrl) {
+        const pocket = await fetchPocketTrainerImage(searchNames);
+        imageUrl = pocket.url;
+        isFullArt = pocket.isFullArt;
       }
-    }
-    return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl, isFullArt };
-  });
+      return { name, slug: toTrainerSlug(name), region: "Kanto", imageUrl, isFullArt };
+    })
+  );
 }

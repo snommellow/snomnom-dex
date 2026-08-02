@@ -22,11 +22,14 @@ async function fetchCard(id: string): Promise<any> {
 }
 
 async function main() {
-  const ids = ["swsh10-161", "swsh6-170", "swsh6-174", "swsh6-177", "sv9-161", "sv3pt5-202"];
+  const ids = [
+    "swsh10-161", "swsh6-170", "swsh6-174", "swsh6-177", "sv9-161", "sv3pt5-202",
+    "sv10-192", "swsh7-194",
+  ];
   const out: Record<string, any> = {};
   for (const id of ids) {
     const c = await fetchCard(id);
-    out[id] = c ? { name: c.name, rarity: c.rarity, subtypes: c.subtypes, set: c.set?.id, images: c.images } : null;
+    out[id] = c ? { name: c.name, rarity: c.rarity, subtypes: c.subtypes, artist: c.artist, set: c.set?.id, images: c.images } : null;
     console.log(id, "->", c ? `${c.name} (${c.rarity})` : "NOT FOUND");
   }
   writeFileSync(join(import.meta.dirname, "../lib/debug-cards.json"), JSON.stringify(out, null, 2));

@@ -142,23 +142,16 @@ export function toTrainerSlug(name: string): string {
 }
 
 // Kanto (Gen 1) roster, sourced from pret/pokered's constants/trainer_constants.asm — every
-// trainer class and named character the games define. Ordered by importance rather than the
-// game's internal constant order: Elite Four → Champion → Gym Leaders → other named characters
-// → generic trainer classes last. RIVAL2/RIVAL3 are the same person as RIVAL1 at later battle
-// stages, so they collapse into one "Rival" entry rather than three. searchNames are the
-// candidate TCG Supporter-card names to try for portrait art, tried in order — a miss just
-// means no art, not a missing trainer. special marks named individuals (gym leaders, Elite Four,
-// Champion, Rival, Professor Oak, Team Rocket/Giovanni) — these get the single best/most
-// valuable card regardless of era, unlike generic trainer classes which prefer the
-// period-accurate 1998-2003 WotC-era print.
+// trainer class and named character the games define. Ordered by game progression: Gym Leaders
+// (fought first) → Elite Four → Champion (fought last) → other named characters → generic
+// trainer classes last. RIVAL2/RIVAL3 are the same person as RIVAL1 at later battle stages, so
+// they collapse into one "Rival" entry rather than three. searchNames are the candidate TCG
+// Supporter-card names to try for portrait art, tried in order — a miss just means no art, not
+// a missing trainer. special marks named individuals (gym leaders, Elite Four, Champion, Rival,
+// Professor Oak, Team Rocket/Giovanni) — these get the single best/most valuable card regardless
+// of era, unlike generic trainer classes which prefer the period-accurate 1998-2003 WotC-era
+// print.
 const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[] = [
-  // Elite Four
-  { name: "Lorelei", searchNames: ["Lorelei"], special: true },
-  { name: "Bruno", searchNames: ["Bruno"], special: true },
-  { name: "Agatha", searchNames: ["Agatha"], special: true },
-  { name: "Lance", searchNames: ["Lance"], special: true },
-  // Champion
-  { name: "Rival", searchNames: ["Rival"], special: true },
   // Gym Leaders
   { name: "Brock", searchNames: ["Brock"], special: true },
   { name: "Misty", searchNames: ["Misty"], special: true },
@@ -168,6 +161,13 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean }[]
   { name: "Sabrina", searchNames: ["Sabrina"], special: true },
   { name: "Blaine", searchNames: ["Blaine"], special: true },
   { name: "Giovanni", searchNames: ["Giovanni"], special: true },
+  // Elite Four
+  { name: "Lorelei", searchNames: ["Lorelei"], special: true },
+  { name: "Bruno", searchNames: ["Bruno"], special: true },
+  { name: "Agatha", searchNames: ["Agatha"], special: true },
+  { name: "Lance", searchNames: ["Lance"], special: true },
+  // Champion
+  { name: "Rival", searchNames: ["Rival"], special: true },
   // Other named characters
   { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
   { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },

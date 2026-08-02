@@ -171,8 +171,8 @@
     "name": "Professor Oak",
     "slug": "professor-oak",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/ecard1/149_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Chief",
@@ -192,8 +192,8 @@
     "name": "Giovanni",
     "slug": "giovanni",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym2/18_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Team Rocket Grunt",
@@ -241,15 +241,15 @@
     "name": "Lt. Surge",
     "slug": "lt-surge",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym1/17_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Erika",
     "slug": "erika",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym1/16_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Koga",

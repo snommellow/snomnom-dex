@@ -47,7 +47,7 @@ export default function TrainersPage() {
           <div>
             <h1 className="text-white text-xl font-extrabold tracking-tight leading-none drop-shadow">Trainers</h1>
             <p className="text-red-200 text-[11px] font-medium leading-none mt-0.5">
-              {trainers.length} Trainers · Kanto &amp; Universal
+              {trainers.length} Trainers · All Regions
             </p>
           </div>
         </div>

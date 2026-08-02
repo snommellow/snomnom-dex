@@ -12,6 +12,13 @@ import type { TrainerEntry } from "@/lib/trainerapi";
 const REGION_ACCENT: Record<string, string> = {
   Kanto: "#c0392b",
   Johto: "#2c6e8f",
+  Hoenn: "#2f9e5c",
+  Sinnoh: "#5a4fa3",
+  Unova: "#4a4a52",
+  Kalos: "#3aa0c9",
+  Alola: "#e8873e",
+  Galar: "#7b3fa0",
+  Paldea: "#c23b6e",
   Universal: "#546778",
 };
 

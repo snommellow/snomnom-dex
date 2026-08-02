@@ -1,5 +1,110 @@
 [
   {
+    "name": "Brock",
+    "slug": "brock",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sv9/179_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Misty",
+    "slug": "misty",
+    "region": "Kanto",
+    "imageUrl": "https://images.scrydex.com/pokemon/me5-111/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Lt. Surge",
+    "slug": "lt-surge",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Erika",
+    "slug": "erika",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Koga",
+    "slug": "koga",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm10/211_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Sabrina",
+    "slug": "sabrina",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm9/181_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Blaine",
+    "slug": "blaine",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm75/69_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Giovanni",
+    "slug": "giovanni",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Lorelei",
+    "slug": "lorelei",
+    "region": "Kanto",
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Bruno",
+    "slug": "bruno",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/swsh5/158_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Agatha",
+    "slug": "agatha",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/swsh6/186_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Lance",
+    "slug": "lance",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/swsh12/192_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rival",
+    "slug": "rival",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/dp1/113_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Professor Oak",
+    "slug": "professor-oak",
+    "region": "Kanto",
+    "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Team Rocket Grunt",
+    "slug": "team-rocket-grunt",
+    "region": "Kanto",
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Youngster",
     "slug": "youngster",
     "region": "Kanto",
@@ -157,21 +262,7 @@
     "name": "Blackbelt",
     "slug": "blackbelt",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/hgss4/85_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Rival",
-    "slug": "rival",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/dp1/113_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Professor Oak",
-    "slug": "professor-oak",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-255/large",
     "isFullArt": true
   },
   {
@@ -184,20 +275,6 @@
   {
     "name": "Scientist",
     "slug": "scientist",
-    "region": "Kanto",
-    "imageUrl": null,
-    "isFullArt": false
-  },
-  {
-    "name": "Giovanni",
-    "slug": "giovanni",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Team Rocket Grunt",
-    "slug": "team-rocket-grunt",
     "region": "Kanto",
     "imageUrl": null,
     "isFullArt": false
@@ -217,71 +294,8 @@
     "isFullArt": false
   },
   {
-    "name": "Bruno",
-    "slug": "bruno",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh5/158_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Brock",
-    "slug": "brock",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym1/15_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Misty",
-    "slug": "misty",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym1/18_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Lt. Surge",
-    "slug": "lt-surge",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Erika",
-    "slug": "erika",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Koga",
-    "slug": "koga",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym2/19_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Blaine",
-    "slug": "blaine",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym2/17_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Sabrina",
-    "slug": "sabrina",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/gym2/20_hires.png",
-    "isFullArt": false
-  },
-  {
     "name": "Gentleman",
     "slug": "gentleman",
-    "region": "Kanto",
-    "imageUrl": null,
-    "isFullArt": false
-  },
-  {
-    "name": "Lorelei",
-    "slug": "lorelei",
     "region": "Kanto",
     "imageUrl": null,
     "isFullArt": false
@@ -291,20 +305,6 @@
     "slug": "channeler",
     "region": "Kanto",
     "imageUrl": "https://images.pokemontcg.io/sm11/232_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Agatha",
-    "slug": "agatha",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/186_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Lance",
-    "slug": "lance",
-    "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/192_hires.png",
     "isFullArt": true
   }
 ]

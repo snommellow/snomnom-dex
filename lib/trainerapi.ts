@@ -107,6 +107,8 @@ function pickBestCard(cards: PtcgCard[]): PtcgCard | null {
 async function fetchAllPages(q: string): Promise<PtcgCard[]> {
   const results: PtcgCard[] = [];
   let page = 1;
+  let totalCount: number | null = null;
+  let consecutiveFailures = 0;
   while (true) {
     const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&page=${page}&select=id,number,name,rarity,set,images,tcgplayer`;
     let data: PtcgCard[] | null = null;
@@ -117,14 +119,16 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const text = await res.text();
         if (!text) throw new Error("empty body");
-        const parsed = JSON.parse(text).data;
+        const json = JSON.parse(text);
+        const parsed = json.data;
         // A 200 response with an empty/missing data array on page 1 is indistinguishable from
         // "query legitimately has zero matches" at the HTTP level, but for a broad query like
         // supertype:Trainer that's always known to have thousands of results — treating it as
         // success here silently truncated the entire card catalog to nothing with no error
-        // logged, breaking pagination on the very first page. Retry instead of accepting it.
+        // logged. Retry instead of accepting it.
         if (page === 1 && (!parsed || parsed.length === 0)) throw new Error("empty data on page 1");
         data = parsed;
+        if (typeof json.totalCount === "number") totalCount = json.totalCount;
         succeeded = true;
         break;
       } catch {
@@ -132,11 +136,22 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
       }
     }
     if (!succeeded) {
+      // A page failing all retries used to be treated as "reached the end," silently dropping
+      // every later page too — for a query with 15+ pages, one bad page anywhere truncated the
+      // rest of the catalog with no error logged beyond this line. Skip the page and keep going
+      // instead: pagination only stops on a genuinely short/empty successful page, or once we've
+      // accounted for the API's own reported totalCount, or after too many consecutive failures
+      // (a real outage, not a one-off blip).
       console.log(`[fetchAllPages] giving up on page ${page} for query "${q}" after 5 attempts — this page's results will be missing`);
+      consecutiveFailures++;
+      if (consecutiveFailures >= 5) break;
+      page++;
+      continue;
     }
-    if (!data || data.length === 0) break;
-    results.push(...data);
-    if (data.length < 250) break;
+    consecutiveFailures = 0;
+    if (data && data.length > 0) results.push(...data);
+    if (!data || data.length < 250) break;
+    if (totalCount !== null && results.length >= totalCount) break;
     page++;
   }
   return results;
@@ -541,6 +556,26 @@ function comboIndexNames(cardName: string): string[] {
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
 
+// Same rate-limit queue pattern as pocketapi.ts — with 300+ trainers now, every miss firing an
+// unthrottled TCGdex request at once (150+ concurrent) is a likely cause of the request
+// failures/rate-limiting seen in recent regens, on top of the fetchAllPages pagination bug.
+const MAX_CONCURRENT_TCGDEX = 20;
+let _tcgdexActive = 0;
+const _tcgdexQueue: Array<() => void> = [];
+function withTcgdexRateLimit<T>(fn: () => Promise<T>): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const run = () => {
+      _tcgdexActive++;
+      fn().then(resolve, reject).finally(() => {
+        _tcgdexActive--;
+        if (_tcgdexQueue.length > 0) _tcgdexQueue.shift()!();
+      });
+    };
+    if (_tcgdexActive < MAX_CONCURRENT_TCGDEX) run();
+    else _tcgdexQueue.push(run);
+  });
+}
+
 interface TcgdexCard {
   id: string;
   localId: string;
@@ -558,15 +593,17 @@ function isPocketSetId(setId: string): boolean {
 }
 
 async function fetchTcgdexJson<T>(url: string): Promise<T | null> {
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * attempt));
-      const res = await fetch(url, { next: { revalidate: 86400 } } as RequestInit);
-      if (!res.ok) return null;
-      return (await res.json()) as T;
-    } catch { /* retry */ }
-  }
-  return null;
+  return withTcgdexRateLimit(async () => {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * attempt));
+        const res = await fetch(url, { next: { revalidate: 86400 } } as RequestInit);
+        if (!res.ok) return null;
+        return (await res.json()) as T;
+      } catch { /* retry */ }
+    }
+    return null;
+  });
 }
 
 async function fetchPocketTrainerImage(searchNames: string[]): Promise<{ url: string | null; isFullArt: boolean }> {

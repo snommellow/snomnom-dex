@@ -535,7 +535,7 @@
     "name": "Cyrus",
     "slug": "cyrus",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/pl1/105_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/pl3/137_hires.png",
     "isFullArt": false
   },
   {
@@ -1032,7 +1032,7 @@
     "name": "Milo",
     "slug": "milo",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh2/190_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG27_hires.png",
     "isFullArt": true
   },
   {
@@ -1130,8 +1130,8 @@
     "name": "Professor Magnolia",
     "slug": "professor-magnolia",
     "region": "Galar",
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/swsh1/201_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Sonia",
@@ -1725,7 +1725,7 @@
     "name": "Ninja Boy",
     "slug": "ninja-boy",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy11/103_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {

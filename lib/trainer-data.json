@@ -3,113 +3,113 @@
     "name": "Brock",
     "slug": "brock",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv9/179_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/271/high.webp",
     "isFullArt": true
   },
   {
     "name": "Misty",
     "slug": "misty",
     "region": "Kanto",
-    "imageUrl": "https://images.scrydex.com/pokemon/me5-111/large",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/267/high.webp",
     "isFullArt": true
   },
   {
     "name": "Lt. Surge",
     "slug": "lt-surge",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/273/high.webp",
     "isFullArt": true
   },
   {
     "name": "Erika",
     "slug": "erika",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/266/high.webp",
     "isFullArt": true
   },
   {
     "name": "Koga",
     "slug": "koga",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm10/211_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/269/high.webp",
     "isFullArt": true
   },
   {
     "name": "Sabrina",
     "slug": "sabrina",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm9/181_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/272/high.webp",
     "isFullArt": true
   },
   {
     "name": "Blaine",
     "slug": "blaine",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm75/69_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/268/high.webp",
     "isFullArt": true
   },
   {
     "name": "Giovanni",
     "slug": "giovanni",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1/270/high.webp",
     "isFullArt": true
   },
   {
     "name": "Lorelei",
     "slug": "lorelei",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm12/199_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Bruno",
     "slug": "bruno",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh5/158_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Agatha",
     "slug": "agatha",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/186_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Lance",
     "slug": "lance",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/192_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Red",
     "slug": "red",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm10/213_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2b/090/high.webp",
     "isFullArt": true
   },
   {
     "name": "Blue",
     "slug": "blue",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm11/231_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1a/081/high.webp",
     "isFullArt": true
   },
   {
     "name": "Green",
     "slug": "green",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm10/209_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Professor Oak",
     "slug": "professor-oak",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Team Rocket Grunt",
@@ -122,36 +122,36 @@
     "name": "Bill",
     "slug": "bill",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/194_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Mr. Fuji",
     "slug": "mr-fuji",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/base3/58_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Daisy",
     "slug": "daisy",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/195_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Copycat",
     "slug": "copycat",
     "region": "Kanto",
-    "imageUrl": "https://images.pokemontcg.io/sm7/163_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1/270/high.webp",
     "isFullArt": true
   },
   {
     "name": "Falkner",
     "slug": "falkner",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv2/251_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bugsy",
@@ -164,14 +164,14 @@
     "name": "Whitney",
     "slug": "whitney",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sm8/214_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4a/083/high.webp",
     "isFullArt": true
   },
   {
     "name": "Morty",
     "slug": "morty",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv5/211_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4a/085/high.webp",
     "isFullArt": true
   },
   {
@@ -185,7 +185,7 @@
     "name": "Jasmine",
     "slug": "jasmine",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv8/245_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/200/high.webp",
     "isFullArt": true
   },
   {
@@ -206,15 +206,15 @@
     "name": "Will",
     "slug": "will",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sm12/208_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/196/high.webp",
+    "isFullArt": true
   },
   {
     "name": "Karen",
     "slug": "karen",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/193_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Silver",
@@ -227,36 +227,36 @@
     "name": "Professor Elm",
     "slug": "professor-elm",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sm8/213_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ariana",
     "slug": "ariana",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv10/237_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Proton",
     "slug": "proton",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv10/227_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Petrel",
     "slug": "petrel",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv10/226_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Archer",
     "slug": "archer",
     "region": "Johto",
-    "imageUrl": "https://images.pokemontcg.io/sv10/223_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Eusine",
@@ -283,15 +283,15 @@
     "name": "Roxanne",
     "slug": "roxanne",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh10/188_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Brawly",
     "slug": "brawly",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/188_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Wattson",
@@ -304,43 +304,43 @@
     "name": "Flannery",
     "slug": "flannery",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/191_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Norman",
     "slug": "norman",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/sv4/237_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Winona",
     "slug": "winona",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/xy6/108_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Tate",
     "slug": "tate",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/sm7/166_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Liza",
     "slug": "liza",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/sm7/166_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Wallace",
     "slug": "wallace",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/194_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Juan",
@@ -353,36 +353,36 @@
     "name": "Sidney",
     "slug": "sidney",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh8/264_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Phoebe",
     "slug": "phoebe",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/swsh5/161_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Glacia",
     "slug": "glacia",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/ex16/76_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Drake",
     "slug": "drake",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/ex16/72_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Steven",
     "slug": "steven",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/sm7/165_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "May",
@@ -402,43 +402,43 @@
     "name": "Professor Birch",
     "slug": "professor-birch",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/xy5/159_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Archie",
     "slug": "archie",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/xy5/157_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Maxie",
     "slug": "maxie",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/xy5/158_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Wally",
     "slug": "wally",
     "region": "Hoenn",
-    "imageUrl": "https://images.pokemontcg.io/me1/186_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Roark",
     "slug": "roark",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sv4/242_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Gardenia",
     "slug": "gardenia",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm5/149_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Maylene",
@@ -451,14 +451,14 @@
     "name": "Crasher Wake",
     "slug": "crasher-wake",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm6/129_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Fantina",
     "slug": "fantina",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/swsh11/191_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1/269/high.webp",
     "isFullArt": true
   },
   {
@@ -472,77 +472,77 @@
     "name": "Candice",
     "slug": "candice",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/189_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Volkner",
     "slug": "volkner",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm5/156_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/193/high.webp",
     "isFullArt": true
   },
   {
     "name": "Aaron",
     "slug": "aaron",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/pl2/88_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Bertha",
     "slug": "bertha",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/pl2/90_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Flint",
     "slug": "flint",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/pl2/91_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Lucian",
     "slug": "lucian",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sv6/208_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cynthia",
     "slug": "cynthia",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm5/148_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/192/high.webp",
     "isFullArt": true
   },
   {
     "name": "Barry",
     "slug": "barry",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/swsh9/167_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2a/089/high.webp",
     "isFullArt": true
   },
   {
     "name": "Professor Rowan",
     "slug": "professor-rowan",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/dp1/112_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Cyrus",
     "slug": "cyrus",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/pl1/105_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/190/high.webp",
+    "isFullArt": true
   },
   {
     "name": "Mars",
     "slug": "mars",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm5/154_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/195/high.webp",
     "isFullArt": true
   },
   {
@@ -563,29 +563,29 @@
     "name": "Looker",
     "slug": "looker",
     "region": "Sinnoh",
-    "imageUrl": "https://images.pokemontcg.io/sm5/152_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3a/082/high.webp",
     "isFullArt": true
   },
   {
     "name": "Cilan",
     "slug": "cilan",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/bw4/86_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Chili",
     "slug": "chili",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/swsh8/258_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cress",
     "slug": "cress",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/swsh8/258_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Lenora",
@@ -605,28 +605,28 @@
     "name": "Elesa",
     "slug": "elesa",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/swsh12pt5/147_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Clay",
     "slug": "clay",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/sm12/188_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Skyla",
     "slug": "skyla",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/bw7/149_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Brycen",
     "slug": "brycen",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/smp/SM246_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -640,8 +640,8 @@
     "name": "Roxie",
     "slug": "roxie",
     "region": "Unova",
-    "imageUrl": "https://images.scrydex.com/pokemon/me4-121/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Marlon",
@@ -654,8 +654,8 @@
     "name": "Shauntal",
     "slug": "shauntal",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/sv4/243_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Marshal",
@@ -668,15 +668,15 @@
     "name": "Grimsley",
     "slug": "grimsley",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/me2/120_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Caitlin",
     "slug": "caitlin",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/189_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Alder",
@@ -689,57 +689,57 @@
     "name": "Iris",
     "slug": "iris",
     "region": "Unova",
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-292/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cheren",
     "slug": "cheren",
     "region": "Unova",
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-258/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bianca",
     "slug": "bianca",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/sv5/209_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hugh",
     "slug": "hugh",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/bw7/130_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Professor Juniper",
     "slug": "professor-juniper",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/bw9/116_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ghetsis",
     "slug": "ghetsis",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/bw9/115_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "N",
     "slug": "n",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/zsv10pt5/170_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Colress",
     "slug": "colress",
     "region": "Unova",
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/87_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Viola",
@@ -752,15 +752,15 @@
     "name": "Grant",
     "slug": "grant",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG62_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Korrina",
     "slug": "korrina",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/xy3/111_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ramos",
@@ -773,7 +773,7 @@
     "name": "Clemont",
     "slug": "clemont",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/sv8/243_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1a/081/high.webp",
     "isFullArt": true
   },
   {
@@ -787,7 +787,7 @@
     "name": "Olympia",
     "slug": "olympia",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/g1/66_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -808,8 +808,8 @@
     "name": "Siebold",
     "slug": "siebold",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/198_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Wikstrom",
@@ -822,21 +822,21 @@
     "name": "Drasna",
     "slug": "drasna",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/sv8/231_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Diantha",
     "slug": "diantha",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/sm6/130_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B2/190/high.webp",
     "isFullArt": true
   },
   {
     "name": "Serena",
     "slug": "serena",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/193_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1a/082/high.webp",
     "isFullArt": true
   },
   {
@@ -850,281 +850,281 @@
     "name": "Shauna",
     "slug": "shauna",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/swsh8/263_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Tierno",
     "slug": "tierno",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/xy9/112_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Trevor",
     "slug": "trevor",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/xyp/XY33_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Professor Sycamore",
     "slug": "professor-sycamore",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/xy11/114_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Lysandre",
     "slug": "lysandre",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/xy2/104_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Xerosic",
     "slug": "xerosic",
     "region": "Kalos",
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/89_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "AZ",
     "slug": "az",
     "region": "Kalos",
-    "imageUrl": "https://images.scrydex.com/pokemon/me4-120/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ilima",
     "slug": "ilima",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm1/146_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/191/high.webp",
     "isFullArt": true
   },
   {
     "name": "Lana",
     "slug": "lana",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sv6/219_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/194/high.webp",
     "isFullArt": true
   },
   {
     "name": "Kiawe",
     "slug": "kiawe",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm3/144_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/192/high.webp",
     "isFullArt": true
   },
   {
     "name": "Mallow",
     "slug": "mallow",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm2/145_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/196/high.webp",
     "isFullArt": true
   },
   {
     "name": "Sophocles",
     "slug": "sophocles",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm3/146_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/195/high.webp",
     "isFullArt": true
   },
   {
     "name": "Acerola",
     "slug": "acerola",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/me1/183_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/190/high.webp",
     "isFullArt": true
   },
   {
     "name": "Mina",
     "slug": "mina",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm8/211_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hala",
     "slug": "hala",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm2/143_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1/267/high.webp",
     "isFullArt": true
   },
   {
     "name": "Olivia",
     "slug": "olivia",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm4/111_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Nanu",
     "slug": "nanu",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm9/179_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hapu",
     "slug": "hapu",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm11/200_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Professor Kukui",
     "slug": "professor-kukui",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm1/148_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Professor Burnet",
     "slug": "professor-burnet",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/swsh12tg/TG26_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hau",
     "slug": "hau",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm2/144_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3b/085/high.webp",
     "isFullArt": true
   },
   {
     "name": "Guzma",
     "slug": "guzma",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm3/143_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/208/high.webp",
     "isFullArt": true
   },
   {
     "name": "Plumeria",
     "slug": "plumeria",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm3/145_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Lusamine",
     "slug": "lusamine",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/sm5/153_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3a/083/high.webp",
     "isFullArt": true
   },
   {
     "name": "Gladion",
     "slug": "gladion",
     "region": "Alola",
-    "imageUrl": "https://images.scrydex.com/pokemon/me5-118/large",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3a/081/high.webp",
     "isFullArt": true
   },
   {
     "name": "Lillie",
     "slug": "lillie",
     "region": "Alola",
-    "imageUrl": "https://images.pokemontcg.io/me1/184_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3/209/high.webp",
     "isFullArt": true
   },
   {
     "name": "Milo",
     "slug": "milo",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh2/190_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Nessa",
     "slug": "nessa",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG27_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Kabu",
     "slug": "kabu",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG26_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bea",
     "slug": "bea",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh4/180_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Allister",
     "slug": "allister",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG24_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Opal",
     "slug": "opal",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG28_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Gordie",
     "slug": "gordie",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh7/201_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Melony",
     "slug": "melony",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG64_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Piers",
     "slug": "piers",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG28_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B2/193/high.webp",
     "isFullArt": true
   },
   {
     "name": "Raihan",
     "slug": "raihan",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh7/202_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Leon",
     "slug": "leon",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh4/182_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hop",
     "slug": "hop",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh35/73_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Marnie",
     "slug": "marnie",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh1/200_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bede",
     "slug": "bede",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh1/199_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Professor Magnolia",
@@ -1137,211 +1137,211 @@
     "name": "Sonia",
     "slug": "sonia",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh2/192_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Rose",
     "slug": "rose",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh3/189_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Oleana",
     "slug": "oleana",
     "region": "Galar",
-    "imageUrl": "https://images.pokemontcg.io/swsh2/191_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Katy",
     "slug": "katy",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv1/237_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Brassius",
     "slug": "brassius",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv8pt5/135_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Iono",
     "slug": "iono",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv2/269_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2b/088/high.webp",
     "isFullArt": true
   },
   {
     "name": "Kofu",
     "slug": "kofu",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv7/165_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Larry",
     "slug": "larry",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4/235_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ryme",
     "slug": "ryme",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv3/221_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Tulip",
     "slug": "tulip",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4/259_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Grusha",
     "slug": "grusha",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv2/268_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Rika",
     "slug": "rika",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4/258_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Poppy",
     "slug": "poppy",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv3/227_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hassel",
     "slug": "hassel",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv6/205_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Geeta",
     "slug": "geeta",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv3/226_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Nemona",
     "slug": "nemona",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/238_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Arven",
     "slug": "arven",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/235_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Penny",
     "slug": "penny",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/239_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A3b/086/high.webp",
     "isFullArt": true
   },
   {
     "name": "Clavell",
     "slug": "clavell",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv2/249_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Jacq",
     "slug": "jacq",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv1/250_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Giacomo",
     "slug": "giacomo",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv2/267_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Mela",
     "slug": "mela",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv4/254_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Atticus",
     "slug": "atticus",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv8pt5/133_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ortega",
     "slug": "ortega",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv3/219_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Eri",
     "slug": "eri",
     "region": "Paldea",
-    "imageUrl": "https://images.pokemontcg.io/sv5/210_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Professor Laventon",
     "slug": "professor-laventon",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/162_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Cyllene",
     "slug": "cyllene",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh10/183_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Adaman",
     "slug": "adaman",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG57_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2a/090/high.webp",
     "isFullArt": true
   },
   {
     "name": "Irida",
     "slug": "irida",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh10/186_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2a/087/high.webp",
     "isFullArt": true
   },
   {
     "name": "Volo",
     "slug": "volo",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh11/196_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cogita",
@@ -1354,35 +1354,49 @@
     "name": "Ingo",
     "slug": "ingo",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/sm9/176_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Kamado",
     "slug": "kamado",
     "region": "Hisui",
-    "imageUrl": "https://images.pokemontcg.io/swsh10/187_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Urbain",
+    "slug": "urbain",
+    "region": "Lumiose",
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Jett",
+    "slug": "jett",
+    "region": "Lumiose",
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Youngster",
     "slug": "youngster",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sv1/198_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Bug Catcher",
     "slug": "bug-catcher",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sm11/189_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Lass",
     "slug": "lass",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/base1/75_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1424,7 +1438,7 @@
     "name": "Hiker",
     "slug": "hiker",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sma/SV85_hires.png",
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/201/high.webp",
     "isFullArt": true
   },
   {
@@ -1445,15 +1459,15 @@
     "name": "Engineer",
     "slug": "engineer",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/hgss2/75_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Fisherman",
     "slug": "fisherman",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/ecard3/125_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/199/high.webp",
+    "isFullArt": true
   },
   {
     "name": "Swimmer",
@@ -1473,21 +1487,21 @@
     "name": "Gambler",
     "slug": "gambler",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/base3/60_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Beauty",
     "slug": "beauty",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh4/181_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Psychic",
     "slug": "psychic",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy9/108_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1501,8 +1515,8 @@
     "name": "Juggler",
     "slug": "juggler",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/ecard2/126_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/B2/192/high.webp",
+    "isFullArt": true
   },
   {
     "name": "Tamer",
@@ -1515,15 +1529,15 @@
     "name": "Bird Keeper",
     "slug": "bird-keeper",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh45/66_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Blackbelt",
     "slug": "blackbelt",
     "region": "Universal",
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-255/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Chief",
@@ -1543,14 +1557,14 @@
     "name": "Cooltrainer♂",
     "slug": "cooltrainer-m",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy7/69_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Cooltrainer♀",
     "slug": "cooltrainer-f",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy7/69_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1564,8 +1578,8 @@
     "name": "Channeler",
     "slug": "channeler",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sm11/232_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Camper",
@@ -1578,7 +1592,7 @@
     "name": "Picnicker",
     "slug": "picnicker",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/svp/114_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1634,7 +1648,7 @@
     "name": "Sage",
     "slug": "sage",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/hgss3/77_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1648,8 +1662,8 @@
     "name": "Firebreather",
     "slug": "firebreather",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/me2/119_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Guitarist",
@@ -1662,8 +1676,8 @@
     "name": "Aroma Lady",
     "slug": "aroma-lady",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh7/199_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bug Maniac",
@@ -1697,21 +1711,21 @@
     "name": "Kindler",
     "slug": "kindler",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh9/170_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Lady",
     "slug": "lady",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sma/SV86_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Ninja Boy",
     "slug": "ninja-boy",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy11/103_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1767,21 +1781,21 @@
     "name": "Twins",
     "slug": "twins",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/hgss4/89_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Team Aqua Grunt",
     "slug": "team-aqua-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/dc1/26_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Team Magma Grunt",
     "slug": "team-magma-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/dc1/30_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1823,15 +1837,15 @@
     "name": "Waitress",
     "slug": "waitress",
     "region": "Universal",
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-215/large",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Worker",
     "slug": "worker",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/195_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Team Galactic Grunt",
@@ -1879,8 +1893,8 @@
     "name": "Doctor",
     "slug": "doctor",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh6/190_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Nurse",
@@ -1900,22 +1914,22 @@
     "name": "Parasol Lady",
     "slug": "parasol-lady",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sv4/255_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Pokémon Breeder",
     "slug": "pokemon-breeder",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/base6/102_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Pokémon Ranger",
     "slug": "pokemon-ranger",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy11/113_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Preschooler",
@@ -1949,7 +1963,7 @@
     "name": "Team Plasma Grunt",
     "slug": "team-plasma-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/bw8/125_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -1963,15 +1977,15 @@
     "name": "Furisode Girl",
     "slug": "furisode-girl",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh12/190_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Hex Maniac",
     "slug": "hex-maniac",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy7/75a_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Punk Guy",
@@ -1998,15 +2012,15 @@
     "name": "Team Flare Grunt",
     "slug": "team-flare-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/g1/73a_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Delinquent",
     "slug": "delinquent",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/xy9/98b_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Golfer",
@@ -2033,42 +2047,42 @@
     "name": "Surfer",
     "slug": "surfer",
     "region": "Universal",
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-293/large",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Team Skull Grunt",
     "slug": "team-skull-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sm1/149_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Aether Foundation Employee",
     "slug": "aether-foundation-employee",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/sma/SV81_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "League Staff",
     "slug": "league-staff",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh4/153_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
     "name": "Team Yell Grunt",
     "slug": "team-yell-grunt",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/swsh1/202_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cheerleader",
     "slug": "cheerleader",
     "region": "Universal",
-    "imageUrl": "https://images.pokemontcg.io/hgss2/71_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {

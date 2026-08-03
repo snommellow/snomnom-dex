@@ -540,8 +540,18 @@ const ORG_POSSESSIVE_PREFIXES = ["Team Rocket", "Team Aqua", "Team Magma", "Team
 // (Red's "Red's Challenge" and Blue's "Blue's Tactics" were both getting replaced by the shared
 // "Red & Blue" tag-team card this way before the split).
 function comboIndexNames(cardName: string): string[] {
-  const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
   const names: string[] = [];
+  // "Professor's Research (Professor Magnolia)" — a shared card template reused across every
+  // region, where the parenthetical is the actual identifying info (which professor), not a
+  // disambiguating variant tag. soloIndexName's trailing-parenthetical strip treats it as noise
+  // and collapses every one of these to generic "Professor's Research" -> "professor", so none
+  // of them ever matched their specific professor's roster entry.
+  const professorMatch = cardName.match(/^Professor'?s Research \((?:Professor\s+)?(.+)\)$/i);
+  if (professorMatch) {
+    const person = professorMatch[1].trim();
+    names.push(person.toLowerCase(), `professor ${person}`.toLowerCase());
+  }
+  const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
   if (/ & /.test(noVariantTag)) {
     names.push(...noVariantTag.split(" & ").map((p) => p.trim().toLowerCase()).filter(Boolean));
   }

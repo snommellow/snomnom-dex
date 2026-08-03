@@ -701,7 +701,12 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
 // Maintenance", "Bill's Transfer"), so the possessive prefix is the trainer's actual name.
 function soloIndexName(cardName: string): string {
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
-  const possessiveMatch = noVariantTag.match(/^(.+?)['']s\s+.+$/);
+  // Both apostrophe variants matter here — vintage Gym Heroes/Gym Challenge card names (e.g.
+  // "Bill's Maintenance", "Brock's Grit", "Sabrina's Suggestion") use a typographic curly
+  // apostrophe (’, U+2019) in pokemontcg.io's data, not the straight one ('). Only matching
+  // straight quotes silently failed every one of these vintage possessive cards — they never
+  // stripped down to the trainer's name and so never matched their roster entry at all.
+  const possessiveMatch = noVariantTag.match(/^(.+?)['’]s\s+.+$/);
   return (possessiveMatch ? possessiveMatch[1] : noVariantTag).toLowerCase();
 }
 
@@ -725,10 +730,18 @@ function comboIndexNames(cardName: string): string[] {
   // disambiguating variant tag. soloIndexName's trailing-parenthetical strip treats it as noise
   // and collapses every one of these to generic "Professor's Research" -> "professor", so none
   // of them ever matched their specific professor's roster entry.
-  const professorMatch = cardName.match(/^Professor'?s Research \((?:Professor\s+)?(.+)\)$/i);
+  const professorMatch = cardName.match(/^Professor['’]?s Research \((?:Professor\s+)?(.+)\)$/i);
   if (professorMatch) {
     const person = professorMatch[1].trim();
     names.push(person.toLowerCase(), `professor ${person}`.toLowerCase());
+  }
+  // "Boss's Orders (Ghetsis)" / "Boss's Orders (Giovanni)" — same shared-template shape as
+  // Professor's Research above (identity is in the parenthetical, not the card name itself),
+  // used for whichever team's leader/boss appears. Without this, every team leader's own
+  // signature Supporter card collapsed to generic "boss" and never matched their roster entry.
+  const bossMatch = cardName.match(/^Boss['’]s Orders \((.+)\)$/i);
+  if (bossMatch) {
+    names.push(bossMatch[1].trim().toLowerCase());
   }
   const noVariantTag = cardName.replace(/\s*\([^)]*\)\s*$/, "");
   if (/ & /.test(noVariantTag)) {

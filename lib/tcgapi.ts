@@ -387,10 +387,18 @@ function lookupCandidates(
   return matched.length ? matched : regionalMatched;
 }
 
+// "dc1" (Double Crisis) and "dv1" (Dragon Vault) are BW-block half-decks/minisets released
+// alongside the numbered bw1-11 sets, using the same full-bleed BW-era card template — but their
+// set IDs don't start with "bw", so the prefix test below wrongly treated them as pre-BW
+// (bordered/old-style). That excluded Double Crisis's "Team Aqua's Kyogre-EX" (dc1-6) — the only
+// genuinely good full-art card Kyogre has — from trainerVgxPick as if it were an old bordered
+// card, leaving Kyogre with a much worse automated pick instead.
+const BW_ERA_SPECIAL_SETS = new Set(["dc1", "dv1"]);
+
 // Returns true for sets older than BW era (DP, Platinum, HGSS, EX series, Base, Neo, etc.)
 // BW introduced full-bleed artwork so bw+ sets look fine as card backgrounds.
 function isPreBwSet(setId: string): boolean {
-  return !/^(bw|xy|sm|swsh|sv)/i.test(setId);
+  return !/^(bw|xy|sm|swsh|sv)/i.test(setId) && !BW_ERA_SPECIAL_SETS.has(setId);
 }
 
 function pickBestCard(cards: RankedCard[]): RankedCard | null {

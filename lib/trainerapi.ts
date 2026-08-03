@@ -182,7 +182,7 @@ assignRole("Elite Four", [
   "Aaron", "Bertha", "Flint", "Lucian",
   "Shauntal", "Marshal", "Grimsley", "Caitlin",
   "Malva", "Siebold", "Wikstrom", "Drasna",
-  "Rika", "Poppy", "Hassel",
+  "Rika", "Poppy", "Hassel", "Molayne",
 ]);
 assignRole("Champion", ["Lance", "Wallace", "Steven", "Cynthia", "Alder", "Iris", "Diantha", "Leon", "Geeta"]);
 assignRole("Rival", [
@@ -205,7 +205,7 @@ assignRole("Team Admin", [
   "Cassiopeia", "Penny", "Sordward", "Shielbert",
 ]);
 assignRole("Kahuna", ["Hala", "Olivia", "Nanu", "Hapu"]);
-assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili", "Molayne"]);
+assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili"]);
 assignRole("Frontier Brain", [
   "Scott", "Anabel", "Noland", "Greta", "Tucker", "Lucy", "Spenser", "Brandon",
   "Palmer", "Argenta", "Dahlia", "Darach", "Thorton",
@@ -457,7 +457,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Kahili", searchNames: ["Kahili"], special: true, region: "Alola" },
   { name: "Molayne", searchNames: ["Molayne"], special: true, region: "Alola" },
   { name: "Samson Oak", searchNames: ["Samson Oak"], special: true, region: "Alola" },
-  { name: "Zisu", searchNames: ["Zisu"], special: true, region: "Alola" },
+  { name: "Zisu", searchNames: ["Zisu"], special: true, region: "Hisui" },
   { name: "Welder", searchNames: ["Welder"], special: true, region: "Alola" },
   { name: "Faba", searchNames: ["Faba"], special: true, region: "Alola" },
   { name: "Wicke", searchNames: ["Wicke"], special: true, region: "Alola" },
@@ -524,21 +524,21 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Briar", searchNames: ["Briar"], special: true, region: "Paldea" },
   { name: "Crispin", searchNames: ["Crispin"], special: true, region: "Paldea" },
   { name: "Lacey", searchNames: ["Lacey"], special: true, region: "Paldea" },
-  { name: "Cara Liss", searchNames: ["Cara Liss"], special: true, region: "Paldea" },
+  { name: "Cara Liss", searchNames: ["Cara Liss"], special: true, region: "Galar" },
   { name: "Dendra", searchNames: ["Dendra"], special: true, region: "Paldea" },
-  { name: "Gwynn", searchNames: ["Gwynn"], special: true, region: "Paldea" },
-  { name: "Iscan", searchNames: ["Iscan"], special: true, region: "Paldea" },
+  { name: "Gwynn", searchNames: ["Gwynn"], special: true, region: "Lumiose" },
+  { name: "Iscan", searchNames: ["Iscan"], special: true, region: "Hisui" },
   { name: "Miriam", searchNames: ["Miriam"], special: true, region: "Paldea" },
-  { name: "Morgan", searchNames: ["Morgan"], special: true, region: "Paldea" },
-  { name: "Naveen", searchNames: ["Naveen"], special: true, region: "Paldea" },
+  { name: "Morgan", searchNames: ["Morgan"], special: true, region: "Hoenn" },
+  { name: "Naveen", searchNames: ["Naveen"], special: true, region: "Lumiose" },
   { name: "Raifort", searchNames: ["Raifort"], special: true, region: "Paldea" },
   { name: "Saguaro", searchNames: ["Saguaro"], special: true, region: "Paldea" },
   { name: "Salvatore", searchNames: ["Salvatore"], special: true, region: "Paldea" },
-  { name: "Tarragon", searchNames: ["Tarragon"], special: true, region: "Paldea" },
-  { name: "Evelyn", searchNames: ["Evelyn"], special: true, region: "Paldea" },
-  { name: "Arezu", searchNames: ["Arezu"], special: true, region: "Paldea" },
+  { name: "Tarragon", searchNames: ["Tarragon"], special: true, region: "Lumiose" },
+  { name: "Evelyn", searchNames: ["Evelyn"], special: true, region: "Hoenn" },
+  { name: "Arezu", searchNames: ["Arezu"], special: true, region: "Hisui" },
   { name: "Honey", searchNames: ["Honey"], special: true, region: "Paldea" },
-  { name: "Jacinthe", searchNames: ["Jacinthe"], special: true, region: "Paldea" },
+  { name: "Jacinthe", searchNames: ["Jacinthe"], special: true, region: "Lumiose" },
   { name: "Professor Sada", searchNames: ["Professor Sada", "Sada"], special: true, region: "Paldea" },
   { name: "Professor Turo", searchNames: ["Professor Turo", "Turo"], special: true, region: "Paldea" },
   { name: "Cassiopeia", searchNames: ["Cassiopeia"], special: true, region: "Paldea" },

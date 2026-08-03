@@ -943,7 +943,5 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
       };
     })
   );
-  // The Pokédex is always ordered by dex number; trainers have no equivalent number, so
-  // alphabetical is the consistent stand-in rather than leaving it in roster-edit order.
-  return entries.sort((a, b) => a.name.localeCompare(b.name));
+  return entries;
 }

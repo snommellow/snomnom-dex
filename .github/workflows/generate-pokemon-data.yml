@@ -32,22 +32,15 @@ jobs:
 
       - run: npm ci
 
-      - name: Debug cards
-        run: npx tsx scripts/debug-cards.ts
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
-
-      - name: Debug legendary cards
-        run: npx tsx scripts/debug-legendary-cards.ts
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
+      - name: Debug name verify
+        run: npx tsx scripts/debug-name-verify.ts
 
       - name: Commit debug data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/debug-cards.json lib/debug-legendary-cards.json
-          git commit -m "debug: full card-catalog sweep + Kyogre/Rayquaza card investigation" || true
+          git add lib/debug-name-verify.json
+          git commit -m "debug: verify sweep candidate names against Bulbapedia" || true
           git push --force-with-lease || true
 
       - name: Generate pokemon-data.json

@@ -177,7 +177,7 @@ assignRole("Gym Leader", [
   "Cilan", "Chili", "Cress", "Lenora", "Burgh", "Elesa", "Clay", "Skyla", "Brycen", "Drayden", "Roxie", "Marlon",
   "Viola", "Grant", "Korrina", "Ramos", "Clemont", "Valerie", "Olympia", "Wulfric",
   "Milo", "Nessa", "Kabu", "Bea", "Allister", "Opal", "Gordie", "Melony", "Piers", "Raihan",
-  "Katy", "Brassius", "Iono", "Kofu", "Larry", "Ryme", "Tulip", "Grusha",
+  "Katy", "Brassius", "Iono", "Kofu", "Larry", "Ryme", "Tulip", "Grusha", "Tyme",
 ]);
 assignRole("Elite Four", [
   "Lorelei", "Bruno", "Agatha", "Lance", "Will", "Karen",
@@ -205,7 +205,7 @@ assignRole("Team Leader", [
 assignRole("Team Admin", [
   "Ariana", "Proton", "Petrel", "Archer", "Mars", "Jupiter", "Saturn", "Charon",
   "N", "Colress", "Zinnia", "Xerosic", "Plumeria", "Lusamine", "Faba", "Wicke", "Oleana",
-  "Cassiopeia", "Penny", "Sordward", "Shielbert",
+  "Cassiopeia", "Penny", "Sordward", "Shielbert", "Emma",
 ]);
 assignRole("Kahuna", ["Hala", "Olivia", "Nanu", "Hapu"]);
 assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili", "Molayne"]);
@@ -368,6 +368,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Buck", searchNames: ["Buck"], special: true, region: "Sinnoh" },
   { name: "Marley", searchNames: ["Marley"], special: true, region: "Sinnoh" },
   { name: "Riley", searchNames: ["Riley"], special: true, region: "Sinnoh" },
+  { name: "Felicity", searchNames: ["Felicity"], special: true, region: "Sinnoh" },
   // Battle Frontier (Platinum) — Palmer heads the Battle Tower; Argenta (Battle Castle), Dahlia
   // (Battle Hall), Darach (Battle Arcade), and Thorton (Battle Factory) each head another
   // facility.
@@ -439,6 +440,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "AZ", searchNames: ["AZ"], special: true, region: "Kalos" },
   { name: "Cyrano", searchNames: ["Cyrano"], special: true, region: "Kalos" },
   { name: "Bonnie", searchNames: ["Bonnie"], special: true, region: "Kalos" },
+  // Dana/Nita: Battle Chateau-titled trainers (Bulbapedia-confirmed X and Y characters).
+  { name: "Dana", searchNames: ["Dana"], special: true, region: "Kalos" },
+  { name: "Nita", searchNames: ["Nita"], special: true, region: "Kalos" },
+  { name: "Cassius", searchNames: ["Cassius"], special: true, region: "Kalos" },
+  { name: "Emma", searchNames: ["Emma"], special: true, region: "Kalos" },
   // Alola (Gen 7) named characters
   { name: "Ilima", searchNames: ["Ilima"], special: true, region: "Alola" },
   { name: "Lana", searchNames: ["Lana"], special: true, region: "Alola" },
@@ -512,6 +518,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Hassel", searchNames: ["Hassel"], special: true, region: "Paldea" },
   { name: "Geeta", searchNames: ["Geeta"], special: true, region: "Paldea" },
   { name: "Nemona", searchNames: ["Nemona"], special: true, region: "Paldea" },
+  { name: "O'Nare", searchNames: ["O'Nare", "O’Nare"], special: true, region: "Paldea" },
+  // Tyme: Bulbapedia-tagged Gym Leader + Rock-type Trainer, from the Paldean Winds short.
+  { name: "Tyme", searchNames: ["Tyme"], special: true, region: "Paldea" },
   { name: "Arven", searchNames: ["Arven"], special: true, region: "Paldea" },
   { name: "Penny", searchNames: ["Penny"], special: true, region: "Paldea" },
   { name: "Clavell", searchNames: ["Clavell"], special: true, region: "Paldea" },
@@ -555,11 +564,13 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Volo", searchNames: ["Volo"], special: true, region: "Hisui" },
   { name: "Cogita", searchNames: ["Cogita"], special: true, region: "Hisui" },
   { name: "Kamado", searchNames: ["Kamado"], special: true, region: "Hisui" },
+  { name: "Choy", searchNames: ["Choy"], special: true, region: "Hisui" },
   // Lumiose (Legends: Z-A) named characters. AZ already exists as a Kalos entry above and
   // returns in Z-A, so not duplicated here. Only Urbain and Jett confirmed against the card
   // catalog — other reported characters (Taunie, Vinnie) have no card yet.
   { name: "Urbain", searchNames: ["Urbain"], special: true, region: "Lumiose" },
   { name: "Canari", searchNames: ["Canari"], special: true, region: "Lumiose" },
+  { name: "Philippe", searchNames: ["Philippe"], special: true, region: "Lumiose" },
   { name: "Jett", searchNames: ["Jett"], special: true, region: "Lumiose" },
   // Pokémon GO — the three Team Leaders, not tied to any mainline region.
   { name: "Blanche", searchNames: ["Blanche"], special: true, region: "Pokémon GO" },
@@ -694,6 +705,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Team Star Grunt", searchNames: ["Team Star Grunt"] },
   { name: "Team Aqua Admin", searchNames: ["Team Aqua Admin"] },
   { name: "Team Magma Admin", searchNames: ["Team Magma Admin"] },
+  // Rust Syndicate: Legends: Z-A's villain faction, Bulbapedia-confirmed as a real trainer class.
+  { name: "Rust Syndicate Grunt", searchNames: ["Rust Syndicate Grunt"] },
 ];
 
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io
@@ -834,15 +847,17 @@ async function fetchPocketTrainerImage(searchNames: string[]): Promise<{ url: st
 
 const BULBAPEDIA_API = "https://bulbapedia.bulbagarden.net/w/api.php";
 
-// Last-resort art source for named trainers with zero TCG/Pocket card of their own — mirrors the
+// Last-resort art source for trainers with zero TCG/Pocket card of their own — mirrors the
 // Pokédex's PokeAPI official-artwork fallback for Pokémon with no matching card. Bulbapedia isn't
 // reachable from the sandbox this code is edited in, but is reachable from the CI runner that
 // actually executes this at data-generation time (confirmed separately). "(game)" is Bulbapedia's
-// usual disambiguator when a trainer's plain name collides with another article (e.g. an anime
-// character or move of the same name); redirects=1 handles the common case where the plain title
-// is itself a redirect to the disambiguated page.
+// usual disambiguator when a named trainer's plain name collides with another article (e.g. an
+// anime character or move of the same name); "(Trainer class)" is the equivalent disambiguator
+// Bulbapedia uses for generic trainer-class pages (e.g. "Skier (Trainer class)"), which is why
+// generic classes need it tried too, not just named individuals. redirects=1 handles the common
+// case where the plain title is itself a redirect to the disambiguated page.
 async function fetchBulbapediaArtwork(name: string): Promise<string | null> {
-  for (const title of [name, `${name} (game)`]) {
+  for (const title of [name, `${name} (game)`, `${name} (Trainer class)`]) {
     try {
       const url = `${BULBAPEDIA_API}?action=query&titles=${encodeURIComponent(title)}&prop=pageimages&piprop=original&format=json&redirects=1`;
       const res = await fetch(url);
@@ -923,9 +938,9 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         imageUrl = pocket.url;
         isFullArt = pocket.isFullArt;
       }
-      // Only named individuals get a Bulbapedia lookup — generic trainer classes (Youngster,
-      // Sailor, etc.) don't have their own character page to fetch art from.
-      if (!imageUrl && special) {
+      // Generic trainer classes (Youngster, Sailor, etc.) get a Bulbapedia lookup too — they
+      // have their own "X (Trainer class)" pages with official art, same as named individuals.
+      if (!imageUrl) {
         imageUrl = await fetchBulbapediaArtwork(name);
         // Character art, not a bordered TCG card — same full-bleed treatment as a full-art card.
         isFullArt = imageUrl !== null;

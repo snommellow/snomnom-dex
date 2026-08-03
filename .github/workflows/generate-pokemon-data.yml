@@ -32,17 +32,6 @@ jobs:
 
       - run: npm ci
 
-      - name: Debug name verify
-        run: npx tsx scripts/debug-name-verify.ts
-
-      - name: Commit debug data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/debug-name-verify.json
-          git commit -m "debug: verify sweep candidate names against Bulbapedia" || true
-          git push --force-with-lease || true
-
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}

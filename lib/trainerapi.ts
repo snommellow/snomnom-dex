@@ -252,6 +252,17 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Archie", searchNames: ["Archie"], special: true, region: "Hoenn" },
   { name: "Maxie", searchNames: ["Maxie"], special: true, region: "Hoenn" },
   { name: "Wally", searchNames: ["Wally"], special: true, region: "Hoenn" },
+  // Battle Frontier (Emerald) — Scott recruits the player; the 7 Frontier Brains each head one
+  // facility (Anabel/Battle Tower, Noland/Battle Factory, Greta/Battle Arena, Tucker/Battle
+  // Dome, Lucy/Battle Pike, Spenser/Battle Palace, Brandon/Battle Pyramid).
+  { name: "Scott", searchNames: ["Scott"], special: true, region: "Hoenn" },
+  { name: "Anabel", searchNames: ["Anabel"], special: true, region: "Hoenn" },
+  { name: "Noland", searchNames: ["Noland"], special: true, region: "Hoenn" },
+  { name: "Greta", searchNames: ["Greta"], special: true, region: "Hoenn" },
+  { name: "Tucker", searchNames: ["Tucker"], special: true, region: "Hoenn" },
+  { name: "Lucy", searchNames: ["Lucy"], special: true, region: "Hoenn" },
+  { name: "Spenser", searchNames: ["Spenser"], special: true, region: "Hoenn" },
+  { name: "Brandon", searchNames: ["Brandon"], special: true, region: "Hoenn" },
   // Sinnoh (Gen 4) named characters
   { name: "Roark", searchNames: ["Roark"], special: true, region: "Sinnoh" },
   { name: "Gardenia", searchNames: ["Gardenia"], special: true, region: "Sinnoh" },
@@ -273,6 +284,14 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Jupiter", searchNames: ["Jupiter"], special: true, region: "Sinnoh" },
   { name: "Saturn", searchNames: ["Saturn"], special: true, region: "Sinnoh" },
   { name: "Looker", searchNames: ["Looker"], special: true, region: "Sinnoh" },
+  // Battle Frontier (Platinum) — Palmer heads the Battle Tower; Argenta (Battle Castle), Dahlia
+  // (Battle Hall), Darach (Battle Arcade), and Thorton (Battle Factory) each head another
+  // facility.
+  { name: "Palmer", searchNames: ["Palmer"], special: true, region: "Sinnoh" },
+  { name: "Argenta", searchNames: ["Argenta"], special: true, region: "Sinnoh" },
+  { name: "Dahlia", searchNames: ["Dahlia"], special: true, region: "Sinnoh" },
+  { name: "Darach", searchNames: ["Darach"], special: true, region: "Sinnoh" },
+  { name: "Thorton", searchNames: ["Thorton"], special: true, region: "Sinnoh" },
   // Unova (Gen 5) named characters
   { name: "Cilan", searchNames: ["Cilan"], special: true, region: "Unova" },
   { name: "Chili", searchNames: ["Chili"], special: true, region: "Unova" },

@@ -1,0 +1,3473 @@
+{
+  "ptcgCount": 2250,
+  "tcgdexTotalCount": 23444,
+  "pocketSupporterCount": 1288,
+  "totalExtractedNames": 1176,
+  "missingCount": 866,
+  "missing": [
+    {
+      "name": "professor",
+      "count": 49
+    },
+    {
+      "name": "potion",
+      "count": 26
+    },
+    {
+      "name": "switch",
+      "count": 24
+    },
+    {
+      "name": "team rocket",
+      "count": 23
+    },
+    {
+      "name": "boss",
+      "count": 23
+    },
+    {
+      "name": "poké ball",
+      "count": 20
+    },
+    {
+      "name": "rare candy",
+      "count": 19
+    },
+    {
+      "name": "energy switch",
+      "count": 19
+    },
+    {
+      "name": "judge",
+      "count": 18
+    },
+    {
+      "name": "pokémon center lady",
+      "count": 17
+    },
+    {
+      "name": "great ball",
+      "count": 16
+    },
+    {
+      "name": "energy search",
+      "count": 16
+    },
+    {
+      "name": "pokémon fan club",
+      "count": 15
+    },
+    {
+      "name": "rocket",
+      "count": 14
+    },
+    {
+      "name": "ultra ball",
+      "count": 14
+    },
+    {
+      "name": "energy retrieval",
+      "count": 13
+    },
+    {
+      "name": "super scoop up",
+      "count": 13
+    },
+    {
+      "name": "pokémon catcher",
+      "count": 10
+    },
+    {
+      "name": "crushing hammer",
+      "count": 9
+    },
+    {
+      "name": "full heal",
+      "count": 9
+    },
+    {
+      "name": "team galactic",
+      "count": 9
+    },
+    {
+      "name": "here comes team rocket!",
+      "count": 8
+    },
+    {
+      "name": "champions festival",
+      "count": 8
+    },
+    {
+      "name": "gym badge",
+      "count": 8
+    },
+    {
+      "name": "gym trainer",
+      "count": 8
+    },
+    {
+      "name": "exp. share",
+      "count": 7
+    },
+    {
+      "name": "pluspower",
+      "count": 7
+    },
+    {
+      "name": "warp point",
+      "count": 7
+    },
+    {
+      "name": "pokégear 3.0",
+      "count": 7
+    },
+    {
+      "name": "underground expedition",
+      "count": 7
+    },
+    {
+      "name": "unidentified fossil",
+      "count": 7
+    },
+    {
+      "name": "super rod",
+      "count": 6
+    },
+    {
+      "name": "mysterious fossil",
+      "count": 6
+    },
+    {
+      "name": "dual ball",
+      "count": 6
+    },
+    {
+      "name": "life herb",
+      "count": 6
+    },
+    {
+      "name": "master ball",
+      "count": 6
+    },
+    {
+      "name": "pokémon communication",
+      "count": 6
+    },
+    {
+      "name": "enhanced hammer",
+      "count": 6
+    },
+    {
+      "name": "max potion",
+      "count": 6
+    },
+    {
+      "name": "chili & cilan & cress",
+      "count": 6
+    },
+    {
+      "name": "dancer",
+      "count": 6
+    },
+    {
+      "name": "choy",
+      "count": 6
+    },
+    {
+      "name": "miss fortune sisters",
+      "count": 6
+    },
+    {
+      "name": "claw fossil",
+      "count": 5
+    },
+    {
+      "name": "root fossil",
+      "count": 5
+    },
+    {
+      "name": "maintenance",
+      "count": 5
+    },
+    {
+      "name": "pokénav",
+      "count": 5
+    },
+    {
+      "name": "energy removal 2",
+      "count": 5
+    },
+    {
+      "name": "energy restore",
+      "count": 5
+    },
+    {
+      "name": "pokémon reversal",
+      "count": 5
+    },
+    {
+      "name": "quick ball",
+      "count": 5
+    },
+    {
+      "name": "rocky helmet",
+      "count": 5
+    },
+    {
+      "name": "escape rope",
+      "count": 5
+    },
+    {
+      "name": "apricorn maker",
+      "count": 5
+    },
+    {
+      "name": "tate & liza",
+      "count": 5
+    },
+    {
+      "name": "cook",
+      "count": 5
+    },
+    {
+      "name": "tropical wind",
+      "count": 4
+    },
+    {
+      "name": "pokémon center",
+      "count": 4
+    },
+    {
+      "name": "jessie & james",
+      "count": 4
+    },
+    {
+      "name": "devolution spray",
+      "count": 4
+    },
+    {
+      "name": "energy recycler",
+      "count": 4
+    },
+    {
+      "name": "strength charm",
+      "count": 4
+    },
+    {
+      "name": "level ball",
+      "count": 4
+    },
+    {
+      "name": "double full heal",
+      "count": 4
+    },
+    {
+      "name": "blacksmith",
+      "count": 4
+    },
+    {
+      "name": "energy recycle system",
+      "count": 4
+    },
+    {
+      "name": "pal pad",
+      "count": 4
+    },
+    {
+      "name": "pokédex",
+      "count": 4
+    },
+    {
+      "name": "mary",
+      "count": 4
+    },
+    {
+      "name": "fossil excavator",
+      "count": 4
+    },
+    {
+      "name": "holon mentor",
+      "count": 4
+    },
+    {
+      "name": "revive",
+      "count": 4
+    },
+    {
+      "name": "super potion",
+      "count": 4
+    },
+    {
+      "name": "lady outing",
+      "count": 4
+    },
+    {
+      "name": "alph lithograph",
+      "count": 4
+    },
+    {
+      "name": "battle reporter",
+      "count": 4
+    },
+    {
+      "name": "vs seeker",
+      "count": 4
+    },
+    {
+      "name": "fossil researcher",
+      "count": 4
+    },
+    {
+      "name": "acro bike",
+      "count": 4
+    },
+    {
+      "name": "rival",
+      "count": 4
+    },
+    {
+      "name": "handiwork",
+      "count": 4
+    },
+    {
+      "name": "nest ball",
+      "count": 4
+    },
+    {
+      "name": "ultra recon squad",
+      "count": 4
+    },
+    {
+      "name": "dana",
+      "count": 4
+    },
+    {
+      "name": "teammates",
+      "count": 4
+    },
+    {
+      "name": "brigette",
+      "count": 4
+    },
+    {
+      "name": "ingo & emmet",
+      "count": 4
+    },
+    {
+      "name": "nita",
+      "count": 4
+    },
+    {
+      "name": "cynthia & caitlin",
+      "count": 4
+    },
+    {
+      "name": "guzma & hala",
+      "count": 4
+    },
+    {
+      "name": "mallow & lana",
+      "count": 4
+    },
+    {
+      "name": "red & blue",
+      "count": 4
+    },
+    {
+      "name": "coach trainer",
+      "count": 4
+    },
+    {
+      "name": "poké maniac",
+      "count": 4
+    },
+    {
+      "name": "ball guy",
+      "count": 4
+    },
+    {
+      "name": "sordward & shielbert",
+      "count": 4
+    },
+    {
+      "name": "adventurer",
+      "count": 4
+    },
+    {
+      "name": "café master",
+      "count": 4
+    },
+    {
+      "name": "friends in galar",
+      "count": 4
+    },
+    {
+      "name": "friends in hisui",
+      "count": 4
+    },
+    {
+      "name": "friends in sinnoh",
+      "count": 4
+    },
+    {
+      "name": "paldean student",
+      "count": 4
+    },
+    {
+      "name": "drayton",
+      "count": 4
+    },
+    {
+      "name": "night maintenance",
+      "count": 3
+    },
+    {
+      "name": "tropical tidal wave",
+      "count": 3
+    },
+    {
+      "name": "victory cup",
+      "count": 3
+    },
+    {
+      "name": "hyper potion",
+      "count": 3
+    },
+    {
+      "name": "fiery flint",
+      "count": 3
+    },
+    {
+      "name": "turffield stadium",
+      "count": 3
+    },
+    {
+      "name": "balloon berry",
+      "count": 3
+    },
+    {
+      "name": "computer search",
+      "count": 3
+    },
+    {
+      "name": "emcee",
+      "count": 3
+    },
+    {
+      "name": "defender",
+      "count": 3
+    },
+    {
+      "name": "pokémon trader",
+      "count": 3
+    },
+    {
+      "name": "interviewer",
+      "count": 3
+    },
+    {
+      "name": "scoop up",
+      "count": 3
+    },
+    {
+      "name": "max revive",
+      "count": 3
+    },
+    {
+      "name": "lum berry",
+      "count": 3
+    },
+    {
+      "name": "crystal shard",
+      "count": 3
+    },
+    {
+      "name": "buffer piece",
+      "count": 3
+    },
+    {
+      "name": "memory berry",
+      "count": 3
+    },
+    {
+      "name": "trainers' mail",
+      "count": 3
+    },
+    {
+      "name": "dark patch",
+      "count": 3
+    },
+    {
+      "name": "imposter professor oak",
+      "count": 3
+    },
+    {
+      "name": "superior energy retrieval",
+      "count": 3
+    },
+    {
+      "name": "random receiver",
+      "count": 3
+    },
+    {
+      "name": "beast ring",
+      "count": 3
+    },
+    {
+      "name": "tool scrapper",
+      "count": 3
+    },
+    {
+      "name": "choice band",
+      "count": 3
+    },
+    {
+      "name": "metal frying pan",
+      "count": 3
+    },
+    {
+      "name": "mysterious treasure",
+      "count": 3
+    },
+    {
+      "name": "escape board",
+      "count": 3
+    },
+    {
+      "name": "field blower",
+      "count": 3
+    },
+    {
+      "name": "weakness policy",
+      "count": 3
+    },
+    {
+      "name": "rescue stretcher",
+      "count": 3
+    },
+    {
+      "name": "power plant",
+      "count": 3
+    },
+    {
+      "name": "electropower",
+      "count": 3
+    },
+    {
+      "name": "net ball",
+      "count": 3
+    },
+    {
+      "name": "cherish ball",
+      "count": 3
+    },
+    {
+      "name": "reset stamp",
+      "count": 3
+    },
+    {
+      "name": "choice belt",
+      "count": 3
+    },
+    {
+      "name": "trekking shoes",
+      "count": 3
+    },
+    {
+      "name": "lost vacuum",
+      "count": 3
+    },
+    {
+      "name": "bill’s maintenance",
+      "count": 3
+    },
+    {
+      "name": "blaine’s last stand",
+      "count": 3
+    },
+    {
+      "name": "brock’s grit",
+      "count": 3
+    },
+    {
+      "name": "erika’s hospitality",
+      "count": 3
+    },
+    {
+      "name": "giovanni’s exile",
+      "count": 3
+    },
+    {
+      "name": "koga’s trap",
+      "count": 3
+    },
+    {
+      "name": "sabrina’s suggestion",
+      "count": 3
+    },
+    {
+      "name": "ciphermaniac",
+      "count": 3
+    },
+    {
+      "name": "explorer",
+      "count": 3
+    },
+    {
+      "name": "high pressure system",
+      "count": 2
+    },
+    {
+      "name": "low pressure system",
+      "count": 2
+    },
+    {
+      "name": "multi technical machine 01",
+      "count": 2
+    },
+    {
+      "name": "pokémon park",
+      "count": 2
+    },
+    {
+      "name": "the rocket",
+      "count": 2
+    },
+    {
+      "name": "team aqua",
+      "count": 2
+    },
+    {
+      "name": "secret base",
+      "count": 2
+    },
+    {
+      "name": "tropical beach",
+      "count": 2
+    },
+    {
+      "name": "team magma",
+      "count": 2
+    },
+    {
+      "name": "lucky stadium",
+      "count": 2
+    },
+    {
+      "name": "beginning door",
+      "count": 2
+    },
+    {
+      "name": "ultimate zone",
+      "count": 2
+    },
+    {
+      "name": "recycle",
+      "count": 2
+    },
+    {
+      "name": "rotom bike",
+      "count": 2
+    },
+    {
+      "name": "dragon talon",
+      "count": 2
+    },
+    {
+      "name": "suspicious food tin",
+      "count": 2
+    },
+    {
+      "name": "lance ◇",
+      "count": 2
+    },
+    {
+      "name": "switch raft",
+      "count": 2
+    },
+    {
+      "name": "team aqua schemer",
+      "count": 2
+    },
+    {
+      "name": "team magma schemer",
+      "count": 2
+    },
+    {
+      "name": "fieldworker",
+      "count": 2
+    },
+    {
+      "name": "old rod",
+      "count": 2
+    },
+    {
+      "name": "impostor professor oak",
+      "count": 2
+    },
+    {
+      "name": "item finder",
+      "count": 2
+    },
+    {
+      "name": "cover fossil",
+      "count": 2
+    },
+    {
+      "name": "evosoda",
+      "count": 2
+    },
+    {
+      "name": "castaway",
+      "count": 2
+    },
+    {
+      "name": "imakuni?",
+      "count": 2
+    },
+    {
+      "name": "battle frontier",
+      "count": 2
+    },
+    {
+      "name": "plume fossil",
+      "count": 2
+    },
+    {
+      "name": "flower shop lady",
+      "count": 2
+    },
+    {
+      "name": "team aqua conspirator",
+      "count": 2
+    },
+    {
+      "name": "the boss",
+      "count": 2
+    },
+    {
+      "name": "challenge!",
+      "count": 2
+    },
+    {
+      "name": "super energy removal",
+      "count": 2
+    },
+    {
+      "name": "trickery",
+      "count": 2
+    },
+    {
+      "name": "team magma conspirator",
+      "count": 2
+    },
+    {
+      "name": "oran berry",
+      "count": 2
+    },
+    {
+      "name": "magnetic storm",
+      "count": 2
+    },
+    {
+      "name": "dusk ball",
+      "count": 2
+    },
+    {
+      "name": "department store girl",
+      "count": 2
+    },
+    {
+      "name": "red card",
+      "count": 2
+    },
+    {
+      "name": "heavy ball",
+      "count": 2
+    },
+    {
+      "name": "holon adventurer",
+      "count": 2
+    },
+    {
+      "name": "lucky egg",
+      "count": 2
+    },
+    {
+      "name": "energy charge",
+      "count": 2
+    },
+    {
+      "name": "moomoo milk",
+      "count": 2
+    },
+    {
+      "name": "island hermit",
+      "count": 2
+    },
+    {
+      "name": "old amber",
+      "count": 2
+    },
+    {
+      "name": "mom",
+      "count": 2
+    },
+    {
+      "name": "pokémon collector",
+      "count": 2
+    },
+    {
+      "name": "dome fossil",
+      "count": 2
+    },
+    {
+      "name": "seeker",
+      "count": 2
+    },
+    {
+      "name": "energy removal",
+      "count": 2
+    },
+    {
+      "name": "gust of wind",
+      "count": 2
+    },
+    {
+      "name": "sitrus berry",
+      "count": 2
+    },
+    {
+      "name": "helix fossil",
+      "count": 2
+    },
+    {
+      "name": "exp.all",
+      "count": 2
+    },
+    {
+      "name": "aether paradise conservation area",
+      "count": 2
+    },
+    {
+      "name": "brooklet hill",
+      "count": 2
+    },
+    {
+      "name": "mt. coronet",
+      "count": 2
+    },
+    {
+      "name": "eviolite",
+      "count": 2
+    },
+    {
+      "name": "shrine of punishment",
+      "count": 2
+    },
+    {
+      "name": "holon farmer",
+      "count": 2
+    },
+    {
+      "name": "holon lass",
+      "count": 2
+    },
+    {
+      "name": "gardevoir spirit link",
+      "count": 2
+    },
+    {
+      "name": "holon researcher",
+      "count": 2
+    },
+    {
+      "name": "float stone",
+      "count": 2
+    },
+    {
+      "name": "premier ball",
+      "count": 2
+    },
+    {
+      "name": "prof. oak",
+      "count": 2
+    },
+    {
+      "name": "holon scientist",
+      "count": 2
+    },
+    {
+      "name": "shadow triad",
+      "count": 2
+    },
+    {
+      "name": "counter catcher",
+      "count": 2
+    },
+    {
+      "name": "hooligans jim & cas",
+      "count": 2
+    },
+    {
+      "name": "hooligans jim",
+      "count": 2
+    },
+    {
+      "name": "cas",
+      "count": 2
+    },
+    {
+      "name": "old amber aerodactyl",
+      "count": 2
+    },
+    {
+      "name": "fairy garden",
+      "count": 2
+    },
+    {
+      "name": "felicity",
+      "count": 2
+    },
+    {
+      "name": "moo-moo milk",
+      "count": 2
+    },
+    {
+      "name": "peeking red card",
+      "count": 2
+    },
+    {
+      "name": "roller skates",
+      "count": 2
+    },
+    {
+      "name": "cassius",
+      "count": 2
+    },
+    {
+      "name": "pokédex handy910is",
+      "count": 2
+    },
+    {
+      "name": "scorched earth",
+      "count": 2
+    },
+    {
+      "name": "dive ball",
+      "count": 2
+    },
+    {
+      "name": "eneporter",
+      "count": 2
+    },
+    {
+      "name": "bodybuilding dumbbells",
+      "count": 2
+    },
+    {
+      "name": "aqua patch",
+      "count": 2
+    },
+    {
+      "name": "armor fossil",
+      "count": 2
+    },
+    {
+      "name": "skull fossil",
+      "count": 2
+    },
+    {
+      "name": "fresh water set",
+      "count": 2
+    },
+    {
+      "name": "lysandre ◇",
+      "count": 2
+    },
+    {
+      "name": "wager",
+      "count": 2
+    },
+    {
+      "name": "energy loto",
+      "count": 2
+    },
+    {
+      "name": "cyrus ◇",
+      "count": 2
+    },
+    {
+      "name": "town map",
+      "count": 2
+    },
+    {
+      "name": "rotom dex",
+      "count": 2
+    },
+    {
+      "name": "dangerous drill",
+      "count": 2
+    },
+    {
+      "name": "multi switch",
+      "count": 2
+    },
+    {
+      "name": "electrocharger",
+      "count": 2
+    },
+    {
+      "name": "wishful baton",
+      "count": 2
+    },
+    {
+      "name": "missing clover",
+      "count": 2
+    },
+    {
+      "name": "friend ball",
+      "count": 2
+    },
+    {
+      "name": "hustle belt",
+      "count": 2
+    },
+    {
+      "name": "judge whistle",
+      "count": 2
+    },
+    {
+      "name": "lure ball",
+      "count": 2
+    },
+    {
+      "name": "metal goggles",
+      "count": 2
+    },
+    {
+      "name": "rainbow brush",
+      "count": 2
+    },
+    {
+      "name": "viridian forest",
+      "count": 2
+    },
+    {
+      "name": "dan",
+      "count": 2
+    },
+    {
+      "name": "hero",
+      "count": 2
+    },
+    {
+      "name": "air balloon",
+      "count": 2
+    },
+    {
+      "name": "big charm",
+      "count": 2
+    },
+    {
+      "name": "memory capsule",
+      "count": 2
+    },
+    {
+      "name": "scoop up net",
+      "count": 2
+    },
+    {
+      "name": "telescopic sight",
+      "count": 2
+    },
+    {
+      "name": "training court",
+      "count": 2
+    },
+    {
+      "name": "big parasol",
+      "count": 2
+    },
+    {
+      "name": "cape of toughness",
+      "count": 2
+    },
+    {
+      "name": "adventure bag",
+      "count": 2
+    },
+    {
+      "name": "metal saucer",
+      "count": 2
+    },
+    {
+      "name": "beast bringer",
+      "count": 2
+    },
+    {
+      "name": "choice helmet",
+      "count": 2
+    },
+    {
+      "name": "ordinary rod",
+      "count": 2
+    },
+    {
+      "name": "counter gain",
+      "count": 2
+    },
+    {
+      "name": "custom catcher",
+      "count": 2
+    },
+    {
+      "name": "electromagnetic radar",
+      "count": 2
+    },
+    {
+      "name": "fire crystal",
+      "count": 2
+    },
+    {
+      "name": "turbo patch",
+      "count": 2
+    },
+    {
+      "name": "bellelba & brycen-man",
+      "count": 2
+    },
+    {
+      "name": "bellelba",
+      "count": 2
+    },
+    {
+      "name": "brycen-man",
+      "count": 2
+    },
+    {
+      "name": "lost blender",
+      "count": 2
+    },
+    {
+      "name": "vitality band",
+      "count": 2
+    },
+    {
+      "name": "lusamine ◇",
+      "count": 2
+    },
+    {
+      "name": "martial arts dojo",
+      "count": 2
+    },
+    {
+      "name": "great catcher",
+      "count": 2
+    },
+    {
+      "name": "metal core barrier",
+      "count": 2
+    },
+    {
+      "name": "island challenge amulet",
+      "count": 2
+    },
+    {
+      "name": "misty & lorelei",
+      "count": 2
+    },
+    {
+      "name": "spell tag",
+      "count": 2
+    },
+    {
+      "name": "ultra forest kartenvoy",
+      "count": 2
+    },
+    {
+      "name": "wait and see hammer",
+      "count": 2
+    },
+    {
+      "name": "tag call",
+      "count": 2
+    },
+    {
+      "name": "giant bomb",
+      "count": 2
+    },
+    {
+      "name": "giant hearth",
+      "count": 2
+    },
+    {
+      "name": "karate belt",
+      "count": 2
+    },
+    {
+      "name": "tag switch",
+      "count": 2
+    },
+    {
+      "name": "u-turn board",
+      "count": 2
+    },
+    {
+      "name": "fan of waves",
+      "count": 2
+    },
+    {
+      "name": "urn of vitality",
+      "count": 2
+    },
+    {
+      "name": "echoing horn",
+      "count": 2
+    },
+    {
+      "name": "fog crystal",
+      "count": 2
+    },
+    {
+      "name": "path to the peak",
+      "count": 2
+    },
+    {
+      "name": "rugged helmet",
+      "count": 2
+    },
+    {
+      "name": "welcoming lantern",
+      "count": 2
+    },
+    {
+      "name": "crystal cave",
+      "count": 2
+    },
+    {
+      "name": "boost shake",
+      "count": 2
+    },
+    {
+      "name": "full face guard",
+      "count": 2
+    },
+    {
+      "name": "rescue carrier",
+      "count": 2
+    },
+    {
+      "name": "stormy mountains",
+      "count": 2
+    },
+    {
+      "name": "toy catcher",
+      "count": 2
+    },
+    {
+      "name": "sabrina & brycen",
+      "count": 2
+    },
+    {
+      "name": "power tablet",
+      "count": 2
+    },
+    {
+      "name": "collapsed stadium",
+      "count": 2
+    },
+    {
+      "name": "magma basin",
+      "count": 2
+    },
+    {
+      "name": "team yell",
+      "count": 2
+    },
+    {
+      "name": "cheer",
+      "count": 2
+    },
+    {
+      "name": "gapejaw bog",
+      "count": 2
+    },
+    {
+      "name": "jubilife village",
+      "count": 2
+    },
+    {
+      "name": "temple of sinnoh",
+      "count": 2
+    },
+    {
+      "name": "egg incubator",
+      "count": 2
+    },
+    {
+      "name": "lure module",
+      "count": 2
+    },
+    {
+      "name": "box of disaster",
+      "count": 2
+    },
+    {
+      "name": "leafy camo poncho",
+      "count": 2
+    },
+    {
+      "name": "digging duo",
+      "count": 2
+    },
+    {
+      "name": "artazon",
+      "count": 2
+    },
+    {
+      "name": "bill’s analysis",
+      "count": 2
+    },
+    {
+      "name": "lt. surge’s strategy",
+      "count": 2
+    },
+    {
+      "name": "budding expeditioner",
+      "count": 2
+    },
+    {
+      "name": "celestic town elder",
+      "count": 2
+    },
+    {
+      "name": "emma",
+      "count": 2
+    },
+    {
+      "name": "philippe",
+      "count": 2
+    },
+    {
+      "name": "rust syndicate grunt",
+      "count": 2
+    },
+    {
+      "name": "friends in paldea",
+      "count": 2
+    },
+    {
+      "name": "tyme",
+      "count": 2
+    },
+    {
+      "name": "caretaker",
+      "count": 2
+    },
+    {
+      "name": "steven’s resolve",
+      "count": 2
+    },
+    {
+      "name": "green’s exploration",
+      "count": 2
+    },
+    {
+      "name": "anthea & concordia",
+      "count": 2
+    },
+    {
+      "name": "red’s challenge",
+      "count": 2
+    },
+    {
+      "name": "blue’s tactics",
+      "count": 2
+    },
+    {
+      "name": "professor elm’s lecture",
+      "count": 2
+    },
+    {
+      "name": "lillie’s full force",
+      "count": 2
+    },
+    {
+      "name": "n’s resolve",
+      "count": 2
+    },
+    {
+      "name": "professor oak’s setup",
+      "count": 2
+    },
+    {
+      "name": "misty’s favor",
+      "count": 2
+    },
+    {
+      "name": "first ticket",
+      "count": 1
+    },
+    {
+      "name": "computer error",
+      "count": 1
+    },
+    {
+      "name": "aqua diffuser",
+      "count": 1
+    },
+    {
+      "name": "magma pointer",
+      "count": 1
+    },
+    {
+      "name": "championship arena",
+      "count": 1
+    },
+    {
+      "name": "pokémon tower",
+      "count": 1
+    },
+    {
+      "name": "battle city",
+      "count": 1
+    },
+    {
+      "name": "rotom phone",
+      "count": 1
+    },
+    {
+      "name": "healing field",
+      "count": 1
+    },
+    {
+      "name": "wela volcano park",
+      "count": 1
+    },
+    {
+      "name": "pokémon breeder fields",
+      "count": 1
+    },
+    {
+      "name": "cursed stone",
+      "count": 1
+    },
+    {
+      "name": "damage mover",
+      "count": 1
+    },
+    {
+      "name": "clefairy doll",
+      "count": 1
+    },
+    {
+      "name": "ampharos spirit link",
+      "count": 1
+    },
+    {
+      "name": "eco arm",
+      "count": 1
+    },
+    {
+      "name": "full flame",
+      "count": 1
+    },
+    {
+      "name": "giant stump",
+      "count": 1
+    },
+    {
+      "name": "faded town",
+      "count": 1
+    },
+    {
+      "name": "forest of giant plants",
+      "count": 1
+    },
+    {
+      "name": "burned tower",
+      "count": 1
+    },
+    {
+      "name": "power tree",
+      "count": 1
+    },
+    {
+      "name": "team aqua ball",
+      "count": 1
+    },
+    {
+      "name": "energy returner",
+      "count": 1
+    },
+    {
+      "name": "strange cave",
+      "count": 1
+    },
+    {
+      "name": "team aqua belt",
+      "count": 1
+    },
+    {
+      "name": "energy exchanger",
+      "count": 1
+    },
+    {
+      "name": "good rod",
+      "count": 1
+    },
+    {
+      "name": "legend box",
+      "count": 1
+    },
+    {
+      "name": "lucky helmet",
+      "count": 1
+    },
+    {
+      "name": "team aqua hideout",
+      "count": 1
+    },
+    {
+      "name": "cessation crystal",
+      "count": 1
+    },
+    {
+      "name": "team aqua technical machine 01",
+      "count": 1
+    },
+    {
+      "name": "ruins of alph",
+      "count": 1
+    },
+    {
+      "name": "blastoise spirit link",
+      "count": 1
+    },
+    {
+      "name": "digger",
+      "count": 1
+    },
+    {
+      "name": "crystal beach",
+      "count": 1
+    },
+    {
+      "name": "fiery torch",
+      "count": 1
+    },
+    {
+      "name": "paint roller",
+      "count": 1
+    },
+    {
+      "name": "team magma ball",
+      "count": 1
+    },
+    {
+      "name": "charizard spirit link",
+      "count": 1
+    },
+    {
+      "name": "fossil egg",
+      "count": 1
+    },
+    {
+      "name": "lost remover",
+      "count": 1
+    },
+    {
+      "name": "reversal trigger",
+      "count": 1
+    },
+    {
+      "name": "team magma belt",
+      "count": 1
+    },
+    {
+      "name": "sceptile spirit link",
+      "count": 1
+    },
+    {
+      "name": "imposter oak",
+      "count": 1
+    },
+    {
+      "name": "tyranitar spirit link",
+      "count": 1
+    },
+    {
+      "name": "nightly garbage run",
+      "count": 1
+    },
+    {
+      "name": "lost world",
+      "count": 1
+    },
+    {
+      "name": "root fossil lileep",
+      "count": 1
+    },
+    {
+      "name": "hyper devolution spray",
+      "count": 1
+    },
+    {
+      "name": "curse powder",
+      "count": 1
+    },
+    {
+      "name": "pokémon circulator",
+      "count": 1
+    },
+    {
+      "name": "dawn stadium",
+      "count": 1
+    },
+    {
+      "name": "silver bangle",
+      "count": 1
+    },
+    {
+      "name": "goop gas attack",
+      "count": 1
+    },
+    {
+      "name": "silver mirror",
+      "count": 1
+    },
+    {
+      "name": "team magma hideout",
+      "count": 1
+    },
+    {
+      "name": "sleep!",
+      "count": 1
+    },
+    {
+      "name": "bench shield",
+      "count": 1
+    },
+    {
+      "name": "ruin wall",
+      "count": 1
+    },
+    {
+      "name": "holon circle",
+      "count": 1
+    },
+    {
+      "name": "energy ark",
+      "count": 1
+    },
+    {
+      "name": "revitalizer",
+      "count": 1
+    },
+    {
+      "name": "team magma technical machine 01",
+      "count": 1
+    },
+    {
+      "name": "research record",
+      "count": 1
+    },
+    {
+      "name": "energy root",
+      "count": 1
+    },
+    {
+      "name": "g booster",
+      "count": 1
+    },
+    {
+      "name": "pokémon flute",
+      "count": 1
+    },
+    {
+      "name": "holon legacy",
+      "count": 1
+    },
+    {
+      "name": "fluffy berry",
+      "count": 1
+    },
+    {
+      "name": "expert belt",
+      "count": 1
+    },
+    {
+      "name": "protection cube",
+      "count": 1
+    },
+    {
+      "name": "g scope",
+      "count": 1
+    },
+    {
+      "name": "pidgeot spirit link",
+      "count": 1
+    },
+    {
+      "name": "mysterious shard",
+      "count": 1
+    },
+    {
+      "name": "sacred ash",
+      "count": 1
+    },
+    {
+      "name": "holon fossil",
+      "count": 1
+    },
+    {
+      "name": "pokémon retriever",
+      "count": 1
+    },
+    {
+      "name": "gallade spirit link",
+      "count": 1
+    },
+    {
+      "name": "scoop up cyclone",
+      "count": 1
+    },
+    {
+      "name": "startling megaphone",
+      "count": 1
+    },
+    {
+      "name": "healing scarf",
+      "count": 1
+    },
+    {
+      "name": "holon lake",
+      "count": 1
+    },
+    {
+      "name": "skyarrow bridge",
+      "count": 1
+    },
+    {
+      "name": "trick shovel",
+      "count": 1
+    },
+    {
+      "name": "indigo plateau",
+      "count": 1
+    },
+    {
+      "name": "pow! hand extension",
+      "count": 1
+    },
+    {
+      "name": "latios spirit link",
+      "count": 1
+    },
+    {
+      "name": "junk arm",
+      "count": 1
+    },
+    {
+      "name": "windstorm",
+      "count": 1
+    },
+    {
+      "name": "arcade game",
+      "count": 1
+    },
+    {
+      "name": "slowbro spirit link",
+      "count": 1
+    },
+    {
+      "name": "meteor falls",
+      "count": 1
+    },
+    {
+      "name": "protective orb",
+      "count": 1
+    },
+    {
+      "name": "mega turbo",
+      "count": 1
+    },
+    {
+      "name": "conductive quarry",
+      "count": 1
+    },
+    {
+      "name": "rayquaza spirit link",
+      "count": 1
+    },
+    {
+      "name": "ancient technical machine [ice]",
+      "count": 1
+    },
+    {
+      "name": "ecogym",
+      "count": 1
+    },
+    {
+      "name": "energy link",
+      "count": 1
+    },
+    {
+      "name": "space center",
+      "count": 1
+    },
+    {
+      "name": "solid rage",
+      "count": 1
+    },
+    {
+      "name": "broken ground gym",
+      "count": 1
+    },
+    {
+      "name": "venusaur spirit link",
+      "count": 1
+    },
+    {
+      "name": "ancient technical machine [rock]",
+      "count": 1
+    },
+    {
+      "name": "focus band",
+      "count": 1
+    },
+    {
+      "name": "sky field",
+      "count": 1
+    },
+    {
+      "name": "surprise! time machine",
+      "count": 1
+    },
+    {
+      "name": "ancient technical machine [steel]",
+      "count": 1
+    },
+    {
+      "name": "pokémon contest hall",
+      "count": 1
+    },
+    {
+      "name": "luxury ball",
+      "count": 1
+    },
+    {
+      "name": "alakazam spirit link",
+      "count": 1
+    },
+    {
+      "name": "swoop! teleporter",
+      "count": 1
+    },
+    {
+      "name": "ancient tomb",
+      "count": 1
+    },
+    {
+      "name": "pokégear",
+      "count": 1
+    },
+    {
+      "name": "sunyshore city gym",
+      "count": 1
+    },
+    {
+      "name": "charity",
+      "count": 1
+    },
+    {
+      "name": "altaria spirit link",
+      "count": 1
+    },
+    {
+      "name": "desert ruins",
+      "count": 1
+    },
+    {
+      "name": "super energy retrieval",
+      "count": 1
+    },
+    {
+      "name": "venture bomb",
+      "count": 1
+    },
+    {
+      "name": "radio tower",
+      "count": 1
+    },
+    {
+      "name": "armor fossil shieldon",
+      "count": 1
+    },
+    {
+      "name": "mt. moon",
+      "count": 1
+    },
+    {
+      "name": "invention g-107 technical machine g",
+      "count": 1
+    },
+    {
+      "name": "invention g-109 sp radar",
+      "count": 1
+    },
+    {
+      "name": "poké blower +",
+      "count": 1
+    },
+    {
+      "name": "island cave",
+      "count": 1
+    },
+    {
+      "name": "poké drawer +",
+      "count": 1
+    },
+    {
+      "name": "time capsule",
+      "count": 1
+    },
+    {
+      "name": "captivating poké puff",
+      "count": 1
+    },
+    {
+      "name": "audino spirit link",
+      "count": 1
+    },
+    {
+      "name": "thought wave machine",
+      "count": 1
+    },
+    {
+      "name": "claw fossil anorith",
+      "count": 1
+    },
+    {
+      "name": "poké healer +",
+      "count": 1
+    },
+    {
+      "name": "pokédex handy909",
+      "count": 1
+    },
+    {
+      "name": "no removal gym",
+      "count": 1
+    },
+    {
+      "name": "bent spoon",
+      "count": 1
+    },
+    {
+      "name": "holon research tower",
+      "count": 1
+    },
+    {
+      "name": "xtransceiver",
+      "count": 1
+    },
+    {
+      "name": "counterattack claws",
+      "count": 1
+    },
+    {
+      "name": "battle compressor team flare gear",
+      "count": 1
+    },
+    {
+      "name": "chaos gym",
+      "count": 1
+    },
+    {
+      "name": "chaos tower",
+      "count": 1
+    },
+    {
+      "name": "card-flip game",
+      "count": 1
+    },
+    {
+      "name": "dimension valley",
+      "count": 1
+    },
+    {
+      "name": "dark claw",
+      "count": 1
+    },
+    {
+      "name": "energy amplifier",
+      "count": 1
+    },
+    {
+      "name": "holon ruins",
+      "count": 1
+    },
+    {
+      "name": "wide lens",
+      "count": 1
+    },
+    {
+      "name": "celadon city gym",
+      "count": 1
+    },
+    {
+      "name": "gold berry",
+      "count": 1
+    },
+    {
+      "name": "frozen city",
+      "count": 1
+    },
+    {
+      "name": "greedy dice",
+      "count": 1
+    },
+    {
+      "name": "energy stadium",
+      "count": 1
+    },
+    {
+      "name": "cerulean city gym",
+      "count": 1
+    },
+    {
+      "name": "miracle berry",
+      "count": 1
+    },
+    {
+      "name": "holon transceiver",
+      "count": 1
+    },
+    {
+      "name": "dome fossil kabuto",
+      "count": 1
+    },
+    {
+      "name": "gengar spirit link",
+      "count": 1
+    },
+    {
+      "name": "fighting stadium",
+      "count": 1
+    },
+    {
+      "name": "hand scope",
+      "count": 1
+    },
+    {
+      "name": "energy pouch",
+      "count": 1
+    },
+    {
+      "name": "good manners",
+      "count": 1
+    },
+    {
+      "name": "magnifier",
+      "count": 1
+    },
+    {
+      "name": "new pokédex",
+      "count": 1
+    },
+    {
+      "name": "energy reset",
+      "count": 1
+    },
+    {
+      "name": "focus sash",
+      "count": 1
+    },
+    {
+      "name": "head ringer team flare hyper gear",
+      "count": 1
+    },
+    {
+      "name": "team plasma badge",
+      "count": 1
+    },
+    {
+      "name": "minion of team rocket",
+      "count": 1
+    },
+    {
+      "name": "pokémon personality test",
+      "count": 1
+    },
+    {
+      "name": "special charge",
+      "count": 1
+    },
+    {
+      "name": "dashing pouch",
+      "count": 1
+    },
+    {
+      "name": "team plasma ball",
+      "count": 1
+    },
+    {
+      "name": "sprout tower",
+      "count": 1
+    },
+    {
+      "name": "aerodactyl spirit link",
+      "count": 1
+    },
+    {
+      "name": "steelix spirit link",
+      "count": 1
+    },
+    {
+      "name": "evil deeds",
+      "count": 1
+    },
+    {
+      "name": "devoured field",
+      "count": 1
+    },
+    {
+      "name": "pewter city gym",
+      "count": 1
+    },
+    {
+      "name": "jamming net team flare hyper gear",
+      "count": 1
+    },
+    {
+      "name": "amulet coin",
+      "count": 1
+    },
+    {
+      "name": "broken time-space",
+      "count": 1
+    },
+    {
+      "name": "fairy drop",
+      "count": 1
+    },
+    {
+      "name": "fighting memory",
+      "count": 1
+    },
+    {
+      "name": "life dew",
+      "count": 1
+    },
+    {
+      "name": "heal powder",
+      "count": 1
+    },
+    {
+      "name": "fossil excavation kit",
+      "count": 1
+    },
+    {
+      "name": "rock guard",
+      "count": 1
+    },
+    {
+      "name": "resistance gym",
+      "count": 1
+    },
+    {
+      "name": "recall",
+      "count": 1
+    },
+    {
+      "name": "berry",
+      "count": 1
+    },
+    {
+      "name": "jaw fossil",
+      "count": 1
+    },
+    {
+      "name": "helix fossil omanyte",
+      "count": 1
+    },
+    {
+      "name": "galactic hq",
+      "count": 1
+    },
+    {
+      "name": "mail from bill",
+      "count": 1
+    },
+    {
+      "name": "all-night party",
+      "count": 1
+    },
+    {
+      "name": "level max",
+      "count": 1
+    },
+    {
+      "name": "manectric spirit link",
+      "count": 1
+    },
+    {
+      "name": "night pokémon center",
+      "count": 1
+    },
+    {
+      "name": "double gust",
+      "count": 1
+    },
+    {
+      "name": "bursting balloon",
+      "count": 1
+    },
+    {
+      "name": "leftovers",
+      "count": 1
+    },
+    {
+      "name": "moonlight stadium",
+      "count": 1
+    },
+    {
+      "name": "mega catcher",
+      "count": 1
+    },
+    {
+      "name": "secret mission",
+      "count": 1
+    },
+    {
+      "name": "robo substitute team flare gear",
+      "count": 1
+    },
+    {
+      "name": "twist mountain",
+      "count": 1
+    },
+    {
+      "name": "cinnabar city gym",
+      "count": 1
+    },
+    {
+      "name": "pokémon march",
+      "count": 1
+    },
+    {
+      "name": "psychic memory",
+      "count": 1
+    },
+    {
+      "name": "mawile spirit link",
+      "count": 1
+    },
+    {
+      "name": "fighting fury belt",
+      "count": 1
+    },
+    {
+      "name": "sea of nothingness",
+      "count": 1
+    },
+    {
+      "name": "fuchsia city gym",
+      "count": 1
+    },
+    {
+      "name": "tickling machine",
+      "count": 1
+    },
+    {
+      "name": "mountain ring",
+      "count": 1
+    },
+    {
+      "name": "sail fossil",
+      "count": 1
+    },
+    {
+      "name": "miasma valley",
+      "count": 1
+    },
+    {
+      "name": "sparkling robe",
+      "count": 1
+    },
+    {
+      "name": "vermilion city gym",
+      "count": 1
+    },
+    {
+      "name": "gyarados spirit link",
+      "count": 1
+    },
+    {
+      "name": "steel shelter",
+      "count": 1
+    },
+    {
+      "name": "tool retriever",
+      "count": 1
+    },
+    {
+      "name": "max elixir",
+      "count": 1
+    },
+    {
+      "name": "target whistle team flare gear",
+      "count": 1
+    },
+    {
+      "name": "energy flow",
+      "count": 1
+    },
+    {
+      "name": "power memory",
+      "count": 1
+    },
+    {
+      "name": "training center",
+      "count": 1
+    },
+    {
+      "name": "narrow gym",
+      "count": 1
+    },
+    {
+      "name": "aggron spirit link",
+      "count": 1
+    },
+    {
+      "name": "speed stadium",
+      "count": 1
+    },
+    {
+      "name": "trick coin",
+      "count": 1
+    },
+    {
+      "name": "pokémon rescue",
+      "count": 1
+    },
+    {
+      "name": "floral crown",
+      "count": 1
+    },
+    {
+      "name": "giant cape",
+      "count": 1
+    },
+    {
+      "name": "invention g-101 energy gain",
+      "count": 1
+    },
+    {
+      "name": "trash exchange",
+      "count": 1
+    },
+    {
+      "name": "invention g-103 power spray",
+      "count": 1
+    },
+    {
+      "name": "altar of the moone",
+      "count": 1
+    },
+    {
+      "name": "fossil excavation map",
+      "count": 1
+    },
+    {
+      "name": "big malasada",
+      "count": 1
+    },
+    {
+      "name": "rescue scarf",
+      "count": 1
+    },
+    {
+      "name": "altar of the sunne",
+      "count": 1
+    },
+    {
+      "name": "hard charm",
+      "count": 1
+    },
+    {
+      "name": "invention g-105 poké turn",
+      "count": 1
+    },
+    {
+      "name": "saffron city gym",
+      "count": 1
+    },
+    {
+      "name": "lake boundary",
+      "count": 1
+    },
+    {
+      "name": "viridian city gym",
+      "count": 1
+    },
+    {
+      "name": "puzzle of time",
+      "count": 1
+    },
+    {
+      "name": "fervor",
+      "count": 1
+    },
+    {
+      "name": "reverse valley",
+      "count": 1
+    },
+    {
+      "name": "ancient crystal",
+      "count": 1
+    },
+    {
+      "name": "muscle band",
+      "count": 1
+    },
+    {
+      "name": "transparent walls",
+      "count": 1
+    },
+    {
+      "name": "scizor spirit link",
+      "count": 1
+    },
+    {
+      "name": "groudon spirit link",
+      "count": 1
+    },
+    {
+      "name": "kyogre spirit link",
+      "count": 1
+    },
+    {
+      "name": "bicycle",
+      "count": 1
+    },
+    {
+      "name": "lysandre labs",
+      "count": 1
+    },
+    {
+      "name": "aspertia city gym",
+      "count": 1
+    },
+    {
+      "name": "electric memory",
+      "count": 1
+    },
+    {
+      "name": "colress machine",
+      "count": 1
+    },
+    {
+      "name": "mount lanakila",
+      "count": 1
+    },
+    {
+      "name": "poison barb",
+      "count": 1
+    },
+    {
+      "name": "shadow circle",
+      "count": 1
+    },
+    {
+      "name": "repeat ball",
+      "count": 1
+    },
+    {
+      "name": "bubble coat",
+      "count": 1
+    },
+    {
+      "name": "ether",
+      "count": 1
+    },
+    {
+      "name": "ultra space",
+      "count": 1
+    },
+    {
+      "name": "rough seas",
+      "count": 1
+    },
+    {
+      "name": "fire memory",
+      "count": 1
+    },
+    {
+      "name": "beast ball",
+      "count": 1
+    },
+    {
+      "name": "black market ◇",
+      "count": 1
+    },
+    {
+      "name": "po town",
+      "count": 1
+    },
+    {
+      "name": "hypnotoxic laser",
+      "count": 1
+    },
+    {
+      "name": "shrine of memories",
+      "count": 1
+    },
+    {
+      "name": "energy pickup",
+      "count": 1
+    },
+    {
+      "name": "rotom dex poké finder mode",
+      "count": 1
+    },
+    {
+      "name": "plasma frigate",
+      "count": 1
+    },
+    {
+      "name": "poké radar",
+      "count": 1
+    },
+    {
+      "name": "silent lab",
+      "count": 1
+    },
+    {
+      "name": "repel",
+      "count": 1
+    },
+    {
+      "name": "buff padding",
+      "count": 1
+    },
+    {
+      "name": "snowpoint temple",
+      "count": 1
+    },
+    {
+      "name": "time-space distortion",
+      "count": 1
+    },
+    {
+      "name": "virbank city gym",
+      "count": 1
+    },
+    {
+      "name": "stark mountain",
+      "count": 1
+    },
+    {
+      "name": "looker whistle",
+      "count": 1
+    },
+    {
+      "name": "tormenting spray",
+      "count": 1
+    },
+    {
+      "name": "technical machine ts-1",
+      "count": 1
+    },
+    {
+      "name": "crystal edge",
+      "count": 1
+    },
+    {
+      "name": "dowsing machine",
+      "count": 1
+    },
+    {
+      "name": "scramble switch",
+      "count": 1
+    },
+    {
+      "name": "timer ball",
+      "count": 1
+    },
+    {
+      "name": "technical machine ts-2",
+      "count": 1
+    },
+    {
+      "name": "crystal wall",
+      "count": 1
+    },
+    {
+      "name": "gold potion",
+      "count": 1
+    },
+    {
+      "name": "victory piece",
+      "count": 1
+    },
+    {
+      "name": "fairy charm ub",
+      "count": 1
+    },
+    {
+      "name": "order pad",
+      "count": 1
+    },
+    {
+      "name": "assault vest",
+      "count": 1
+    },
+    {
+      "name": "battle tower",
+      "count": 1
+    },
+    {
+      "name": "grass memory",
+      "count": 1
+    },
+    {
+      "name": "champion",
+      "count": 1
+    },
+    {
+      "name": "buddy-buddy rescue",
+      "count": 1
+    },
+    {
+      "name": "last chance potion",
+      "count": 1
+    },
+    {
+      "name": "lavender town",
+      "count": 1
+    },
+    {
+      "name": "night teleporter",
+      "count": 1
+    },
+    {
+      "name": "glalie spirit link",
+      "count": 1
+    },
+    {
+      "name": "heavy boots",
+      "count": 1
+    },
+    {
+      "name": "apricorn forest",
+      "count": 1
+    },
+    {
+      "name": "houndoom spirit link",
+      "count": 1
+    },
+    {
+      "name": "darkness cube 01",
+      "count": 1
+    },
+    {
+      "name": "mewtwo spirit link",
+      "count": 1
+    },
+    {
+      "name": "parallel city",
+      "count": 1
+    },
+    {
+      "name": "sky pillar",
+      "count": 1
+    },
+    {
+      "name": "return label",
+      "count": 1
+    },
+    {
+      "name": "fighting cube 01",
+      "count": 1
+    },
+    {
+      "name": "fire cube 01",
+      "count": 1
+    },
+    {
+      "name": "forest guardian",
+      "count": 1
+    },
+    {
+      "name": "reserved ticket",
+      "count": 1
+    },
+    {
+      "name": "grass cube 01",
+      "count": 1
+    },
+    {
+      "name": "water memory",
+      "count": 1
+    },
+    {
+      "name": "pokémon nurse",
+      "count": 1
+    },
+    {
+      "name": "wondrous labyrinth ◇",
+      "count": 1
+    },
+    {
+      "name": "healing berry",
+      "count": 1
+    },
+    {
+      "name": "burning scarf",
+      "count": 1
+    },
+    {
+      "name": "lightning cube 01",
+      "count": 1
+    },
+    {
+      "name": "power charge",
+      "count": 1
+    },
+    {
+      "name": "capacious bucket",
+      "count": 1
+    },
+    {
+      "name": "cursed shovel",
+      "count": 1
+    },
+    {
+      "name": "metal cube 01",
+      "count": 1
+    },
+    {
+      "name": "circhester bath",
+      "count": 1
+    },
+    {
+      "name": "ancient ruins",
+      "count": 1
+    },
+    {
+      "name": "drone rotom",
+      "count": 1
+    },
+    {
+      "name": "relic hunter",
+      "count": 1
+    },
+    {
+      "name": "galar mine",
+      "count": 1
+    },
+    {
+      "name": "psychic cube 01",
+      "count": 1
+    },
+    {
+      "name": "nugget",
+      "count": 1
+    },
+    {
+      "name": "desert shaman",
+      "count": 1
+    },
+    {
+      "name": "seer",
+      "count": 1
+    },
+    {
+      "name": "fast ball",
+      "count": 1
+    },
+    {
+      "name": "super energy removal 2",
+      "count": 1
+    },
+    {
+      "name": "time shard",
+      "count": 1
+    },
+    {
+      "name": "moomoo cheese",
+      "count": 1
+    },
+    {
+      "name": "town volunteers",
+      "count": 1
+    },
+    {
+      "name": "traveling salesman",
+      "count": 1
+    },
+    {
+      "name": "undersea ruins",
+      "count": 1
+    },
+    {
+      "name": "beedrill spirit link",
+      "count": 1
+    },
+    {
+      "name": "miracle sphere α",
+      "count": 1
+    },
+    {
+      "name": "evolution incense",
+      "count": 1
+    },
+    {
+      "name": "wyndon stadium",
+      "count": 1
+    },
+    {
+      "name": "miracle sphere β",
+      "count": 1
+    },
+    {
+      "name": "water cube 01",
+      "count": 1
+    },
+    {
+      "name": "miracle sphere γ",
+      "count": 1
+    },
+    {
+      "name": "mirage stadium",
+      "count": 1
+    },
+    {
+      "name": "billowing smoke",
+      "count": 1
+    },
+    {
+      "name": "weakness guard",
+      "count": 1
+    },
+    {
+      "name": "mystery plate α",
+      "count": 1
+    },
+    {
+      "name": "mystery plate β",
+      "count": 1
+    },
+    {
+      "name": "familiar bell",
+      "count": 1
+    },
+    {
+      "name": "mystery plate γ",
+      "count": 1
+    },
+    {
+      "name": "mystery plate δ",
+      "count": 1
+    },
+    {
+      "name": "glimwood tangle",
+      "count": 1
+    },
+    {
+      "name": "mystery zone",
+      "count": 1
+    },
+    {
+      "name": "oracle",
+      "count": 1
+    },
+    {
+      "name": "chip-chip ice axe",
+      "count": 1
+    },
+    {
+      "name": "old pc",
+      "count": 1
+    },
+    {
+      "name": "garchomp spirit link",
+      "count": 1
+    },
+    {
+      "name": "star piece",
+      "count": 1
+    },
+    {
+      "name": "devolution spray z",
+      "count": 1
+    },
+    {
+      "name": "dusk stone",
+      "count": 1
+    },
+    {
+      "name": "dust island",
+      "count": 1
+    },
+    {
+      "name": "rare fossil",
+      "count": 1
+    },
+    {
+      "name": "underground lake",
+      "count": 1
+    },
+    {
+      "name": "salamence spirit link",
+      "count": 1
+    },
+    {
+      "name": "energy spinner",
+      "count": 1
+    },
+    {
+      "name": "fairy charm grass",
+      "count": 1
+    },
+    {
+      "name": "rose tower",
+      "count": 1
+    },
+    {
+      "name": "fairy charm ability",
+      "count": 1
+    },
+    {
+      "name": "spikemuth",
+      "count": 1
+    },
+    {
+      "name": "fairy charm psychic",
+      "count": 1
+    },
+    {
+      "name": "fairy charm lightning",
+      "count": 1
+    },
+    {
+      "name": "struggle gloves",
+      "count": 1
+    },
+    {
+      "name": "fairy charm fighting",
+      "count": 1
+    },
+    {
+      "name": "beastite",
+      "count": 1
+    },
+    {
+      "name": "fairy charm dragon",
+      "count": 1
+    },
+    {
+      "name": "heat factory ◇",
+      "count": 1
+    },
+    {
+      "name": "yell horn",
+      "count": 1
+    },
+    {
+      "name": "chaotic swell",
+      "count": 1
+    },
+    {
+      "name": "life forest ◇",
+      "count": 1
+    },
+    {
+      "name": "dragonium z: dragon claw",
+      "count": 1
+    },
+    {
+      "name": "mixed herbs",
+      "count": 1
+    },
+    {
+      "name": "blizzard town",
+      "count": 1
+    },
+    {
+      "name": "stealthy hood",
+      "count": 1
+    },
+    {
+      "name": "surprise box",
+      "count": 1
+    },
+    {
+      "name": "thunder mountain ◇",
+      "count": 1
+    },
+    {
+      "name": "dark city",
+      "count": 1
+    },
+    {
+      "name": "ear-ringing bell",
+      "count": 1
+    },
+    {
+      "name": "flyinium z: air slash",
+      "count": 1
+    },
+    {
+      "name": "great potion",
+      "count": 1
+    },
+    {
+      "name": "camerupt spirit link",
+      "count": 1
+    },
+    {
+      "name": "sharpedo spirit link",
+      "count": 1
+    },
+    {
+      "name": "normalium z: tackle",
+      "count": 1
+    },
+    {
+      "name": "pokémon research lab",
+      "count": 1
+    },
+    {
+      "name": "slumbering forest",
+      "count": 1
+    },
+    {
+      "name": "stadium nav",
+      "count": 1
+    },
+    {
+      "name": "lucario spirit link",
+      "count": 1
+    },
+    {
+      "name": "rusted shield",
+      "count": 1
+    },
+    {
+      "name": "rusted sword",
+      "count": 1
+    },
+    {
+      "name": "team yell towel",
+      "count": 1
+    },
+    {
+      "name": "camping gear",
+      "count": 1
+    },
+    {
+      "name": "rapid strike scroll of swirls",
+      "count": 1
+    },
+    {
+      "name": "single strike scroll of scorn",
+      "count": 1
+    },
+    {
+      "name": "tool jammer",
+      "count": 1
+    },
+    {
+      "name": "tower of darkness",
+      "count": 1
+    },
+    {
+      "name": "tower of waters",
+      "count": 1
+    },
+    {
+      "name": "crushing gloves",
+      "count": 1
+    },
+    {
+      "name": "dyna tree hill",
+      "count": 1
+    },
+    {
+      "name": "expedition uniform",
+      "count": 1
+    },
+    {
+      "name": "fire-resistant gloves",
+      "count": 1
+    },
+    {
+      "name": "galarian chestplate",
+      "count": 1
+    },
+    {
+      "name": "justified gloves",
+      "count": 1
+    },
+    {
+      "name": "old cemetery",
+      "count": 1
+    },
+    {
+      "name": "rapid strike scroll of the skies",
+      "count": 1
+    },
+    {
+      "name": "single strike scroll of piercing",
+      "count": 1
+    },
+    {
+      "name": "weeding gloves",
+      "count": 1
+    },
+    {
+      "name": "digging gloves",
+      "count": 1
+    },
+    {
+      "name": "elemental badge",
+      "count": 1
+    },
+    {
+      "name": "dream ball",
+      "count": 1
+    },
+    {
+      "name": "lucky ice pop",
+      "count": 1
+    },
+    {
+      "name": "moon & sun badge",
+      "count": 1
+    },
+    {
+      "name": "moon",
+      "count": 1
+    },
+    {
+      "name": "sun badge",
+      "count": 1
+    },
+    {
+      "name": "rubber gloves",
+      "count": 1
+    },
+    {
+      "name": "ribbon badge",
+      "count": 1
+    },
+    {
+      "name": "rapid strike scroll of the flying dragon",
+      "count": 1
+    },
+    {
+      "name": "shopping center",
+      "count": 1
+    },
+    {
+      "name": "single strike scroll of the fanged dragon",
+      "count": 1
+    },
+    {
+      "name": "spirit mask",
+      "count": 1
+    },
+    {
+      "name": "snow leaf badge",
+      "count": 1
+    },
+    {
+      "name": "switching cups",
+      "count": 1
+    },
+    {
+      "name": "battle vip pass",
+      "count": 1
+    },
+    {
+      "name": "cram-o-matic",
+      "count": 1
+    },
+    {
+      "name": "cross switcher",
+      "count": 1
+    },
+    {
+      "name": "crossceiver",
+      "count": 1
+    },
+    {
+      "name": "farewell bell",
+      "count": 1
+    },
+    {
+      "name": "skaters' park",
+      "count": 1
+    },
+    {
+      "name": "spongy gloves",
+      "count": 1
+    },
+    {
+      "name": "blunder policy",
+      "count": 1
+    },
+    {
+      "name": "cleansing gloves",
+      "count": 1
+    },
+    {
+      "name": "hunting gloves",
+      "count": 1
+    },
+    {
+      "name": "pot helmet",
+      "count": 1
+    },
+    {
+      "name": "canceling cologne",
+      "count": 1
+    },
+    {
+      "name": "feather ball",
+      "count": 1
+    },
+    {
+      "name": "gutsy pickaxe",
+      "count": 1
+    },
+    {
+      "name": "hisuian heavy ball",
+      "count": 1
+    },
+    {
+      "name": "spicy seasoned curry",
+      "count": 1
+    },
+    {
+      "name": "supereffective glasses",
+      "count": 1
+    },
+    {
+      "name": "sweet honey",
+      "count": 1
+    },
+    {
+      "name": "switch cart",
+      "count": 1
+    },
+    {
+      "name": "wait and see turbo",
+      "count": 1
+    },
+    {
+      "name": "pokéstop",
+      "count": 1
+    },
+    {
+      "name": "arc phone",
+      "count": 1
+    },
+    {
+      "name": "damage pump",
+      "count": 1
+    },
+    {
+      "name": "lake acuity",
+      "count": 1
+    },
+    {
+      "name": "lost city",
+      "count": 1
+    },
+    {
+      "name": "mirage gate",
+      "count": 1
+    },
+    {
+      "name": "panic mask",
+      "count": 1
+    },
+    {
+      "name": "tool box",
+      "count": 1
+    },
+    {
+      "name": "windup arm",
+      "count": 1
+    },
+    {
+      "name": "capturing aroma",
+      "count": 1
+    },
+    {
+      "name": "earthen seal stone",
+      "count": 1
+    },
+    {
+      "name": "emergency jelly",
+      "count": 1
+    },
+    {
+      "name": "forest seal stone",
+      "count": 1
+    },
+    {
+      "name": "primordial altar",
+      "count": 1
+    },
+    {
+      "name": "quad stone",
+      "count": 1
+    },
+    {
+      "name": "sky seal stone",
+      "count": 1
+    },
+    {
+      "name": "beach court",
+      "count": 1
+    },
+    {
+      "name": "defiance band",
+      "count": 1
+    },
+    {
+      "name": "electric generator",
+      "count": 1
+    },
+    {
+      "name": "mesagoza",
+      "count": 1
+    },
+    {
+      "name": "picnic basket",
+      "count": 1
+    },
+    {
+      "name": "rock chestplate",
+      "count": 1
+    },
+    {
+      "name": "bravery charm",
+      "count": 1
+    },
+    {
+      "name": "delivery drone",
+      "count": 1
+    },
+    {
+      "name": "calamitous snowy mountain",
+      "count": 1
+    },
+    {
+      "name": "calamitous wasteland",
+      "count": 1
+    },
+    {
+      "name": "fighting au lait",
+      "count": 1
+    },
+    {
+      "name": "practice studio",
+      "count": 1
+    },
+    {
+      "name": "letter of encouragement",
+      "count": 1
+    },
+    {
+      "name": "patrol cap",
+      "count": 1
+    },
+    {
+      "name": "vengeful punch",
+      "count": 1
+    },
+    {
+      "name": "pokémon league headquarters",
+      "count": 1
+    },
+    {
+      "name": "town store",
+      "count": 1
+    },
+    {
+      "name": "mr. briney’s compassion",
+      "count": 1
+    },
+    {
+      "name": "roseanne’s research",
+      "count": 1
+    },
+    {
+      "name": "brock’s training",
+      "count": 1
+    },
+    {
+      "name": "misty’s determination",
+      "count": 1
+    },
+    {
+      "name": "misty’s water command",
+      "count": 1
+    },
+    {
+      "name": "cheerleader’s cheer",
+      "count": 1
+    },
+    {
+      "name": "emcee’s chatter",
+      "count": 1
+    },
+    {
+      "name": "engineer’s adjustments",
+      "count": 1
+    },
+    {
+      "name": "interviewer’s questions",
+      "count": 1
+    },
+    {
+      "name": "sage’s training",
+      "count": 1
+    },
+    {
+      "name": "team rocket’s trickery",
+      "count": 1
+    },
+    {
+      "name": "professor elm’s training method",
+      "count": 1
+    },
+    {
+      "name": "professor oak’s new theory",
+      "count": 1
+    },
+    {
+      "name": "billy & o'nare",
+      "count": 1
+    },
+    {
+      "name": "billy",
+      "count": 1
+    },
+    {
+      "name": "o'nare",
+      "count": 1
+    },
+    {
+      "name": "blaine’s quiz show",
+      "count": 1
+    }
+  ]
+}

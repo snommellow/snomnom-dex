@@ -378,6 +378,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Cogita", searchNames: ["Cogita"], special: true, region: "Hisui" },
   { name: "Ingo", searchNames: ["Ingo"], special: true, region: "Hisui" },
   { name: "Kamado", searchNames: ["Kamado"], special: true, region: "Hisui" },
+  // Lumiose (Legends: Z-A) named characters. AZ already exists as a Kalos entry above and
+  // returns in Z-A, so not duplicated here. Only Urbain and Jett confirmed against the card
+  // catalog — other reported characters (Taunie, Vinnie) have no card yet.
+  { name: "Urbain", searchNames: ["Urbain"], special: true, region: "Lumiose" },
+  { name: "Jett", searchNames: ["Jett"], special: true, region: "Lumiose" },
   // Generic trainer classes — not Kanto-specific (every region has these), tagged "Universal".
   // Kanto's own roster (Gen 1) first, then every other generic class introduced across Gen
   // 2-9, deduplicated where a later game reused an earlier class name.

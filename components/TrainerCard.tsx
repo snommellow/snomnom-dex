@@ -20,6 +20,7 @@ const REGION_ACCENT: Record<string, string> = {
   Galar: "#7b3fa0",
   Paldea: "#c23b6e",
   Hisui: "#8a6b3d",
+  Lumiose: "#9b2d5e",
   Universal: "#546778",
 };
 

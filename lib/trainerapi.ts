@@ -192,7 +192,13 @@ assignRole("Rival", [
   "Blue", "Green", "Silver", "May", "Brendan", "Wally", "Barry", "Cheren", "Bianca", "Hugh",
   "Serena", "Calem", "Shauna", "Tierno", "Trevor", "Hau", "Hop", "Marnie", "Bede", "Nemona", "Arven",
 ]);
-assignRole("Protagonist", ["Red", "Leaf", "Ethan", "Lyra", "Dawn", "Rosa", "Hilda", "Gloria"]);
+assignRole("Protagonist", [
+  "Red", "Leaf", "Ethan", "Lyra", "Kris", "Dawn", "Lucas", "Hilda", "Hilbert", "Rosa", "Nate",
+  "Gloria", "Victor", "Elio", "Selene", "Florian", "Juliana",
+]);
+// May/Brendan/Calem/Serena are also playable protagonists (whichever you don't pick becomes your
+// rival) — already listed under Rival above; adding Protagonist here gives them both roles.
+assignRole("Protagonist", ["May", "Brendan", "Calem", "Serena"]);
 assignRole("Professor", [
   "Professor Oak", "Professor Elm", "Professor Birch", "Professor Rowan", "Professor Juniper",
   "Professor Sycamore", "Professor Kukui", "Professor Burnet", "Professor Cozmo", "Professor Magnolia",
@@ -335,6 +341,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Kurt", searchNames: ["Kurt"], special: true, region: "Johto" },
   { name: "Ethan", searchNames: ["Ethan"], special: true, region: "Johto" },
   { name: "Lyra", searchNames: ["Lyra"], special: true, region: "Johto" },
+  // Crystal's own protagonist design, distinct from HGSS's Lyra.
+  { name: "Kris", searchNames: ["Kris"], special: true, region: "Johto" },
   // Hoenn (Gen 3) named characters. Steven is Ruby/Sapphire's Champion; Wallace succeeds him as
   // Emerald's Champion (and is also the 8th Gym Leader in Ruby/Sapphire) — both kept as their
   // own entries since both are canonically Champion depending on version.
@@ -363,7 +371,6 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Mr. Briney", searchNames: ["Mr. Briney"], special: true, region: "Hoenn" },
   { name: "Mr. Stone", searchNames: ["Mr. Stone"], special: true, region: "Hoenn" },
   { name: "Roseanne", searchNames: ["Roseanne"], special: true, region: "Hoenn" },
-  { name: "Clive", searchNames: ["Clive"], special: true, region: "Hoenn" },
   { name: "Zinnia", searchNames: ["Zinnia"], special: true, region: "Hoenn" },
   { name: "Lisia", searchNames: ["Lisia"], special: true, region: "Hoenn" },
   { name: "Bebe", searchNames: ["Bebe"], special: true, region: "Hoenn" },
@@ -395,6 +402,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Cynthia", searchNames: ["Cynthia"], special: true, region: "Sinnoh" },
   { name: "Barry", searchNames: ["Barry"], special: true, region: "Sinnoh" },
   { name: "Dawn", searchNames: ["Dawn"], special: true, region: "Sinnoh" },
+  { name: "Lucas", searchNames: ["Lucas"], special: true, region: "Sinnoh" },
   { name: "Professor Rowan", searchNames: ["Professor Rowan", "Rowan"], special: true, region: "Sinnoh" },
   { name: "Cyrus", searchNames: ["Cyrus"], special: true, region: "Sinnoh" },
   { name: "Mars", searchNames: ["Mars"], special: true, region: "Sinnoh" },
@@ -452,7 +460,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Cedric Juniper", searchNames: ["Cedric Juniper"], special: true, region: "Unova" },
   { name: "Fennel", searchNames: ["Fennel"], special: true, region: "Unova" },
   { name: "Rosa", searchNames: ["Rosa"], special: true, region: "Unova" },
+  { name: "Nate", searchNames: ["Nate"], special: true, region: "Unova" },
   { name: "Hilda", searchNames: ["Hilda"], special: true, region: "Unova" },
+  { name: "Hilbert", searchNames: ["Hilbert"], special: true, region: "Unova" },
   // Kalos (Gen 6) named characters
   { name: "Viola", searchNames: ["Viola"], special: true, region: "Kalos" },
   { name: "Grant", searchNames: ["Grant"], special: true, region: "Kalos" },
@@ -498,6 +508,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Professor Kukui", searchNames: ["Professor Kukui", "Kukui"], special: true, region: "Alola" },
   { name: "Professor Burnet", searchNames: ["Professor Burnet", "Burnet"], special: true, region: "Alola" },
   { name: "Hau", searchNames: ["Hau"], special: true, region: "Alola" },
+  { name: "Elio", searchNames: ["Elio"], special: true, region: "Alola" },
+  { name: "Selene", searchNames: ["Selene"], special: true, region: "Alola" },
   { name: "Guzma", searchNames: ["Guzma"], special: true, region: "Alola" },
   { name: "Plumeria", searchNames: ["Plumeria"], special: true, region: "Alola" },
   { name: "Lusamine", searchNames: ["Lusamine"], special: true, region: "Alola" },
@@ -538,6 +550,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Shielbert", searchNames: ["Shielbert"], special: true, region: "Galar" },
   { name: "The Masked Royal", searchNames: ["The Masked Royal"], special: true, region: "Galar" },
   { name: "Gloria", searchNames: ["Gloria"], special: true, region: "Galar" },
+  { name: "Victor", searchNames: ["Victor"], special: true, region: "Galar" },
   // Mustard's cards are named "Rapid Strike Style Mustard" / "Single Strike Style Mustard" — no
   // possessive, so soloIndexName's stripping doesn't reduce them to "Mustard" alone; listed as
   // literal candidates instead of writing new parsing logic for this one case.
@@ -556,6 +569,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Hassel", searchNames: ["Hassel"], special: true, region: "Paldea" },
   { name: "Geeta", searchNames: ["Geeta"], special: true, region: "Paldea" },
   { name: "Nemona", searchNames: ["Nemona"], special: true, region: "Paldea" },
+  { name: "Florian", searchNames: ["Florian"], special: true, region: "Paldea" },
+  { name: "Juliana", searchNames: ["Juliana"], special: true, region: "Paldea" },
   { name: "O'Nare", searchNames: ["O'Nare", "O’Nare"], special: true, region: "Paldea" },
   // Tyme: Bulbapedia-tagged Gym Leader + Rock-type Trainer, from the Paldean Winds short.
   { name: "Tyme", searchNames: ["Tyme"], special: true, region: "Paldea" },

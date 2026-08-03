@@ -221,6 +221,11 @@ assignRole("Frontier Brain", [
   "Scott", "Anabel", "Noland", "Greta", "Tucker", "Lucy", "Spenser", "Brandon",
   "Palmer", "Argenta", "Dahlia", "Darach", "Thorton",
 ]);
+// Team Rocket Grunt is conceptually a generic class (every other Team X Grunt gets "Trainer
+// Class" automatically since they aren't `special`) — it's only marked `special: true` so its
+// card-picking prefers a modern print over an old classic one, not because it's a unique named
+// individual. Without this, it fell through to the generic "Trainer" fallback instead.
+assignRole("Trainer Class", ["Team Rocket Grunt"]);
 
 function assignRolesFor(name: string): string[] {
   return TRAINER_ROLES[name] ?? ["Trainer"];

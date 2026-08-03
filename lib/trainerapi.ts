@@ -518,6 +518,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   // Dana/Nita: Battle Chateau-titled trainers (Bulbapedia-confirmed X and Y characters).
   { name: "Dana", searchNames: ["Dana"], special: true, region: "Kalos" },
   { name: "Nita", searchNames: ["Nita"], special: true, region: "Kalos" },
+  // Morgan/Evelyn: her own card requires discarding "Dana, Evelyn, and Nita" — the same Battle
+  // Chateau trio as Dana/Nita, not Hoenn/ORAS as previously guessed from category order.
+  { name: "Morgan", searchNames: ["Morgan"], special: true, region: "Kalos" },
+  { name: "Evelyn", searchNames: ["Evelyn"], special: true, region: "Kalos" },
   { name: "Cassius", searchNames: ["Cassius"], special: true, region: "Kalos" },
   { name: "Emma", searchNames: ["Emma"], special: true, region: "Kalos" },
   // Alola (Gen 7) named characters
@@ -625,13 +629,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Gwynn", searchNames: ["Gwynn"], special: true, region: "Lumiose" },
   { name: "Iscan", searchNames: ["Iscan"], special: true, region: "Hisui" },
   { name: "Miriam", searchNames: ["Miriam"], special: true, region: "Paldea" },
-  { name: "Morgan", searchNames: ["Morgan"], special: true, region: "Hoenn" },
   { name: "Naveen", searchNames: ["Naveen"], special: true, region: "Lumiose" },
   { name: "Raifort", searchNames: ["Raifort"], special: true, region: "Paldea" },
   { name: "Saguaro", searchNames: ["Saguaro"], special: true, region: "Paldea" },
   { name: "Salvatore", searchNames: ["Salvatore"], special: true, region: "Paldea" },
   { name: "Tarragon", searchNames: ["Tarragon"], special: true, region: "Lumiose" },
-  { name: "Evelyn", searchNames: ["Evelyn"], special: true, region: "Hoenn" },
   { name: "Arezu", searchNames: ["Arezu"], special: true, region: "Hisui" },
   { name: "Honey", searchNames: ["Honey"], special: true, region: "Paldea" },
   { name: "Jacinthe", searchNames: ["Jacinthe"], special: true, region: "Lumiose" },

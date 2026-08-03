@@ -1192,7 +1192,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
   }
 
   const entries = await Promise.all(
-    KANTO_ROSTER.map(async ({ name, searchNames, special, region }) => {
+    KANTO_ROSTER.map(async ({ name, searchNames, special, region }, rosterIndex) => {
       let imageUrl: string | null = null;
       let isFullArt = false;
       // Solo cards always win first — a co-starring tag-team card is only used if the trainer
@@ -1228,14 +1228,23 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         roles: special ? assignRolesFor(name) : ["Trainer Class"],
         imageUrl,
         isFullArt,
+        rosterIndex,
       };
     })
   );
-  return entries.sort((a, b) => {
+  entries.sort((a, b) => {
     const regionDiff = regionRank(a.region) - regionRank(b.region);
     if (regionDiff !== 0) return regionDiff;
     const roleDiff = bestRoleRank(a.roles) - bestRoleRank(b.roles);
     if (roleDiff !== 0) return roleDiff;
-    return a.name.localeCompare(b.name);
+    // KANTO_ROSTER's own entry order is already hand-curated to match game-encounter order
+    // within each role group (e.g. Kanto Gym Leaders are listed Brock -> Misty -> ... -> Giovanni,
+    // the actual gym sequence, not alphabetical) — use that instead of re-alphabetizing over it.
+    return a.rosterIndex - b.rosterIndex;
+  });
+  return entries.map((entry) => {
+    const { rosterIndex, ...rest } = entry;
+    void rosterIndex;
+    return rest;
   });
 }

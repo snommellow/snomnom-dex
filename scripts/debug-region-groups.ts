@@ -83,16 +83,26 @@ function main() {
     }
 
     const evidence: Record<string, string[]> = {};
+    const rosterNameSet = new Set(rosterNames.map((n) => n.toLowerCase()));
+
+    // Only rules text, never the card's own name — a card literally named "Silver Bangle" or
+    // "Fiery Flint" isn't evidence that "Silver"/"Flint" (the trainers) are grouped with anyone,
+    // it's just an item card whose name happens to contain a common word. And instead of linking
+    // ANY two names mentioned anywhere in a card's full text (too loose — a long rules paragraph
+    // can coincidentally mention unrelated names), only link names that appear together in an
+    // actual "X, Y, and Z" list — the exact shape of Morgan's real "discard Dana, Evelyn, and
+    // Nita" text.
+    const listRe = /\b([A-Z][A-Za-zÀ-ÿ'.]+(?:\s[A-Z][A-Za-zÀ-ÿ'.]+)?)(?:,\s*([A-Z][A-Za-zÀ-ÿ'.]+(?:\s[A-Z][A-Za-zÀ-ÿ'.]+)?))*,?\s+and\s+([A-Z][A-Za-zÀ-ÿ'.]+(?:\s[A-Z][A-Za-zÀ-ÿ'.]+)?)\b/g;
 
     for (const card of cards) {
-      const text = [card.name, ...(card.rules ?? [])].join(" \n ");
-      const mentioned = rosterNames.filter((n) => {
-        const re = new RegExp(`\\b${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
-        return re.test(text);
-      });
-      if (mentioned.length >= 2) {
-        for (let i = 1; i < mentioned.length; i++) union(mentioned[0], mentioned[i]);
-        const key = mentioned.slice().sort().join(", ");
+      const text = (card.rules ?? []).join(" \n ");
+      for (const m of text.matchAll(listRe)) {
+        const words = m[0].split(/,\s*|\s+and\s+/).map((w) => w.trim());
+        const mentioned = words.filter((w) => rosterNameSet.has(w.toLowerCase()));
+        if (mentioned.length < 2) continue;
+        const canonical = mentioned.map((w) => rosterNames.find((n) => n.toLowerCase() === w.toLowerCase())!);
+        for (let i = 1; i < canonical.length; i++) union(canonical[0], canonical[i]);
+        const key = canonical.slice().sort().join(", ");
         (evidence[key] ??= []).push(card.name);
       }
     }

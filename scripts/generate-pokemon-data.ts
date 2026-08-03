@@ -406,7 +406,7 @@ async function main() {
   const teraIrSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(teraIrCandidatesList[i].map(c => c.set.id))]));
   const teraIrChainSetsMap = buildChainSets(teraIrSetsByDex, chainsByDex);
 
-  const vgxCandidatesList = raw.map(p => vgxCandidates(vgxData, toDisplayName(p.name)));
+  const vgxCandidatesList = raw.map(p => vgxCandidates(vgxData, toDisplayName(p.name), p.id));
   const vgxSetsByDex = new Map(raw.map((p, i) => [p.id, new Set(vgxCandidatesList[i].map(c => c.set.id))]));
   const vgxChainSetsMap = buildChainSets(vgxSetsByDex, chainsByDex);
 

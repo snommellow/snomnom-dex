@@ -624,7 +624,17 @@ export async function buildVgxData(): Promise<VgxData> {
 
 const OLD_STYLE_RARITIES = new Set(["Rare Holo EX", "Rare Secret", "Rare Ultra"]);
 
-export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] {
+// Species with an actual distinct Gigantamax design (bigger/reshaped, not just a scaled-up
+// Dynamax render) — PokeAPI only creates a "-gmax" variety/alt-form for these. Their VMAX cards
+// depict that separate Gigantamax look and must stay reserved for the gmax alt-form; every other
+// Pokémon (including ones that can Dynamax, like Rayquaza) has no alt-form claiming VMAX art, so
+// excluding it from their own base entity for no reason just threw away their best available card.
+const GIGANTAMAX_DEX_IDS = new Set([
+  3, 6, 9, 12, 25, 52, 68, 94, 99, 131, 133, 143, 569, 809, 812, 815, 818, 823, 826, 834, 839, 841,
+  842, 844, 849, 851, 858, 861, 869, 879, 884, 892,
+]);
+
+export function vgxCandidates(data: VgxData, displayName: string, dexId?: number): RankedCard[] {
   const nameLower = displayName.toLowerCase();
   const all = data.rarities.flatMap((r, i) =>
     lookupCandidates(data.indexes[i], displayName, r, { allowGimmick: true })
@@ -652,7 +662,7 @@ export function vgxCandidates(data: VgxData, displayName: string): RankedCard[] 
       && !(c.artist && borderedGxArtists.has(c.artist))) return false;
     if (/ V(-UNION)?$/.test(c.name) && SWSH_EARLY_SETS.has(c.set.id)) return false;
     if (/ V(-UNION)?$/.test(c.name) && c._rarity === "Hyper Rare") return false;
-    if (/ VMAX$/.test(c.name)) return false;
+    if (/ VMAX$/.test(c.name) && dexId !== undefined && GIGANTAMAX_DEX_IDS.has(dexId)) return false;
     return true;
   });
 }

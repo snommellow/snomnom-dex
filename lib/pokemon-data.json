@@ -19114,7 +19114,7 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh45/42_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swsh2/113_hires.png"
       }
     ],
     "familyId": 109,
@@ -22820,7 +22820,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh1/50_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 131,
@@ -24943,7 +24943,8 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY98_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 142,
@@ -63856,7 +63857,8 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xy6/102_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 381,
@@ -65088,7 +65090,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
     "genus": "Continent Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/dp1/17_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/dp1/122_hires.png",
     "altForms": [],
     "familyId": 387,
     "familyOrder": 2,
@@ -111293,7 +111295,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/676.png",
     "genus": "Poodle Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/xy0/33_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/xy1/114_hires.png",
     "altForms": [],
     "familyId": 676,
     "familyOrder": 0,

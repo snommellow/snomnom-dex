@@ -172,8 +172,8 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               TRAINERS
             </span>
             <span className="flex items-center gap-1">
-              <span className="text-white font-black tabular-nums leading-none" style={{ fontSize: 9, letterSpacing: ".06em" }}>
-                {trainer.region}
+              <span className="text-white font-black uppercase leading-none" style={{ fontSize: 8, letterSpacing: ".04em" }}>
+                {trainer.role}
               </span>
             </span>
           </div>
@@ -195,7 +195,7 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               className="font-semibold leading-none text-gray-500"
               style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}
             >
-              Trainer of {trainer.region}.
+              {trainer.role} of {trainer.region}.
             </p>
           </div>
 

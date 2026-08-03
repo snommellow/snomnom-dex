@@ -27,6 +27,7 @@ export interface TrainerEntry {
   name: string;
   slug: string;
   region: string;
+  role: string;
   imageUrl: string | null;
   // Whether imageUrl is a borderless full-art illustration vs a plain bordered card with a
   // rules text box — most Supporter cards are the latter, so they need the same "cropped"
@@ -155,6 +156,63 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
     page++;
   }
   return results;
+}
+
+// Role shown in the card masthead + subtitle, replacing the generic "Trainer of {region}."
+// filler that duplicated the region already shown in the bottom pill. Grouped by role rather
+// than listed inline per roster entry to keep the roster itself readable; anything not listed
+// here (mostly minor named NPCs with no crisp title) falls back to "Trainer".
+const TRAINER_ROLES: Record<string, string> = {};
+function assignRole(role: string, names: string[]) {
+  for (const n of names) TRAINER_ROLES[n] = role;
+}
+assignRole("Gym Leader", [
+  "Brock", "Misty", "Lt. Surge", "Erika", "Koga", "Sabrina", "Blaine", "Giovanni",
+  "Falkner", "Bugsy", "Whitney", "Morty", "Chuck", "Jasmine", "Pryce", "Clair",
+  "Roxanne", "Brawly", "Wattson", "Flannery", "Norman", "Winona", "Tate", "Liza", "Wallace", "Juan",
+  "Roark", "Gardenia", "Maylene", "Crasher Wake", "Fantina", "Byron", "Candice", "Volkner",
+  "Cilan", "Chili", "Cress", "Lenora", "Burgh", "Elesa", "Clay", "Skyla", "Brycen", "Drayden", "Roxie", "Marlon",
+  "Viola", "Grant", "Korrina", "Ramos", "Clemont", "Valerie", "Olympia", "Wulfric",
+  "Milo", "Nessa", "Kabu", "Bea", "Allister", "Opal", "Gordie", "Melony", "Piers", "Raihan",
+  "Katy", "Brassius", "Iono", "Kofu", "Larry", "Ryme", "Tulip", "Grusha",
+]);
+assignRole("Elite Four", [
+  "Lorelei", "Bruno", "Agatha", "Lance", "Will", "Karen",
+  "Sidney", "Phoebe", "Glacia", "Drake",
+  "Aaron", "Bertha", "Flint", "Lucian",
+  "Shauntal", "Marshal", "Grimsley", "Caitlin",
+  "Malva", "Siebold", "Wikstrom", "Drasna",
+  "Rika", "Poppy", "Hassel",
+]);
+assignRole("Champion", ["Lance", "Wallace", "Steven", "Cynthia", "Alder", "Iris", "Diantha", "Leon", "Geeta"]);
+assignRole("Rival", [
+  "Blue", "Green", "Silver", "May", "Brendan", "Wally", "Barry", "Cheren", "Bianca", "Hugh",
+  "Serena", "Calem", "Shauna", "Tierno", "Trevor", "Hau", "Hop", "Marnie", "Bede", "Nemona", "Arven",
+]);
+assignRole("Protagonist", ["Red", "Leaf", "Ethan", "Lyra", "Dawn", "Rosa", "Hilda", "Gloria"]);
+assignRole("Professor", [
+  "Professor Oak", "Professor Elm", "Professor Birch", "Professor Rowan", "Professor Juniper",
+  "Professor Sycamore", "Professor Kukui", "Professor Burnet", "Professor Cozmo", "Professor Magnolia",
+  "Professor Sada", "Professor Turo", "Professor Laventon", "Cedric Juniper", "Samson Oak",
+]);
+assignRole("Team Leader", [
+  "Archie", "Maxie", "Cyrus", "Ghetsis", "Lysandre", "Guzma", "Rose", "Giacomo", "Mela", "Atticus", "Ortega", "Eri",
+  "Blanche", "Candela", "Spark",
+]);
+assignRole("Team Admin", [
+  "Ariana", "Proton", "Petrel", "Archer", "Mars", "Jupiter", "Saturn", "Charon",
+  "N", "Colress", "Zinnia", "Xerosic", "Plumeria", "Lusamine", "Faba", "Wicke", "Oleana",
+  "Cassiopeia", "Penny", "Sordward", "Shielbert",
+]);
+assignRole("Kahuna", ["Hala", "Olivia", "Nanu", "Hapu"]);
+assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili", "Molayne"]);
+assignRole("Frontier Brain", [
+  "Scott", "Anabel", "Noland", "Greta", "Tucker", "Lucy", "Spenser", "Brandon",
+  "Palmer", "Argenta", "Dahlia", "Darach", "Thorton",
+]);
+
+function assignRoleFor(name: string): string {
+  return TRAINER_ROLES[name] ?? "Trainer";
 }
 
 export function toTrainerSlug(name: string): string {
@@ -821,7 +879,14 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
       // Generic trainer classes (Youngster, Sailor, etc.) aren't region-specific — every region
       // has its own Youngsters and Sailors — so only named individuals get a real region tag,
       // defaulting to Kanto when not overridden (Johto entries set region explicitly).
-      return { name, slug: toTrainerSlug(name), region: region ?? (special ? "Kanto" : "Universal"), imageUrl, isFullArt };
+      return {
+        name,
+        slug: toTrainerSlug(name),
+        region: region ?? (special ? "Kanto" : "Universal"),
+        role: special ? assignRoleFor(name) : "Trainer Class",
+        imageUrl,
+        isFullArt,
+      };
     })
   );
 }

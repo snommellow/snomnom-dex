@@ -94,7 +94,7 @@ export default function TrainersClient({ trainers }: Props) {
               )}
             </div>
             <p className="text-white font-bold text-lg">{selected.name}</p>
-            <p className="text-white/50 text-xs font-semibold uppercase tracking-wide">{selected.region}</p>
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-wide">{selected.role} · {selected.region}</p>
             <button
               onClick={() => setSelected(null)}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold bg-white/10 text-white hover:bg-white/20 transition-colors"

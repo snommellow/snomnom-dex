@@ -265,6 +265,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Clive", searchNames: ["Clive"], special: true, region: "Hoenn" },
   { name: "Zinnia", searchNames: ["Zinnia"], special: true, region: "Hoenn" },
   { name: "Lisia", searchNames: ["Lisia"], special: true, region: "Hoenn" },
+  { name: "Bebe", searchNames: ["Bebe"], special: true, region: "Hoenn" },
+  { name: "Lanette", searchNames: ["Lanette"], special: true, region: "Hoenn" },
   // Battle Frontier (Emerald) — Scott recruits the player; the 7 Frontier Brains each head one
   // facility (Anabel/Battle Tower, Noland/Battle Factory, Greta/Battle Arena, Tucker/Battle
   // Dome, Lucy/Battle Pike, Spenser/Battle Palace, Brandon/Battle Pyramid).
@@ -333,10 +335,14 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Cheren", searchNames: ["Cheren"], special: true, region: "Unova" },
   { name: "Bianca", searchNames: ["Bianca"], special: true, region: "Unova" },
   { name: "Hugh", searchNames: ["Hugh"], special: true, region: "Unova" },
+  { name: "Emmet", searchNames: ["Emmet"], special: true, region: "Unova" },
   { name: "Professor Juniper", searchNames: ["Professor Juniper", "Juniper"], special: true, region: "Unova" },
   { name: "Ghetsis", searchNames: ["Ghetsis"], special: true, region: "Unova" },
   { name: "N", searchNames: ["N"], special: true, region: "Unova" },
   { name: "Colress", searchNames: ["Colress"], special: true, region: "Unova" },
+  { name: "Anthea", searchNames: ["Anthea"], special: true, region: "Unova" },
+  { name: "Concordia", searchNames: ["Concordia"], special: true, region: "Unova" },
+  { name: "Harlequin", searchNames: ["Harlequin"], special: true, region: "Unova" },
   { name: "Cedric Juniper", searchNames: ["Cedric Juniper"], special: true, region: "Unova" },
   { name: "Fennel", searchNames: ["Fennel"], special: true, region: "Unova" },
   { name: "Rosa", searchNames: ["Rosa"], special: true, region: "Unova" },
@@ -365,6 +371,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Xerosic", searchNames: ["Xerosic"], special: true, region: "Kalos" },
   { name: "AZ", searchNames: ["AZ"], special: true, region: "Kalos" },
   { name: "Cyrano", searchNames: ["Cyrano"], special: true, region: "Kalos" },
+  { name: "Bonnie", searchNames: ["Bonnie"], special: true, region: "Kalos" },
   // Alola (Gen 7) named characters
   { name: "Ilima", searchNames: ["Ilima"], special: true, region: "Alola" },
   { name: "Lana", searchNames: ["Lana"], special: true, region: "Alola" },
@@ -392,6 +399,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Welder", searchNames: ["Welder"], special: true, region: "Alola" },
   { name: "Faba", searchNames: ["Faba"], special: true, region: "Alola" },
   { name: "Wicke", searchNames: ["Wicke"], special: true, region: "Alola" },
+  { name: "Professor Cozmo", searchNames: ["Professor Cozmo"], special: true, region: "Alola" },
   // Galar (Gen 8) named characters
   { name: "Milo", searchNames: ["Milo"], special: true, region: "Galar" },
   { name: "Nessa", searchNames: ["Nessa"], special: true, region: "Galar" },
@@ -418,6 +426,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Sordward", searchNames: ["Sordward"], special: true, region: "Galar" },
   { name: "Shielbert", searchNames: ["Shielbert"], special: true, region: "Galar" },
   { name: "The Masked Royal", searchNames: ["The Masked Royal"], special: true, region: "Galar" },
+  { name: "Gloria", searchNames: ["Gloria"], special: true, region: "Galar" },
+  // Mustard's cards are named "Rapid Strike Style Mustard" / "Single Strike Style Mustard" — no
+  // possessive, so soloIndexName's stripping doesn't reduce them to "Mustard" alone; listed as
+  // literal candidates instead of writing new parsing logic for this one case.
+  { name: "Mustard", searchNames: ["Mustard", "Rapid Strike Style Mustard", "Single Strike Style Mustard"], special: true, region: "Galar" },
   // Paldea (Gen 9) named characters
   { name: "Katy", searchNames: ["Katy"], special: true, region: "Paldea" },
   { name: "Brassius", searchNames: ["Brassius"], special: true, region: "Paldea" },
@@ -436,6 +449,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Penny", searchNames: ["Penny"], special: true, region: "Paldea" },
   { name: "Clavell", searchNames: ["Clavell"], special: true, region: "Paldea" },
   { name: "Jacq", searchNames: ["Jacq"], special: true, region: "Paldea" },
+  { name: "Amarys", searchNames: ["Amarys"], special: true, region: "Paldea" },
   { name: "Giacomo", searchNames: ["Giacomo"], special: true, region: "Paldea" },
   { name: "Mela", searchNames: ["Mela"], special: true, region: "Paldea" },
   { name: "Atticus", searchNames: ["Atticus"], special: true, region: "Paldea" },
@@ -463,6 +477,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Arezu", searchNames: ["Arezu"], special: true, region: "Paldea" },
   { name: "Honey", searchNames: ["Honey"], special: true, region: "Paldea" },
   { name: "Jacinthe", searchNames: ["Jacinthe"], special: true, region: "Paldea" },
+  { name: "Professor Sada", searchNames: ["Professor Sada", "Sada"], special: true, region: "Paldea" },
+  { name: "Professor Turo", searchNames: ["Professor Turo", "Turo"], special: true, region: "Paldea" },
+  { name: "Cassiopeia", searchNames: ["Cassiopeia"], special: true, region: "Paldea" },
   // Hisui (Legends: Arceus) named characters
   { name: "Professor Laventon", searchNames: ["Professor Laventon", "Laventon"], special: true, region: "Hisui" },
   { name: "Cyllene", searchNames: ["Cyllene"], special: true, region: "Hisui" },
@@ -476,6 +493,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   // returns in Z-A, so not duplicated here. Only Urbain and Jett confirmed against the card
   // catalog — other reported characters (Taunie, Vinnie) have no card yet.
   { name: "Urbain", searchNames: ["Urbain"], special: true, region: "Lumiose" },
+  { name: "Canari", searchNames: ["Canari"], special: true, region: "Lumiose" },
   { name: "Jett", searchNames: ["Jett"], special: true, region: "Lumiose" },
   // Pokémon GO — the three Team Leaders, not tied to any mainline region.
   { name: "Blanche", searchNames: ["Blanche"], special: true, region: "Pokémon GO" },
@@ -598,6 +616,18 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Restaurant Employee", searchNames: ["Restaurant Employee"] },
   { name: "Sports Student", searchNames: ["Sports Student"] },
   { name: "Student", searchNames: ["Student"] },
+  // Additional generic classes/ranks found in a full catalog sweep, missed the first pass
+  { name: "Schoolboy", searchNames: ["Schoolboy"] },
+  { name: "Schoolgirl", searchNames: ["Schoolgirl"] },
+  { name: "Poké Kid", searchNames: ["Poké Kid", "Poke Kid"] },
+  { name: "Roller Skater", searchNames: ["Roller Skater"] },
+  { name: "Ruffian", searchNames: ["Ruffian"] },
+  { name: "Sightseer", searchNames: ["Sightseer"] },
+  { name: "TV Reporter", searchNames: ["TV Reporter"] },
+  { name: "Traveling Merchant", searchNames: ["Traveling Merchant"] },
+  { name: "Team Star Grunt", searchNames: ["Team Star Grunt"] },
+  { name: "Team Aqua Admin", searchNames: ["Team Aqua Admin"] },
+  { name: "Team Magma Admin", searchNames: ["Team Magma Admin"] },
 ];
 
 // The point of the Trainers page is one tile per trainer, not one per card — pokemontcg.io

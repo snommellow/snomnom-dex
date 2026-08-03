@@ -181,8 +181,13 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
           {/* Name + tagline */}
           <div className="relative z-10 px-2.5 pt-1.5 pb-1 flex-shrink-0" style={{ opacity: isHovered ? 0 : 1, transition: "opacity 0.25s" }}>
             <p
-              className="font-black leading-tight truncate"
-              style={{ fontSize: 14, color: ACCENT, WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}
+              className="font-black leading-tight"
+              style={{
+                fontSize: trainer.name.length > 14 ? 11 : 14,
+                color: ACCENT,
+                WebkitTextStroke: "2px white",
+                paintOrder: "stroke fill",
+              }}
             >
               {trainer.name}
             </p>

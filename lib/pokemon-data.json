@@ -2132,7 +2132,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
     "genus": "Poison Bee Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10/161_hires.png"
+      "https://images.pokemontcg.io/swsh10/1_hires.png"
     ],
     "altForms": [
       {
@@ -7465,11 +7465,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png",
     "genus": "Flower Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex5/100_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm12/211_hires.png"
+    ],
     "altForms": [],
     "familyId": 43,
     "familyOrder": 2,
+    "cardRank": 6,
     "flavorText": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.",
     "heightM": 1.2,
     "weightKg": 18.6,
@@ -8096,11 +8098,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/49.png",
     "genus": "Poison Moth Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm10/12_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm10/12_hires.png"
+    ],
     "altForms": [],
     "familyId": 48,
     "familyOrder": 1,
+    "cardRank": 6,
     "flavorText": "The dust-like scales covering its wings are color coded to indicate the kinds of poison it has.",
     "heightM": 1.5,
     "weightKg": 12.5,
@@ -16467,11 +16471,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
     "genus": "Rock Snake Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm115/36_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm115/36_hires.png"
+    ],
     "altForms": [],
     "familyId": 95,
     "familyOrder": 0,
+    "cardRank": 6,
     "flavorText": "It burrows through the ground at a speed of 50 mph while feeding on large boulders.",
     "heightM": 8.8,
     "weightKg": 210,
@@ -18942,7 +18948,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/109.png",
-    "genus": "Poison Gas Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sm12/243_hires.png"
     ],
@@ -18950,7 +18956,7 @@
     "familyId": 109,
     "familyOrder": 0,
     "cardRank": 6,
-    "flavorText": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning.",
+    "flavorText": null,
     "heightM": 0.6,
     "weightKg": 1,
     "abilities": [
@@ -18996,9 +19002,7 @@
         "value": 35
       }
     ],
-    "eggGroups": [
-      "indeterminate"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "tackle",
@@ -19065,22 +19069,7 @@
         "level": 52
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 109,
-        "name": "koffing",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 110,
-        "name": "weezing",
-        "minLevel": 35,
-        "trigger": "level-up",
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 110,
@@ -25355,7 +25344,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10169.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/170_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/58_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -25533,7 +25522,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10170.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/174_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/80_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -25699,7 +25688,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10171.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/177_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/97_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -34580,7 +34569,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10172.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh6/179_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh6/99_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -51332,7 +51321,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10066.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/sm11/226_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm11/225_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -63108,7 +63097,8 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY35_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 6
       }
     ],
     "familyId": 374,
@@ -66118,7 +66108,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/395.png",
     "genus": "Emperor Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh5/146_hires.png"
+      "https://images.pokemontcg.io/swsh5/40_hires.png"
     ],
     "altForms": [],
     "familyId": 393,
@@ -76403,7 +76393,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/457.png",
     "genus": "Neon Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh9/156_hires.png"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG39_hires.png"
     ],
     "altForms": [],
     "familyId": 456,
@@ -81262,7 +81252,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10245.png",
         "category": "regional",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/177_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/113_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -81416,7 +81406,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10246.png",
         "category": "regional",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/167_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/39_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -91237,7 +91227,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10237.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/163_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swsh10/17_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -117494,7 +117484,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/715.png",
     "genus": "Sound Wave Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh7/196_hires.png"
+      "https://images.pokemontcg.io/sm3/141_hires.png"
     ],
     "altForms": [],
     "familyId": 714,
@@ -122685,11 +122675,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/748.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/748.png",
     "genus": "Brutal Star Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm2/57_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm2/57_hires.png"
+    ],
     "altForms": [],
     "familyId": 747,
     "familyOrder": 1,
+    "cardRank": 6,
     "flavorText": "Toxapex crawls along the ocean floor on its 12 legs. It leaves a trail of Corsola bits scattered in its wake.",
     "heightM": 0.7,
     "weightKg": 14.5,
@@ -123542,11 +123534,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/754.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/754.png",
     "genus": "Bloom Sickle Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm1/15_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm1/15_hires.png"
+    ],
     "altForms": [],
     "familyId": 753,
     "familyOrder": 1,
+    "cardRank": 6,
     "flavorText": "It requires a lot of effort to maintain Lurantis’s vivid coloring, but some collectors enjoy this work and treat it as their hobby.",
     "heightM": 0.9,
     "weightKg": 18.5,
@@ -125850,11 +125844,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/770.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/770.png",
     "genus": "Sand Castle Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm7/82_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm7/82_hires.png"
+    ],
     "altForms": [],
     "familyId": 769,
     "familyOrder": 1,
+    "cardRank": 6,
     "flavorText": "Possessed people controlled by this Pokémon transformed its sand mound into a castle. As it evolved, its power to curse grew ever stronger.",
     "heightM": 1.3,
     "weightKg": 250,
@@ -127850,11 +127846,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/784.png",
     "genus": "Scaly Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm2/100_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm2/100_hires.png"
+    ],
     "altForms": [],
     "familyId": 782,
     "familyOrder": 2,
+    "cardRank": 6,
     "flavorText": "When it spots enemies, it threatens them by jingling the scales on its tail. Weak opponents will crack and flee in panic.",
     "heightM": 1.6,
     "weightKg": 78.2,
@@ -129136,11 +129134,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/793.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/793.png",
     "genus": "Parasite Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm4/49_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm4/49_hires.png"
+    ],
     "altForms": [],
     "familyId": 793,
     "familyOrder": 0,
+    "cardRank": 6,
     "flavorText": "One of several mysterious Ultra Beasts. People on the street report observing those infested by it suddenly becoming violent.",
     "heightM": 1.2,
     "weightKg": 55.5,
@@ -129865,11 +129865,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/798.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/798.png",
     "genus": "Drawn Sword Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm4/70_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm4/70_hires.png"
+    ],
     "altForms": [],
     "familyId": 798,
     "familyOrder": 0,
+    "cardRank": 6,
     "flavorText": "This Ultra Beast came from the Ultra Wormhole. It seems not to attack enemies on its own, but its sharp body is a dangerous weapon in itself.",
     "heightM": 0.3,
     "weightKg": 0.1,
@@ -130178,9 +130180,9 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10155.png",
         "category": "regional",
         "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/smp/SM102_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm5/90_hires.png",
         "regularCardUrl": null,
-        "cardRank": 2
+        "cardRank": 6
       },
       {
         "slug": "necrozma-dawn",
@@ -130196,7 +130198,7 @@
         "displayCategory": "forme",
         "tcgUrl": "https://images.pokemontcg.io/smp/SM101_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 2
       },
       {
         "slug": "necrozma-ultra",
@@ -130966,11 +130968,13 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/805.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/805.png",
     "genus": "Rampart Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/sm7/102_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/sm7/102_hires.png"
+    ],
     "altForms": [],
     "familyId": 805,
     "familyOrder": 0,
+    "cardRank": 6,
     "flavorText": "It appeared from an Ultra Wormhole. Each one appears to be made up of many life-forms stacked one on top of each other.",
     "heightM": 5.5,
     "weightKg": 820,
@@ -136370,7 +136374,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
     "genus": "Sand Snake Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh8/252_hires.png"
+      "https://images.pokemontcg.io/swsh2/108_hires.png"
     ],
     "altForms": [
       {
@@ -139155,7 +139159,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/863.png",
     "genus": "Viking Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh11/184_hires.png"
+      "https://images.pokemontcg.io/swsh11/129_hires.png"
     ],
     "altForms": [],
     "familyId": 52,
@@ -142112,7 +142116,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/884.png",
     "genus": "Alloy Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh7/198_hires.png"
+      "https://images.pokemontcg.io/swsh35/47_hires.png"
     ],
     "altForms": [
       {
@@ -144963,7 +144967,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/903.png",
     "genus": "Free Climb Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh10/175_hires.png"
+      "https://images.pokemontcg.io/swsh10/94_hires.png"
     ],
     "altForms": [],
     "familyId": 215,
@@ -154468,7 +154472,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/968.png",
-    "genus": "Earthworm Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv2/224_hires.png"
     ],
@@ -154476,7 +154480,7 @@
     "familyId": 968,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "When attacked, this Pokémon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches.",
+    "flavorText": null,
     "heightM": 2.5,
     "weightKg": 310,
     "abilities": [
@@ -154517,9 +154521,7 @@
         "value": 65
       }
     ],
-    "eggGroups": [
-      "ground"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "tackle",
@@ -154578,15 +154580,7 @@
         "level": 52
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 968,
-        "name": "orthworm",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 969,

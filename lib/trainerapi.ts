@@ -394,6 +394,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Bianca", searchNames: ["Bianca"], special: true, region: "Unova" },
   { name: "Hugh", searchNames: ["Hugh"], special: true, region: "Unova" },
   { name: "Emmet", searchNames: ["Emmet"], special: true, region: "Unova" },
+  // Ingo's card was matched via his Legends: Arceus cameo appearance, but his primary identity
+  // is Unova's Subway Boss (twin brother of Emmet, listed above) — grouped with Emmet here
+  // rather than under Hisui, where he's only a late-game crossover appearance.
+  { name: "Ingo", searchNames: ["Ingo"], special: true, region: "Unova" },
   { name: "Professor Juniper", searchNames: ["Professor Juniper", "Juniper"], special: true, region: "Unova" },
   { name: "Ghetsis", searchNames: ["Ghetsis"], special: true, region: "Unova" },
   { name: "N", searchNames: ["N"], special: true, region: "Unova" },
@@ -545,7 +549,6 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Irida", searchNames: ["Irida"], special: true, region: "Hisui" },
   { name: "Volo", searchNames: ["Volo"], special: true, region: "Hisui" },
   { name: "Cogita", searchNames: ["Cogita"], special: true, region: "Hisui" },
-  { name: "Ingo", searchNames: ["Ingo"], special: true, region: "Hisui" },
   { name: "Kamado", searchNames: ["Kamado"], special: true, region: "Hisui" },
   // Lumiose (Legends: Z-A) named characters. AZ already exists as a Kalos entry above and
   // returns in Z-A, so not duplicated here. Only Urbain and Jett confirmed against the card

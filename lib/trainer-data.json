@@ -6,8 +6,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/bc/Diamond_Pearl_Aaron.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/pl2/88_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Acerola",
@@ -36,8 +36,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sm8/168_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sma/SV81_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Agatha",
@@ -276,7 +276,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/dp2/109_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/pl2/89_hires.png",
     "isFullArt": false
   },
   {
@@ -296,8 +296,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/5e/Diamond_Pearl_Bertha.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/pl2/90_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Bianca",
@@ -646,8 +646,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw11/110_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c0/Black_White_Cedric_Juniper.png",
+    "isFullArt": true
   },
   {
     "name": "Celio",
@@ -656,7 +656,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/ex14/73_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/ex6/88_hires.png",
     "isFullArt": false
   },
   {
@@ -676,8 +676,8 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/pl2/RT6_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/0b/Platinum_Charon.png",
+    "isFullArt": true
   },
   {
     "name": "Cheerleader",
@@ -746,8 +746,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/swsh8/258_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/bw4/86_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Clair",
@@ -976,7 +976,7 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/pl3/137_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/pl1/105_hires.png",
     "isFullArt": false
   },
   {
@@ -1026,8 +1026,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy9/98b_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Dendra",
@@ -1286,8 +1286,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a8/Diamond_Pearl_Flint.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/pl2/91_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Furisode Girl",
@@ -1346,8 +1346,8 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw9/115_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/bw9/101_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Giacomo",
@@ -1376,8 +1376,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/3c/Omega_Ruby_Alpha_Sapphire_Glacia.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/ex16/76_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Gladion",
@@ -1566,8 +1566,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sm7/133_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sma/SV85_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Hilda",
@@ -1916,7 +1916,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy3/111_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/swsh5/160_hires.png",
     "isFullArt": true
   },
   {
@@ -1946,7 +1946,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/swsh11/193_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sma/SV86_hires.png",
     "isFullArt": true
   },
   {
@@ -2147,7 +2147,7 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy4/118_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/xy2/104_hires.png",
     "isFullArt": true
   },
   {
@@ -2177,7 +2177,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": null,
+    "imageUrl": "https://images.pokemontcg.io/dp7/87_hires.png",
     "isFullArt": false
   },
   {
@@ -2358,7 +2358,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/pop2/8_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/ex3/87_hires.png",
     "isFullArt": false
   },
   {
@@ -2468,7 +2468,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": null,
+    "imageUrl": "https://images.pokemontcg.io/xy11/103_hires.png",
     "isFullArt": false
   },
   {
@@ -2748,7 +2748,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/base6/102_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/base1/76_hires.png",
     "isFullArt": false
   },
   {
@@ -2758,8 +2758,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy11/113_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/xy11/104_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Poppy",
@@ -2808,7 +2808,7 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/tk2a/10_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/ex8/90_hires.png",
     "isFullArt": false
   },
   {
@@ -2828,8 +2828,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw9/116_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/bw1/101_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Professor Kukui",
@@ -2878,8 +2878,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/dp1/112_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/1b/Brilliant_Diamond_Shining_Pearl_Professor_Rowan.png",
+    "isFullArt": true
   },
   {
     "name": "Professor Sada",
@@ -2898,8 +2898,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy11/114_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/xy1/122_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Professor Turo",
@@ -2938,7 +2938,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy9/108_hires.png",
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -3298,8 +3298,8 @@
     "roles": [
       "Frontier Brain"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/bc/Emerald_Scott.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/ex9/84_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Serena",
@@ -3608,8 +3608,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy1/129_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/g1/73a_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Team Galactic Grunt",
@@ -3718,7 +3718,7 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy9/112_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/xy0/39_hires.png",
     "isFullArt": false
   },
   {
@@ -3798,7 +3798,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": null,
+    "imageUrl": "https://images.pokemontcg.io/hgss4/89_hires.png",
     "isFullArt": false
   },
   {
@@ -3969,8 +3969,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy6/108_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/xy6/96_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Worker",

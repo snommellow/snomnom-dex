@@ -878,7 +878,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH261_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 4,
@@ -3806,8 +3806,7 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 6
+        "regularCardUrl": null
       }
     ],
     "familyId": 25,
@@ -11547,7 +11546,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/73_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 66,
@@ -43996,7 +43995,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/257.png",
     "genus": "Blaze Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sm7/153_hires.png"
+      "https://images.pokemontcg.io/swsh12tg/TG14_hires.png"
     ],
     "altForms": [
       {
@@ -52709,7 +52708,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10055.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/me1/158_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy4/120_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -64017,7 +64016,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/382.png",
     "genus": "Sea Basin Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw5/104_hires.png"
+      "https://images.pokemontcg.io/dc1/6_hires.png"
     ],
     "altForms": [
       {
@@ -64038,7 +64037,7 @@
     ],
     "familyId": 382,
     "familyOrder": 0,
-    "cardRank": 6,
+    "cardRank": 4,
     "flavorText": "KYOGRE has the power to create massive rain clouds that cover the entire sky and bring about torrential downpours. This POKéMON saved people who were suffering from droughts.",
     "heightM": 4.5,
     "weightKg": 352,
@@ -64305,7 +64304,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
     "genus": "Sky High Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/bw6/123_hires.png"
+      "https://images.pokemontcg.io/swsh7/218_hires.png"
     ],
     "altForms": [
       {
@@ -64327,7 +64326,7 @@
     ],
     "familyId": 384,
     "familyOrder": 0,
-    "cardRank": 6,
+    "cardRank": 2,
     "flavorText": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer, never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
     "heightM": 7,
     "weightKg": 206.5,
@@ -131527,7 +131526,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/pgo/48_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 809,
@@ -138359,8 +138358,9 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/858.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
     "genus": "Silent Pokémon",
-    "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG47_hires.png",
+    "bgCandidates": [
+      "https://images.pokemontcg.io/swsh12pt5/65_hires.png"
+    ],
     "altForms": [
       {
         "slug": "hatterene-gmax",
@@ -138381,6 +138381,7 @@
     ],
     "familyId": 856,
     "familyOrder": 2,
+    "cardRank": 6,
     "flavorText": "It emits psychic power strong enough to cause headaches as a deterrent to the approach of others.",
     "heightM": 2.1,
     "weightKg": 5.1,

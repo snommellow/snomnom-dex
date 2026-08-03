@@ -1172,6 +1172,116 @@
     "isFullArt": true
   },
   {
+    "name": "Adaman",
+    "slug": "adaman",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG57_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Arezu",
+    "slug": "arezu",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh11/189_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Choy",
+    "slug": "choy",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh10/182_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cogita",
+    "slug": "cogita",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a9/Legends_Arceus_Cogita.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cyllene",
+    "slug": "cyllene",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh10/183_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Irida",
+    "slug": "irida",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh10/186_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Iscan",
+    "slug": "iscan",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh11/192_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Kamado",
+    "slug": "kamado",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh10/187_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Professor Laventon",
+    "slug": "professor-laventon",
+    "region": "Hisui",
+    "roles": [
+      "Professor"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh12/162_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Volo",
+    "slug": "volo",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh11/196_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Zisu",
+    "slug": "zisu",
+    "region": "Hisui",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh10/189_hires.png",
+    "isFullArt": true
+  },
+  {
     "name": "Brycen",
     "slug": "brycen",
     "region": "Unova",
@@ -1790,6 +1900,86 @@
     ],
     "imageUrl": "https://images.pokemontcg.io/sv6pt5/89_hires.png",
     "isFullArt": true
+  },
+  {
+    "name": "Canari",
+    "slug": "canari",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-291/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Gwynn",
+    "slug": "gwynn",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me5-119/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Jacinthe",
+    "slug": "jacinthe",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me3-122/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Jett",
+    "slug": "jett",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me5-79/large",
+    "isFullArt": false
+  },
+  {
+    "name": "Naveen",
+    "slug": "naveen",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me3-112/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Philippe",
+    "slug": "philippe",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me4-110/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Tarragon",
+    "slug": "tarragon",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me3-116/large",
+    "isFullArt": true
+  },
+  {
+    "name": "Urbain",
+    "slug": "urbain",
+    "region": "Lumiose",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-214/large",
+    "isFullArt": false
   },
   {
     "name": "Molayne",
@@ -2733,196 +2923,6 @@
     "isFullArt": true
   },
   {
-    "name": "Adaman",
-    "slug": "adaman",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG57_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Arezu",
-    "slug": "arezu",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh11/189_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Choy",
-    "slug": "choy",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/182_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Cogita",
-    "slug": "cogita",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a9/Legends_Arceus_Cogita.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Cyllene",
-    "slug": "cyllene",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/183_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Irida",
-    "slug": "irida",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/186_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Iscan",
-    "slug": "iscan",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh11/192_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Kamado",
-    "slug": "kamado",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/187_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Professor Laventon",
-    "slug": "professor-laventon",
-    "region": "Hisui",
-    "roles": [
-      "Professor"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh12/162_hires.png",
-    "isFullArt": false
-  },
-  {
-    "name": "Volo",
-    "slug": "volo",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh11/196_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Zisu",
-    "slug": "zisu",
-    "region": "Hisui",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/189_hires.png",
-    "isFullArt": true
-  },
-  {
-    "name": "Canari",
-    "slug": "canari",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-291/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Gwynn",
-    "slug": "gwynn",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me5-119/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Jacinthe",
-    "slug": "jacinthe",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me3-122/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Jett",
-    "slug": "jett",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me5-79/large",
-    "isFullArt": false
-  },
-  {
-    "name": "Naveen",
-    "slug": "naveen",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me3-112/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Philippe",
-    "slug": "philippe",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me4-110/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Tarragon",
-    "slug": "tarragon",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me3-116/large",
-    "isFullArt": true
-  },
-  {
-    "name": "Urbain",
-    "slug": "urbain",
-    "region": "Lumiose",
-    "roles": [
-      "Trainer"
-    ],
-    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-214/large",
-    "isFullArt": false
-  },
-  {
     "name": "Blanche",
     "slug": "blanche",
     "region": "Pokémon GO",
@@ -2963,6 +2963,56 @@
     "isFullArt": true
   },
   {
+    "name": "A-list Actor",
+    "slug": "a-list-actor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Ace Duo",
+    "slug": "ace-duo",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/91/SM_Ace_Trainers_TOKIYA.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Ace Trainer",
+    "slug": "ace-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/xy7/69_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Actor",
+    "slug": "actor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/44/Spr_SM_Office_Worker_F.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Actress",
+    "slug": "actress",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Aether Foundation Employee",
     "slug": "aether-foundation-employee",
     "region": "Universal",
@@ -2970,6 +3020,26 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sma/SV81_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Alpha Trainer",
+    "slug": "alpha-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Area Leader",
+    "slug": "area-leader",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/05/Colo_Vander.png",
     "isFullArt": true
   },
   {
@@ -2993,6 +3063,56 @@
     "isFullArt": true
   },
   {
+    "name": "Artist Family",
+    "slug": "artist-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/12/XY_Artist_Family.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Assistant",
+    "slug": "assistant",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f6/TW05.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Athlete",
+    "slug": "athlete",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8e/Colo_Athlete_m.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Athletic Siblings",
+    "slug": "athletic-siblings",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/5d/Spr_SM_Youth_Athlete_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Backers",
+    "slug": "backers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Backpacker",
     "slug": "backpacker",
     "region": "Universal",
@@ -3013,6 +3133,56 @@
     "isFullArt": true
   },
   {
+    "name": "Bandana Guy",
+    "slug": "bandana-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/9c/Colo_Bandana_Guy.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Bandit",
+    "slug": "bandit",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/3a/Miss_Fortunes_LA.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Baron",
+    "slug": "baron",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7b/XY_Monsieur.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Baroness",
+    "slug": "baroness",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/XY_Madame.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Battle Chatelaine",
+    "slug": "battle-chatelaine",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/9f/XY_Evelyn.png",
+    "isFullArt": true
+  },
+  {
     "name": "Battle Girl",
     "slug": "battle-girl",
     "region": "Universal",
@@ -3023,6 +3193,16 @@
     "isFullArt": true
   },
   {
+    "name": "Battle Legend",
+    "slug": "battle-legend",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Beauty",
     "slug": "beauty",
     "region": "Universal",
@@ -3031,6 +3211,36 @@
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh4/181_hires.png",
     "isFullArt": true
+  },
+  {
+    "name": "Beginning Trainer",
+    "slug": "beginning-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Bellhop",
+    "slug": "bellhop",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2e/Spr_SM_Bellhop.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Big Star",
+    "slug": "big-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Biker",
@@ -3050,6 +3260,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh45/66_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Black Belt",
+    "slug": "black-belt",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-255/large",
     "isFullArt": true
   },
   {
@@ -3073,6 +3293,46 @@
     "isFullArt": false
   },
   {
+    "name": "Bodybuilder",
+    "slug": "bodybuilder",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a5/XD_Bodybuilder_m.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Bolts & Brawn",
+    "slug": "bolts-brawn",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/55/ZA_Ivor.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Boss Trainer",
+    "slug": "boss-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f1/Black_2_White_2_Benga.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Brains & Brawn",
+    "slug": "brains-brawn",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e0/XY_Brains_%26_Brawn.png",
+    "isFullArt": true
+  },
+  {
     "name": "Bug Catcher",
     "slug": "bug-catcher",
     "region": "Universal",
@@ -3093,6 +3353,16 @@
     "isFullArt": true
   },
   {
+    "name": "Bug-Catching Man",
+    "slug": "bug-catching-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Burglar",
     "slug": "burglar",
     "region": "Universal",
@@ -3100,6 +3370,46 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/c/ce/VSBurglar_PE.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Butler",
+    "slug": "butler",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/82/Butler.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cabbie",
+    "slug": "cabbie",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/08/VSCabbie_SV.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Café Master",
+    "slug": "cafe-master",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh9tg/TG25_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cameraman",
+    "slug": "cameraman",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/43/VSCameraman_BDSP.png",
     "isFullArt": true
   },
   {
@@ -3113,6 +3423,56 @@
     "isFullArt": true
   },
   {
+    "name": "Capoeira Couple",
+    "slug": "capoeira-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/49/Spr_SM_Black_Belt.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Casual Dude",
+    "slug": "casual-dude",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/75/XD_Casual_Dude.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Casual Guy",
+    "slug": "casual-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b7/XD_Casual_Guy.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Celebrity",
+    "slug": "celebrity",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Challenger",
+    "slug": "challenger",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Channeler",
     "slug": "channeler",
     "region": "Universal",
@@ -3120,6 +3480,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sm11/232_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Chaser",
+    "slug": "chaser",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/44/XD_Chaser_m.png",
     "isFullArt": true
   },
   {
@@ -3133,6 +3503,26 @@
     "isFullArt": false
   },
   {
+    "name": "Chef",
+    "slug": "chef",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2a/XY_Chef.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Chic Actress",
+    "slug": "chic-actress",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Chief",
     "slug": "chief",
     "region": "Universal",
@@ -3141,6 +3531,36 @@
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/1/14/Glitch_Trainer_battle.png",
     "isFullArt": true
+  },
+  {
+    "name": "Child Star",
+    "slug": "child-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Cipher Admin",
+    "slug": "cipher-admin",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Cipher Peon",
+    "slug": "cipher-peon",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Clerk",
@@ -3153,6 +3573,56 @@
     "isFullArt": true
   },
   {
+    "name": "Close Siblings",
+    "slug": "close-siblings",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Clown",
+    "slug": "clown",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b5/VSClown_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Coach Trainer",
+    "slug": "coach-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/sm11/233_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Coffee Aficionados",
+    "slug": "coffee-aficionados",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Colleagues",
+    "slug": "colleagues",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f4/VSColleagues.png",
+    "isFullArt": true
+  },
+  {
     "name": "Collector",
     "slug": "collector",
     "region": "Universal",
@@ -3161,6 +3631,66 @@
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cd/VSCollector_BDSP.png",
     "isFullArt": true
+  },
+  {
+    "name": "Colosseum Leader",
+    "slug": "colosseum-leader",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2e/Rosie.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Colosseum Master",
+    "slug": "colosseum-master",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7b/Kruger.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Comedian",
+    "slug": "comedian",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Commander",
+    "slug": "commander",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/35/Galactic_Commanders_anime.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cool Beauty",
+    "slug": "cool-beauty",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Cool Couple",
+    "slug": "cool-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Cooltrainer♀",
@@ -3183,8 +3713,48 @@
     "isFullArt": false
   },
   {
+    "name": "Countess",
+    "slug": "countess",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/XY_Madame.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Courier",
+    "slug": "courier",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/26/VSCourier_SV.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cowgirl",
+    "slug": "cowgirl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a0/VSCowgirl_BDSP.png",
+    "isFullArt": true
+  },
+  {
     "name": "Crush Girl",
     "slug": "crush-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Crush Kin",
+    "slug": "crush-kin",
     "region": "Universal",
     "roles": [
       "Trainer Class"
@@ -3203,6 +3773,36 @@
     "isFullArt": true
   },
   {
+    "name": "Curmudgeon",
+    "slug": "curmudgeon",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/70/XD_Curmudgeon.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Cute Maniac",
+    "slug": "cute-maniac",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Cute Trainer",
+    "slug": "cute-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Cyclist",
     "slug": "cyclist",
     "region": "Universal",
@@ -3210,6 +3810,36 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f3/VSCyclist_M_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Dancer",
+    "slug": "dancer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh8/259_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Dancing Family",
+    "slug": "dancing-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f4/Spr_SM_Preschooler_F.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Daring Couple",
+    "slug": "daring-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/94/VSDaring_Couple.png",
     "isFullArt": true
   },
   {
@@ -3243,6 +3873,16 @@
     "isFullArt": true
   },
   {
+    "name": "Double Team",
+    "slug": "double-team",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/51/Double_Team_IX.png",
+    "isFullArt": true
+  },
+  {
     "name": "Dragon Tamer",
     "slug": "dragon-tamer",
     "region": "Universal",
@@ -3251,6 +3891,56 @@
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/1/13/VSDragon_Tamer_SV.png",
     "isFullArt": true
+  },
+  {
+    "name": "Driver",
+    "slug": "driver",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/Z-A_Royale_Profile_Zach.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Duchess",
+    "slug": "duchess",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/XY_Madame.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Duke",
+    "slug": "duke",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7b/XY_Monsieur.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Earl",
+    "slug": "earl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Electrifying Guy",
+    "slug": "electrifying-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Engineer",
@@ -3263,6 +3953,16 @@
     "isFullArt": false
   },
   {
+    "name": "Executive",
+    "slug": "executive",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f9/RocketExecs.png",
+    "isFullArt": true
+  },
+  {
     "name": "Expert",
     "slug": "expert",
     "region": "Universal",
@@ -3271,6 +3971,16 @@
     ],
     "imageUrl": null,
     "isFullArt": false
+  },
+  {
+    "name": "Factory Head",
+    "slug": "factory-head",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2f/Platinum_Thorton.png",
+    "isFullArt": true
   },
   {
     "name": "Fairy Tale Girl",
@@ -3283,6 +3993,36 @@
     "isFullArt": true
   },
   {
+    "name": "Festival Boy",
+    "slug": "festival-boy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2d/VSFestival_Boy_1.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Festival Girl",
+    "slug": "festival-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/94/VSFestival_Girl_1.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Fine Actor",
+    "slug": "fine-actor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Firebreather",
     "slug": "firebreather",
     "region": "Universal",
@@ -3290,6 +4030,26 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/me2/119_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Firefighter",
+    "slug": "firefighter",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b7/Spr_SM_Firefighter.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Fisher",
+    "slug": "fisher",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/199/high.webp",
     "isFullArt": true
   },
   {
@@ -3303,6 +4063,46 @@
     "isFullArt": false
   },
   {
+    "name": "Fist of Justice",
+    "slug": "fist-of-justice",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8e/Fist_of_Justice.jpg",
+    "isFullArt": true
+  },
+  {
+    "name": "Free Diver",
+    "slug": "free-diver",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Freshwoman",
+    "slug": "freshwoman",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Fun Old Man",
+    "slug": "fun-old-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/5e/XD_Fun_Old_Man.png",
+    "isFullArt": true
+  },
+  {
     "name": "Furisode Girl",
     "slug": "furisode-girl",
     "region": "Universal",
@@ -3310,6 +4110,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh12/190_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Future Girl",
+    "slug": "future-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
     "isFullArt": true
   },
   {
@@ -3323,6 +4133,26 @@
     "isFullArt": false
   },
   {
+    "name": "Garçon",
+    "slug": "garcon",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fb/XY_Gar%C3%A7on.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Gardener",
+    "slug": "gardener",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b8/XY_Gardener.png",
+    "isFullArt": true
+  },
+  {
     "name": "Gentleman",
     "slug": "gentleman",
     "region": "Universal",
@@ -3330,6 +4160,46 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/7/73/VSGentleman_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Girl In Love",
+    "slug": "girl-in-love",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Girlfriend",
+    "slug": "girlfriend",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8f/B2W2_Monica_Pok%C3%A9star_2.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Glasses Man",
+    "slug": "glasses-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/d4/Colo_Glasses_Man.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Golf Buddies",
+    "slug": "golf-buddies",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fb/Spr_SM_Golfer_F.png",
     "isFullArt": true
   },
   {
@@ -3343,6 +4213,46 @@
     "isFullArt": true
   },
   {
+    "name": "Gourmet",
+    "slug": "gourmet",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Grade-Schooler",
+    "slug": "grade-schooler",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Grand Duchess",
+    "slug": "grand-duchess",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ea/XY_Diantha.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Grand Duke",
+    "slug": "grand-duke",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Guitarist",
     "slug": "guitarist",
     "region": "Universal",
@@ -3350,6 +4260,56 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8b/VSGuitarist_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Guy",
+    "slug": "guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/d3/Colo_Guy.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Gym Challenger",
+    "slug": "gym-challenger",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c4/VSGym_Challenger_Deneb.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Gym Trainer",
+    "slug": "gym-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/swsh12/191_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Hardheaded Girl",
+    "slug": "hardheaded-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Haunted Man",
+    "slug": "haunted-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fd/B2W2_Spirit_Pok%C3%A9star_Red.png",
     "isFullArt": true
   },
   {
@@ -3363,6 +4323,16 @@
     "isFullArt": true
   },
   {
+    "name": "High-Tech Maniac",
+    "slug": "high-tech-maniac",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Hiker",
     "slug": "hiker",
     "region": "Universal",
@@ -3370,6 +4340,146 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sma/SV85_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Hiking Club Member",
+    "slug": "hiking-club-member",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Hiking Girl",
+    "slug": "hiking-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Honeymooners",
+    "slug": "honeymooners",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/11/SM_Sightseers_Saito.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Hooligans",
+    "slug": "hooligans",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4a/Hooligans_TCG.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Hoopster",
+    "slug": "hoopster",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Hunter",
+    "slug": "hunter",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e4/XD_Hunter.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Hyperspace Trainer",
+    "slug": "hyperspace-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Icy Guy",
+    "slug": "icy-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Idol",
+    "slug": "idol",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/70/VSIdol_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Infielder",
+    "slug": "infielder",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Instructor",
+    "slug": "instructor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cc/Scarlet_Violet_Jacq.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Interviewers",
+    "slug": "interviewers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/00/ORAS_Interviewers.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Janitor",
+    "slug": "janitor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a6/VSJanitor_SV.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Jogger",
+    "slug": "jogger",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/1b/VSJogger_ZA.png",
     "isFullArt": true
   },
   {
@@ -3403,6 +4513,26 @@
     "isFullArt": false
   },
   {
+    "name": "Junior Representative",
+    "slug": "junior-representative",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Karate Family",
+    "slug": "karate-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/49/Spr_SM_Black_Belt.png",
+    "isFullArt": true
+  },
+  {
     "name": "Kimono Girl",
     "slug": "kimono-girl",
     "region": "Universal",
@@ -3423,6 +4553,16 @@
     "isFullArt": true
   },
   {
+    "name": "Kruger Family",
+    "slug": "kruger-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Lady",
     "slug": "lady",
     "region": "Universal",
@@ -3430,6 +4570,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sma/SV86_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Lady in Suit",
+    "slug": "lady-in-suit",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/41/Colo_Lady_in_Suit.png",
     "isFullArt": true
   },
   {
@@ -3443,6 +4593,26 @@
     "isFullArt": false
   },
   {
+    "name": "Leader-in-Training",
+    "slug": "leader-in-training",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "League Club",
+    "slug": "league-club",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e0/Blueberry_League_Club.png",
+    "isFullArt": true
+  },
+  {
     "name": "League Staff",
     "slug": "league-staff",
     "region": "Universal",
@@ -3451,6 +4621,206 @@
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh4/153_hires.png",
     "isFullArt": false
+  },
+  {
+    "name": "Linebacker",
+    "slug": "linebacker",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Lone Wolf",
+    "slug": "lone-wolf",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Lumiose Gang Member",
+    "slug": "lumiose-gang-member",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/3f/XY_Punk_Girl.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Lumiose Safety Group",
+    "slug": "lumiose-safety-group",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Madame",
+    "slug": "madame",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/44/VSMadame_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Magician's Apprentice",
+    "slug": "magician-s-apprentice",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Maid",
+    "slug": "maid",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Marchioness",
+    "slug": "marchioness",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/XY_Madame.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Marquis",
+    "slug": "marquis",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7b/XY_Monsieur.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Masked Man",
+    "slug": "masked-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e0/Masked_Man.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Masked Woman",
+    "slug": "masked-woman",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4a/Spr_Masters_Masked_Punk_Girl.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Master & Apprentice",
+    "slug": "master-apprentice",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/02/Spr_SM_Ace_Trainer_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Master Class",
+    "slug": "master-class",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Master Dojo Student",
+    "slug": "master-dojo-student",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b6/VSMaster_Dojo_Student_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Master Mimic",
+    "slug": "master-mimic",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Master Representative",
+    "slug": "master-representative",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Matron",
+    "slug": "matron",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/1d/XD_Fun_Old_Lady.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Mature Couple",
+    "slug": "mature-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "May-December Couple",
+    "slug": "may-december-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Medical Team",
+    "slug": "medical-team",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/55/VSMedical_Team.png",
+    "isFullArt": true
   },
   {
     "name": "Medium",
@@ -3463,6 +4833,46 @@
     "isFullArt": false
   },
   {
+    "name": "Model",
+    "slug": "model",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/78/VSModel_SV.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Monsieur",
+    "slug": "monsieur",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7b/XY_Monsieur.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Movie Star",
+    "slug": "movie-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b5/Black_White_Brycen.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Music Crew",
+    "slug": "music-crew",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e5/VSMusic_Crew.png",
+    "isFullArt": true
+  },
+  {
     "name": "Musician",
     "slug": "musician",
     "region": "Universal",
@@ -3473,6 +4883,76 @@
     "isFullArt": true
   },
   {
+    "name": "Mysterious Sisters",
+    "slug": "mysterious-sisters",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/6c/XY_Mysterious_Sisters.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Mystery Man",
+    "slug": "mystery-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7a/HeartGold_SoulSilver_Eusine.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Myth Trainer",
+    "slug": "myth-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8d/Colo_Eagun.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Navigator",
+    "slug": "navigator",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/de/XD_Navigator.png",
+    "isFullArt": true
+  },
+  {
+    "name": "New Actress",
+    "slug": "new-actress",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "New Star",
+    "slug": "new-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Newscaster",
+    "slug": "newscaster",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/8e/XD_Newscaster.png",
+    "isFullArt": true
+  },
+  {
     "name": "Ninja Boy",
     "slug": "ninja-boy",
     "region": "Universal",
@@ -3480,6 +4960,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/xy11/103_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Novice",
+    "slug": "novice",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
     "isFullArt": false
   },
   {
@@ -3533,6 +5023,46 @@
     "isFullArt": true
   },
   {
+    "name": "Ordinary Guy",
+    "slug": "ordinary-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Ordinary Lady",
+    "slug": "ordinary-lady",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Owner",
+    "slug": "owner",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/d1/XY_Owner.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Painter",
+    "slug": "painter",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Parasol Lady",
     "slug": "parasol-lady",
     "region": "Universal",
@@ -3540,6 +5070,56 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sv4/255_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Passionate Man",
+    "slug": "passionate-man",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Passionate Rider",
+    "slug": "passionate-rider",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Patissier Pair",
+    "slug": "patissier-pair",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/5a/ZA_Tarragon.png",
+    "isFullArt": true
+  },
+  {
+    "name": "PI",
+    "slug": "pi",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/09/VSPI_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Picnic Girl",
+    "slug": "picnic-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
     "isFullArt": true
   },
   {
@@ -3553,6 +5133,56 @@
     "isFullArt": false
   },
   {
+    "name": "Pikachu Fan",
+    "slug": "pikachu-fan",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/17/Pikachu_Fan.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Pilot",
+    "slug": "pilot",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Poison Tongue Boy",
+    "slug": "poison-tongue-boy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Poké Fan",
+    "slug": "poke-fan",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cf/VSPok%C3%A9_Fan_M_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Poké Fan Family",
+    "slug": "poke-fan-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cd/XY_Pok%C3%A9_Fan_Family.png",
+    "isFullArt": true
+  },
+  {
     "name": "Poké Kid",
     "slug": "poke-kid",
     "region": "Universal",
@@ -3560,6 +5190,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh45/70_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Poké Maniac",
+    "slug": "poke-maniac",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/sm11/236_hires.png",
     "isFullArt": true
   },
   {
@@ -3613,6 +5253,26 @@
     "isFullArt": true
   },
   {
+    "name": "Police Officer",
+    "slug": "police-officer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c8/VSPolice_Officer_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Postman",
+    "slug": "postman",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/20/VSPostman.png",
+    "isFullArt": true
+  },
+  {
     "name": "Preschooler",
     "slug": "preschooler",
     "region": "Universal",
@@ -3620,6 +5280,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/1/14/Spr_SM_Preschooler_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Principal",
+    "slug": "principal",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ed/Spr_SM_Veteran_F.png",
     "isFullArt": true
   },
   {
@@ -3631,6 +5301,16 @@
     ],
     "imageUrl": "https://images.pokemontcg.io/xy9/108_hires.png",
     "isFullArt": false
+  },
+  {
+    "name": "Punk Couple",
+    "slug": "punk-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/94/XY_Punk_Couple.png",
+    "isFullArt": true
   },
   {
     "name": "Punk Girl",
@@ -3653,6 +5333,36 @@
     "isFullArt": true
   },
   {
+    "name": "Punk Pair",
+    "slug": "punk-pair",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/13/Spr_SM_Punk_Guy.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Raichu Duo",
+    "slug": "raichu-duo",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rail Staff",
+    "slug": "rail-staff",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a6/VSRail_Staff.png",
+    "isFullArt": true
+  },
+  {
     "name": "Rancher",
     "slug": "rancher",
     "region": "Universal",
@@ -3660,6 +5370,36 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f7/VSRancher_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Ranchers",
+    "slug": "ranchers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/78/VSRanchers_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rangers",
+    "slug": "rangers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/48/XY_Rangers.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Reporter",
+    "slug": "reporter",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2a/VSReporter_BDSP.png",
     "isFullArt": true
   },
   {
@@ -3683,8 +5423,28 @@
     "isFullArt": true
   },
   {
+    "name": "Rider",
+    "slug": "rider",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/45/Battrio_Rider_F.png",
+    "isFullArt": true
+  },
+  {
     "name": "Rising Star",
     "slug": "rising-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/58/Spr_SM_Rising_Star_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rising Star Duo",
+    "slug": "rising-star-duo",
     "region": "Universal",
     "roles": [
       "Trainer Class"
@@ -3703,6 +5463,16 @@
     "isFullArt": true
   },
   {
+    "name": "Roller Boy",
+    "slug": "roller-boy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f6/Colo_Roller_Boy.png",
+    "isFullArt": true
+  },
+  {
     "name": "Roller Skater",
     "slug": "roller-skater",
     "region": "Universal",
@@ -3711,6 +5481,26 @@
     ],
     "imageUrl": "https://images.pokemontcg.io/sm12/235_hires.png",
     "isFullArt": true
+  },
+  {
+    "name": "Rookie",
+    "slug": "rookie",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rotation Girl",
+    "slug": "rotation-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Roughneck",
@@ -3773,6 +5563,16 @@
     "isFullArt": true
   },
   {
+    "name": "Sashay Fan Club",
+    "slug": "sashay-fan-club",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "School Kid",
     "slug": "school-kid",
     "region": "Universal",
@@ -3803,6 +5603,16 @@
     "isFullArt": true
   },
   {
+    "name": "Sci-Fi Maniac",
+    "slug": "sci-fi-maniac",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Scientist",
     "slug": "scientist",
     "region": "Universal",
@@ -3810,6 +5620,56 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4b/VSScientist_SV.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Scuba Diver",
+    "slug": "scuba-diver",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/08/ORAS_Scuba_Diver.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Secret Base Trainer",
+    "slug": "secret-base-trainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a1/ORAS_Ace_Trainer_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Senior Representative",
+    "slug": "senior-representative",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Shady Guy",
+    "slug": "shady-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Shocking Girl",
+    "slug": "shocking-girl",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
     "isFullArt": true
   },
   {
@@ -3833,6 +5693,16 @@
     "isFullArt": true
   },
   {
+    "name": "Sisters in Suffering",
+    "slug": "sisters-in-suffering",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b9/ZA_Lebanne.png",
+    "isFullArt": true
+  },
+  {
     "name": "Skier",
     "slug": "skier",
     "region": "Universal",
@@ -3853,6 +5723,16 @@
     "isFullArt": true
   },
   {
+    "name": "Smasher",
+    "slug": "smasher",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Socialite",
     "slug": "socialite",
     "region": "Universal",
@@ -3860,6 +5740,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/4/44/VSMadame_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Sparring Partners",
+    "slug": "sparring-partners",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/49/Spr_SM_Black_Belt.png",
     "isFullArt": true
   },
   {
@@ -3871,6 +5761,66 @@
     ],
     "imageUrl": null,
     "isFullArt": false
+  },
+  {
+    "name": "Spy",
+    "slug": "spy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Star Actor",
+    "slug": "star-actor",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Steel Spirit",
+    "slug": "steel-spirit",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Street Thug",
+    "slug": "street-thug",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/54/ORAS_Street_Thug.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Striker",
+    "slug": "striker",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Stubborn Boy",
+    "slug": "stubborn-boy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
   },
   {
     "name": "Student",
@@ -3893,6 +5843,16 @@
     "isFullArt": true
   },
   {
+    "name": "Supertrainer",
+    "slug": "supertrainer",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/53/Colo_Supertrainer_m_1.png",
+    "isFullArt": true
+  },
+  {
     "name": "Surfer",
     "slug": "surfer",
     "region": "Universal",
@@ -3910,6 +5870,46 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cf/VSSwimmer_F_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Swimmer Girls",
+    "slug": "swimmer-girls",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4c/Spr_SM_Swimmer_F_yellow.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Swimmers",
+    "slug": "swimmers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fa/SM_Swimmers_TOKIYA.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Swimming Champ",
+    "slug": "swimming-champ",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Swimming Club Member",
+    "slug": "swimming-club-member",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
     "isFullArt": true
   },
   {
@@ -3953,6 +5953,16 @@
     "isFullArt": false
   },
   {
+    "name": "Team Flare Admin",
+    "slug": "team-flare-admin",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4e/VSTeam_Flare_Admin_M.png",
+    "isFullArt": true
+  },
+  {
     "name": "Team Flare Grunt",
     "slug": "team-flare-grunt",
     "region": "Universal",
@@ -3963,6 +5973,16 @@
     "isFullArt": true
   },
   {
+    "name": "Team Flare Nouveau",
+    "slug": "team-flare-nouveau",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a6/Team_Flare_Nouveau.png",
+    "isFullArt": true
+  },
+  {
     "name": "Team Galactic Grunt",
     "slug": "team-galactic-grunt",
     "region": "Universal",
@@ -3970,6 +5990,26 @@
       "Trainer Class"
     ],
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/191/high.webp",
+    "isFullArt": true
+  },
+  {
+    "name": "Team GO Rocket Grunt",
+    "slug": "team-go-rocket-grunt",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/68/GO_Team_GO_Rocket_Grunt_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Team GO Rocket Leader",
+    "slug": "team-go-rocket-leader",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c8/GO_Team_GO_Rocket_Leaders.png",
     "isFullArt": true
   },
   {
@@ -4003,6 +6043,16 @@
     "isFullArt": false
   },
   {
+    "name": "Team Rainbow Rocket Grunt",
+    "slug": "team-rainbow-rocket-grunt",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/34/Rainbow_Rocket_Grunts_Concept.png",
+    "isFullArt": true
+  },
+  {
     "name": "Team Skull Grunt",
     "slug": "team-skull-grunt",
     "region": "Universal",
@@ -4033,6 +6083,96 @@
     "isFullArt": true
   },
   {
+    "name": "Teammates",
+    "slug": "teammates",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://images.pokemontcg.io/xy5/160_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Three Brothers",
+    "slug": "three-brothers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/None.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Three Sisters",
+    "slug": "three-sisters",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Tomboy",
+    "slug": "tomboy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Tourist",
+    "slug": "tourist",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/25/XY_Tourist_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Tourist Couple",
+    "slug": "tourist-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/aa/Spr_SM_Punk_Girl.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Tower Tycoon",
+    "slug": "tower-tycoon",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ef/Emerald_Anabel.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Traveling Guy",
+    "slug": "traveling-guy",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Traveling Lady",
+    "slug": "traveling-lady",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Traveling Merchant",
     "slug": "traveling-merchant",
     "region": "Universal",
@@ -4040,6 +6180,16 @@
       "Trainer Class"
     ],
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4a/084/high.webp",
+    "isFullArt": true
+  },
+  {
+    "name": "Trial Guide",
+    "slug": "trial-guide",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a2/Spr_SM_Trial_Guide_M.png",
     "isFullArt": true
   },
   {
@@ -4073,6 +6223,26 @@
     "isFullArt": true
   },
   {
+    "name": "Twin Brothers",
+    "slug": "twin-brothers",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Twin Sisters",
+    "slug": "twin-sisters",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
     "name": "Twins",
     "slug": "twins",
     "region": "Universal",
@@ -4083,6 +6253,26 @@
     "isFullArt": false
   },
   {
+    "name": "Unique Star",
+    "slug": "unique-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Unstoppable Forces",
+    "slug": "unstoppable-forces",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/93/ZA_Jacinthe.png",
+    "isFullArt": true
+  },
+  {
     "name": "Veteran",
     "slug": "veteran",
     "region": "Universal",
@@ -4090,6 +6280,46 @@
       "Trainer Class"
     ],
     "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fc/VSVeteran_BDSP.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Veteran Duo",
+    "slug": "veteran-duo",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/6e/SM_Veterans_Saito.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Veteran Star",
+    "slug": "veteran-star",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Viscount",
+    "slug": "viscount",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Viscountess",
+    "slug": "viscountess",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/db/XY_Madame.png",
     "isFullArt": true
   },
   {
@@ -4113,6 +6343,46 @@
     "isFullArt": false
   },
   {
+    "name": "Warden",
+    "slug": "warden",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/9/99/Legends_Arceus_Ingo.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Warlord",
+    "slug": "warlord",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/b5/Conquest_All_Warlords.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Warrior",
+    "slug": "warrior",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Winstrate Family",
+    "slug": "winstrate-family",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/06/Winstrate_family_anime.png",
+    "isFullArt": true
+  },
+  {
     "name": "Worker",
     "slug": "worker",
     "region": "Universal",
@@ -4123,6 +6393,46 @@
     "isFullArt": true
   },
   {
+    "name": "World Champion",
+    "slug": "world-champion",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "World Finalist",
+    "slug": "world-finalist",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "World Runner-up",
+    "slug": "world-runner-up",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
+  },
+  {
+    "name": "Young Couple",
+    "slug": "young-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e6/VSYoung_Couple_BDSP.png",
+    "isFullArt": true
+  },
+  {
     "name": "Youngster",
     "slug": "youngster",
     "region": "Universal",
@@ -4130,6 +6440,26 @@
       "Trainer Class"
     ],
     "imageUrl": "https://images.pokemontcg.io/sv1/198_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Youth Athlete",
+    "slug": "youth-athlete",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/5/5d/Spr_SM_Youth_Athlete_M.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Youthful Couple",
+    "slug": "youthful-couple",
+    "region": "Universal",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": null,
     "isFullArt": false
   }
 ]

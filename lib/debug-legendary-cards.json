@@ -1,0 +1,963 @@
+{
+  "Kyogre": [
+    {
+      "id": "ex4-3",
+      "name": "Team Aqua's Kyogre",
+      "rarity": "Rare Holo",
+      "set": "ex4",
+      "hasImage": true,
+      "market": [
+        183.95,
+        70.1
+      ]
+    },
+    {
+      "id": "ex9-6",
+      "name": "Kyogre",
+      "rarity": "Rare Holo",
+      "set": "ex9",
+      "hasImage": true,
+      "market": [
+        70.23,
+        218
+      ]
+    },
+    {
+      "id": "col1-12",
+      "name": "Kyogre",
+      "rarity": "Rare Holo",
+      "set": "col1",
+      "hasImage": true,
+      "market": [
+        42.61,
+        33.29
+      ]
+    },
+    {
+      "id": "np-1",
+      "name": "Kyogre ex",
+      "rarity": "Promo",
+      "set": "np",
+      "hasImage": true,
+      "market": [
+        41.77,
+        250
+      ]
+    },
+    {
+      "id": "ex9-15",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "ex9",
+      "hasImage": true,
+      "market": [
+        20.52,
+        56.43
+      ]
+    },
+    {
+      "id": "dc1-6",
+      "name": "Team Aqua's Kyogre-EX",
+      "rarity": "Rare Ultra",
+      "set": "dc1",
+      "hasImage": true,
+      "market": [
+        503.84
+      ]
+    },
+    {
+      "id": "bw5-26",
+      "name": "Kyogre-EX",
+      "rarity": "Rare Holo EX",
+      "set": "bw5",
+      "hasImage": true,
+      "market": [
+        111.35
+      ]
+    },
+    {
+      "id": "dp6-32",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "dp6",
+      "hasImage": true,
+      "market": [
+        11.96,
+        14.05
+      ]
+    },
+    {
+      "id": "np-37",
+      "name": "Kyogre ex",
+      "rarity": "Promo",
+      "set": "np",
+      "hasImage": true,
+      "market": [
+        94.12
+      ]
+    },
+    {
+      "id": "sm7-46",
+      "name": "Kyogre",
+      "rarity": "Rare Holo",
+      "set": "sm7",
+      "hasImage": true,
+      "market": [
+        2.29,
+        3.7
+      ]
+    },
+    {
+      "id": "sm12-53",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "sm12",
+      "hasImage": true,
+      "market": [
+        0.61,
+        1.12
+      ]
+    },
+    {
+      "id": "xyp-XY41",
+      "name": "Kyogre-EX",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        12.32
+      ]
+    },
+    {
+      "id": "xy5-53",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        1.01,
+        2
+      ]
+    },
+    {
+      "id": "xy5-54",
+      "name": "Kyogre-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        19.22
+      ]
+    },
+    {
+      "id": "xy5-55",
+      "name": "Primal Kyogre-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        60.58
+      ]
+    },
+    {
+      "id": "xyp-XY51",
+      "name": "Kyogre",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        18.93
+      ]
+    },
+    {
+      "id": "hgss3-87",
+      "name": "Kyogre & Groudon LEGEND",
+      "rarity": "LEGEND",
+      "set": "hgss3",
+      "hasImage": true,
+      "market": [
+        208.93
+      ]
+    },
+    {
+      "id": "hgss3-88",
+      "name": "Kyogre & Groudon LEGEND",
+      "rarity": "LEGEND",
+      "set": "hgss3",
+      "hasImage": true,
+      "market": [
+        292
+      ]
+    },
+    {
+      "id": "xy7-96",
+      "name": "Primal Kyogre-EX",
+      "rarity": "Rare Secret",
+      "set": "xy7",
+      "hasImage": true,
+      "market": [
+        438.96
+      ]
+    },
+    {
+      "id": "ex14-95",
+      "name": "Kyogre ex",
+      "rarity": "Rare Holo EX",
+      "set": "ex14",
+      "hasImage": true,
+      "market": [
+        199.5
+      ]
+    },
+    {
+      "id": "ex5-94",
+      "name": "Kyogre ex",
+      "rarity": "Rare Holo EX",
+      "set": "ex5",
+      "hasImage": true,
+      "market": [
+        223.75
+      ]
+    },
+    {
+      "id": "col1-SL6",
+      "name": "Kyogre",
+      "rarity": "Rare Holo",
+      "set": "col1",
+      "hasImage": true,
+      "market": []
+    },
+    {
+      "id": "ex11-112",
+      "name": "Kyogre ★",
+      "rarity": "Rare Holo Star",
+      "set": "ex11",
+      "hasImage": true,
+      "market": []
+    },
+    {
+      "id": "bw5-104",
+      "name": "Kyogre-EX",
+      "rarity": "Rare Ultra",
+      "set": "bw5",
+      "hasImage": true,
+      "market": [
+        318.96
+      ]
+    },
+    {
+      "id": "xy5-132",
+      "name": "Kyogre Spirit Link",
+      "rarity": "Uncommon",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        0.29,
+        0.79
+      ]
+    },
+    {
+      "id": "smp-SM129",
+      "name": "Kyogre",
+      "rarity": "Promo",
+      "set": "smp",
+      "hasImage": true,
+      "market": [
+        33.5
+      ]
+    },
+    {
+      "id": "xy5-148",
+      "name": "Kyogre-EX",
+      "rarity": "Rare Ultra",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        142.91
+      ]
+    },
+    {
+      "id": "xy5-149",
+      "name": "Primal Kyogre-EX",
+      "rarity": "Rare Ultra",
+      "set": "xy5",
+      "hasImage": true,
+      "market": [
+        315.18
+      ]
+    },
+    {
+      "id": "swsh45-21",
+      "name": "Kyogre",
+      "rarity": "Amazing Rare",
+      "set": "swsh45",
+      "hasImage": true,
+      "market": [
+        3.62
+      ]
+    },
+    {
+      "id": "cel25-3",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "cel25",
+      "hasImage": true,
+      "market": [
+        0.38
+      ]
+    },
+    {
+      "id": "swsh12pt5-36",
+      "name": "Kyogre",
+      "rarity": "Rare Holo",
+      "set": "swsh12pt5",
+      "hasImage": true,
+      "market": [
+        0.52,
+        0.29
+      ]
+    },
+    {
+      "id": "swsh12pt5-37",
+      "name": "Kyogre V",
+      "rarity": "Rare Holo V",
+      "set": "swsh12pt5",
+      "hasImage": true,
+      "market": [
+        0.97
+      ]
+    },
+    {
+      "id": "svp-178",
+      "name": "Kyogre ex",
+      "rarity": "Promo",
+      "set": "svp",
+      "hasImage": true,
+      "market": [
+        1.23
+      ]
+    },
+    {
+      "id": "me1-34",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "set": "me1",
+      "hasImage": true,
+      "market": [
+        0.22,
+        0.24
+      ]
+    }
+  ],
+  "Rayquaza": [
+    {
+      "id": "pop1-3",
+      "name": "Rayquaza",
+      "rarity": "Rare",
+      "set": "pop1",
+      "hasImage": true,
+      "market": [
+        73.04,
+        102.67
+      ]
+    },
+    {
+      "id": "ex9-9",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "ex9",
+      "hasImage": true,
+      "market": [
+        112.06,
+        407.34,
+        749.99
+      ]
+    },
+    {
+      "id": "pl3-8",
+      "name": "Rayquaza C",
+      "rarity": "Rare Holo",
+      "set": "pl3",
+      "hasImage": true,
+      "market": [
+        70.51,
+        112.99
+      ]
+    },
+    {
+      "id": "dv1-11",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "dv1",
+      "hasImage": true,
+      "market": [
+        49.09
+      ]
+    },
+    {
+      "id": "ex11-13",
+      "name": "Rayquaza δ",
+      "rarity": "Rare Holo",
+      "set": "ex11",
+      "hasImage": true,
+      "market": [
+        220,
+        240.17
+      ]
+    },
+    {
+      "id": "ex13-16",
+      "name": "Rayquaza δ",
+      "rarity": "Rare Holo",
+      "set": "ex13",
+      "hasImage": true,
+      "market": [
+        283.19,
+        387.49
+      ]
+    },
+    {
+      "id": "col1-20",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "col1",
+      "hasImage": true,
+      "market": [
+        107.19,
+        143.32
+      ]
+    },
+    {
+      "id": "ex8-22",
+      "name": "Rayquaza",
+      "rarity": "Rare",
+      "set": "ex8",
+      "hasImage": true,
+      "market": [
+        26.57,
+        581.92
+      ]
+    },
+    {
+      "id": "dp6-14",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "dp6",
+      "hasImage": true,
+      "market": [
+        144.33,
+        61.5
+      ]
+    },
+    {
+      "id": "ex13-26",
+      "name": "Rayquaza δ",
+      "rarity": "Rare",
+      "set": "ex13",
+      "hasImage": true,
+      "market": [
+        74.16,
+        290.32
+      ]
+    },
+    {
+      "id": "swshp-SWSH029",
+      "name": "Rayquaza",
+      "rarity": "Promo",
+      "set": "swshp",
+      "hasImage": true,
+      "market": [
+        6.98
+      ]
+    },
+    {
+      "id": "np-39",
+      "name": "Rayquaza ex",
+      "rarity": "Promo",
+      "set": "np",
+      "hasImage": true,
+      "market": [
+        517.27
+      ]
+    },
+    {
+      "id": "dpp-DP47",
+      "name": "Rayquaza C LV.X",
+      "rarity": "Promo",
+      "set": "dpp",
+      "hasImage": true,
+      "market": [
+        389.99
+      ]
+    },
+    {
+      "id": "bwp-BW47",
+      "name": "Rayquaza-EX",
+      "rarity": "Promo",
+      "set": "bwp",
+      "hasImage": true,
+      "market": [
+        37.8
+      ]
+    },
+    {
+      "id": "xy6-60",
+      "name": "Rayquaza-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        27.87
+      ]
+    },
+    {
+      "id": "xy6-61",
+      "name": "M Rayquaza-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        134.4
+      ]
+    },
+    {
+      "id": "sm35-56",
+      "name": "Shining Rayquaza",
+      "rarity": "Rare Shining",
+      "set": "sm35",
+      "hasImage": true,
+      "market": [
+        143.28
+      ]
+    },
+    {
+      "id": "xyp-XY64",
+      "name": "Rayquaza",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        45.55
+      ]
+    },
+    {
+      "id": "xyp-XY66",
+      "name": "Rayquaza-EX",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        61.71
+      ]
+    },
+    {
+      "id": "xyp-XY69",
+      "name": "Rayquaza-EX",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        171.39
+      ]
+    },
+    {
+      "id": "xy6-75",
+      "name": "Rayquaza-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        37.27
+      ]
+    },
+    {
+      "id": "xy6-76",
+      "name": "M Rayquaza-EX",
+      "rarity": "Rare Holo EX",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        88.26
+      ]
+    },
+    {
+      "id": "xyp-XY73",
+      "name": "Rayquaza-EX",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        40.62
+      ]
+    },
+    {
+      "id": "bw6-85",
+      "name": "Rayquaza-EX",
+      "rarity": "Rare Holo EX",
+      "set": "bw6",
+      "hasImage": true,
+      "market": [
+        37.49
+      ]
+    },
+    {
+      "id": "bw11-93",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "bw11",
+      "hasImage": true,
+      "market": [
+        43.94,
+        76.05
+      ]
+    },
+    {
+      "id": "hgss3-89",
+      "name": "Rayquaza & Deoxys LEGEND",
+      "rarity": "LEGEND",
+      "set": "hgss3",
+      "hasImage": true,
+      "market": [
+        226.01
+      ]
+    },
+    {
+      "id": "xy6-87",
+      "name": "Rayquaza Spirit Link",
+      "rarity": "Uncommon",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        0.48,
+        11.85
+      ]
+    },
+    {
+      "id": "hgss3-90",
+      "name": "Rayquaza & Deoxys LEGEND",
+      "rarity": "LEGEND",
+      "set": "hgss3",
+      "hasImage": true,
+      "market": [
+        264.3
+      ]
+    },
+    {
+      "id": "ex3-97",
+      "name": "Rayquaza ex",
+      "rarity": "Rare Holo EX",
+      "set": "ex3",
+      "hasImage": true,
+      "market": [
+        484.98
+      ]
+    },
+    {
+      "id": "xy7-98",
+      "name": "M Rayquaza-EX",
+      "rarity": "Rare Secret",
+      "set": "xy7",
+      "hasImage": true,
+      "market": [
+        1069.91
+      ]
+    },
+    {
+      "id": "ex8-102",
+      "name": "Rayquaza ex",
+      "rarity": "Rare Holo EX",
+      "set": "ex8",
+      "hasImage": true,
+      "market": [
+        999
+      ]
+    },
+    {
+      "id": "ex8-107",
+      "name": "Rayquaza ★",
+      "rarity": "Rare Holo Star",
+      "set": "ex8",
+      "hasImage": true,
+      "market": [
+        2500.99
+      ]
+    },
+    {
+      "id": "col1-SL10",
+      "name": "Rayquaza",
+      "rarity": "Rare Holo",
+      "set": "col1",
+      "hasImage": true,
+      "market": [
+        628.79
+      ]
+    },
+    {
+      "id": "sm2-106",
+      "name": "Rayquaza",
+      "rarity": "Rare",
+      "set": "sm2",
+      "hasImage": true,
+      "market": [
+        2.14,
+        13.49
+      ]
+    },
+    {
+      "id": "xy6-104",
+      "name": "Rayquaza-EX",
+      "rarity": "Rare Ultra",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        181.33
+      ]
+    },
+    {
+      "id": "xy6-105",
+      "name": "M Rayquaza-EX",
+      "rarity": "Rare Ultra",
+      "set": "xy6",
+      "hasImage": true,
+      "market": [
+        434.72
+      ]
+    },
+    {
+      "id": "ex15-97",
+      "name": "Rayquaza ex δ",
+      "rarity": "Rare Holo EX",
+      "set": "ex15",
+      "hasImage": true,
+      "market": [
+        490
+      ]
+    },
+    {
+      "id": "sm7-109",
+      "name": "Rayquaza-GX",
+      "rarity": "Rare Holo GX",
+      "set": "sm7",
+      "hasImage": true,
+      "market": [
+        39.27
+      ]
+    },
+    {
+      "id": "bw6-123",
+      "name": "Rayquaza-EX",
+      "rarity": "Rare Ultra",
+      "set": "bw6",
+      "hasImage": true,
+      "market": [
+        219.47
+      ]
+    },
+    {
+      "id": "bw6-128",
+      "name": "Rayquaza",
+      "rarity": "Rare Secret",
+      "set": "bw6",
+      "hasImage": true,
+      "market": [
+        659.95
+      ]
+    },
+    {
+      "id": "swsh4-138",
+      "name": "Rayquaza",
+      "rarity": "Amazing Rare",
+      "set": "swsh4",
+      "hasImage": true,
+      "market": [
+        25.51
+      ]
+    },
+    {
+      "id": "xyp-XY141",
+      "name": "Rayquaza",
+      "rarity": "Promo",
+      "set": "xyp",
+      "hasImage": true,
+      "market": [
+        41.56
+      ]
+    },
+    {
+      "id": "pl3-146",
+      "name": "Rayquaza C LV.X",
+      "rarity": "Rare Holo LV.X",
+      "set": "pl3",
+      "hasImage": true,
+      "market": [
+        218.66
+      ]
+    },
+    {
+      "id": "sm7-160",
+      "name": "Rayquaza-GX",
+      "rarity": "Rare Ultra",
+      "set": "sm7",
+      "hasImage": true,
+      "market": [
+        121.33
+      ]
+    },
+    {
+      "id": "sm7-177",
+      "name": "Rayquaza-GX",
+      "rarity": "Rare Rainbow",
+      "set": "sm7",
+      "hasImage": true,
+      "market": [
+        301.05
+      ]
+    },
+    {
+      "id": "sm7-177a",
+      "name": "Rayquaza-GX",
+      "rarity": "Rare Ultra",
+      "set": "sm7",
+      "hasImage": true,
+      "market": []
+    },
+    {
+      "id": "swsh7-111",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Holo VMAX",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        14.44
+      ]
+    },
+    {
+      "id": "swsh7-110",
+      "name": "Rayquaza V",
+      "rarity": "Rare Holo V",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        2.59
+      ]
+    },
+    {
+      "id": "swsh7-193",
+      "name": "Rayquaza V",
+      "rarity": "Rare Ultra",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        90.88
+      ]
+    },
+    {
+      "id": "swsh7-194",
+      "name": "Rayquaza V",
+      "rarity": "Rare Ultra",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        511.7
+      ]
+    },
+    {
+      "id": "swsh7-218",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Rainbow",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        1253.94
+      ]
+    },
+    {
+      "id": "swsh7-217",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Rainbow",
+      "set": "swsh7",
+      "hasImage": true,
+      "market": [
+        127.76
+      ]
+    },
+    {
+      "id": "cel25c-76_A",
+      "name": "M Rayquaza-EX",
+      "rarity": "Classic Collection",
+      "set": "cel25c",
+      "hasImage": true,
+      "market": [
+        42.21
+      ]
+    },
+    {
+      "id": "swshp-SWSH147",
+      "name": "Rayquaza V",
+      "rarity": "Promo",
+      "set": "swshp",
+      "hasImage": true,
+      "market": [
+        29.95
+      ]
+    },
+    {
+      "id": "swsh12tg-TG20",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Holo VMAX",
+      "set": "swsh12tg",
+      "hasImage": true,
+      "market": [
+        203.95
+      ]
+    },
+    {
+      "id": "swsh12tg-TG29",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Secret",
+      "set": "swsh12tg",
+      "hasImage": true,
+      "market": [
+        34.3
+      ]
+    },
+    {
+      "id": "swsh12pt5-100",
+      "name": "Rayquaza V",
+      "rarity": "Rare Holo V",
+      "set": "swsh12pt5",
+      "hasImage": true,
+      "market": [
+        2.28
+      ]
+    },
+    {
+      "id": "swsh12pt5-101",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Holo VMAX",
+      "set": "swsh12pt5",
+      "hasImage": true,
+      "market": [
+        10.8
+      ]
+    },
+    {
+      "id": "swsh12pt5-102",
+      "name": "Rayquaza VMAX",
+      "rarity": "Rare Holo VMAX",
+      "set": "swsh12pt5",
+      "hasImage": true,
+      "market": [
+        13.24
+      ]
+    },
+    {
+      "id": "me2pt5-153",
+      "name": "Rayquaza",
+      "rarity": "Rare",
+      "set": "me2pt5",
+      "hasImage": true,
+      "market": []
+    }
+  ]
+}

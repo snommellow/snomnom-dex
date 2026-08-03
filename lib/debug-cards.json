@@ -1,60 +1,68 @@
 {
-  "ptcgCount": 2250,
+  "ptcgCount": 2806,
   "tcgdexTotalCount": 23444,
   "pocketSupporterCount": 1288,
-  "totalExtractedNames": 1176,
-  "missingCount": 866,
+  "totalExtractedNames": 1315,
+  "missingCount": 1005,
   "missing": [
     {
       "name": "professor",
-      "count": 49
-    },
-    {
-      "name": "potion",
-      "count": 26
-    },
-    {
-      "name": "switch",
-      "count": 24
+      "count": 57
     },
     {
       "name": "team rocket",
-      "count": 23
+      "count": 52
+    },
+    {
+      "name": "potion",
+      "count": 27
+    },
+    {
+      "name": "switch",
+      "count": 27
     },
     {
       "name": "boss",
-      "count": 23
-    },
-    {
-      "name": "poké ball",
-      "count": 20
+      "count": 26
     },
     {
       "name": "rare candy",
-      "count": 19
-    },
-    {
-      "name": "energy switch",
-      "count": 19
+      "count": 22
     },
     {
       "name": "judge",
+      "count": 22
+    },
+    {
+      "name": "poké ball",
+      "count": 21
+    },
+    {
+      "name": "energy switch",
+      "count": 21
+    },
+    {
+      "name": "great ball",
       "count": 18
     },
     {
       "name": "pokémon center lady",
-      "count": 17
+      "count": 18
     },
     {
-      "name": "great ball",
-      "count": 16
+      "name": "ultra ball",
+      "count": 18
     },
     {
       "name": "energy search",
-      "count": 16
+      "count": 17
     },
     {
       "name": "pokémon fan club",
+      "count": 15
+    },
+    {
+      "name": "energy retrieval",
       "count": 15
     },
     {
@@ -62,24 +70,16 @@
       "count": 14
     },
     {
-      "name": "ultra ball",
-      "count": 14
-    },
-    {
-      "name": "energy retrieval",
-      "count": 13
-    },
-    {
       "name": "super scoop up",
       "count": 13
     },
     {
-      "name": "pokémon catcher",
-      "count": 10
+      "name": "crushing hammer",
+      "count": 11
     },
     {
-      "name": "crushing hammer",
-      "count": 9
+      "name": "pokémon catcher",
+      "count": 11
     },
     {
       "name": "full heal",
@@ -98,11 +98,27 @@
       "count": 8
     },
     {
+      "name": "pokégear 3.0",
+      "count": 8
+    },
+    {
+      "name": "enhanced hammer",
+      "count": 8
+    },
+    {
       "name": "gym badge",
       "count": 8
     },
     {
       "name": "gym trainer",
+      "count": 8
+    },
+    {
+      "name": "paldean student",
+      "count": 8
+    },
+    {
+      "name": "drayton",
       "count": 8
     },
     {
@@ -118,7 +134,7 @@
       "count": 7
     },
     {
-      "name": "pokégear 3.0",
+      "name": "master ball",
       "count": 7
     },
     {
@@ -138,6 +154,10 @@
       "count": 6
     },
     {
+      "name": "energy recycler",
+      "count": 6
+    },
+    {
       "name": "dual ball",
       "count": 6
     },
@@ -146,19 +166,23 @@
       "count": 6
     },
     {
-      "name": "master ball",
-      "count": 6
-    },
-    {
       "name": "pokémon communication",
       "count": 6
     },
     {
-      "name": "enhanced hammer",
+      "name": "max potion",
       "count": 6
     },
     {
-      "name": "max potion",
+      "name": "tool scrapper",
+      "count": 6
+    },
+    {
+      "name": "counter gain",
+      "count": 6
+    },
+    {
+      "name": "cook",
       "count": 6
     },
     {
@@ -176,6 +200,18 @@
     {
       "name": "miss fortune sisters",
       "count": 6
+    },
+    {
+      "name": "ciphermaniac",
+      "count": 6
+    },
+    {
+      "name": "explorer",
+      "count": 6
+    },
+    {
+      "name": "emcee",
+      "count": 5
     },
     {
       "name": "claw fossil",
@@ -202,6 +238,10 @@
       "count": 5
     },
     {
+      "name": "super potion",
+      "count": 5
+    },
+    {
       "name": "pokémon reversal",
       "count": 5
     },
@@ -218,6 +258,10 @@
       "count": 5
     },
     {
+      "name": "nest ball",
+      "count": 5
+    },
+    {
       "name": "apricorn maker",
       "count": 5
     },
@@ -226,7 +270,11 @@
       "count": 5
     },
     {
-      "name": "cook",
+      "name": "air balloon",
+      "count": 5
+    },
+    {
+      "name": "buddy-buddy poffin",
       "count": 5
     },
     {
@@ -243,10 +291,6 @@
     },
     {
       "name": "devolution spray",
-      "count": 4
-    },
-    {
-      "name": "energy recycler",
       "count": 4
     },
     {
@@ -294,10 +338,6 @@
       "count": 4
     },
     {
-      "name": "super potion",
-      "count": 4
-    },
-    {
       "name": "lady outing",
       "count": 4
     },
@@ -314,6 +354,10 @@
       "count": 4
     },
     {
+      "name": "counter catcher",
+      "count": 4
+    },
+    {
       "name": "fossil researcher",
       "count": 4
     },
@@ -327,10 +371,6 @@
     },
     {
       "name": "handiwork",
-      "count": 4
-    },
-    {
-      "name": "nest ball",
       "count": 4
     },
     {
@@ -410,11 +450,39 @@
       "count": 4
     },
     {
-      "name": "paldean student",
+      "name": "caretaker",
       "count": 4
     },
     {
-      "name": "drayton",
+      "name": "night stretcher",
+      "count": 4
+    },
+    {
+      "name": "glass trumpet",
+      "count": 4
+    },
+    {
+      "name": "tyme",
+      "count": 4
+    },
+    {
+      "name": "friends in paldea",
+      "count": 4
+    },
+    {
+      "name": "anthea & concordia",
+      "count": 4
+    },
+    {
+      "name": "emma",
+      "count": 4
+    },
+    {
+      "name": "philippe",
+      "count": 4
+    },
+    {
+      "name": "rust syndicate grunt",
       "count": 4
     },
     {
@@ -450,10 +518,6 @@
       "count": 3
     },
     {
-      "name": "emcee",
-      "count": 3
-    },
-    {
       "name": "defender",
       "count": 3
     },
@@ -482,11 +546,23 @@
       "count": 3
     },
     {
+      "name": "dusk ball",
+      "count": 3
+    },
+    {
       "name": "buffer piece",
       "count": 3
     },
     {
       "name": "memory berry",
+      "count": 3
+    },
+    {
+      "name": "sacred ash",
+      "count": 3
+    },
+    {
+      "name": "scoop up cyclone",
       "count": 3
     },
     {
@@ -511,10 +587,6 @@
     },
     {
       "name": "beast ring",
-      "count": 3
-    },
-    {
-      "name": "tool scrapper",
       "count": 3
     },
     {
@@ -543,6 +615,10 @@
     },
     {
       "name": "rescue stretcher",
+      "count": 3
+    },
+    {
+      "name": "hero",
       "count": 3
     },
     {
@@ -578,6 +654,54 @@
       "count": 3
     },
     {
+      "name": "artazon",
+      "count": 3
+    },
+    {
+      "name": "earthen vessel",
+      "count": 3
+    },
+    {
+      "name": "rescue board",
+      "count": 3
+    },
+    {
+      "name": "jamming tower",
+      "count": 3
+    },
+    {
+      "name": "area zero underdepths",
+      "count": 3
+    },
+    {
+      "name": "transceiver",
+      "count": 3
+    },
+    {
+      "name": "fighting gong",
+      "count": 3
+    },
+    {
+      "name": "forest of vitality",
+      "count": 3
+    },
+    {
+      "name": "mega signal",
+      "count": 3
+    },
+    {
+      "name": "mystery garden",
+      "count": 3
+    },
+    {
+      "name": "premium power pro",
+      "count": 3
+    },
+    {
+      "name": "poké pad",
+      "count": 3
+    },
+    {
       "name": "bill’s maintenance",
       "count": 3
     },
@@ -603,14 +727,6 @@
     },
     {
       "name": "sabrina’s suggestion",
-      "count": 3
-    },
-    {
-      "name": "ciphermaniac",
-      "count": 3
-    },
-    {
-      "name": "explorer",
       "count": 3
     },
     {
@@ -742,6 +858,10 @@
       "count": 2
     },
     {
+      "name": "lucky helmet",
+      "count": 2
+    },
+    {
       "name": "the boss",
       "count": 2
     },
@@ -767,10 +887,6 @@
     },
     {
       "name": "magnetic storm",
-      "count": 2
-    },
-    {
-      "name": "dusk ball",
       "count": 2
     },
     {
@@ -870,6 +986,10 @@
       "count": 2
     },
     {
+      "name": "venture bomb",
+      "count": 2
+    },
+    {
       "name": "holon lass",
       "count": 2
     },
@@ -902,10 +1022,6 @@
       "count": 2
     },
     {
-      "name": "counter catcher",
-      "count": 2
-    },
-    {
       "name": "hooligans jim & cas",
       "count": 2
     },
@@ -927,6 +1043,10 @@
     },
     {
       "name": "felicity",
+      "count": 2
+    },
+    {
+      "name": "leftovers",
       "count": 2
     },
     {
@@ -998,6 +1118,10 @@
       "count": 2
     },
     {
+      "name": "repel",
+      "count": 2
+    },
+    {
       "name": "town map",
       "count": 2
     },
@@ -1030,6 +1154,10 @@
       "count": 2
     },
     {
+      "name": "scramble switch",
+      "count": 2
+    },
+    {
       "name": "hustle belt",
       "count": 2
     },
@@ -1055,14 +1183,6 @@
     },
     {
       "name": "dan",
-      "count": 2
-    },
-    {
-      "name": "hero",
-      "count": 2
-    },
-    {
-      "name": "air balloon",
       "count": 2
     },
     {
@@ -1111,10 +1231,6 @@
     },
     {
       "name": "ordinary rod",
-      "count": 2
-    },
-    {
-      "name": "counter gain",
       "count": 2
     },
     {
@@ -1322,7 +1438,155 @@
       "count": 2
     },
     {
-      "name": "artazon",
+      "name": "beach court",
+      "count": 2
+    },
+    {
+      "name": "electric generator",
+      "count": 2
+    },
+    {
+      "name": "bravery charm",
+      "count": 2
+    },
+    {
+      "name": "paradise resort",
+      "count": 2
+    },
+    {
+      "name": "ancient booster energy capsule",
+      "count": 2
+    },
+    {
+      "name": "future booster energy capsule",
+      "count": 2
+    },
+    {
+      "name": "luxurious cape",
+      "count": 2
+    },
+    {
+      "name": "techno radar",
+      "count": 2
+    },
+    {
+      "name": "maximum belt",
+      "count": 2
+    },
+    {
+      "name": "prime catcher",
+      "count": 2
+    },
+    {
+      "name": "bug catching set",
+      "count": 2
+    },
+    {
+      "name": "festival grounds",
+      "count": 2
+    },
+    {
+      "name": "ogre",
+      "count": 2
+    },
+    {
+      "name": "binding mochi",
+      "count": 2
+    },
+    {
+      "name": "powerglass",
+      "count": 2
+    },
+    {
+      "name": "antique cover fossil",
+      "count": 2
+    },
+    {
+      "name": "sparkling crystal",
+      "count": 2
+    },
+    {
+      "name": "gravity mountain",
+      "count": 2
+    },
+    {
+      "name": "billy & o'nare",
+      "count": 2
+    },
+    {
+      "name": "billy",
+      "count": 2
+    },
+    {
+      "name": "o'nare",
+      "count": 2
+    },
+    {
+      "name": "levincia",
+      "count": 2
+    },
+    {
+      "name": "factory",
+      "count": 2
+    },
+    {
+      "name": "watchtower",
+      "count": 2
+    },
+    {
+      "name": "brave bangle",
+      "count": 2
+    },
+    {
+      "name": "iron defender",
+      "count": 2
+    },
+    {
+      "name": "surfing beach",
+      "count": 2
+    },
+    {
+      "name": "battle cage",
+      "count": 2
+    },
+    {
+      "name": "blowtorch",
+      "count": 2
+    },
+    {
+      "name": "jumbo ice cream",
+      "count": 2
+    },
+    {
+      "name": "punk helmet",
+      "count": 2
+    },
+    {
+      "name": "sacred charm",
+      "count": 2
+    },
+    {
+      "name": "wondrous patch",
+      "count": 2
+    },
+    {
+      "name": "lumiose city",
+      "count": 2
+    },
+    {
+      "name": "prism tower",
+      "count": 2
+    },
+    {
+      "name": "special red card",
+      "count": 2
+    },
+    {
+      "name": "dark bell",
+      "count": 2
+    },
+    {
+      "name": "tremendous bomb",
       "count": 2
     },
     {
@@ -1342,39 +1606,11 @@
       "count": 2
     },
     {
-      "name": "emma",
-      "count": 2
-    },
-    {
-      "name": "philippe",
-      "count": 2
-    },
-    {
-      "name": "rust syndicate grunt",
-      "count": 2
-    },
-    {
-      "name": "friends in paldea",
-      "count": 2
-    },
-    {
-      "name": "tyme",
-      "count": 2
-    },
-    {
-      "name": "caretaker",
-      "count": 2
-    },
-    {
       "name": "steven’s resolve",
       "count": 2
     },
     {
       "name": "green’s exploration",
-      "count": 2
-    },
-    {
-      "name": "anthea & concordia",
       "count": 2
     },
     {
@@ -1519,10 +1755,6 @@
     },
     {
       "name": "legend box",
-      "count": 1
-    },
-    {
-      "name": "lucky helmet",
       "count": 1
     },
     {
@@ -1714,10 +1946,6 @@
       "count": 1
     },
     {
-      "name": "sacred ash",
-      "count": 1
-    },
-    {
       "name": "holon fossil",
       "count": 1
     },
@@ -1727,10 +1955,6 @@
     },
     {
       "name": "gallade spirit link",
-      "count": 1
-    },
-    {
-      "name": "scoop up cyclone",
       "count": 1
     },
     {
@@ -1891,10 +2115,6 @@
     },
     {
       "name": "super energy retrieval",
-      "count": 1
-    },
-    {
-      "name": "venture bomb",
       "count": 1
     },
     {
@@ -2226,10 +2446,6 @@
       "count": 1
     },
     {
-      "name": "leftovers",
-      "count": 1
-    },
-    {
       "name": "moonlight stadium",
       "count": 1
     },
@@ -2546,10 +2762,6 @@
       "count": 1
     },
     {
-      "name": "repel",
-      "count": 1
-    },
-    {
       "name": "buff padding",
       "count": 1
     },
@@ -2587,10 +2799,6 @@
     },
     {
       "name": "dowsing machine",
-      "count": 1
-    },
-    {
-      "name": "scramble switch",
       "count": 1
     },
     {
@@ -3334,15 +3542,7 @@
       "count": 1
     },
     {
-      "name": "beach court",
-      "count": 1
-    },
-    {
       "name": "defiance band",
-      "count": 1
-    },
-    {
-      "name": "electric generator",
       "count": 1
     },
     {
@@ -3355,10 +3555,6 @@
     },
     {
       "name": "rock chestplate",
-      "count": 1
-    },
-    {
-      "name": "bravery charm",
       "count": 1
     },
     {
@@ -3399,6 +3595,378 @@
     },
     {
       "name": "town store",
+      "count": 1
+    },
+    {
+      "name": "cycling road",
+      "count": 1
+    },
+    {
+      "name": "grabber",
+      "count": 1
+    },
+    {
+      "name": "antique dome fossil",
+      "count": 1
+    },
+    {
+      "name": "antique helix fossil",
+      "count": 1
+    },
+    {
+      "name": "energy sticker",
+      "count": 1
+    },
+    {
+      "name": "protective goggles",
+      "count": 1
+    },
+    {
+      "name": "rigid band",
+      "count": 1
+    },
+    {
+      "name": "antique old amber",
+      "count": 1
+    },
+    {
+      "name": "big air balloon",
+      "count": 1
+    },
+    {
+      "name": "cursed duster",
+      "count": 1
+    },
+    {
+      "name": "defiance vest",
+      "count": 1
+    },
+    {
+      "name": "snorlax doll",
+      "count": 1
+    },
+    {
+      "name": "technical machine: blindside",
+      "count": 1
+    },
+    {
+      "name": "technical machine: devolution",
+      "count": 1
+    },
+    {
+      "name": "technical machine: evolution",
+      "count": 1
+    },
+    {
+      "name": "technical machine: turbo energize",
+      "count": 1
+    },
+    {
+      "name": "technical machine: crisis punch",
+      "count": 1
+    },
+    {
+      "name": "moonlit hill",
+      "count": 1
+    },
+    {
+      "name": "awakening drum",
+      "count": 1
+    },
+    {
+      "name": "boxed order",
+      "count": 1
+    },
+    {
+      "name": "full metal lab",
+      "count": 1
+    },
+    {
+      "name": "hand trimmer",
+      "count": 1
+    },
+    {
+      "name": "heavy baton",
+      "count": 1
+    },
+    {
+      "name": "perilous jungle",
+      "count": 1
+    },
+    {
+      "name": "reboot pod",
+      "count": 1
+    },
+    {
+      "name": "accompanying flute",
+      "count": 1
+    },
+    {
+      "name": "community center",
+      "count": 1
+    },
+    {
+      "name": "handheld fan",
+      "count": 1
+    },
+    {
+      "name": "hyper aroma",
+      "count": 1
+    },
+    {
+      "name": "love ball",
+      "count": 1
+    },
+    {
+      "name": "secret box",
+      "count": 1
+    },
+    {
+      "name": "survival brace",
+      "count": 1
+    },
+    {
+      "name": "unfair stamp",
+      "count": 1
+    },
+    {
+      "name": "academy at night",
+      "count": 1
+    },
+    {
+      "name": "dangerous laser",
+      "count": 1
+    },
+    {
+      "name": "neutralization zone",
+      "count": 1
+    },
+    {
+      "name": "poké vital a",
+      "count": 1
+    },
+    {
+      "name": "antique root fossil",
+      "count": 1
+    },
+    {
+      "name": "deluxe bomb",
+      "count": 1
+    },
+    {
+      "name": "grand tree",
+      "count": 1
+    },
+    {
+      "name": "gravity gemstone",
+      "count": 1
+    },
+    {
+      "name": "occa berry",
+      "count": 1
+    },
+    {
+      "name": "payapa berry",
+      "count": 1
+    },
+    {
+      "name": "amulet of hope",
+      "count": 1
+    },
+    {
+      "name": "babiri berry",
+      "count": 1
+    },
+    {
+      "name": "brilliant blender",
+      "count": 1
+    },
+    {
+      "name": "call bell",
+      "count": 1
+    },
+    {
+      "name": "chill teaser toy",
+      "count": 1
+    },
+    {
+      "name": "colbur berry",
+      "count": 1
+    },
+    {
+      "name": "deduction kit",
+      "count": 1
+    },
+    {
+      "name": "dragon elixir",
+      "count": 1
+    },
+    {
+      "name": "energy search pro",
+      "count": 1
+    },
+    {
+      "name": "lively stadium",
+      "count": 1
+    },
+    {
+      "name": "meddling memo",
+      "count": 1
+    },
+    {
+      "name": "megaton blower",
+      "count": 1
+    },
+    {
+      "name": "miracle headset",
+      "count": 1
+    },
+    {
+      "name": "passho berry",
+      "count": 1
+    },
+    {
+      "name": "precious trolley",
+      "count": 1
+    },
+    {
+      "name": "technical machine: fluorite",
+      "count": 1
+    },
+    {
+      "name": "tera orb",
+      "count": 1
+    },
+    {
+      "name": "haban berry",
+      "count": 1
+    },
+    {
+      "name": "max rod",
+      "count": 1
+    },
+    {
+      "name": "roto-stick",
+      "count": 1
+    },
+    {
+      "name": "treasure tracker",
+      "count": 1
+    },
+    {
+      "name": "postwick",
+      "count": 1
+    },
+    {
+      "name": "redeemable ticket",
+      "count": 1
+    },
+    {
+      "name": "granite cave",
+      "count": 1
+    },
+    {
+      "name": "spikemuth gym",
+      "count": 1
+    },
+    {
+      "name": "bother-bot",
+      "count": 1
+    },
+    {
+      "name": "tm machine",
+      "count": 1
+    },
+    {
+      "name": "antique plume fossil",
+      "count": 1
+    },
+    {
+      "name": "energy coin",
+      "count": 1
+    },
+    {
+      "name": "risky ruins",
+      "count": 1
+    },
+    {
+      "name": "strange timepiece",
+      "count": 1
+    },
+    {
+      "name": "dizzying valley",
+      "count": 1
+    },
+    {
+      "name": "hypnotizer",
+      "count": 1
+    },
+    {
+      "name": "thick scale",
+      "count": 1
+    },
+    {
+      "name": "light ball",
+      "count": 1
+    },
+    {
+      "name": "nighttime mine",
+      "count": 1
+    },
+    {
+      "name": "antique jaw fossil",
+      "count": 1
+    },
+    {
+      "name": "antique sail fossil",
+      "count": 1
+    },
+    {
+      "name": "core memory",
+      "count": 1
+    },
+    {
+      "name": "energy swatter",
+      "count": 1
+    },
+    {
+      "name": "hole-digging shovel",
+      "count": 1
+    },
+    {
+      "name": "lumiose galette",
+      "count": 1
+    },
+    {
+      "name": "adversity policy",
+      "count": 1
+    },
+    {
+      "name": "ange floette",
+      "count": 1
+    },
+    {
+      "name": "great haul net",
+      "count": 1
+    },
+    {
+      "name": "transformation tome",
+      "count": 1
+    },
+    {
+      "name": "antique armor fossil",
+      "count": 1
+    },
+    {
+      "name": "antique skull fossil",
+      "count": 1
+    },
+    {
+      "name": "backtrack badge",
+      "count": 1
+    },
+    {
+      "name": "fossil quarry",
       "count": 1
     },
     {
@@ -3451,18 +4019,6 @@
     },
     {
       "name": "professor oak’s new theory",
-      "count": 1
-    },
-    {
-      "name": "billy & o'nare",
-      "count": 1
-    },
-    {
-      "name": "billy",
-      "count": 1
-    },
-    {
-      "name": "o'nare",
       "count": 1
     },
     {

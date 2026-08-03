@@ -203,6 +203,7 @@ assignRole("Professor", [
   "Professor Oak", "Professor Elm", "Professor Birch", "Professor Rowan", "Professor Juniper",
   "Professor Sycamore", "Professor Kukui", "Professor Burnet", "Professor Cozmo", "Professor Magnolia",
   "Professor Sada", "Professor Turo", "Professor Laventon", "Cedric Juniper", "Samson Oak",
+  "Professor Ivy", "Professor Willow",
 ]);
 assignRole("Team Leader", [
   "Archie", "Maxie", "Cyrus", "Ghetsis", "Lysandre", "Guzma", "Rose", "Giacomo", "Mela", "Atticus", "Ortega", "Eri",
@@ -212,6 +213,9 @@ assignRole("Team Admin", [
   "Ariana", "Proton", "Petrel", "Archer", "Mars", "Jupiter", "Saturn", "Charon",
   "N", "Colress", "Zinnia", "Xerosic", "Plumeria", "Lusamine", "Faba", "Wicke", "Oleana",
   "Cassiopeia", "Penny", "Sordward", "Shielbert", "Emma",
+  "Domino", "Matt", "Shelly", "Tabitha", "Courtney",
+  "Zinzolin", "Rood", "Gorm", "Bronius", "Ryoku",
+  "Aliana", "Celosia", "Bryony", "Mable",
 ]);
 assignRole("Kahuna", ["Hala", "Olivia", "Nanu", "Hapu"]);
 assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili", "Molayne"]);
@@ -322,6 +326,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Janine", searchNames: ["Janine"], special: true },
   { name: "Jessie", searchNames: ["Jessie"], special: true },
   { name: "James", searchNames: ["James"], special: true },
+  // Domino ("Agent 009"): a named Team Rocket agent from Pokémon Yellow.
+  { name: "Domino", searchNames: ["Domino"], special: true },
+  { name: "Professor Ivy", searchNames: ["Professor Ivy", "Ivy"], special: true },
   // Johto (Gen 2) named characters. Bruno, Koga, and Lance are NOT repeated here — they're the
   // same people already listed above, canonically reappearing as Johto's Elite Four (Bruno,
   // Koga) and Champion (Lance).
@@ -371,6 +378,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Professor Birch", searchNames: ["Professor Birch", "Birch"], special: true, region: "Hoenn" },
   { name: "Archie", searchNames: ["Archie"], special: true, region: "Hoenn" },
   { name: "Maxie", searchNames: ["Maxie"], special: true, region: "Hoenn" },
+  { name: "Matt", searchNames: ["Matt"], special: true, region: "Hoenn" },
+  { name: "Shelly", searchNames: ["Shelly"], special: true, region: "Hoenn" },
+  { name: "Tabitha", searchNames: ["Tabitha"], special: true, region: "Hoenn" },
+  { name: "Courtney", searchNames: ["Courtney"], special: true, region: "Hoenn" },
   { name: "Wally", searchNames: ["Wally"], special: true, region: "Hoenn" },
   { name: "Celio", searchNames: ["Celio"], special: true, region: "Hoenn" },
   { name: "Mr. Briney", searchNames: ["Mr. Briney"], special: true, region: "Hoenn" },
@@ -461,6 +472,12 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Colress", searchNames: ["Colress"], special: true, region: "Unova" },
   { name: "Anthea", searchNames: ["Anthea"], special: true, region: "Unova" },
   { name: "Concordia", searchNames: ["Concordia"], special: true, region: "Unova" },
+  // Seven Sages: Team Plasma's council of elders (Ghetsis is their leader, already listed above).
+  { name: "Zinzolin", searchNames: ["Zinzolin"], special: true, region: "Unova" },
+  { name: "Rood", searchNames: ["Rood"], special: true, region: "Unova" },
+  { name: "Gorm", searchNames: ["Gorm"], special: true, region: "Unova" },
+  { name: "Bronius", searchNames: ["Bronius"], special: true, region: "Unova" },
+  { name: "Ryoku", searchNames: ["Ryoku"], special: true, region: "Unova" },
   { name: "Harlequin", searchNames: ["Harlequin"], special: true, region: "Unova" },
   { name: "Cedric Juniper", searchNames: ["Cedric Juniper"], special: true, region: "Unova" },
   { name: "Fennel", searchNames: ["Fennel"], special: true, region: "Unova" },
@@ -490,6 +507,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Professor Sycamore", searchNames: ["Professor Sycamore", "Sycamore"], special: true, region: "Kalos" },
   { name: "Lysandre", searchNames: ["Lysandre"], special: true, region: "Kalos" },
   { name: "Xerosic", searchNames: ["Xerosic"], special: true, region: "Kalos" },
+  // Team Flare's Science Team, alongside Xerosic above.
+  { name: "Aliana", searchNames: ["Aliana"], special: true, region: "Kalos" },
+  { name: "Celosia", searchNames: ["Celosia"], special: true, region: "Kalos" },
+  { name: "Bryony", searchNames: ["Bryony"], special: true, region: "Kalos" },
+  { name: "Mable", searchNames: ["Mable"], special: true, region: "Kalos" },
   { name: "AZ", searchNames: ["AZ"], special: true, region: "Kalos" },
   { name: "Cyrano", searchNames: ["Cyrano"], special: true, region: "Kalos" },
   { name: "Bonnie", searchNames: ["Bonnie"], special: true, region: "Kalos" },
@@ -520,6 +542,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Lusamine", searchNames: ["Lusamine"], special: true, region: "Alola" },
   { name: "Gladion", searchNames: ["Gladion"], special: true, region: "Alola" },
   { name: "Lillie", searchNames: ["Lillie"], special: true, region: "Alola" },
+  // Mohn: Lusamine's husband, Lillie/Gladion's father, Aether Foundation.
+  { name: "Mohn", searchNames: ["Mohn"], special: true, region: "Alola" },
   { name: "Kahili", searchNames: ["Kahili"], special: true, region: "Alola" },
   { name: "Molayne", searchNames: ["Molayne"], special: true, region: "Alola" },
   { name: "Samson Oak", searchNames: ["Samson Oak"], special: true, region: "Alola" },
@@ -634,6 +658,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Blanche", searchNames: ["Blanche"], special: true, region: "Pokémon GO" },
   { name: "Candela", searchNames: ["Candela"], special: true, region: "Pokémon GO" },
   { name: "Spark", searchNames: ["Spark"], special: true, region: "Pokémon GO" },
+  { name: "Professor Willow", searchNames: ["Professor Willow", "Willow"], special: true, region: "Pokémon GO" },
   // Generic trainer classes — not Kanto-specific (every region has these), tagged "Universal".
   // Kanto's own roster (Gen 1) first, then every other generic class introduced across Gen
   // 2-9, deduplicated where a later game reused an earlier class name.

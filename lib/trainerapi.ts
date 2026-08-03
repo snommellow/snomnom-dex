@@ -220,6 +220,27 @@ function assignRolesFor(name: string): string[] {
   return TRAINER_ROLES[name] ?? ["Trainer"];
 }
 
+// Region display order — same sequence as REGION_ACCENT in components/TrainerCard.tsx, so the
+// grid's grouping matches the color coding already established there.
+const REGION_ORDER = [
+  "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea",
+  "Hisui", "Lumiose", "Pokémon GO", "Universal",
+];
+
+// Within a region: Gym Leader -> Elite Four -> Champion -> Protagonist first, then every other
+// named-individual role (Rival, Professor, Team Leader, etc.) as a single "special trainer"
+// bucket, with generic (non-special) Trainer Class entries last.
+const ROLE_RANK: Record<string, number> = {
+  "Gym Leader": 0,
+  "Elite Four": 1,
+  Champion: 2,
+  Protagonist: 3,
+  "Trainer Class": 5,
+};
+function bestRoleRank(roles: string[]): number {
+  return Math.min(...roles.map((r) => ROLE_RANK[r] ?? 4));
+}
+
 export function toTrainerSlug(name: string): string {
   return name
     .toLowerCase()
@@ -958,5 +979,11 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
       };
     })
   );
-  return entries;
+  return entries.sort((a, b) => {
+    const regionDiff = REGION_ORDER.indexOf(a.region) - REGION_ORDER.indexOf(b.region);
+    if (regionDiff !== 0) return regionDiff;
+    const roleDiff = bestRoleRank(a.roles) - bestRoleRank(b.roles);
+    if (roleDiff !== 0) return roleDiff;
+    return a.name.localeCompare(b.name);
+  });
 }

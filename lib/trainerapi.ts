@@ -55,6 +55,8 @@ const SUPPORTER_RARITY_ORDER = [
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
+  "Trainer Gallery Rare Holo",
   "Rare Shiny",
   "Ultra Rare",
   "Rare Ultra",
@@ -73,6 +75,8 @@ const FULL_ART_RARITIES = new Set([
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
+  "Trainer Gallery Rare Holo",
   "Ultra Rare",
   "Rare Ultra",
 ]);
@@ -92,10 +96,18 @@ function cardImageUrl(card: PtcgCard): string {
   return card.images.large ?? card.images.small;
 }
 
+// TG-numbered cards (Trainer Gallery) are always full-art, but pokemontcg.io's `rarity` field
+// for them is inconsistent — mirrors the identical TG_RE check in tcgapi.ts's pickBestCard.
+const TG_RE = /^TG\d+$/;
+function effectiveRarityScore(card: PtcgCard): number {
+  if (TG_RE.test(card.number)) return rarityScore("Trainer Gallery Rare Holo");
+  return rarityScore(card.rarity);
+}
+
 function pickBestCard(cards: PtcgCard[]): PtcgCard | null {
   if (!cards.length) return null;
   return cards.reduce((a, b) => {
-    const ra = rarityScore(a.rarity), rb = rarityScore(b.rarity);
+    const ra = effectiveRarityScore(a), rb = effectiveRarityScore(b);
     if (ra !== rb) return ra < rb ? a : b;
     const pa = marketPrice(a), pb = marketPrice(b);
     if (pa !== pb) return pb > pa ? b : a;
@@ -1228,7 +1240,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
     return {
       imageUrl: cardImageUrl(best),
       // Classic-era Trainer cards are always bordered — no full-art printing existed yet.
-      isFullArt: usedClassic ? false : FULL_ART_RARITIES.has(best.rarity),
+      isFullArt: usedClassic ? false : (TG_RE.test(best.number) || FULL_ART_RARITIES.has(best.rarity)),
     };
   }
 

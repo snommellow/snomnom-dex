@@ -33,7 +33,7 @@ jobs:
       - run: npm ci
 
       - name: Debug swimmer
-        run: npx tsx scripts/debug-swimmer.ts
+        run: npx tsx scripts/debug-swimmer.ts || true
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
 

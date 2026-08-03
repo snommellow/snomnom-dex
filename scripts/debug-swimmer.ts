@@ -27,10 +27,15 @@ function getHeaders(): HeadersInit {
   return key ? { "X-Api-Key": key } : {};
 }
 async function fetchCardNames(q: string): Promise<string[]> {
-  const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&select=id,name,rules`;
-  const res = await fetch(url, { headers: getHeaders() });
-  const json = await res.json();
-  return (json.data ?? []).map((c: any) => `${c.id}: ${c.name}${c.rules ? " | " + c.rules.join(" ") : ""}`);
+  try {
+    const url = `${PTCGIO_BASE}/cards?q=${encodeURIComponent(q)}&pageSize=250&select=id,name,rules`;
+    const res = await fetch(url, { headers: getHeaders() });
+    if (!res.ok) return [`(HTTP ${res.status})`];
+    const json = await res.json();
+    return (json.data ?? []).map((c: any) => `${c.id}: ${c.name}${c.rules ? " | " + c.rules.join(" ") : ""}`);
+  } catch (e) {
+    return [`(error: ${String(e)})`];
+  }
 }
 
 async function main() {

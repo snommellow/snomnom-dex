@@ -1,0 +1,75 @@
+[
+  {
+    "title": "Chuck",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/bd/HeartGold_SoulSilver_Chuck.png"
+  },
+  {
+    "title": "Pryce",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/02/HeartGold_SoulSilver_Pryce.png"
+  },
+  {
+    "title": "Clair",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fe/HeartGold_SoulSilver_Clair.png"
+  },
+  {
+    "title": "Bugsy",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/6b/HeartGold_SoulSilver_Bugsy.png"
+  },
+  {
+    "title": "Wattson",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a0/Omega_Ruby_Alpha_Sapphire_Wattson.png"
+  },
+  {
+    "title": "Maylene",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/1a/Brilliant_Diamond_Shining_Pearl_Maylene.png"
+  },
+  {
+    "title": "Viola",
+    "found": false
+  },
+  {
+    "title": "Wulfric",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c7/XY_Wulfric.png"
+  },
+  {
+    "title": "Eusine",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/7a/HeartGold_SoulSilver_Eusine.png"
+  },
+  {
+    "title": "Mr. Pokémon",
+    "found": false
+  },
+  {
+    "title": "Kurt",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/12/HeartGold_SoulSilver_Kurt.png"
+  },
+  {
+    "title": "Cogita",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a9/Legends_Arceus_Cogita.png"
+  },
+  {
+    "title": "Anabel",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/aa/Anabel_SM_concept_art.png"
+  },
+  {
+    "title": "Noland",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/65/Emerald_Noland.png"
+  },
+  {
+    "title": "Greta",
+    "found": true,
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/7/79/Emerald_Greta.png"
+  }
+]

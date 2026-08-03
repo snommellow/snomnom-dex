@@ -27,7 +27,7 @@ export interface TrainerEntry {
   name: string;
   slug: string;
   region: string;
-  role: string;
+  roles: string[];
   imageUrl: string | null;
   // Whether imageUrl is a borderless full-art illustration vs a plain bordered card with a
   // rules text box — most Supporter cards are the latter, so they need the same "cropped"
@@ -158,13 +158,16 @@ async function fetchAllPages(q: string): Promise<PtcgCard[]> {
   return results;
 }
 
-// Role shown in the card masthead + subtitle, replacing the generic "Trainer of {region}."
-// filler that duplicated the region already shown in the bottom pill. Grouped by role rather
-// than listed inline per roster entry to keep the roster itself readable; anything not listed
-// here (mostly minor named NPCs with no crisp title) falls back to "Trainer".
-const TRAINER_ROLES: Record<string, string> = {};
+// Role(s) shown in the card subtitle, replacing the generic "Trainer of {region}." filler that
+// duplicated the region already shown in the bottom pill. Grouped by role rather than listed
+// inline per roster entry to keep the roster itself readable; anything not listed here (mostly
+// minor named NPCs with no crisp title) falls back to "Trainer". Many characters hold more than
+// one title across the games they appear in (e.g. Lance is Elite Four in Gen 1, Champion in
+// Gen 2; Molayne is a Trial Captain who's later promoted to Elite Four in the Ultra games) — a
+// name can appear in multiple assignRole calls and all of them are kept, in call order.
+const TRAINER_ROLES: Record<string, string[]> = {};
 function assignRole(role: string, names: string[]) {
-  for (const n of names) TRAINER_ROLES[n] = role;
+  for (const n of names) (TRAINER_ROLES[n] ??= []).push(role);
 }
 assignRole("Gym Leader", [
   "Brock", "Misty", "Lt. Surge", "Erika", "Koga", "Sabrina", "Blaine", "Giovanni",
@@ -182,7 +185,7 @@ assignRole("Elite Four", [
   "Aaron", "Bertha", "Flint", "Lucian",
   "Shauntal", "Marshal", "Grimsley", "Caitlin",
   "Malva", "Siebold", "Wikstrom", "Drasna",
-  "Rika", "Poppy", "Hassel", "Molayne",
+  "Rika", "Poppy", "Hassel",
 ]);
 assignRole("Champion", ["Lance", "Wallace", "Steven", "Cynthia", "Alder", "Iris", "Diantha", "Leon", "Geeta"]);
 assignRole("Rival", [
@@ -205,14 +208,16 @@ assignRole("Team Admin", [
   "Cassiopeia", "Penny", "Sordward", "Shielbert",
 ]);
 assignRole("Kahuna", ["Hala", "Olivia", "Nanu", "Hapu"]);
-assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili"]);
+assignRole("Trial Captain", ["Ilima", "Lana", "Kiawe", "Mallow", "Sophocles", "Acerola", "Mina", "Kahili", "Molayne"]);
+// Molayne is promoted from Trial Captain to Elite Four in Ultra Sun/Ultra Moon.
+assignRole("Elite Four", ["Molayne"]);
 assignRole("Frontier Brain", [
   "Scott", "Anabel", "Noland", "Greta", "Tucker", "Lucy", "Spenser", "Brandon",
   "Palmer", "Argenta", "Dahlia", "Darach", "Thorton",
 ]);
 
-function assignRoleFor(name: string): string {
-  return TRAINER_ROLES[name] ?? "Trainer";
+function assignRolesFor(name: string): string[] {
+  return TRAINER_ROLES[name] ?? ["Trainer"];
 }
 
 export function toTrainerSlug(name: string): string {
@@ -886,7 +891,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         name,
         slug: toTrainerSlug(name),
         region: region ?? (special ? "Kanto" : "Universal"),
-        role: special ? assignRoleFor(name) : "Trainer Class",
+        roles: special ? assignRolesFor(name) : ["Trainer Class"],
         imageUrl,
         isFullArt,
       };

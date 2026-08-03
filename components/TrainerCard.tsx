@@ -195,7 +195,7 @@ export default function TrainerCard({ trainer, onSelect }: Props) {
               className="font-semibold leading-none text-gray-500"
               style={{ fontSize: 7, letterSpacing: ".1em", textShadow: "0 0 6px #fff, 0 0 4px #fff, 0 0 2px #fff" }}
             >
-              The {trainer.role}.
+              {trainer.roles.map((r) => `The ${r}.`).join(" ")}
             </p>
           </div>
 

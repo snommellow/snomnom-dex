@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: "static.tcgcollector.com",
         pathname: "/**",
       },
+      {
+        // Bulbapedia official-artwork fallback for named trainers with no TCG/Pocket card.
+        protocol: "https",
+        hostname: "archives.bulbagarden.net",
+        pathname: "/**",
+      },
     ],
   },
 };

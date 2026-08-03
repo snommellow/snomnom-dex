@@ -878,7 +878,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH261_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 4,
@@ -3806,7 +3806,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 25,
@@ -24942,8 +24943,7 @@
         "category": "mega",
         "displayCategory": "mega",
         "tcgUrl": "https://images.pokemontcg.io/xyp/XY98_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 6
+        "regularCardUrl": null
       }
     ],
     "familyId": 142,
@@ -43995,7 +43995,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/257.png",
     "genus": "Blaze Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh12tg/TG14_hires.png"
+      "https://images.pokemontcg.io/swsh12tg/TG15_hires.png"
     ],
     "altForms": [
       {
@@ -52708,7 +52708,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10055.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/xy4/120_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/me1/158_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -61755,7 +61755,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/367.png",
     "genus": "Deep Sea Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/xy5/50_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/18_hires.png",
     "altForms": [],
     "familyId": 366,
     "familyOrder": 1,
@@ -64304,7 +64304,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
     "genus": "Sky High Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh7/218_hires.png"
+      "https://images.pokemontcg.io/swsh12tg/TG20_hires.png"
     ],
     "altForms": [
       {
@@ -64326,7 +64326,7 @@
     ],
     "familyId": 384,
     "familyOrder": 0,
-    "cardRank": 2,
+    "cardRank": 6,
     "flavorText": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer, never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
     "heightM": 7,
     "weightKg": 206.5,
@@ -131526,7 +131526,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/pgo/48_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 809,
@@ -133846,7 +133846,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG13_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 824,
@@ -143014,7 +143014,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/890.png",
     "genus": "Gigantic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh11tg/TG21_hires.png"
+      "https://images.pokemontcg.io/swsh11tg/TG22_hires.png"
     ],
     "altForms": [
       {

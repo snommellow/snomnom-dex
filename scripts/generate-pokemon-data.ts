@@ -42,12 +42,6 @@ const HARDCODED_BG_URLS: Record<number, string> = {
   987: "https://images.pokemontcg.io/svp/97_hires.png",
   995: "https://images.pokemontcg.io/svp/98_hires.png",
   894: "https://images.pokemontcg.io/swshp/SWSH280_hires.png", // Regieleki V, SWSH Black Star Promos
-  // #384 Rayquaza: no Illustration/Special Illustration Rare exists for it at all, and its most
-  // valuable, iconic modern card (swsh7-218 "Rayquaza VMAX", Rare Rainbow, Evolving Skies) is
-  // unreachable through the normal automated pass — vgxCandidates deliberately excludes every
-  // " VMAX"-suffixed card from the base entity's pool (VMAX is meant for a Gigantamax alt form,
-  // which Rayquaza doesn't have), leaving only a much lower-value XY/BW-era "Rayquaza-EX".
-  384: "https://images.pokemontcg.io/swsh7/218_hires.png",
   892: "https://images.pokemontcg.io/swsh5/151_hires.png", // Urshifu (Single Strike Style V), Battle Styles
   // Zacian/Zamazenta: automated pass was assigning me2-100/sv10-201 to the base (Hero of Many
   // Battles) entity, but those cards belong to the Crowned Sword/Shield forms instead (moved

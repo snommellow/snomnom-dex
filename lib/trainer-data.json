@@ -3,6 +3,7 @@
     "name": "Brock",
     "slug": "brock",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv9/179_hires.png",
     "isFullArt": true
   },
@@ -10,6 +11,7 @@
     "name": "Misty",
     "slug": "misty",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.scrydex.com/pokemon/me5-111/large",
     "isFullArt": true
   },
@@ -17,6 +19,7 @@
     "name": "Lt. Surge",
     "slug": "lt-surge",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
     "isFullArt": true
   },
@@ -24,6 +27,7 @@
     "name": "Erika",
     "slug": "erika",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
     "isFullArt": true
   },
@@ -31,6 +35,7 @@
     "name": "Koga",
     "slug": "koga",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm10/211_hires.png",
     "isFullArt": true
   },
@@ -38,6 +43,7 @@
     "name": "Sabrina",
     "slug": "sabrina",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm9/181_hires.png",
     "isFullArt": true
   },
@@ -45,6 +51,7 @@
     "name": "Blaine",
     "slug": "blaine",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm75/69_hires.png",
     "isFullArt": true
   },
@@ -52,6 +59,7 @@
     "name": "Giovanni",
     "slug": "giovanni",
     "region": "Kanto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
     "isFullArt": true
   },
@@ -59,6 +67,7 @@
     "name": "Lorelei",
     "slug": "lorelei",
     "region": "Kanto",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sm12/199_hires.png",
     "isFullArt": false
   },
@@ -66,6 +75,7 @@
     "name": "Bruno",
     "slug": "bruno",
     "region": "Kanto",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh5/158_hires.png",
     "isFullArt": true
   },
@@ -73,6 +83,7 @@
     "name": "Agatha",
     "slug": "agatha",
     "region": "Kanto",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh6/186_hires.png",
     "isFullArt": true
   },
@@ -80,6 +91,7 @@
     "name": "Lance",
     "slug": "lance",
     "region": "Kanto",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/swsh12/192_hires.png",
     "isFullArt": true
   },
@@ -87,6 +99,7 @@
     "name": "Red",
     "slug": "red",
     "region": "Kanto",
+    "role": "Protagonist",
     "imageUrl": "https://images.pokemontcg.io/sm10/213_hires.png",
     "isFullArt": true
   },
@@ -94,6 +107,7 @@
     "name": "Blue",
     "slug": "blue",
     "region": "Kanto",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sm11/231_hires.png",
     "isFullArt": true
   },
@@ -101,6 +115,7 @@
     "name": "Green",
     "slug": "green",
     "region": "Kanto",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sm10/209_hires.png",
     "isFullArt": true
   },
@@ -108,6 +123,7 @@
     "name": "Professor Oak",
     "slug": "professor-oak",
     "region": "Kanto",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sm12/233_hires.png",
     "isFullArt": true
   },
@@ -115,6 +131,7 @@
     "name": "Team Rocket Grunt",
     "slug": "team-rocket-grunt",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2b/091/high.webp",
     "isFullArt": true
   },
@@ -122,6 +139,7 @@
     "name": "Bill",
     "slug": "bill",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv3pt5/194_hires.png",
     "isFullArt": true
   },
@@ -129,6 +147,7 @@
     "name": "Mr. Fuji",
     "slug": "mr-fuji",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/base3/58_hires.png",
     "isFullArt": false
   },
@@ -136,6 +155,7 @@
     "name": "Daisy",
     "slug": "daisy",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv3pt5/195_hires.png",
     "isFullArt": true
   },
@@ -143,6 +163,7 @@
     "name": "Copycat",
     "slug": "copycat",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm7/163_hires.png",
     "isFullArt": true
   },
@@ -150,6 +171,7 @@
     "name": "Leaf",
     "slug": "leaf",
     "region": "Kanto",
+    "role": "Protagonist",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A1a/082/high.webp",
     "isFullArt": true
   },
@@ -157,6 +179,7 @@
     "name": "Janine",
     "slug": "janine",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/173_hires.png",
     "isFullArt": true
   },
@@ -164,6 +187,7 @@
     "name": "Jessie",
     "slug": "jessie",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm115/68_hires.png",
     "isFullArt": true
   },
@@ -171,6 +195,7 @@
     "name": "James",
     "slug": "james",
     "region": "Kanto",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm115/68_hires.png",
     "isFullArt": true
   },
@@ -178,6 +203,7 @@
     "name": "Falkner",
     "slug": "falkner",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv2/251_hires.png",
     "isFullArt": true
   },
@@ -185,6 +211,7 @@
     "name": "Bugsy",
     "slug": "bugsy",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -192,6 +219,7 @@
     "name": "Whitney",
     "slug": "whitney",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm8/214_hires.png",
     "isFullArt": true
   },
@@ -199,6 +227,7 @@
     "name": "Morty",
     "slug": "morty",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv5/211_hires.png",
     "isFullArt": true
   },
@@ -206,6 +235,7 @@
     "name": "Chuck",
     "slug": "chuck",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -213,6 +243,7 @@
     "name": "Jasmine",
     "slug": "jasmine",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv8/245_hires.png",
     "isFullArt": true
   },
@@ -220,6 +251,7 @@
     "name": "Pryce",
     "slug": "pryce",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -227,6 +259,7 @@
     "name": "Clair",
     "slug": "clair",
     "region": "Johto",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -234,6 +267,7 @@
     "name": "Will",
     "slug": "will",
     "region": "Johto",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sm12/208_hires.png",
     "isFullArt": false
   },
@@ -241,6 +275,7 @@
     "name": "Karen",
     "slug": "karen",
     "region": "Johto",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh6/193_hires.png",
     "isFullArt": true
   },
@@ -248,6 +283,7 @@
     "name": "Silver",
     "slug": "silver",
     "region": "Johto",
+    "role": "Rival",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/198/high.webp",
     "isFullArt": true
   },
@@ -255,6 +291,7 @@
     "name": "Professor Elm",
     "slug": "professor-elm",
     "region": "Johto",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sm8/213_hires.png",
     "isFullArt": true
   },
@@ -262,6 +299,7 @@
     "name": "Ariana",
     "slug": "ariana",
     "region": "Johto",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv10/237_hires.png",
     "isFullArt": true
   },
@@ -269,6 +307,7 @@
     "name": "Proton",
     "slug": "proton",
     "region": "Johto",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv10/227_hires.png",
     "isFullArt": true
   },
@@ -276,6 +315,7 @@
     "name": "Petrel",
     "slug": "petrel",
     "region": "Johto",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv10/226_hires.png",
     "isFullArt": true
   },
@@ -283,6 +323,7 @@
     "name": "Archer",
     "slug": "archer",
     "region": "Johto",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv10/223_hires.png",
     "isFullArt": true
   },
@@ -290,6 +331,7 @@
     "name": "Eusine",
     "slug": "eusine",
     "region": "Johto",
+    "role": "Trainer",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -297,6 +339,7 @@
     "name": "Mr. Pokémon",
     "slug": "mr-pokemon",
     "region": "Johto",
+    "role": "Trainer",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -304,6 +347,7 @@
     "name": "Kurt",
     "slug": "kurt",
     "region": "Johto",
+    "role": "Trainer",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -311,6 +355,7 @@
     "name": "Ethan",
     "slug": "ethan",
     "region": "Johto",
+    "role": "Protagonist",
     "imageUrl": "https://images.pokemontcg.io/sv10/236_hires.png",
     "isFullArt": true
   },
@@ -318,6 +363,7 @@
     "name": "Lyra",
     "slug": "lyra",
     "region": "Johto",
+    "role": "Protagonist",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4/197/high.webp",
     "isFullArt": true
   },
@@ -325,6 +371,7 @@
     "name": "Roxanne",
     "slug": "roxanne",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh10/188_hires.png",
     "isFullArt": true
   },
@@ -332,6 +379,7 @@
     "name": "Brawly",
     "slug": "brawly",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh6/188_hires.png",
     "isFullArt": true
   },
@@ -339,6 +387,7 @@
     "name": "Wattson",
     "slug": "wattson",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -346,6 +395,7 @@
     "name": "Flannery",
     "slug": "flannery",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh6/191_hires.png",
     "isFullArt": true
   },
@@ -353,6 +403,7 @@
     "name": "Norman",
     "slug": "norman",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv4/237_hires.png",
     "isFullArt": true
   },
@@ -360,6 +411,7 @@
     "name": "Winona",
     "slug": "winona",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/xy6/108_hires.png",
     "isFullArt": true
   },
@@ -367,6 +419,7 @@
     "name": "Tate",
     "slug": "tate",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm7/166_hires.png",
     "isFullArt": true
   },
@@ -374,6 +427,7 @@
     "name": "Liza",
     "slug": "liza",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm7/166_hires.png",
     "isFullArt": true
   },
@@ -381,6 +435,7 @@
     "name": "Wallace",
     "slug": "wallace",
     "region": "Hoenn",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/swsh12/194_hires.png",
     "isFullArt": true
   },
@@ -388,6 +443,7 @@
     "name": "Juan",
     "slug": "juan",
     "region": "Hoenn",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -395,6 +451,7 @@
     "name": "Sidney",
     "slug": "sidney",
     "region": "Hoenn",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh8/264_hires.png",
     "isFullArt": true
   },
@@ -402,6 +459,7 @@
     "name": "Phoebe",
     "slug": "phoebe",
     "region": "Hoenn",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh5/161_hires.png",
     "isFullArt": true
   },
@@ -409,6 +467,7 @@
     "name": "Glacia",
     "slug": "glacia",
     "region": "Hoenn",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/ex16/76_hires.png",
     "isFullArt": false
   },
@@ -416,6 +475,7 @@
     "name": "Drake",
     "slug": "drake",
     "region": "Hoenn",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/ex16/72_hires.png",
     "isFullArt": false
   },
@@ -423,6 +483,7 @@
     "name": "Steven",
     "slug": "steven",
     "region": "Hoenn",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/sm7/165_hires.png",
     "isFullArt": true
   },
@@ -430,6 +491,7 @@
     "name": "May",
     "slug": "may",
     "region": "Hoenn",
+    "role": "Rival",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1/268/high.webp",
     "isFullArt": true
   },
@@ -437,6 +499,7 @@
     "name": "Brendan",
     "slug": "brendan",
     "region": "Hoenn",
+    "role": "Rival",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -444,6 +507,7 @@
     "name": "Professor Birch",
     "slug": "professor-birch",
     "region": "Hoenn",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/xy5/159_hires.png",
     "isFullArt": true
   },
@@ -451,6 +515,7 @@
     "name": "Archie",
     "slug": "archie",
     "region": "Hoenn",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/xy5/157_hires.png",
     "isFullArt": true
   },
@@ -458,6 +523,7 @@
     "name": "Maxie",
     "slug": "maxie",
     "region": "Hoenn",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/xy5/158_hires.png",
     "isFullArt": true
   },
@@ -465,6 +531,7 @@
     "name": "Wally",
     "slug": "wally",
     "region": "Hoenn",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/me1/186_hires.png",
     "isFullArt": true
   },
@@ -472,6 +539,7 @@
     "name": "Celio",
     "slug": "celio",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/ex6/88_hires.png",
     "isFullArt": false
   },
@@ -479,6 +547,7 @@
     "name": "Mr. Briney",
     "slug": "mr-briney",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/ex3/87_hires.png",
     "isFullArt": false
   },
@@ -486,6 +555,7 @@
     "name": "Mr. Stone",
     "slug": "mr-stone",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/ex9/79_hires.png",
     "isFullArt": false
   },
@@ -493,6 +563,7 @@
     "name": "Roseanne",
     "slug": "roseanne",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh9/172_hires.png",
     "isFullArt": true
   },
@@ -500,6 +571,7 @@
     "name": "Clive",
     "slug": "clive",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv4pt5/236_hires.png",
     "isFullArt": true
   },
@@ -507,6 +579,7 @@
     "name": "Zinnia",
     "slug": "zinnia",
     "region": "Hoenn",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm75/70_hires.png",
     "isFullArt": true
   },
@@ -514,6 +587,7 @@
     "name": "Lisia",
     "slug": "lisia",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8/246_hires.png",
     "isFullArt": true
   },
@@ -521,6 +595,7 @@
     "name": "Bebe",
     "slug": "bebe",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/dp2/109_hires.png",
     "isFullArt": false
   },
@@ -528,6 +603,7 @@
     "name": "Lanette",
     "slug": "lanette",
     "region": "Hoenn",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/ex9/77_hires.png",
     "isFullArt": false
   },
@@ -535,6 +611,7 @@
     "name": "Scott",
     "slug": "scott",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": "https://images.pokemontcg.io/ex9/84_hires.png",
     "isFullArt": false
   },
@@ -542,6 +619,7 @@
     "name": "Anabel",
     "slug": "anabel",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -549,6 +627,7 @@
     "name": "Noland",
     "slug": "noland",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -556,6 +635,7 @@
     "name": "Greta",
     "slug": "greta",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -563,6 +643,7 @@
     "name": "Tucker",
     "slug": "tucker",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -570,6 +651,7 @@
     "name": "Lucy",
     "slug": "lucy",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -577,6 +659,7 @@
     "name": "Spenser",
     "slug": "spenser",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -584,6 +667,7 @@
     "name": "Brandon",
     "slug": "brandon",
     "region": "Hoenn",
+    "role": "Frontier Brain",
     "imageUrl": "https://images.pokemontcg.io/swsh12/188_hires.png",
     "isFullArt": true
   },
@@ -591,6 +675,7 @@
     "name": "Roark",
     "slug": "roark",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv4/242_hires.png",
     "isFullArt": true
   },
@@ -598,6 +683,7 @@
     "name": "Gardenia",
     "slug": "gardenia",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm5/149_hires.png",
     "isFullArt": true
   },
@@ -605,6 +691,7 @@
     "name": "Maylene",
     "slug": "maylene",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -612,6 +699,7 @@
     "name": "Crasher Wake",
     "slug": "crasher-wake",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm6/129_hires.png",
     "isFullArt": true
   },
@@ -619,6 +707,7 @@
     "name": "Fantina",
     "slug": "fantina",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh11/191_hires.png",
     "isFullArt": true
   },
@@ -626,6 +715,7 @@
     "name": "Byron",
     "slug": "byron",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -633,6 +723,7 @@
     "name": "Candice",
     "slug": "candice",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh12/189_hires.png",
     "isFullArt": true
   },
@@ -640,6 +731,7 @@
     "name": "Volkner",
     "slug": "volkner",
     "region": "Sinnoh",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm5/156_hires.png",
     "isFullArt": true
   },
@@ -647,6 +739,7 @@
     "name": "Aaron",
     "slug": "aaron",
     "region": "Sinnoh",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/pl2/88_hires.png",
     "isFullArt": false
   },
@@ -654,6 +747,7 @@
     "name": "Bertha",
     "slug": "bertha",
     "region": "Sinnoh",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/pl2/90_hires.png",
     "isFullArt": false
   },
@@ -661,6 +755,7 @@
     "name": "Flint",
     "slug": "flint",
     "region": "Sinnoh",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/pl2/91_hires.png",
     "isFullArt": false
   },
@@ -668,6 +763,7 @@
     "name": "Lucian",
     "slug": "lucian",
     "region": "Sinnoh",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv6/208_hires.png",
     "isFullArt": true
   },
@@ -675,6 +771,7 @@
     "name": "Cynthia",
     "slug": "cynthia",
     "region": "Sinnoh",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/sm5/148_hires.png",
     "isFullArt": true
   },
@@ -682,6 +779,7 @@
     "name": "Barry",
     "slug": "barry",
     "region": "Sinnoh",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh9/167_hires.png",
     "isFullArt": true
   },
@@ -689,6 +787,7 @@
     "name": "Dawn",
     "slug": "dawn",
     "region": "Sinnoh",
+    "role": "Protagonist",
     "imageUrl": "https://images.pokemontcg.io/me2/129_hires.png",
     "isFullArt": true
   },
@@ -696,6 +795,7 @@
     "name": "Professor Rowan",
     "slug": "professor-rowan",
     "region": "Sinnoh",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/dp1/112_hires.png",
     "isFullArt": false
   },
@@ -703,6 +803,7 @@
     "name": "Cyrus",
     "slug": "cyrus",
     "region": "Sinnoh",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/pl1/105_hires.png",
     "isFullArt": false
   },
@@ -710,6 +811,7 @@
     "name": "Mars",
     "slug": "mars",
     "region": "Sinnoh",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm5/154_hires.png",
     "isFullArt": true
   },
@@ -717,6 +819,7 @@
     "name": "Jupiter",
     "slug": "jupiter",
     "region": "Sinnoh",
+    "role": "Team Admin",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -724,6 +827,7 @@
     "name": "Saturn",
     "slug": "saturn",
     "region": "Sinnoh",
+    "role": "Team Admin",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -731,6 +835,7 @@
     "name": "Charon",
     "slug": "charon",
     "region": "Sinnoh",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/pl2/RT6_hires.png",
     "isFullArt": false
   },
@@ -738,6 +843,7 @@
     "name": "Looker",
     "slug": "looker",
     "region": "Sinnoh",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm5/152_hires.png",
     "isFullArt": true
   },
@@ -745,6 +851,7 @@
     "name": "Cheryl",
     "slug": "cheryl",
     "region": "Sinnoh",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh5/159_hires.png",
     "isFullArt": true
   },
@@ -752,6 +859,7 @@
     "name": "Buck",
     "slug": "buck",
     "region": "Sinnoh",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/dp6/130_hires.png",
     "isFullArt": false
   },
@@ -759,6 +867,7 @@
     "name": "Marley",
     "slug": "marley",
     "region": "Sinnoh",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/dp7/87_hires.png",
     "isFullArt": false
   },
@@ -766,6 +875,7 @@
     "name": "Riley",
     "slug": "riley",
     "region": "Sinnoh",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh11/166_hires.png",
     "isFullArt": false
   },
@@ -773,6 +883,7 @@
     "name": "Palmer",
     "slug": "palmer",
     "region": "Sinnoh",
+    "role": "Frontier Brain",
     "imageUrl": "https://images.pokemontcg.io/pl3/139_hires.png",
     "isFullArt": false
   },
@@ -780,6 +891,7 @@
     "name": "Argenta",
     "slug": "argenta",
     "region": "Sinnoh",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -787,6 +899,7 @@
     "name": "Dahlia",
     "slug": "dahlia",
     "region": "Sinnoh",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -794,6 +907,7 @@
     "name": "Darach",
     "slug": "darach",
     "region": "Sinnoh",
+    "role": "Frontier Brain",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -801,6 +915,7 @@
     "name": "Thorton",
     "slug": "thorton",
     "region": "Sinnoh",
+    "role": "Frontier Brain",
     "imageUrl": "https://images.pokemontcg.io/swsh11/195_hires.png",
     "isFullArt": true
   },
@@ -808,6 +923,7 @@
     "name": "Cilan",
     "slug": "cilan",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/bw4/86_hires.png",
     "isFullArt": false
   },
@@ -815,6 +931,7 @@
     "name": "Chili",
     "slug": "chili",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh8/258_hires.png",
     "isFullArt": true
   },
@@ -822,6 +939,7 @@
     "name": "Cress",
     "slug": "cress",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh8/258_hires.png",
     "isFullArt": true
   },
@@ -829,6 +947,7 @@
     "name": "Lenora",
     "slug": "lenora",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -836,6 +955,7 @@
     "name": "Burgh",
     "slug": "burgh",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -843,6 +963,7 @@
     "name": "Elesa",
     "slug": "elesa",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh12pt5/147_hires.png",
     "isFullArt": true
   },
@@ -850,6 +971,7 @@
     "name": "Clay",
     "slug": "clay",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sm12/188_hires.png",
     "isFullArt": false
   },
@@ -857,6 +979,7 @@
     "name": "Skyla",
     "slug": "skyla",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/bw7/149_hires.png",
     "isFullArt": true
   },
@@ -864,6 +987,7 @@
     "name": "Brycen",
     "slug": "brycen",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/smp/SM246_hires.png",
     "isFullArt": false
   },
@@ -871,6 +995,7 @@
     "name": "Drayden",
     "slug": "drayden",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -878,6 +1003,7 @@
     "name": "Roxie",
     "slug": "roxie",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://images.scrydex.com/pokemon/me4-121/large",
     "isFullArt": true
   },
@@ -885,6 +1011,7 @@
     "name": "Marlon",
     "slug": "marlon",
     "region": "Unova",
+    "role": "Gym Leader",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/B1/266/high.webp",
     "isFullArt": true
   },
@@ -892,6 +1019,7 @@
     "name": "Shauntal",
     "slug": "shauntal",
     "region": "Unova",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv4/243_hires.png",
     "isFullArt": true
   },
@@ -899,6 +1027,7 @@
     "name": "Marshal",
     "slug": "marshal",
     "region": "Unova",
+    "role": "Elite Four",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -906,6 +1035,7 @@
     "name": "Grimsley",
     "slug": "grimsley",
     "region": "Unova",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/me2/120_hires.png",
     "isFullArt": true
   },
@@ -913,6 +1043,7 @@
     "name": "Caitlin",
     "slug": "caitlin",
     "region": "Unova",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh6/189_hires.png",
     "isFullArt": true
   },
@@ -920,6 +1051,7 @@
     "name": "Alder",
     "slug": "alder",
     "region": "Unova",
+    "role": "Champion",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -927,6 +1059,7 @@
     "name": "Iris",
     "slug": "iris",
     "region": "Unova",
+    "role": "Champion",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-292/large",
     "isFullArt": true
   },
@@ -934,6 +1067,7 @@
     "name": "Cheren",
     "slug": "cheren",
     "region": "Unova",
+    "role": "Rival",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-258/large",
     "isFullArt": true
   },
@@ -941,6 +1075,7 @@
     "name": "Bianca",
     "slug": "bianca",
     "region": "Unova",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sv5/209_hires.png",
     "isFullArt": true
   },
@@ -948,6 +1083,7 @@
     "name": "Hugh",
     "slug": "hugh",
     "region": "Unova",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/bw7/130_hires.png",
     "isFullArt": false
   },
@@ -955,6 +1091,7 @@
     "name": "Emmet",
     "slug": "emmet",
     "region": "Unova",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm9/176_hires.png",
     "isFullArt": true
   },
@@ -962,6 +1099,7 @@
     "name": "Professor Juniper",
     "slug": "professor-juniper",
     "region": "Unova",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/bw9/116_hires.png",
     "isFullArt": true
   },
@@ -969,6 +1107,7 @@
     "name": "Ghetsis",
     "slug": "ghetsis",
     "region": "Unova",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/bw9/115_hires.png",
     "isFullArt": true
   },
@@ -976,6 +1115,7 @@
     "name": "N",
     "slug": "n",
     "region": "Unova",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/zsv10pt5/170_hires.png",
     "isFullArt": true
   },
@@ -983,6 +1123,7 @@
     "name": "Colress",
     "slug": "colress",
     "region": "Unova",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv6pt5/87_hires.png",
     "isFullArt": true
   },
@@ -990,6 +1131,7 @@
     "name": "Anthea",
     "slug": "anthea",
     "region": "Unova",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-254/large",
     "isFullArt": true
   },
@@ -997,6 +1139,7 @@
     "name": "Concordia",
     "slug": "concordia",
     "region": "Unova",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-254/large",
     "isFullArt": true
   },
@@ -1004,6 +1147,7 @@
     "name": "Harlequin",
     "slug": "harlequin",
     "region": "Unova",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/rsv10pt5/163_hires.png",
     "isFullArt": true
   },
@@ -1011,6 +1155,7 @@
     "name": "Cedric Juniper",
     "slug": "cedric-juniper",
     "region": "Unova",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/bw11/110_hires.png",
     "isFullArt": false
   },
@@ -1018,6 +1163,7 @@
     "name": "Fennel",
     "slug": "fennel",
     "region": "Unova",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/zsv10pt5/162_hires.png",
     "isFullArt": true
   },
@@ -1025,6 +1171,7 @@
     "name": "Rosa",
     "slug": "rosa",
     "region": "Unova",
+    "role": "Protagonist",
     "imageUrl": "https://images.scrydex.com/pokemon/me3-123/large",
     "isFullArt": true
   },
@@ -1032,6 +1179,7 @@
     "name": "Hilda",
     "slug": "hilda",
     "region": "Unova",
+    "role": "Protagonist",
     "imageUrl": "https://images.pokemontcg.io/rsv10pt5/171_hires.png",
     "isFullArt": true
   },
@@ -1039,6 +1187,7 @@
     "name": "Viola",
     "slug": "viola",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1046,6 +1195,7 @@
     "name": "Grant",
     "slug": "grant",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG62_hires.png",
     "isFullArt": true
   },
@@ -1053,6 +1203,7 @@
     "name": "Korrina",
     "slug": "korrina",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/xy3/111_hires.png",
     "isFullArt": true
   },
@@ -1060,6 +1211,7 @@
     "name": "Ramos",
     "slug": "ramos",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1067,6 +1219,7 @@
     "name": "Clemont",
     "slug": "clemont",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv8/243_hires.png",
     "isFullArt": true
   },
@@ -1074,6 +1227,7 @@
     "name": "Valerie",
     "slug": "valerie",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1081,6 +1235,7 @@
     "name": "Olympia",
     "slug": "olympia",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/g1/66_hires.png",
     "isFullArt": false
   },
@@ -1088,6 +1243,7 @@
     "name": "Wulfric",
     "slug": "wulfric",
     "region": "Kalos",
+    "role": "Gym Leader",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1095,6 +1251,7 @@
     "name": "Malva",
     "slug": "malva",
     "region": "Kalos",
+    "role": "Elite Four",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1102,6 +1259,7 @@
     "name": "Siebold",
     "slug": "siebold",
     "region": "Kalos",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/swsh6/198_hires.png",
     "isFullArt": true
   },
@@ -1109,6 +1267,7 @@
     "name": "Wikstrom",
     "slug": "wikstrom",
     "region": "Kalos",
+    "role": "Elite Four",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1116,6 +1275,7 @@
     "name": "Drasna",
     "slug": "drasna",
     "region": "Kalos",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv8/231_hires.png",
     "isFullArt": true
   },
@@ -1123,6 +1283,7 @@
     "name": "Diantha",
     "slug": "diantha",
     "region": "Kalos",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/sm6/130_hires.png",
     "isFullArt": true
   },
@@ -1130,6 +1291,7 @@
     "name": "Serena",
     "slug": "serena",
     "region": "Kalos",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh12/193_hires.png",
     "isFullArt": true
   },
@@ -1137,6 +1299,7 @@
     "name": "Calem",
     "slug": "calem",
     "region": "Kalos",
+    "role": "Rival",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1144,6 +1307,7 @@
     "name": "Shauna",
     "slug": "shauna",
     "region": "Kalos",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh8/263_hires.png",
     "isFullArt": true
   },
@@ -1151,6 +1315,7 @@
     "name": "Tierno",
     "slug": "tierno",
     "region": "Kalos",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/xy9/112_hires.png",
     "isFullArt": false
   },
@@ -1158,6 +1323,7 @@
     "name": "Trevor",
     "slug": "trevor",
     "region": "Kalos",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/xyp/XY33_hires.png",
     "isFullArt": false
   },
@@ -1165,6 +1331,7 @@
     "name": "Professor Sycamore",
     "slug": "professor-sycamore",
     "region": "Kalos",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/xy11/114_hires.png",
     "isFullArt": true
   },
@@ -1172,6 +1339,7 @@
     "name": "Lysandre",
     "slug": "lysandre",
     "region": "Kalos",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/xy2/104_hires.png",
     "isFullArt": true
   },
@@ -1179,6 +1347,7 @@
     "name": "Xerosic",
     "slug": "xerosic",
     "region": "Kalos",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv6pt5/89_hires.png",
     "isFullArt": true
   },
@@ -1186,6 +1355,7 @@
     "name": "AZ",
     "slug": "az",
     "region": "Kalos",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me4-120/large",
     "isFullArt": true
   },
@@ -1193,6 +1363,7 @@
     "name": "Cyrano",
     "slug": "cyrano",
     "region": "Kalos",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8/230_hires.png",
     "isFullArt": true
   },
@@ -1200,6 +1371,7 @@
     "name": "Bonnie",
     "slug": "bonnie",
     "region": "Kalos",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm6/128_hires.png",
     "isFullArt": true
   },
@@ -1207,6 +1379,7 @@
     "name": "Ilima",
     "slug": "ilima",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm1/146_hires.png",
     "isFullArt": true
   },
@@ -1214,6 +1387,7 @@
     "name": "Lana",
     "slug": "lana",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sv6/219_hires.png",
     "isFullArt": true
   },
@@ -1221,6 +1395,7 @@
     "name": "Kiawe",
     "slug": "kiawe",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm3/144_hires.png",
     "isFullArt": true
   },
@@ -1228,6 +1403,7 @@
     "name": "Mallow",
     "slug": "mallow",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm2/145_hires.png",
     "isFullArt": true
   },
@@ -1235,6 +1411,7 @@
     "name": "Sophocles",
     "slug": "sophocles",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm3/146_hires.png",
     "isFullArt": true
   },
@@ -1242,6 +1419,7 @@
     "name": "Acerola",
     "slug": "acerola",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/me1/183_hires.png",
     "isFullArt": true
   },
@@ -1249,6 +1427,7 @@
     "name": "Mina",
     "slug": "mina",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm8/211_hires.png",
     "isFullArt": true
   },
@@ -1256,6 +1435,7 @@
     "name": "Hala",
     "slug": "hala",
     "region": "Alola",
+    "role": "Kahuna",
     "imageUrl": "https://images.pokemontcg.io/sm2/143_hires.png",
     "isFullArt": true
   },
@@ -1263,6 +1443,7 @@
     "name": "Olivia",
     "slug": "olivia",
     "region": "Alola",
+    "role": "Kahuna",
     "imageUrl": "https://images.pokemontcg.io/sm4/111_hires.png",
     "isFullArt": true
   },
@@ -1270,6 +1451,7 @@
     "name": "Nanu",
     "slug": "nanu",
     "region": "Alola",
+    "role": "Kahuna",
     "imageUrl": "https://images.pokemontcg.io/sm9/179_hires.png",
     "isFullArt": true
   },
@@ -1277,6 +1459,7 @@
     "name": "Hapu",
     "slug": "hapu",
     "region": "Alola",
+    "role": "Kahuna",
     "imageUrl": "https://images.pokemontcg.io/sm11/200_hires.png",
     "isFullArt": false
   },
@@ -1284,6 +1467,7 @@
     "name": "Professor Kukui",
     "slug": "professor-kukui",
     "region": "Alola",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sm1/148_hires.png",
     "isFullArt": true
   },
@@ -1291,6 +1475,7 @@
     "name": "Professor Burnet",
     "slug": "professor-burnet",
     "region": "Alola",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/swsh12tg/TG26_hires.png",
     "isFullArt": true
   },
@@ -1298,6 +1483,7 @@
     "name": "Hau",
     "slug": "hau",
     "region": "Alola",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sm2/144_hires.png",
     "isFullArt": true
   },
@@ -1305,6 +1491,7 @@
     "name": "Guzma",
     "slug": "guzma",
     "region": "Alola",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sm3/143_hires.png",
     "isFullArt": true
   },
@@ -1312,6 +1499,7 @@
     "name": "Plumeria",
     "slug": "plumeria",
     "region": "Alola",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm3/145_hires.png",
     "isFullArt": true
   },
@@ -1319,6 +1507,7 @@
     "name": "Lusamine",
     "slug": "lusamine",
     "region": "Alola",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm5/153_hires.png",
     "isFullArt": true
   },
@@ -1326,6 +1515,7 @@
     "name": "Gladion",
     "slug": "gladion",
     "region": "Alola",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me5-118/large",
     "isFullArt": true
   },
@@ -1333,6 +1523,7 @@
     "name": "Lillie",
     "slug": "lillie",
     "region": "Alola",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/me1/184_hires.png",
     "isFullArt": true
   },
@@ -1340,6 +1531,7 @@
     "name": "Kahili",
     "slug": "kahili",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm8/210_hires.png",
     "isFullArt": true
   },
@@ -1347,6 +1539,7 @@
     "name": "Molayne",
     "slug": "molayne",
     "region": "Alola",
+    "role": "Trial Captain",
     "imageUrl": "https://images.pokemontcg.io/sm10/212_hires.png",
     "isFullArt": true
   },
@@ -1354,6 +1547,7 @@
     "name": "Samson Oak",
     "slug": "samson-oak",
     "region": "Alola",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sm10/185_hires.png",
     "isFullArt": false
   },
@@ -1361,6 +1555,7 @@
     "name": "Zisu",
     "slug": "zisu",
     "region": "Alola",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh10/189_hires.png",
     "isFullArt": true
   },
@@ -1368,6 +1563,7 @@
     "name": "Welder",
     "slug": "welder",
     "region": "Alola",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm10/214_hires.png",
     "isFullArt": true
   },
@@ -1375,6 +1571,7 @@
     "name": "Faba",
     "slug": "faba",
     "region": "Alola",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm8/208_hires.png",
     "isFullArt": true
   },
@@ -1382,6 +1579,7 @@
     "name": "Wicke",
     "slug": "wicke",
     "region": "Alola",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sm3/147_hires.png",
     "isFullArt": true
   },
@@ -1389,6 +1587,7 @@
     "name": "Professor Cozmo",
     "slug": "professor-cozmo",
     "region": "Alola",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/ex8/90_hires.png",
     "isFullArt": false
   },
@@ -1396,6 +1595,7 @@
     "name": "Milo",
     "slug": "milo",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG27_hires.png",
     "isFullArt": true
   },
@@ -1403,6 +1603,7 @@
     "name": "Nessa",
     "slug": "nessa",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG27_hires.png",
     "isFullArt": true
   },
@@ -1410,6 +1611,7 @@
     "name": "Kabu",
     "slug": "kabu",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG26_hires.png",
     "isFullArt": true
   },
@@ -1417,6 +1619,7 @@
     "name": "Bea",
     "slug": "bea",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh4/180_hires.png",
     "isFullArt": true
   },
@@ -1424,6 +1627,7 @@
     "name": "Allister",
     "slug": "allister",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG24_hires.png",
     "isFullArt": true
   },
@@ -1431,6 +1635,7 @@
     "name": "Opal",
     "slug": "opal",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh11tg/TG28_hires.png",
     "isFullArt": true
   },
@@ -1438,6 +1643,7 @@
     "name": "Gordie",
     "slug": "gordie",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh7/201_hires.png",
     "isFullArt": true
   },
@@ -1445,6 +1651,7 @@
     "name": "Melony",
     "slug": "melony",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG64_hires.png",
     "isFullArt": true
   },
@@ -1452,6 +1659,7 @@
     "name": "Piers",
     "slug": "piers",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh10tg/TG28_hires.png",
     "isFullArt": true
   },
@@ -1459,6 +1667,7 @@
     "name": "Raihan",
     "slug": "raihan",
     "region": "Galar",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh7/202_hires.png",
     "isFullArt": true
   },
@@ -1466,6 +1675,7 @@
     "name": "Leon",
     "slug": "leon",
     "region": "Galar",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/swsh4/182_hires.png",
     "isFullArt": true
   },
@@ -1473,6 +1683,7 @@
     "name": "Hop",
     "slug": "hop",
     "region": "Galar",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh35/73_hires.png",
     "isFullArt": true
   },
@@ -1480,6 +1691,7 @@
     "name": "Marnie",
     "slug": "marnie",
     "region": "Galar",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh1/200_hires.png",
     "isFullArt": true
   },
@@ -1487,6 +1699,7 @@
     "name": "Bede",
     "slug": "bede",
     "region": "Galar",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/swsh1/199_hires.png",
     "isFullArt": true
   },
@@ -1494,6 +1707,7 @@
     "name": "Professor Magnolia",
     "slug": "professor-magnolia",
     "region": "Galar",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/swsh1/201_hires.png",
     "isFullArt": true
   },
@@ -1501,6 +1715,7 @@
     "name": "Sonia",
     "slug": "sonia",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh2/192_hires.png",
     "isFullArt": true
   },
@@ -1508,6 +1723,7 @@
     "name": "Rose",
     "slug": "rose",
     "region": "Galar",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/swsh3/189_hires.png",
     "isFullArt": true
   },
@@ -1515,6 +1731,7 @@
     "name": "Oleana",
     "slug": "oleana",
     "region": "Galar",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/swsh2/191_hires.png",
     "isFullArt": true
   },
@@ -1522,6 +1739,7 @@
     "name": "Peony",
     "slug": "peony",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh6/197_hires.png",
     "isFullArt": true
   },
@@ -1529,6 +1747,7 @@
     "name": "Peonia",
     "slug": "peonia",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh6/196_hires.png",
     "isFullArt": true
   },
@@ -1536,6 +1755,7 @@
     "name": "Klara",
     "slug": "klara",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh6/194_hires.png",
     "isFullArt": true
   },
@@ -1543,6 +1763,7 @@
     "name": "Avery",
     "slug": "avery",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh6/187_hires.png",
     "isFullArt": true
   },
@@ -1550,6 +1771,7 @@
     "name": "Sordward",
     "slug": "sordward",
     "region": "Galar",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/swsh12tg/TG28_hires.png",
     "isFullArt": true
   },
@@ -1557,6 +1779,7 @@
     "name": "Shielbert",
     "slug": "shielbert",
     "region": "Galar",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/swsh12tg/TG28_hires.png",
     "isFullArt": true
   },
@@ -1564,6 +1787,7 @@
     "name": "The Masked Royal",
     "slug": "the-masked-royal",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm7/139_hires.png",
     "isFullArt": false
   },
@@ -1571,6 +1795,7 @@
     "name": "Gloria",
     "slug": "gloria",
     "region": "Galar",
+    "role": "Protagonist",
     "imageUrl": "https://images.pokemontcg.io/swsh9tg/TG26_hires.png",
     "isFullArt": true
   },
@@ -1578,6 +1803,7 @@
     "name": "Mustard",
     "slug": "mustard",
     "region": "Galar",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh9tg/TG27_hires.png",
     "isFullArt": true
   },
@@ -1585,6 +1811,7 @@
     "name": "Katy",
     "slug": "katy",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv1/237_hires.png",
     "isFullArt": true
   },
@@ -1592,6 +1819,7 @@
     "name": "Brassius",
     "slug": "brassius",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/135_hires.png",
     "isFullArt": true
   },
@@ -1599,6 +1827,7 @@
     "name": "Iono",
     "slug": "iono",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv2/269_hires.png",
     "isFullArt": true
   },
@@ -1606,6 +1835,7 @@
     "name": "Kofu",
     "slug": "kofu",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv7/165_hires.png",
     "isFullArt": true
   },
@@ -1613,6 +1843,7 @@
     "name": "Larry",
     "slug": "larry",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv4/235_hires.png",
     "isFullArt": true
   },
@@ -1620,6 +1851,7 @@
     "name": "Ryme",
     "slug": "ryme",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv3/221_hires.png",
     "isFullArt": true
   },
@@ -1627,6 +1859,7 @@
     "name": "Tulip",
     "slug": "tulip",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv4/259_hires.png",
     "isFullArt": true
   },
@@ -1634,6 +1867,7 @@
     "name": "Grusha",
     "slug": "grusha",
     "region": "Paldea",
+    "role": "Gym Leader",
     "imageUrl": "https://images.pokemontcg.io/sv2/268_hires.png",
     "isFullArt": true
   },
@@ -1641,6 +1875,7 @@
     "name": "Rika",
     "slug": "rika",
     "region": "Paldea",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv4/258_hires.png",
     "isFullArt": true
   },
@@ -1648,6 +1883,7 @@
     "name": "Poppy",
     "slug": "poppy",
     "region": "Paldea",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv3/227_hires.png",
     "isFullArt": true
   },
@@ -1655,6 +1891,7 @@
     "name": "Hassel",
     "slug": "hassel",
     "region": "Paldea",
+    "role": "Elite Four",
     "imageUrl": "https://images.pokemontcg.io/sv6/205_hires.png",
     "isFullArt": true
   },
@@ -1662,6 +1899,7 @@
     "name": "Geeta",
     "slug": "geeta",
     "region": "Paldea",
+    "role": "Champion",
     "imageUrl": "https://images.pokemontcg.io/sv3/226_hires.png",
     "isFullArt": true
   },
@@ -1669,6 +1907,7 @@
     "name": "Nemona",
     "slug": "nemona",
     "region": "Paldea",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sv4pt5/238_hires.png",
     "isFullArt": true
   },
@@ -1676,6 +1915,7 @@
     "name": "Arven",
     "slug": "arven",
     "region": "Paldea",
+    "role": "Rival",
     "imageUrl": "https://images.pokemontcg.io/sv4pt5/235_hires.png",
     "isFullArt": true
   },
@@ -1683,6 +1923,7 @@
     "name": "Penny",
     "slug": "penny",
     "region": "Paldea",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv4pt5/239_hires.png",
     "isFullArt": true
   },
@@ -1690,6 +1931,7 @@
     "name": "Clavell",
     "slug": "clavell",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv2/249_hires.png",
     "isFullArt": true
   },
@@ -1697,6 +1939,7 @@
     "name": "Jacq",
     "slug": "jacq",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv1/250_hires.png",
     "isFullArt": true
   },
@@ -1704,6 +1947,7 @@
     "name": "Amarys",
     "slug": "amarys",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/170_hires.png",
     "isFullArt": true
   },
@@ -1711,6 +1955,7 @@
     "name": "Giacomo",
     "slug": "giacomo",
     "region": "Paldea",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sv2/267_hires.png",
     "isFullArt": true
   },
@@ -1718,6 +1963,7 @@
     "name": "Mela",
     "slug": "mela",
     "region": "Paldea",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sv4/254_hires.png",
     "isFullArt": true
   },
@@ -1725,6 +1971,7 @@
     "name": "Atticus",
     "slug": "atticus",
     "region": "Paldea",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/133_hires.png",
     "isFullArt": true
   },
@@ -1732,6 +1979,7 @@
     "name": "Ortega",
     "slug": "ortega",
     "region": "Paldea",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sv3/219_hires.png",
     "isFullArt": true
   },
@@ -1739,6 +1987,7 @@
     "name": "Eri",
     "slug": "eri",
     "region": "Paldea",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/sv5/210_hires.png",
     "isFullArt": true
   },
@@ -1746,6 +1995,7 @@
     "name": "Kieran",
     "slug": "kieran",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv6/218_hires.png",
     "isFullArt": true
   },
@@ -1753,6 +2003,7 @@
     "name": "Carmine",
     "slug": "carmine",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv6/217_hires.png",
     "isFullArt": true
   },
@@ -1760,6 +2011,7 @@
     "name": "Perrin",
     "slug": "perrin",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv6/220_hires.png",
     "isFullArt": true
   },
@@ -1767,6 +2019,7 @@
     "name": "Briar",
     "slug": "briar",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv7/171_hires.png",
     "isFullArt": true
   },
@@ -1774,6 +2027,7 @@
     "name": "Crispin",
     "slug": "crispin",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/171_hires.png",
     "isFullArt": true
   },
@@ -1781,6 +2035,7 @@
     "name": "Lacey",
     "slug": "lacey",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/175_hires.png",
     "isFullArt": true
   },
@@ -1788,6 +2043,7 @@
     "name": "Cara Liss",
     "slug": "cara-liss",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh45/67_hires.png",
     "isFullArt": true
   },
@@ -1795,6 +2051,7 @@
     "name": "Dendra",
     "slug": "dendra",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv2/266_hires.png",
     "isFullArt": true
   },
@@ -1802,6 +2059,7 @@
     "name": "Gwynn",
     "slug": "gwynn",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me5-119/large",
     "isFullArt": true
   },
@@ -1809,6 +2067,7 @@
     "name": "Iscan",
     "slug": "iscan",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh11/192_hires.png",
     "isFullArt": true
   },
@@ -1816,6 +2075,7 @@
     "name": "Miriam",
     "slug": "miriam",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv1/251_hires.png",
     "isFullArt": true
   },
@@ -1823,6 +2083,7 @@
     "name": "Morgan",
     "slug": "morgan",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm9/178_hires.png",
     "isFullArt": true
   },
@@ -1830,6 +2091,7 @@
     "name": "Naveen",
     "slug": "naveen",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me3-112/large",
     "isFullArt": true
   },
@@ -1837,6 +2099,7 @@
     "name": "Raifort",
     "slug": "raifort",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv8pt5/142_hires.png",
     "isFullArt": true
   },
@@ -1844,6 +2107,7 @@
     "name": "Saguaro",
     "slug": "saguaro",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv2/270_hires.png",
     "isFullArt": true
   },
@@ -1851,6 +2115,7 @@
     "name": "Salvatore",
     "slug": "salvatore",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sv5/212_hires.png",
     "isFullArt": true
   },
@@ -1858,6 +2123,7 @@
     "name": "Tarragon",
     "slug": "tarragon",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me3-116/large",
     "isFullArt": true
   },
@@ -1865,6 +2131,7 @@
     "name": "Evelyn",
     "slug": "evelyn",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm9/175_hires.png",
     "isFullArt": true
   },
@@ -1872,6 +2139,7 @@
     "name": "Arezu",
     "slug": "arezu",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh11/189_hires.png",
     "isFullArt": true
   },
@@ -1879,6 +2147,7 @@
     "name": "Honey",
     "slug": "honey",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh6/192_hires.png",
     "isFullArt": true
   },
@@ -1886,6 +2155,7 @@
     "name": "Jacinthe",
     "slug": "jacinthe",
     "region": "Paldea",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me3-122/large",
     "isFullArt": true
   },
@@ -1893,6 +2163,7 @@
     "name": "Professor Sada",
     "slug": "professor-sada",
     "region": "Paldea",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sv4/256_hires.png",
     "isFullArt": true
   },
@@ -1900,6 +2171,7 @@
     "name": "Professor Turo",
     "slug": "professor-turo",
     "region": "Paldea",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/sv4/257_hires.png",
     "isFullArt": true
   },
@@ -1907,6 +2179,7 @@
     "name": "Cassiopeia",
     "slug": "cassiopeia",
     "region": "Paldea",
+    "role": "Team Admin",
     "imageUrl": "https://images.pokemontcg.io/sv6pt5/94_hires.png",
     "isFullArt": true
   },
@@ -1914,6 +2187,7 @@
     "name": "Professor Laventon",
     "slug": "professor-laventon",
     "region": "Hisui",
+    "role": "Professor",
     "imageUrl": "https://images.pokemontcg.io/swsh12/162_hires.png",
     "isFullArt": false
   },
@@ -1921,6 +2195,7 @@
     "name": "Cyllene",
     "slug": "cyllene",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh10/183_hires.png",
     "isFullArt": true
   },
@@ -1928,6 +2203,7 @@
     "name": "Adaman",
     "slug": "adaman",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG57_hires.png",
     "isFullArt": true
   },
@@ -1935,6 +2211,7 @@
     "name": "Irida",
     "slug": "irida",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh10/186_hires.png",
     "isFullArt": true
   },
@@ -1942,6 +2219,7 @@
     "name": "Volo",
     "slug": "volo",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh11/196_hires.png",
     "isFullArt": true
   },
@@ -1949,6 +2227,7 @@
     "name": "Cogita",
     "slug": "cogita",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -1956,6 +2235,7 @@
     "name": "Ingo",
     "slug": "ingo",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/sm9/176_hires.png",
     "isFullArt": true
   },
@@ -1963,6 +2243,7 @@
     "name": "Kamado",
     "slug": "kamado",
     "region": "Hisui",
+    "role": "Trainer",
     "imageUrl": "https://images.pokemontcg.io/swsh10/187_hires.png",
     "isFullArt": true
   },
@@ -1970,6 +2251,7 @@
     "name": "Urbain",
     "slug": "urbain",
     "region": "Lumiose",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-214/large",
     "isFullArt": false
   },
@@ -1977,6 +2259,7 @@
     "name": "Canari",
     "slug": "canari",
     "region": "Lumiose",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-291/large",
     "isFullArt": true
   },
@@ -1984,6 +2267,7 @@
     "name": "Jett",
     "slug": "jett",
     "region": "Lumiose",
+    "role": "Trainer",
     "imageUrl": "https://images.scrydex.com/pokemon/me5-79/large",
     "isFullArt": false
   },
@@ -1991,6 +2275,7 @@
     "name": "Blanche",
     "slug": "blanche",
     "region": "Pokémon GO",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/pgo/64_hires.png",
     "isFullArt": false
   },
@@ -1998,6 +2283,7 @@
     "name": "Candela",
     "slug": "candela",
     "region": "Pokémon GO",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/pgo/65_hires.png",
     "isFullArt": false
   },
@@ -2005,6 +2291,7 @@
     "name": "Spark",
     "slug": "spark",
     "region": "Pokémon GO",
+    "role": "Team Leader",
     "imageUrl": "https://images.pokemontcg.io/pgo/70_hires.png",
     "isFullArt": false
   },
@@ -2012,6 +2299,7 @@
     "name": "Youngster",
     "slug": "youngster",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sv1/198_hires.png",
     "isFullArt": false
   },
@@ -2019,6 +2307,7 @@
     "name": "Bug Catcher",
     "slug": "bug-catcher",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm11/189_hires.png",
     "isFullArt": false
   },
@@ -2026,6 +2315,7 @@
     "name": "Lass",
     "slug": "lass",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/base1/75_hires.png",
     "isFullArt": false
   },
@@ -2033,6 +2323,7 @@
     "name": "Sailor",
     "slug": "sailor",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2040,6 +2331,7 @@
     "name": "Jr. Trainer♂",
     "slug": "jr-trainer-m",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2047,6 +2339,7 @@
     "name": "Jr. Trainer♀",
     "slug": "jr-trainer-f",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2054,6 +2347,7 @@
     "name": "Pokémaniac",
     "slug": "pokemaniac",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2061,6 +2355,7 @@
     "name": "Super Nerd",
     "slug": "super-nerd",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2068,6 +2363,7 @@
     "name": "Hiker",
     "slug": "hiker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sma/SV85_hires.png",
     "isFullArt": true
   },
@@ -2075,6 +2371,7 @@
     "name": "Biker",
     "slug": "biker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2082,6 +2379,7 @@
     "name": "Burglar",
     "slug": "burglar",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2089,6 +2387,7 @@
     "name": "Engineer",
     "slug": "engineer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/hgss2/75_hires.png",
     "isFullArt": false
   },
@@ -2096,6 +2395,7 @@
     "name": "Fisherman",
     "slug": "fisherman",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/ecard3/125_hires.png",
     "isFullArt": false
   },
@@ -2103,6 +2403,7 @@
     "name": "Swimmer",
     "slug": "swimmer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2110,6 +2411,7 @@
     "name": "Cue Ball",
     "slug": "cue-ball",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2117,6 +2419,7 @@
     "name": "Gambler",
     "slug": "gambler",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/base3/60_hires.png",
     "isFullArt": false
   },
@@ -2124,6 +2427,7 @@
     "name": "Beauty",
     "slug": "beauty",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh4/181_hires.png",
     "isFullArt": true
   },
@@ -2131,6 +2435,7 @@
     "name": "Psychic",
     "slug": "psychic",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy9/108_hires.png",
     "isFullArt": false
   },
@@ -2138,6 +2443,7 @@
     "name": "Rocker",
     "slug": "rocker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2145,6 +2451,7 @@
     "name": "Juggler",
     "slug": "juggler",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/ecard2/126_hires.png",
     "isFullArt": false
   },
@@ -2152,6 +2459,7 @@
     "name": "Tamer",
     "slug": "tamer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2159,6 +2467,7 @@
     "name": "Bird Keeper",
     "slug": "bird-keeper",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh45/66_hires.png",
     "isFullArt": true
   },
@@ -2166,6 +2475,7 @@
     "name": "Blackbelt",
     "slug": "blackbelt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-255/large",
     "isFullArt": true
   },
@@ -2173,6 +2483,7 @@
     "name": "Chief",
     "slug": "chief",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2180,6 +2491,7 @@
     "name": "Scientist",
     "slug": "scientist",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2187,6 +2499,7 @@
     "name": "Cooltrainer♂",
     "slug": "cooltrainer-m",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy7/69_hires.png",
     "isFullArt": false
   },
@@ -2194,6 +2507,7 @@
     "name": "Cooltrainer♀",
     "slug": "cooltrainer-f",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy7/69_hires.png",
     "isFullArt": false
   },
@@ -2201,6 +2515,7 @@
     "name": "Gentleman",
     "slug": "gentleman",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2208,6 +2523,7 @@
     "name": "Channeler",
     "slug": "channeler",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm11/232_hires.png",
     "isFullArt": true
   },
@@ -2215,6 +2531,7 @@
     "name": "Camper",
     "slug": "camper",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2222,6 +2539,7 @@
     "name": "Picnicker",
     "slug": "picnicker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/svp/114_hires.png",
     "isFullArt": false
   },
@@ -2229,6 +2547,7 @@
     "name": "Pokéfan♂",
     "slug": "pokefan-m",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2236,6 +2555,7 @@
     "name": "Pokéfan♀",
     "slug": "pokefan-f",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2243,6 +2563,7 @@
     "name": "Teacher",
     "slug": "teacher",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2250,6 +2571,7 @@
     "name": "Boarder",
     "slug": "boarder",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2257,6 +2579,7 @@
     "name": "Skier",
     "slug": "skier",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2264,6 +2587,7 @@
     "name": "Medium",
     "slug": "medium",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2271,6 +2595,7 @@
     "name": "Kimono Girl",
     "slug": "kimono-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2278,6 +2603,7 @@
     "name": "Sage",
     "slug": "sage",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/hgss3/77_hires.png",
     "isFullArt": false
   },
@@ -2285,6 +2611,7 @@
     "name": "Officer",
     "slug": "officer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2292,6 +2619,7 @@
     "name": "Firebreather",
     "slug": "firebreather",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/me2/119_hires.png",
     "isFullArt": true
   },
@@ -2299,6 +2627,7 @@
     "name": "Guitarist",
     "slug": "guitarist",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2306,6 +2635,7 @@
     "name": "Aroma Lady",
     "slug": "aroma-lady",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh7/199_hires.png",
     "isFullArt": true
   },
@@ -2313,6 +2643,7 @@
     "name": "Bug Maniac",
     "slug": "bug-maniac",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2320,6 +2651,7 @@
     "name": "Collector",
     "slug": "collector",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2327,6 +2659,7 @@
     "name": "Crush Girl",
     "slug": "crush-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2334,6 +2667,7 @@
     "name": "Expert",
     "slug": "expert",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2341,6 +2675,7 @@
     "name": "Kindler",
     "slug": "kindler",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh9/170_hires.png",
     "isFullArt": true
   },
@@ -2348,6 +2683,7 @@
     "name": "Lady",
     "slug": "lady",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sma/SV86_hires.png",
     "isFullArt": true
   },
@@ -2355,6 +2691,7 @@
     "name": "Ninja Boy",
     "slug": "ninja-boy",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy11/103_hires.png",
     "isFullArt": false
   },
@@ -2362,6 +2699,7 @@
     "name": "Old Couple",
     "slug": "old-couple",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2369,6 +2707,7 @@
     "name": "Rich Boy",
     "slug": "rich-boy",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2376,6 +2715,7 @@
     "name": "Ruin Maniac",
     "slug": "ruin-maniac",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2383,6 +2723,7 @@
     "name": "School Kid",
     "slug": "school-kid",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2390,6 +2731,7 @@
     "name": "Sis and Bro",
     "slug": "sis-and-bro",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2397,6 +2739,7 @@
     "name": "Triathlete",
     "slug": "triathlete",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2404,6 +2747,7 @@
     "name": "Tuber",
     "slug": "tuber",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2411,6 +2755,7 @@
     "name": "Twins",
     "slug": "twins",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/hgss4/89_hires.png",
     "isFullArt": false
   },
@@ -2418,6 +2763,7 @@
     "name": "Team Aqua Grunt",
     "slug": "team-aqua-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/dc1/26_hires.png",
     "isFullArt": false
   },
@@ -2425,6 +2771,7 @@
     "name": "Team Magma Grunt",
     "slug": "team-magma-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/dc1/30_hires.png",
     "isFullArt": false
   },
@@ -2432,6 +2779,7 @@
     "name": "Battle Girl",
     "slug": "battle-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2439,6 +2787,7 @@
     "name": "Cyclist",
     "slug": "cyclist",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2446,6 +2795,7 @@
     "name": "Dragon Tamer",
     "slug": "dragon-tamer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2453,6 +2803,7 @@
     "name": "Roughneck",
     "slug": "roughneck",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2460,6 +2811,7 @@
     "name": "Veteran",
     "slug": "veteran",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2467,6 +2819,7 @@
     "name": "Waitress",
     "slug": "waitress",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-215/large",
     "isFullArt": false
   },
@@ -2474,6 +2827,7 @@
     "name": "Worker",
     "slug": "worker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh12/195_hires.png",
     "isFullArt": true
   },
@@ -2481,6 +2835,7 @@
     "name": "Team Galactic Grunt",
     "slug": "team-galactic-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/191/high.webp",
     "isFullArt": true
   },
@@ -2488,6 +2843,7 @@
     "name": "Artist",
     "slug": "artist",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2495,6 +2851,7 @@
     "name": "Backpacker",
     "slug": "backpacker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2502,6 +2859,7 @@
     "name": "Baker",
     "slug": "baker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2509,6 +2867,7 @@
     "name": "Clerk",
     "slug": "clerk",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2516,6 +2875,7 @@
     "name": "Depot Agent",
     "slug": "depot-agent",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2523,6 +2883,7 @@
     "name": "Doctor",
     "slug": "doctor",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh6/190_hires.png",
     "isFullArt": true
   },
@@ -2530,6 +2891,7 @@
     "name": "Nurse",
     "slug": "nurse",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2537,6 +2899,7 @@
     "name": "Nursery Aide",
     "slug": "nursery-aide",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2544,6 +2907,7 @@
     "name": "Parasol Lady",
     "slug": "parasol-lady",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sv4/255_hires.png",
     "isFullArt": true
   },
@@ -2551,6 +2915,7 @@
     "name": "Pokémon Breeder",
     "slug": "pokemon-breeder",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/base6/102_hires.png",
     "isFullArt": false
   },
@@ -2558,6 +2923,7 @@
     "name": "Pokémon Ranger",
     "slug": "pokemon-ranger",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy11/113_hires.png",
     "isFullArt": true
   },
@@ -2565,6 +2931,7 @@
     "name": "Preschooler",
     "slug": "preschooler",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2572,6 +2939,7 @@
     "name": "Socialite",
     "slug": "socialite",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2579,6 +2947,7 @@
     "name": "Waiter",
     "slug": "waiter",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2586,6 +2955,7 @@
     "name": "Musician",
     "slug": "musician",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2593,6 +2963,7 @@
     "name": "Team Plasma Grunt",
     "slug": "team-plasma-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/bw8/125_hires.png",
     "isFullArt": false
   },
@@ -2600,6 +2971,7 @@
     "name": "Fairy Tale Girl",
     "slug": "fairy-tale-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2607,6 +2979,7 @@
     "name": "Furisode Girl",
     "slug": "furisode-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh12/190_hires.png",
     "isFullArt": true
   },
@@ -2614,6 +2987,7 @@
     "name": "Hex Maniac",
     "slug": "hex-maniac",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy7/75a_hires.png",
     "isFullArt": true
   },
@@ -2621,6 +2995,7 @@
     "name": "Punk Guy",
     "slug": "punk-guy",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2628,6 +3003,7 @@
     "name": "Punk Girl",
     "slug": "punk-girl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2635,6 +3011,7 @@
     "name": "Sky Trainer",
     "slug": "sky-trainer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2642,6 +3019,7 @@
     "name": "Team Flare Grunt",
     "slug": "team-flare-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/g1/73a_hires.png",
     "isFullArt": true
   },
@@ -2649,6 +3027,7 @@
     "name": "Delinquent",
     "slug": "delinquent",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/xy9/98b_hires.png",
     "isFullArt": true
   },
@@ -2656,6 +3035,7 @@
     "name": "Golfer",
     "slug": "golfer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2663,6 +3043,7 @@
     "name": "Office Worker",
     "slug": "office-worker",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2670,6 +3051,7 @@
     "name": "Rising Star",
     "slug": "rising-star",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2677,6 +3059,7 @@
     "name": "Surfer",
     "slug": "surfer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-293/large",
     "isFullArt": true
   },
@@ -2684,6 +3067,7 @@
     "name": "Team Skull Grunt",
     "slug": "team-skull-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm1/149_hires.png",
     "isFullArt": true
   },
@@ -2691,6 +3075,7 @@
     "name": "Aether Foundation Employee",
     "slug": "aether-foundation-employee",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sma/SV81_hires.png",
     "isFullArt": true
   },
@@ -2698,6 +3083,7 @@
     "name": "League Staff",
     "slug": "league-staff",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh4/153_hires.png",
     "isFullArt": false
   },
@@ -2705,6 +3091,7 @@
     "name": "Team Yell Grunt",
     "slug": "team-yell-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh1/202_hires.png",
     "isFullArt": true
   },
@@ -2712,6 +3099,7 @@
     "name": "Cheerleader",
     "slug": "cheerleader",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/hgss2/71_hires.png",
     "isFullArt": false
   },
@@ -2719,6 +3107,7 @@
     "name": "Rancher",
     "slug": "rancher",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2726,6 +3115,7 @@
     "name": "Restaurant Employee",
     "slug": "restaurant-employee",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2733,6 +3123,7 @@
     "name": "Sports Student",
     "slug": "sports-student",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2740,6 +3131,7 @@
     "name": "Student",
     "slug": "student",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": null,
     "isFullArt": false
   },
@@ -2747,6 +3139,7 @@
     "name": "Schoolboy",
     "slug": "schoolboy",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh8/261_hires.png",
     "isFullArt": true
   },
@@ -2754,6 +3147,7 @@
     "name": "Schoolgirl",
     "slug": "schoolgirl",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh8/262_hires.png",
     "isFullArt": true
   },
@@ -2761,6 +3155,7 @@
     "name": "Poké Kid",
     "slug": "poke-kid",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/swsh45/70_hires.png",
     "isFullArt": true
   },
@@ -2768,6 +3163,7 @@
     "name": "Roller Skater",
     "slug": "roller-skater",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm12/235_hires.png",
     "isFullArt": true
   },
@@ -2775,6 +3171,7 @@
     "name": "Ruffian",
     "slug": "ruffian",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sv9/181_hires.png",
     "isFullArt": true
   },
@@ -2782,6 +3179,7 @@
     "name": "Sightseer",
     "slug": "sightseer",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm8/189_hires.png",
     "isFullArt": false
   },
@@ -2789,6 +3187,7 @@
     "name": "TV Reporter",
     "slug": "tv-reporter",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sm7/167_hires.png",
     "isFullArt": true
   },
@@ -2796,6 +3195,7 @@
     "name": "Traveling Merchant",
     "slug": "traveling-merchant",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://assets.tcgdex.net/en/tcgp/A4a/084/high.webp",
     "isFullArt": true
   },
@@ -2803,6 +3203,7 @@
     "name": "Team Star Grunt",
     "slug": "team-star-grunt",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/sv1/242_hires.png",
     "isFullArt": true
   },
@@ -2810,6 +3211,7 @@
     "name": "Team Aqua Admin",
     "slug": "team-aqua-admin",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/dc1/25_hires.png",
     "isFullArt": false
   },
@@ -2817,6 +3219,7 @@
     "name": "Team Magma Admin",
     "slug": "team-magma-admin",
     "region": "Universal",
+    "role": "Trainer Class",
     "imageUrl": "https://images.pokemontcg.io/dc1/29_hires.png",
     "isFullArt": false
   }

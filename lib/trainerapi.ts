@@ -819,6 +819,32 @@ async function fetchPocketTrainerImage(searchNames: string[]): Promise<{ url: st
   return { url: null, isFullArt: false };
 }
 
+const BULBAPEDIA_API = "https://bulbapedia.bulbagarden.net/w/api.php";
+
+// Last-resort art source for named trainers with zero TCG/Pocket card of their own — mirrors the
+// Pokédex's PokeAPI official-artwork fallback for Pokémon with no matching card. Bulbapedia isn't
+// reachable from the sandbox this code is edited in, but is reachable from the CI runner that
+// actually executes this at data-generation time (confirmed separately). "(game)" is Bulbapedia's
+// usual disambiguator when a trainer's plain name collides with another article (e.g. an anime
+// character or move of the same name); redirects=1 handles the common case where the plain title
+// is itself a redirect to the disambiguated page.
+async function fetchBulbapediaArtwork(name: string): Promise<string | null> {
+  for (const title of [name, `${name} (game)`]) {
+    try {
+      const url = `${BULBAPEDIA_API}?action=query&titles=${encodeURIComponent(title)}&prop=pageimages&piprop=original&format=json&redirects=1`;
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const json = await res.json();
+      const page = Object.values(json?.query?.pages ?? {})[0] as { missing?: unknown; original?: { source?: string } } | undefined;
+      if (!page || page.missing !== undefined) continue;
+      if (page.original?.source) return page.original.source;
+    } catch {
+      // try next candidate title
+    }
+  }
+  return null;
+}
+
 // Builds the Kanto trainer roster with portrait art pulled from pokemontcg.io Trainer cards
 // where a name matches, falling back to Pocket (TCGdex) only when the paper TCG has nothing —
 // the card catalogs are art lookup only, not the trainer list itself. Queries all
@@ -864,7 +890,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
     };
   }
 
-  return Promise.all(
+  const entries = await Promise.all(
     KANTO_ROSTER.map(async ({ name, searchNames, special, region }) => {
       let imageUrl: string | null = null;
       let isFullArt = false;
@@ -884,6 +910,13 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
         imageUrl = pocket.url;
         isFullArt = pocket.isFullArt;
       }
+      // Only named individuals get a Bulbapedia lookup — generic trainer classes (Youngster,
+      // Sailor, etc.) don't have their own character page to fetch art from.
+      if (!imageUrl && special) {
+        imageUrl = await fetchBulbapediaArtwork(name);
+        // Character art, not a bordered TCG card — same full-bleed treatment as a full-art card.
+        isFullArt = imageUrl !== null;
+      }
       // Generic trainer classes (Youngster, Sailor, etc.) aren't region-specific — every region
       // has its own Youngsters and Sailors — so only named individuals get a real region tag,
       // defaulting to Kanto when not overridden (Johto entries set region explicitly).
@@ -897,4 +930,7 @@ export async function fetchTrainerEntries(): Promise<TrainerEntry[]> {
       };
     })
   );
+  // The Pokédex is always ordered by dex number; trainers have no equivalent number, so
+  // alphabetical is the consistent stand-in rather than leaving it in roster-edit order.
+  return entries.sort((a, b) => a.name.localeCompare(b.name));
 }

@@ -259,7 +259,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Green", searchNames: ["Green"], special: true },
   // Other named characters
   { name: "Professor Oak", searchNames: ["Professor Oak", "Oak"], special: true },
-  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true },
+  { name: "Team Rocket Grunt", searchNames: ["Team Rocket Grunt", "Rocket Grunt"], special: true, region: "Universal" },
   { name: "Bill", searchNames: ["Bill"], special: true },
   { name: "Mr. Fuji", searchNames: ["Mr. Fuji", "Fuji"], special: true },
   { name: "Daisy", searchNames: ["Daisy"], special: true },

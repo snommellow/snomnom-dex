@@ -206,6 +206,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Mr. Fuji", searchNames: ["Mr. Fuji", "Fuji"], special: true },
   { name: "Daisy", searchNames: ["Daisy"], special: true },
   { name: "Copycat", searchNames: ["Copycat"], special: true },
+  { name: "Leaf", searchNames: ["Leaf"], special: true },
+  { name: "Janine", searchNames: ["Janine"], special: true },
+  { name: "Jessie", searchNames: ["Jessie"], special: true },
+  { name: "James", searchNames: ["James"], special: true },
   // Johto (Gen 2) named characters. Bruno, Koga, and Lance are NOT repeated here — they're the
   // same people already listed above, canonically reappearing as Johto's Elite Four (Bruno,
   // Koga) and Champion (Lance).
@@ -228,6 +232,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Eusine", searchNames: ["Eusine"], special: true, region: "Johto" },
   { name: "Mr. Pokémon", searchNames: ["Mr. Pokémon", "Mr. Pokemon"], special: true, region: "Johto" },
   { name: "Kurt", searchNames: ["Kurt"], special: true, region: "Johto" },
+  { name: "Ethan", searchNames: ["Ethan"], special: true, region: "Johto" },
+  { name: "Lyra", searchNames: ["Lyra"], special: true, region: "Johto" },
   // Hoenn (Gen 3) named characters. Steven is Ruby/Sapphire's Champion; Wallace succeeds him as
   // Emerald's Champion (and is also the 8th Gym Leader in Ruby/Sapphire) — both kept as their
   // own entries since both are canonically Champion depending on version.
@@ -252,6 +258,13 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Archie", searchNames: ["Archie"], special: true, region: "Hoenn" },
   { name: "Maxie", searchNames: ["Maxie"], special: true, region: "Hoenn" },
   { name: "Wally", searchNames: ["Wally"], special: true, region: "Hoenn" },
+  { name: "Celio", searchNames: ["Celio"], special: true, region: "Hoenn" },
+  { name: "Mr. Briney", searchNames: ["Mr. Briney"], special: true, region: "Hoenn" },
+  { name: "Mr. Stone", searchNames: ["Mr. Stone"], special: true, region: "Hoenn" },
+  { name: "Roseanne", searchNames: ["Roseanne"], special: true, region: "Hoenn" },
+  { name: "Clive", searchNames: ["Clive"], special: true, region: "Hoenn" },
+  { name: "Zinnia", searchNames: ["Zinnia"], special: true, region: "Hoenn" },
+  { name: "Lisia", searchNames: ["Lisia"], special: true, region: "Hoenn" },
   // Battle Frontier (Emerald) — Scott recruits the player; the 7 Frontier Brains each head one
   // facility (Anabel/Battle Tower, Noland/Battle Factory, Greta/Battle Arena, Tucker/Battle
   // Dome, Lucy/Battle Pike, Spenser/Battle Palace, Brandon/Battle Pyramid).
@@ -278,12 +291,18 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Lucian", searchNames: ["Lucian"], special: true, region: "Sinnoh" },
   { name: "Cynthia", searchNames: ["Cynthia"], special: true, region: "Sinnoh" },
   { name: "Barry", searchNames: ["Barry"], special: true, region: "Sinnoh" },
+  { name: "Dawn", searchNames: ["Dawn"], special: true, region: "Sinnoh" },
   { name: "Professor Rowan", searchNames: ["Professor Rowan", "Rowan"], special: true, region: "Sinnoh" },
   { name: "Cyrus", searchNames: ["Cyrus"], special: true, region: "Sinnoh" },
   { name: "Mars", searchNames: ["Mars"], special: true, region: "Sinnoh" },
   { name: "Jupiter", searchNames: ["Jupiter"], special: true, region: "Sinnoh" },
   { name: "Saturn", searchNames: ["Saturn"], special: true, region: "Sinnoh" },
+  { name: "Charon", searchNames: ["Charon"], special: true, region: "Sinnoh" },
   { name: "Looker", searchNames: ["Looker"], special: true, region: "Sinnoh" },
+  { name: "Cheryl", searchNames: ["Cheryl"], special: true, region: "Sinnoh" },
+  { name: "Buck", searchNames: ["Buck"], special: true, region: "Sinnoh" },
+  { name: "Marley", searchNames: ["Marley"], special: true, region: "Sinnoh" },
+  { name: "Riley", searchNames: ["Riley"], special: true, region: "Sinnoh" },
   // Battle Frontier (Platinum) — Palmer heads the Battle Tower; Argenta (Battle Castle), Dahlia
   // (Battle Hall), Darach (Battle Arcade), and Thorton (Battle Factory) each head another
   // facility.
@@ -318,6 +337,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Ghetsis", searchNames: ["Ghetsis"], special: true, region: "Unova" },
   { name: "N", searchNames: ["N"], special: true, region: "Unova" },
   { name: "Colress", searchNames: ["Colress"], special: true, region: "Unova" },
+  { name: "Cedric Juniper", searchNames: ["Cedric Juniper"], special: true, region: "Unova" },
+  { name: "Fennel", searchNames: ["Fennel"], special: true, region: "Unova" },
+  { name: "Rosa", searchNames: ["Rosa"], special: true, region: "Unova" },
+  { name: "Hilda", searchNames: ["Hilda"], special: true, region: "Unova" },
   // Kalos (Gen 6) named characters
   { name: "Viola", searchNames: ["Viola"], special: true, region: "Kalos" },
   { name: "Grant", searchNames: ["Grant"], special: true, region: "Kalos" },
@@ -341,6 +364,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Lysandre", searchNames: ["Lysandre"], special: true, region: "Kalos" },
   { name: "Xerosic", searchNames: ["Xerosic"], special: true, region: "Kalos" },
   { name: "AZ", searchNames: ["AZ"], special: true, region: "Kalos" },
+  { name: "Cyrano", searchNames: ["Cyrano"], special: true, region: "Kalos" },
   // Alola (Gen 7) named characters
   { name: "Ilima", searchNames: ["Ilima"], special: true, region: "Alola" },
   { name: "Lana", searchNames: ["Lana"], special: true, region: "Alola" },
@@ -361,6 +385,13 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Lusamine", searchNames: ["Lusamine"], special: true, region: "Alola" },
   { name: "Gladion", searchNames: ["Gladion"], special: true, region: "Alola" },
   { name: "Lillie", searchNames: ["Lillie"], special: true, region: "Alola" },
+  { name: "Kahili", searchNames: ["Kahili"], special: true, region: "Alola" },
+  { name: "Molayne", searchNames: ["Molayne"], special: true, region: "Alola" },
+  { name: "Samson Oak", searchNames: ["Samson Oak"], special: true, region: "Alola" },
+  { name: "Zisu", searchNames: ["Zisu"], special: true, region: "Alola" },
+  { name: "Welder", searchNames: ["Welder"], special: true, region: "Alola" },
+  { name: "Faba", searchNames: ["Faba"], special: true, region: "Alola" },
+  { name: "Wicke", searchNames: ["Wicke"], special: true, region: "Alola" },
   // Galar (Gen 8) named characters
   { name: "Milo", searchNames: ["Milo"], special: true, region: "Galar" },
   { name: "Nessa", searchNames: ["Nessa"], special: true, region: "Galar" },
@@ -380,6 +411,13 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Sonia", searchNames: ["Sonia"], special: true, region: "Galar" },
   { name: "Rose", searchNames: ["Rose"], special: true, region: "Galar" },
   { name: "Oleana", searchNames: ["Oleana"], special: true, region: "Galar" },
+  { name: "Peony", searchNames: ["Peony"], special: true, region: "Galar" },
+  { name: "Peonia", searchNames: ["Peonia"], special: true, region: "Galar" },
+  { name: "Klara", searchNames: ["Klara"], special: true, region: "Galar" },
+  { name: "Avery", searchNames: ["Avery"], special: true, region: "Galar" },
+  { name: "Sordward", searchNames: ["Sordward"], special: true, region: "Galar" },
+  { name: "Shielbert", searchNames: ["Shielbert"], special: true, region: "Galar" },
+  { name: "The Masked Royal", searchNames: ["The Masked Royal"], special: true, region: "Galar" },
   // Paldea (Gen 9) named characters
   { name: "Katy", searchNames: ["Katy"], special: true, region: "Paldea" },
   { name: "Brassius", searchNames: ["Brassius"], special: true, region: "Paldea" },
@@ -403,6 +441,28 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Atticus", searchNames: ["Atticus"], special: true, region: "Paldea" },
   { name: "Ortega", searchNames: ["Ortega"], special: true, region: "Paldea" },
   { name: "Eri", searchNames: ["Eri"], special: true, region: "Paldea" },
+  // Kitakami/Blueberry Academy (Teal Mask / Indigo Disk DLC)
+  { name: "Kieran", searchNames: ["Kieran"], special: true, region: "Paldea" },
+  { name: "Carmine", searchNames: ["Carmine"], special: true, region: "Paldea" },
+  { name: "Perrin", searchNames: ["Perrin"], special: true, region: "Paldea" },
+  { name: "Briar", searchNames: ["Briar"], special: true, region: "Paldea" },
+  { name: "Crispin", searchNames: ["Crispin"], special: true, region: "Paldea" },
+  { name: "Lacey", searchNames: ["Lacey"], special: true, region: "Paldea" },
+  { name: "Cara Liss", searchNames: ["Cara Liss"], special: true, region: "Paldea" },
+  { name: "Dendra", searchNames: ["Dendra"], special: true, region: "Paldea" },
+  { name: "Gwynn", searchNames: ["Gwynn"], special: true, region: "Paldea" },
+  { name: "Iscan", searchNames: ["Iscan"], special: true, region: "Paldea" },
+  { name: "Miriam", searchNames: ["Miriam"], special: true, region: "Paldea" },
+  { name: "Morgan", searchNames: ["Morgan"], special: true, region: "Paldea" },
+  { name: "Naveen", searchNames: ["Naveen"], special: true, region: "Paldea" },
+  { name: "Raifort", searchNames: ["Raifort"], special: true, region: "Paldea" },
+  { name: "Saguaro", searchNames: ["Saguaro"], special: true, region: "Paldea" },
+  { name: "Salvatore", searchNames: ["Salvatore"], special: true, region: "Paldea" },
+  { name: "Tarragon", searchNames: ["Tarragon"], special: true, region: "Paldea" },
+  { name: "Evelyn", searchNames: ["Evelyn"], special: true, region: "Paldea" },
+  { name: "Arezu", searchNames: ["Arezu"], special: true, region: "Paldea" },
+  { name: "Honey", searchNames: ["Honey"], special: true, region: "Paldea" },
+  { name: "Jacinthe", searchNames: ["Jacinthe"], special: true, region: "Paldea" },
   // Hisui (Legends: Arceus) named characters
   { name: "Professor Laventon", searchNames: ["Professor Laventon", "Laventon"], special: true, region: "Hisui" },
   { name: "Cyllene", searchNames: ["Cyllene"], special: true, region: "Hisui" },
@@ -417,6 +477,10 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   // catalog — other reported characters (Taunie, Vinnie) have no card yet.
   { name: "Urbain", searchNames: ["Urbain"], special: true, region: "Lumiose" },
   { name: "Jett", searchNames: ["Jett"], special: true, region: "Lumiose" },
+  // Pokémon GO — the three Team Leaders, not tied to any mainline region.
+  { name: "Blanche", searchNames: ["Blanche"], special: true, region: "Pokémon GO" },
+  { name: "Candela", searchNames: ["Candela"], special: true, region: "Pokémon GO" },
+  { name: "Spark", searchNames: ["Spark"], special: true, region: "Pokémon GO" },
   // Generic trainer classes — not Kanto-specific (every region has these), tagged "Universal".
   // Kanto's own roster (Gen 1) first, then every other generic class introduced across Gen
   // 2-9, deduplicated where a later game reused an earlier class name.

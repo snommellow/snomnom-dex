@@ -21,6 +21,7 @@ const REGION_ACCENT: Record<string, string> = {
   Paldea: "#c23b6e",
   Hisui: "#8a6b3d",
   Lumiose: "#9b2d5e",
+  "Pokémon GO": "#3a7bd5",
   Universal: "#546778",
 };
 

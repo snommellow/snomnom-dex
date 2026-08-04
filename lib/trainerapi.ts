@@ -1,5 +1,5 @@
-// Trainer roster source: PokeAPI has zero trainer data, and Bulbapedia isn't reachable from
-// this environment, so the actual trainer list comes from pret/pokered — the open-source
+// Trainer roster source: PokeAPI has zero trainer data, so the actual trainer list comes from
+// pret/pokered plus Bulbapedia-verified additions — the open-source
 // decompilation of Pokémon Red/Blue (constants/trainer_constants.asm lists every trainer class
 // and named character, e.g. Brock/Misty/gym leaders are each their own "class" of one).
 // pokemontcg.io's Trainer/Supporter cards are used ONLY for portrait art where a name matches —

@@ -732,8 +732,11 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   // Gen 2 (Johto)
   { name: "Camper", searchNames: ["Camper"] },
   { name: "Picnicker", searchNames: ["Picnicker"] },
-  { name: "Pokéfan♂", searchNames: ["Pokéfan", "Pokefan", "Poké Fan"] },
-  { name: "Pokéfan♀", searchNames: ["Pokéfan", "Pokefan", "Poké Fan"] },
+  // Unlike Cooltrainer♂/♀ and Jr. Trainer♂/♀ (which both resolve to real art), the constructed
+  // "Pokéfan♂"/"Pokéfan♀" Bulbapedia lookup titles never matched anything — same situation as
+  // Swimmer: the real class page is titled "Poké Fan" (with a space, no gender symbol), not two
+  // distinct gendered articles. Merged back to a single unisex entry so it actually gets art.
+  { name: "Poké Fan", searchNames: ["Pokéfan", "Pokefan", "Poké Fan"] },
   { name: "Teacher", searchNames: ["Teacher"] },
   { name: "Boarder", searchNames: ["Boarder"] },
   { name: "Skier", searchNames: ["Skier"] },

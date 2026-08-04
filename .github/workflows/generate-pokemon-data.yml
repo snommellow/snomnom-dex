@@ -32,19 +32,6 @@ jobs:
 
       - run: npm ci
 
-      - name: Debug region scope
-        run: npx tsx scripts/debug-region-scope.ts || true
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
-
-      - name: Commit debug data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/debug-region-scope.json
-          git commit -m "debug: check family/duo classes for region-locking + Pokefan cards" || true
-          git push --force-with-lease || true
-
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}

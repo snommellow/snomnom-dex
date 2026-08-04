@@ -36,7 +36,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/203_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm9/174_hires.png",
     "isFullArt": true
   },
   {
@@ -76,7 +76,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/204_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/xy8/162_hires.png",
     "isFullArt": true
   },
   {
@@ -177,7 +177,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/194_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm7/162_hires.png",
     "isFullArt": true
   },
   {
@@ -197,8 +197,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv3pt5/195_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Copycat",
@@ -297,7 +297,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv5/211_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm8/212_hires.png",
     "isFullArt": true
   },
   {
@@ -317,7 +317,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/245_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm9/177_hires.png",
     "isFullArt": true
   },
   {
@@ -527,8 +527,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/237_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Winona",
@@ -790,7 +790,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/246_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm7/164_hires.png",
     "isFullArt": true
   },
   {
@@ -894,13 +894,23 @@
     "isFullArt": true
   },
   {
+    "name": "Winstrate Family",
+    "slug": "winstrate-family",
+    "region": "Hoenn",
+    "roles": [
+      "Trainer Class"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/06/Winstrate_family_anime.png",
+    "isFullArt": true
+  },
+  {
     "name": "Roark",
     "slug": "roark",
     "region": "Sinnoh",
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/242_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/36/Brilliant_Diamond_Shining_Pearl_Roark.png",
     "isFullArt": true
   },
   {
@@ -1010,8 +1020,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/208_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/pl2/92_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Cynthia",
@@ -1221,6 +1231,26 @@
       "Frontier Brain"
     ],
     "imageUrl": "https://images.pokemontcg.io/swsh11/195_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Akari",
+    "slug": "akari",
+    "region": "Hisui",
+    "roles": [
+      "Protagonist"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/3/38/Legends_Arceus_Akari.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Rei",
+    "slug": "rei",
+    "region": "Hisui",
+    "roles": [
+      "Protagonist"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/68/Legends_Arceus_Rei.png",
     "isFullArt": true
   },
   {
@@ -1460,7 +1490,7 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/243_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/b/bf/Black_White_Shauntal.png",
     "isFullArt": true
   },
   {
@@ -1570,7 +1600,17 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv5/209_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/bw7/147_hires.png",
+    "isFullArt": true
+  },
+  {
+    "name": "Benga",
+    "slug": "benga",
+    "region": "Unova",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/f1/Black_2_White_2_Benga.png",
     "isFullArt": true
   },
   {
@@ -1640,7 +1680,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/87_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/bw8/135_hires.png",
     "isFullArt": true
   },
   {
@@ -1790,8 +1830,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/243_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/g1/59_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Valerie",
@@ -1860,7 +1900,7 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/231_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/f/fa/XY_Drasna.png",
     "isFullArt": true
   },
   {
@@ -1952,7 +1992,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/89_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/xy4/119_hires.png",
     "isFullArt": true
   },
   {
@@ -2012,8 +2052,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/230_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Bonnie",
@@ -2213,7 +2253,7 @@
     "roles": [
       "Trial Captain"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/219_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sm12/266_hires.png",
     "isFullArt": true
   },
   {
@@ -2783,7 +2823,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv7/165_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/e3/Scarlet_Violet_Kofu.png",
     "isFullArt": true
   },
   {
@@ -2793,7 +2833,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/235_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/139_hires.png",
     "isFullArt": true
   },
   {
@@ -2813,7 +2853,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/259_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/d/d1/Scarlet_Violet_Tulip.png",
     "isFullArt": true
   },
   {
@@ -2843,8 +2883,8 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/258_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Poppy",
@@ -2863,7 +2903,7 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/205_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ee/Scarlet_Violet_Hassel.png",
     "isFullArt": true
   },
   {
@@ -2903,8 +2943,18 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/238_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv1/180_hires.png",
+    "isFullArt": false
+  },
+  {
+    "name": "Clive",
+    "slug": "clive",
+    "region": "Paldea",
+    "roles": [
+      "Trainer"
+    ],
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "O'Nare",
@@ -2923,7 +2973,7 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/235_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv1/249_hires.png",
     "isFullArt": true
   },
   {
@@ -2933,7 +2983,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/239_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv1/252_hires.png",
     "isFullArt": true
   },
   {
@@ -2983,7 +3033,7 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/254_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/140_hires.png",
     "isFullArt": true
   },
   {
@@ -3013,7 +3063,7 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv5/210_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/136_hires.png",
     "isFullArt": true
   },
   {
@@ -3023,7 +3073,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/218_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/174_hires.png",
     "isFullArt": true
   },
   {
@@ -3033,8 +3083,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/217_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/103_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Perrin",
@@ -3043,8 +3093,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/220_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Briar",
@@ -3053,8 +3103,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv7/171_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/100_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Crispin",
@@ -3123,7 +3173,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv5/212_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a1/LCR_Salvatore_icon_large.png",
     "isFullArt": true
   },
   {
@@ -3143,8 +3193,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/256_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/120_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Professor Turo",
@@ -3153,8 +3203,8 @@
     "roles": [
       "Professor"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/257_hires.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/121_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Cassiopeia",
@@ -3163,8 +3213,8 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/94_hires.png",
-    "isFullArt": true
+    "imageUrl": null,
+    "isFullArt": false
   },
   {
     "name": "Blanche",
@@ -3523,28 +3573,18 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/svp/114_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/1/13/VSPicnicker_BDSP.png",
+    "isFullArt": true
   },
   {
-    "name": "Pokéfan♂",
-    "slug": "pokefan-m",
+    "name": "Poké Fan",
+    "slug": "poke-fan",
     "region": "Universal",
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": null,
-    "isFullArt": false
-  },
-  {
-    "name": "Pokéfan♀",
-    "slug": "pokefan-f",
-    "region": "Universal",
-    "roles": [
-      "Trainer Class"
-    ],
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/cf/VSPok%C3%A9_Fan_M_BDSP.png",
+    "isFullArt": true
   },
   {
     "name": "Teacher",
@@ -3983,7 +4023,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4/255_hires.png",
+    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/29/VSParasol_Lady_BDSP.png",
     "isFullArt": true
   },
   {
@@ -6505,16 +6545,6 @@
     ],
     "imageUrl": null,
     "isFullArt": false
-  },
-  {
-    "name": "Winstrate Family",
-    "slug": "winstrate-family",
-    "region": "Universal",
-    "roles": [
-      "Trainer Class"
-    ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/0/06/Winstrate_family_anime.png",
-    "isFullArt": true
   },
   {
     "name": "World Champion",

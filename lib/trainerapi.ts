@@ -1040,7 +1040,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Warden", searchNames: ["Warden"] },
   { name: "Warlord", searchNames: ["Warlord"] },
   { name: "Warrior", searchNames: ["Warrior"] },
-  { name: "Winstrate Family", searchNames: ["Winstrate Family"] },
+  // The Winstrates are a specific named family near Mauville City, not a recurring generic
+  // class every region has — region-locked to Hoenn, unlike its neighbors in this list.
+  { name: "Winstrate Family", searchNames: ["Winstrate Family"], region: "Hoenn" },
   { name: "World Champion", searchNames: ["World Champion"] },
   { name: "World Finalist", searchNames: ["World Finalist"] },
   { name: "World Runner-up", searchNames: ["World Runner-up"] },

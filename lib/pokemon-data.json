@@ -878,7 +878,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH261_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 4,
@@ -8681,7 +8681,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH005_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 52,
@@ -11546,7 +11546,8 @@
         "category": "gmax",
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh10/73_hires.png",
-        "regularCardUrl": null
+        "regularCardUrl": null,
+        "cardRank": 0
       }
     ],
     "familyId": 66,
@@ -37033,7 +37034,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10047.png",
         "category": "mega",
         "displayCategory": "mega",
-        "tcgUrl": "https://images.pokemontcg.io/me2/108_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/xy3/112_hires.png",
         "regularCardUrl": null,
         "cardRank": 6
       }
@@ -72648,7 +72649,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/435.png",
     "genus": "Skunk Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh12/108_hires.png"
+      "https://images.pokemontcg.io/swsh12/181_hires.png"
     ],
     "altForms": [],
     "familyId": 434,
@@ -135614,7 +135615,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh4/99_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 0
       }
     ],
     "familyId": 837,
@@ -143749,7 +143750,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/895.png",
     "genus": "Dragon Orb Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/swsh12/135_hires.png"
+      "https://images.pokemontcg.io/swsh12/184_hires.png"
     ],
     "altForms": [],
     "familyId": 895,
@@ -160074,7 +160075,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1008.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv1/244_hires.png"
     ],
@@ -160082,7 +160083,7 @@
     "familyId": 1008,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Much remains unknown about this creature. It resembles Cyclizar, but it is far more ruthless and powerful.",
+    "flavorText": null,
     "heightM": 3.5,
     "weightKg": 240,
     "abilities": [
@@ -160118,9 +160119,7 @@
         "value": 135
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "thunder-shock",
@@ -160187,15 +160186,7 @@
         "level": 98
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1008,
-        "name": "miraidon",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1009,
@@ -160206,7 +160197,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1009.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/205_hires.png"
     ],
@@ -160214,7 +160205,7 @@
     "familyId": 1009,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "This ferocious creature is shrouded in mystery. It's named after an aquatic monster mentioned in an old expedition journal.",
+    "flavorText": null,
     "heightM": 3.5,
     "weightKg": 280,
     "abilities": [
@@ -160250,9 +160241,7 @@
         "value": 109
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "leer",
@@ -160315,15 +160304,7 @@
         "level": 84
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1009,
-        "name": "walking-wake",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1010,
@@ -160334,7 +160315,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1010.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/203_hires.png"
     ],
@@ -160342,7 +160323,7 @@
     "familyId": 1010,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Many of its physical characteristics match those of a Virizion from the future that was covered in a paranormal magazine.",
+    "flavorText": null,
     "heightM": 1.5,
     "weightKg": 125,
     "abilities": [
@@ -160378,9 +160359,7 @@
         "value": 104
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "leer",
@@ -160451,15 +160430,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1010,
-        "name": "iron-leaves",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1011,
@@ -160470,15 +160441,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1011.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1011.png",
-    "genus": "Candy Apple Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6/170_hires.png"
     ],
     "altForms": [],
-    "familyId": 840,
-    "familyOrder": 3,
+    "familyId": 1011,
+    "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Dipplin is two creatures in one Pokémon. Its evolution was triggered by a special apple grown only in one place.",
+    "flavorText": null,
     "heightM": 0.4,
     "weightKg": 9.7,
     "abilities": [
@@ -160524,10 +160495,7 @@
         "value": 40
       }
     ],
-    "eggGroups": [
-      "plant",
-      "dragon"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "double-hit",
@@ -160590,43 +160558,7 @@
         "level": 44
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 840,
-        "name": "applin",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 841,
-        "name": "flapple",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "tart-apple"
-      },
-      {
-        "id": 842,
-        "name": "appletun",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "sweet-apple"
-      },
-      {
-        "id": 1011,
-        "name": "dipplin",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "syrupy-apple"
-      },
-      {
-        "id": 1019,
-        "name": "hydrapple",
-        "minLevel": null,
-        "trigger": "level-up",
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1012,
@@ -160637,7 +160569,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1012.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1012.png",
-    "genus": "Matcha Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6/171_hires.png"
     ],
@@ -160645,7 +160577,7 @@
     "familyId": 1012,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pokémon.",
+    "flavorText": null,
     "heightM": 0.1,
     "weightKg": 1.1,
     "abilities": [
@@ -160686,10 +160618,7 @@
         "value": 50
       }
     ],
-    "eggGroups": [
-      "mineral",
-      "indeterminate"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "stun-spore",
@@ -160744,22 +160673,7 @@
         "level": 60
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1012,
-        "name": "poltchageist",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 1013,
-        "name": "sinistcha",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "unremarkable-teacup"
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1013,
@@ -160770,15 +160684,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png",
-    "genus": "Matcha Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6/210_hires.png"
     ],
     "altForms": [],
-    "familyId": 1012,
-    "familyOrder": 1,
+    "familyId": 1013,
+    "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It pretends to be tea, trying to fool people into drinking it so it can drain their life-force. Its ruse is generally unsuccessful.",
+    "flavorText": null,
     "heightM": 0.2,
     "weightKg": 2.2,
     "abilities": [
@@ -160819,10 +160733,7 @@
         "value": 70
       }
     ],
-    "eggGroups": [
-      "mineral",
-      "indeterminate"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "matcha-gotcha",
@@ -160881,22 +160792,7 @@
         "level": 60
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1012,
-        "name": "poltchageist",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 1013,
-        "name": "sinistcha",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "unremarkable-teacup"
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1014,
@@ -160907,7 +160803,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1014.png",
-    "genus": "Retainer Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6pt5/90_hires.png"
     ],
@@ -160915,7 +160811,7 @@
     "familyId": 1014,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "After all its muscles were stimulated by the toxic chain around its neck, Okidogi transformed and gained a powerful physique.",
+    "flavorText": null,
     "heightM": 1.8,
     "weightKg": 92.2,
     "abilities": [
@@ -160956,9 +160852,7 @@
         "value": 80
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "bite",
@@ -161009,15 +160903,7 @@
         "level": 72
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1014,
-        "name": "okidogi",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1015,
@@ -161028,7 +160914,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1015.png",
-    "genus": "Retainer Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6pt5/91_hires.png"
     ],
@@ -161036,7 +160922,7 @@
     "familyId": 1015,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pokémon's psychic powers to bloom.",
+    "flavorText": null,
     "heightM": 1,
     "weightKg": 12.2,
     "abilities": [
@@ -161077,9 +160963,7 @@
         "value": 106
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "scratch",
@@ -161134,15 +161018,7 @@
         "level": 72
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1015,
-        "name": "munkidori",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1016,
@@ -161153,7 +161029,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1016.png",
-    "genus": "Retainer Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv6pt5/92_hires.png"
     ],
@@ -161161,7 +161037,7 @@
     "familyId": 1016,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Fezandipiti owes its beautiful looks and lovely voice to the toxic stimulants emanating from the chain wrapped around its body.",
+    "flavorText": null,
     "heightM": 1.4,
     "weightKg": 30.1,
     "abilities": [
@@ -161202,9 +161078,7 @@
         "value": 99
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "double-kick",
@@ -161263,15 +161137,7 @@
         "level": 72
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1016,
-        "name": "fezandipiti",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1017,
@@ -161281,64 +161147,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1017.png",
-    "genus": "Mask Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/svp/123_hires.png"
     ],
-    "altForms": [
-      {
-        "slug": "ogerpon-wellspring-mask",
-        "displayName": "Wellspring Mask Ogerpon",
-        "types": [
-          "grass",
-          "water"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10273.png",
-        "category": "regional",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/152_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 7
-      },
-      {
-        "slug": "ogerpon-hearthflame-mask",
-        "displayName": "Hearthflame Mask Ogerpon",
-        "types": [
-          "grass",
-          "fire"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10274.png",
-        "category": "regional",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/148_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 7
-      },
-      {
-        "slug": "ogerpon-cornerstone-mask",
-        "displayName": "Cornerstone Mask Ogerpon",
-        "types": [
-          "grass",
-          "rock"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10275.png",
-        "category": "regional",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/160_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 7
-      }
-    ],
+    "altForms": [],
     "familyId": 1017,
     "familyOrder": 0,
     "cardRank": 2,
-    "flavorText": "This Pokémon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
+    "flavorText": null,
     "heightM": 1.2,
     "weightKg": 39.8,
     "abilities": [
@@ -161374,9 +161191,7 @@
         "value": 110
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "vine-whip",
@@ -161439,15 +161254,7 @@
         "level": 66
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1017,
-        "name": "ogerpon",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1018,
@@ -161458,15 +161265,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png",
-    "genus": "Alloy Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv8/241_hires.png"
     ],
     "altForms": [],
-    "familyId": 884,
-    "familyOrder": 1,
+    "familyId": 1018,
+    "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It gathers static electricity from its surroundings. The beams it launches when down on all fours are tremendously powerful.",
+    "flavorText": null,
     "heightM": 2,
     "weightKg": 60,
     "abilities": [
@@ -161512,10 +161319,7 @@
         "value": 85
       }
     ],
-    "eggGroups": [
-      "mineral",
-      "dragon"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "electro-shot",
@@ -161574,22 +161378,7 @@
         "level": 66
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 884,
-        "name": "duraludon",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 1018,
-        "name": "archaludon",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "metal-alloy"
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1019,
@@ -161600,15 +161389,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
-    "genus": "Apple Hydra Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv7/167_hires.png"
     ],
     "altForms": [],
-    "familyId": 840,
-    "familyOrder": 4,
+    "familyId": 1019,
+    "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "Seven syrpents live inside an apple made of syrup. The syrpent in the center is the commander.",
+    "flavorText": null,
     "heightM": 1.8,
     "weightKg": 93,
     "abilities": [
@@ -161654,10 +161443,7 @@
         "value": 44
       }
     ],
-    "eggGroups": [
-      "plant",
-      "dragon"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "fickle-beam",
@@ -161724,43 +161510,7 @@
         "level": 54
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 840,
-        "name": "applin",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      },
-      {
-        "id": 841,
-        "name": "flapple",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "tart-apple"
-      },
-      {
-        "id": 842,
-        "name": "appletun",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "sweet-apple"
-      },
-      {
-        "id": 1011,
-        "name": "dipplin",
-        "minLevel": null,
-        "trigger": "use-item",
-        "item": "syrupy-apple"
-      },
-      {
-        "id": 1019,
-        "name": "hydrapple",
-        "minLevel": null,
-        "trigger": "level-up",
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1020,
@@ -161771,7 +161521,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/204_hires.png"
     ],
@@ -161779,7 +161529,7 @@
     "familyId": 1020,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "There are scant few reports of this creature being sighted. One short video shows it rampaging and spouting pillars of flame.",
+    "flavorText": null,
     "heightM": 3.5,
     "weightKg": 590,
     "abilities": [
@@ -161815,9 +161565,7 @@
         "value": 91
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "stomp",
@@ -161888,15 +161636,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1020,
-        "name": "gouging-fire",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1021,
@@ -161907,7 +161647,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1021.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/208_hires.png"
     ],
@@ -161915,7 +161655,7 @@
     "familyId": 1021,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It's said to incinerate everything around it with lightning launched from its fur. Very little is known about this creature.",
+    "flavorText": null,
     "heightM": 5.2,
     "weightKg": 480,
     "abilities": [
@@ -161951,9 +161691,7 @@
         "value": 75
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "stomp",
@@ -162024,15 +161762,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1021,
-        "name": "raging-bolt",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1022,
@@ -162043,7 +161773,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1022.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/207_hires.png"
     ],
@@ -162051,7 +161781,7 @@
     "familyId": 1022,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
+    "flavorText": null,
     "heightM": 1.5,
     "weightKg": 162.5,
     "abilities": [
@@ -162087,9 +161817,7 @@
         "value": 124
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "horn-attack",
@@ -162160,15 +161888,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1022,
-        "name": "iron-boulder",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1023,
@@ -162179,7 +161899,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
-    "genus": "Paradox Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv5/206_hires.png"
     ],
@@ -162187,7 +161907,7 @@
     "familyId": 1023,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It resembles a mysterious object introduced in a paranormal magazine as a cutting-edge weapon shaped like a Cobalion.",
+    "flavorText": null,
     "heightM": 1.6,
     "weightKg": 156,
     "abilities": [
@@ -162223,9 +161943,7 @@
         "value": 98
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "leer",
@@ -162296,15 +162014,7 @@
         "level": 91
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1023,
-        "name": "iron-crown",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1024,
@@ -162314,46 +162024,15 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1024.png",
-    "genus": "Tera Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv7/170_hires.png"
     ],
-    "altForms": [
-      {
-        "slug": "terapagos-terastal",
-        "displayName": "Terastal Forme Terapagos",
-        "types": [
-          "normal"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10276.png",
-        "category": "forme",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv7/173_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 2
-      },
-      {
-        "slug": "terapagos-stellar",
-        "displayName": "Stellar Forme Terapagos",
-        "types": [
-          "normal"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10277.png",
-        "category": "forme",
-        "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/169_hires.png",
-        "regularCardUrl": null,
-        "cardRank": 2
-      }
-    ],
+    "altForms": [],
     "familyId": 1024,
     "familyOrder": 0,
     "cardRank": 7,
-    "flavorText": "Terapagos protects itself using its power to transform energy into hard crystals. This Pokémon is the source of the Terastal phenomenon.",
+    "flavorText": null,
     "heightM": 0.2,
     "weightKg": 6.5,
     "abilities": [
@@ -162389,9 +162068,7 @@
         "value": 60
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "withdraw",
@@ -162442,15 +162119,7 @@
         "level": 90
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1024,
-        "name": "terapagos",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   },
   {
     "id": 1025,
@@ -162461,7 +162130,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
-    "genus": "Subjugation Pokémon",
+    "genus": null,
     "bgCandidates": [
       "https://images.pokemontcg.io/sv8pt5/163_hires.png"
     ],
@@ -162469,7 +162138,7 @@
     "familyId": 1025,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
+    "flavorText": null,
     "heightM": 0.3,
     "weightKg": 0.3,
     "abilities": [
@@ -162505,9 +162174,7 @@
         "value": 88
       }
     ],
-    "eggGroups": [
-      "no-eggs"
-    ],
+    "eggGroups": [],
     "levelUpMoves": [
       {
         "name": "smog",
@@ -162562,14 +162229,6 @@
         "level": 72
       }
     ],
-    "evolutionSteps": [
-      {
-        "id": 1025,
-        "name": "pecharunt",
-        "minLevel": null,
-        "trigger": null,
-        "item": null
-      }
-    ]
+    "evolutionSteps": []
   }
 ]

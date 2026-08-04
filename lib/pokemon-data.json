@@ -3807,7 +3807,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 25,
@@ -17524,7 +17524,7 @@
         "displayCategory": "regional",
         "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH294_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 2
       }
     ],
     "familyId": 100,
@@ -119003,9 +119003,9 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10244.png",
         "category": "regional",
         "displayCategory": "regional",
-        "tcgUrl": "https://images.pokemontcg.io/swsh10/173_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/swshp/SWSH238_hires.png",
         "regularCardUrl": null,
-        "cardRank": 6
+        "cardRank": 2
       }
     ],
     "familyId": 722,
@@ -130197,9 +130197,9 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10155.png",
         "category": "regional",
         "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/smp/SM102_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sm5/90_hires.png",
         "regularCardUrl": null,
-        "cardRank": 2
+        "cardRank": 6
       },
       {
         "slug": "necrozma-dawn",
@@ -133847,7 +133847,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG13_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 824,
@@ -162462,7 +162462,7 @@
     ],
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
-    "genus": null,
+    "genus": "Subjugation Pokémon",
     "bgCandidates": [
       "https://images.pokemontcg.io/sv8pt5/163_hires.png"
     ],
@@ -162470,7 +162470,7 @@
     "familyId": 1025,
     "familyOrder": 0,
     "cardRank": 0,
-    "flavorText": null,
+    "flavorText": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
     "heightM": 0.3,
     "weightKg": 0.3,
     "abilities": [
@@ -162506,7 +162506,9 @@
         "value": 88
       }
     ],
-    "eggGroups": [],
+    "eggGroups": [
+      "no-eggs"
+    ],
     "levelUpMoves": [
       {
         "name": "smog",
@@ -162561,6 +162563,14 @@
         "level": 72
       }
     ],
-    "evolutionSteps": []
+    "evolutionSteps": [
+      {
+        "id": 1025,
+        "name": "pecharunt",
+        "minLevel": null,
+        "trigger": null,
+        "item": null
+      }
+    ]
   }
 ]

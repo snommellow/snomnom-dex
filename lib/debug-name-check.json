@@ -1,0 +1,113 @@
+{
+  "perRegionMissing": {
+    "Kanto": [],
+    "Johto": [],
+    "Hoenn": [],
+    "Sinnoh": [],
+    "Unova": [],
+    "Kalos": [],
+    "Alola": [],
+    "Galar": [],
+    "Paldea": [],
+    "Hisui": [
+      "Akari",
+      "Ancient hero",
+      "Anthe",
+      "Arceus",
+      "Beni",
+      "Calaba",
+      "Charm",
+      "Clover",
+      "Coin",
+      "Colza",
+      "Gaeric",
+      "Ginter",
+      "Lian",
+      "Mai",
+      "Melli",
+      "Noble Pokémon",
+      "Palina",
+      "Pesselle",
+      "Professor's assistant",
+      "Rei",
+      "Ress",
+      "Ride Pokémon",
+      "Rye",
+      "Sabi",
+      "Sanqua",
+      "Tao Hua",
+      "Tuli",
+      "Vessa"
+    ],
+    "Lumiose": [
+      "Andi",
+      "Ansha",
+      "Asami",
+      "AZ's Floette",
+      "Claddia",
+      "Corbeau",
+      "Furfrou League",
+      "Griselle",
+      "Grisham",
+      "Harmony",
+      "Ivor",
+      "Josée",
+      "Lebanne",
+      "Lida",
+      "Lost Poké Ball collector",
+      "Korrina's Lucario",
+      "Mani",
+      "Paxton",
+      "Lysandre's Pyroar",
+      "Rintaro",
+      "Taunie",
+      "Vinnie",
+      "Xavi",
+      "Yvon",
+      "Zach",
+      "Zygarde"
+    ]
+  },
+  "specificChecks": [
+    {
+      "title": "Bellelba",
+      "found": false,
+      "error": "page missing"
+    },
+    {
+      "title": "Bellelba and Benga",
+      "found": false,
+      "error": "page missing"
+    },
+    {
+      "title": "Benga",
+      "found": true,
+      "categories": [
+        "Black 2 and White 2 characters",
+        "Characters",
+        "Game characters",
+        "Male characters",
+        "Manga characters",
+        "Pokémon Adventures characters",
+        "Trainers with Legendary Pokémon",
+        "Trainers with Shiny Pokémon"
+      ]
+    },
+    {
+      "title": "Clive",
+      "found": true,
+      "categories": [
+        "Animation characters",
+        "Characters",
+        "Game characters",
+        "Male characters",
+        "Pokémon: Paldean Winds characters",
+        "Pokémon Adventures characters",
+        "Pokémon Horizons: The Series characters",
+        "Scarlet and Violet characters",
+        "Trainers who use Terastallization",
+        "Trainers with unique classes"
+      ]
+    }
+  ]
+}

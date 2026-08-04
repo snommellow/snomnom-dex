@@ -49,13 +49,16 @@ const CLASSIC_SET_RE = /^(base|gym|neo|ecard)/i;
 // "Ultra Rare" (modern SV/SWSH naming) and "Rare Ultra" (older EX/pre-SWSH naming) are the same
 // tier under two different strings pokemontcg.io has used across eras — both must be listed, or
 // a card tagged with whichever one is missing scores a fallback 99 (worse than Uncommon), which
-// let vintage bordered cards win over modern full-art ones for named trainers.
+// let vintage bordered cards win over modern full-art ones for named trainers. Deliberately
+// excludes "Rare Rainbow" (unlike Trainer Gallery Rare Holo, which is genuinely clean full art):
+// user-confirmed Rainbow Rare Supporter cards read as busy/washed-out backgrounds and often carry
+// Rapid Strike/Single Strike branding bleeding into the art (the same reason Rayquaza's VMAX
+// Rainbow was blacklisted in the Pokédex pipeline) — not the visual upgrade the tier name implies.
 const SUPPORTER_RARITY_ORDER = [
   "Special Illustration Rare",
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
-  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Rare Shiny",
   "Ultra Rare",
@@ -75,7 +78,6 @@ const FULL_ART_RARITIES = new Set([
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
-  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
   "Rare Ultra",

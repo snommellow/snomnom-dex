@@ -49,16 +49,17 @@ const CLASSIC_SET_RE = /^(base|gym|neo|ecard)/i;
 // "Ultra Rare" (modern SV/SWSH naming) and "Rare Ultra" (older EX/pre-SWSH naming) are the same
 // tier under two different strings pokemontcg.io has used across eras — both must be listed, or
 // a card tagged with whichever one is missing scores a fallback 99 (worse than Uncommon), which
-// let vintage bordered cards win over modern full-art ones for named trainers. Deliberately
-// excludes "Rare Rainbow" (unlike Trainer Gallery Rare Holo, which is genuinely clean full art):
-// user-confirmed Rainbow Rare Supporter cards read as busy/washed-out backgrounds and often carry
-// Rapid Strike/Single Strike branding bleeding into the art (the same reason Rayquaza's VMAX
-// Rainbow was blacklisted in the Pokédex pipeline) — not the visual upgrade the tier name implies.
+// let vintage bordered cards win over modern full-art ones for named trainers. "Rare Rainbow" is
+// included — most Rainbow Rare Supporter cards are genuine clean full art (e.g. Lt. Surge's
+// me1-185) — but some specific prints have busy backgrounds or Rapid Strike/Single Strike
+// branding bleeding into the art; those get individually blacklisted below (mirrors tcgapi.ts's
+// MISMATCHED_FULL_ART_BLACKLIST) rather than excluding the whole tier and losing the good ones.
 const SUPPORTER_RARITY_ORDER = [
   "Special Illustration Rare",
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Rare Shiny",
   "Ultra Rare",
@@ -78,10 +79,16 @@ const FULL_ART_RARITIES = new Set([
   "Illustration Rare",
   "Hyper Rare",
   "Rare Secret",
+  "Rare Rainbow",
   "Trainer Gallery Rare Holo",
   "Ultra Rare",
   "Rare Ultra",
 ]);
+
+// Individual cards confirmed (user feedback) to be a bad pick despite winning on rarity/price —
+// busy Rare Rainbow background or Rapid Strike/Single Strike branding bleeding into the art.
+// swsh10-206 "Roxanne" and swsh6-212 "Brawly": both Rare Rainbow, both confirmed bad.
+const MISMATCHED_TRAINER_BLACKLIST = new Set(["swsh10-206", "swsh6-212"]);
 
 function rarityScore(rarity: string): number {
   const idx = SUPPORTER_RARITY_ORDER.indexOf(rarity);
@@ -107,8 +114,9 @@ function effectiveRarityScore(card: PtcgCard): number {
 }
 
 function pickBestCard(cards: PtcgCard[]): PtcgCard | null {
-  if (!cards.length) return null;
-  return cards.reduce((a, b) => {
+  const filtered = cards.filter((c) => !MISMATCHED_TRAINER_BLACKLIST.has(c.id));
+  if (!filtered.length) return null;
+  return filtered.reduce((a, b) => {
     const ra = effectiveRarityScore(a), rb = effectiveRarityScore(b);
     if (ra !== rb) return ra < rb ? a : b;
     const pa = marketPrice(a), pb = marketPrice(b);

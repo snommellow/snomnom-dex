@@ -6,7 +6,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sm9/172_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv9/179_hires.png",
     "isFullArt": true
   },
   {
@@ -26,8 +26,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/gym1/17_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/me1/185_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Erika",
@@ -217,7 +217,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6pt5/88_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/173_hires.png",
     "isFullArt": true
   },
   {
@@ -367,7 +367,7 @@
     "roles": [
       "Protagonist"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/c/c0/HeartGold_SoulSilver_Ethan.png",
+    "imageUrl": "https://images.pokemontcg.io/sv10/236_hires.png",
     "isFullArt": true
   },
   {
@@ -417,7 +417,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ec/HeartGold_SoulSilver_Ariana.png",
+    "imageUrl": "https://images.pokemontcg.io/sv10/237_hires.png",
     "isFullArt": true
   },
   {
@@ -427,7 +427,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/a/a9/HeartGold_SoulSilver_Proton.png",
+    "imageUrl": "https://images.pokemontcg.io/sv10/227_hires.png",
     "isFullArt": true
   },
   {
@@ -437,7 +437,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/45/HeartGold_SoulSilver_Petrel.png",
+    "imageUrl": "https://images.pokemontcg.io/sv10/226_hires.png",
     "isFullArt": true
   },
   {
@@ -447,7 +447,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2d/HeartGold_SoulSilver_Archer.png",
+    "imageUrl": "https://images.pokemontcg.io/sv10/223_hires.png",
     "isFullArt": true
   },
   {
@@ -487,7 +487,7 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/swsh10/188_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/swsh12pt5gg/GG66_hires.png",
     "isFullArt": true
   },
   {
@@ -730,7 +730,7 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy6/107_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/me1/186_hires.png",
     "isFullArt": true
   },
   {
@@ -1030,7 +1030,7 @@
     "roles": [
       "Protagonist"
     ],
-    "imageUrl": "https://assets.tcgdex.net/en/tcgp/A2/194/high.webp",
+    "imageUrl": "https://images.pokemontcg.io/me2/129_hires.png",
     "isFullArt": true
   },
   {
@@ -1480,7 +1480,7 @@
     "roles": [
       "Elite Four"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sm11/234_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/me2/120_hires.png",
     "isFullArt": true
   },
   {
@@ -1510,7 +1510,7 @@
     "roles": [
       "Champion"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw10/101_hires.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-292/large",
     "isFullArt": true
   },
   {
@@ -1540,7 +1540,7 @@
     "roles": [
       "Protagonist"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/6/6f/Black_White_Hilda.png",
+    "imageUrl": "https://images.pokemontcg.io/rsv10pt5/171_hires.png",
     "isFullArt": true
   },
   {
@@ -1560,7 +1560,7 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw7/148_hires.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-258/large",
     "isFullArt": true
   },
   {
@@ -1630,7 +1630,7 @@
     "roles": [
       "Team Admin"
     ],
-    "imageUrl": "https://images.pokemontcg.io/bw3/101_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/zsv10pt5/170_hires.png",
     "isFullArt": true
   },
   {
@@ -1650,7 +1650,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/88/Black_2_White_2_Anthea_and_Concordia.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-254/large",
     "isFullArt": true
   },
   {
@@ -1660,7 +1660,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/8/88/Black_2_White_2_Anthea_and_Concordia.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-254/large",
     "isFullArt": true
   },
   {
@@ -1720,8 +1720,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/rsv10pt5/163_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Cedric Juniper",
@@ -1740,8 +1740,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/zsv10pt5/162_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Viola",
@@ -1912,7 +1912,7 @@
     "roles": [
       "Rival"
     ],
-    "imageUrl": "https://images.pokemontcg.io/xy9/112_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/xy4/107_hires.png",
     "isFullArt": false
   },
   {
@@ -2132,7 +2132,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": null,
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-214/large",
     "isFullArt": false
   },
   {
@@ -2142,8 +2142,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": null,
-    "isFullArt": false
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-291/large",
+    "isFullArt": true
   },
   {
     "name": "Philippe",
@@ -2253,7 +2253,7 @@
     "roles": [
       "Trial Captain"
     ],
-    "imageUrl": "https://images.pokemontcg.io/swsh9tg/TG24_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/me1/183_hires.png",
     "isFullArt": true
   },
   {
@@ -2383,7 +2383,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sm12/267_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/me1/184_hires.png",
     "isFullArt": true
   },
   {
@@ -2763,8 +2763,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv3/187_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/135_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Iono",
@@ -2833,8 +2833,8 @@
     "roles": [
       "Gym Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/190_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/143_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Rika",
@@ -2913,8 +2913,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/e/ef/Glitterati_Billy_and_O%27Nare.png",
-    "isFullArt": true
+    "imageUrl": "https://images.pokemontcg.io/sv9/142_hires.png",
+    "isFullArt": false
   },
   {
     "name": "Arven",
@@ -2963,8 +2963,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8pt5/93_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/170_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Giacomo",
@@ -2993,8 +2993,8 @@
     "roles": [
       "Team Leader"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv4pt5/77_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/133_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Ortega",
@@ -3063,7 +3063,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv7/164_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/171_hires.png",
     "isFullArt": true
   },
   {
@@ -3073,7 +3073,7 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv7/172_hires.png",
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/175_hires.png",
     "isFullArt": true
   },
   {
@@ -3103,8 +3103,8 @@
     "roles": [
       "Trainer"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv6/161_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.pokemontcg.io/sv8pt5/142_hires.png",
+    "isFullArt": true
   },
   {
     "name": "Saguaro",
@@ -3443,8 +3443,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/hgss4/85_hires.png",
-    "isFullArt": false
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-255/large",
+    "isFullArt": true
   },
   {
     "name": "Chief",
@@ -3623,7 +3623,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/4b/Gold_Silver_Firebreather.png",
+    "imageUrl": "https://images.pokemontcg.io/me2/119_hires.png",
     "isFullArt": true
   },
   {
@@ -3873,8 +3873,8 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/4/48/VSWaitress_SV.png",
-    "isFullArt": true
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-215/large",
+    "isFullArt": false
   },
   {
     "name": "Worker",
@@ -4173,7 +4173,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://images.pokemontcg.io/sv8/235_hires.png",
+    "imageUrl": "https://images.scrydex.com/pokemon/me2pt5-293/large",
     "isFullArt": true
   },
   {
@@ -4313,7 +4313,7 @@
     "roles": [
       "Trainer Class"
     ],
-    "imageUrl": "https://archives.bulbagarden.net/media/upload/2/2a/VSRuffian_1.png",
+    "imageUrl": "https://images.pokemontcg.io/sv9/181_hires.png",
     "isFullArt": true
   },
   {

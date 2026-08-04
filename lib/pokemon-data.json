@@ -314,7 +314,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
     "genus": "Seed Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3pt5/198_hires.png"
+      "https://images.pokemontcg.io/xy1/141_hires.png"
     ],
     "altForms": [
       {
@@ -352,7 +352,7 @@
     ],
     "familyId": 1,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
     "heightM": 2,
     "weightKg": 100,
@@ -672,8 +672,8 @@
       "https://images.pokemontcg.io/sv3pt5/169_hires.png"
     ],
     "altForms": [],
-    "familyId": 4,
-    "familyOrder": 1,
+    "familyId": 5,
+    "familyOrder": 0,
     "cardRank": 0,
     "flavorText": "When it swings its burning tail, it elevates the temperature to unbearably high levels.",
     "heightM": 1.1,
@@ -829,7 +829,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
     "genus": "Flame Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3pt5/199_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/280/high.webp"
     ],
     "altForms": [
       {
@@ -881,9 +881,9 @@
         "cardRank": 0
       }
     ],
-    "familyId": 4,
-    "familyOrder": 2,
-    "cardRank": 0,
+    "familyId": 6,
+    "familyOrder": 0,
+    "cardRank": 1,
     "flavorText": "It is said that Charizard’s fire burns hotter if it has experienced harsh battles.",
     "heightM": 1.7,
     "weightKg": 90.5,
@@ -1383,7 +1383,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
     "genus": "Shellfish Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3pt5/200_hires.png"
+      "https://images.pokemontcg.io/sm12/215_hires.png"
     ],
     "altForms": [
       {
@@ -1419,7 +1419,7 @@
     ],
     "familyId": 7,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
     "heightM": 1.6,
     "weightKg": 85.5,
@@ -2632,7 +2632,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
     "genus": "Bird Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3/225_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/245/high.webp"
     ],
     "altForms": [
       {
@@ -2654,7 +2654,7 @@
     ],
     "familyId": 16,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as MAGIKARP.",
     "heightM": 1.5,
     "weightKg": 39.5,
@@ -2970,7 +2970,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
     "genus": "Mouse Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-99/large"
+      "https://images.pokemontcg.io/sv10/202_hires.png"
     ],
     "altForms": [
       {
@@ -2992,7 +2992,7 @@
     ],
     "familyId": 19,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 3,
     "flavorText": "It uses its whis­ kers to maintain its balance. It apparently slows down if they are cut off.",
     "heightM": 0.7,
     "weightKg": 18.5,
@@ -3147,13 +3147,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
     "genus": "Tiny Bird Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/151_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex6/81_hires.png",
     "altForms": [],
     "familyId": 21,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne.",
     "heightM": 0.3,
     "weightKg": 2,
@@ -3791,7 +3789,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
     "genus": "Mouse Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-276/large"
+      "https://images.pokemontcg.io/sv3pt5/173_hires.png"
     ],
     "altForms": [
       {
@@ -3807,7 +3805,7 @@
         "displayCategory": "gmax",
         "tcgUrl": "https://images.pokemontcg.io/swsh11tg/TG17_hires.png",
         "regularCardUrl": null,
-        "cardRank": 0
+        "cardRank": 6
       }
     ],
     "familyId": 25,
@@ -5547,12 +5545,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png",
     "genus": "Fairy Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-94/large"
+      "https://images.pokemontcg.io/sv9/184_hires.png"
     ],
     "altForms": [],
     "familyId": 35,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 3,
     "flavorText": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
     "heightM": 0.6,
     "weightKg": 7.5,
@@ -5786,7 +5784,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
     "genus": "Fairy Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex6/106_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/7_hires.png",
     "altForms": [
       {
         "slug": "clefable-mega",
@@ -6015,9 +6013,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png",
     "genus": "Fox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/138_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/pl1/SH6_hires.png",
     "altForms": [
       {
         "slug": "vulpix-alola",
@@ -6037,7 +6034,6 @@
     ],
     "familyId": 37,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "At the time of birth, it has just one tail. The tail splits from its tip as it grows older.",
     "heightM": 0.6,
     "weightKg": 9.9,
@@ -6596,12 +6592,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/40.png",
     "genus": "Balloon Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/105_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2b/078/high.webp"
     ],
     "altForms": [],
     "familyId": 39,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
     "heightM": 1,
     "weightKg": 12,
@@ -8446,9 +8442,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
     "genus": "Mole Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-239/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/10_hires.png",
     "altForms": [
       {
         "slug": "dugtrio-alola",
@@ -8469,7 +8464,6 @@
     ],
     "familyId": 50,
     "familyOrder": 1,
-    "cardRank": 3,
     "flavorText": "A team of DIGLETT triplets. It triggers huge earthquakes by burrowing 60 miles underground.",
     "heightM": 0.7,
     "weightKg": 33.3,
@@ -8636,7 +8630,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
     "genus": "Scratch Cat Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-121/large"
+      "https://assets.tcgdex.net/en/tcgp/B2/204/high.webp"
     ],
     "altForms": [
       {
@@ -8686,7 +8680,7 @@
     ],
     "familyId": 52,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Adores circular objects. Wanders the streets on a nightly basis to look for dropped loose change.",
     "heightM": 0.4,
     "weightKg": 4.2,
@@ -10924,7 +10918,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
     "genus": "Psi Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3pt5/201_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/236/high.webp"
     ],
     "altForms": [
       {
@@ -10945,7 +10939,7 @@
     ],
     "familyId": 63,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Its brain can out­ perform a super­ computer. Its intelligence quotient is said to be 5,000.",
     "heightM": 1.5,
     "weightKg": 48,
@@ -13774,7 +13768,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
     "genus": "Hermit Crab Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-90/large"
+      "https://images.pokemontcg.io/xy12/26_hires.png"
     ],
     "altForms": [
       {
@@ -13812,7 +13806,7 @@
     ],
     "familyId": 79,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "The SHELLDER that is latched onto SLOWPOKE's tail is said to feed on the host's left over scraps.",
     "heightM": 1.6,
     "weightKg": 78.5,
@@ -15046,13 +15040,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/87.png",
     "genus": "Sea Lion Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me2/97_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/7_hires.png",
     "altForms": [],
     "familyId": 86,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters.",
     "heightM": 1.7,
     "weightKg": 120,
@@ -17853,7 +17845,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png",
     "genus": "Coconut Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/135_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1a/069/high.webp"
     ],
     "altForms": [
       {
@@ -17875,7 +17867,7 @@
     ],
     "familyId": 102,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Legend has it that on rare occasions, one of its heads will drop off and continue on as an EXEGGCUTE.",
     "heightM": 2,
     "weightKg": 120,
@@ -20573,13 +20565,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/118.png",
     "genus": "Goldfish Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-87/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard2/78_hires.png",
     "altForms": [],
     "familyId": 118,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Its tail fin billows like an elegant ballroom dress, giving it the nickname of the Water Queen.",
     "heightM": 0.6,
     "weightKg": 15,
@@ -22301,7 +22291,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
     "genus": "Wild Bull Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-96/large"
+      "https://assets.tcgdex.net/en/tcgp/B1/283/high.webp"
     ],
     "altForms": [
       {
@@ -22352,7 +22342,7 @@
     ],
     "familyId": 128,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "When it targets an enemy, it charges furiously while whipping its body with its long tails.",
     "heightM": 1.4,
     "weightKg": 88.4,
@@ -24735,7 +24725,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png",
     "genus": "Shellfish Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex2/97_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H13_hires.png",
     "altForms": [],
     "familyId": 140,
     "familyOrder": 1,
@@ -25524,7 +25514,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png",
     "genus": "Electric Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv3pt5/202_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/276/high.webp"
     ],
     "altForms": [
       {
@@ -25546,7 +25536,7 @@
     ],
     "familyId": 145,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts.",
     "heightM": 1.6,
     "weightKg": 52.6,
@@ -26564,12 +26554,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
     "genus": "New Species Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv4pt5/232_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1/283/high.webp"
     ],
     "altForms": [],
     "familyId": 151,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "So rare that it is still said to be a mirage by many experts. Only a few people have seen it worldwide.",
     "heightM": 0.4,
     "weightKg": 4,
@@ -27990,7 +27980,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
     "genus": "Big Jaw Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/103_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard1/12_hires.png",
     "altForms": [
       {
         "slug": "feraligatr-mega",
@@ -29453,12 +29443,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/169.png",
     "genus": "Bat Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-93/large"
+      "https://assets.tcgdex.net/en/tcgp/A4/207/high.webp"
     ],
     "altForms": [],
     "familyId": 41,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Having four wings allows it to fly more quickly and quietly so it can sneak up on prey without its noticing.",
     "heightM": 1.8,
     "weightKg": 75,
@@ -31370,7 +31360,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png",
     "genus": "Light Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-90/large"
+      "https://assets.tcgdex.net/en/tcgp/A4/172/high.webp"
     ],
     "altForms": [
       {
@@ -31392,7 +31382,7 @@
     ],
     "familyId": 179,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "The tail's tip shines brightly and can be seen from far away. It acts as a beacon for lost people.",
     "heightM": 1.4,
     "weightKg": 61.5,
@@ -32265,7 +32255,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/186.png",
     "genus": "Frog Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex10/107_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/H23_hires.png",
     "altForms": [],
     "familyId": 60,
     "familyOrder": 3,
@@ -34766,13 +34756,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/200.png",
     "genus": "Screech Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-233/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ecard3/39_hires.png",
     "altForms": [],
     "familyId": 200,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It likes playing mischievous tricks such as screaming and wailing to startle people at night.",
     "heightM": 0.7,
     "weightKg": 1,
@@ -36483,7 +36471,7 @@
         "category": "regional",
         "displayCategory": "regional",
         "tcgUrl": null,
-        "regularCardUrl": "https://images.pokemontcg.io/swsh10/88_hires.png"
+        "regularCardUrl": "https://images.pokemontcg.io/swsh10/89_hires.png"
       }
     ],
     "familyId": 211,
@@ -36865,12 +36853,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/213.png",
     "genus": "Mold Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/136_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4/202/high.webp"
     ],
     "altForms": [],
     "familyId": 213,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "The BERRIES it stores in its vase-like shell decompose and become a gooey liquid.",
     "heightM": 0.6,
     "weightKg": 20.5,
@@ -37904,12 +37892,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/219.png",
     "genus": "Lava Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-222/large"
+      "https://images.pokemontcg.io/xy5/24_hires.png"
     ],
     "altForms": [],
     "familyId": 218,
     "familyOrder": 1,
-    "cardRank": 3,
+    "cardRank": 5,
     "flavorText": "The shell on its back is just skin that has cooled and hardened. It breaks easily with a slight touch.",
     "heightM": 0.8,
     "weightKg": 55,
@@ -38926,12 +38914,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/225.png",
     "genus": "Delivery Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/152_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4/170/high.webp"
     ],
     "altForms": [],
     "familyId": 225,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "It carries food all day long. There are tales about lost people who were saved by the food it had.",
     "heightM": 0.9,
     "weightKg": 16,
@@ -40737,13 +40725,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/237.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/237.png",
     "genus": "Handstand Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-240/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/hgss1/5_hires.png",
     "altForms": [],
     "familyId": 106,
     "familyOrder": 3,
-    "cardRank": 0,
     "flavorText": "If you become enchanted by its smooth, elegant, dance-like kicks, you may get drilled hard.",
     "heightM": 1.4,
     "weightKg": 48,
@@ -44907,12 +44893,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/262.png",
     "genus": "Bite Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-243/large"
+      "https://images.pokemontcg.io/swsh10tg/TG09_hires.png"
     ],
     "altForms": [],
     "familyId": 261,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It chases down prey in a pack. It will never disobey the commands of a skilled Trainer.",
     "heightM": 1,
     "weightKg": 37,
@@ -45681,12 +45667,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/267.png",
     "genus": "Butterfly Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-219/large"
+      "https://assets.tcgdex.net/en/tcgp/B1/227/high.webp"
     ],
     "altForms": [],
     "familyId": 265,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "BEAUTIFLY’s favorite food is the sweet pollen of flowers. If you want to see this POKéMON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
     "heightM": 1,
     "weightKg": 28.4,
@@ -45983,12 +45969,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/269.png",
     "genus": "Poison Moth Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-220/large"
+      "https://images.pokemontcg.io/xy6/8_hires.png"
     ],
     "altForms": [],
     "familyId": 265,
     "familyOrder": 4,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "DUSTOX is instinctively drawn to light. Swarms of this POKéMON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
     "heightM": 1.2,
     "weightKg": 31.6,
@@ -46506,12 +46492,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/272.png",
     "genus": "Carefree Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/95_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B1/233/high.webp"
     ],
     "altForms": [],
     "familyId": 270,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "LUDICOLO begins dancing as soon as it hears cheerful, festive music. This POKéMON is said to appear when it hears the singing of children on hiking outings.",
     "heightM": 1.5,
     "weightKg": 55,
@@ -48135,7 +48121,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/282.png",
     "genus": "Embrace Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/245_hires.png"
+      "https://images.pokemontcg.io/xy11/116_hires.png"
     ],
     "altForms": [
       {
@@ -48157,7 +48143,7 @@
     ],
     "familyId": 280,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It unleashes psychokinetic energy at full power when protecting a Trainer it has bonded closely with.",
     "heightM": 1.6,
     "weightKg": 48.4,
@@ -49600,13 +49586,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/291.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/291.png",
     "genus": "Ninja Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/137_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex8/13_hires.png",
     "altForms": [],
     "familyId": 290,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "NINJASK moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this POKéMON was long believed to be invisible.",
     "heightM": 0.8,
     "weightKg": 12,
@@ -49771,13 +49755,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/292.png",
     "genus": "Shed Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/144_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex8/14_hires.png",
     "altForms": [],
     "familyId": 290,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POKéMON will steal the spirit of anyone peering into its hollow body from its back.",
     "heightM": 0.8,
     "weightKg": 1.2,
@@ -51502,7 +51484,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/303.png",
     "genus": "Deceiver Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-246/large"
+      "https://images.pokemontcg.io/swsh12tg/TG17_hires.png"
     ],
     "altForms": [
       {
@@ -51524,7 +51506,7 @@
     ],
     "familyId": 303,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "MAWHILE’s huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, MAWHILE chomps it with its gaping jaws.",
     "heightM": 0.6,
     "weightKg": 11.5,
@@ -52348,7 +52330,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/308.png",
     "genus": "Meditate Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-241/large"
+      "https://images.pokemontcg.io/xy5/81_hires.png"
     ],
     "altForms": [
       {
@@ -52369,7 +52351,7 @@
     ],
     "familyId": 307,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "It is said that through meditation, MEDICHAM heightens energy inside its body and sharpens its sixth sense. This POKéMON hides its presence by merging itself with fields and mountains.",
     "heightM": 1.3,
     "weightKg": 31.5,
@@ -52695,7 +52677,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/310.png",
     "genus": "Discharge Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-89/large"
+      "https://images.pokemontcg.io/xy4/113_hires.png"
     ],
     "altForms": [
       {
@@ -52716,7 +52698,7 @@
     ],
     "familyId": 309,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "MANECTRIC is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this POKéMON creates thunderclouds.",
     "heightM": 1.5,
     "weightKg": 40.2,
@@ -53484,7 +53466,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/315.png",
     "genus": "Thorn Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex3/9_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex12/42_hires.png",
     "altForms": [],
     "familyId": 315,
     "familyOrder": 1,
@@ -54599,13 +54581,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/322.png",
     "genus": "Numb Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-223/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/57_hires.png",
     "altForms": [],
     "familyId": 322,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "NUMEL is extremely dull witted - it doesn’t notice being hit. However, it can’t stand hunger for even a second. This POKéMON’s body is a seething cauldron of boiling magma.",
     "heightM": 0.7,
     "weightKg": 24,
@@ -55897,12 +55877,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/330.png",
     "genus": "Mystic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/101_hires.png"
+      "https://images.pokemontcg.io/swsh9/164_hires.png"
     ],
     "altForms": [],
     "familyId": 328,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "FLYGON is nicknamed “the elemental spirit of the desert.” Because its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in a sandstorm while flying.",
     "heightM": 2,
     "weightKg": 82,
@@ -56592,7 +56572,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png",
     "genus": "Humming Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv4/253_hires.png"
+      "https://images.pokemontcg.io/xy6/74_hires.png"
     ],
     "altForms": [
       {
@@ -56614,7 +56594,7 @@
     ],
     "familyId": 333,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "ALTARIA dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this POKéMON makes its listeners experience dreamy wonderment.",
     "heightM": 1.1,
     "weightKg": 20.6,
@@ -58148,13 +58128,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/344.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/344.png",
     "genus": "Clay Doll Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-92/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/ex16/93_hires.png",
     "altForms": [],
     "familyId": 343,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "CLAYDOL are said to be dolls of mud made by primitive humans and brought to life by exposure to a mysterious ray. This POKéMON moves about while levitating.",
     "heightM": 1.5,
     "weightKg": 108,
@@ -58974,12 +58952,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/350.png",
     "genus": "Tender Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8/237_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4a/072/high.webp"
     ],
     "altForms": [],
     "familyId": 349,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "MILOTIC is breathtakingly beautiful. Those that see it are said to forget their combative spirits.",
     "heightM": 6.2,
     "weightKg": 162,
@@ -59629,7 +59607,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/354.png",
     "genus": "Marionette Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-234/large"
+      "https://images.pokemontcg.io/xy6/32_hires.png"
     ],
     "altForms": [
       {
@@ -59649,7 +59627,7 @@
     ],
     "familyId": 353,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "A doll that became a Pokémon over its grudge from being junked. It seeks the child that disowned it.",
     "heightM": 1.1,
     "weightKg": 12.5,
@@ -62221,7 +62199,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/370.png",
     "genus": "Rendezvous Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/ex14/7_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/ex9/53_hires.png",
     "altForms": [],
     "familyId": 370,
     "familyOrder": 0,
@@ -62660,7 +62638,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/373.png",
     "genus": "Dragon Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv9/187_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B2/178/high.webp"
     ],
     "altForms": [
       {
@@ -62682,7 +62660,7 @@
     ],
     "familyId": 371,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "SALAMENCE came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this POKéMON’s cells, causing it to sprout its magnificent wings.",
     "heightM": 1.5,
     "weightKg": 102.6,
@@ -62942,13 +62920,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/375.png",
     "genus": "Iron Claw Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-94/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/np/23_hires.png",
     "altForms": [],
     "familyId": 374,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. By linking its brains magnetically, this POKéMON generates strong psychokinetic power.",
     "heightM": 1.2,
     "weightKg": 202.5,
@@ -63672,7 +63648,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/380.png",
     "genus": "Eon Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8/239_hires.png"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG20_hires.png"
     ],
     "altForms": [
       {
@@ -63694,7 +63670,7 @@
     ],
     "familyId": 380,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POKéMON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
     "heightM": 1.4,
     "weightKg": 40,
@@ -65772,12 +65748,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/393.png",
     "genus": "Penguin Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/98_hires.png"
+      "https://images.pokemontcg.io/sm12/239_hires.png"
     ],
     "altForms": [],
     "familyId": 393,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
     "heightM": 0.4,
     "weightKg": 5.2,
@@ -67885,13 +67861,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/406.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/406.png",
     "genus": "Bud Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-221/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/dp7/33_hires.png",
     "altForms": [],
     "familyId": 315,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Over the winter, it closes its bud and endures the cold. In spring, the bud opens and releases pollen.",
     "heightM": 0.2,
     "weightKg": 1.2,
@@ -68379,7 +68353,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/409.png",
     "genus": "Head Butt Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/pl1/13_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/11_hires.png",
     "altForms": [],
     "familyId": 408,
     "familyOrder": 1,
@@ -68690,13 +68664,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/411.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/411.png",
     "genus": "Shield Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-93/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/pl2/2_hires.png",
     "altForms": [],
     "familyId": 410,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "Any frontal attack is repulsed. It is a docile Pokémon that feeds on grass and berries.",
     "heightM": 1.3,
     "weightKg": 149.5,
@@ -70730,13 +70702,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/424.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/424.png",
     "genus": "Long Tail Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me2/107_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/dp2/3_hires.png",
     "altForms": [],
     "familyId": 190,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "To eat, it deftly shucks nuts with its two tails. It rarely uses its arms now.",
     "heightM": 1.2,
     "weightKg": 20.3,
@@ -73839,12 +73809,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/442.png",
     "genus": "Forbidden Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/148_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2/172/high.webp"
     ],
     "altForms": [],
     "familyId": 442,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "A Pokémon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.",
     "heightM": 1,
     "weightKg": 108,
@@ -75582,12 +75552,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/452.png",
     "genus": "Ogre Scorpion Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-97/large"
+      "https://images.pokemontcg.io/swsh11/182_hires.png"
     ],
     "altForms": [],
     "familyId": 451,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It has the power in its clawed arms to make scrap of a car. The tips of its claws release poison.",
     "heightM": 1.3,
     "weightKg": 61.5,
@@ -76735,13 +76705,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/459.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/459.png",
     "genus": "Frost Tree Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/140_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 459,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It lives on snowy mountains. Having had little contact with humans, it is boldly inquisitive.",
     "heightM": 1,
     "weightKg": 50.5,
@@ -77043,12 +77010,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/461.png",
     "genus": "Sharp Claw Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-228/large"
+      "https://assets.tcgdex.net/en/tcgp/A2/201/high.webp"
     ],
     "altForms": [],
     "familyId": 215,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "They communicate by clawing signs in boulders and work together to surround enemies.",
     "heightM": 1.1,
     "weightKg": 34,
@@ -78319,12 +78286,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/468.png",
     "genus": "Jubilee Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-235/large"
+      "https://images.pokemontcg.io/xy6/46_hires.png"
     ],
     "altForms": [],
     "familyId": 175,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "It will never appear where there is strife. Its sightings have become rare recently.",
     "heightM": 1.5,
     "weightKg": 38,
@@ -78524,12 +78491,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/469.png",
     "genus": "Ogre Darner Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv10/228_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2/196/high.webp"
     ],
     "altForms": [],
     "familyId": 193,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "By churning its wings, it creates shock waves that inflict critical internal injuries to foes.",
     "heightM": 1.9,
     "weightKg": 51.5,
@@ -80612,7 +80579,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/479.png",
     "genus": "Plasma Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/126_hires.png"
+      "https://images.pokemontcg.io/sv10/197_hires.png"
     ],
     "altForms": [
       {
@@ -83408,12 +83375,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/497.png",
     "genus": "Regal Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/164_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1a/070/high.webp"
     ],
     "altForms": [],
     "familyId": 495,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "It can stop its opponents’ movements with just a glare. It takes in solar energy and boosts it internally.",
     "heightM": 3.3,
     "weightKg": 63,
@@ -86646,13 +86613,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/519.png",
     "genus": "Tiny Pigeon Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/148_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bwp/BW15_hires.png",
     "altForms": [],
     "familyId": 519,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Each follows its Trainer’s orders as best it can, but they sometimes fail to understand complicated commands.",
     "heightM": 0.3,
     "weightKg": 2.1,
@@ -86798,13 +86763,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/520.png",
     "genus": "Wild Pigeon Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/149_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/149_hires.png",
     "altForms": [],
     "familyId": 519,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It can return to its Trainer’s location regardless of the distance separating them.",
     "heightM": 0.6,
     "weightKg": 15,
@@ -86951,12 +86914,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/521.png",
     "genus": "Proud Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/150_hires.png"
+      "https://images.pokemontcg.io/xy6/81_hires.png"
     ],
     "altForms": [],
     "familyId": 519,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 5,
     "flavorText": "Males swing their head plumage to threaten opponents. The females’ flying abilities surpass those of the males.",
     "heightM": 1.2,
     "weightKg": 29,
@@ -88256,7 +88219,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/530.png",
     "genus": "Subterrene Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/168_hires.png"
+      "https://images.pokemontcg.io/sv5/174_hires.png"
     ],
     "altForms": [
       {
@@ -88429,7 +88392,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/531.png",
     "genus": "Hearing Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/151_hires.png"
+      "https://images.pokemontcg.io/xy10/84_hires.png"
     ],
     "altForms": [
       {
@@ -88451,7 +88414,7 @@
     ],
     "familyId": 531,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
     "heightM": 1.1,
     "weightKg": 31,
@@ -90393,13 +90356,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/544.png",
     "genus": "Curlipede Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/133_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/133_hires.png",
     "altForms": [],
     "familyId": 543,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "Protected by a hard shell, it spins its body like a wheel and crashes furiously into its enemies.",
     "heightM": 1.2,
     "weightKg": 58.5,
@@ -90892,12 +90853,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/547.png",
     "genus": "Windveiled Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/165_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B1/273/high.webp"
     ],
     "altForms": [],
     "familyId": 546,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Like the wind, it can slip through any gap, no matter how small. It leaves balls of white fluff behind.",
     "heightM": 0.7,
     "weightKg": 6.6,
@@ -91771,13 +91732,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/552.png",
     "genus": "Desert Croc Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/136_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/136_hires.png",
     "altForms": [],
     "familyId": 551,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "They live in groups of a few individuals. Protective membranes shield their eyes from sandstorms.",
     "heightM": 1,
     "weightKg": 33.4,
@@ -91939,13 +91898,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/553.png",
     "genus": "Intimidation Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/137_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bw1/65_hires.png",
     "altForms": [],
     "familyId": 551,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "They never allow prey to escape. Their jaws are so powerful, they can crush the body of an automobile.",
     "heightM": 1.5,
     "weightKg": 96.3,
@@ -95050,7 +95007,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/572.png",
     "genus": "Chinchilla Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/152_hires.png"
+      "https://images.pokemontcg.io/sv5/182_hires.png"
     ],
     "altForms": [],
     "familyId": 572,
@@ -97732,13 +97689,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/589.png",
     "genus": "Cavalry Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/138_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/138_hires.png",
     "altForms": [],
     "familyId": 588,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "They fly around at high speed, striking with their pointed spears. Even when in trouble, they face opponents bravely.",
     "heightM": 1,
     "weightKg": 33,
@@ -98362,13 +98317,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/593.png",
     "genus": "Floating Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/168_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 592,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "The fate of the ships and crew that wander into Jellicent’s habitat: all sunken, all lost, all vanished.",
     "heightM": 2.2,
     "weightKg": 135,
@@ -98838,8 +98790,8 @@
       "https://images.pokemontcg.io/rsv10pt5/117_hires.png"
     ],
     "altForms": [],
-    "familyId": 596,
-    "familyOrder": 0,
+    "familyId": 595,
+    "familyOrder": 1,
     "cardRank": 0,
     "flavorText": "When attacked, they create an electric barrier by spitting out many electrically charged threads.",
     "heightM": 0.8,
@@ -99275,13 +99227,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/599.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/599.png",
     "genus": "Gear Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/139_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/139_hires.png",
     "altForms": [],
     "familyId": 599,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
     "heightM": 0.3,
     "weightKg": 21,
@@ -99426,13 +99376,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/600.png",
     "genus": "Gear Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/140_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/zsv10pt5/140_hires.png",
     "altForms": [],
     "familyId": 599,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "By changing the direction in which it rotates, it communicates its feelings to others. When angry, it rotates faster.",
     "heightM": 0.6,
     "weightKg": 51,
@@ -99577,13 +99525,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/601.png",
     "genus": "Gear Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/141_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bw1/76_hires.png",
     "altForms": [],
     "familyId": 599,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "Its red core functions as an energy tank. It fires the charged energy through its spikes into an area.",
     "heightM": 0.6,
     "weightKg": 81,
@@ -100940,13 +100886,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/610.png",
     "genus": "Tusk Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/145_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bwp/BW16_hires.png",
     "altForms": [],
     "familyId": 610,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "They use their tusks to crush the berries they eat. Repeated regrowth makes their tusks strong and sharp.",
     "heightM": 0.6,
     "weightKg": 18,
@@ -101117,7 +101061,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/611.png",
     "genus": "Axe Jaw Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/146_hires.png"
+      "https://images.pokemontcg.io/sv6pt5/77_hires.png"
     ],
     "altForms": [],
     "familyId": 610,
@@ -101292,13 +101236,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/612.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/612.png",
     "genus": "Axe Jaw Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/147_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bw3/88_hires.png",
     "altForms": [],
     "familyId": 610,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "They are kind but can be relentless when defending territory. They challenge foes with tusks that can cut steel.",
     "heightM": 1.8,
     "weightKg": 105.5,
@@ -103262,13 +103204,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/624.png",
     "genus": "Sharp Blade Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/142_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bw3/81_hires.png",
     "altForms": [],
     "familyId": 624,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Blades comprise this Pokémon’s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
     "heightM": 0.5,
     "weightKg": 10.2,
@@ -103426,13 +103366,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/625.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/625.png",
     "genus": "Sword Blade Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/143_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/bw3/82_hires.png",
     "altForms": [],
     "familyId": 624,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It leads a group of Pawniard. It battles to become the boss, but will be driven from the group if it loses.",
     "heightM": 1.6,
     "weightKg": 70,
@@ -103593,13 +103531,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/626.png",
     "genus": "Bash Buffalo Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/170_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 626,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Their fluffy fur absorbs damage, even if they strike foes with a fierce headbutt.",
     "heightM": 1.6,
     "weightKg": 94.6,
@@ -103736,12 +103671,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/627.png",
     "genus": "Eaglet Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/154_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B1/250/high.webp"
     ],
     "altForms": [],
     "familyId": 627,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "They crush berries with their talons. They bravely stand up to any opponent, no matter how strong it is.",
     "heightM": 0.5,
     "weightKg": 10.5,
@@ -103901,7 +103836,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/628.png",
     "genus": "Valiant Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/155_hires.png"
+      "https://images.pokemontcg.io/sv8/214_hires.png"
     ],
     "altForms": [
       {
@@ -104565,7 +104500,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/632.png",
     "genus": "Iron Ant Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8/236_hires.png"
+      "https://images.pokemontcg.io/rsv10pt5/150_hires.png"
     ],
     "altForms": [],
     "familyId": 632,
@@ -105019,12 +104954,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/635.png",
     "genus": "Brutal Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/169_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B1/245/high.webp"
     ],
     "altForms": [],
     "familyId": 633,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This brutal Pokémon travels the skies on its six wings. Anything that moves seems like a foe to it, triggering its attack.",
     "heightM": 1.8,
     "weightKg": 160,
@@ -105505,12 +105440,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/638.png",
     "genus": "Iron Will Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/144_hires.png"
+      "https://images.pokemontcg.io/bw3/100_hires.png"
     ],
     "altForms": [],
     "familyId": 638,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "This legendary Pokémon battled against humans to protect Pokémon. Its personality is calm and composed.",
     "heightM": 2.1,
     "weightKg": 250,
@@ -106247,12 +106182,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/643.png",
     "genus": "Vast White Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/166_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/B2/160/high.webp"
     ],
     "altForms": [],
     "familyId": 643,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This Pokémon appears in legends. It sends flames into the air from its tail, burning up everything around it.",
     "heightM": 3.2,
     "weightKg": 330,
@@ -106379,12 +106314,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png",
     "genus": "Deep Black Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/166_hires.png"
+      "https://images.pokemontcg.io/swsh9tg/TG05_hires.png"
     ],
     "altForms": [],
     "familyId": 644,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Concealing itself in lightning clouds, it flies throughout the Unova region. It creates electricity in its tail.",
     "heightM": 2.9,
     "weightKg": 345,
@@ -106705,7 +106640,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/646.png",
     "genus": "Boundary Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/165_hires.png"
+      "https://images.pokemontcg.io/bw4/96_hires.png"
     ],
     "altForms": [
       {
@@ -106743,7 +106678,7 @@
     ],
     "familyId": 646,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It generates a powerful, freezing energy inside itself, but its body became frozen when the energy leaked out.",
     "heightM": 3,
     "weightKg": 325,
@@ -106874,7 +106809,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/647.png",
     "genus": "Colt Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/rsv10pt5/167_hires.png"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG07_hires.png"
     ],
     "altForms": [
       {
@@ -106896,7 +106831,7 @@
     ],
     "familyId": 647,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "By blasting water from its hooves, it can glide across water. It excels at using leg moves while battling.",
     "heightM": 1.4,
     "weightKg": 48.5,
@@ -107019,7 +106954,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/648.png",
     "genus": "Melody Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/167_hires.png"
+      "https://images.pokemontcg.io/bw11/RC25_hires.png"
     ],
     "altForms": [
       {
@@ -107041,7 +106976,7 @@
     ],
     "familyId": 648,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Its melodies are sung with a special vocalization method that can control the feelings of those who hear it.",
     "heightM": 0.6,
     "weightKg": 6.5,
@@ -107168,12 +107103,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/649.png",
     "genus": "Paleozoic Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/zsv10pt5/169_hires.png"
+      "https://images.pokemontcg.io/bw10/97_hires.png"
     ],
     "altForms": [],
     "familyId": 649,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Over 300 million years ago, it was feared as the strongest of hunters. It has been modified by Team Plasma.",
     "heightM": 1.5,
     "weightKg": 82.5,
@@ -107314,13 +107249,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
     "genus": "Spiny Nut Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-87/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xyp/XY88_hires.png",
     "altForms": [],
     "familyId": 650,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.",
     "heightM": 0.4,
     "weightKg": 9,
@@ -108271,13 +108204,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/656.png",
     "genus": "Bubble Frog Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-88/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xyp/XY03_hires.png",
     "altForms": [],
     "familyId": 656,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.",
     "heightM": 0.3,
     "weightKg": 7,
@@ -108417,13 +108348,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/657.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/657.png",
     "genus": "Bubble Frog Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-89/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy0/13_hires.png",
     "altForms": [],
     "familyId": 656,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It can throw bubble-covered pebbles with precise control, hitting empty cans up to a hundred feet away.",
     "heightM": 0.6,
     "weightKg": 10.9,
@@ -109408,12 +109337,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/663.png",
     "genus": "Scorching Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-91/large"
+      "https://images.pokemontcg.io/swsh4/29_hires.png"
     ],
     "altForms": [],
     "familyId": 661,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "In the fever of an exciting battle, it showers embers from the gaps between its feathers and takes to the air.",
     "heightM": 1.2,
     "weightKg": 24.5,
@@ -109678,13 +109607,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/665.png",
     "genus": "Scatterdust Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-89/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy1/16_hires.png",
     "altForms": [],
     "familyId": 664,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
     "heightM": 0.3,
     "weightKg": 8.4,
@@ -109925,13 +109852,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/667.png",
     "genus": "Lion Cub Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/139_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me1/139_hires.png",
     "altForms": [],
     "familyId": 667,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
     "heightM": 0.6,
     "weightKg": 13.5,
@@ -111411,13 +111336,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/677.png",
     "genus": "Restraint Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-95/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/g1/RC14_hires.png",
     "altForms": [],
     "familyId": 677,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.",
     "heightM": 0.3,
     "weightKg": 3.5,
@@ -111868,13 +111791,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/680.png",
     "genus": "Sword Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-98/large"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 679,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "When Honedge evolves, it divides into two swords, which cooperate via telepathy to coordinate attacks and slash their enemies to ribbons.",
     "heightM": 0.8,
     "weightKg": 4.5,
@@ -112619,13 +112539,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/685.png",
     "genus": "Meringue Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-236/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy4/69_hires.png",
     "altForms": [],
     "familyId": 684,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It can distinguish the faintest of scents. It puts its sensitive sense of smell to use by helping pastry chefs in their work.",
     "heightM": 0.8,
     "weightKg": 5,
@@ -113896,13 +113814,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/693.png",
     "genus": "Howitzer Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/141_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy3/24_hires.png",
     "altForms": [],
     "familyId": 692,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "Their enormous claws launch cannonballs of water powerful enough to pierce tanker hulls.",
     "heightM": 1.3,
     "weightKg": 35.3,
@@ -114048,13 +113964,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/694.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/694.png",
     "genus": "Generator Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/143_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me1/143_hires.png",
     "altForms": [],
     "familyId": 694,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "They make their home in deserts. They can generate their energy from basking in the sun, so eating food is not a requirement.",
     "heightM": 0.5,
     "weightKg": 6,
@@ -114793,12 +114707,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/699.png",
     "genus": "Tundra Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-92/large"
+      "https://assets.tcgdex.net/en/tcgp/B2/163/high.webp"
     ],
     "altForms": [],
     "familyId": 698,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "The diamond-shaped crystals on its body expel air as cold as -240 degrees Fahrenheit, surrounding its enemies and encasing them in ice.",
     "heightM": 2.7,
     "weightKg": 225,
@@ -115361,12 +115275,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/702.png",
     "genus": "Antenna Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-93/large"
+      "https://assets.tcgdex.net/en/tcgp/A1a/073/high.webp"
     ],
     "altForms": [],
     "familyId": 702,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
     "heightM": 0.2,
     "weightKg": 2.2,
@@ -115507,13 +115421,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/703.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/703.png",
     "genus": "Jewel Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-242/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/xy2/68_hires.png",
     "altForms": [],
     "familyId": 703,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Born from the temperatures and pressures deep underground, it fires beams from the stone in its head.",
     "heightM": 0.3,
     "weightKg": 5.7,
@@ -115815,9 +115727,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/705.png",
     "genus": "Soft Tissue Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-95/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sm6/93_hires.png",
     "altForms": [
       {
         "slug": "sliggoo-hisui",
@@ -115837,7 +115748,6 @@
     ],
     "familyId": 704,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can’t see anything.",
     "heightM": 0.8,
     "weightKg": 17.5,
@@ -116469,12 +116379,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/709.png",
     "genus": "Elder Tree Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-237/large"
+      "https://images.pokemontcg.io/xy5/145_hires.png"
     ],
     "altForms": [],
     "familyId": 708,
     "familyOrder": 1,
-    "cardRank": 3,
+    "cardRank": 6,
     "flavorText": "It can control trees at will. It will trap people who harm the forest, so they can never leave.",
     "heightM": 1.5,
     "weightKg": 71,
@@ -117670,12 +117580,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/716.png",
     "genus": "Life Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me4-91/large"
+      "https://assets.tcgdex.net/en/tcgp/B1a/073/high.webp"
     ],
     "altForms": [],
     "familyId": 716,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Legends say it can share eternal life. It slept for a thousand years in the form of a tree before its revival.",
     "heightM": 3,
     "weightKg": 215,
@@ -118488,12 +118398,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/721.png",
     "genus": "Steam Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv9/182_hires.png"
+      "https://images.pokemontcg.io/xy11/115_hires.png"
     ],
     "altForms": [],
     "familyId": 721,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It lets out billows of steam and disappears into the dense fog. It’s said to live in mountains where humans do not tread.",
     "heightM": 1.7,
     "weightKg": 195,
@@ -118632,12 +118542,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/722.png",
     "genus": "Grass Quill Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me3-90/large"
+      "https://assets.tcgdex.net/en/tcgp/A3a/070/high.webp"
     ],
     "altForms": [],
     "familyId": 722,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This wary Pokémon uses photosynthesis to store up energy during the day, while becoming active at night.",
     "heightM": 0.3,
     "weightKg": 1.5,
@@ -119945,12 +119855,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/730.png",
     "genus": "Soloist Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-88/large"
+      "https://assets.tcgdex.net/en/tcgp/A3b/088/high.webp"
     ],
     "altForms": [],
     "familyId": 728,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "It controls its water balloons with song. The melody is learned from others of its kind and is passed down from one generation to the next.",
     "heightM": 1.8,
     "weightKg": 44,
@@ -120390,13 +120300,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/733.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/733.png",
     "genus": "Cannon Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-94/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sm8/166_hires.png",
     "altForms": [],
     "familyId": 731,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "When it battles, its beak heats up. The temperature can easily exceed 212 degrees Fahrenheit, causing severe burns when it hits.",
     "heightM": 1.1,
     "weightKg": 26,
@@ -120696,12 +120604,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/735.png",
     "genus": "Stakeout Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/153_hires.png"
+      "https://images.pokemontcg.io/sm1/145_hires.png"
     ],
     "altForms": [],
     "familyId": 734,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "When it finds a trace of its prey, it patiently stakes out the location...but it’s always snoozing by nightfall.",
     "heightM": 0.7,
     "weightKg": 14.2,
@@ -121114,12 +121022,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/738.png",
     "genus": "Stag Beetle Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-230/large"
+      "https://images.pokemontcg.io/sm2/134_hires.png"
     ],
     "altForms": [],
     "familyId": 736,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It zips around, on sharp lookout for an opening. It concentrates electrical energy within its large jaws and uses it to zap its enemies.",
     "heightM": 1.5,
     "weightKg": 45,
@@ -123424,13 +123332,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/753.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/753.png",
     "genus": "Sickle Grass Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-85/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sm11/15_hires.png",
     "altForms": [],
     "familyId": 753,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "During the day, it sleeps and soaks up light. When night falls, it walks around looking for a safer place to sleep.",
     "heightM": 0.3,
     "weightKg": 1.5,
@@ -124135,12 +124041,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/758.png",
     "genus": "Toxic Lizard Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-224/large"
+      "https://images.pokemontcg.io/sm3/132_hires.png"
     ],
     "altForms": [],
     "familyId": 757,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "For some reason, only females have been found. It creates a reverse harem of male Salandit that it lives with.",
     "heightM": 1.2,
     "weightKg": 22.2,
@@ -124315,13 +124221,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/759.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/759.png",
     "genus": "Flailing Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/154_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me1/154_hires.png",
     "altForms": [],
     "familyId": 759,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Despite its adorable appearance, when it gets angry and flails about, its arms and legs could knock a pro wrestler sprawling.",
     "heightM": 0.5,
     "weightKg": 6.8,
@@ -125570,7 +125474,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/768.png",
     "genus": "Hard Scale Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv4/246_hires.png"
+      "https://images.pokemontcg.io/sm3/129_hires.png"
     ],
     "altForms": [
       {
@@ -125591,7 +125495,7 @@
     ],
     "familyId": 767,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "With a flashing slash of its giant sharp claws, it cleaves seawater—or even air—right in two.",
     "heightM": 2,
     "weightKg": 108,
@@ -126281,12 +126185,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/773.png",
     "genus": "Synthetic Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-95/large"
+      "https://assets.tcgdex.net/en/tcgp/A3a/074/high.webp"
     ],
     "altForms": [],
     "familyId": 772,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Its trust in its partner is what awakens it. This Pokémon is capable of changing its type, a flexibility that is well displayed in battle.",
     "heightM": 2.3,
     "weightKg": 100.5,
@@ -126843,13 +126747,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/777.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/777.png",
     "genus": "Roly-Poly Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me2/104_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/smp/SM44_hires.png",
     "altForms": [],
     "familyId": 777,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The spiny fur on its back is normally at rest. When this Pokémon becomes agitated, its fur stands on end and stabs into its attackers.",
     "heightM": 0.3,
     "weightKg": 3.3,
@@ -127421,12 +127323,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/781.png",
     "genus": "Sea Creeper Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-91/large"
+      "https://assets.tcgdex.net/en/tcgp/A3/199/high.webp"
     ],
     "altForms": [],
     "familyId": 781,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Swinging its massive anchor, it can KO Wailord in a single blow. What appears to be green seaweed is actually its body.",
     "heightM": 3.9,
     "weightKg": 210,
@@ -128040,12 +127942,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/785.png",
     "genus": "Land Spirit Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv4/247_hires.png"
+      "https://images.pokemontcg.io/sma/SV93_hires.png"
     ],
     "altForms": [],
     "familyId": 785,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "This guardian deity of Melemele is brimming with curiosity. It summons thunderclouds and stores their lightning inside its body.",
     "heightM": 1.8,
     "weightKg": 20.5,
@@ -130563,12 +130465,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/802.png",
     "genus": "Gloomdweller Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/146_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A1a/074/high.webp"
     ],
     "altForms": [],
     "familyId": 802,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Able to conceal itself in shadows, it never appears before humans, so its very existence was the stuff of myth.",
     "heightM": 0.7,
     "weightKg": 22.2,
@@ -132085,12 +131987,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/813.png",
     "genus": "Rabbit Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-225/large"
+      "https://assets.tcgdex.net/en/tcgp/B2/162/high.webp"
     ],
     "altForms": [],
     "familyId": 813,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.",
     "heightM": 0.3,
     "weightKg": 4.5,
@@ -132766,7 +132668,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/818.png",
     "genus": "Secret Agent Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me1/142_hires.png"
+      "https://images.pokemontcg.io/swsh8/78_hires.png"
     ],
     "altForms": [
       {
@@ -132787,7 +132689,7 @@
     ],
     "familyId": 816,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It has many hidden capabilities, such as fingertips that can shoot water and a membrane on its back that it can use to glide through the air.",
     "heightM": 1.9,
     "weightKg": 45.2,
@@ -134128,12 +134030,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/828.png",
     "genus": "Fox Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me5-92/large"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG17_hires.png"
     ],
     "altForms": [],
     "familyId": 827,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "It secretly marks potential targets with a scent. By following the scent, it stalks its targets and steals from them when they least expect it.",
     "heightM": 1.2,
     "weightKg": 19.9,
@@ -135072,12 +134974,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/835.png",
     "genus": "Puppy Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/99_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A4a/074/high.webp"
     ],
     "altForms": [],
     "familyId": 835,
     "familyOrder": 0,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This Pokémon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.",
     "heightM": 0.3,
     "weightKg": 13.5,
@@ -136260,7 +136162,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/843.png",
     "genus": "Sand Snake Pokémon",
     "bgCandidates": [],
-    "regularCardUrl": "https://images.pokemontcg.io/swsh1/107_hires.png",
+    "regularCardUrl": "https://images.pokemontcg.io/swsh1/108_hires.png",
     "altForms": [],
     "familyId": 843,
     "familyOrder": 0,
@@ -137021,7 +136923,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/849.png",
     "genus": "Punk Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/me2/103_hires.png"
+      "https://images.pokemontcg.io/swsh12pt5gg/GG09_hires.png"
     ],
     "altForms": [
       {
@@ -137037,22 +136939,6 @@
         "category": "forme",
         "displayCategory": "forme",
         "tcgUrl": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/pocket/B2/B2_198_EN.png",
-        "regularCardUrl": null,
-        "cardRank": 2
-      },
-      {
-        "slug": "toxtricity-amped-gmax",
-        "displayName": "Gigantamax Amped Toxtricity",
-        "types": [
-          "electric",
-          "poison"
-        ],
-        "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png",
-        "formSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png",
-        "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10219.png",
-        "category": "gmax",
-        "displayCategory": "gmax",
-        "tcgUrl": "https://images.pokemontcg.io/swsh2/71_hires.png",
         "regularCardUrl": null,
         "cardRank": 2
       },
@@ -137075,7 +136961,7 @@
     ],
     "familyId": 848,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "When this Pokémon sounds as if it’s strumming a guitar, it’s actually clawing at the protrusions on its chest to generate electricity.",
     "heightM": 1.6,
     "weightKg": 40,
@@ -138819,7 +138705,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
     "genus": "Bulk Up Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-287/large"
+      "https://images.pokemontcg.io/swsh45sv/SV116_hires.png"
     ],
     "altForms": [
       {
@@ -138841,7 +138727,7 @@
     ],
     "familyId": 859,
     "familyOrder": 2,
-    "cardRank": 3,
+    "cardRank": 6,
     "flavorText": "With the hair wrapped around its body helping to enhance its muscles, this Pokémon can overwhelm even Machamp.",
     "heightM": 1.5,
     "weightKg": 61,
@@ -139001,12 +138887,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/862.png",
     "genus": "Blocking Pokémon",
     "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-245/large"
+      "https://images.pokemontcg.io/swsh10tg/TG10_hires.png"
     ],
     "altForms": [],
     "familyId": 263,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 6,
     "flavorText": "Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout—this move is known as Obstruct.",
     "heightM": 1.6,
     "weightKg": 46,
@@ -141204,7 +141090,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10187.png",
         "category": "forme",
         "displayCategory": "forme",
-        "tcgUrl": "https://images.scrydex.com/pokemon/me5-117/large",
+        "tcgUrl": "https://images.pokemontcg.io/sv4/206_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
       }
@@ -142291,13 +142177,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/885.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/885.png",
     "genus": "Lingering Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-247/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv6/128_hires.png",
     "altForms": [],
     "familyId": 885,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "After being reborn as a ghost Pokémon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
     "heightM": 0.5,
     "weightKg": 2,
@@ -142400,13 +142284,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/886.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/886.png",
     "genus": "Caretaker Pokémon",
-    "bgCandidates": [
-      "https://images.scrydex.com/pokemon/me2pt5-248/large"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv6/129_hires.png",
     "altForms": [],
     "familyId": 885,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It’s capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
     "heightM": 1.4,
     "weightKg": 11,
@@ -145771,12 +145653,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/908.png",
     "genus": "Magician Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/256_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2b/073/high.webp"
     ],
     "altForms": [],
     "familyId": 906,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This Pokémon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating.",
     "heightM": 1.5,
     "weightKg": 31.2,
@@ -146206,13 +146088,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/911.png",
     "genus": "Singer Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/258_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/258_hires.png",
     "altForms": [],
     "familyId": 909,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge’s head gained a soul.",
     "heightM": 1.6,
     "weightKg": 326.5,
@@ -146647,13 +146527,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/914.png",
     "genus": "Dancer Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/260_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/260_hires.png",
     "altForms": [],
     "familyId": 912,
     "familyOrder": 2,
-    "cardRank": 0,
     "flavorText": "A single kick from a Quaquaval can send a truck rolling. This Pokémon uses its powerful legs to perform striking dances from far-off lands.",
     "heightM": 1.8,
     "weightKg": 61.9,
@@ -147239,12 +147117,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/918.png",
     "genus": "Trap Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/243_hires.png"
+      "https://images.pokemontcg.io/sv10/187_hires.png"
     ],
     "altForms": [],
     "familyId": 917,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 3,
     "flavorText": "It clings to branches and ceilings using its threads and moves without a sound. It takes out its prey before the prey even notices it.",
     "heightM": 1,
     "weightKg": 16.5,
@@ -147377,13 +147255,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/919.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/919.png",
     "genus": "Grasshopper Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me2/96_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me2/96_hires.png",
     "altForms": [],
     "familyId": 919,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It has its third set of legs folded up. When it’s in a tough spot, this Pokémon jumps over 30 feet using the strength of its legs.",
     "heightM": 0.2,
     "weightKg": 1,
@@ -148579,13 +148455,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/927.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/927.png",
     "genus": "Dog Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv7/169_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv7/169_hires.png",
     "altForms": [],
     "familyId": 926,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "The pleasant aroma that emanates from this Pokémon’s body helps wheat grow, so Dachsbun has been treasured by farming villages.",
     "heightM": 0.5,
     "weightKg": 14.9,
@@ -149149,9 +149023,8 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/931.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/931.png",
     "genus": "Parrot Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/264_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/264_hires.png",
     "altForms": [
       {
         "slug": "squawkabilly-blue-plumage",
@@ -149204,7 +149077,6 @@
     ],
     "familyId": 931,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "These Pokémon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory.",
     "heightM": 0.6,
     "weightKg": 2.4,
@@ -151083,13 +150955,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/944.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/944.png",
     "genus": "Toxic Mouse Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/149_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me1/149_hires.png",
     "altForms": [],
     "familyId": 944,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Though usually a mellow Pokémon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
     "heightM": 0.2,
     "weightKg": 0.7,
@@ -153221,12 +153091,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/959.png",
     "genus": "Hammer Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/262_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2b/094/high.webp"
     ],
     "altForms": [],
     "familyId": 957,
     "familyOrder": 2,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
     "heightM": 0.7,
     "weightKg": 112.8,
@@ -153915,7 +153785,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/964.png",
     "genus": "Dolphin Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/151_hires.png"
+      "https://images.pokemontcg.io/sv3/200_hires.png"
     ],
     "altForms": [
       {
@@ -153929,7 +153799,7 @@
         "homeSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10256.png",
         "category": "forme",
         "displayCategory": "forme",
-        "tcgUrl": "https://images.pokemontcg.io/sv8pt5/151_hires.png",
+        "tcgUrl": "https://images.pokemontcg.io/sv3/200_hires.png",
         "regularCardUrl": null,
         "cardRank": 0
       }
@@ -154214,13 +154084,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/966.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/966.png",
     "genus": "Multi-Cyl Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv3/224_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv3/224_hires.png",
     "altForms": [],
     "familyId": 965,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders—now numbering eight—to generate energy.",
     "heightM": 1.8,
     "weightKg": 120,
@@ -155053,13 +154921,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/972.png",
     "genus": "Ghost Dog Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/me1/145_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/me1/145_hires.png",
     "altForms": [],
     "familyId": 971,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pokémon, this one is most loyal to its master.",
     "heightM": 2,
     "weightKg": 15,
@@ -156831,13 +156697,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/984.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/984.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/246_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/246_hires.png",
     "altForms": [],
     "familyId": 984,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Sightings of this Pokémon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book.",
     "heightM": 2.2,
     "weightKg": 320,
@@ -157495,13 +157359,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/989.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/989.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/159_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv8pt5/159_hires.png",
     "altForms": [],
     "familyId": 989,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It slightly resembles a Magneton that lived for 10,000 years and was featured in an article in a paranormal magazine.",
     "heightM": 2.3,
     "weightKg": 60,
@@ -157631,13 +157493,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/990.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/990.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/248_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 990,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "This Pokémon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens.",
     "heightM": 0.9,
     "weightKg": 240,
@@ -157887,13 +157746,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/992.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/154_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv8pt5/154_hires.png",
     "altForms": [],
     "familyId": 992,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It is very similar to a cyborg covered exclusively by a paranormal magazine. The cyborg was said to be the modified form of a certain athlete.",
     "heightM": 1.8,
     "weightKg": 380.7,
@@ -158978,12 +158835,12 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1000.png",
     "genus": "Coin Entity Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv4/252_hires.png"
+      "https://assets.tcgdex.net/en/tcgp/A2b/077/high.webp"
     ],
     "altForms": [],
     "familyId": 999,
     "familyOrder": 1,
-    "cardRank": 0,
+    "cardRank": 1,
     "flavorText": "Its body seems to be made up of 1,000 coins. This Pokémon gets along well with others and is quick to make friends with anybody.",
     "heightM": 1.2,
     "weightKg": 30,
@@ -159100,13 +158957,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1001.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1001.png",
     "genus": "Ruinous Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/257_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 1001,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The grudge of a person punished for writing the king’s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pokémon.",
     "heightM": 1.5,
     "weightKg": 74.2,
@@ -159244,13 +159098,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1002.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1002.png",
     "genus": "Ruinous Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/261_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/261_hires.png",
     "altForms": [],
     "familyId": 1002,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "This Pokémon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
     "heightM": 1.9,
     "weightKg": 152.2,
@@ -159388,13 +159240,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1003.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1003.png",
     "genus": "Ruinous Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/263_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv2/263_hires.png",
     "altForms": [],
     "familyId": 1003,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "The fear poured into an ancient ritual vessel has clad itself in rocks and dirt to become a Pokémon.",
     "heightM": 2.7,
     "weightKg": 699.7,
@@ -159528,13 +159378,10 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1004.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1004.png",
     "genus": "Ruinous Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv2/259_hires.png"
-    ],
+    "bgCandidates": [],
     "altForms": [],
     "familyId": 1004,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It controls flames burning at over 5,400 degrees Fahrenheit. It casually swims through the sea of lava it creates by melting rock and sand.",
     "heightM": 0.4,
     "weightKg": 4.9,
@@ -159668,13 +159515,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1005.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1005.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/162_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv8pt5/162_hires.png",
     "altForms": [],
     "familyId": 1005,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It is possible that this is the creature listed as Roaring Moon in an expedition journal that still holds many mysteries.",
     "heightM": 2,
     "weightKg": 380,
@@ -159804,13 +159649,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1006.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1006.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/157_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv8pt5/157_hires.png",
     "altForms": [],
     "familyId": 1006,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It has some similarities to a mad scientist’s invention covered in a paranormal magazine.",
     "heightM": 1.4,
     "weightKg": 35,
@@ -159944,13 +159787,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1007.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1007.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/247_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/247_hires.png",
     "altForms": [],
     "familyId": 1007,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "This seems to be the Winged King mentioned in an old expedition journal. It was said to have split the land with its bare fists.",
     "heightM": 2.5,
     "weightKg": 303,
@@ -160076,13 +159917,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1008.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv1/244_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv1/244_hires.png",
     "altForms": [],
     "familyId": 1008,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Much remains unknown about this creature. It resembles Cyclizar, but it is far more ruthless and powerful.",
     "heightM": 3.5,
     "weightKg": 240,
@@ -160208,13 +160047,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1009.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/205_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/205_hires.png",
     "altForms": [],
     "familyId": 1009,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "This ferocious creature is shrouded in mystery. It's named after an aquatic monster mentioned in an old expedition journal.",
     "heightM": 3.5,
     "weightKg": 280,
@@ -160336,13 +160173,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1010.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/203_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/203_hires.png",
     "altForms": [],
     "familyId": 1010,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "Many of its physical characteristics match those of a Virizion from the future that was covered in a paranormal magazine.",
     "heightM": 1.5,
     "weightKg": 125,
@@ -160772,13 +160607,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png",
     "genus": "Matcha Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv6/210_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv6/210_hires.png",
     "altForms": [],
     "familyId": 1012,
     "familyOrder": 1,
-    "cardRank": 0,
     "flavorText": "It pretends to be tea, trying to fool people into drinking it so it can drain their life-force. Its ruse is generally unsuccessful.",
     "heightM": 0.2,
     "weightKg": 2.2,
@@ -160910,7 +160743,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1014.png",
     "genus": "Retainer Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv6pt5/90_hires.png"
+      "https://images.pokemontcg.io/sv6pt5/74_hires.png"
     ],
     "altForms": [],
     "familyId": 1014,
@@ -161031,7 +160864,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1015.png",
     "genus": "Retainer Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv6pt5/91_hires.png"
+      "https://images.pokemontcg.io/sv6pt5/72_hires.png"
     ],
     "altForms": [],
     "familyId": 1015,
@@ -161156,7 +160989,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1016.png",
     "genus": "Retainer Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv6pt5/92_hires.png"
+      "https://images.pokemontcg.io/sv6pt5/73_hires.png"
     ],
     "altForms": [],
     "familyId": 1016,
@@ -161461,7 +161294,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png",
     "genus": "Alloy Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv8/241_hires.png"
+      "https://images.pokemontcg.io/sv7/155_hires.png"
     ],
     "altForms": [],
     "familyId": 884,
@@ -161603,7 +161436,7 @@
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
     "genus": "Apple Hydra Pokémon",
     "bgCandidates": [
-      "https://images.pokemontcg.io/sv7/167_hires.png"
+      "https://images.pokemontcg.io/sv10/188_hires.png"
     ],
     "altForms": [],
     "familyId": 840,
@@ -161773,13 +161606,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/204_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/204_hires.png",
     "altForms": [],
     "familyId": 1020,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "There are scant few reports of this creature being sighted. One short video shows it rampaging and spouting pillars of flame.",
     "heightM": 3.5,
     "weightKg": 590,
@@ -161909,13 +161740,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1021.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/208_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/208_hires.png",
     "altForms": [],
     "familyId": 1021,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It's said to incinerate everything around it with lightning launched from its fur. Very little is known about this creature.",
     "heightM": 5.2,
     "weightKg": 480,
@@ -162045,13 +161874,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1022.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/207_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/207_hires.png",
     "altForms": [],
     "familyId": 1022,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
     "heightM": 1.5,
     "weightKg": 162.5,
@@ -162181,13 +162008,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
     "genus": "Paradox Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv5/206_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv5/206_hires.png",
     "altForms": [],
     "familyId": 1023,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It resembles a mysterious object introduced in a paranormal magazine as a cutting-edge weapon shaped like a Cobalion.",
     "heightM": 1.6,
     "weightKg": 156,
@@ -162463,13 +162288,11 @@
     "spriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
     "artworkUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
     "genus": "Subjugation Pokémon",
-    "bgCandidates": [
-      "https://images.pokemontcg.io/sv8pt5/163_hires.png"
-    ],
+    "bgCandidates": [],
+    "regularCardUrl": "https://images.pokemontcg.io/sv8pt5/163_hires.png",
     "altForms": [],
     "familyId": 1025,
     "familyOrder": 0,
-    "cardRank": 0,
     "flavorText": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
     "heightM": 0.3,
     "weightKg": 0.3,

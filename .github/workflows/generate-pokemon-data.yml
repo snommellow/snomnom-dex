@@ -32,6 +32,17 @@ jobs:
 
       - run: npm ci
 
+      - name: Debug completeness check
+        run: npx tsx scripts/debug-completeness-check.ts || true
+
+      - name: Commit debug data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lib/debug-completeness-check.json
+          git commit -m "debug: check trainer-class/gym-leader/elite-four category completeness" || true
+          git push --force-with-lease || true
+
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}

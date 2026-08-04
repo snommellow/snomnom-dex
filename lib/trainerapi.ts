@@ -116,11 +116,12 @@ function effectiveRarityScore(card: PtcgCard): number {
 }
 
 // Cards confirmed to depict a DIFFERENT character than the roster entry they'd otherwise match —
-// name collisions with an unrelated card, not a visual-quality issue. sv4pt5-78/227/236 "Clive":
-// all three are Paldean Fates (SV-era) prints of an unrelated Paldea character, nothing to do
-// with the Hoenn NPC of the same name — blacklisted so he falls through to the next art source
-// (Pocket, then Bulbapedia) instead of showing the wrong person.
-const WRONG_CHARACTER_BLACKLIST = new Set(["sv4pt5-78", "sv4pt5-227", "sv4pt5-236"]);
+// genuine name collisions with an unrelated card, not a visual-quality issue. (Previously
+// contained sv4pt5-78/227/236 "Clive", on the assumption he was an obscure Hoenn NPC — but
+// Bulbapedia's own categories for "Clive" show only Scarlet and Violet/Paldean Winds/Pokémon
+// Horizons, no Hoenn category at all, so those Paldean Fates cards were the right character
+// after all. Moved to Paldea below instead of blacklisted.)
+const WRONG_CHARACTER_BLACKLIST = new Set<string>([]);
 
 function pickBestCard(cards: PtcgCard[]): PtcgCard | null {
   cards = cards.filter((c) => !WRONG_CHARACTER_BLACKLIST.has(c.id));
@@ -225,7 +226,7 @@ assignRole("Rival", [
 ]);
 assignRole("Protagonist", [
   "Red", "Leaf", "Ethan", "Lyra", "Kris", "Dawn", "Lucas", "Hilda", "Hilbert", "Rosa", "Nate",
-  "Gloria", "Victor", "Elio", "Selene", "Florian", "Juliana",
+  "Gloria", "Victor", "Elio", "Selene", "Florian", "Juliana", "Akari", "Rei",
 ]);
 // May/Brendan/Calem/Serena are also playable protagonists (whichever you don't pick becomes your
 // rival) — already listed under Rival above; adding Protagonist here gives them both roles.
@@ -418,9 +419,6 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Mr. Briney", searchNames: ["Mr. Briney"], special: true, region: "Hoenn" },
   { name: "Mr. Stone", searchNames: ["Mr. Stone"], special: true, region: "Hoenn" },
   { name: "Roseanne", searchNames: ["Roseanne"], special: true, region: "Hoenn" },
-  // Clive's only pokemontcg.io matches (sv4pt5-*) are an unrelated Paldea character sharing his
-  // name — blacklisted below so he falls through to the Bulbapedia art fallback instead.
-  { name: "Clive", searchNames: ["Clive"], special: true, region: "Hoenn" },
   { name: "Zinnia", searchNames: ["Zinnia"], special: true, region: "Hoenn" },
   { name: "Lisia", searchNames: ["Lisia"], special: true, region: "Hoenn" },
   { name: "Bebe", searchNames: ["Bebe"], special: true, region: "Hoenn" },
@@ -494,6 +492,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Iris", searchNames: ["Iris"], special: true, region: "Unova" },
   { name: "Cheren", searchNames: ["Cheren"], special: true, region: "Unova" },
   { name: "Bianca", searchNames: ["Bianca"], special: true, region: "Unova" },
+  { name: "Benga", searchNames: ["Benga"], special: true, region: "Unova" },
   { name: "Hugh", searchNames: ["Hugh"], special: true, region: "Unova" },
   { name: "Emmet", searchNames: ["Emmet"], special: true, region: "Unova" },
   // Ingo's card was matched via his Legends: Arceus cameo appearance, but his primary identity
@@ -638,6 +637,7 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Nemona", searchNames: ["Nemona"], special: true, region: "Paldea" },
   { name: "Florian", searchNames: ["Florian"], special: true, region: "Paldea" },
   { name: "Juliana", searchNames: ["Juliana"], special: true, region: "Paldea" },
+  { name: "Clive", searchNames: ["Clive"], special: true, region: "Paldea" },
   { name: "O'Nare", searchNames: ["O'Nare", "O’Nare"], special: true, region: "Paldea" },
   // Tyme: Bulbapedia-tagged Gym Leader + Rock-type Trainer, from the Paldean Winds short.
   { name: "Tyme", searchNames: ["Tyme"], special: true, region: "Paldea" },
@@ -680,6 +680,8 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Adaman", searchNames: ["Adaman"], special: true, region: "Hisui" },
   { name: "Irida", searchNames: ["Irida"], special: true, region: "Hisui" },
   { name: "Volo", searchNames: ["Volo"], special: true, region: "Hisui" },
+  { name: "Akari", searchNames: ["Akari"], special: true, region: "Hisui" },
+  { name: "Rei", searchNames: ["Rei"], special: true, region: "Hisui" },
   { name: "Cogita", searchNames: ["Cogita"], special: true, region: "Hisui" },
   { name: "Kamado", searchNames: ["Kamado"], special: true, region: "Hisui" },
   { name: "Choy", searchNames: ["Choy"], special: true, region: "Hisui" },

@@ -1,0 +1,10 @@
+{
+  "totalChecked": 338,
+  "needsSplit": [
+    {
+      "name": "Swimmer",
+      "hasMale": true,
+      "hasFemale": true
+    }
+  ]
+}

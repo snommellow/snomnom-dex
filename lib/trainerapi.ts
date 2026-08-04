@@ -115,7 +115,15 @@ function effectiveRarityScore(card: PtcgCard): number {
   return rarityScore(card.rarity, card.id);
 }
 
+// Cards confirmed to depict a DIFFERENT character than the roster entry they'd otherwise match —
+// name collisions with an unrelated card, not a visual-quality issue. sv4pt5-78/227/236 "Clive":
+// all three are Paldean Fates (SV-era) prints of an unrelated Paldea character, nothing to do
+// with the Hoenn NPC of the same name — blacklisted so he falls through to the next art source
+// (Pocket, then Bulbapedia) instead of showing the wrong person.
+const WRONG_CHARACTER_BLACKLIST = new Set(["sv4pt5-78", "sv4pt5-227", "sv4pt5-236"]);
+
 function pickBestCard(cards: PtcgCard[]): PtcgCard | null {
+  cards = cards.filter((c) => !WRONG_CHARACTER_BLACKLIST.has(c.id));
   if (!cards.length) return null;
   return cards.reduce((a, b) => {
     const ra = effectiveRarityScore(a), rb = effectiveRarityScore(b);
@@ -410,6 +418,9 @@ const KANTO_ROSTER: { name: string; searchNames: string[]; special?: boolean; re
   { name: "Mr. Briney", searchNames: ["Mr. Briney"], special: true, region: "Hoenn" },
   { name: "Mr. Stone", searchNames: ["Mr. Stone"], special: true, region: "Hoenn" },
   { name: "Roseanne", searchNames: ["Roseanne"], special: true, region: "Hoenn" },
+  // Clive's only pokemontcg.io matches (sv4pt5-*) are an unrelated Paldea character sharing his
+  // name — blacklisted below so he falls through to the Bulbapedia art fallback instead.
+  { name: "Clive", searchNames: ["Clive"], special: true, region: "Hoenn" },
   { name: "Zinnia", searchNames: ["Zinnia"], special: true, region: "Hoenn" },
   { name: "Lisia", searchNames: ["Lisia"], special: true, region: "Hoenn" },
   { name: "Bebe", searchNames: ["Bebe"], special: true, region: "Hoenn" },

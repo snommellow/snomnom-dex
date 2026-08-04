@@ -32,6 +32,17 @@ jobs:
 
       - run: npm ci
 
+      - name: Debug name check
+        run: npx tsx scripts/debug-name-check.ts || true
+
+      - name: Commit debug data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lib/debug-name-check.json
+          git commit -m "debug: full per-region character sweep" || true
+          git push --force-with-lease || true
+
       - name: Generate pokemon-data.json
         env:
           POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
